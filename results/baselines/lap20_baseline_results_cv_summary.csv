@@ -1,0 +1,4 @@
+lap,baseline,top1_mean±std,top3_mean±std,total_races_evaluated
+20,Fastest lap at lap 20 (lap_time_x_seconds),0.3310 ± 0.0954,0.6705 ± 0.0751,103
+20,Leader at lap 20 (position_x),0.6800 ± 0.0976,0.9133 ± 0.0614,103
+20,Lowest driver_number (sanity baseline),0.3395 ± 0.0889,0.3490 ± 0.0771,103

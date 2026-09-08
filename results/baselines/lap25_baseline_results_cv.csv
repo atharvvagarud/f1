@@ -1,0 +1,16 @@
+lap,baseline,fold,n_splits,test_races,races_evaluated,top1_accuracy,top3_accuracy
+25,Leader at lap 25 (position_x),1,5,21,21,0.6190476190476191,0.9523809523809523
+25,Fastest lap at lap 25 (lap_time_x_seconds),1,5,21,21,0.3333333333333333,0.7619047619047619
+25,Lowest driver_number (sanity baseline),1,5,21,21,0.3333333333333333,0.3333333333333333
+25,Leader at lap 25 (position_x),2,5,21,21,0.8095238095238095,0.9523809523809523
+25,Fastest lap at lap 25 (lap_time_x_seconds),2,5,21,21,0.3333333333333333,0.6666666666666666
+25,Lowest driver_number (sanity baseline),2,5,21,21,0.42857142857142855,0.42857142857142855
+25,Leader at lap 25 (position_x),3,5,21,21,0.7619047619047619,0.9047619047619048
+25,Fastest lap at lap 25 (lap_time_x_seconds),3,5,21,21,0.42857142857142855,0.9047619047619048
+25,Lowest driver_number (sanity baseline),3,5,21,21,0.47619047619047616,0.47619047619047616
+25,Leader at lap 25 (position_x),4,5,20,20,0.5,0.95
+25,Fastest lap at lap 25 (lap_time_x_seconds),4,5,20,20,0.35,0.75
+25,Lowest driver_number (sanity baseline),4,5,20,20,0.15,0.2
+25,Leader at lap 25 (position_x),5,5,20,20,0.7,0.9
+25,Fastest lap at lap 25 (lap_time_x_seconds),5,5,20,20,0.25,0.75
+25,Lowest driver_number (sanity baseline),5,5,20,20,0.3,0.3

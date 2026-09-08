@@ -1,0 +1,2 @@
+model,lap,top1_mean±std,top3_mean±std,log_loss_mean±std,total_races
+LogisticRegression,25,0.6881 ± 0.1051,0.9124 ± 0.0225,0.0954 ± 0.0112,103

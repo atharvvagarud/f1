@@ -1,0 +1,105 @@
+year,event_name,true_winner,pred_top1_driver,pred_top3_drivers,hit_top1,hit_top3,fold
+2019,Belgian Grand Prix,LEC,LEC,LEC|VET|HAM,1,1,1
+2019,Canadian Grand Prix,HAM,VET,VET|HAM|LEC,0,1,1
+2019,Mexican Grand Prix,HAM,LEC,LEC|VET|ALB,0,0,1
+2019,Singapore Grand Prix,VET,LEC,LEC|HAM|VET,0,1,1
+2020,Austrian Grand Prix,BOT,BOT,BOT|HAM|ALB,1,1,1
+2020,Emilia Romagna Grand Prix,HAM,BOT,BOT|VER|HAM,0,1,1
+2020,Russian Grand Prix,BOT,HAM,HAM|BOT|VER,0,1,1
+2020,Tuscan Grand Prix,HAM,HAM,HAM|BOT|LEC,1,1,1
+2021,British Grand Prix,HAM,LEC,LEC|HAM|NOR,0,1,1
+2021,Italian Grand Prix,RIC,RIC,RIC|VER|HAM,1,1,1
+2021,Russian Grand Prix,HAM,SAI,SAI|NOR|RUS,0,0,1
+2021,Turkish Grand Prix,BOT,BOT,BOT|VER|LEC,1,1,1
+2022,Dutch Grand Prix,VER,VER,VER|LEC|SAI,1,1,1
+2022,French Grand Prix,VER,LEC,LEC|VER|HAM,0,1,1
+2022,Italian Grand Prix,VER,LEC,LEC|VER|RUS,0,1,1
+2023,Australian Grand Prix,VER,HAM,HAM|VER|ALO,0,1,1
+2023,British Grand Prix,VER,VER,VER|NOR|PIA,1,1,1
+2023,Japanese Grand Prix,VER,VER,VER|NOR|PIA,1,1,1
+2023,Monaco Grand Prix,VER,ALO,ALO|VER|SAI,0,1,1
+2023,Singapore Grand Prix,SAI,SAI,SAI|LEC|RUS,1,1,1
+2023,United States Grand Prix,VER,NOR,NOR|HAM|LEC,0,0,1
+2019,Australian Grand Prix,BOT,BOT,BOT|HAM|VET,1,1,2
+2019,Hungarian Grand Prix,HAM,VER,VER|HAM|LEC,0,1,2
+2019,Russian Grand Prix,HAM,VET,VET|LEC|HAM,0,1,2
+2020,Abu Dhabi Grand Prix,VER,VER,VER|BOT|HAM,1,1,2
+2020,Eifel Grand Prix,HAM,BOT,BOT|HAM|VER,0,1,2
+2020,Italian Grand Prix,GAS,HAM,HAM|SAI|NOR,0,0,2
+2020,Portuguese Grand Prix,HAM,BOT,BOT|HAM|VER,0,1,2
+2020,Turkish Grand Prix,HAM,PER,PER|VER|ALB,0,0,2
+2021,Belgian Grand Prix,VER,VER,VER|RUS|HAM,1,1,2
+2021,Hungarian Grand Prix,OCO,OCO,OCO|VET|LAT,1,1,2
+2021,Qatar Grand Prix,HAM,HAM,HAM|VER|ALO,1,1,2
+2021,São Paulo Grand Prix,HAM,VER,VER|PER|HAM,0,1,2
+2022,Bahrain Grand Prix,LEC,LEC,LEC|VER|SAI,1,1,2
+2022,Hungarian Grand Prix,VER,RUS,RUS|SAI|LEC,0,0,2
+2022,Monaco Grand Prix,PER,LEC,LEC|SAI|PER,0,1,2
+2023,Abu Dhabi Grand Prix,VER,VER,VER|LEC|NOR,1,1,2
+2023,Belgian Grand Prix,VER,PER,PER|VER|LEC,0,1,2
+2023,Italian Grand Prix,VER,SAI,SAI|VER|LEC,0,1,2
+2023,Las Vegas Grand Prix,VER,VER,VER|LEC|RUS,1,1,2
+2023,Qatar Grand Prix,VER,VER,VER|PIA|ALO,1,1,2
+2023,São Paulo Grand Prix,VER,VER,VER|NOR|ALO,1,1,2
+2019,Austrian Grand Prix,VER,LEC,LEC|BOT|HAM,0,0,3
+2019,British Grand Prix,HAM,BOT,BOT|HAM|LEC,0,1,3
+2019,German Grand Prix,VER,HAM,HAM|BOT|VER,0,1,3
+2019,Monaco Grand Prix,HAM,HAM,HAM|BOT|VER,1,1,3
+2020,70th Anniversary Grand Prix,VER,BOT,BOT|HAM|VER,0,1,3
+2020,British Grand Prix,HAM,HAM,HAM|BOT|VER,1,1,3
+2020,Hungarian Grand Prix,HAM,HAM,HAM|VER|MAG,1,1,3
+2020,Styrian Grand Prix,HAM,HAM,HAM|VER|BOT,1,1,3
+2021,Abu Dhabi Grand Prix,VER,HAM,HAM|VER|PER,0,1,3
+2021,Bahrain Grand Prix,HAM,VER,VER|HAM|BOT,0,1,3
+2021,French Grand Prix,VER,HAM,HAM|VER|BOT,0,1,3
+2021,Portuguese Grand Prix,HAM,BOT,BOT|VER|HAM,0,1,3
+2021,Styrian Grand Prix,VER,VER,VER|HAM|PER,1,1,3
+2022,Australian Grand Prix,LEC,LEC,LEC|VER|PER,1,1,3
+2022,Belgian Grand Prix,VER,SAI,SAI|PER|VER,0,1,3
+2022,Miami Grand Prix,VER,VER,VER|LEC|SAI,1,1,3
+2022,United States Grand Prix,VER,VER,VER|HAM|RUS,1,1,3
+2023,Bahrain Grand Prix,VER,VER,VER|LEC|PER,1,1,3
+2023,Hungarian Grand Prix,VER,VER,VER|PIA|NOR,1,1,3
+2023,Mexico City Grand Prix,VER,VER,VER|LEC|SAI,1,1,3
+2023,Spanish Grand Prix,VER,VER,VER|SAI|HAM,1,1,3
+2019,Abu Dhabi Grand Prix,HAM,HAM,HAM|LEC|VER,1,1,4
+2019,Azerbaijan Grand Prix,BOT,BOT,BOT|HAM|VET,1,1,4
+2019,French Grand Prix,HAM,HAM,HAM|BOT|LEC,1,1,4
+2019,Japanese Grand Prix,BOT,BOT,BOT|VET|HAM,1,1,4
+2019,United States Grand Prix,BOT,BOT,BOT|VER|HAM,1,1,4
+2020,Belgian Grand Prix,HAM,HAM,HAM|BOT|VER,1,1,4
+2020,Sakhir Grand Prix,PER,RUS,RUS|BOT|SAI,0,0,4
+2021,Azerbaijan Grand Prix,PER,HAM,HAM|VER|PER,0,1,4
+2021,Emilia Romagna Grand Prix,VER,VER,VER|HAM|LEC,1,1,4
+2021,Monaco Grand Prix,VER,VER,VER|BOT|SAI,1,1,4
+2021,Spanish Grand Prix,HAM,VER,VER|HAM|LEC,0,1,4
+2022,Abu Dhabi Grand Prix,VER,VER,VER|PER|LEC,1,1,4
+2022,Austrian Grand Prix,LEC,VER,VER|LEC|SAI,0,1,4
+2022,British Grand Prix,SAI,VER,VER|SAI|LEC,0,1,4
+2022,Japanese Grand Prix,VER,VER,VER|LEC|PER,1,1,4
+2022,Saudi Arabian Grand Prix,VER,PER,PER|LEC|VER,0,1,4
+2022,Spanish Grand Prix,VER,LEC,LEC|RUS|PER,0,0,4
+2022,São Paulo Grand Prix,RUS,RUS,RUS|PER|SAI,1,1,4
+2023,Azerbaijan Grand Prix,PER,PER,PER|LEC|VER,1,1,4
+2023,Dutch Grand Prix,VER,PER,PER|VER|GAS,0,1,4
+2023,Saudi Arabian Grand Prix,PER,PER,PER|ALO|RUS,1,1,4
+2019,Bahrain Grand Prix,HAM,LEC,LEC|VET|HAM,0,1,5
+2019,Brazilian Grand Prix,VER,VER,VER|HAM|VET,1,1,5
+2019,Chinese Grand Prix,HAM,HAM,HAM|BOT|LEC,1,1,5
+2019,Italian Grand Prix,LEC,LEC,LEC|HAM|BOT,1,1,5
+2019,Spanish Grand Prix,HAM,HAM,HAM|BOT|VER,1,1,5
+2020,Bahrain Grand Prix,HAM,HAM,HAM|VER|PER,1,1,5
+2020,Spanish Grand Prix,HAM,HAM,HAM|VER|BOT,1,1,5
+2021,Austrian Grand Prix,VER,VER,VER|NOR|HAM,1,1,5
+2021,Dutch Grand Prix,VER,VER,VER|HAM|BOT,1,1,5
+2021,Mexico City Grand Prix,VER,VER,VER|HAM|PER,1,1,5
+2021,Saudi Arabian Grand Prix,HAM,VER,VER|HAM|BOT,0,1,5
+2021,United States Grand Prix,VER,HAM,HAM|PER|VER,0,1,5
+2022,Azerbaijan Grand Prix,VER,PER,PER|VER|ALO,0,1,5
+2022,Canadian Grand Prix,VER,SAI,SAI|ALO|RUS,0,0,5
+2022,Emilia Romagna Grand Prix,VER,VER,VER|PER|LEC,1,1,5
+2022,Mexico City Grand Prix,VER,VER,VER|HAM|PER,1,1,5
+2022,Singapore Grand Prix,PER,PER,PER|LEC|SAI,1,1,5
+2023,Austrian Grand Prix,VER,VER,VER|LEC|SAI,1,1,5
+2023,Canadian Grand Prix,VER,VER,VER|HAM|ALO,1,1,5
+2023,Miami Grand Prix,VER,PER,PER|ALO|SAI,0,0,5

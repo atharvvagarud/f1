@@ -1,0 +1,2 @@
+model,lap,top1_mean±std,top3_mean±std,log_loss_mean±std,total_races
+HistGradientBoosting,5,0.5110 ± 0.1718,0.8343 ± 0.0460,0.1628 ± 0.0463,103

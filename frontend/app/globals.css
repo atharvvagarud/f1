@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --font-heading: var(--font-montserrat);
+  --font-body: var(--font-space-grotesk);
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #020617;
+}
+
+body {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+.font-heading {
+  font-family: var(--font-montserrat), sans-serif !important;
+}
+
+.font-body {
+  font-family: var(--font-space-grotesk), sans-serif !important;
+}

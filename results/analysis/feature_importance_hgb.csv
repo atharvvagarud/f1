@@ -1,0 +1,11 @@
+model,feature,importance_mean,importance_std
+HistGradientBoosting,position_x,0.27284885026840133,0.021180546526100127
+HistGradientBoosting,gap_to_leader_seconds,0.007224771231069968,0.006908885314635433
+HistGradientBoosting,pit_in_time_present,0.0018269881384222534,0.002306047394374317
+HistGradientBoosting,compound_x,0.0016758804022157623,0.005208206081695854
+HistGradientBoosting,lap_time_x_seconds,0.0008324876773129885,0.00635209884105813
+HistGradientBoosting,stint_x,0.0008184404829779492,0.0009615885281309487
+HistGradientBoosting,track_status_x,0.00016550558544721822,0.0024252261266357977
+HistGradientBoosting,pit_out_time_present,-0.0005408149243654808,0.0013156165437036792
+HistGradientBoosting,session_time_x_seconds,-0.0015956115991625423,0.012490770531353277
+HistGradientBoosting,tyre_life_x,-0.002802088007707546,0.005526151593574206

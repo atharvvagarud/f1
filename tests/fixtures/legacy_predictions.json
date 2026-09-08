@@ -1,0 +1,3595 @@
+{
+ "meta": {
+  "note": "R0 golden baseline generated from current implementation; do not edit to hide regressions."
+ },
+ "fixtures": [
+  {
+   "year": 2023,
+   "event": "Bahrain Grand Prix",
+   "ensemble": {
+    "summary": [
+     {
+      "lap": 5,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.6011,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 5,
+      "model": "Logistic Regression",
+      "predicted_winner": "VER",
+      "win_probability": 0.3564,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 5,
+      "model": "XGBoost",
+      "predicted_winner": "VER",
+      "win_probability": 0.587,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 10,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.6159,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 10,
+      "model": "Logistic Regression",
+      "predicted_winner": "VER",
+      "win_probability": 0.3819,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 10,
+      "model": "XGBoost",
+      "predicted_winner": "VER",
+      "win_probability": 0.6989,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 15,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.5962,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 15,
+      "model": "Logistic Regression",
+      "predicted_winner": "VER",
+      "win_probability": 0.4336,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 15,
+      "model": "XGBoost",
+      "predicted_winner": "VER",
+      "win_probability": 0.5701,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 20,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.7865,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 20,
+      "model": "Logistic Regression",
+      "predicted_winner": "VER",
+      "win_probability": 0.4949,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 20,
+      "model": "XGBoost",
+      "predicted_winner": "VER",
+      "win_probability": 0.795,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 25,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.758,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 25,
+      "model": "Logistic Regression",
+      "predicted_winner": "VER",
+      "win_probability": 0.5987,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 25,
+      "model": "XGBoost",
+      "predicted_winner": "VER",
+      "win_probability": 0.8051,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     }
+    ],
+    "latest_lap": 25,
+    "final_winner": "VER",
+    "decision_reason": "Majority vote at latest checkpoint",
+    "actual_winner": "VER",
+    "agreement_count": 3,
+    "confidence_value": 0.8051262497901917,
+    "confidence_label": "Confidence (XGBoost)",
+    "latest_top5": {
+     "Logistic Regression": [
+      {
+       "driver": "VER",
+       "driver_number": 1,
+       "win_probability": 0.5986934448921309,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "SOFT",
+       "tyre_life_x": 11.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "LEC",
+       "driver_number": 16,
+       "win_probability": 0.1468759975713692,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 13.519999999999529,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "PER",
+       "driver_number": 11,
+       "win_probability": 0.07170181876481883,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 14.101999999999862,
+       "compound_x": "SOFT",
+       "tyre_life_x": 10.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "SAI",
+       "driver_number": 55,
+       "win_probability": 0.008358601306338911,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 27.88400000000001,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "HAM",
+       "driver_number": 44,
+       "win_probability": 0.0024965009154452955,
+       "position_x": 5.0,
+       "gap_to_leader_seconds": 31.80199999999968,
+       "compound_x": "HARD",
+       "tyre_life_x": 13.0,
+       "stint_x": 2.0
+      }
+     ],
+     "HistGradientBoosting": [
+      {
+       "driver": "VER",
+       "driver_number": 1,
+       "win_probability": 0.7580109435557343,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "SOFT",
+       "tyre_life_x": 11.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "LEC",
+       "driver_number": 16,
+       "win_probability": 0.03340700014057683,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 13.519999999999529,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "PER",
+       "driver_number": 11,
+       "win_probability": 0.03146769628445113,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 14.101999999999862,
+       "compound_x": "SOFT",
+       "tyre_life_x": 10.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "SAI",
+       "driver_number": 55,
+       "win_probability": 0.00029054561619217966,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 27.88400000000001,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "HAM",
+       "driver_number": 44,
+       "win_probability": 0.0002810033995314714,
+       "position_x": 5.0,
+       "gap_to_leader_seconds": 31.80199999999968,
+       "compound_x": "HARD",
+       "tyre_life_x": 13.0,
+       "stint_x": 2.0
+      }
+     ],
+     "XGBoost": [
+      {
+       "driver": "VER",
+       "driver_number": 1,
+       "win_probability": 0.8051262497901917,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "SOFT",
+       "tyre_life_x": 11.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "LEC",
+       "driver_number": 16,
+       "win_probability": 0.041874539107084274,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 13.519999999999529,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "PER",
+       "driver_number": 11,
+       "win_probability": 0.029398567974567413,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 14.101999999999862,
+       "compound_x": "SOFT",
+       "tyre_life_x": 10.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "SAI",
+       "driver_number": 55,
+       "win_probability": 0.001833820715546608,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 27.88400000000001,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "HAM",
+       "driver_number": 44,
+       "win_probability": 0.0012710848823189735,
+       "position_x": 5.0,
+       "gap_to_leader_seconds": 31.80199999999968,
+       "compound_x": "HARD",
+       "tyre_life_x": 13.0,
+       "stint_x": 2.0
+      }
+     ]
+    }
+   },
+   "single": {
+    "logreg": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "VER",
+       "win_probability": 0.3564,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "VER",
+       "win_probability": 0.3819,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "VER",
+       "win_probability": 0.4336,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "VER",
+       "win_probability": 0.4949,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "VER",
+       "win_probability": 0.5987,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      }
+     ],
+     "latest": {
+      "model": "logreg",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "VER",
+      "predicted_driver_number": 1,
+      "predicted_win_probability": 0.5986934448921309,
+      "actual_winner": "VER",
+      "actual_rank": 1,
+      "top5": [
+       {
+        "driver": "VER",
+        "driver_number": 1,
+        "win_probability": 0.5986934448921309,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "SOFT",
+        "tyre_life_x": 11.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "LEC",
+        "driver_number": 16,
+        "win_probability": 0.1468759975713692,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 13.519999999999529,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "PER",
+        "driver_number": 11,
+        "win_probability": 0.07170181876481883,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 14.101999999999862,
+        "compound_x": "SOFT",
+        "tyre_life_x": 10.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "SAI",
+        "driver_number": 55,
+        "win_probability": 0.008358601306338911,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 27.88400000000001,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "HAM",
+        "driver_number": 44,
+        "win_probability": 0.0024965009154452955,
+        "position_x": 5.0,
+        "gap_to_leader_seconds": 31.80199999999968,
+        "compound_x": "HARD",
+        "tyre_life_x": 13.0,
+        "stint_x": 2.0
+       }
+      ]
+     }
+    },
+    "hgb": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "VER",
+       "win_probability": 0.6011,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "VER",
+       "win_probability": 0.6159,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "VER",
+       "win_probability": 0.5962,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "VER",
+       "win_probability": 0.7865,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "VER",
+       "win_probability": 0.758,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      }
+     ],
+     "latest": {
+      "model": "hgb",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "VER",
+      "predicted_driver_number": 1,
+      "predicted_win_probability": 0.7580109435557343,
+      "actual_winner": "VER",
+      "actual_rank": 1,
+      "top5": [
+       {
+        "driver": "VER",
+        "driver_number": 1,
+        "win_probability": 0.7580109435557343,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "SOFT",
+        "tyre_life_x": 11.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "LEC",
+        "driver_number": 16,
+        "win_probability": 0.03340700014057683,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 13.519999999999529,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "PER",
+        "driver_number": 11,
+        "win_probability": 0.03146769628445113,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 14.101999999999862,
+        "compound_x": "SOFT",
+        "tyre_life_x": 10.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "SAI",
+        "driver_number": 55,
+        "win_probability": 0.00029054561619217966,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 27.88400000000001,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "HAM",
+        "driver_number": 44,
+        "win_probability": 0.0002810033995314714,
+        "position_x": 5.0,
+        "gap_to_leader_seconds": 31.80199999999968,
+        "compound_x": "HARD",
+        "tyre_life_x": 13.0,
+        "stint_x": 2.0
+       }
+      ]
+     }
+    },
+    "xgboost": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "VER",
+       "win_probability": 0.587,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "VER",
+       "win_probability": 0.6989,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "VER",
+       "win_probability": 0.5701,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "VER",
+       "win_probability": 0.795,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "VER",
+       "win_probability": 0.8051,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      }
+     ],
+     "latest": {
+      "model": "xgboost",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "VER",
+      "predicted_driver_number": 1,
+      "predicted_win_probability": 0.8051262497901917,
+      "actual_winner": "VER",
+      "actual_rank": 1,
+      "top5": [
+       {
+        "driver": "VER",
+        "driver_number": 1,
+        "win_probability": 0.8051262497901917,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "SOFT",
+        "tyre_life_x": 11.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "LEC",
+        "driver_number": 16,
+        "win_probability": 0.041874539107084274,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 13.519999999999529,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "PER",
+        "driver_number": 11,
+        "win_probability": 0.029398567974567413,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 14.101999999999862,
+        "compound_x": "SOFT",
+        "tyre_life_x": 10.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "SAI",
+        "driver_number": 55,
+        "win_probability": 0.001833820715546608,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 27.88400000000001,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "HAM",
+        "driver_number": 44,
+        "win_probability": 0.0012710848823189735,
+        "position_x": 5.0,
+        "gap_to_leader_seconds": 31.80199999999968,
+        "compound_x": "HARD",
+        "tyre_life_x": 13.0,
+        "stint_x": 2.0
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "year": 2021,
+   "event": "Abu Dhabi Grand Prix",
+   "ensemble": {
+    "summary": [
+     {
+      "lap": 5,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "HAM",
+      "win_probability": 0.6406,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 5,
+      "model": "Logistic Regression",
+      "predicted_winner": "HAM",
+      "win_probability": 0.4007,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 5,
+      "model": "XGBoost",
+      "predicted_winner": "HAM",
+      "win_probability": 0.5828,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 10,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "HAM",
+      "win_probability": 0.59,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 10,
+      "model": "Logistic Regression",
+      "predicted_winner": "HAM",
+      "win_probability": 0.4347,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 10,
+      "model": "XGBoost",
+      "predicted_winner": "HAM",
+      "win_probability": 0.62,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 15,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "PER",
+      "win_probability": 0.7109,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 15,
+      "model": "Logistic Regression",
+      "predicted_winner": "HAM",
+      "win_probability": 0.5158,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 15,
+      "model": "XGBoost",
+      "predicted_winner": "PER",
+      "win_probability": 0.6809,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 20,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "PER",
+      "win_probability": 0.6314,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 20,
+      "model": "Logistic Regression",
+      "predicted_winner": "HAM",
+      "win_probability": 0.4078,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 20,
+      "model": "XGBoost",
+      "predicted_winner": "PER",
+      "win_probability": 0.5648,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 25,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "HAM",
+      "win_probability": 0.6439,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 25,
+      "model": "Logistic Regression",
+      "predicted_winner": "HAM",
+      "win_probability": 0.6228,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 25,
+      "model": "XGBoost",
+      "predicted_winner": "HAM",
+      "win_probability": 0.6843,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     }
+    ],
+    "latest_lap": 25,
+    "final_winner": "HAM",
+    "decision_reason": "Majority vote at latest checkpoint",
+    "actual_winner": "VER",
+    "agreement_count": 3,
+    "confidence_value": 0.6843127608299255,
+    "confidence_label": "Confidence (XGBoost)",
+    "latest_top5": {
+     "Logistic Regression": [
+      {
+       "driver": "HAM",
+       "driver_number": 44,
+       "win_probability": 0.6227905985331695,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "VER",
+       "driver_number": 33,
+       "win_probability": 0.3589792192026447,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 2.9450000000006185,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "BOT",
+       "driver_number": 77,
+       "win_probability": 0.01716001771957723,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 21.950000000000728,
+       "compound_x": "MEDIUM",
+       "tyre_life_x": 30.0,
+       "stint_x": 1.0
+      },
+      {
+       "driver": "PER",
+       "driver_number": 11,
+       "win_probability": 0.011775171945436787,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 28.312000000000808,
+       "compound_x": "HARD",
+       "tyre_life_x": 4.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "ALO",
+       "driver_number": 14,
+       "win_probability": 0.001168691199272676,
+       "position_x": 5.0,
+       "gap_to_leader_seconds": 34.19000000000051,
+       "compound_x": "HARD",
+       "tyre_life_x": 26.0,
+       "stint_x": 1.0
+      }
+     ],
+     "HistGradientBoosting": [
+      {
+       "driver": "HAM",
+       "driver_number": 44,
+       "win_probability": 0.6439305751895479,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "VER",
+       "driver_number": 33,
+       "win_probability": 0.28778955066139045,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 2.9450000000006185,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "BOT",
+       "driver_number": 77,
+       "win_probability": 0.008135278109901988,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 21.950000000000728,
+       "compound_x": "MEDIUM",
+       "tyre_life_x": 30.0,
+       "stint_x": 1.0
+      },
+      {
+       "driver": "PER",
+       "driver_number": 11,
+       "win_probability": 0.0003741297220994817,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 28.312000000000808,
+       "compound_x": "HARD",
+       "tyre_life_x": 4.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "ALO",
+       "driver_number": 14,
+       "win_probability": 0.00028302980835846503,
+       "position_x": 5.0,
+       "gap_to_leader_seconds": 34.19000000000051,
+       "compound_x": "HARD",
+       "tyre_life_x": 26.0,
+       "stint_x": 1.0
+      }
+     ],
+     "XGBoost": [
+      {
+       "driver": "HAM",
+       "driver_number": 44,
+       "win_probability": 0.6843127608299255,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "VER",
+       "driver_number": 33,
+       "win_probability": 0.32882237434387207,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 2.9450000000006185,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "BOT",
+       "driver_number": 77,
+       "win_probability": 0.011465337127447128,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 21.950000000000728,
+       "compound_x": "MEDIUM",
+       "tyre_life_x": 30.0,
+       "stint_x": 1.0
+      },
+      {
+       "driver": "PER",
+       "driver_number": 11,
+       "win_probability": 0.004216392990201712,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 28.312000000000808,
+       "compound_x": "HARD",
+       "tyre_life_x": 4.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "ALO",
+       "driver_number": 14,
+       "win_probability": 0.0010781243909150362,
+       "position_x": 5.0,
+       "gap_to_leader_seconds": 34.19000000000051,
+       "compound_x": "HARD",
+       "tyre_life_x": 26.0,
+       "stint_x": 1.0
+      }
+     ]
+    }
+   },
+   "single": {
+    "logreg": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "HAM",
+       "win_probability": 0.4007,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "HAM",
+       "win_probability": 0.4347,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "HAM",
+       "win_probability": 0.5158,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "HAM",
+       "win_probability": 0.4078,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "HAM",
+       "win_probability": 0.6228,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      }
+     ],
+     "latest": {
+      "model": "logreg",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "HAM",
+      "predicted_driver_number": 44,
+      "predicted_win_probability": 0.6227905985331695,
+      "actual_winner": "VER",
+      "actual_rank": 2,
+      "top5": [
+       {
+        "driver": "HAM",
+        "driver_number": 44,
+        "win_probability": 0.6227905985331695,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "VER",
+        "driver_number": 33,
+        "win_probability": 0.3589792192026447,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 2.9450000000006185,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "BOT",
+        "driver_number": 77,
+        "win_probability": 0.01716001771957723,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 21.950000000000728,
+        "compound_x": "MEDIUM",
+        "tyre_life_x": 30.0,
+        "stint_x": 1.0
+       },
+       {
+        "driver": "PER",
+        "driver_number": 11,
+        "win_probability": 0.011775171945436787,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 28.312000000000808,
+        "compound_x": "HARD",
+        "tyre_life_x": 4.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "ALO",
+        "driver_number": 14,
+        "win_probability": 0.001168691199272676,
+        "position_x": 5.0,
+        "gap_to_leader_seconds": 34.19000000000051,
+        "compound_x": "HARD",
+        "tyre_life_x": 26.0,
+        "stint_x": 1.0
+       }
+      ]
+     }
+    },
+    "hgb": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "HAM",
+       "win_probability": 0.6406,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "HAM",
+       "win_probability": 0.59,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "PER",
+       "win_probability": 0.7109,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "PER",
+       "win_probability": 0.6314,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "HAM",
+       "win_probability": 0.6439,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      }
+     ],
+     "latest": {
+      "model": "hgb",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "HAM",
+      "predicted_driver_number": 44,
+      "predicted_win_probability": 0.6439305751895479,
+      "actual_winner": "VER",
+      "actual_rank": 2,
+      "top5": [
+       {
+        "driver": "HAM",
+        "driver_number": 44,
+        "win_probability": 0.6439305751895479,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "VER",
+        "driver_number": 33,
+        "win_probability": 0.28778955066139045,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 2.9450000000006185,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "BOT",
+        "driver_number": 77,
+        "win_probability": 0.008135278109901988,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 21.950000000000728,
+        "compound_x": "MEDIUM",
+        "tyre_life_x": 30.0,
+        "stint_x": 1.0
+       },
+       {
+        "driver": "PER",
+        "driver_number": 11,
+        "win_probability": 0.0003741297220994817,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 28.312000000000808,
+        "compound_x": "HARD",
+        "tyre_life_x": 4.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "ALO",
+        "driver_number": 14,
+        "win_probability": 0.00028302980835846503,
+        "position_x": 5.0,
+        "gap_to_leader_seconds": 34.19000000000051,
+        "compound_x": "HARD",
+        "tyre_life_x": 26.0,
+        "stint_x": 1.0
+       }
+      ]
+     }
+    },
+    "xgboost": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "HAM",
+       "win_probability": 0.5828,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "HAM",
+       "win_probability": 0.62,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "PER",
+       "win_probability": 0.6809,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "PER",
+       "win_probability": 0.5648,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "HAM",
+       "win_probability": 0.6843,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      }
+     ],
+     "latest": {
+      "model": "xgboost",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "HAM",
+      "predicted_driver_number": 44,
+      "predicted_win_probability": 0.6843127608299255,
+      "actual_winner": "VER",
+      "actual_rank": 2,
+      "top5": [
+       {
+        "driver": "HAM",
+        "driver_number": 44,
+        "win_probability": 0.6843127608299255,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "VER",
+        "driver_number": 33,
+        "win_probability": 0.32882237434387207,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 2.9450000000006185,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "BOT",
+        "driver_number": 77,
+        "win_probability": 0.011465337127447128,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 21.950000000000728,
+        "compound_x": "MEDIUM",
+        "tyre_life_x": 30.0,
+        "stint_x": 1.0
+       },
+       {
+        "driver": "PER",
+        "driver_number": 11,
+        "win_probability": 0.004216392990201712,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 28.312000000000808,
+        "compound_x": "HARD",
+        "tyre_life_x": 4.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "ALO",
+        "driver_number": 14,
+        "win_probability": 0.0010781243909150362,
+        "position_x": 5.0,
+        "gap_to_leader_seconds": 34.19000000000051,
+        "compound_x": "HARD",
+        "tyre_life_x": 26.0,
+        "stint_x": 1.0
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "year": 2019,
+   "event": "German Grand Prix",
+   "ensemble": {
+    "summary": [
+     {
+      "lap": 5,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "HAM",
+      "win_probability": 0.4199,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 5,
+      "model": "Logistic Regression",
+      "predicted_winner": "HAM",
+      "win_probability": 0.5459,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 5,
+      "model": "XGBoost",
+      "predicted_winner": "HAM",
+      "win_probability": 0.396,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 10,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "HAM",
+      "win_probability": 0.4712,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 10,
+      "model": "Logistic Regression",
+      "predicted_winner": "HAM",
+      "win_probability": 0.5048,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 10,
+      "model": "XGBoost",
+      "predicted_winner": "HAM",
+      "win_probability": 0.5297,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 15,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "HAM",
+      "win_probability": 0.4773,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 15,
+      "model": "Logistic Regression",
+      "predicted_winner": "HAM",
+      "win_probability": 0.5397,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 15,
+      "model": "XGBoost",
+      "predicted_winner": "HAM",
+      "win_probability": 0.407,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 20,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "HAM",
+      "win_probability": 0.5672,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 20,
+      "model": "Logistic Regression",
+      "predicted_winner": "HAM",
+      "win_probability": 0.5874,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 20,
+      "model": "XGBoost",
+      "predicted_winner": "HAM",
+      "win_probability": 0.5978,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 25,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "HAM",
+      "win_probability": 0.4695,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 25,
+      "model": "Logistic Regression",
+      "predicted_winner": "HAM",
+      "win_probability": 0.6506,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 25,
+      "model": "XGBoost",
+      "predicted_winner": "HAM",
+      "win_probability": 0.5795,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     }
+    ],
+    "latest_lap": 25,
+    "final_winner": "HAM",
+    "decision_reason": "Majority vote at latest checkpoint",
+    "actual_winner": "VER",
+    "agreement_count": 3,
+    "confidence_value": 0.5795469880104065,
+    "confidence_label": "Confidence (XGBoost)",
+    "latest_top5": {
+     "Logistic Regression": [
+      {
+       "driver": "HAM",
+       "driver_number": 44,
+       "win_probability": 0.6505505349407628,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 22.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "BOT",
+       "driver_number": 77,
+       "win_probability": 0.25870798513450044,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 8.761999999999716,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 22.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "VER",
+       "driver_number": 33,
+       "win_probability": 0.0939511573195291,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 12.990999999999984,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 22.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "LEC",
+       "driver_number": 16,
+       "win_probability": 0.06916609615252897,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 13.827000000000226,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 10.0,
+       "stint_x": 3.0
+      },
+      {
+       "driver": "HUL",
+       "driver_number": 27,
+       "win_probability": 0.0026474967683664634,
+       "position_x": 5.0,
+       "gap_to_leader_seconds": 39.034999999999854,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 10.0,
+       "stint_x": 3.0
+      }
+     ],
+     "HistGradientBoosting": [
+      {
+       "driver": "HAM",
+       "driver_number": 44,
+       "win_probability": 0.4695279728722727,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 22.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "VER",
+       "driver_number": 33,
+       "win_probability": 0.20574075234700118,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 12.990999999999984,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 22.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "BOT",
+       "driver_number": 77,
+       "win_probability": 0.11436716012699821,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 8.761999999999716,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 22.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "LEC",
+       "driver_number": 16,
+       "win_probability": 0.07694532356123629,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 13.827000000000226,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 10.0,
+       "stint_x": 3.0
+      },
+      {
+       "driver": "RUS",
+       "driver_number": 63,
+       "win_probability": 0.0004716572880205323,
+       "position_x": 17.0,
+       "gap_to_leader_seconds": 149.23199999999997,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 1.0,
+       "stint_x": 3.0
+      }
+     ],
+     "XGBoost": [
+      {
+       "driver": "HAM",
+       "driver_number": 44,
+       "win_probability": 0.5795469880104065,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 22.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "VER",
+       "driver_number": 33,
+       "win_probability": 0.23435050249099731,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 12.990999999999984,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 22.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "BOT",
+       "driver_number": 77,
+       "win_probability": 0.10268241912126541,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 8.761999999999716,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 22.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "LEC",
+       "driver_number": 16,
+       "win_probability": 0.038294050842523575,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 13.827000000000226,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 10.0,
+       "stint_x": 3.0
+      },
+      {
+       "driver": "RAI",
+       "driver_number": 7,
+       "win_probability": 0.001751264207996428,
+       "position_x": 6.0,
+       "gap_to_leader_seconds": 43.47400000000016,
+       "compound_x": "INTERMEDIATE",
+       "tyre_life_x": 22.0,
+       "stint_x": 2.0
+      }
+     ]
+    }
+   },
+   "single": {
+    "logreg": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "HAM",
+       "win_probability": 0.5459,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "HAM",
+       "win_probability": 0.5048,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "HAM",
+       "win_probability": 0.5397,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "HAM",
+       "win_probability": 0.5874,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "HAM",
+       "win_probability": 0.6506,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      }
+     ],
+     "latest": {
+      "model": "logreg",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "HAM",
+      "predicted_driver_number": 44,
+      "predicted_win_probability": 0.6505505349407628,
+      "actual_winner": "VER",
+      "actual_rank": 3,
+      "top5": [
+       {
+        "driver": "HAM",
+        "driver_number": 44,
+        "win_probability": 0.6505505349407628,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 22.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "BOT",
+        "driver_number": 77,
+        "win_probability": 0.25870798513450044,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 8.761999999999716,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 22.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "VER",
+        "driver_number": 33,
+        "win_probability": 0.0939511573195291,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 12.990999999999984,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 22.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "LEC",
+        "driver_number": 16,
+        "win_probability": 0.06916609615252897,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 13.827000000000226,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 10.0,
+        "stint_x": 3.0
+       },
+       {
+        "driver": "HUL",
+        "driver_number": 27,
+        "win_probability": 0.0026474967683664634,
+        "position_x": 5.0,
+        "gap_to_leader_seconds": 39.034999999999854,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 10.0,
+        "stint_x": 3.0
+       }
+      ]
+     }
+    },
+    "hgb": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "HAM",
+       "win_probability": 0.4199,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "HAM",
+       "win_probability": 0.4712,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "HAM",
+       "win_probability": 0.4773,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "HAM",
+       "win_probability": 0.5672,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "HAM",
+       "win_probability": 0.4695,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      }
+     ],
+     "latest": {
+      "model": "hgb",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "HAM",
+      "predicted_driver_number": 44,
+      "predicted_win_probability": 0.4695279728722727,
+      "actual_winner": "VER",
+      "actual_rank": 2,
+      "top5": [
+       {
+        "driver": "HAM",
+        "driver_number": 44,
+        "win_probability": 0.4695279728722727,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 22.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "VER",
+        "driver_number": 33,
+        "win_probability": 0.20574075234700118,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 12.990999999999984,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 22.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "BOT",
+        "driver_number": 77,
+        "win_probability": 0.11436716012699821,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 8.761999999999716,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 22.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "LEC",
+        "driver_number": 16,
+        "win_probability": 0.07694532356123629,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 13.827000000000226,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 10.0,
+        "stint_x": 3.0
+       },
+       {
+        "driver": "RUS",
+        "driver_number": 63,
+        "win_probability": 0.0004716572880205323,
+        "position_x": 17.0,
+        "gap_to_leader_seconds": 149.23199999999997,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 1.0,
+        "stint_x": 3.0
+       }
+      ]
+     }
+    },
+    "xgboost": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "HAM",
+       "win_probability": 0.396,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "HAM",
+       "win_probability": 0.5297,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "HAM",
+       "win_probability": 0.407,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "HAM",
+       "win_probability": 0.5978,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "HAM",
+       "win_probability": 0.5795,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      }
+     ],
+     "latest": {
+      "model": "xgboost",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "HAM",
+      "predicted_driver_number": 44,
+      "predicted_win_probability": 0.5795469880104065,
+      "actual_winner": "VER",
+      "actual_rank": 2,
+      "top5": [
+       {
+        "driver": "HAM",
+        "driver_number": 44,
+        "win_probability": 0.5795469880104065,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 22.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "VER",
+        "driver_number": 33,
+        "win_probability": 0.23435050249099731,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 12.990999999999984,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 22.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "BOT",
+        "driver_number": 77,
+        "win_probability": 0.10268241912126541,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 8.761999999999716,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 22.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "LEC",
+        "driver_number": 16,
+        "win_probability": 0.038294050842523575,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 13.827000000000226,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 10.0,
+        "stint_x": 3.0
+       },
+       {
+        "driver": "RAI",
+        "driver_number": 7,
+        "win_probability": 0.001751264207996428,
+        "position_x": 6.0,
+        "gap_to_leader_seconds": 43.47400000000016,
+        "compound_x": "INTERMEDIATE",
+        "tyre_life_x": 22.0,
+        "stint_x": 2.0
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "year": 2022,
+   "event": "Monaco Grand Prix",
+   "ensemble": {
+    "summary": [
+     {
+      "lap": 5,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "LEC",
+      "win_probability": 0.3671,
+      "actual_winner": "PER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 5,
+      "model": "Logistic Regression",
+      "predicted_winner": "LEC",
+      "win_probability": 0.4111,
+      "actual_winner": "PER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 5,
+      "model": "XGBoost",
+      "predicted_winner": "LEC",
+      "win_probability": 0.4153,
+      "actual_winner": "PER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 10,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "LEC",
+      "win_probability": 0.5322,
+      "actual_winner": "PER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 10,
+      "model": "Logistic Regression",
+      "predicted_winner": "LEC",
+      "win_probability": 0.3195,
+      "actual_winner": "PER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 10,
+      "model": "XGBoost",
+      "predicted_winner": "LEC",
+      "win_probability": 0.52,
+      "actual_winner": "PER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 15,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "LEC",
+      "win_probability": 0.7285,
+      "actual_winner": "PER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 15,
+      "model": "Logistic Regression",
+      "predicted_winner": "LEC",
+      "win_probability": 0.4578,
+      "actual_winner": "PER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 15,
+      "model": "XGBoost",
+      "predicted_winner": "LEC",
+      "win_probability": 0.66,
+      "actual_winner": "PER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 20,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "SAI",
+      "win_probability": 0.5338,
+      "actual_winner": "PER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 20,
+      "model": "Logistic Regression",
+      "predicted_winner": "PER",
+      "win_probability": 0.3073,
+      "actual_winner": "PER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 20,
+      "model": "XGBoost",
+      "predicted_winner": "SAI",
+      "win_probability": 0.4878,
+      "actual_winner": "PER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 25,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "PER",
+      "win_probability": 0.899,
+      "actual_winner": "PER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 25,
+      "model": "Logistic Regression",
+      "predicted_winner": "PER",
+      "win_probability": 0.6882,
+      "actual_winner": "PER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 25,
+      "model": "XGBoost",
+      "predicted_winner": "PER",
+      "win_probability": 0.8881,
+      "actual_winner": "PER",
+      "actual_rank": 1
+     }
+    ],
+    "latest_lap": 25,
+    "final_winner": "PER",
+    "decision_reason": "Majority vote at latest checkpoint",
+    "actual_winner": "PER",
+    "agreement_count": 3,
+    "confidence_value": 0.888141930103302,
+    "confidence_label": "Confidence (XGBoost)",
+    "latest_top5": {
+     "Logistic Regression": [
+      {
+       "driver": "PER",
+       "driver_number": 11,
+       "win_probability": 0.6881550647061022,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "HARD",
+       "tyre_life_x": 3.0,
+       "stint_x": 3.0
+      },
+      {
+       "driver": "SAI",
+       "driver_number": 55,
+       "win_probability": 0.333697769829236,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 1.944999999999709,
+       "compound_x": "HARD",
+       "tyre_life_x": NaN,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "VER",
+       "driver_number": 1,
+       "win_probability": 0.2511941876500997,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 3.0969999999997526,
+       "compound_x": "HARD",
+       "tyre_life_x": 3.0,
+       "stint_x": 3.0
+      },
+      {
+       "driver": "LEC",
+       "driver_number": 16,
+       "win_probability": 0.11870482631130122,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 3.9899999999997817,
+       "compound_x": "HARD",
+       "tyre_life_x": 4.0,
+       "stint_x": 3.0
+      },
+      {
+       "driver": "RUS",
+       "driver_number": 63,
+       "win_probability": 0.014301570730235167,
+       "position_x": 5.0,
+       "gap_to_leader_seconds": 13.924999999999272,
+       "compound_x": "HARD",
+       "tyre_life_x": NaN,
+       "stint_x": 2.0
+      }
+     ],
+     "HistGradientBoosting": [
+      {
+       "driver": "PER",
+       "driver_number": 11,
+       "win_probability": 0.8989582595173952,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "HARD",
+       "tyre_life_x": 3.0,
+       "stint_x": 3.0
+      },
+      {
+       "driver": "VER",
+       "driver_number": 1,
+       "win_probability": 0.22685803210327757,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 3.0969999999997526,
+       "compound_x": "HARD",
+       "tyre_life_x": 3.0,
+       "stint_x": 3.0
+      },
+      {
+       "driver": "SAI",
+       "driver_number": 55,
+       "win_probability": 0.11180913444411146,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 1.944999999999709,
+       "compound_x": "HARD",
+       "tyre_life_x": NaN,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "LEC",
+       "driver_number": 16,
+       "win_probability": 0.052476093444228634,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 3.9899999999997817,
+       "compound_x": "HARD",
+       "tyre_life_x": 4.0,
+       "stint_x": 3.0
+      },
+      {
+       "driver": "NOR",
+       "driver_number": 4,
+       "win_probability": 0.015246450078774235,
+       "position_x": 6.0,
+       "gap_to_leader_seconds": 16.638999999999214,
+       "compound_x": "HARD",
+       "tyre_life_x": 3.0,
+       "stint_x": 3.0
+      }
+     ],
+     "XGBoost": [
+      {
+       "driver": "PER",
+       "driver_number": 11,
+       "win_probability": 0.888141930103302,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "HARD",
+       "tyre_life_x": 3.0,
+       "stint_x": 3.0
+      },
+      {
+       "driver": "VER",
+       "driver_number": 1,
+       "win_probability": 0.19789652526378632,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 3.0969999999997526,
+       "compound_x": "HARD",
+       "tyre_life_x": 3.0,
+       "stint_x": 3.0
+      },
+      {
+       "driver": "SAI",
+       "driver_number": 55,
+       "win_probability": 0.14538340270519257,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 1.944999999999709,
+       "compound_x": "HARD",
+       "tyre_life_x": NaN,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "LEC",
+       "driver_number": 16,
+       "win_probability": 0.0634736642241478,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 3.9899999999997817,
+       "compound_x": "HARD",
+       "tyre_life_x": 4.0,
+       "stint_x": 3.0
+      },
+      {
+       "driver": "NOR",
+       "driver_number": 4,
+       "win_probability": 0.02622285671532154,
+       "position_x": 6.0,
+       "gap_to_leader_seconds": 16.638999999999214,
+       "compound_x": "HARD",
+       "tyre_life_x": 3.0,
+       "stint_x": 3.0
+      }
+     ]
+    }
+   },
+   "single": {
+    "logreg": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "LEC",
+       "win_probability": 0.4111,
+       "actual_winner": "PER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "LEC",
+       "win_probability": 0.3195,
+       "actual_winner": "PER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "LEC",
+       "win_probability": 0.4578,
+       "actual_winner": "PER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "PER",
+       "win_probability": 0.3073,
+       "actual_winner": "PER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "PER",
+       "win_probability": 0.6882,
+       "actual_winner": "PER",
+       "actual_rank": 1
+      }
+     ],
+     "latest": {
+      "model": "logreg",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "PER",
+      "predicted_driver_number": 11,
+      "predicted_win_probability": 0.6881550647061022,
+      "actual_winner": "PER",
+      "actual_rank": 1,
+      "top5": [
+       {
+        "driver": "PER",
+        "driver_number": 11,
+        "win_probability": 0.6881550647061022,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "HARD",
+        "tyre_life_x": 3.0,
+        "stint_x": 3.0
+       },
+       {
+        "driver": "SAI",
+        "driver_number": 55,
+        "win_probability": 0.333697769829236,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 1.944999999999709,
+        "compound_x": "HARD",
+        "tyre_life_x": NaN,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "VER",
+        "driver_number": 1,
+        "win_probability": 0.2511941876500997,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 3.0969999999997526,
+        "compound_x": "HARD",
+        "tyre_life_x": 3.0,
+        "stint_x": 3.0
+       },
+       {
+        "driver": "LEC",
+        "driver_number": 16,
+        "win_probability": 0.11870482631130122,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 3.9899999999997817,
+        "compound_x": "HARD",
+        "tyre_life_x": 4.0,
+        "stint_x": 3.0
+       },
+       {
+        "driver": "RUS",
+        "driver_number": 63,
+        "win_probability": 0.014301570730235167,
+        "position_x": 5.0,
+        "gap_to_leader_seconds": 13.924999999999272,
+        "compound_x": "HARD",
+        "tyre_life_x": NaN,
+        "stint_x": 2.0
+       }
+      ]
+     }
+    },
+    "hgb": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "LEC",
+       "win_probability": 0.3671,
+       "actual_winner": "PER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "LEC",
+       "win_probability": 0.5322,
+       "actual_winner": "PER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "LEC",
+       "win_probability": 0.7285,
+       "actual_winner": "PER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "SAI",
+       "win_probability": 0.5338,
+       "actual_winner": "PER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "PER",
+       "win_probability": 0.899,
+       "actual_winner": "PER",
+       "actual_rank": 1
+      }
+     ],
+     "latest": {
+      "model": "hgb",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "PER",
+      "predicted_driver_number": 11,
+      "predicted_win_probability": 0.8989582595173952,
+      "actual_winner": "PER",
+      "actual_rank": 1,
+      "top5": [
+       {
+        "driver": "PER",
+        "driver_number": 11,
+        "win_probability": 0.8989582595173952,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "HARD",
+        "tyre_life_x": 3.0,
+        "stint_x": 3.0
+       },
+       {
+        "driver": "VER",
+        "driver_number": 1,
+        "win_probability": 0.22685803210327757,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 3.0969999999997526,
+        "compound_x": "HARD",
+        "tyre_life_x": 3.0,
+        "stint_x": 3.0
+       },
+       {
+        "driver": "SAI",
+        "driver_number": 55,
+        "win_probability": 0.11180913444411146,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 1.944999999999709,
+        "compound_x": "HARD",
+        "tyre_life_x": NaN,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "LEC",
+        "driver_number": 16,
+        "win_probability": 0.052476093444228634,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 3.9899999999997817,
+        "compound_x": "HARD",
+        "tyre_life_x": 4.0,
+        "stint_x": 3.0
+       },
+       {
+        "driver": "NOR",
+        "driver_number": 4,
+        "win_probability": 0.015246450078774235,
+        "position_x": 6.0,
+        "gap_to_leader_seconds": 16.638999999999214,
+        "compound_x": "HARD",
+        "tyre_life_x": 3.0,
+        "stint_x": 3.0
+       }
+      ]
+     }
+    },
+    "xgboost": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "LEC",
+       "win_probability": 0.4153,
+       "actual_winner": "PER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "LEC",
+       "win_probability": 0.52,
+       "actual_winner": "PER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "LEC",
+       "win_probability": 0.66,
+       "actual_winner": "PER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "SAI",
+       "win_probability": 0.4878,
+       "actual_winner": "PER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "PER",
+       "win_probability": 0.8881,
+       "actual_winner": "PER",
+       "actual_rank": 1
+      }
+     ],
+     "latest": {
+      "model": "xgboost",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "PER",
+      "predicted_driver_number": 11,
+      "predicted_win_probability": 0.888141930103302,
+      "actual_winner": "PER",
+      "actual_rank": 1,
+      "top5": [
+       {
+        "driver": "PER",
+        "driver_number": 11,
+        "win_probability": 0.888141930103302,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "HARD",
+        "tyre_life_x": 3.0,
+        "stint_x": 3.0
+       },
+       {
+        "driver": "VER",
+        "driver_number": 1,
+        "win_probability": 0.19789652526378632,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 3.0969999999997526,
+        "compound_x": "HARD",
+        "tyre_life_x": 3.0,
+        "stint_x": 3.0
+       },
+       {
+        "driver": "SAI",
+        "driver_number": 55,
+        "win_probability": 0.14538340270519257,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 1.944999999999709,
+        "compound_x": "HARD",
+        "tyre_life_x": NaN,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "LEC",
+        "driver_number": 16,
+        "win_probability": 0.0634736642241478,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 3.9899999999997817,
+        "compound_x": "HARD",
+        "tyre_life_x": 4.0,
+        "stint_x": 3.0
+       },
+       {
+        "driver": "NOR",
+        "driver_number": 4,
+        "win_probability": 0.02622285671532154,
+        "position_x": 6.0,
+        "gap_to_leader_seconds": 16.638999999999214,
+        "compound_x": "HARD",
+        "tyre_life_x": 3.0,
+        "stint_x": 3.0
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "year": 2023,
+   "event": "Las Vegas Grand Prix",
+   "ensemble": {
+    "summary": [
+     {
+      "lap": 5,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.4854,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 5,
+      "model": "Logistic Regression",
+      "predicted_winner": "VER",
+      "win_probability": 0.4918,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 5,
+      "model": "XGBoost",
+      "predicted_winner": "VER",
+      "win_probability": 0.4692,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 10,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.4453,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 10,
+      "model": "Logistic Regression",
+      "predicted_winner": "VER",
+      "win_probability": 0.4762,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 10,
+      "model": "XGBoost",
+      "predicted_winner": "VER",
+      "win_probability": 0.5086,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 15,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.4752,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 15,
+      "model": "Logistic Regression",
+      "predicted_winner": "VER",
+      "win_probability": 0.4804,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 15,
+      "model": "XGBoost",
+      "predicted_winner": "VER",
+      "win_probability": 0.4303,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 20,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.4983,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 20,
+      "model": "Logistic Regression",
+      "predicted_winner": "LEC",
+      "win_probability": 0.454,
+      "actual_winner": "VER",
+      "actual_rank": 8
+     },
+     {
+      "lap": 20,
+      "model": "XGBoost",
+      "predicted_winner": "VER",
+      "win_probability": 0.5124,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 25,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "PER",
+      "win_probability": 0.655,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 25,
+      "model": "Logistic Regression",
+      "predicted_winner": "PER",
+      "win_probability": 0.5122,
+      "actual_winner": "VER",
+      "actual_rank": 4
+     },
+     {
+      "lap": 25,
+      "model": "XGBoost",
+      "predicted_winner": "PER",
+      "win_probability": 0.4318,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     }
+    ],
+    "latest_lap": 25,
+    "final_winner": "PER",
+    "decision_reason": "Majority vote at latest checkpoint",
+    "actual_winner": "VER",
+    "agreement_count": 3,
+    "confidence_value": 0.4318212568759918,
+    "confidence_label": "Confidence (XGBoost)",
+    "latest_top5": {
+     "Logistic Regression": [
+      {
+       "driver": "PER",
+       "driver_number": 11,
+       "win_probability": 0.5121829115706026,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "HARD",
+       "tyre_life_x": 24.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "LEC",
+       "driver_number": 16,
+       "win_probability": 0.24647261330895173,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 11.509999999999764,
+       "compound_x": "HARD",
+       "tyre_life_x": 4.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "STR",
+       "driver_number": 18,
+       "win_probability": 0.06260222027626146,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 12.032999999999902,
+       "compound_x": "HARD",
+       "tyre_life_x": 23.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "VER",
+       "driver_number": 1,
+       "win_probability": 0.036400239150236775,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 15.39599999999973,
+       "compound_x": "HARD",
+       "tyre_life_x": 9.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "RUS",
+       "driver_number": 63,
+       "win_probability": 0.014482447277493253,
+       "position_x": 5.0,
+       "gap_to_leader_seconds": 16.463999999999942,
+       "compound_x": "HARD",
+       "tyre_life_x": 10.0,
+       "stint_x": 2.0
+      }
+     ],
+     "HistGradientBoosting": [
+      {
+       "driver": "PER",
+       "driver_number": 11,
+       "win_probability": 0.6549933383036198,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "HARD",
+       "tyre_life_x": 24.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "LEC",
+       "driver_number": 16,
+       "win_probability": 0.24324631309662723,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 11.509999999999764,
+       "compound_x": "HARD",
+       "tyre_life_x": 4.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "VER",
+       "driver_number": 1,
+       "win_probability": 0.17412112443896938,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 15.39599999999973,
+       "compound_x": "HARD",
+       "tyre_life_x": 9.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "STR",
+       "driver_number": 18,
+       "win_probability": 0.09339360580485952,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 12.032999999999902,
+       "compound_x": "HARD",
+       "tyre_life_x": 23.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "RUS",
+       "driver_number": 63,
+       "win_probability": 0.06401461683267158,
+       "position_x": 5.0,
+       "gap_to_leader_seconds": 16.463999999999942,
+       "compound_x": "HARD",
+       "tyre_life_x": 10.0,
+       "stint_x": 2.0
+      }
+     ],
+     "XGBoost": [
+      {
+       "driver": "PER",
+       "driver_number": 11,
+       "win_probability": 0.4318212568759918,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "HARD",
+       "tyre_life_x": 24.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "VER",
+       "driver_number": 1,
+       "win_probability": 0.2528923451900482,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 15.39599999999973,
+       "compound_x": "HARD",
+       "tyre_life_x": 9.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "LEC",
+       "driver_number": 16,
+       "win_probability": 0.1522548794746399,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 11.509999999999764,
+       "compound_x": "HARD",
+       "tyre_life_x": 4.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "STR",
+       "driver_number": 18,
+       "win_probability": 0.12068945169448853,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 12.032999999999902,
+       "compound_x": "HARD",
+       "tyre_life_x": 23.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "RUS",
+       "driver_number": 63,
+       "win_probability": 0.07738273590803146,
+       "position_x": 5.0,
+       "gap_to_leader_seconds": 16.463999999999942,
+       "compound_x": "HARD",
+       "tyre_life_x": 10.0,
+       "stint_x": 2.0
+      }
+     ]
+    }
+   },
+   "single": {
+    "logreg": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "VER",
+       "win_probability": 0.4918,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "VER",
+       "win_probability": 0.4762,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "VER",
+       "win_probability": 0.4804,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "LEC",
+       "win_probability": 0.454,
+       "actual_winner": "VER",
+       "actual_rank": 8
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "PER",
+       "win_probability": 0.5122,
+       "actual_winner": "VER",
+       "actual_rank": 4
+      }
+     ],
+     "latest": {
+      "model": "logreg",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "PER",
+      "predicted_driver_number": 11,
+      "predicted_win_probability": 0.5121829115706026,
+      "actual_winner": "VER",
+      "actual_rank": 4,
+      "top5": [
+       {
+        "driver": "PER",
+        "driver_number": 11,
+        "win_probability": 0.5121829115706026,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "HARD",
+        "tyre_life_x": 24.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "LEC",
+        "driver_number": 16,
+        "win_probability": 0.24647261330895173,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 11.509999999999764,
+        "compound_x": "HARD",
+        "tyre_life_x": 4.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "STR",
+        "driver_number": 18,
+        "win_probability": 0.06260222027626146,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 12.032999999999902,
+        "compound_x": "HARD",
+        "tyre_life_x": 23.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "VER",
+        "driver_number": 1,
+        "win_probability": 0.036400239150236775,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 15.39599999999973,
+        "compound_x": "HARD",
+        "tyre_life_x": 9.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "RUS",
+        "driver_number": 63,
+        "win_probability": 0.014482447277493253,
+        "position_x": 5.0,
+        "gap_to_leader_seconds": 16.463999999999942,
+        "compound_x": "HARD",
+        "tyre_life_x": 10.0,
+        "stint_x": 2.0
+       }
+      ]
+     }
+    },
+    "hgb": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "VER",
+       "win_probability": 0.4854,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "VER",
+       "win_probability": 0.4453,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "VER",
+       "win_probability": 0.4752,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "VER",
+       "win_probability": 0.4983,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "PER",
+       "win_probability": 0.655,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      }
+     ],
+     "latest": {
+      "model": "hgb",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "PER",
+      "predicted_driver_number": 11,
+      "predicted_win_probability": 0.6549933383036198,
+      "actual_winner": "VER",
+      "actual_rank": 3,
+      "top5": [
+       {
+        "driver": "PER",
+        "driver_number": 11,
+        "win_probability": 0.6549933383036198,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "HARD",
+        "tyre_life_x": 24.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "LEC",
+        "driver_number": 16,
+        "win_probability": 0.24324631309662723,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 11.509999999999764,
+        "compound_x": "HARD",
+        "tyre_life_x": 4.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "VER",
+        "driver_number": 1,
+        "win_probability": 0.17412112443896938,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 15.39599999999973,
+        "compound_x": "HARD",
+        "tyre_life_x": 9.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "STR",
+        "driver_number": 18,
+        "win_probability": 0.09339360580485952,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 12.032999999999902,
+        "compound_x": "HARD",
+        "tyre_life_x": 23.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "RUS",
+        "driver_number": 63,
+        "win_probability": 0.06401461683267158,
+        "position_x": 5.0,
+        "gap_to_leader_seconds": 16.463999999999942,
+        "compound_x": "HARD",
+        "tyre_life_x": 10.0,
+        "stint_x": 2.0
+       }
+      ]
+     }
+    },
+    "xgboost": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "VER",
+       "win_probability": 0.4692,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "VER",
+       "win_probability": 0.5086,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "VER",
+       "win_probability": 0.4303,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "VER",
+       "win_probability": 0.5124,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "PER",
+       "win_probability": 0.4318,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      }
+     ],
+     "latest": {
+      "model": "xgboost",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "PER",
+      "predicted_driver_number": 11,
+      "predicted_win_probability": 0.4318212568759918,
+      "actual_winner": "VER",
+      "actual_rank": 2,
+      "top5": [
+       {
+        "driver": "PER",
+        "driver_number": 11,
+        "win_probability": 0.4318212568759918,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "HARD",
+        "tyre_life_x": 24.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "VER",
+        "driver_number": 1,
+        "win_probability": 0.2528923451900482,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 15.39599999999973,
+        "compound_x": "HARD",
+        "tyre_life_x": 9.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "LEC",
+        "driver_number": 16,
+        "win_probability": 0.1522548794746399,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 11.509999999999764,
+        "compound_x": "HARD",
+        "tyre_life_x": 4.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "STR",
+        "driver_number": 18,
+        "win_probability": 0.12068945169448853,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 12.032999999999902,
+        "compound_x": "HARD",
+        "tyre_life_x": 23.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "RUS",
+        "driver_number": 63,
+        "win_probability": 0.07738273590803146,
+        "position_x": 5.0,
+        "gap_to_leader_seconds": 16.463999999999942,
+        "compound_x": "HARD",
+        "tyre_life_x": 10.0,
+        "stint_x": 2.0
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "year": 2020,
+   "event": "70th Anniversary Grand Prix",
+   "ensemble": {
+    "summary": [
+     {
+      "lap": 5,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.7113,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 5,
+      "model": "Logistic Regression",
+      "predicted_winner": "BOT",
+      "win_probability": 0.4357,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 5,
+      "model": "XGBoost",
+      "predicted_winner": "BOT",
+      "win_probability": 0.5531,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 10,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.6425,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 10,
+      "model": "Logistic Regression",
+      "predicted_winner": "BOT",
+      "win_probability": 0.4469,
+      "actual_winner": "VER",
+      "actual_rank": 3
+     },
+     {
+      "lap": 10,
+      "model": "XGBoost",
+      "predicted_winner": "BOT",
+      "win_probability": 0.5069,
+      "actual_winner": "VER",
+      "actual_rank": 2
+     },
+     {
+      "lap": 15,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.6417,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 15,
+      "model": "Logistic Regression",
+      "predicted_winner": "VER",
+      "win_probability": 0.4818,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 15,
+      "model": "XGBoost",
+      "predicted_winner": "VER",
+      "win_probability": 0.7476,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 20,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.5098,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 20,
+      "model": "Logistic Regression",
+      "predicted_winner": "VER",
+      "win_probability": 0.398,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 20,
+      "model": "XGBoost",
+      "predicted_winner": "VER",
+      "win_probability": 0.6591,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 25,
+      "model": "HistGradientBoosting",
+      "predicted_winner": "VER",
+      "win_probability": 0.6754,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 25,
+      "model": "Logistic Regression",
+      "predicted_winner": "VER",
+      "win_probability": 0.4641,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     },
+     {
+      "lap": 25,
+      "model": "XGBoost",
+      "predicted_winner": "VER",
+      "win_probability": 0.6569,
+      "actual_winner": "VER",
+      "actual_rank": 1
+     }
+    ],
+    "latest_lap": 25,
+    "final_winner": "VER",
+    "decision_reason": "Majority vote at latest checkpoint",
+    "actual_winner": "VER",
+    "agreement_count": 3,
+    "confidence_value": 0.6569172143936157,
+    "confidence_label": "Confidence (XGBoost)",
+    "latest_top5": {
+     "Logistic Regression": [
+      {
+       "driver": "VER",
+       "driver_number": 33,
+       "win_probability": 0.4640735979880753,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "HARD",
+       "tyre_life_x": 28.0,
+       "stint_x": 1.0
+      },
+      {
+       "driver": "BOT",
+       "driver_number": 77,
+       "win_probability": 0.1098030671125388,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 18.311999999999895,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "HAM",
+       "driver_number": 44,
+       "win_probability": 0.03490847911939772,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 23.03899999999976,
+       "compound_x": "HARD",
+       "tyre_life_x": 11.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "HUL",
+       "driver_number": 27,
+       "win_probability": 0.005494023768086694,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 34.327000000000226,
+       "compound_x": "HARD",
+       "tyre_life_x": 10.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "STR",
+       "driver_number": 18,
+       "win_probability": 0.0023235225225254536,
+       "position_x": 5.0,
+       "gap_to_leader_seconds": 36.30500000000029,
+       "compound_x": "HARD",
+       "tyre_life_x": 7.0,
+       "stint_x": 2.0
+      }
+     ],
+     "HistGradientBoosting": [
+      {
+       "driver": "VER",
+       "driver_number": 33,
+       "win_probability": 0.6754026935828265,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "HARD",
+       "tyre_life_x": 28.0,
+       "stint_x": 1.0
+      },
+      {
+       "driver": "BOT",
+       "driver_number": 77,
+       "win_probability": 0.09180143183245355,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 18.311999999999895,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "HAM",
+       "driver_number": 44,
+       "win_probability": 0.0005276608714313093,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 23.03899999999976,
+       "compound_x": "HARD",
+       "tyre_life_x": 11.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "HUL",
+       "driver_number": 27,
+       "win_probability": 0.0003048266925393507,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 34.327000000000226,
+       "compound_x": "HARD",
+       "tyre_life_x": 10.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "RIC",
+       "driver_number": 3,
+       "win_probability": 0.0002814512318582937,
+       "position_x": 6.0,
+       "gap_to_leader_seconds": 40.82700000000023,
+       "compound_x": "MEDIUM",
+       "tyre_life_x": 14.0,
+       "stint_x": 2.0
+      }
+     ],
+     "XGBoost": [
+      {
+       "driver": "VER",
+       "driver_number": 33,
+       "win_probability": 0.6569172143936157,
+       "position_x": 1.0,
+       "gap_to_leader_seconds": 0.0,
+       "compound_x": "HARD",
+       "tyre_life_x": 28.0,
+       "stint_x": 1.0
+      },
+      {
+       "driver": "BOT",
+       "driver_number": 77,
+       "win_probability": 0.07385821640491486,
+       "position_x": 2.0,
+       "gap_to_leader_seconds": 18.311999999999895,
+       "compound_x": "HARD",
+       "tyre_life_x": 12.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "HAM",
+       "driver_number": 44,
+       "win_probability": 0.002913878997787833,
+       "position_x": 3.0,
+       "gap_to_leader_seconds": 23.03899999999976,
+       "compound_x": "HARD",
+       "tyre_life_x": 11.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "HUL",
+       "driver_number": 27,
+       "win_probability": 0.001623455435037613,
+       "position_x": 4.0,
+       "gap_to_leader_seconds": 34.327000000000226,
+       "compound_x": "HARD",
+       "tyre_life_x": 10.0,
+       "stint_x": 2.0
+      },
+      {
+       "driver": "STR",
+       "driver_number": 18,
+       "win_probability": 0.0015246826224029064,
+       "position_x": 5.0,
+       "gap_to_leader_seconds": 36.30500000000029,
+       "compound_x": "HARD",
+       "tyre_life_x": 7.0,
+       "stint_x": 2.0
+      }
+     ]
+    }
+   },
+   "single": {
+    "logreg": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "BOT",
+       "win_probability": 0.4357,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "BOT",
+       "win_probability": 0.4469,
+       "actual_winner": "VER",
+       "actual_rank": 3
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "VER",
+       "win_probability": 0.4818,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "VER",
+       "win_probability": 0.398,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "VER",
+       "win_probability": 0.4641,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      }
+     ],
+     "latest": {
+      "model": "logreg",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "VER",
+      "predicted_driver_number": 33,
+      "predicted_win_probability": 0.4640735979880753,
+      "actual_winner": "VER",
+      "actual_rank": 1,
+      "top5": [
+       {
+        "driver": "VER",
+        "driver_number": 33,
+        "win_probability": 0.4640735979880753,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "HARD",
+        "tyre_life_x": 28.0,
+        "stint_x": 1.0
+       },
+       {
+        "driver": "BOT",
+        "driver_number": 77,
+        "win_probability": 0.1098030671125388,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 18.311999999999895,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "HAM",
+        "driver_number": 44,
+        "win_probability": 0.03490847911939772,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 23.03899999999976,
+        "compound_x": "HARD",
+        "tyre_life_x": 11.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "HUL",
+        "driver_number": 27,
+        "win_probability": 0.005494023768086694,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 34.327000000000226,
+        "compound_x": "HARD",
+        "tyre_life_x": 10.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "STR",
+        "driver_number": 18,
+        "win_probability": 0.0023235225225254536,
+        "position_x": 5.0,
+        "gap_to_leader_seconds": 36.30500000000029,
+        "compound_x": "HARD",
+        "tyre_life_x": 7.0,
+        "stint_x": 2.0
+       }
+      ]
+     }
+    },
+    "hgb": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "VER",
+       "win_probability": 0.7113,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "VER",
+       "win_probability": 0.6425,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "VER",
+       "win_probability": 0.6417,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "VER",
+       "win_probability": 0.5098,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "VER",
+       "win_probability": 0.6754,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      }
+     ],
+     "latest": {
+      "model": "hgb",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "VER",
+      "predicted_driver_number": 33,
+      "predicted_win_probability": 0.6754026935828265,
+      "actual_winner": "VER",
+      "actual_rank": 1,
+      "top5": [
+       {
+        "driver": "VER",
+        "driver_number": 33,
+        "win_probability": 0.6754026935828265,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "HARD",
+        "tyre_life_x": 28.0,
+        "stint_x": 1.0
+       },
+       {
+        "driver": "BOT",
+        "driver_number": 77,
+        "win_probability": 0.09180143183245355,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 18.311999999999895,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "HAM",
+        "driver_number": 44,
+        "win_probability": 0.0005276608714313093,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 23.03899999999976,
+        "compound_x": "HARD",
+        "tyre_life_x": 11.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "HUL",
+        "driver_number": 27,
+        "win_probability": 0.0003048266925393507,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 34.327000000000226,
+        "compound_x": "HARD",
+        "tyre_life_x": 10.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "RIC",
+        "driver_number": 3,
+        "win_probability": 0.0002814512318582937,
+        "position_x": 6.0,
+        "gap_to_leader_seconds": 40.82700000000023,
+        "compound_x": "MEDIUM",
+        "tyre_life_x": 14.0,
+        "stint_x": 2.0
+       }
+      ]
+     }
+    },
+    "xgboost": {
+     "summary": [
+      {
+       "lap": 5,
+       "predicted_winner": "BOT",
+       "win_probability": 0.5531,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 10,
+       "predicted_winner": "BOT",
+       "win_probability": 0.5069,
+       "actual_winner": "VER",
+       "actual_rank": 2
+      },
+      {
+       "lap": 15,
+       "predicted_winner": "VER",
+       "win_probability": 0.7476,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 20,
+       "predicted_winner": "VER",
+       "win_probability": 0.6591,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      },
+      {
+       "lap": 25,
+       "predicted_winner": "VER",
+       "win_probability": 0.6569,
+       "actual_winner": "VER",
+       "actual_rank": 1
+      }
+     ],
+     "latest": {
+      "model": "xgboost",
+      "lap": 25,
+      "model_file": "model_tuned.pkl",
+      "predicted_winner": "VER",
+      "predicted_driver_number": 33,
+      "predicted_win_probability": 0.6569172143936157,
+      "actual_winner": "VER",
+      "actual_rank": 1,
+      "top5": [
+       {
+        "driver": "VER",
+        "driver_number": 33,
+        "win_probability": 0.6569172143936157,
+        "position_x": 1.0,
+        "gap_to_leader_seconds": 0.0,
+        "compound_x": "HARD",
+        "tyre_life_x": 28.0,
+        "stint_x": 1.0
+       },
+       {
+        "driver": "BOT",
+        "driver_number": 77,
+        "win_probability": 0.07385821640491486,
+        "position_x": 2.0,
+        "gap_to_leader_seconds": 18.311999999999895,
+        "compound_x": "HARD",
+        "tyre_life_x": 12.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "HAM",
+        "driver_number": 44,
+        "win_probability": 0.002913878997787833,
+        "position_x": 3.0,
+        "gap_to_leader_seconds": 23.03899999999976,
+        "compound_x": "HARD",
+        "tyre_life_x": 11.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "HUL",
+        "driver_number": 27,
+        "win_probability": 0.001623455435037613,
+        "position_x": 4.0,
+        "gap_to_leader_seconds": 34.327000000000226,
+        "compound_x": "HARD",
+        "tyre_life_x": 10.0,
+        "stint_x": 2.0
+       },
+       {
+        "driver": "STR",
+        "driver_number": 18,
+        "win_probability": 0.0015246826224029064,
+        "position_x": 5.0,
+        "gap_to_leader_seconds": 36.30500000000029,
+        "compound_x": "HARD",
+        "tyre_life_x": 7.0,
+        "stint_x": 2.0
+       }
+      ]
+     }
+    }
+   }
+  }
+ ]
+}

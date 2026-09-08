@@ -1,0 +1,103 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+
+venv/
+.venv/
+scripts/venv/
+.env
+.env.*
+
+# =========================
+# FastAPI / Backend
+# =========================
+*.log
+
+# =========================
+# Node / Next.js
+# =========================
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# =========================
+# macOS junk
+# =========================
+.DS_Store
+._*
+
+# =========================
+# Windows junk
+# =========================
+Thumbs.db
+desktop.ini
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Data files (optional)
+# =========================
+*.sqlite
+*.db
+
+# =========================
+# Python cache
+# =========================
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# =========================
+# Streamlit
+# =========================
+.streamlit/
+
+# =========================
+# Build artifacts
+# =========================
+dist/
+build/
+*.egg-info/
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# FastF1 runtime cache (NOT source data)
+# =========================
+# Root-scoped on purpose: data/raw/fastf1_cache/ is intentional
+# source cache and must stay tracked (see docs/V2_REPOSITORY_AUDIT.md §7).
+/.fastf1_cache/
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.bak
+*.swp
+*~
+
+# =========================
+# Intentional artifacts (do NOT ignore)
+# =========================
+# data/processed, data/interim, data/raw/fastf1_cache,
+# results/models, results subdirectories and
+# tests/fixtures/legacy_predictions.json are part of the
+# R0 baseline and must remain tracked. Do not add *.pkl,
+# *.csv or data/ exclusions here without an artifact-policy
+# update in docs/V2_REPOSITORY_AUDIT.md.

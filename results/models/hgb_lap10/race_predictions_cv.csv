@@ -1,0 +1,105 @@
+model,fold,year,event_name,predicted_winner,true_winner,hit_top1,hit_top3
+HistGradientBoostingClassifier,1,2019,Belgian Grand Prix,LEC,LEC,1,1
+HistGradientBoostingClassifier,1,2019,Hungarian Grand Prix,VER,HAM,0,1
+HistGradientBoostingClassifier,1,2019,Mexican Grand Prix,LEC,HAM,0,0
+HistGradientBoostingClassifier,1,2019,Singapore Grand Prix,LEC,VET,0,1
+HistGradientBoostingClassifier,1,2020,Austrian Grand Prix,BOT,BOT,1,1
+HistGradientBoostingClassifier,1,2020,British Grand Prix,HAM,HAM,1,1
+HistGradientBoostingClassifier,1,2020,Russian Grand Prix,VER,BOT,0,1
+HistGradientBoostingClassifier,1,2020,Tuscan Grand Prix,HAM,HAM,1,1
+HistGradientBoostingClassifier,1,2021,Abu Dhabi Grand Prix,HAM,VER,0,0
+HistGradientBoostingClassifier,1,2021,British Grand Prix,LEC,HAM,0,1
+HistGradientBoostingClassifier,1,2021,Italian Grand Prix,RIC,RIC,1,1
+HistGradientBoostingClassifier,1,2021,Russian Grand Prix,SAI,HAM,0,0
+HistGradientBoostingClassifier,1,2021,United States Grand Prix,HAM,VER,0,1
+HistGradientBoostingClassifier,1,2022,British Grand Prix,VER,SAI,0,1
+HistGradientBoostingClassifier,1,2022,Emilia Romagna Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,1,2022,Italian Grand Prix,LEC,VER,0,1
+HistGradientBoostingClassifier,1,2022,São Paulo Grand Prix,RUS,RUS,1,1
+HistGradientBoostingClassifier,1,2023,Belgian Grand Prix,LEC,VER,0,1
+HistGradientBoostingClassifier,1,2023,Dutch Grand Prix,PER,VER,0,0
+HistGradientBoostingClassifier,1,2023,Mexico City Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,1,2023,Spanish Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,2,2019,Bahrain Grand Prix,LEC,HAM,0,1
+HistGradientBoostingClassifier,2,2019,German Grand Prix,HAM,VER,0,1
+HistGradientBoostingClassifier,2,2019,Russian Grand Prix,VET,HAM,0,1
+HistGradientBoostingClassifier,2,2020,Abu Dhabi Grand Prix,BOT,VER,0,1
+HistGradientBoostingClassifier,2,2020,Belgian Grand Prix,HAM,HAM,1,1
+HistGradientBoostingClassifier,2,2020,Italian Grand Prix,HAM,GAS,0,0
+HistGradientBoostingClassifier,2,2020,Portuguese Grand Prix,BOT,HAM,0,1
+HistGradientBoostingClassifier,2,2020,Turkish Grand Prix,PER,HAM,0,0
+HistGradientBoostingClassifier,2,2021,Belgian Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,2,2021,Hungarian Grand Prix,OCO,OCO,1,1
+HistGradientBoostingClassifier,2,2021,Qatar Grand Prix,VER,HAM,0,1
+HistGradientBoostingClassifier,2,2022,Abu Dhabi Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,2,2022,Bahrain Grand Prix,LEC,LEC,1,1
+HistGradientBoostingClassifier,2,2022,Hungarian Grand Prix,RUS,VER,0,0
+HistGradientBoostingClassifier,2,2022,Miami Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,2,2022,Monaco Grand Prix,LEC,PER,0,1
+HistGradientBoostingClassifier,2,2023,Australian Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,2,2023,Canadian Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,2,2023,Miami Grand Prix,PER,VER,0,1
+HistGradientBoostingClassifier,2,2023,Qatar Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,2,2023,United States Grand Prix,NOR,VER,0,0
+HistGradientBoostingClassifier,3,2019,Australian Grand Prix,HAM,BOT,0,1
+HistGradientBoostingClassifier,3,2019,British Grand Prix,BOT,HAM,0,1
+HistGradientBoostingClassifier,3,2019,French Grand Prix,HAM,HAM,1,1
+HistGradientBoostingClassifier,3,2019,Monaco Grand Prix,HAM,HAM,1,1
+HistGradientBoostingClassifier,3,2020,70th Anniversary Grand Prix,HAM,VER,0,1
+HistGradientBoostingClassifier,3,2020,Bahrain Grand Prix,HAM,HAM,1,1
+HistGradientBoostingClassifier,3,2020,Hungarian Grand Prix,HAM,HAM,1,1
+HistGradientBoostingClassifier,3,2020,Styrian Grand Prix,HAM,HAM,1,1
+HistGradientBoostingClassifier,3,2021,Bahrain Grand Prix,VER,HAM,0,1
+HistGradientBoostingClassifier,3,2021,French Grand Prix,HAM,VER,0,1
+HistGradientBoostingClassifier,3,2021,Portuguese Grand Prix,BOT,HAM,0,1
+HistGradientBoostingClassifier,3,2021,Styrian Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,3,2022,Australian Grand Prix,LEC,LEC,1,1
+HistGradientBoostingClassifier,3,2022,Dutch Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,3,2022,Saudi Arabian Grand Prix,PER,VER,0,1
+HistGradientBoostingClassifier,3,2022,Singapore Grand Prix,PER,PER,1,1
+HistGradientBoostingClassifier,3,2023,Abu Dhabi Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,3,2023,British Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,3,2023,Italian Grand Prix,SAI,VER,0,1
+HistGradientBoostingClassifier,3,2023,Monaco Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,3,2023,Singapore Grand Prix,SAI,SAI,1,1
+HistGradientBoostingClassifier,4,2019,Austrian Grand Prix,LEC,VER,0,0
+HistGradientBoostingClassifier,4,2019,Azerbaijan Grand Prix,BOT,BOT,1,1
+HistGradientBoostingClassifier,4,2019,Chinese Grand Prix,HAM,HAM,1,1
+HistGradientBoostingClassifier,4,2019,Japanese Grand Prix,BOT,BOT,1,1
+HistGradientBoostingClassifier,4,2019,United States Grand Prix,BOT,BOT,1,1
+HistGradientBoostingClassifier,4,2020,Emilia Romagna Grand Prix,BOT,HAM,0,1
+HistGradientBoostingClassifier,4,2020,Sakhir Grand Prix,RUS,PER,0,0
+HistGradientBoostingClassifier,4,2021,Azerbaijan Grand Prix,HAM,PER,0,1
+HistGradientBoostingClassifier,4,2021,Emilia Romagna Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,4,2021,Monaco Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,4,2021,Spanish Grand Prix,VER,HAM,0,1
+HistGradientBoostingClassifier,4,2021,São Paulo Grand Prix,VER,HAM,0,1
+HistGradientBoostingClassifier,4,2022,Austrian Grand Prix,VER,LEC,0,1
+HistGradientBoostingClassifier,4,2022,Canadian Grand Prix,SAI,VER,0,1
+HistGradientBoostingClassifier,4,2022,Japanese Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,4,2022,Spanish Grand Prix,LEC,VER,0,1
+HistGradientBoostingClassifier,4,2022,United States Grand Prix,HAM,VER,0,1
+HistGradientBoostingClassifier,4,2023,Azerbaijan Grand Prix,PER,PER,1,1
+HistGradientBoostingClassifier,4,2023,Japanese Grand Prix,NOR,VER,0,1
+HistGradientBoostingClassifier,4,2023,Saudi Arabian Grand Prix,PER,PER,1,1
+HistGradientBoostingClassifier,4,2023,São Paulo Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,5,2019,Abu Dhabi Grand Prix,HAM,HAM,1,1
+HistGradientBoostingClassifier,5,2019,Brazilian Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,5,2019,Canadian Grand Prix,VET,HAM,0,1
+HistGradientBoostingClassifier,5,2019,Italian Grand Prix,HAM,LEC,0,1
+HistGradientBoostingClassifier,5,2019,Spanish Grand Prix,HAM,HAM,1,1
+HistGradientBoostingClassifier,5,2020,Eifel Grand Prix,BOT,HAM,0,1
+HistGradientBoostingClassifier,5,2020,Spanish Grand Prix,HAM,HAM,1,1
+HistGradientBoostingClassifier,5,2021,Austrian Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,5,2021,Dutch Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,5,2021,Mexico City Grand Prix,PER,VER,0,1
+HistGradientBoostingClassifier,5,2021,Saudi Arabian Grand Prix,HAM,HAM,1,1
+HistGradientBoostingClassifier,5,2021,Turkish Grand Prix,BOT,BOT,1,1
+HistGradientBoostingClassifier,5,2022,Azerbaijan Grand Prix,PER,VER,0,1
+HistGradientBoostingClassifier,5,2022,Belgian Grand Prix,SAI,VER,0,1
+HistGradientBoostingClassifier,5,2022,French Grand Prix,LEC,VER,0,1
+HistGradientBoostingClassifier,5,2022,Mexico City Grand Prix,HAM,VER,0,1
+HistGradientBoostingClassifier,5,2023,Austrian Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,5,2023,Bahrain Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,5,2023,Hungarian Grand Prix,VER,VER,1,1
+HistGradientBoostingClassifier,5,2023,Las Vegas Grand Prix,VER,VER,1,1

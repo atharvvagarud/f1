@@ -1,0 +1,4 @@
+baseline,races,top1_accuracy,top3_accuracy
+Leader at lap X (position_x),97,0.5567010309278351,0.9072164948453608
+Fastest lap at lap X (lap_time_x_seconds),97,0.4536082474226804,0.7731958762886598
+Lowest driver_number (sanity baseline),97,0.28865979381443296,0.29896907216494845

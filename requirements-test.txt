@@ -1,0 +1,8 @@
+# Test-only dependencies (R2 regression harness).
+# Production deps stay in requirements.txt; install both for verification:
+#   python -m pip install -r requirements.txt -r requirements-test.txt
+# Pinned to the versions the R2 suite was verified against. The app targets
+# scikit-learn==1.8.0 / xgboost==3.2.0 from requirements.txt — the saved
+# pipelines must be unpickled with those exact versions.
+pytest==9.1.1
+httpx==0.28.1

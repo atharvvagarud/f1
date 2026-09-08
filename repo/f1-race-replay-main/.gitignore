@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Data & models (DO NOT COMMIT)
+data/
+models/
+*.joblib
+*.pkl
+
+# FastF1 cache
+fastf1_cache/
+*_cache.sqlite
+*_http_cache.sqlite
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# macOS junk
+.DS_Store
+._*

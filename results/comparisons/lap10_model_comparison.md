@@ -1,0 +1,13 @@
+# Lap-10 (Non-Weather) Model Comparison
+
+| Model | Top-1 | Top-3 | Log Loss |
+| --- | --- | --- | --- |
+| Fastest lap at lap 10 (lap_time_x_seconds) | 0.4619 ± 0.0573 | 0.7800 ± 0.0848 | N/A |
+| Leader at lap 10 (position_x) | 0.5786 ± 0.1325 | 0.9048 ± 0.1010 | N/A |
+| Lowest driver_number (sanity baseline) | 0.3371 ± 0.0529 | 0.3467 ± 0.0562 | N/A |
+| Logistic Regression | 0.5786 ± 0.1185 | 0.8852 ± 0.0880 | 0.3135 ± 0.0101 |
+| HistGradientBoostingClassifier | 0.5105 ± 0.0829 | 0.9048 ± 0.0852 | 0.1528 ± 0.0391 |
+
+Notes:
+- Metrics are GroupKFold CV mean ± std across folds.
+- Log Loss is N/A for non-probabilistic baselines.

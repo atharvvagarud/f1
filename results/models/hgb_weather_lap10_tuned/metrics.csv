@@ -1,0 +1,2 @@
+model,total_races,top1_mean,top1_std,top3_mean,top3_std,log_loss_mean,log_loss_std,params
+HistGradientBoosting_weather_tuned,104,0.5785714285714285,0.10202040612204073,0.9042857142857142,0.04206678633401482,0.10960803297509766,0.015354156853537117,"max_depth=2, learning_rate=0.05, max_iter=200, min_samples_leaf=50"

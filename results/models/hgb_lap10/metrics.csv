@@ -1,0 +1,7 @@
+model,fold,n_splits,train_races,test_races,races_evaluated,top1_accuracy,top3_accuracy,log_loss
+HistGradientBoostingClassifier,1,5,77,20,20,0.4,0.85,0.1281759593364621
+HistGradientBoostingClassifier,2,5,78,19,19,0.5789473684210527,0.8421052631578947,0.11963597340203262
+HistGradientBoostingClassifier,3,5,78,19,19,0.7368421052631579,1.0,0.07751473756715235
+HistGradientBoostingClassifier,4,5,78,19,19,0.5263157894736842,0.7894736842105263,0.12844715453250186
+HistGradientBoostingClassifier,5,5,77,20,20,0.35,0.85,0.14625026151374515
+HistGradientBoostingClassifier,MEAN±STD,5,,,97,0.5184 ± 0.1370,0.8663 ± 0.0706,0.1200 ± 0.0229

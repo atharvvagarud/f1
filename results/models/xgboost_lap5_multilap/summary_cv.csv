@@ -1,0 +1,2 @@
+model,lap,top1_mean±std,top3_mean±std,log_loss_mean±std,total_races
+XGBoost,5,0.5005 ± 0.2075,0.8243 ± 0.0758,0.1437 ± 0.0381,103
