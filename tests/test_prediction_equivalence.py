@@ -15,10 +15,7 @@ investigated, never papered over by regenerating the fixture.
 
 import pytest
 
-from api.services.predictor import (
-    run_ensemble_prediction,
-    run_single_model_prediction,
-)
+from ml.inference import run_ensemble_prediction, run_single_model_prediction
 from conftest import fixture_races, probs_close
 
 

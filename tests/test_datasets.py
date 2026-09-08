@@ -7,12 +7,9 @@ predictor selects, cover seasons 2019-2023, and expose the race list the
 
 import pytest
 
-from api.services.predictor import (
-    CHECKPOINTS,
-    FEATURE_COLS,
-    get_available_races,
-    load_dataset,
-)
+from ml.config import CHECKPOINTS
+from ml.features import FEATURE_COLS
+from ml.inference import get_available_races, load_dataset
 
 REQUIRED_COLUMNS = {
     "year",

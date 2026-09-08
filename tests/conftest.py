@@ -22,11 +22,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from api.services.predictor import (  # noqa: E402
-    CHECKPOINTS,
-    FEATURE_COLS,
-    MODELS,
-)
+from ml.config import CHECKPOINTS, MODELS  # noqa: E402
+from ml.features import FEATURE_COLS  # noqa: E402
 
 FIXTURE_PATH = ROOT / "tests" / "fixtures" / "legacy_predictions.json"
 # sha256 of the fixture file as captured in R0. Any byte change fails loudly

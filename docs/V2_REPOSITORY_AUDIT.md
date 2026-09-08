@@ -460,3 +460,520 @@ files (`tests/fixtures/`, §12) belong in the earlier `refactor: establish
 legacy baseline` / hygiene boundary per the plan's Git strategy.
 
 **R2 is complete. Awaiting explicit approval before R3.**
+
+---
+
+## 14. R3 addendum — Python/ML Restructuring (2026-09-08)
+
+### 14.1 Dependency graph actually found (drove the plan)
+
+- Scripts are standalone leaf entry points: zero cross-imports between
+  `scripts/*/*.py`; the only in-repo import was
+  `api/main.py → api.services.predictor`.
+- Every script resolves the project root from its own location
+  (`parents[2]`; one outlier in `scripts/utils/` uses `parents[1]` — untouched).
+- `FEATURE_COLS` was copied verbatim in 6 places, `CHECKPOINTS` in 6,
+  `MODEL_LABELS` in 3. Training scripts instead use a NUM_COLS/CAT_COLS
+  split feeding their imputation/encoding pipelines — unifying those would
+  need training execution (forbidden), so they are out of R3 scope.
+- Physical `scripts/ → ml/` moves were rejected: same-depth relocation
+  keeps `parents[2]` working, but it would break the documented
+  `python scripts/...` CLI entry points (req.md) with no dependency
+  justification. `scripts/` stays where it is, now importing shared
+  constants from `ml/`.
+
+### 14.2 Old → new module mapping
+
+| Before | After | Change |
+|---|---|---|
+| `api/services/predictor.py` (242 lines: constants + paths + 7 inference fns) | `ml/config.py` (ROOT, CHECKPOINTS, MODELS, MODEL_LABELS, path helpers) + `ml/features.py` (FEATURE_COLS, order frozen) + `ml/inference.py` (7 fns, verbatim) | Extract; `diff` shows only header/import changes |
+| — | `ml/__init__.py` | New package marker + re-exports |
+| `api/services/predictor.py` | Same path, thin re-export shim | Keeps `api.main`, callers, R2 tests working; R4 owns services |
+| `app.py` constant blocks | `from ml.config / ml.features import …` | Dedup; Streamlit logic untouched |
+| 3 scripts' constant blocks (`predict_race_winner_ensemble.py`, `predict_race_winner_all_checkpoints.py`, `plot_winner_probability_evolution.py`) | Same + 2-line `sys.path` root bootstrap | Dedup; all logic/CLI untouched |
+| `legacy/`, training/eval/cleaning/data scripts, `api/main.py` | Untouched | R6 / later scope, or NUM_COLS split (see §14.1) |
+
+Resulting tree: `ml/{__init__,config,features,inference}.py` (flat — no
+`data/training/evaluation` placeholders; the graph did not justify them).
+
+### 14.3 Duplication eliminated / path assumptions changed
+
+- Eliminated: 5 redundant copies of CHECKPOINTS/FEATURE_COLS/MODELS and
+  2 of MODEL_LABELS (api + app.py + 3 scripts → single source in `ml/`).
+- Remaining (intentional): `legacy/streamlit_app.py` copy (R6),
+  NUM_COLS/CAT_COLS in training/eval scripts (needs training to verify).
+- Path assumptions: `ml/config.ROOT = parents[1]` (== old roots);
+  the 3 scripts bootstrap `sys.path` with their existing `parents[2]`;
+  `app.py` reuses its existing `sys.path.append(ROOT)`.
+- Compatibility: `api.services.predictor` re-exports all 14 public names;
+  no caller or test import changed.
+
+### 14.4 Verification record (after every step; full battery at completion)
+
+- `pytest tests/`: **71 collected — 67 passed, 4 xfailed (Monaco), 0 failed**,
+  incl. full golden-equivalence recompute (unchanged fixture sha
+  `8e23031a…c1f65302`).
+- Script operability: `--help` on both predict scripts; full
+  `predict_race_winner_ensemble.py --year 2023 --event "Bahrain Grand Prix"`
+  → VER/VER lap 25 (matches API + fixture).
+- `app.py` executed with stubbed streamlit/matplotlib: constants identical
+  to `ml/`, dataset paths resolve.
+- Artifacts: 30 `.pkl`, 14 CSVs, no file under `results/`/`data/` modified
+  since R0 (mtime check); no model/dataset content touched.
+- Live uvicorn smoke: `/health` 200, Bahrain ensemble 200
+  (VER/VER/25/0.8051 — identical), Monaco ensemble still 500 with the
+  identical NaN traceback (defect preserved, not fixed).
+- Frontend (untouched): node tests 17/17, `tsc` exit 0, lint 0 errors +
+  same 7 warnings, `npm run build` success.
+- `py_compile` across ml/api/app/edited scripts: OK.
+- **Behaviour differences detected: none.**
+
+### 14.5 Deferred to R4 / R6
+
+- R4: real FastAPI service-layer split (the shim is temporary by design).
+- R6: `legacy/` retirement, `repo/` vs `legacy/repo/` consolidation,
+  Streamlit-vs-Next.js parity verdict.
+- Training/eval NUM_COLS/CAT_COLS unification (needs training execution).
+- Commit strategy for the 6.6 GB source cache (still undecided).
+
+### 14.6 R3 Definition of Done — status
+
+- [x] ML/data responsibilities are understandable (§14.1–14.2)
+- [x] Inference reusable independently from API routing (`ml.inference`, no framework imports)
+- [x] Feature definitions not unnecessarily duplicated (§14.3)
+- [x] Training remains operational (CLI verified; methodology untouched)
+- [x] Evaluation scripts remain available (untouched + compile-verified)
+- [x] Model artifacts remain loadable (15/15 in-suite)
+- [x] Golden predictions remain equivalent (fixture sha + full recompute)
+- [x] No V2 ML behaviour introduced
+
+**R3 is complete. Awaiting explicit approval before R4.**
+
+---
+
+## 15. R4 addendum — FastAPI/Backend Restructuring (2026-09-08)
+
+### 15.1 Responsibility mapping (old → new)
+
+| Before | After |
+|---|---|
+| `api/main.py` (app + CORS + 2 Pydantic models + 4 routes) | `api/main.py` (app + CORS + `include_router` only) |
+| inline `RaceRequest` / `SingleModelRequest` | `api/schemas.py` (verbatim move, validation frozen) |
+| routes calling `api.services.predictor` fns directly | `api/routes.py` (`APIRouter`, same paths/methods/handler names, delegates to service) |
+| `api/services/predictor.py` (R3 re-export shim) | `api/services/prediction_service.py` (use cases: health, races, ensemble, single-model → `ml.inference`); **shim deleted** |
+| `ml.inference` (already framework-free) | Unchanged, now the sole computation owner |
+
+Resulting tree:
+
+```text
+api/
+├── main.py                 # assembly only
+├── routes.py               # HTTP routing (4 endpoints)
+├── schemas.py              # request contracts
+└── services/
+    └── prediction_service.py  # orchestration → ml.inference
+ml/{__init__,config,features,inference}.py   # unchanged from R3
+```
+
+Call path: `routes.py → prediction_service.py → ml/inference.py → artifacts`.
+`ml/` imports nothing from `api/`/`fastapi` (verified by inspection).
+
+### 15.2 Shim verdict
+
+`api/services/predictor.py` **removed**. All consumers were inspected:
+`api/main.py` (rewritten), 5 R2 test files (import-only migration to
+`ml.config` / `ml.features` / `ml.inference`, assertions untouched), and no
+script/frontend references existed. Suite re-run green before and after
+deletion. No compatibility retention needed.
+
+### 15.3 Endpoint comparison before/after
+
+- Paths+methods identical (`GET /health`, `GET /races`,
+  `POST /predict/ensemble`, `POST /predict/single-model` — via OpenAPI).
+- Handler names identical → same operationIds under this FastAPI version.
+- No `response_model` added (serialization, incl. Monaco NaN failure, untouched).
+- Request fields/defaults/validation unchanged (schemas moved verbatim).
+- CORS, app title, error propagation (ValueError → 500) unchanged.
+
+### 15.4 Verification record
+
+- `pytest tests/`: **71 collected — 67 passed, 4 xfailed (Monaco), 0 failed**,
+  run after each step (schemas+service+routes; test migration; shim deletion).
+- Fixture sha `8e23031a…c1f65302` unchanged; full golden-equivalence green.
+- Live uvicorn smoke: `/health` 200, `/races` 104, Bahrain ensemble 200
+  (VER/VER/25/0.8051), single-model hgb 200 (VER), Monaco ensemble 500 with
+  the identical NaN traceback.
+- Artifacts: 30 `.pkl`, 14 CSVs, zero files under `results/`/`data/`
+  modified since R0; no newly discovered defects (the `_IncludedRouter`
+  introspection shape is a FastAPI-version detail, not a behaviour change).
+- Frontend (untouched): node 17/17, `tsc` 0, lint 0 errors + same 7
+  warnings, build success. `py_compile` across api/ml: OK.
+
+### 15.5 Deferred to R5 / R6
+
+- R5: frontend modularisation (page.tsx still ~1200 lines).
+- R6: `legacy/` + `repo/` duplication verdicts, Streamlit parity.
+- Still open: commit strategy for the 6.6 GB source cache; no commit made
+  in R4. Note: a baseline commit (`e7d3467`) now exists in the repo root
+  from outside this session; R3+R4 changes sit uncommitted on top.
+
+### 15.6 R4 Definition of Done — status
+
+- [x] Backend structure is modular (§15.1)
+- [x] Route logic is thin (one-line delegation)
+- [x] Prediction logic is reusable (`ml.inference`, framework-free)
+- [x] Schemas are explicit (`api/schemas.py`)
+- [x] Configuration is understandable (`ml/config.py`, unchanged from R3)
+- [x] Existing frontend can still communicate (contract §15.3 + frontend API tests green)
+- [x] Golden predictions remain equivalent (§15.4)
+- [x] API tests pass (§15.4)
+
+**R4 is complete. Awaiting explicit approval before R5.**
+
+---
+
+## 16. R5 addendum — Frontend Restructuring (2026-09-08)
+
+### 16.1 Original page.tsx responsibilities (1278 lines)
+
+State ×10 (races/year/event/mode/model/loading/results/error/activeTab),
+2 effects, 2 memos + chart/grouping memos, `handlePredict`, full hero JSX
+(3 states), 8 tab-section blocks, and 5 local presentational components —
+with API access already centralised (`lib/api.ts`) and types/helpers already
+single-sourced (`lib/predictionTypes.ts`, `lib/predictionHelpers.ts`).
+
+### 16.2 Resulting tree (new electorate in `features/`)
+
+```text
+frontend/
+├── app/page.tsx (114 lines — layout composition only)
+├── features/prediction/
+│   ├── hooks/usePrediction.ts        # all page state + effects + handlePredict
+│   ├── lib/predictionTransforms.ts   # pure chart/grouping transforms (+ tests)
+│   └── components/
+│       ├── PredictionHero.tsx        # hero card, 3 states
+│       ├── EnsembleResults.tsx       # 4 ensemble tab blocks
+│       ├── SingleResults.tsx         # 4 single-model tab blocks
+│       ├── ResultCards.tsx           # ConfidenceBar/OverviewCard/ChartInsightCard
+│       └── DriverCards.tsx           # DriverCard/CompactDriverRow
+├── components/prediction/            # unchanged (ControlsPanel/Tabs/Chart)
+└── lib/                              # unchanged + PredictionMode/ModelId aliases
+```
+
+Call path: `page → usePrediction → lib/api → backend` (unchanged wire
+protocol; no fetch outside `lib/api.ts`; no new dependencies; no store lib).
+
+### 16.3 Move mechanics / fidelity proof
+
+All JSX moved by scripted line-range extraction from the pre-R5 file and
+verified **byte-identical** against git HEAD (`/tmp/verify_r5.py`: all 8
+blocks PASS). Only headers (imports/props) are new; prop names match the
+original hook variables so moved JSX needed zero edits. Dropped as dead
+code in transit: unused `isCorrect` var + 6 unused imports (were lint
+warnings). Deliberately not fixed: `barClassName` unused prop (warning kept).
+
+### 16.4 Verification record
+
+- `node --test` (all three files): **21 passed, 0 failed** (17 pre-existing + 4 transform tests).
+- `tsc --noEmit`: exit 0. `npm run lint`: 0 errors, 1 warning (was 7; 6
+  removed with dead code, none added). `npm run build`: success.
+- Production SSR smoke (`next start` + curl `/` → 200): preview-state HTML
+  contains all 10 key copy/control strings (hero, Controls, selectors,
+  mode buttons, run button) — restructured tree renders without crashing.
+- Backend battery (frontend-only change, per R5 gate list): `pytest`
+  67 passed + 4 xfailed; fixture sha unchanged; 30 `.pkl` / 14 CSVs intact.
+- Visual-equivalence basis: byte-identical markup + unchanged classes/DOM +
+  same component tree order + successful prerender. Post-prediction
+  interactive states (tabs after Predict, chart after data) cannot be
+  exercised without a browser (no headless browser available; no test
+  framework added per constraints) — residual risk documented, not observed.
+- **Behavioural/visual differences detected: none.**
+
+### 16.5 Deferred to R6 / V2 UI
+
+- R6 owns Streamlit-vs-Next.js parity and legacy retirement (unchanged).
+- Future V2 navigation/replay/simulator UI: not started. Cosmetic polish
+  encountered: none applied.
+
+### 16.6 R5 Definition of Done — status
+
+- [x] Primary page is easier to understand (1278 → 114 lines, §16.2)
+- [x] API access is centralised (unchanged `lib/api.ts`, contract tests green)
+- [x] Types are organised (single source + mode/model aliases; no dupes found)
+- [x] Major prediction UI responsibilities are modular (§16.2)
+- [x] Current UI still works (§16.4)
+- [x] Frontend tests pass (21/21)
+- [x] Production build succeeds
+
+**R5 is complete. Awaiting explicit approval before R6.**
+
+---
+
+## 17. R6 addendum — Legacy & Duplication Cleanup (2026-09-08)
+
+### 17.1 Candidate verdicts (all inspected before action)
+
+| Candidate | Verdict | Evidence |
+|---|---|---|
+| root `app.py` (Streamlit) | REMOVE | Full parity with Next.js+FastAPI (table §17.2); zero imports/references; logic now in `ml/`+API; retired, not migrated |
+| `legacy/streamlit_app.py` | REMOVE | Same as above + broken `ROOT` paths (never ran from `legacy/`) |
+| `legacy/` dir | REMOVE | Emptied by the above; removed |
+| `repo/f1-race-replay-main/` | REMOVE | Byte-identical to legacy copy; unrelated arcade/GUI prototype; zero references; ~15 MB duplicated PNG/gif assets |
+| `legacy/repo/f1-race-replay-main/` | REMOVE | Same; `legacy/` emptied → dir removed |
+| `repo/` dir | REMOVE | Emptied by the above; removed |
+| `gpt.txt` (3.9 MB) | REMOVE | Unreferenced AI metrics-narration dump; 0 secret-pattern hits; no runtime value |
+| `docs/{req,notes,section5report}.txt/.md` | REMOVE (dupes) | Byte-identical to root copies; zero references to the `docs/` copies; root originals kept |
+| `requirements.txt` streamlit pin | REMOVE (line) | Last `import streamlit` owners deleted; matplotlib kept (analysis scripts still use it) |
+| `results/debug/*` (README + 6 tiny CSVs) | PRESERVE | Header-only failure CSVs + archival README = dataset-alignment evidence, ~1 KB |
+| All 42 `scripts/*.py` | PRESERVE | No exact duplicates (md5); training/eval needed for Phases 1–3 |
+| 30 `.pkl`, 14 CSVs, fixture, `results/` evidence | PRESERVE | Untouched (mtime-verified); counts re-verified |
+| `frontend/README.md`, root docs, V2 plans | PRESERVE | No action (README work is R7) |
+
+### 17.2 Streamlit parity table (retirement basis)
+
+```text
+Feature                    Streamlit    Next.js/FastAPI
+Race selection             yes          yes
+Checkpoint selection       yes          yes (all 5 laps)
+Model selection            yes          yes
+Ensemble (majority+XGB)    yes          yes (same rule)
+Probability view           yes (mpl)    yes (SVG + bars)
+Actual result comparison   yes          yes (winner + rank)
+Top-5 drivers              yes          yes
+Unique Streamlit-only cap. NONE FOUND
+```
+
+Post-R3 re-diff: the two Streamlit files differed only in the constant
+block (`app.py` → `ml/` imports); all UI/logic identical. `notes.txt`
+references a nonexistent `app_test.py` (stale scratch note, kept as-is
+at root as harmless history).
+
+### 17.3 Removed inventory (~33.7 MB)
+
+- 2 replay trees (74 files, ~30 MB) + 2 emptied parent dirs
+- `app.py`, `legacy/streamlit_app.py`, `legacy/` dir
+- `gpt.txt` (3.9 MB, 34k lines)
+- 3 `docs/` duplicate files; 1 requirements line
+- History note: R1 git bundles of the removed nested `.git`s remain at
+  `/tmp/r1_git_backups/` (outside repo, ephemeral).
+
+### 17.4 Verification record
+
+- After each deletion: referencegrep clean (only legit `api.main:app`
+  match + audit history), targeted pytest green, final full `pytest`:
+  **67 passed, 4 xfailed (Monaco), 0 failed**.
+- Frontend: node 21/21, `tsc` 0, lint 0 errors + 1 kept warning, build ok.
+- Live smoke: `/health` 200, Bahrain 200 (VER/VER/0.8051), Monaco 500
+  identical traceback. Fixture sha unchanged. `py_compile` ok.
+- Secret/hygiene scan (patterns for keys/tokens/passwords, repo-wide
+  excl. caches/node_modules/.git): **0 hits**; no machine paths in
+  source; only env file is the ignored localhost `.env.local`.
+- **Behavioural differences detected: none.** No regressions; nothing restored.
+
+### 17.5 Newly discovered risks / deferred
+
+- The outside-session baseline commit tracks **1492 files incl. 1113
+  FastF1 cache blobs + 176 pkl/csv** — cache-in-git inflates the repo and
+  must be addressed (untrack + LFS/`.gitignore` strategy) in R7+; R6 did
+  not rewrite history or commit (81 deletions sit unstaged).
+- `notes.txt` staleness (`app_test.py`) noted, kept.
+- R7 owns: README, `.env.example`, command docs, formatter strategy,
+  and the cache-tracking decision above.
+
+### 17.6 R6 Definition of Done — status
+
+- [x] Streamlit status explicitly decided (retired, parity table §17.2)
+- [x] Useful functionality preserved (all in `ml/`+API+Next.js; debug evidence kept)
+- [x] Unnecessary duplication reduced (~33.7 MB, §17.3)
+- [x] Dead code removal justified (§17.1 evidence per item)
+- [x] Documentation reflects the supported path (§17.1; README deferred to R7)
+- [x] Regression suite passes (§17.4)
+
+**R6 is complete. Awaiting explicit approval before R7.**
+
+---
+
+## 18. R7 addendum — Tooling + Developer Experience (2026-09-08)
+
+### 18.1 Tracked FastF1 cache — findings and action
+
+- Baseline commit tracked **1113 `.ff1pkl` blobs** under
+  `data/raw/fastf1_cache/` (reproducible FastF1 session cache; largest
+  ~52 MB). Verified: zero non-cache files among them (extensions all
+  `.ff1pkl`); no app/test/script reads them at runtime (API/tests use
+  `data/processed` CSVs); `.fastf1_cache/` was never tracked.
+- Action: `git rm -r --cached data/raw/fastf1_cache` (**index only**).
+  Local 6.6 GB cache intact; `git ls-files` 1492 → **379**; `.gitignore`
+  now covers `/data/raw/fastf1_cache/` (root-scoped) with a no-LFS note.
+- Verified after: `git check-ignore` hits both cache paths; datasets/API
+  tests pass offline (18/18 subset); history untouched (no filter-repo/BFG;
+  baseline commit retains blobs historically).
+- Kept tracked: 14 processed/interim CSVs, 30 `.pkl`, 176 result CSVs,
+  fixture, source, docs.
+
+### 18.2 Docs / env / notes.txt
+
+- New root `README.md`: what the app does, canonical architecture, backend
+  + frontend setup/run, all test/typecheck/lint/build commands (== `make`
+  targets), dataset/model locations, cache-not-versioned rule, Monaco
+  defect, legacy-eval disclaimer, V2 plan pointers. Not a portfolio study.
+- All 13 README-required paths verified present. Stale Streamlit/legacy
+  setup references: none remain outside audit history.
+- New `frontend/.env.example` (localhost base only, no secrets);
+  `frontend/.gitignore` negation added so the example is tracked while
+  real `.env*` files stay ignored (verified both ways).
+- `notes.txt` verdict: REMOVE — stale scratch (done-XGBoost TODO,
+  nonexistent `app_test.py`); setup commands preserved in README + scripts.
+
+### 18.3 Dependencies / setup scripts
+
+- `requirements.txt`: only change is the R6 streamlit-line removal.
+  Audited imports: only `streamlit` was orphaned; `tabulate/signalrcore/
+  timple/PIL/scipy` have no direct importers but are transitive pins —
+  kept conservatively. No upgrades; sklearn/xgboost pins frozen.
+- `requirements-test.txt`, `frontend/package.json`: unchanged, match use.
+- `scripts/dev/{setup,run,clean}_{mac,windows}`: all reference canonical
+  paths (`api.main:app`, root `venv/`, `npm run dev`); no Streamlit/legacy/
+  stale paths found → preserved as-is. (`run_mac.sh` stays macOS-GUI-only;
+  `make backend-dev/frontend-dev` are the plain cross-platform equivalent.)
+
+### 18.4 Commands / formatting / hygiene
+
+- New root `Makefile` (single system): `backend-dev`, `frontend-dev`,
+  `test-python`, `test-frontend`, `typecheck`, `lint`, `build`,
+  `verify` (= full battery). `make verify` exit 0.
+- Formatting: no Python formatter/linter configured in-repo — documented
+  as-is per plan (no rewrite, no pre-commit hooks; frontend keeps
+  eslint + tsc).
+- Hygiene: index holds no DS_Store/pycache/.next/node_modules/venvs;
+  ignored working files verified (caches, `.env.local`, build output);
+  secret-pattern rescan: **0 hits**.
+
+### 18.5 Verification record
+
+- `make verify` exit 0 (pytest 67+4xf, node 21/21, tsc 0, lint 0 err +
+  1 kept warning, build success). Live smoke: `/health` 200, Bahrain 200
+  (VER/0.8051), Monaco 500 identical. Fixture sha unchanged; 30 `.pkl` /
+  14 CSVs intact, unmodified since R0.
+- **Behavioural differences detected: none.**
+
+### 18.6 Recommended staging/commit procedure (NOT executed — await approval)
+
+The worktree currently holds staged cache-untracking + unstaged R3–R7
+work. When approved, commit as logical boundaries (do NOT lump):
+
+```bash
+git status --short          # review first; expect only intended paths
+git add ml/ api/ tests/ requirements-test.txt
+git commit -m "refactor: reorganise ml modules and FastAPI backend (R3/R4)"
+git add frontend/ Makefile
+git commit -m "refactor: modularise prediction frontend; add dev commands (R5/R7)"
+git add README.md requirements.txt frontend/.env.example \
+  docs/V2_REPOSITORY_AUDIT.md .gitignore frontend/.gitignore
+git commit -m "docs: README, env example, hygiene (R1/R6/R7)"
+git rm -r --cached data/raw/fastf1_cache   # already staged; verify with git status
+git commit -m "chore: stop tracking FastF1 cache (R7)"
+```
+
+Deletions (`app.py`, `legacy/`, `repo/`, `gpt.txt`, `notes.txt`, doc
+dupes, shim) stage with the commits above via `git add -A` per boundary —
+verify each `git status` before committing. Never commit `.fastf1_cache/`,
+`data/raw/fastf1_cache/`, `node_modules/`, `.next/`, `.env.local`.
+
+### 18.7 R7 Definition of Done — status
+
+- [x] New engineer can find what/where/how-to-run-how-to-test (§18.2)
+- [x] Cache-in-git resolved without history rewrite (§18.1)
+- [x] Env example safe + ignored correctly (§18.2)
+- [x] Deps match canonical app, pins frozen (§18.3)
+- [x] One obvious command surface (§18.4)
+- [x] Formatter strategy explicit (§18.4)
+- [x] Full battery green with zero behaviour change (§18.5)
+
+**R7 is complete. Awaiting explicit approval before R8.**
+
+---
+
+## 19. R8 addendum — Full Regression Verification (2026-09-08, gate stage, no code changes*)
+
+(*One audit-doc section is the only file modified in R8.)
+
+### 19.1 Git / repository hygiene: PASS
+
+- Exactly one `.git`, no nested repos. Both FastF1 caches present locally,
+  both ignored, 1113 raw-cache blobs staged for untracking (pure deletions,
+  zero additions). `node_modules`, `.next`, `__pycache__`, `.env.local`
+  ignored; `.env.example` trackable. No tracked generated junk. Secret
+  rescan: **0 hits**. >50 MB entries exist only in HEAD history (the cache
+  being untracked) — none staged/tracked going forward. No commit, no
+  history rewrite.
+
+### 19.2 Fresh environments: PASS (with one documented caveat)
+
+- Fresh `/tmp/r8fresh` (py3.11) built from `requirements.txt` +
+  `requirements-test.txt`: pins resolve exactly (sklearn 1.8.0, xgboost
+  3.2.0, fastapi 0.135.1, fastf1 3.7.0). In it: imports ok, all 15 tuned
+  artifacts deserialize, `pytest` **67 passed, 4 xfailed in 9.67 s**,
+  `py_compile` over api/ml/all-42-scripts ok. No network F1 data needed.
+- Frontend: lockfile resolves, no invalid/missing (only optional
+  platform shims flagged extraneous — noise). `npm ci` deliberately NOT
+  run (would wipe the verified tree); gates below run on the documented
+  tree. tsc 0, lint 0 err + 1 kept warning, build success, node 21/21.
+
+### 19.3 Golden / API / models / datasets / contract: PASS
+
+- Full golden suite in both envs: ensemble + 3 model families × 5 laps ×
+  6 races — winners/ranks/top-5/reasons exact, raw probs within 1e-9.
+  Fixture sha `8e23031a…c1f65302` unchanged. **No regressions.**
+- API: OpenAPI shows exactly the 4 routes/methods; TestClient + live
+  uvicorn: `/health` 200, `/races` 104, Bahrain ensemble 200
+  (VER/VER/25/0.8051), hgb single 200, unknown-race 500 (legacy),
+  Monaco 500 identical NaN traceback (defect preserved).
+- Models: 30 `.pkl` present, aggregate sha `8723b9…` recorded, 0 modified
+  since R0, all load + score. Datasets: 14 CSVs, aggregate sha `f085f7…`
+  recorded, 0 modified; all laps 2019–2023 with 1-winner-per-race integrity.
+- Contract: frontend ModelIds == backend MODELS; ensemble response keys ==
+  frontend `EnsembleResult`; endpoint URLs asserted in api.test.ts.
+
+### 19.4 Workflow / xfails / architecture: PASS with findings
+
+- `make test-frontend/typecheck/lint/build` genuinely verified; `make
+  verify` exit 0. `make backend-dev` / `frontend-dev` construction
+  correct — frontend-dev served 200 live; backend-dev serves 200 when run
+  with a working interpreter (`PYTHON=<venv-python>`), no orphans left.
+- **Finding (environment, not repo): this machine's bare `python3`
+  (3.14 shim) produces no output and exits 0, so `make test-python` /
+  `backend-dev` with default `PYTHON=python3` are vacuous HERE.** Recipe
+  construction is correct for a normal machine; real pytest numbers above
+  come from working interpreters. Recommended follow-up (not applied in
+  R8 freeze): Makefile preflight asserting a functional interpreter
+  (e.g. `$(PYTHON) -c "import sys, pytest"`) and `--reload-dir api ml`
+  to avoid watching the 6.6 GB cache dir. Also: one transient `npm`
+  enoent during R8 re-verified green on immediate retry (infra noise).
+- xfails: exactly the 4 Monaco markers, all failing-as-expected with
+  intact rationale. No other xfails/skips. Warnings: Starlette/anyio
+  deprecation notices (upstream), node typeless-package notes (cosmetic).
+- Architecture: `ml/` has no FastAPI imports; frontend has no prediction
+  computation; no references to Streamlit/legacy/replay/deleted modules.
+- Secrets/hygiene: 0 hits, third consecutive stage.
+
+### 19.5 Phase-1 readiness: READY except one expected item
+
+- Parquet home (`data/processed/laps/season=…`) can coexist with legacy
+  CSVs; `scripts/` stage layout can evolve into ingestion modules;
+  `ml/` runtime boundaries don't conflict with ingestion/validation
+  layers; cache handling matches the Phase-1 strategy (local-only,
+  documented); `tests/` layout supports new data-platform tests.
+- **Gap: Phase-1 D0 requires `docs/FOUNDATION_REFACTOR_REPORT.md`, which
+  is R9's deliverable — by plan, not a surprise.** No other blockers.
+
+### 19.6 R8 pass criteria (all must hold)
+
+1. [x] Non-xfail tests pass (67 + 21, two envs) 2. [x] Golden equivalent
+3. [x] Fixture unchanged 4. [x] Models/datasets unchanged
+5. [x] Frontend builds 6. [x] API contract intact
+7. [x] Workflow succeeds (with the §19.4 caveat documented, not hidden)
+8. [x] No new regression 9. [x] No critical hygiene issue
+10. [x] No Foundation blocker for R9 (only the expected R9 report itself)
+
+**R8 PASSES. Awaiting explicit approval before R9.**

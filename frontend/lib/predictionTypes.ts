@@ -60,3 +60,7 @@ export type SingleModelResult = {
 };
 
 export type MainTab = "overview" | "table" | "chart" | "drivers";
+
+export type PredictionMode = "ensemble" | "single";
+
+export type ModelId = "logreg" | "hgb" | "xgboost";

@@ -2,13 +2,13 @@
 
 The app decides the final winner by majority vote across the three models at
 the latest checkpoint, breaking ties via XGBoost (see
-api/services/predictor.py::choose_final_prediction). These tests pin each
+ml/inference.py::choose_final_prediction). These tests pin each
 branch, including the exact decision-reason strings surfaced in the UI.
 """
 
 import pandas as pd
 
-from api.services.predictor import choose_final_prediction, run_ensemble_prediction
+from ml.inference import choose_final_prediction, run_ensemble_prediction
 
 
 def _frame(rows):

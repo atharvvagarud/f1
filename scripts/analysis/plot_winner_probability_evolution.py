@@ -1,23 +1,14 @@
+import sys
 import pandas as pd
 import joblib
 from pathlib import Path
 import matplotlib.pyplot as plt
 
-CHECKPOINTS = [5,10,15,20,25]
-MODELS = ["logreg","hgb","xgboost"]
-
-FEATURE_COLS = [
-    "position_x",
-    "session_time_x_seconds",
-    "gap_to_leader_seconds",
-    "lap_time_x_seconds",
-    "tyre_life_x",
-    "stint_x",
-    "pit_in_time_present",
-    "pit_out_time_present",
-    "track_status_x",
-    "compound_x",
-]
+# R3: constants single-sourced from the ml package (values unchanged).
+# Bootstrap the project root so `python scripts/...` invocations resolve `ml`.
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from ml.config import CHECKPOINTS, MODELS
+from ml.features import FEATURE_COLS
 
 def get_root():
     return Path(__file__).resolve().parents[2]

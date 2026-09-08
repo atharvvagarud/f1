@@ -19,7 +19,7 @@ import math
 
 import pytest
 
-from api.services.predictor import load_dataset
+from ml.inference import load_dataset
 from conftest import FIXTURE_PATH, FIXTURE_SHA256, _sha256, load_fixture
 
 

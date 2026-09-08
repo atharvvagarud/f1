@@ -78,11 +78,15 @@ logs/
 *.log
 
 # =========================
-# FastF1 runtime cache (NOT source data)
+# FastF1 caches (NOT version-controlled)
 # =========================
-# Root-scoped on purpose: data/raw/fastf1_cache/ is intentional
-# source cache and must stay tracked (see docs/V2_REPOSITORY_AUDIT.md §7).
+# /.fastf1_cache/ is the runtime HTTP cache. /data/raw/fastf1_cache/ holds
+# reproducible .ff1pkl session blobs (removed from the index in R7; the
+# baseline commit retains them historically). Both stay local-only so the
+# working tree runs offline; neither belongs in Git or Git LFS.
+# Processed datasets (data/processed, data/interim) remain tracked.
 /.fastf1_cache/
+/data/raw/fastf1_cache/
 
 # =========================
 # Temporary files
@@ -95,7 +99,7 @@ logs/
 # =========================
 # Intentional artifacts (do NOT ignore)
 # =========================
-# data/processed, data/interim, data/raw/fastf1_cache,
+# data/processed, data/interim (but NOT data/raw/fastf1_cache/),
 # results/models, results subdirectories and
 # tests/fixtures/legacy_predictions.json are part of the
 # R0 baseline and must remain tracked. Do not add *.pkl,
