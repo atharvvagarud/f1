@@ -3,6 +3,8 @@
 > **Stage:** R9 — Foundation Readiness / Final Handoff (final stage of
 > `V2_FOUNDATION_REFACTOR.md`).
 > **Date:** 2026-09-08.
+> **Historical record:** Phase 0 is COMPLETE; this document records the
+> R9-handoff state. Current status lives in `README.md`.
 > **Rule compliance:** No Phase 1 work. No model retraining, no artifact or
 > dataset modification, no fixture regeneration, no prediction-semantics
 > change, no probability normalisation, no new infrastructure.

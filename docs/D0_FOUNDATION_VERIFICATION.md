@@ -2,6 +2,8 @@
 
 > **Plan:** `V2_PHASE_1_DATA_PLATFORM.md`, stage D0 only.
 > **Date:** 2026-09-08.
+> **Historical record:** D0 is COMPLETE; this document records the D0-time
+> state. Current status lives in `README.md`.
 > **Authoritative inputs read completely:** `V2_PHASE_1_DATA_PLATFORM.md`
 > (all 2329 lines), `docs/FOUNDATION_REFACTOR_REPORT.md`,
 > `docs/V2_REPOSITORY_AUDIT.md` (R0–R8 record).
@@ -46,6 +48,14 @@ block D1–D3 ingestion work, but it blocks any clean commit until re-applied.
 The `.gitignore` entries (`/.fastf1_cache/`, `/data/raw/fastf1_cache/`) are
 correct and verified via `git check-ignore`; they take effect for untracked
 files once the blobs leave the index.
+
+> **Post-D0 note (D1, 2026-09-08): RESOLVED.** Outside-session commits
+> `5a4001e` (1113 cache-blob deletions), `999076b` (foundation refactor),
+> and `5e4c72c` (this document) landed after D0. HEAD now holds 317 files
+> with **0** `.ff1pkl` blobs and the index holds **0**; the worktree cache
+> (6.6 GB) is intact and ignored. No remediation remains — future commits
+> must simply keep cache blobs out (verified via `git status` + `git
+> ls-files | grep -c ff1pkl` → 0).
 
 ---
 

@@ -2,6 +2,8 @@
 
 > **Stage:** R0 — Baseline & Inventory (V2_FOUNDATION_REFACTOR.md)
 > **Date:** 2026-09-08
+> **Historical record:** this document records the R0 baseline state
+> (pre-refactor). Current status lives in `README.md`.
 > **Rule compliance:** No refactoring performed. No models retrained or modified.
 > No prediction behaviour changed. No V2 features implemented.
 > Only additions: this document and `tests/fixtures/legacy_predictions.json`

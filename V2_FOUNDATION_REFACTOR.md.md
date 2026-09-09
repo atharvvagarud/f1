@@ -6,6 +6,9 @@
 >
 > **Status:** Pre-V2 Foundation Refactor
 >
+> **Historical record:** the Phase-0 plan is COMPLETE. Current status lives
+> in `README.md`; current architecture in `docs/DATA_PLATFORM_ARCHITECTURE.md`.
+>
 > **Primary rule:** Refactor the existing system without changing its intended behaviour, predictions, model methodology, or user-facing functionality.
 
 ---

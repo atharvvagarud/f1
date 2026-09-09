@@ -1,46 +1,96 @@
-# F1 In-Race Winner Prediction
+# F1 Intelligence — Race Intelligence Platform
 
-Predict the eventual winner of a historical Formula 1 race (seasons
-2019–2023) from an in-race snapshot at lap 5 / 10 / 15 / 20 / 25, using
-tuned Logistic Regression, HistGradientBoosting and XGBoost pipelines plus
-a majority-vote ensemble (XGBoost tie-break).
+> **Status: Phase 0 (Foundation Refactor) COMPLETE · Phase 1 (Historical Data
+> Platform) COMPLETE & FROZEN · Phase 2 (Temporal Feature Engine) NOT
+> STARTED.** This repository contains two systems: the frozen legacy
+> university predictor (**V1**, still serving) and the new canonical data
+> platform (**V2**, validated, no prediction models yet). Nothing below
+> claims V2 predictive performance — no V2 model has been trained.
 
-> Status: working foundation under behaviour-preserving refactor towards
-> F1 Intelligence v2. See `V2_FOUNDATION_REFACTOR.md` (current plan) and
-> `docs/V2_REPOSITORY_AUDIT.md` (baseline + per-stage record). The stored
-> model evaluation is **legacy methodology (race-grouped CV, not temporal
-> validation)** — do not present it as final V2 performance.
+## Vision (roadmap — planned, not implemented)
 
-## Architecture (canonical)
+F1 Intelligence aims at historical lap-by-lap race intelligence:
+probabilistic in-race predictions, historical replay, race simulation,
+strategy analysis and explainability. All of these are **ROADMAP / PLANNED**:
+Monte Carlo, strategy engine, replay, RaceState, V2 prediction models,
+calibration, MLOps and any Race Engineer AI do **not** exist in this repo.
+
+## Currently implemented
+
+- Foundation refactor: FastAPI/ML separation, characterization tests,
+  golden regression fixtures.
+- **V2 Phase-1 data platform (frozen):** 1950–2025 historical results
+  platform (76 seasons, 1,149 races, 25,784 results); 2018–2025 rich FastF1
+  platform (173 Race sessions); resumable/idempotent ingestion with
+  manifests; canonical IDs and machine-readable contracts; **189,420
+  canonical lap-end states**; temporal weather/race-control/pit/stint
+  enrichment; separated outcome labels (3,458 race-drivers); deterministic
+  builds; per-stage future-mutation leakage tests; legacy comparison;
+  telemetry deferral ADR; final validation gate (44 findings, 0 failed,
+  0 unresolved BLOCKERs — `docs/PHASE1_FINAL_VALIDATION.md`).
+- **V1 legacy predictor (frozen):** tuned Logistic Regression /
+  HistGradientBoosting / XGBoost pipelines plus majority-vote ensemble
+  (XGBoost tie-break) over lap 5/10/15/20/25 snapshots, served by the
+  FastAPI backend + Next.js frontend. Race-grouped CV methodology (not
+  temporal validation). Do not modify or retrain.
+
+## Architecture (implemented only)
 
 ```text
-ml/                    # shared ML library: config, features, inference
-  config.py            # checkpoints, models, artifact paths (single source)
-  features.py          # inference FEATURE_COLS (order frozen by pipelines)
-  inference.py         # loading + single-model + ensemble (framework-free)
-api/                   # FastAPI backend: main → routes → schemas → services → ml
-  main.py / routes.py / schemas.py / services/prediction_service.py
-frontend/              # Next.js + React + TypeScript + Tailwind
-  app/page.tsx         # composes features/prediction (hook + components)
-  features/prediction/ # usePrediction hook, result components, transforms
-  lib/api.ts           # sole backend client (NEXT_PUBLIC_API_BASE)
-scripts/               # standalone stage CLIs: data → cleaning → models → baselines → analysis
-data/processed|interim # checkpoint datasets (tracked)
-results/models         # 30 tuned pipelines (tracked) + historical evaluation outputs
-tests/                 # pytest regression suite + tests/fixtures/legacy_predictions.json
+Jolpica / Ergast-compatible historical data (1950–2025, Tier-B)
+              +
+FastF1 rich timing data, Race sessions 2018–2025 (Tier-A)
+              ↓
+      ingestion / normalization (v2/, manifests, atomic writes)
+              ↓
+     D6 canonical lap state (189,420 rows, state_time_s = LAP_END)
+              ↓
+    D7 temporal enrichment (weather / race control / pit / stint)
+              ↓
+  D9 structural derived state (189,420 rows)
+              ↓
+      Phase 2 feature engine (NOT STARTED)
+
+official results  →  D9 outcome labels, race×driver (3,458 rows, separate)
+
+FastF1 raw telemetry/cache  →  DEFERRED by ADR-0001 (source-only, ~16 GB)
+
+V1 serving (frozen): ml/ + api/ + frontend/ over data/processed/lap*/
 ```
 
-Retired in R6: the Streamlit UI (`app.py`) — full parity with Next.js +
-FastAPI, no unique capability. Use the web app below.
+## Reproducibility
 
-## Prerequisites
-
-- Python 3.11+ with `pip install -r requirements.txt`
+- Python 3.11; create an environment and install the exact pins:
+  `pip install -r requirements.txt -r requirements-test.txt`
   (pins include scikit-learn==1.8.0 / xgboost==3.2.0 — **required** to
-  unpickle the saved pipelines) plus `-r requirements-test.txt` for tests.
-- Node.js 22 + npm for `frontend/` (dependencies in `frontend/package.json`).
+  unpickle the saved legacy pipelines).
+- Node.js 22 + npm for `frontend/` (`npm install`).
+- If `python3` on your machine is a non-functional shim, override the
+  interpreter explicitly, e.g. `make PYTHON=/path/to/python3.11 <target>`
+  (see `make check-python`).
+- Optional env vars: `V2_PROJECT_ROOT` (explicit repo root for V2 tooling),
+  `V2_ALLOW_NETWORK=1` (explicit opt-in for live FastF1 ingestion only),
+  `NEXT_PUBLIC_API_BASE` (frontend → backend URL, see
+  `frontend/.env.example`).
 
-## Run the backend
+## Data instructions
+
+Full guide: [`data/README.md`](data/README.md) (coverage, sources, entities,
+grain/clock, label separation, build/validate commands, manifests, reports,
+telemetry decision, limitations, Phase-2 input contract).
+
+In short: canonical Parquet lives under `data/v2/processed/` (gitignored,
+reproducible — do not commit it); ingestion manifests under
+`data/v2/raw/manifests/`; validation evidence under
+`data/v2/reports/data_quality/`; the FastF1 cache under
+`data/raw/fastf1_cache/` is local-only source infrastructure (~16 GB, never
+committed, never quoted as dataset size — canonical data is ~74 MB).
+Validate an existing build with `python -m v2.d11` (acceptance gate);
+rebuild deterministically with `python -m v2.d6/d7/d9 --all --validate`.
+A full rich FastF1 rebuild needs network, takes substantial time and grows
+the cache — don't rerun it casually.
+
+## Run the backend (V1, frozen behaviour)
 
 ```bash
 python -m uvicorn api.main:app --reload --port 8000
@@ -61,7 +111,7 @@ Point it at the backend with `NEXT_PUBLIC_API_BASE` (see
 ## Verify (or `make verify`)
 
 ```bash
-python -m pytest tests/ -q                                  # backend + ML safety net (71 tests)
+python -m pytest tests/ -q                                  # backend + ML safety net (320 tests)
 node --test lib/predictionHelpers.test.ts lib/api.test.ts \
   features/prediction/lib/predictionTransforms.test.ts      # frontend tests (21, from frontend/)
 ./node_modules/.bin/tsc --noEmit -p .                       # typecheck (from frontend/)
@@ -71,25 +121,36 @@ npm run build                                               # production build (
 
 ## Data, models, caches
 
-- Datasets: `data/processed/lap{5,10,15,20,25}/base/dataset_clean.csv`
-  (104 races, 2019–2023) + `data/interim/` mirrors. Tracked, do not modify.
-- Models: `results/models/{logreg,hgb,xgboost}_lap{LAP}_multilap/`
+- V1 datasets: `data/processed/lap{5,10,15,20,25}/base/dataset_clean.csv`
+  (2019–2023 checkpoints). Tracked, do not modify.
+- V1 models: `results/models/{logreg,hgb,xgboost}_lap{LAP}_multilap/`
   (`model_tuned.pkl` preferred at runtime). Tracked, do not modify/retrain.
+- V2 canonical data: `data/v2/` — generated, ignored, reproducible.
+  Do not add to Git/LFS.
 - FastF1 caches (`.fastf1_cache/`, `data/raw/fastf1_cache/`) are
-  **local-only and not version-controlled** (reproducible blobs; the app
-  and tests run offline from the processed datasets). Do not add to Git/LFS.
+  **local-only and not version-controlled**. Do not add to Git/LFS.
 - Golden fixtures: `tests/fixtures/legacy_predictions.json` — byte-frozen
   R0 baseline; never regenerate to hide drift.
 
-## Known legacy defect
+## Known legacy defect (characterized, frozen)
 
 Monaco 2022 predictions return HTTP 500: NaN `tyre_life_x` in the source
 rows breaks JSON serialization. Documented in `docs/V2_REPOSITORY_AUDIT.md`
-(§5.1) and pinned by `xfail` tests. Do not fix opportunistically — it has
-a planned home in later V2 work.
+(§5.1) and pinned by `xfail` tests. Do not fix opportunistically.
 
-## V2 plans
+## Docs index
 
-`V2_FOUNDATION_REFACTOR.md` (active) · `V2_PHASE_1_DATA_PLATFORM.md` ·
-`V2_PHASE_2_TEMPORAL_FEATURE_ENGINE.md` · `V2_PHASE_3_MODEL_LAB.md`
-(future phases — not started). Reproducibility notes: `req.md`.
+- `data/README.md` — data-platform README + Phase-2 handoff (start here
+  for data)
+- `docs/DATA_PLATFORM_ARCHITECTURE.md` — accepted architecture (D0–D11)
+- `docs/DATASET_V2_REPORT.md` — measured dataset report
+- `docs/PHASE1_FINAL_VALIDATION.md` — D11 acceptance gate (44/0/0)
+- `docs/PHASE1_EXIT_REPORT.md` — Phase-1 exit record (freeze, DoD, handoff)
+- `docs/LEGACY_V2_DATASET_COMPARISON.md` — V1↔V2 audit (D10)
+- `docs/adr/ADR-0001-telemetry-retention.md` — telemetry deferral decision
+- `V2_PHASE_1_DATA_PLATFORM.md` — Phase-1 plan (complete)
+- `V2_PHASE_2_TEMPORAL_FEATURE_ENGINE.md` · `V2_PHASE_3_MODEL_LAB.md` —
+  future phases (not started)
+- `V2_FOUNDATION_REFACTOR.md` · `docs/V2_REPOSITORY_AUDIT.md` ·
+  `docs/FOUNDATION_REFACTOR_REPORT.md` — foundation history
+- `req.md` — reproducibility notes

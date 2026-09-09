@@ -89,6 +89,16 @@ logs/
 /data/raw/fastf1_cache/
 
 # =========================
+# V2 canonical data (generated, NOT version-controlled)
+# =========================
+# data/v2/ holds manifests, interim frames and canonical Parquet built by
+# the Phase-1 pipeline (D3+). All generated: reproducible from source via
+# versioned ingestion, never hand-edited, never committed. V2 *code*
+# (v2/*.py) and contract tests remain tracked.
+# data/processed + data/interim (legacy baseline) remain tracked.
+/data/v2/
+
+# =========================
 # Temporary files
 # =========================
 *.tmp
