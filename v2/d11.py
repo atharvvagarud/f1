@@ -1732,7 +1732,11 @@ def check_git(root: Path):
 def check_regression(root: Path, skip_frontend_build=False):
     findings, data = [], {}
     t0 = time.perf_counter()
-    py = _run_pytest(root, ["tests/"], timeout_s=1200)
+    # The regression suite grew past the original 1200 s budget once the
+    # F15 canonical-matrix rebuild tests were added (offline runtime
+    # ~1,400 s). A timeout here reports a false BLOCKER; raise the budget
+    # so a genuinely green suite is not killed by the harness.
+    py = _run_pytest(root, ["tests/"], timeout_s=3600)
     data["pytest"] = {"returncode": py["returncode"],
                       "elapsed_s": py["elapsed_s"],
                       "tail": py["tail"][-1500:]}

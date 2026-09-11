@@ -1,0 +1,133 @@
+{
+  "ablation_config": {
+    "ablation_config_version": "v1",
+    "all_84_equals_manifest": true,
+    "config_hash": "c88bcbaafe72ff2a615f24563d631f4e313cbc1d41e23b3818d3f9d86f6b087c",
+    "config_sha256": "bb59d936b14552779a4ab192c4d3e9c9d1e2ff31e2ef8608b30c44ed86f2f5a7",
+    "fixtures": 11,
+    "path": "data/v2/processed/model_matrix/matrix_version=v1/ablation_config.json"
+  },
+  "features": {
+    "feature_set_version": "v8",
+    "predictive_count": 84,
+    "primary_group_counts": {
+      "ENVIRONMENT_HISTORY": 9,
+      "FIELD_CONTEXT": 12,
+      "GAPS": 8,
+      "INTERACTIONS": 3,
+      "PACE": 12,
+      "PRE_RACE_PRIORS": 13,
+      "RATES_MOMENTUM": 4,
+      "STATE": 23
+    },
+    "registry_fingerprint": "a04d5475e8ac113bfffe8af3ba35db5dedf127d0306803dcb71332c5be863fe6"
+  },
+  "freeze": {
+    "name": "temporal_feature_engine",
+    "phase": 2,
+    "report": "docs/PHASE2_FINAL_REPORT.md",
+    "status": "COMPLETE_FROZEN"
+  },
+  "labels": {
+    "label_count": 7,
+    "label_set_version": "v1",
+    "names": [
+      "final_position",
+      "gains_position_by_finish",
+      "is_podium",
+      "is_winner",
+      "loses_position_by_finish",
+      "position_change_from_state",
+      "scored_points"
+    ],
+    "registry_fingerprint": "0a4d0bb6369f880add679731f46e992f0bee98b2930caeefa392297cf29515cd"
+  },
+  "matrix": {
+    "columns": 106,
+    "content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+    "feature_registry_fingerprint": "a04d5475e8ac113bfffe8af3ba35db5dedf127d0306803dcb71332c5be863fe6",
+    "label_columns": 7,
+    "label_companion_columns": 1,
+    "label_registry_fingerprint": "0a4d0bb6369f880add679731f46e992f0bee98b2930caeefa392297cf29515cd",
+    "manifest_path": "data/v2/processed/model_matrix/matrix_version=v1/manifest.json",
+    "manifest_sha256": "b6a63f5eb0577906ee6496d05c4f7a20c3eb79f2f8048d4ff06acb764d6cbc62",
+    "matrix_version": "v1",
+    "metadata_columns": 9,
+    "ordinal_eligible_true": 178963,
+    "parquet_sha256": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3",
+    "path": "data/v2/processed/model_matrix/matrix_version=v1/model_matrix.parquet",
+    "predictive_columns": 84,
+    "rows": 189420,
+    "schema_hash": "b1ccbc62380da8e841e7b2d78d8d37aac2b67c72b0306a2495fbabc3fb224f0e",
+    "source_fingerprints": {
+      "d9_states": {
+        "files": 8,
+        "sha256": "66711cb632e920d89896f5a3b7ea326ae91d152b6cc3e107d6f65969706a5719"
+      },
+      "hist_races": {
+        "files": 76,
+        "sha256": "b6cb0359b8ea8608f6fdf9404304d5cb2a516b3d1a4e450c81885706a1b2c19e"
+      },
+      "hist_results": {
+        "files": 76,
+        "sha256": "f6ea01903f6e948d6c7ab6d4228099fdcef44ac57f0fba6a3b5f80bb6b6ca244"
+      },
+      "labels": {
+        "files": 8,
+        "sha256": "fe17b2279f0fe7eae92dea5608c7bad1c3dacfe5ef18998a72e36c116882bb47"
+      },
+      "pit_stops": {
+        "files": 173,
+        "sha256": "8f0f37633c92f5128851ecef858abcda3ec116f19b3207ff937d7453359b82f1"
+      },
+      "races": {
+        "files": 173,
+        "sha256": "513e2beb74a54bf17237dc9192b2e69a10d7ab494bf7e004afef194088ec027f"
+      },
+      "results": {
+        "files": 173,
+        "sha256": "1ba568a4682b6a86c579341da1423aa78788eb1d6055597ec3660f002ff28cd5"
+      }
+    },
+    "task_eligibility_columns": 5
+  },
+  "next_stage": "M0 \u2014 Model Lab Handoff + Temporal Evaluation Protocol Freeze",
+  "phase1": {
+    "commit": "2fa0a7c54f9fbcf7dd52fe71ea9ced620304a4ee",
+    "complete": 171,
+    "d9_states": 189420,
+    "dataset_tag": "v2-data-platform-phase1",
+    "partial": 2,
+    "partial_race_ids": [
+      "2021-r12-R",
+      "2022-r18-R"
+    ],
+    "race_driver_outcomes": 3458,
+    "rich_race_sessions": 173,
+    "rich_seasons": [
+      2018,
+      2025
+    ],
+    "telemetry": "DEFERRED (ADR-0001)"
+  },
+  "tests": {
+    "d11_historical_complete": {
+      "blockers": 0,
+      "failed": 0,
+      "findings": 44,
+      "fresh_env": "included"
+    },
+    "d11_offline": {
+      "blockers": 0,
+      "failed": 0,
+      "findings": 43,
+      "fresh_env": "skipped"
+    },
+    "frontend_build": "pass",
+    "frontend_passed": 21,
+    "lint": "pass (1 warning)",
+    "python_passed": 861,
+    "python_xfailed": 4,
+    "typecheck": "pass"
+  }
+}

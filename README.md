@@ -1,11 +1,13 @@
 # F1 Intelligence — Race Intelligence Platform
 
 > **Status: Phase 0 (Foundation Refactor) COMPLETE · Phase 1 (Historical Data
-> Platform) COMPLETE & FROZEN · Phase 2 (Temporal Feature Engine) NOT
-> STARTED.** This repository contains two systems: the frozen legacy
-> university predictor (**V1**, still serving) and the new canonical data
-> platform (**V2**, validated, no prediction models yet). Nothing below
-> claims V2 predictive performance — no V2 model has been trained.
+> Platform) COMPLETE & FROZEN · Phase 2 (Temporal Feature Engine) COMPLETE &
+> FROZEN · Phase 3 (Model Lab) NOT STARTED (next stage M0).** This repository
+> contains two systems: the frozen legacy university predictor (**V1**, still
+> serving) and the new canonical data/feature platform (**V2**, validated, no
+> prediction models yet). Nothing below claims V2 predictive performance — no
+> V2 model has been trained. Phase-2 freeze report:
+> `docs/PHASE2_FINAL_REPORT.md`.
 
 ## Vision (roadmap — planned, not implemented)
 
@@ -28,6 +30,18 @@ calibration, MLOps and any Race Engineer AI do **not** exist in this repo.
   builds; per-stage future-mutation leakage tests; legacy comparison;
   telemetry deferral ADR; final validation gate (44 findings, 0 failed,
   0 unresolved BLOCKERs — `docs/PHASE1_FINAL_VALIDATION.md`).
+- **V2 Phase-2 temporal feature engine (frozen):** frozen temporal/
+  synchronization contract; feature registry `FEATURE_SET_VERSION=v8`
+  (**84** predictive definitions) separated from labels
+  `LABEL_SET_VERSION=v1` (**7** targets); leakage/parity red-team audit
+  (20 threat classes); canonical model-ready matrix `MATRIX_VERSION=v1`
+  (**189,420 × 106**) at
+  `data/v2/processed/model_matrix/matrix_version=v1/` + manifest;
+  manifest-controlled loaders; ordinal eligibility protected
+  (178,963/189,420); ablation/experiment config `ABLATION_CONFIG_VERSION=v1`
+  + 11 fixtures; telemetry stays DEFERRED (ADR-0001); regression
+  861 passed / 4 xfailed; D11 offline 43/0/0. Full freeze:
+  `docs/PHASE2_FINAL_REPORT.md`.
 - **V1 legacy predictor (frozen):** tuned Logistic Regression /
   HistGradientBoosting / XGBoost pipelines plus majority-vote ensemble
   (XGBoost tie-break) over lap 5/10/15/20/25 snapshots, served by the
@@ -49,9 +63,15 @@ FastF1 rich timing data, Race sessions 2018–2025 (Tier-A)
               ↓
   D9 structural derived state (189,420 rows)
               ↓
-      Phase 2 feature engine (NOT STARTED)
+  Phase-2 feature engine: temporal operators + families F4–F11
+              ↓
+  84-feature predictive surface → F15 canonical matrix
+  (data/v2/processed/model_matrix/matrix_version=v1/, 189,420 × 106)
+              ↓
+  F16 ablation config + fixtures → Phase 3 Model Lab (NOT STARTED; M0 next)
 
 official results  →  D9 outcome labels, race×driver (3,458 rows, separate)
+                  →  F13 label contracts → F15 label join
 
 FastF1 raw telemetry/cache  →  DEFERRED by ADR-0001 (source-only, ~16 GB)
 
@@ -111,12 +131,19 @@ Point it at the backend with `NEXT_PUBLIC_API_BASE` (see
 ## Verify (or `make verify`)
 
 ```bash
-python -m pytest tests/ -q                                  # backend + ML safety net (320 tests)
+python -m pytest tests/ -q                                  # backend + ML safety net + Phase-2 (861 passed, 4 xfailed)
 node --test lib/predictionHelpers.test.ts lib/api.test.ts \
   features/prediction/lib/predictionTransforms.test.ts      # frontend tests (21, from frontend/)
 ./node_modules/.bin/tsc --noEmit -p .                       # typecheck (from frontend/)
 npm run lint                                                # eslint (from frontend/)
 npm run build                                               # production build (from frontend/)
+```
+
+Phase-2 build/validate (from the repo root, offline):
+
+```bash
+python -m v2.features.build_matrix [--force]   # canonical matrix (idempotent)
+python -m v2.d11 --skip-fresh-env              # D11 acceptance gate (offline; 43/0/0)
 ```
 
 ## Data, models, caches
@@ -146,11 +173,17 @@ rows breaks JSON serialization. Documented in `docs/V2_REPOSITORY_AUDIT.md`
 - `docs/DATASET_V2_REPORT.md` — measured dataset report
 - `docs/PHASE1_FINAL_VALIDATION.md` — D11 acceptance gate (44/0/0)
 - `docs/PHASE1_EXIT_REPORT.md` — Phase-1 exit record (freeze, DoD, handoff)
+- `docs/PHASE2_FINAL_REPORT.md` — Phase-2 final report + freeze (start here
+  for features/labels/matrix)
+- `docs/PHASE2_CANONICAL_MATRIX.md` · `docs/PHASE2_ABLATION_CONFIG.md` ·
+  `docs/PHASE2_LEAKAGE_PARITY_AUDIT.md` · `docs/PHASE2_TEMPORAL_SEMANTICS.md`
+  — Phase-2 matrix, ablation config, leakage/parity audit, temporal contract
+- `docs/generated/phase2_freeze_manifest.json` — machine-readable freeze
 - `docs/LEGACY_V2_DATASET_COMPARISON.md` — V1↔V2 audit (D10)
 - `docs/adr/ADR-0001-telemetry-retention.md` — telemetry deferral decision
 - `V2_PHASE_1_DATA_PLATFORM.md` — Phase-1 plan (complete)
-- `V2_PHASE_2_TEMPORAL_FEATURE_ENGINE.md` · `V2_PHASE_3_MODEL_LAB.md` —
-  future phases (not started)
+- `V2_PHASE_2_TEMPORAL_FEATURE_ENGINE.md` — Phase-2 plan (complete/frozen)
+- `V2_PHASE_3_MODEL_LAB.md` — Phase-3 plan (not started; M0 next)
 - `V2_FOUNDATION_REFACTOR.md` · `docs/V2_REPOSITORY_AUDIT.md` ·
   `docs/FOUNDATION_REFACTOR_REPORT.md` — foundation history
 - `req.md` — reproducibility notes
