@@ -1,0 +1,394 @@
+{
+  "chronology": {
+    "key": [
+      "season",
+      "round_no",
+      "race_id"
+    ],
+    "races": 173,
+    "seasons": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "dependency_availability": {
+    "catboost": false,
+    "lifelines": false,
+    "lightgbm": false,
+    "mord": false,
+    "sklearn": true,
+    "tabpfn": false,
+    "torch": false,
+    "xgboost": true
+  },
+  "development_folds": [
+    {
+      "fold_id": "D1",
+      "train_races": 81,
+      "train_seasons": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "train_states": 88123,
+      "train_tasks": {
+        "final_position": {
+          "coverage": 82372,
+          "eligible": 82372,
+          "max": 20,
+          "min": 1
+        },
+        "gain": {
+          "eligible": 87971,
+          "negatives": 52855,
+          "positive_rate": 0.399177,
+          "positives": 35116
+        },
+        "loss": {
+          "eligible": 87971,
+          "negatives": 63139,
+          "positive_rate": 0.282275,
+          "positives": 24832
+        },
+        "podium": {
+          "eligible": 88123,
+          "negatives": 73539,
+          "positive_rate": 0.165496,
+          "positives": 14584
+        },
+        "points": {
+          "eligible": 88123,
+          "negatives": 39665,
+          "positive_rate": 0.54989,
+          "positives": 48458
+        },
+        "winner": {
+          "eligible": 88123,
+          "negatives": 83261,
+          "positive_rate": 0.055173,
+          "positives": 4862
+        }
+      },
+      "validation_races": 22,
+      "validation_season": 2022,
+      "validation_states": 23577,
+      "validation_tasks": {
+        "final_position": {
+          "coverage": 22087,
+          "eligible": 22087,
+          "max": 20,
+          "min": 1
+        },
+        "gain": {
+          "eligible": 23536,
+          "negatives": 13784,
+          "positive_rate": 0.414344,
+          "positives": 9752
+        },
+        "loss": {
+          "eligible": 23536,
+          "negatives": 17046,
+          "positive_rate": 0.275748,
+          "positives": 6490
+        },
+        "podium": {
+          "eligible": 23577,
+          "negatives": 19694,
+          "positive_rate": 0.164694,
+          "positives": 3883
+        },
+        "points": {
+          "eligible": 23577,
+          "negatives": 10651,
+          "positive_rate": 0.548246,
+          "positives": 12926
+        },
+        "winner": {
+          "eligible": 23577,
+          "negatives": 22282,
+          "positive_rate": 0.054926,
+          "positives": 1295
+        }
+      }
+    },
+    {
+      "fold_id": "D2",
+      "train_races": 103,
+      "train_seasons": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "train_states": 111700,
+      "train_tasks": {
+        "final_position": {
+          "coverage": 104459,
+          "eligible": 104459,
+          "max": 20,
+          "min": 1
+        },
+        "gain": {
+          "eligible": 111507,
+          "negatives": 66639,
+          "positive_rate": 0.402378,
+          "positives": 44868
+        },
+        "loss": {
+          "eligible": 111507,
+          "negatives": 80185,
+          "positive_rate": 0.280897,
+          "positives": 31322
+        },
+        "podium": {
+          "eligible": 111700,
+          "negatives": 93233,
+          "positive_rate": 0.165327,
+          "positives": 18467
+        },
+        "points": {
+          "eligible": 111700,
+          "negatives": 50316,
+          "positive_rate": 0.549543,
+          "positives": 61384
+        },
+        "winner": {
+          "eligible": 111700,
+          "negatives": 105543,
+          "positive_rate": 0.055121,
+          "positives": 6157
+        }
+      },
+      "validation_races": 22,
+      "validation_season": 2023,
+      "validation_states": 24422,
+      "validation_tasks": {
+        "final_position": {
+          "coverage": 23361,
+          "eligible": 23361,
+          "max": 20,
+          "min": 1
+        },
+        "gain": {
+          "eligible": 24382,
+          "negatives": 14815,
+          "positive_rate": 0.39238,
+          "positives": 9567
+        },
+        "loss": {
+          "eligible": 24382,
+          "negatives": 17061,
+          "positive_rate": 0.300262,
+          "positives": 7321
+        },
+        "podium": {
+          "eligible": 24422,
+          "negatives": 20447,
+          "positive_rate": 0.162763,
+          "positives": 3975
+        },
+        "points": {
+          "eligible": 24422,
+          "negatives": 11176,
+          "positive_rate": 0.54238,
+          "positives": 13246
+        },
+        "winner": {
+          "eligible": 24422,
+          "negatives": 23097,
+          "positive_rate": 0.054254,
+          "positives": 1325
+        }
+      }
+    },
+    {
+      "fold_id": "D3",
+      "train_races": 125,
+      "train_seasons": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "train_states": 136122,
+      "train_tasks": {
+        "final_position": {
+          "coverage": 127820,
+          "eligible": 127820,
+          "max": 20,
+          "min": 1
+        },
+        "gain": {
+          "eligible": 135889,
+          "negatives": 81454,
+          "positive_rate": 0.400584,
+          "positives": 54435
+        },
+        "loss": {
+          "eligible": 135889,
+          "negatives": 97246,
+          "positive_rate": 0.284372,
+          "positives": 38643
+        },
+        "podium": {
+          "eligible": 136122,
+          "negatives": 113680,
+          "positive_rate": 0.164867,
+          "positives": 22442
+        },
+        "points": {
+          "eligible": 136122,
+          "negatives": 61492,
+          "positive_rate": 0.548258,
+          "positives": 74630
+        },
+        "winner": {
+          "eligible": 136122,
+          "negatives": 128640,
+          "positive_rate": 0.054965,
+          "positives": 7482
+        }
+      },
+      "validation_races": 24,
+      "validation_season": 2024,
+      "validation_states": 26606,
+      "validation_tasks": {
+        "final_position": {
+          "coverage": 25766,
+          "eligible": 25766,
+          "max": 20,
+          "min": 1
+        },
+        "gain": {
+          "eligible": 26578,
+          "negatives": 16449,
+          "positive_rate": 0.381105,
+          "positives": 10129
+        },
+        "loss": {
+          "eligible": 26578,
+          "negatives": 19172,
+          "positive_rate": 0.278652,
+          "positives": 7406
+        },
+        "podium": {
+          "eligible": 26606,
+          "negatives": 22274,
+          "positive_rate": 0.16282,
+          "positives": 4332
+        },
+        "points": {
+          "eligible": 26606,
+          "negatives": 12179,
+          "positive_rate": 0.542246,
+          "positives": 14427
+        },
+        "winner": {
+          "eligible": 26606,
+          "negatives": 25162,
+          "positive_rate": 0.054273,
+          "positives": 1444
+        }
+      }
+    }
+  ],
+  "final_boundaries": {
+    "final_fit_races": 149,
+    "final_fit_seasons": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "final_fit_states": 162728,
+    "holdout_races": 24,
+    "holdout_season": 2025,
+    "holdout_states": 26692
+  },
+  "note": "counts only; no model and no metric",
+  "phase2_freeze": {
+    "ablation_config_sha256": "bb59d936b14552779a4ab192c4d3e9c9d1e2ff31e2ef8608b30c44ed86f2f5a7",
+    "ablation_config_version": "v1",
+    "columns": 106,
+    "content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+    "content_hash_recomputed": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+    "feature_set_version": "v8",
+    "label_set_version": "v1",
+    "manifest_sha256": "b6a63f5eb0577906ee6496d05c4f7a20c3eb79f2f8048d4ff06acb764d6cbc62",
+    "matrix_version": "v1",
+    "parquet_sha256": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3",
+    "races": 173,
+    "rows": 189420
+  },
+  "protocol": "MODEL_LAB_PROTOCOL_v1",
+  "stage_buckets": {
+    "EARLY": 64016,
+    "LATE": 61967,
+    "MID": 63437,
+    "total": 189420
+  },
+  "task_eligibility_total": {
+    "final_position": {
+      "coverage": 178963,
+      "eligible": 178963,
+      "max": 20,
+      "min": 1
+    },
+    "gain": {
+      "eligible": 189126,
+      "negatives": 113771,
+      "positive_rate": 0.398438,
+      "positives": 75355
+    },
+    "loss": {
+      "eligible": 189126,
+      "negatives": 135397,
+      "positive_rate": 0.284091,
+      "positives": 53729
+    },
+    "podium": {
+      "eligible": 189420,
+      "negatives": 158314,
+      "positive_rate": 0.164217,
+      "positives": 31106
+    },
+    "points": {
+      "eligible": 189420,
+      "negatives": 85938,
+      "positive_rate": 0.54631,
+      "positives": 103482
+    },
+    "position_change": {
+      "coverage": 189126,
+      "eligible": 189126,
+      "max": 17,
+      "min": -19
+    },
+    "winner": {
+      "eligible": 189420,
+      "negatives": 179050,
+      "positive_rate": 0.054746,
+      "positives": 10370
+    }
+  },
+  "totals": {
+    "binary_eligible": 189420,
+    "gain_loss_eligible": 189126,
+    "ordinal_eligible": 178963,
+    "races": 173,
+    "states": 189420
+  }
+}

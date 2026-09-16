@@ -1,0 +1,201 @@
+{
+  "documents": {
+    "docs/MODEL_LAB_FINAL_MODEL_CARD.md": "452a0e41871dd411beab33a88273bf55cdcfd39b7114e72355d1fc7f256451d3",
+    "docs/MODEL_LAB_FINAL_REPORT.md": "af027c03175fd3465d278cbe53a10f0734c1193cb8eef6f71fc8efec1e729fd1"
+  },
+  "final_model_artifact": {
+    "path": "data/v2/model_lab/final/winner_logreg_raw_v1/metadata.json",
+    "persistence": "metadata_only_no_estimator_serialization",
+    "sha256": "7180fbce6dd9b037e2cafa2a36142de0f26379a5104cb79f0cff39dba2b4ab5d"
+  },
+  "final_model_fingerprint": "81e0e4beb24287f9b532230fc0da157f3f261b9b034440651d071fbe8dd2076d",
+  "final_model_specification": {
+    "C": 0.01,
+    "calibration_method": "RAW",
+    "class_weight": null,
+    "eligibility_mask": "eligible_is_winner",
+    "estimator": "LogisticRegression",
+    "feature_count": 84,
+    "feature_set": "ALL_84",
+    "final_fit_seasons": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "holdout_season": 2025,
+    "max_iter": 1000,
+    "model_family": "logistic_regression",
+    "penalty": "l2 (sklearn default, not passed explicitly)",
+    "preprocessing": {
+      "boolean_imputation": "most_frequent (train-fitted), cast to float, unscaled",
+      "categorical_encoding": "one-hot, train-fitted vocabulary, unknown=ignore",
+      "categorical_imputation": "constant 'MISSING' (explicit structural sentinel)",
+      "fit_scope": "training only",
+      "native_categorical": false,
+      "native_missing": false,
+      "notes": "fit on TRAIN only; validation transform-only; densified output",
+      "numeric_imputation": "median (train-fitted)",
+      "numeric_scaling": "StandardScaler (train-fitted)"
+    },
+    "probability_kind": "BINARY_PROBABILITY",
+    "probability_semantics": "INDEPENDENT_BINARY",
+    "random_state": 42,
+    "resampling": false,
+    "seed": 42,
+    "selection_references": {
+      "m7": "logreg_boundary_resolution_v1.json (global development C=0.01)",
+      "m8": "calibration_selection_v1.json (selected calibration method RAW)",
+      "protocol": "docs/generated/model_lab_protocol_v1.json"
+    },
+    "solver": "lbfgs",
+    "target": "is_winner",
+    "task": "winner",
+    "weighting": "state_equal"
+  },
+  "final_model_specification_fingerprint": "3164de9e61ca94ab958e26590608824ca6c7b05de29c5398d3d204a8c329c24d",
+  "freeze_timestamp": "2026-09-16T00:23:22.000265+00:00",
+  "holdout_access_statement": "2025 was unlocked exactly once by the sanctioned M9 evaluator with explicit opt-in; the result was used for reporting only.",
+  "holdout_artifact": {
+    "path": "final_holdout_2025_v1.json",
+    "sha256": "2c3a166df1a1af1d20f24fafc6a17283de1cdd1eea2b5f67a26204ed174a7415"
+  },
+  "known_limitations": [
+    "Independent per-driver winner probabilities; no mutually exclusive race distribution.",
+    "FastF1-era data/label limitations apply.",
+    "Telemetry and reliability/DNF modelling remain deferred.",
+    "Model performance varies by race stage.",
+    "Development hyperparameter uncertainty is documented in M7.",
+    "The protected holdout is a single season (24 races).",
+    "No post-holdout tuning, calibration or model change occurred."
+  ],
+  "known_xfails": [
+    "Pre-Phase2 legacy Monaco-2022 NaN label defects remain documented expected xfails (unchanged by M9)."
+  ],
+  "model_lab_phase": "3",
+  "model_lab_status": "FROZEN",
+  "phase2_frozen_hashes": {
+    "expected": {
+      "f16_ablation_sha256": "bb59d936b14552779a4ab192c4d3e9c9d1e2ff31e2ef8608b30c44ed86f2f5a7",
+      "phase2_manifest_sha256": "b6a63f5eb0577906ee6496d05c4f7a20c3eb79f2f8048d4ff06acb764d6cbc62",
+      "phase2_matrix_parquet_sha256": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3"
+    },
+    "f16_ablation_byte_hash": "bb59d936b14552779a4ab192c4d3e9c9d1e2ff31e2ef8608b30c44ed86f2f5a7",
+    "feature_registry_fingerprint": "a04d5475e8ac113bfffe8af3ba35db5dedf127d0306803dcb71332c5be863fe6",
+    "label_registry_fingerprint": "0a4d0bb6369f880add679731f46e992f0bee98b2930caeefa392297cf29515cd",
+    "m0_protocol_json_byte_hash": "6a02b4c2ea36f6e3f0b952bec8cb02d5216bead8ce7a341f8e0145cf18545e01",
+    "m0_protocol_semantic_hash": "0168f1d7fea584cd8a1e4dfe8267bb54dbec16aae60c92663c31115cb3ef53ce",
+    "phase2_freeze_manifest_byte_hash": "ced17eb9a5cae03b50f3965338ac0fa00d54ba3e68f141e19abb36759368b4ce",
+    "phase2_manifest_byte_hash": "b6a63f5eb0577906ee6496d05c4f7a20c3eb79f2f8048d4ff06acb764d6cbc62",
+    "phase2_matrix_content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+    "phase2_matrix_schema_hash": "b1ccbc62380da8e841e7b2d78d8d37aac2b67c72b0306a2495fbabc3fb224f0e",
+    "phase2_parquet_byte_hash": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3"
+  },
+  "preunlock_artifact_sha256": "0bc078a1ad0b5599524d24c3fbbd61ced6e09ac86a2abec1fea2247fc304e739",
+  "preunlock_fingerprint": "3164de9e61ca94ab958e26590608824ca6c7b05de29c5398d3d204a8c329c24d",
+  "protocol_semantic_hash": "0168f1d7fea584cd8a1e4dfe8267bb54dbec16aae60c92663c31115cb3ef53ce",
+  "protocol_version": "v1",
+  "schema_version": "v1",
+  "stage_artifacts": {
+    "M2_baseline_suite": {
+      "path": "baseline_suite_v1.json",
+      "sha256": "0ed19be2f39ba35e94fddb7f9bddd493abc94d04146a922c996cd9ec14b9d746"
+    },
+    "M3_logreg_reference": {
+      "path": "logreg_reference_v1.json",
+      "sha256": "89f34abcad7a8309df0a1f582c25ba2460b907bbdc270da2ae0304804bf6d235"
+    },
+    "M4_nonlinear_candidates": {
+      "path": "nonlinear_candidates_v1.json",
+      "sha256": "7d603f889685829417bebb3e9bdcc942941d28454aa67387a750c23765333548"
+    },
+    "M5_bagged_candidates": {
+      "path": "bagged_candidates_v1.json",
+      "sha256": "27d914cd8499dff06f5d0e1347fa978fa784a749eb02a1bf93f12e1d50b3f843"
+    },
+    "M6_tuning_selection": {
+      "path": "tuning_selection_v1.json",
+      "sha256": "11fdd6ca616b07990e564b707267468a6399efae0e50211c7928d3a562572f92"
+    },
+    "M7_boundary_resolution": {
+      "path": "logreg_boundary_resolution_v1.json",
+      "sha256": "5413a6b7d57a26809eb794b1fc53be4836c28f6fd6bf1494b94d7bd92f9cff1b"
+    },
+    "M8_calibration_selection": {
+      "path": "calibration_selection_v1.json",
+      "sha256": "2d96668c4fcd8da971c055a1274afc8e02c9e137049ccc87a1a24bfd586d80fd"
+    }
+  },
+  "tests": {
+    "date": "2026-09-15",
+    "gates": {
+      "d11_acceptance_gate": {
+        "command": "python -m v2.d11 --skip-fresh-env",
+        "n_failed": 0,
+        "n_findings": 43,
+        "note": "process exit was 1 only because --json pointed outside the repo root (a CLI path-formatting bug); the gate itself passed 43/0/0",
+        "sections_passed": true,
+        "unresolved_blockers": []
+      },
+      "f13_f14_f16_combined": {
+        "result": "195 passed"
+      },
+      "f13_labels": {
+        "command": "pytest tests/test_v2_labels_f13.py -q",
+        "result": "passed"
+      },
+      "f14_leakage_adversarial": {
+        "command": "pytest tests/test_v2_features_f14.py -q",
+        "result": "passed"
+      },
+      "f16_ablation_handoff": {
+        "command": "pytest tests/test_v2_experiments_f16.py -q",
+        "result": "passed"
+      },
+      "frontend_build": {
+        "command": "npm run build",
+        "returncode": 0
+      },
+      "frontend_lint": {
+        "command": "npm run lint",
+        "returncode": 0,
+        "warnings": 1
+      },
+      "frontend_tests": {
+        "command": "node --test lib/predictionHelpers.test.ts lib/api.test.ts features/prediction/lib/predictionTransforms.test.ts",
+        "result": "21 passed"
+      },
+      "frontend_typecheck": {
+        "command": "tsc --noEmit -p .",
+        "returncode": 0
+      },
+      "full_pytest": {
+        "command": "pytest tests/ -q",
+        "elapsed_s": 1701.57,
+        "result": "1307 passed, 4 xfailed"
+      },
+      "m8_focused": {
+        "included_in": "model_lab_m0_m9",
+        "result": "passed"
+      },
+      "m9_focused": {
+        "command": "pytest tests/test_v2_model_lab_m9.py -q",
+        "result": "29 passed"
+      },
+      "model_lab_m0_m9": {
+        "command": "pytest tests/test_v2_model_lab_m0.py ... m9.py -q",
+        "result": "446 passed"
+      },
+      "phase2_temporal_features": {
+        "included_in": "full_pytest",
+        "result": "passed"
+      }
+    },
+    "known_xfail_note": "Pre-Phase2 legacy Monaco-2022 NaN label defects; unchanged by M9.",
+    "known_xfails": 4,
+    "python": "3.11.15 (homebrew)"
+  }
+}

@@ -1,0 +1,792 @@
+{
+  "ablation_policy": {
+    "cumulative_and_logo": true,
+    "dependency_aware_interactions": true,
+    "intuition_based_feature_removal_forbidden": true,
+    "run_before_baselines": false,
+    "same_folds": true,
+    "same_metrics": true,
+    "same_preprocessing_family": true,
+    "same_tuning_budget": true
+  },
+  "artifact_id_template": "mlab-{task}-{model_family}-{feature_set}-{fold}-{seed}",
+  "baselines": [
+    {
+      "applies_to": [
+        "winner",
+        "podium",
+        "points"
+      ],
+      "description": "Predict the driver currently leading the race as the winner.",
+      "name": "CURRENT_LEADER",
+      "notes": "Factual at state time; no future data.",
+      "requires": [
+        "position"
+      ]
+    },
+    {
+      "applies_to": [
+        "winner",
+        "podium",
+        "points",
+        "final_position"
+      ],
+      "description": "Assume the current running order is the final order.",
+      "name": "CURRENT_ORDER",
+      "notes": "Race-level rank baseline for winner/finish tasks.",
+      "requires": [
+        "position"
+      ]
+    },
+    {
+      "applies_to": [
+        "winner",
+        "podium",
+        "points",
+        "final_position"
+      ],
+      "description": "Pre-race: predict the pole/grid leader as the winner and order by grid position.",
+      "name": "GRID_POLE",
+      "notes": "Null grid slots are structurally missing; never imputed globally.",
+      "requires": [
+        "grid_position"
+      ]
+    },
+    {
+      "applies_to": [
+        "winner",
+        "podium",
+        "points"
+      ],
+      "description": "Rank by a simple factual recent-pace summary available at state time.",
+      "name": "RECENT_PACE",
+      "notes": "Must read only past/current state; a frozen recent-pace column may be used rather than a new formula.",
+      "requires": [
+        "representative_recent_pace_s"
+      ]
+    },
+    {
+      "applies_to": [
+        "winner",
+        "podium",
+        "points",
+        "gain",
+        "loss"
+      ],
+      "description": "Constant training-prevalence probability per task.",
+      "name": "CLASS_PRIOR",
+      "notes": "Probability sanity floor for log loss / Brier; fit on fold training rows only.",
+      "requires": []
+    }
+  ],
+  "candidates": [
+    {
+      "calibration": "natively probabilistic; still evaluate reliability",
+      "categorical": "one-hot (train-fitted)",
+      "compute_class": "low",
+      "dependency": "sklearn",
+      "family": "logistic_regression",
+      "missing": "requires complete inputs",
+      "preprocessing": "impute + scale in pipeline",
+      "probability_output": "calibrated binary probability",
+      "supported_tasks": [
+        "binary"
+      ],
+      "tier": "PRODUCTION_CANDIDATE"
+    },
+    {
+      "calibration": "evaluate reliability; calibrate if needed",
+      "categorical": "ordinal/one-hot encoding (train-fitted)",
+      "compute_class": "medium",
+      "dependency": "sklearn",
+      "family": "hist_gradient_boosting",
+      "missing": "native missing support",
+      "preprocessing": "native nulls; no scaling",
+      "probability_output": "binary probability",
+      "supported_tasks": [
+        "binary"
+      ],
+      "tier": "PRODUCTION_CANDIDATE"
+    },
+    {
+      "calibration": "evaluate reliability",
+      "categorical": "one-hot or native categorical",
+      "compute_class": "medium",
+      "dependency": "xgboost",
+      "family": "xgboost",
+      "missing": "native missing support",
+      "preprocessing": "native nulls; no scaling",
+      "probability_output": "binary probability (calibrate)",
+      "supported_tasks": [
+        "binary",
+        "ranking"
+      ],
+      "tier": "PRODUCTION_CANDIDATE"
+    },
+    {
+      "calibration": "evaluate reliability",
+      "categorical": "native categorical support",
+      "compute_class": "medium",
+      "dependency": "lightgbm",
+      "family": "lightgbm",
+      "missing": "native missing support",
+      "preprocessing": "native nulls; no scaling",
+      "probability_output": "binary probability (calibrate)",
+      "supported_tasks": [
+        "binary",
+        "ranking"
+      ],
+      "tier": "PRODUCTION_CANDIDATE"
+    },
+    {
+      "calibration": "evaluate reliability",
+      "categorical": "native categorical support",
+      "compute_class": "medium-high",
+      "dependency": "catboost",
+      "family": "catboost",
+      "missing": "native missing support",
+      "preprocessing": "native nulls; no scaling",
+      "probability_output": "binary probability",
+      "supported_tasks": [
+        "binary",
+        "ranking"
+      ],
+      "tier": "PRODUCTION_CANDIDATE"
+    },
+    {
+      "calibration": "evaluate reliability",
+      "categorical": "one-hot (train-fitted)",
+      "compute_class": "medium",
+      "dependency": "sklearn",
+      "family": "extra_trees",
+      "missing": "requires complete inputs (train-fitted imputation)",
+      "preprocessing": "impute in pipeline; no scaling",
+      "probability_output": "binary probability",
+      "supported_tasks": [
+        "binary"
+      ],
+      "tier": "PRODUCTION_CANDIDATE"
+    },
+    {
+      "calibration": "evaluate reliability",
+      "categorical": "one-hot (train-fitted)",
+      "compute_class": "medium",
+      "dependency": "sklearn",
+      "family": "random_forest",
+      "missing": "requires complete inputs (train-fitted imputation)",
+      "preprocessing": "impute in pipeline; no scaling",
+      "probability_output": "binary probability",
+      "supported_tasks": [
+        "binary"
+      ],
+      "tier": "PRODUCTION_CANDIDATE"
+    },
+    {
+      "calibration": "n/a unless calibrated separately",
+      "categorical": "library dependent",
+      "compute_class": "medium",
+      "dependency": "xgboost / lightgbm",
+      "family": "learning_to_rank",
+      "missing": "native/library dependent",
+      "preprocessing": "per-library; groups by race state",
+      "probability_output": "ranking score (NOT a probability)",
+      "supported_tasks": [
+        "winner",
+        "final_position"
+      ],
+      "tier": "EXPERIMENTAL"
+    },
+    {
+      "calibration": "evaluate rank quality",
+      "categorical": "one-hot (train-fitted)",
+      "compute_class": "medium",
+      "dependency": "mord / statsmodels (not installed)",
+      "family": "ordinal_model",
+      "missing": "requires complete inputs",
+      "preprocessing": "impute + scale in pipeline",
+      "probability_output": "ordinal distribution / expected rank",
+      "supported_tasks": [
+        "final_position"
+      ],
+      "tier": "EXPERIMENTAL"
+    },
+    {
+      "calibration": "evaluate reliability",
+      "categorical": "one-hot (train-fitted)",
+      "compute_class": "medium",
+      "dependency": "torch (not installed)",
+      "family": "mlp",
+      "missing": "requires complete inputs",
+      "preprocessing": "impute + scale in pipeline",
+      "probability_output": "binary probability",
+      "supported_tasks": [
+        "binary"
+      ],
+      "tier": "EXPERIMENTAL"
+    },
+    {
+      "calibration": "evaluate reliability",
+      "categorical": "as tabular",
+      "compute_class": "high",
+      "dependency": "torch (not installed)",
+      "family": "sequence_gru_lstm",
+      "missing": "padding/masking must not expose future laps",
+      "preprocessing": "strictly past-only lap windows",
+      "probability_output": "binary probability",
+      "supported_tasks": [
+        "binary"
+      ],
+      "tier": "DEFERRED"
+    },
+    {
+      "calibration": "evaluate reliability",
+      "categorical": "as tabular",
+      "compute_class": "very high",
+      "dependency": "torch (not installed)",
+      "family": "temporal_transformer",
+      "missing": "padding/masking must not expose future laps",
+      "preprocessing": "strictly past-only lap windows",
+      "probability_output": "binary probability",
+      "supported_tasks": [
+        "binary"
+      ],
+      "tier": "DEFERRED"
+    },
+    {
+      "calibration": "evaluate reliability",
+      "categorical": "library dependent",
+      "compute_class": "high",
+      "dependency": "tabpfn (not installed)",
+      "family": "tabpfn",
+      "missing": "library dependent",
+      "preprocessing": "library dependent",
+      "probability_output": "binary probability",
+      "supported_tasks": [
+        "binary"
+      ],
+      "tier": "DEFERRED"
+    },
+    {
+      "calibration": "n/a",
+      "categorical": "n/a",
+      "compute_class": "medium",
+      "dependency": "lifelines/rsf (not installed)",
+      "family": "dnf_survival",
+      "missing": "n/a",
+      "preprocessing": "n/a until a DNF target exists",
+      "probability_output": "survival/hazard (not a race probability)",
+      "supported_tasks": [
+        "dnf"
+      ],
+      "tier": "DEFERRED"
+    }
+  ],
+  "categorical_policy": {
+    "columns": [
+      "compound",
+      "stint_compound",
+      "track_state"
+    ],
+    "default_treatment": "one-hot or native categorical support fitted on training data only",
+    "native_categorical_models": [
+      "catboost"
+    ],
+    "target_encoding": "forbidden unless train-only and evaluated as an explicit experiment dimension",
+    "unknown_category": "explicit, frozen per pipeline (ignore/other); never silently mapped to a target-correlated category"
+  },
+  "chronology": {
+    "key": [
+      "season",
+      "round_no",
+      "race_id"
+    ],
+    "season_range": [
+      2018,
+      2025
+    ]
+  },
+  "class_imbalance_policy": {
+    "calibration_note": "weighting that changes effective training prevalence must be followed by calibration evaluation",
+    "class_weights": "allowed only as an explicit experiment dimension",
+    "sample_weights": "allowed only as an explicit experiment dimension",
+    "silent_balancing_forbidden": true,
+    "synthetic_resampling_initially": false
+  },
+  "development_folds": [
+    {
+      "fold_id": "D1",
+      "rationale": "Earliest fold: four full seasons of history, first validation season kept in the development era.",
+      "train_seasons": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "validation_season": 2022
+    },
+    {
+      "fold_id": "D2",
+      "rationale": "Expanding window; validation strictly after all training races.",
+      "train_seasons": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "validation_season": 2023
+    },
+    {
+      "fold_id": "D3",
+      "rationale": "Latest development fold; 2025 stays protected.",
+      "train_seasons": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "validation_season": 2024
+    }
+  ],
+  "development_seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "evaluation_aggregation": "race_macro_headline_state_diagnostic",
+  "expected_counts": {
+    "binary_eligible": 189420,
+    "columns": 106,
+    "gain_loss_eligible": 189126,
+    "ordinal_eligible": 178963,
+    "predictive_features": 84,
+    "races": 173,
+    "rows": 189420
+  },
+  "expected_phase2_hashes": {
+    "ablation_config_sha256": "bb59d936b14552779a4ab192c4d3e9c9d1e2ff31e2ef8608b30c44ed86f2f5a7",
+    "ablation_semantic_hash": "c88bcbaafe72ff2a615f24563d631f4e313cbc1d41e23b3818d3f9d86f6b087c",
+    "feature_registry_fingerprint": "a04d5475e8ac113bfffe8af3ba35db5dedf127d0306803dcb71332c5be863fe6",
+    "label_registry_fingerprint": "0a4d0bb6369f880add679731f46e992f0bee98b2930caeefa392297cf29515cd",
+    "manifest_sha256": "b6a63f5eb0577906ee6496d05c4f7a20c3eb79f2f8048d4ff06acb764d6cbc62",
+    "matrix_content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+    "matrix_parquet_sha256": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3",
+    "matrix_schema_hash": "b1ccbc62380da8e841e7b2d78d8d37aac2b67c72b0306a2495fbabc3fb224f0e"
+  },
+  "experiment_id_fields": [
+    "protocol_version",
+    "phase2_freeze_commit",
+    "feature_set_version",
+    "label_set_version",
+    "matrix_version",
+    "ablation_config_version",
+    "matrix_content_hash",
+    "feature_set",
+    "task",
+    "fold",
+    "model_family",
+    "model_parameters",
+    "preprocessing_config",
+    "calibration_config",
+    "seed"
+  ],
+  "feature_set_vocabulary": [
+    "ALL_84",
+    "CURRENT_ORDER_ONLY",
+    "MINIMAL_RACE_STATE",
+    "CUMULATIVE_00_STATE",
+    "CUMULATIVE_01_PACE",
+    "CUMULATIVE_02_GAPS",
+    "CUMULATIVE_03_FIELD_CONTEXT",
+    "CUMULATIVE_04_RATES_MOMENTUM",
+    "CUMULATIVE_05_ENVIRONMENT_HISTORY",
+    "CUMULATIVE_06_PRE_RACE_PRIORS",
+    "CUMULATIVE_07_INTERACTIONS",
+    "ALL_MINUS_ENVIRONMENT_HISTORY",
+    "ALL_MINUS_FIELD_CONTEXT",
+    "ALL_MINUS_GAPS",
+    "ALL_MINUS_INTERACTIONS",
+    "ALL_MINUS_PACE",
+    "ALL_MINUS_PRE_RACE_PRIORS",
+    "ALL_MINUS_RATES_MOMENTUM",
+    "ALL_MINUS_STATE"
+  ],
+  "feature_sets_not_baselines": [
+    "CURRENT_ORDER_ONLY",
+    "MINIMAL_RACE_STATE",
+    "ALL_84"
+  ],
+  "final_fit_seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "fold_aggregation": "simple_mean_across_folds_with_dispersion",
+  "fold_start_rationale": "Training 2018\u20132021 gives four seasons and allows three expanding folds while retaining 2025 as the protected final holdout. No fold is added only to increase fold count.",
+  "holdout_access_policy": {
+    "development_runners_exclude_holdout": true,
+    "explicit_opt_in_required": true,
+    "holdout_access_recorded": true,
+    "repeated_holdout_tuning_forbidden": true,
+    "separate_holdout_evaluator": true,
+    "single_locked_access": true
+  },
+  "latency_benchmark_contract": {
+    "batch_sizes": [
+      "single_driver_state",
+      "full_field_race_state",
+      "batch_historical_inference"
+    ],
+    "environment": "record hardware/environment metadata",
+    "fabrication_forbidden": true,
+    "repeats": "repeated timed calls",
+    "report": [
+      "p50",
+      "p95",
+      "p99_where_supported"
+    ],
+    "warmup": "warm up before timing"
+  },
+  "legacy_reference_policy": {
+    "direct_benchmark": false,
+    "mixing_metrics_forbidden": true,
+    "reason": "legacy race-grouped CV is not comparable to Phase-3 temporal evaluation",
+    "status": "LEGACY REFERENCE"
+  },
+  "metrics": {
+    "accuracy_headline_forbidden": true,
+    "binary_primary": [
+      "log_loss",
+      "brier"
+    ],
+    "binary_secondary": [
+      "roc_auc",
+      "pr_auc"
+    ],
+    "calibration": [
+      "brier",
+      "reliability_curve",
+      "expected_calibration_error"
+    ],
+    "ece": {
+      "binning": "equal_width",
+      "n_bins": 10
+    },
+    "ordinal": [
+      "mae",
+      "rmse",
+      "spearman"
+    ],
+    "ordinal_primary": "mae",
+    "position_change_binary": [
+      "log_loss",
+      "brier",
+      "pr_auc"
+    ],
+    "position_change_regression": [
+      "mae",
+      "rmse"
+    ],
+    "race_level_winner": [
+      "winner_top1_accuracy",
+      "winner_top3_inclusion",
+      "race_level_log_loss_within_valid_distribution"
+    ]
+  },
+  "missingness_policy": {
+    "complete_input_models": "receive train-fitted imputation inside a leakage-safe pipeline",
+    "global_fill_forbidden": true,
+    "global_statistics_forbidden": true,
+    "indicators": "allowed only as an explicit, justified pipeline component",
+    "native_missing_models": "may consume supported nulls directly",
+    "structural_missingness_preserved": true,
+    "target_aware_forbidden": true
+  },
+  "model_artifact_contract": [
+    "model_family",
+    "task",
+    "feature_set",
+    "feature_names_ordered",
+    "training_chronology",
+    "preprocessing",
+    "calibration",
+    "seed",
+    "dependency_versions",
+    "matrix_version",
+    "matrix_content_hash",
+    "protocol_version",
+    "git_commit",
+    "creation_command",
+    "metrics_reference"
+  ],
+  "model_selection_rule": {
+    "decision_table_required": true,
+    "one_model_must_win_every_task": false,
+    "order_of_evidence": [
+      "probabilistic quality (log loss, Brier)",
+      "calibration",
+      "temporal consistency across folds",
+      "stage-of-race behaviour",
+      "inference latency",
+      "complexity / operational cost"
+    ],
+    "primary_task": "winner",
+    "single_metric_selection_forbidden": true,
+    "task_specific_models": true,
+    "weighted_score_forbidden": true
+  },
+  "multi_driver_research_questions": [
+    "independent binary classification",
+    "grouped ranking",
+    "softmax/multinomial race-state formulation",
+    "learning-to-rank"
+  ],
+  "partial_race_policy": {
+    "casual_drop_forbidden": true,
+    "default": "retain valid observed states and official outcomes",
+    "race_ids": [
+      "2021-r12-R",
+      "2022-r18-R"
+    ],
+    "race_level_flag": "record the PARTIAL status in evaluation grouping",
+    "task_exclusion": "only if a task is semantically invalid for the race, justified at task/protocol level"
+  },
+  "phase2_freeze": {
+    "phase1_commit": "2fa0a7c54f9fbcf7dd52fe71ea9ced620304a4ee",
+    "phase1_tag": "v2-data-platform-phase1",
+    "phase2_commit": "adb558395c07733e5f0f5051a92714d8b037951c",
+    "phase2_tag": "v2-temporal-feature-engine-phase2"
+  },
+  "preprocessing_policy": {
+    "fit_scope": "training only",
+    "global_fit_forbidden": true,
+    "includes": [
+      "imputers",
+      "scalers",
+      "encoders",
+      "feature selectors",
+      "dimensionality reduction",
+      "learned transforms"
+    ],
+    "matrix_mutation_forbidden": true,
+    "target_aware_forbidden": true,
+    "transform_scope": "validation and holdout receive transform-only behaviour"
+  },
+  "primary_task": "winner",
+  "primary_task_rationale": "Primary selection task: in-race P(win) feeding the product and downstream Monte Carlo/strategy. Exactly one winner per race.",
+  "probability_semantics": {
+    "independent_binary": "per-driver P(win) from independent binary classification; does NOT sum to 1 across a race",
+    "mutually_exclusive_race": "a coherent race winner distribution that sums to 1; requires a model/probability contract, not post-hoc normalization",
+    "post_hoc_normalization": "forbidden unless explicitly justified and evaluated",
+    "requirement": "each model/task experiment must state which of the two it outputs before results are interpreted"
+  },
+  "protected_holdout_season": 2025,
+  "protocol_semantic_hash": "0168f1d7fea584cd8a1e4dfe8267bb54dbec16aae60c92663c31115cb3ef53ce",
+  "protocol_version": "v1",
+  "required_phase2_versions": {
+    "ablation_config_version": "v1",
+    "feature_set_version": "v8",
+    "label_set_version": "v1",
+    "matrix_version": "v1"
+  },
+  "result_schema": {
+    "config_required": [
+      "experiment_id",
+      "protocol_version",
+      "git_commit",
+      "phase2_freeze_commit",
+      "feature_set_version",
+      "label_set_version",
+      "matrix_version",
+      "ablation_config_version",
+      "matrix_content_hash",
+      "feature_set",
+      "task",
+      "fold",
+      "model_family",
+      "model_parameters",
+      "preprocessing_config",
+      "calibration_config",
+      "seed",
+      "training_rows",
+      "training_races",
+      "validation_rows",
+      "validation_races",
+      "split_policy",
+      "holdout_accessed"
+    ],
+    "holdout_access_fields": [
+      "holdout_accessed",
+      "holdout_purpose",
+      "holdout_protocol_version"
+    ],
+    "result_required": [
+      "experiment_id",
+      "status",
+      "fit_seconds",
+      "inference_latency",
+      "metrics",
+      "calibration_metrics",
+      "stage_metrics",
+      "artifact_refs",
+      "warnings"
+    ]
+  },
+  "run_dir_template": "experiments/{protocol_version}/{experiment_id}",
+  "seed_policy": {
+    "monte_carlo_seeds": "separate later subsystem; not governed here",
+    "project_seed": 42,
+    "record_every_seed": true,
+    "seed_averaging_by_default": false,
+    "seed_set": [
+      42
+    ]
+  },
+  "split_policy": {
+    "allowed": [
+      "expanding_window_race_chronology"
+    ],
+    "forbidden": [
+      "random_row_split",
+      "shuffled_train_test_split",
+      "random_kfold_over_states",
+      "random_state_split"
+    ],
+    "observation_grain": "driver-state / driver-lap",
+    "row_level_random_splits_forbidden": true,
+    "rows_independent": false
+  },
+  "stage_buckets": [
+    [
+      "EARLY",
+      0.0,
+      0.3333333333333333
+    ],
+    [
+      "MID",
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    [
+      "LATE",
+      0.6666666666666666,
+      1.0
+    ]
+  ],
+  "stage_rule": "race_progress_frac_phase2_thirds",
+  "storage_policy": {
+    "gitignored": [
+      "JSON/Parquet result artifacts",
+      "fitted model artifacts"
+    ],
+    "mlflow": "not introduced; reconsider only if measured pain justifies it",
+    "tracked": [
+      "configuration",
+      "code",
+      "protocol",
+      "summary reports"
+    ]
+  },
+  "task_order": [
+    "winner",
+    "podium",
+    "points",
+    "final_position",
+    "position_change",
+    "gain",
+    "loss",
+    "dnf"
+  ],
+  "tasks": {
+    "dnf": {
+      "eligibility_mask": null,
+      "kind": "binary",
+      "label_column": null,
+      "tier": "DEFERRED"
+    },
+    "final_position": {
+      "eligibility_mask": "eligible_ordinal_final_position",
+      "kind": "ordinal",
+      "label_column": "final_position",
+      "tier": "SECONDARY"
+    },
+    "gain": {
+      "eligibility_mask": "eligible_gain_loss",
+      "kind": "binary",
+      "label_column": "gains_position_by_finish",
+      "tier": "SECONDARY"
+    },
+    "loss": {
+      "eligibility_mask": "eligible_gain_loss",
+      "kind": "binary",
+      "label_column": "loses_position_by_finish",
+      "tier": "SECONDARY"
+    },
+    "podium": {
+      "eligibility_mask": "eligible_is_podium",
+      "kind": "binary",
+      "label_column": "is_podium",
+      "tier": "SECONDARY"
+    },
+    "points": {
+      "eligibility_mask": "eligible_scored_points",
+      "kind": "binary",
+      "label_column": "scored_points",
+      "tier": "SECONDARY"
+    },
+    "position_change": {
+      "eligibility_mask": "eligible_gain_loss",
+      "kind": "regression",
+      "label_column": "position_change_from_state",
+      "tier": "SECONDARY"
+    },
+    "winner": {
+      "eligibility_mask": "eligible_is_winner",
+      "kind": "binary",
+      "label_column": "is_winner",
+      "tier": "PRIMARY"
+    }
+  },
+  "training_cost_contract": {
+    "fabrication_forbidden": true,
+    "record": [
+      "fit_wall_time",
+      "peak_memory_where_practical",
+      "artifact_size",
+      "hardware"
+    ]
+  },
+  "training_weighting": "state_equal",
+  "tuning_policy": {
+    "automl_default": false,
+    "budget_recorded": true,
+    "holdout_tuning_forbidden": true,
+    "note": "no Optuna/AutoML unless the plan explicitly requires it and the budget is recorded",
+    "search_scope": "inside development-training folds only",
+    "starting_point": "sensible defaults, then small documented search spaces"
+  },
+  "uncertainty_policy": {
+    "method": "race_level_bootstrap_and_fold_dispersion",
+    "note": "N=189,420 rows are not independent samples; report fold dispersion and race-level bootstrap intervals only when implemented",
+    "resample_unit": "race",
+    "row_level_resampling_forbidden": true
+  },
+  "within_season_evaluation": {
+    "adopted": false,
+    "classification": "SECONDARY EVALUATION (optional)",
+    "description": "train through race R, evaluate race R+1 within a season",
+    "justification_required": true,
+    "role": "never replaces the expanding-window chronological folds used for model selection",
+    "runs_in_m0": false
+  }
+}

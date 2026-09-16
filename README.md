@@ -2,12 +2,19 @@
 
 > **Status: Phase 0 (Foundation Refactor) COMPLETE · Phase 1 (Historical Data
 > Platform) COMPLETE & FROZEN · Phase 2 (Temporal Feature Engine) COMPLETE &
-> FROZEN · Phase 3 (Model Lab) NOT STARTED (next stage M0).** This repository
-> contains two systems: the frozen legacy university predictor (**V1**, still
-> serving) and the new canonical data/feature platform (**V2**, validated, no
-> prediction models yet). Nothing below claims V2 predictive performance — no
-> V2 model has been trained. Phase-2 freeze report:
-> `docs/PHASE2_FINAL_REPORT.md`.
+> FROZEN · Phase 3 (Model Lab M0–M9) COMPLETE & FROZEN · Phase 4 — NEXT.**
+> This repository contains two systems: the frozen legacy university
+> predictor (**V1**, still serving) and the canonical **V2** platform whose
+> frozen winner model (ALL_84 → train-fitted preprocessing →
+> LogisticRegression C=0.01, RAW, independent binary probabilities) is
+> handed to production via `v2/model_lab/serving.py` +
+> `results/v2_model_lab/winner_logreg_raw_v1_serving.joblib`. Phase-2 freeze
+> report: `docs/PHASE2_FINAL_REPORT.md`; Phase-3 final model card:
+> `docs/MODEL_LAB_FINAL_MODEL_CARD.md`; final report:
+> `docs/MODEL_LAB_FINAL_REPORT.md`; freeze manifest:
+> `docs/MODEL_LAB_FREEZE_MANIFEST.json`; production handoff:
+> `docs/MODEL_LAB_P31_HANDOFF_REPORT.md`. Final verification baseline:
+> 1307 passed, 4 known xfailed.
 
 ## Vision (roadmap — planned, not implemented)
 
@@ -68,7 +75,9 @@ FastF1 rich timing data, Race sessions 2018–2025 (Tier-A)
   84-feature predictive surface → F15 canonical matrix
   (data/v2/processed/model_matrix/matrix_version=v1/, 189,420 × 106)
               ↓
-  F16 ablation config + fixtures → Phase 3 Model Lab (NOT STARTED; M0 next)
+  F16 ablation config + fixtures → Phase 3 Model Lab M0–M9 (FROZEN):
+  frozen winner model (LogReg C=0.01, RAW) → P3.1 production handoff
+  (v2/model_lab/serving.py + results/v2_model_lab/ artifact)
 
 official results  →  D9 outcome labels, race×driver (3,458 rows, separate)
                   →  F13 label contracts → F15 label join
@@ -131,7 +140,7 @@ Point it at the backend with `NEXT_PUBLIC_API_BASE` (see
 ## Verify (or `make verify`)
 
 ```bash
-python -m pytest tests/ -q                                  # backend + ML safety net + Phase-2 (861 passed, 4 xfailed)
+python -m pytest tests/ -q                                  # backend + ML safety net + V2 (1307 passed, 4 known xfailed)
 node --test lib/predictionHelpers.test.ts lib/api.test.ts \
   features/prediction/lib/predictionTransforms.test.ts      # frontend tests (21, from frontend/)
 ./node_modules/.bin/tsc --noEmit -p .                       # typecheck (from frontend/)
@@ -179,11 +188,20 @@ rows breaks JSON serialization. Documented in `docs/V2_REPOSITORY_AUDIT.md`
   `docs/PHASE2_LEAKAGE_PARITY_AUDIT.md` · `docs/PHASE2_TEMPORAL_SEMANTICS.md`
   — Phase-2 matrix, ablation config, leakage/parity audit, temporal contract
 - `docs/generated/phase2_freeze_manifest.json` — machine-readable freeze
+- `docs/MODEL_LAB_PROTOCOL.md` — Phase-3 M0 evaluation protocol (frozen) +
+  `docs/generated/model_lab_protocol_v1.json` / `model_lab_split_audit_v1.json`
+- `docs/MODEL_LAB_EXPERIMENT_FRAMEWORK.md` — Phase-3 M1 experiment framework
+  (loader, splits, masks, metrics, aggregation, baselines, results)
+- `docs/MODEL_LAB_FINAL_MODEL_CARD.md` — frozen winner model card (M9)
+- `docs/MODEL_LAB_FINAL_REPORT.md` — Phase-3 culmination report (M0–M9)
+- `docs/MODEL_LAB_FREEZE_MANIFEST.json` — Phase-3 machine-readable freeze
+- `docs/MODEL_LAB_P31_HANDOFF_REPORT.md` — P3.1 production handoff +
+  repository seal record
 - `docs/LEGACY_V2_DATASET_COMPARISON.md` — V1↔V2 audit (D10)
 - `docs/adr/ADR-0001-telemetry-retention.md` — telemetry deferral decision
 - `V2_PHASE_1_DATA_PLATFORM.md` — Phase-1 plan (complete)
 - `V2_PHASE_2_TEMPORAL_FEATURE_ENGINE.md` — Phase-2 plan (complete/frozen)
-- `V2_PHASE_3_MODEL_LAB.md` — Phase-3 plan (not started; M0 next)
-- `V2_FOUNDATION_REFACTOR.md` · `docs/V2_REPOSITORY_AUDIT.md` ·
+- `V2_PHASE_3_MODEL_LAB.md` — Phase-3 plan (M0–M9 complete/frozen)
+- `V2_FOUNDATION_REFACTOR.md.md` · `docs/V2_REPOSITORY_AUDIT.md` ·
   `docs/FOUNDATION_REFACTOR_REPORT.md` — foundation history
 - `req.md` — reproducibility notes
