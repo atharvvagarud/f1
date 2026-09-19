@@ -1,0 +1,115 @@
+{
+  "api_contract": {
+    "docs/PHASE4_V2_API_CONTRACT.json": "e3e6e45d039c59413e8ccddc97f00f3b460e8c17cd2d09660041d97a4aa21918"
+  },
+  "benchmark": {
+    "scripts/benchmark_phase4.py": "52bfccdbf972356880fce22041120ce8cbc0360caefe79bc888b5372f38a65c9"
+  },
+  "contract_version": "v1",
+  "contracts": {
+    "eligibility": "eligible_is_winner",
+    "feature_set": "ALL_84",
+    "feature_set_version": "v8",
+    "model_task": "winner",
+    "normalization": false,
+    "probability_semantics": "INDEPENDENT_BINARY",
+    "serving_seasons": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "target": "is_winner",
+    "unavailable_reason": "NO_OBSERVATION_AT_SNAPSHOT"
+  },
+  "known_debt": [
+    "frozen feature evaluation remains ~12 s/full-field snapshot",
+    "repeated synchronization scans (~9500/snapshot)",
+    "F11 primitive recomputation (~40% of engine time)",
+    "dual RaceIndex/process memory (~550 MB + ~966 MB peak)",
+    "known Monaco legacy xfails (4, pre-existing)",
+    "pandas concat FutureWarning log noise",
+    "D11 /tmp-path cosmetic reporting issue"
+  ],
+  "performance": {
+    "full_corpus_featurebatch_after_s": 12.11,
+    "full_corpus_featurebatch_before_s": 81.56,
+    "full_snapshot_after_s": 12.18,
+    "full_snapshot_before_s": 81.78,
+    "model_inference_s": 0.007
+  },
+  "phase": 4,
+  "phase1": {
+    "commit": "2fa0a7c54f9fbcf7dd52fe71ea9ced620304a4ee",
+    "d9_states": 189420,
+    "dataset_tag": "v2-data-platform-phase1"
+  },
+  "phase2": {
+    "content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+    "f16_file_sha256": "bb59d936b14552779a4ab192c4d3e9c9d1e2ff31e2ef8608b30c44ed86f2f5a7",
+    "f16_semantic_hash": "c88bcbaafe72ff2a615f24563d631f4e313cbc1d41e23b3818d3f9d86f6b087c",
+    "freeze_manifest": "docs/generated/phase2_freeze_manifest.json",
+    "label_registry_fingerprint": "0a4d0bb6369f880add679731f46e992f0bee98b2930caeefa392297cf29515cd",
+    "manifest_sha256": "b6a63f5eb0577906ee6496d05c4f7a20c3eb79f2f8048d4ff06acb764d6cbc62",
+    "parquet_sha256": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3",
+    "registry_fingerprint": "a04d5475e8ac113bfffe8af3ba35db5dedf127d0306803dcb71332c5be863fe6",
+    "schema_hash": "b1ccbc62380da8e841e7b2d78d8d37aac2b67c72b0306a2495fbabc3fb224f0e"
+  },
+  "phase3": {
+    "final_model_metadata": "data/v2/model_lab/final/winner_logreg_raw_v1/metadata.json",
+    "final_model_metadata_sha256": "7180fbce6dd9b037e2cafa2a36142de0f26379a5104cb79f0cff39dba2b4ab5d",
+    "holdout_artifact": "data/v2/model_lab/reports/final_holdout_2025_v1.json",
+    "holdout_sha256": "2c3a166df1a1af1d20f24fafc6a17283de1cdd1eea2b5f67a26204ed174a7415",
+    "phase3_freeze_manifest": "docs/MODEL_LAB_FREEZE_MANIFEST.json",
+    "phase3_freeze_manifest_sha256": "a70e0c022c43a68c852dd7e3de2f37851ea550f96f90d919fefb77c3d034b0ef",
+    "serving_artifact": "results/v2_model_lab/winner_logreg_raw_v1_serving.joblib",
+    "serving_artifact_sha256": "1116b34fc716035c2425e605b9a5cc15541a2d2335e26113f2e2eaf3fcaa59f4",
+    "specification_fingerprint": "3164de9e61ca94ab958e26590608824ca6c7b05de29c5398d3d204a8c329c24d"
+  },
+  "phase4_docs": {
+    "README.md": "5c3308c6f8fd12ac3975dbaaf404941a5bd542d6e18b65e3f4364e5fbc98930c",
+    "docs/PHASE4_FINAL_REPORT.md": "9e29b7c4e9b5407866ba2e48c70fe99e69a73e73ce5d277c616324bf23809736",
+    "docs/PHASE4_R6_HARDENING_REPORT.md": "5c7d70929e08f03d0830b857d433f527f109488cc82a0e0af5e4ce5d8be08044",
+    "docs/PHASE4_RACE_STATE_PREDICTION_PLAN.md": "46e484570710de72a78d3a288b7e6c53479676598def1e98fede78eeb31128d4",
+    "docs/PHASE5_REPLAY_HANDOFF.md": "208c6e311244394ac8625a685f100fa0e0810f9d3c573018c4adfb06380e10b3"
+  },
+  "phase4_modules": {
+    "api/main.py": "455910f5ab8d4e82cb2a881cba6be97cb69fa785569df82dcba61bf77671e959",
+    "api/v2_routes.py": "21378283c5e39c99f589596991798a647480c5ad1b1e839c1caa4553250c7fcb",
+    "api/v2_schemas.py": "a19efff4ee1b1e3e70766927ea27c07842acf3e48aaa3d5ac1e145cce8e65de4",
+    "api/v2_service.py": "040241f84ff32ef1bdea1de2f9ef7d1d2f96f99c72ce2f7db9a56bf015a0377f",
+    "v2/prediction.py": "de676b3ac33b3d4e0831127a24485b2c2e17092f5ed95bf8840395a4f04ad320",
+    "v2/race_state.py": "5b4774b2518cbffe2ed4c7095eddf724c427a0c77fea6078342d8e9791884226",
+    "v2/race_state_features.py": "7a0817238292a9b41f12e6cd32a908bc35eaa7b687de102f19abcb77b8d5ce22",
+    "v2/race_state_reconstruction.py": "1655c205c89e9ca1cbaeb6a5def6c2a726d8ba9c7ee42197536be798ae64b8a6"
+  },
+  "phase4_tests": {
+    "tests/test_v2_phase4_freeze.py": "8156faf8b7e44a05b1d2895c1bd8cd600608c46ab1dfa869bd57ac1576afe5bb",
+    "tests/test_v2_phase4_r1.py": "5f828a57f095c9ed679dc66e2b70d9ad24f8bea5b2c1b8be006d4e3dc8545936",
+    "tests/test_v2_phase4_r2.py": "de76e3c35c5e6a5cd222f4b0525e4048a9975dfcc9ecdb87bb01e5ee79608014",
+    "tests/test_v2_phase4_r3.py": "653bb1985721b2690fe4430353d97e43b87de6b7a2818c242b5e53b9f1caa1b2",
+    "tests/test_v2_phase4_r4.py": "3d6c268520ac90003030a3d70e63f085a24fe6a7bcbe1e7221ec80abb95022ca",
+    "tests/test_v2_phase4_r5.py": "73c950b24542c88ac0aca77389814a541273cc21ca9364d7532f1f542c33345c",
+    "tests/test_v2_phase4_r6.py": "a5b79c06c02355b107fcbd862fea83a9477386d66ce4b9671fb0ef799f94b130"
+  },
+  "status": "FROZEN",
+  "v2_routes": [
+    "get /v2/races",
+    "get /v2/races/{race_id}/state",
+    "get /v2/races/{race_id}/states",
+    "post /v2/predictions/winner-snapshot"
+  ],
+  "verification": {
+    "all84_direct_parity_max_abs_diff": 0.0,
+    "all84_matrix_parity_max_abs_diff": 0.0,
+    "d11": "17/19 PASS pre-commit (legacy/git hygiene signals from uncommitted Phase-4 work; no data blocker)",
+    "frontend": "green with one documented pre-existing lint warning",
+    "prediction_parity_max_abs_diff": 0.0,
+    "r6_pytest_passed": 1540,
+    "r6_pytest_xfailed": 4,
+    "r6_xfail_note": "documented pre-existing Monaco-2022 NaN legacy cases"
+  }
+}

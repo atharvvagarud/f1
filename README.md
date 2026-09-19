@@ -2,7 +2,9 @@
 
 > **Status: Phase 0 (Foundation Refactor) COMPLETE · Phase 1 (Historical Data
 > Platform) COMPLETE & FROZEN · Phase 2 (Temporal Feature Engine) COMPLETE &
-> FROZEN · Phase 3 (Model Lab M0–M9) COMPLETE & FROZEN · Phase 4 — NEXT.**
+> FROZEN · Phase 3 (Model Lab M0–M9) COMPLETE & FROZEN · Phase 4 (Race State
+> & Prediction Service R0–R7) COMPLETE & FROZEN · Phase 5 (Historical Race
+> Replay) — NEXT.**
 > This repository contains two systems: the frozen legacy university
 > predictor (**V1**, still serving) and the canonical **V2** platform whose
 > frozen winner model (ALL_84 → train-fitted preprocessing →
@@ -14,15 +16,19 @@
 > `docs/MODEL_LAB_FINAL_REPORT.md`; freeze manifest:
 > `docs/MODEL_LAB_FREEZE_MANIFEST.json`; production handoff:
 > `docs/MODEL_LAB_P31_HANDOFF_REPORT.md`. Final verification baseline:
-> 1307 passed, 4 known xfailed.
+> 1540 passed, 4 known xfailed (+ Phase-4 freeze seal).
 
 ## Vision (roadmap — planned, not implemented)
 
 F1 Intelligence aims at historical lap-by-lap race intelligence:
 probabilistic in-race predictions, historical replay, race simulation,
-strategy analysis and explainability. All of these are **ROADMAP / PLANNED**:
-Monte Carlo, strategy engine, replay, RaceState, V2 prediction models,
-calibration, MLOps and any Race Engineer AI do **not** exist in this repo.
+strategy analysis and explainability. **Implemented (frozen):** exact
+historical RaceState reconstruction, frozen ALL_84 feature bridge,
+production frozen winner inference, and the V2 historical API
+(independent-binary probability semantics, 2018–2024 serving scope).
+**Still ROADMAP / PLANNED:** Monte Carlo, strategy engine, replay
+(Phase 5 — NEXT), calibration, MLOps and any Race Engineer AI do **not**
+exist in this repo.
 
 ## Currently implemented
 
@@ -49,6 +55,22 @@ calibration, MLOps and any Race Engineer AI do **not** exist in this repo.
   + 11 fixtures; telemetry stays DEFERRED (ADR-0001); regression
   861 passed / 4 xfailed; D11 offline 43/0/0. Full freeze:
   `docs/PHASE2_FINAL_REPORT.md`.
+- **V2 Phase-4 race state & prediction service (frozen, contract v1):**
+  exact historical RaceState reconstruction from canonical D9 anchors
+  (`v2/race_state.py`, `v2/race_state_reconstruction.py`); frozen ALL_84
+  feature bridge (`v2/race_state_features.py`, serving-only per-race
+  slice cache); production frozen winner inference
+  (`v2/prediction.py`, LogisticRegression C=0.01 RAW, one batch
+  `predict_proba` per snapshot, independent binary probabilities never
+  normalized); versioned V2 HTTP API (`api/v2_routes.py`,
+  `api/v2_service.py`, `api/v2_schemas.py`: `/v2/races`,
+  `/v2/races/{id}/states`, `/v2/races/{id}/state`,
+  `/v2/predictions/winner-snapshot`, 2018–2024 scope, stable
+  404/422/503/500 mapping, legacy routes untouched); full-field
+  snapshot ~12 s (feature-dominated). Freeze:
+  `docs/PHASE4_FINAL_REPORT.md`, `docs/PHASE4_FREEZE_MANIFEST.json`,
+  `docs/PHASE4_V2_API_CONTRACT.json`; Phase-5 handoff:
+  `docs/PHASE5_REPLAY_HANDOFF.md`.
 - **V1 legacy predictor (frozen):** tuned Logistic Regression /
   HistGradientBoosting / XGBoost pipelines plus majority-vote ensemble
   (XGBoost tie-break) over lap 5/10/15/20/25 snapshots, served by the
@@ -140,7 +162,7 @@ Point it at the backend with `NEXT_PUBLIC_API_BASE` (see
 ## Verify (or `make verify`)
 
 ```bash
-python -m pytest tests/ -q                                  # backend + ML safety net + V2 (1307 passed, 4 known xfailed)
+python -m pytest tests/ -q                                  # backend + ML safety net + V2 (1540 passed, 4 known xfailed + freeze seal)
 node --test lib/predictionHelpers.test.ts lib/api.test.ts \
   features/prediction/lib/predictionTransforms.test.ts      # frontend tests (21, from frontend/)
 ./node_modules/.bin/tsc --noEmit -p .                       # typecheck (from frontend/)
@@ -197,6 +219,11 @@ rows breaks JSON serialization. Documented in `docs/V2_REPOSITORY_AUDIT.md`
 - `docs/MODEL_LAB_FREEZE_MANIFEST.json` — Phase-3 machine-readable freeze
 - `docs/MODEL_LAB_P31_HANDOFF_REPORT.md` — P3.1 production handoff +
   repository seal record
+- `docs/PHASE4_FINAL_REPORT.md` — Phase-4 final report + freeze (start
+  here for RaceState/prediction/V2 API)
+- `docs/PHASE4_FREEZE_MANIFEST.json` — Phase-4 machine-readable freeze
+- `docs/PHASE4_V2_API_CONTRACT.json` — frozen V2 API surface
+- `docs/PHASE5_REPLAY_HANDOFF.md` — Phase-5 historical replay handoff
 - `docs/LEGACY_V2_DATASET_COMPARISON.md` — V1↔V2 audit (D10)
 - `docs/adr/ADR-0001-telemetry-retention.md` — telemetry deferral decision
 - `V2_PHASE_1_DATA_PLATFORM.md` — Phase-1 plan (complete)

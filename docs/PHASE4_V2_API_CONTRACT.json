@@ -1,0 +1,96 @@
+{
+  "contract_version": "v1",
+  "endpoints": [
+    {
+      "path": "/v2/races",
+      "method": "get",
+      "responses": {
+        "200": "#/components/schemas/V2RaceListResponse"
+      }
+    },
+    {
+      "path": "/v2/races/{race_id}/states",
+      "method": "get",
+      "parameters": [
+        {
+          "name": "limit",
+          "in": "query",
+          "schema": {
+            "type": "integer",
+            "maximum": 500,
+            "minimum": 1,
+            "default": 100
+          }
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "schema": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 0
+          }
+        },
+        {
+          "name": "race_id",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": "#/components/schemas/V2StateListResponse",
+        "422": "#/components/schemas/HTTPValidationError"
+      }
+    },
+    {
+      "path": "/v2/races/{race_id}/state",
+      "method": "get",
+      "parameters": [
+        {
+          "name": "anchor_driver_id",
+          "in": "query",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "anchor_lap_number",
+          "in": "query",
+          "schema": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        {
+          "name": "anchor_state_time_s",
+          "in": "query",
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "race_id",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": "#/components/schemas/V2RaceStateResponse",
+        "422": "#/components/schemas/HTTPValidationError"
+      }
+    },
+    {
+      "path": "/v2/predictions/winner-snapshot",
+      "method": "post",
+      "request_schema": "#/components/schemas/V2AnchorRequest",
+      "responses": {
+        "200": "#/components/schemas/V2PredictionSnapshotResponse",
+        "422": "#/components/schemas/HTTPValidationError"
+      }
+    }
+  ]
+}
