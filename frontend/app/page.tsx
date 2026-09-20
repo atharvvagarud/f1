@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Link from "next/link";
 import { usePrediction } from "@/features/prediction/hooks/usePrediction";
 import PredictionHero from "@/features/prediction/components/PredictionHero";
 import EnsembleResults from "@/features/prediction/components/EnsembleResults";
@@ -44,6 +45,14 @@ export default function HomePage() {
             : "min-h-screen flex items-center justify-center"
         }`}
       >
+        <div className="mb-4 flex w-full justify-end">
+          <Link
+            href="/replay"
+            className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200 hover:border-white/25"
+          >
+            Historical replay →
+          </Link>
+        </div>
         {error && (
           <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-200">
             {error}

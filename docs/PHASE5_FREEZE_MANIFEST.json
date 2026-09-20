@@ -1,0 +1,211 @@
+{
+  "api": {
+    "authorized_api_main_drift": {
+      "phase4_frozen_sha256": "455910f5ab8d4e82cb2a881cba6be97cb69fa785569df82dcba61bf77671e959",
+      "phase5_final_sha256": "2840271a49ced72720e9fc0fa3028a206ff4b9d8c1178fd6a1eab7ebe118549a",
+      "reason": "additive Phase-5 replay router integration (import + include_router; 2 lines)"
+    },
+    "routes": [
+      "get /v2/races/{race_id}/replay/frames/{frame_index}",
+      "get /v2/races/{race_id}/replay/predictions/{frame_index}",
+      "get /v2/races/{race_id}/replay/probability-timeline",
+      "get /v2/races/{race_id}/replay/timeline"
+    ]
+  },
+  "api_contract": {
+    "path": "docs/PHASE5_REPLAY_API_CONTRACT.json",
+    "sha256": "ae4be7e4e8023ad02832554550e992aefd34168a2a22c7704fbad1d62ed1f3df"
+  },
+  "api_modules": {
+    "api/main.py": "2840271a49ced72720e9fc0fa3028a206ff4b9d8c1178fd6a1eab7ebe118549a",
+    "api/v2_replay_routes.py": "2f02f3157df8e25d9add8eada7619ede11f50ec737309583a139e574de972423",
+    "api/v2_replay_schemas.py": "106e64524f87ae2c8a99f186b3d5e7bf83a83ca8d291902a6e14bf33b2637812",
+    "api/v2_replay_service.py": "e9a60f54551b297d0d3a3e8751fd6cc2da1245273e63649616b32df49c078889"
+  },
+  "benchmark_files": {
+    "scripts/benchmark_phase5_replay.py": "8004053d832c7d19f2d53b634c2d91e7cf04e733fcafa4761e600270541d81e6",
+    "scripts/build_replay_prediction_cache.py": "4ddfb55e1ef87a08414d28be1dfc36f98b03f2811d59e72a4c5d21dd8c223080"
+  },
+  "corpus": {
+    "checkpoint_mean_per_race": 64.72,
+    "collapsed_shared_t_observations": 89,
+    "prediction_checkpoints": 9644,
+    "races_with_shared_t": 52,
+    "replay_frames": 162639,
+    "served_observations": 162728,
+    "served_races": 149,
+    "shared_t_groups": 58
+  },
+  "created_by_stage": "R8",
+  "doc_files": {
+    "docs/PHASE5_FINAL_REPORT.md": "1a8e4f584acd13b516d0e20efdfb98e0d72e0d3e384c7a6fcf06f82662ebaecc",
+    "docs/PHASE5_HISTORICAL_REPLAY_PLAN.md": "4ce135032de610dba9edd4bc00a17e78a4e2d05d841b45aea0511d033025edb2",
+    "docs/PHASE6_MONTE_CARLO_HANDOFF.md": "74273c0afa482dbc54a7df309dcdf05668706a7394f4389d9ef129adae65f307"
+  },
+  "domain_modules": {
+    "v2/replay.py": "5bb1bcda6d6c6feda85f6daf038cec2d27beafacfceeecbcc7c8ee154950266a",
+    "v2/replay_predictions.py": "88fe6019b1377591cfb710c47afd9bf192d71ead354c9fad9d7b6db8593d6006",
+    "v2/replay_probability_timeline.py": "05652210972126d31f0d0ddcd664f5aca5bcff5b0be801921ce049e7db679cef",
+    "v2/replay_reconstruction.py": "7287562835ed80c8f0ee3834a84dbbf19332f2788f4283c0aa4ef002c98fd0a3"
+  },
+  "freeze_contract_version": "v1",
+  "frontend_files": {
+    "frontend/app/page.tsx": "152204424428a550e9b5b8ae2b3539eebf62abb4516ba7a8c4adbca3421d7661",
+    "frontend/app/replay/page.tsx": "59e77003e83446a9dd18d80e722169a1663583cf0e1bde81ecd83d167bd103db",
+    "frontend/features/replay/components/ContextBar.tsx": "756bd4f5e2dccacfb20d997f8b762a0f364b0dbf1cbfba36dae0ee834bfe97f3",
+    "frontend/features/replay/components/PlaybackControls.tsx": "b8dde36e4d518540251349765b9cd1426edebf6235cd1e416d55d6ca815938ed",
+    "frontend/features/replay/components/PredictionPanel.tsx": "f7b88a7eb60d658780c4a0d97b2c66fc746cf969d9f44b7897b46acebcbbfddd",
+    "frontend/features/replay/components/ProbabilityTimelineChart.tsx": "6f00db89e0ee004b66bafacddba9304ed5181d273f65f8eddd22630ee03e8ce1",
+    "frontend/features/replay/components/RaceSelector.tsx": "42be872f8f95f03e9592f1af6df5e9bdad1c7275e26f2546008235dd9142147b",
+    "frontend/features/replay/components/ReplayView.tsx": "b498fe34a521bf22b24303dc532551f4bca9e3cb3f1509839f8ebf5e027dd313",
+    "frontend/features/replay/components/StandingsTable.tsx": "ff722bb8d6e9dd074d75380c6bd978aad6feb587f7fc31c817eff9070d38e31c",
+    "frontend/features/replay/components/TimelineScrubber.tsx": "9493860b204664e0a74d16749bf5d492dee618d64c414e9532fbf84af8e9812d",
+    "frontend/features/replay/hooks/useReplay.ts": "2398b363f7b431dc474fc7eb2951ef5d78b697507a2997740d414b818cb80b54",
+    "frontend/features/replay/lib/probabilityTimeline.test.ts": "abcc34528c26d6126f81cddbe36e645ec464677e2e87430de15553a0fe0fe1a7",
+    "frontend/features/replay/lib/probabilityTimeline.ts": "f8a1ab266fbff7e423ac679fb70e2b5a63abdf354132de67ddf6282ea4dec381",
+    "frontend/features/replay/lib/replayMachine.test.ts": "f665f1e4d0bed2a11c857b60d0533799f92ee727f566f66aea506370da04d290",
+    "frontend/features/replay/lib/replayMachine.ts": "61fcdb6ca0b6cecf0da98a7ce4aabf5f1a6fa4f477d6f7d12fddf159878d8763",
+    "frontend/lib/v2.test.ts": "12e24e51936ef0c4cae144dc426f336cc0077202678fbe644955a243c30592e9",
+    "frontend/lib/v2.ts": "1de8279471f45c74420f99ccfeb36758d4dbb93a802597cff914082df0f3d34c"
+  },
+  "git": {
+    "commit_message": "feat(v2): freeze historical race replay",
+    "expected_tag": "v2-historical-replay-phase5",
+    "manifest_self_hash": null,
+    "phase4_tag": "v2-race-state-prediction-phase4",
+    "upstream_base_commit": "4f26801ffb0bb1a10725d6c78fba11c5547cb432"
+  },
+  "known_debt": [
+    "full prediction cache not generated: ~9,644 checkpoints, ~29-30 serial CPU-hours, ~90 MB estimated",
+    "prediction/probability endpoints return 503 cache_missing until the relevant race artifact exists",
+    "leader-lap client jump may require ~11 frame probes typical, bounded by 40",
+    "backend frame_for_leader_lap measured ~374 ms and is not exposed",
+    "frontend transition <200 ms not directly browser-benchmarked",
+    "Monaco-2022 Phase-4 xfails remain upstream debt if still present",
+    "legacy frontend lint warning (untouched ResultCards.tsx)"
+  ],
+  "performance": {
+    "artifact_load_ms": 1.38,
+    "cached_prediction_http_ms": 0.87,
+    "cached_prediction_ms": 0.68,
+    "checkpoint_selection_ms": 3.83,
+    "frame_http_ms": 38.8,
+    "frame_http_p95_ms": 39.5,
+    "leader_lap_backend_helper_ms": 374,
+    "probability_http_ms": 2.82,
+    "probability_projection_ms": 1.53,
+    "reconstruction_early_ms": 0.66,
+    "reconstruction_mid_ms": 37.4,
+    "source": "R7 controlled model-free benchmark (this machine, n=30)",
+    "targets": {
+      "cached_http_lt_250ms": "MET",
+      "frame_lt_100ms_p95": "MET (controlled R7 environment)",
+      "frontend_lt_200ms": "NOT DIRECTLY MEASURED",
+      "timeline_lt_1s": "MET"
+    },
+    "timeline_cold_ms": 2.73,
+    "timeline_cold_p95_ms": 2.75
+  },
+  "phase": 5,
+  "phase5_contracts": {
+    "checkpoint_policy_id": "leader_lap+flag_transition",
+    "normalization": false,
+    "phase4_contract_version": "v1",
+    "prediction_contract_version": "v1",
+    "probability_semantics": "INDEPENDENT_BINARY",
+    "probability_timeline_contract_version": "v1",
+    "replay_contract_version": "v1",
+    "replay_routes": [
+      "get /v2/races/{race_id}/replay/frames/{frame_index}",
+      "get /v2/races/{race_id}/replay/predictions/{frame_index}",
+      "get /v2/races/{race_id}/replay/probability-timeline",
+      "get /v2/races/{race_id}/replay/timeline"
+    ],
+    "served_seasons_max": 2024,
+    "serving_seasons": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "unavailable_reason": "NO_OBSERVATION_AT_SNAPSHOT"
+  },
+  "repository_files": {
+    ".gitignore": "fafe82a5cbda8ee4b67542ad63205a678103f3447660754678638d3d6b647360"
+  },
+  "scientific_identity": {
+    "feature_set": "ALL_84",
+    "feature_set_version": "v8",
+    "phase2_content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+    "probability_semantics": "INDEPENDENT_BINARY",
+    "serving_artifact_sha256": "1116b34fc716035c2425e605b9a5cc15541a2d2335e26113f2e2eaf3fcaa59f4",
+    "specification_fingerprint": "3164de9e61ca94ab958e26590608824ca6c7b05de29c5398d3d204a8c329c24d",
+    "training_seasons": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ]
+  },
+  "status": "FROZEN",
+  "test_files": {
+    "tests/test_v2_phase5_freeze.py": "c74125a0a14f3c4131bc1a31e1cb1fee9e0544e8d2bc4f5df4f6ce59a220820f",
+    "tests/test_v2_phase5_r1.py": "342e02b2691c92051e00a76ed4907224cd264dc89b848b35358e4d5002ba8467",
+    "tests/test_v2_phase5_r2.py": "7f8fe9b4ffb0c230891ffb58d7534301d3467bc64bc25d5177a84d620cd5c70b",
+    "tests/test_v2_phase5_r3.py": "3005599130c636770d427862d06c292cebd30adc0f0b7dee8e87e21b5bf0cbed",
+    "tests/test_v2_phase5_r4.py": "f204af989d6fc99b24260678e00783cdf46343a5648402282895f5be753c9f33",
+    "tests/test_v2_phase5_r6.py": "90ac996dfe8e1f484e430aeadef567d99b2bac0901f5c819af7323be312286f3",
+    "tests/test_v2_phase5_r7.py": "3b859388280c2052a3f7a80545f4b8522e3c3128442d72832df786667f6ee63f"
+  },
+  "upstream": {
+    "phase1": {
+      "commit": "2fa0a7c54f9fbcf7dd52fe71ea9ced620304a4ee",
+      "d9_states": 189420,
+      "dataset_tag": "v2-data-platform-phase1"
+    },
+    "phase2": {
+      "content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+      "f16_manifest_path": "data/v2/processed/model_matrix/matrix_version=v1/manifest.json",
+      "f16_manifest_sha256": "b6a63f5eb0577906ee6496d05c4f7a20c3eb79f2f8048d4ff06acb764d6cbc62",
+      "freeze_manifest": "docs/generated/phase2_freeze_manifest.json",
+      "label_registry_fingerprint": "0a4d0bb6369f880add679731f46e992f0bee98b2930caeefa392297cf29515cd",
+      "parquet_sha256": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3",
+      "registry_fingerprint": "a04d5475e8ac113bfffe8af3ba35db5dedf127d0306803dcb71332c5be863fe6",
+      "schema_hash": "b1ccbc62380da8e841e7b2d78d8d37aac2b67c72b0306a2495fbabc3fb224f0e"
+    },
+    "phase3": {
+      "final_model_metadata": "data/v2/model_lab/final/winner_logreg_raw_v1/metadata.json",
+      "final_model_metadata_sha256": "7180fbce6dd9b037e2cafa2a36142de0f26379a5104cb79f0cff39dba2b4ab5d",
+      "holdout_artifact": "data/v2/model_lab/reports/final_holdout_2025_v1.json",
+      "holdout_sha256": "2c3a166df1a1af1d20f24fafc6a17283de1cdd1eea2b5f67a26204ed174a7415",
+      "phase3_freeze_manifest": "docs/MODEL_LAB_FREEZE_MANIFEST.json",
+      "phase3_freeze_manifest_sha256": "a70e0c022c43a68c852dd7e3de2f37851ea550f96f90d919fefb77c3d034b0ef",
+      "serving_artifact": "results/v2_model_lab/winner_logreg_raw_v1_serving.joblib",
+      "serving_artifact_sha256": "1116b34fc716035c2425e605b9a5cc15541a2d2335e26113f2e2eaf3fcaa59f4",
+      "specification_fingerprint": "3164de9e61ca94ab958e26590608824ca6c7b05de29c5398d3d204a8c329c24d"
+    },
+    "phase4": {
+      "contract_version": "v1",
+      "freeze_manifest": "docs/PHASE4_FREEZE_MANIFEST.json",
+      "freeze_manifest_sha256": "c451bebb944de076e5f1725b1a5dcc0521838cae2ea8e84f1294e1d60b07aa46",
+      "seal_commit": "4f26801ffb0bb1a10725d6c78fba11c5547cb432",
+      "tag": "v2-race-state-prediction-phase4"
+    }
+  },
+  "verification": {
+    "data_validator": "D11 (skip tests/fresh-env/frontend-build to avoid duplicating the full suite/frontend gates): all data/scientific sections PASS; pre-commit LEGACY/GIT hygiene signals from the then-uncommitted Phase-5 files only (no data/scientific failure; resolve on commit)",
+    "freeze_tests": "tests/test_v2_phase5_freeze.py: 28 passed",
+    "frontend": "node --test 62 passed/0 failed; tsc clean; ESLint 0 errors/1 pre-existing warning; next build green (/replay prerendered)",
+    "full_python_suite": "1926 passed, 5 skipped, 4 xfailed, 1 failed (authorized api/main.py drift only), 3524.21s",
+    "phase4_gates": "green except authorized api/main.py drift (all other frozen paths byte-identical)",
+    "phase5_suites": "test_v2_phase5_r1..r7: 348 passed, 5 skipped",
+    "production_cache_generated": false,
+    "upstream_identities": "recomputed from repository reality; match"
+  }
+}

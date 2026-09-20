@@ -10,6 +10,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.routes import router
+from api.v2_replay_routes import router as v2_replay_router
 from api.v2_routes import router as v2_router
 
 app = FastAPI(title="F1 Race Winner Predictor API")
@@ -24,3 +25,4 @@ app.add_middleware(
 
 app.include_router(router)
 app.include_router(v2_router)
+app.include_router(v2_replay_router)

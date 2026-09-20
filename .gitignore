@@ -116,5 +116,13 @@ logs/
 # *.csv or data/ exclusions here without an artifact-policy
 # update in docs/V2_REPOSITORY_AUDIT.md.
 
-# graft's local graph cache — regenerable, not committed (run `graft build`).
-/graft/
+# graphify's local knowledge graph — regenerable, not committed
+# (run `graphify extract . --code-only` to rebuild, `graphify update .`
+# after code changes). 15 MB generated output stays local.
+graphify-out/
+
+# Phase-5 R3 generated replay prediction checkpoints — reproducible via
+# scripts/build_replay_prediction_cache.py, not committed (tens of MB for
+# the full 2018–2024 backfill). Small deterministic test fixtures, if ever
+# needed under tests/, are exempt from this rule.
+results/v2_replay/

@@ -1,0 +1,255 @@
+{
+  "contract_version": "v1",
+  "endpoints": [
+    {
+      "error_statuses": [
+        {
+          "error": "unknown_race",
+          "notes": "registry miss; includes every 2025 race id",
+          "status": 404
+        },
+        {
+          "error": "validation_error",
+          "notes": "offset < 0 or limit outside 1..500 (FastAPI)",
+          "status": 422
+        },
+        {
+          "error": "internal",
+          "notes": "unexpected replay failure; never a client error",
+          "status": 500
+        }
+      ],
+      "method": "get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "race_id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "offset",
+          "required": false,
+          "schema": {
+            "default": 0,
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "limit",
+          "required": false,
+          "schema": {
+            "default": 100,
+            "maximum": 500,
+            "minimum": 1,
+            "type": "integer"
+          }
+        }
+      ],
+      "path": "/v2/races/{race_id}/replay/timeline",
+      "response_model": "V2ReplayTimelineResponse",
+      "semantic_notes": [
+        "Purely factual ReplayFrame metadata; never reconstructs RaceState.",
+        "Deterministic canonical order (state_time_s, lap_number, driver_id).",
+        "One frame per exact unique state_time_s; dense frame_index 0..N-1.",
+        "Frame payloads carry identity only; no RaceState, no probabilities.",
+        "offset >= 0; limit 1..500; default 100 (mirrors /states conventions).",
+        "Unknown race and any 2025 race return 404 unknown_race."
+      ],
+      "success_status": 200
+    },
+    {
+      "error_statuses": [
+        {
+          "error": "unknown_race",
+          "notes": "registry miss; includes every 2025 race id",
+          "status": 404
+        },
+        {
+          "error": "unknown_frame",
+          "notes": "valid race, frame_index outside [0, frame_count)",
+          "status": 404
+        },
+        {
+          "error": "validation_error",
+          "notes": "negative frame_index (FastAPI Path(ge=0))",
+          "status": 422
+        },
+        {
+          "error": "internal",
+          "notes": "unexpected replay failure; never a client error",
+          "status": 500
+        }
+      ],
+      "method": "get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "race_id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "frame_index",
+          "required": true,
+          "schema": {
+            "minimum": 0,
+            "type": "integer"
+          }
+        }
+      ],
+      "path": "/v2/races/{race_id}/replay/frames/{frame_index}",
+      "response_model": "V2ReplayFrameResponse",
+      "semantic_notes": [
+        "Exact R2 path: frame.to_anchor() -> frozen RaceStateReconstructor.reconstruct().",
+        "No nearest lookup, no rounding, no future fall-forward.",
+        "state reuses the frozen V2RaceStateResponse shape (one-way projection).",
+        "Complete roster; stale provenance and unobservable nulls preserved.",
+        "Frame payload never embeds probabilities; only checkpoint pointers.",
+        "leader_lap is leader progress, never the anchor driver's own lap."
+      ],
+      "success_status": 200
+    },
+    {
+      "error_statuses": [
+        {
+          "error": "unknown_race",
+          "notes": "registry miss; includes every 2025 race id",
+          "status": 404
+        },
+        {
+          "error": "unknown_frame",
+          "notes": "valid race, frame_index outside [0, frame_count)",
+          "status": 404
+        },
+        {
+          "error": "not_prediction_checkpoint",
+          "notes": "frame exists but is not a checkpoint; carries previous/next checkpoint pointers; the past prediction is never substituted",
+          "status": 404
+        },
+        {
+          "error": "validation_error",
+          "notes": "negative frame_index (FastAPI Path(ge=0))",
+          "status": 422
+        },
+        {
+          "error": "prediction_unavailable",
+          "notes": "checkpoint exists but cache cannot be served; reason is one of cache_missing / cache_stale / cache_incomplete / cache_corrupt",
+          "status": 503
+        },
+        {
+          "error": "internal",
+          "notes": "unexpected replay failure; never a client error",
+          "status": 500
+        }
+      ],
+      "method": "get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "race_id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "frame_index",
+          "required": true,
+          "schema": {
+            "minimum": 0,
+            "type": "integer"
+          }
+        }
+      ],
+      "path": "/v2/races/{race_id}/replay/predictions/{frame_index}",
+      "response_model": "V2ReplayPredictionResponse",
+      "semantic_notes": [
+        "CHECKPOINT-ONLY: only actual model-evaluation frames are addressable.",
+        "CACHE-ONLY: the read path holds no engine and never generates predictions.",
+        "cache_status is always HIT; misses surface as 503 prediction_unavailable.",
+        "PredictionSnapshot is stored and returned verbatim (driver order, nulls, reason).",
+        "Probabilities are INDEPENDENT_BINARY; never normalized, never shares.",
+        "A cache miss never triggers a synchronous ~12 s model run."
+      ],
+      "success_status": 200
+    },
+    {
+      "error_statuses": [
+        {
+          "error": "unknown_race",
+          "notes": "registry miss; includes every 2025 race id",
+          "status": 404
+        },
+        {
+          "error": "prediction_unavailable",
+          "notes": "cache absent/stale/incomplete/corrupt; reason is one of cache_missing / cache_stale / cache_incomplete / cache_corrupt",
+          "status": 503
+        },
+        {
+          "error": "internal",
+          "notes": "unexpected replay failure; never a client error",
+          "status": 500
+        }
+      ],
+      "method": "get",
+      "parameters": [
+        {
+          "in": "path",
+          "name": "race_id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "path": "/v2/races/{race_id}/replay/probability-timeline",
+      "response_model": "V2ProbabilityTimelineResponse",
+      "semantic_notes": [
+        "CACHE-ONLY read-only projection of a validated R3 artifact.",
+        "One point per (driver_id, ACTUAL prediction checkpoint) only.",
+        "No frame expansion, no resampling, no interpolation, no fill.",
+        "No nearest-checkpoint substitution; missing checkpoints are absent.",
+        "Null probability stays null (never 0.0); complete roster preserved.",
+        "INDEPENDENT_BINARY values pass through; sums may be < 1 or > 1.",
+        "Single complete response; no pagination (payload ~110-130 KB)."
+      ],
+      "success_status": 200
+    }
+  ],
+  "pagination": {
+    "limit": {
+      "default": 100,
+      "maximum": 500,
+      "minimum": 1
+    },
+    "offset": {
+      "default": 0,
+      "minimum": 0
+    }
+  },
+  "phase": 5,
+  "probability_semantics": "INDEPENDENT_BINARY",
+  "probability_timeline_contract_version": "v1",
+  "prediction_contract_version": "v1",
+  "replay_contract_version": "v1",
+  "served_seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "status": "FROZEN"
+}
