@@ -17,7 +17,7 @@ test-python: check-python  ## Backend + ML regression suite (needs requirements-
 	$(PYTHON) -m pytest tests/ -q
 
 test-frontend:  ## Frontend node:test suites (no extra dependencies)
-	cd frontend && node --test lib/predictionHelpers.test.ts lib/api.test.ts features/prediction/lib/predictionTransforms.test.ts
+	cd frontend && node --test
 
 typecheck:  ## Frontend TypeScript check
 	cd frontend && ./node_modules/.bin/tsc --noEmit -p .

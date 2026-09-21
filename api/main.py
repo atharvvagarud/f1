@@ -6,14 +6,25 @@ App construction and middleware only. Legacy routes live in ``api.routes``
 V2 routes live in ``api.v2_routes`` (added R5, additive only).
 """
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
 from api.routes import router
 from api.v2_replay_routes import router as v2_replay_router
 from api.v2_routes import router as v2_router
+from api.v2_simulation_routes import router as v2_simulation_router
+from api.v2_simulation_service import SimulationParameterUnavailableError
 
 app = FastAPI(title="F1 Race Winner Predictor API")
+
+
+@app.exception_handler(SimulationParameterUnavailableError)
+async def _parameter_unavailable(request: Request,
+                                 exc: SimulationParameterUnavailableError):
+    return JSONResponse(
+        status_code=503,
+        content={"error": "parameter_unavailable", "detail": str(exc)})
 
 app.add_middleware(
     CORSMiddleware,
@@ -26,3 +37,4 @@ app.add_middleware(
 app.include_router(router)
 app.include_router(v2_router)
 app.include_router(v2_replay_router)
+app.include_router(v2_simulation_router)

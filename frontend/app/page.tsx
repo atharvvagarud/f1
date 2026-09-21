@@ -45,12 +45,18 @@ export default function HomePage() {
             : "min-h-screen flex items-center justify-center"
         }`}
       >
-        <div className="mb-4 flex w-full justify-end">
+        <div className="mb-4 flex w-full justify-end gap-2">
           <Link
             href="/replay"
             className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200 hover:border-white/25"
           >
             Historical replay →
+          </Link>
+          <Link
+            href="/simulator"
+            className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200 hover:border-white/25"
+          >
+            Simulator →
           </Link>
         </div>
         {error && (

@@ -64,12 +64,20 @@ export function ReplayView() {
               at model checkpoints.
             </p>
           </div>
-          <Link
-            href="/"
-            className="rounded-md border border-white/10 bg-slate-900 px-3 py-2 text-sm text-slate-200 hover:border-white/25 focus-visible:outline-2 focus-visible:outline-red-500"
-          >
-            ← Prediction home
-          </Link>
+          <div className="flex gap-2">
+            <Link
+              href="/"
+              className="rounded-md border border-white/10 bg-slate-900 px-3 py-2 text-sm text-slate-200 hover:border-white/25 focus-visible:outline-2 focus-visible:outline-red-500"
+            >
+              ← Prediction home
+            </Link>
+            <Link
+              href="/simulator"
+              className="rounded-md border border-white/10 bg-slate-900 px-3 py-2 text-sm text-slate-200 hover:border-white/25 focus-visible:outline-2 focus-visible:outline-red-500"
+            >
+              Simulator →
+            </Link>
+          </div>
         </header>
 
         {racesError && (

@@ -413,3 +413,107 @@ export async function getReplayProbabilityTimeline(
     signal,
   });
 }
+
+// --- R8 Monte Carlo simulator (Phase-6) ---
+//
+// Typed boundary over POST /v2/simulations/race. The server reconstructs the
+// factual state from the exact anchor and owns the science; the frontend only
+// sends an anchor + count + optional seed and renders the aggregate. Probabilities
+// are MONTE_CARLO_FREQUENCY outcome frequencies passed through verbatim: never
+// normalized, summed, or re-scaled here.
+
+export type SimulationAnchor = {
+  race_id: string;
+  anchor_driver_id: string;
+  anchor_lap_number: number;
+  anchor_state_time_s: number;
+};
+
+export type SimulationRequest = SimulationAnchor & {
+  simulation_count: number;
+  master_seed?: number;
+};
+
+export type PositionFrequency = {
+  position: number | null;
+  frequency: number;
+};
+
+export type DriverSimulationSummary = {
+  driver_id: string;
+  win_probability: number;
+  podium_probability: number;
+  expected_finish: number;
+  finish_position_distribution: PositionFrequency[];
+  dnf_probability: number | null;
+  points_probability: number | null;
+  expected_points: number | null;
+};
+
+export type SimulationRuntime = {
+  reconstruction_s: number;
+  adaptation_s: number;
+  simulation_s: number;
+  total_s: number;
+};
+
+export type SimulationResponse = {
+  race_id: string;
+  anchor_driver_id: string;
+  anchor_lap_number: number;
+  anchor_state_time_s: number;
+  simulation_contract_version: string;
+  engine_version: string;
+  monte_carlo_version: string;
+  pit_dynamics_version: string;
+  mechanics: string[];
+  probability_semantics: string;
+  probability_semantics_note: string;
+  parameter_set_id: string;
+  parameter_version: string;
+  parameter_hash: string;
+  simulation_request_identity: string;
+  scientific_result_identity: string;
+  requested_simulation_count: number;
+  valid_simulations: number;
+  invalid_simulations: number;
+  master_seed: number;
+  engine_runtime_s: number;
+  runtime: SimulationRuntime;
+  drivers: DriverSimulationSummary[];
+};
+
+export type SimulationErrorBody = {
+  error: string;
+  detail?: string;
+  reason?: string;
+};
+
+/** Run one historical-state Monte Carlo simulation (exact anchor, no JSON state). */
+export async function postRaceSimulation(
+  request: SimulationRequest,
+  fetcher: FetchLike = fetch,
+  base?: string,
+  signal?: AbortSignal,
+): Promise<SimulationResponse> {
+  return readJson<SimulationResponse>(
+    fetcher,
+    `${baseOf(base)}/v2/simulations/race`,
+    {
+      method: "POST",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(request),
+      signal,
+    },
+  );
+}
+
+/** True when a 422 is the stable un-simulatable-state contract (never a fallback). */
+export function isSimulationUnsupported(error: unknown): boolean {
+  return (
+    error instanceof V2ApiError &&
+    error.status === 422 &&
+    error.code === "simulation_unsupported"
+  );
+}

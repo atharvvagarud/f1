@@ -1,0 +1,133 @@
+{
+  "api_contract": "phase6-simulation-v1",
+  "generated_by": "R8-AJ",
+  "endpoint": {
+    "method": "POST",
+    "path": "/v2/simulations/race",
+    "description": "Aggregate Monte Carlo outcome frequencies for one exact historical race state. The server reconstructs the factual state from the exact four-part anchor; arbitrary user-created SimulationState JSON is never accepted.",
+    "served_seasons": [2018, 2019, 2020, 2021, 2022, 2023, 2024],
+    "firewall": "2025 is never served; any 2025 race_id is 404 unknown_race."
+  },
+  "request": {
+    "content_type": "application/json",
+    "fields": {
+      "race_id": {"type": "string", "required": true, "min_length": 1},
+      "anchor_driver_id": {"type": "string", "required": true, "min_length": 1},
+      "anchor_lap_number": {"type": "integer", "required": true, "minimum": 1},
+      "anchor_state_time_s": {"type": "number", "required": true, "finite": true},
+      "simulation_count": {"type": "integer", "required": false, "default": 1000, "minimum": 1, "maximum": 10000},
+      "master_seed": {"type": "integer", "required": false, "default": 20240101, "minimum": 0, "maximum": 18446744073709551615}
+    },
+    "notes": [
+      "The exact anchor is authoritative; there is no nearest-state behaviour.",
+      "When the client starts from a replay frame it sends that frame's exact anchor fields.",
+      "Malformed values are rejected with FastAPI 422 validation."
+    ]
+  },
+  "response": {
+    "fields": {
+      "race_id": "string",
+      "anchor_driver_id": "string",
+      "anchor_lap_number": "integer",
+      "anchor_state_time_s": "number",
+      "simulation_contract_version": "string",
+      "engine_version": "string",
+      "monte_carlo_version": "string",
+      "pit_dynamics_version": "string",
+      "mechanics": "list[string]",
+      "probability_semantics": "MONTE_CARLO_FREQUENCY",
+      "probability_semantics_note": "string",
+      "parameter_set_id": "string",
+      "parameter_version": "string",
+      "parameter_hash": "string",
+      "simulation_request_identity": "string",
+      "scientific_result_identity": "string",
+      "requested_simulation_count": "integer",
+      "valid_simulations": "integer",
+      "invalid_simulations": "integer",
+      "master_seed": "integer",
+      "engine_runtime_s": "number",
+      "runtime": {
+        "reconstruction_s": "number",
+        "adaptation_s": "number",
+        "simulation_s": "number",
+        "total_s": "number"
+      },
+      "drivers": [
+        {
+          "driver_id": "string",
+          "win_probability": "number [0,1]",
+          "podium_probability": "number [0,1]",
+          "expected_finish": "number >= 1",
+          "finish_position_distribution": [
+            {"position": "integer >= 1", "frequency": "number [0,1]"}
+          ],
+          "dnf_probability": "null",
+          "points_probability": "null",
+          "expected_points": "null"
+        }
+      ]
+    },
+    "aggregate_only": true,
+    "raw_trajectories_returned": false,
+    "per_event_traces_returned": false
+  },
+  "probability_semantics": {
+    "value": "MONTE_CARLO_FREQUENCY",
+    "definition": "Empirical frequencies over valid simulated outcomes; exactly one winner per valid trial, so winner frequencies sum to 1.",
+    "not": [
+      "INDEPENDENT_BINARY (the frozen Phase-3/4/5 model semantic)",
+      "calibrated win probability",
+      "a renormalized Phase-4/5 vector"
+    ],
+    "normalization": "none anywhere (service, schema, route, frontend)"
+  },
+  "count_policy": {
+    "default": 1000,
+    "maximum_synchronous": 10000,
+    "minimum": 1,
+    "evidence": "R8 product benchmark (TestClient HTTP): 1k early 2.36 s / mid 1.17 s / late 0.80 s; 10k mid 11.31 s. R7 engine-only 10k: 24.6 s early / 12.7 s mid / 7.3 s late.",
+    "async_worker": false
+  },
+  "error_reasons": {
+    "404 unknown_race": "Unknown race (2018-2024 registry miss, including any 2025 race_id).",
+    "422 unknown_state": "Exact-anchor miss / malformed anchor / invalid reconstructed state.",
+    "422 simulation_unsupported": {
+      "detail": "Well-formed but un-simulatable factual state; stable machine-readable reason.",
+      "reasons": [
+        "unobserved_roster_member",
+        "non_contemporaneous_roster_member",
+        "neutralized_track_state",
+        "red_flag_track_state",
+        "unknown_track_state",
+        "wet_track_conditions",
+        "wet_compound_state",
+        "missing_tyre_age",
+        "retired_driver_unsupported",
+        "missing_circuit_id",
+        "missing_season",
+        "unsupported_season",
+        "parameter_temporal_leak",
+        "missing_pace_parameter",
+        "leader_progress_not_represented"
+      ]
+    },
+    "503 parameter_unavailable": "Frozen through-2024 parameter artifact missing or corrupt (never a runtime estimation).",
+    "500 internal": "Unexpected serving failure; never disguised as a client error."
+  },
+  "scientific_contract": {
+    "simulation_contract_version": "v1",
+    "engine_version": "r4-engine-v1",
+    "monte_carlo_version": "r5-monte-carlo-v1",
+    "pit_dynamics_version": "r6-pit-dynamics-v1",
+    "parameter_contract_version": "r3-v1",
+    "parameter_set_id": "phase6-r3-empirical",
+    "production_parameter_through_season": 2024,
+    "execution_policy": "retrospective_product",
+    "pit_dynamics_enabled": true,
+    "reliability": "DEFERRED (DNF null)",
+    "traffic_overtaking": "DEFERRED",
+    "contemporaneity_reason": "non_contemporaneous_roster_member",
+    "contemporaneity_max_observation_lap_times": 3.0
+  }
+}

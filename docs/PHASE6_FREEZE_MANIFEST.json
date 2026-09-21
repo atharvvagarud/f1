@@ -1,0 +1,271 @@
+{
+  "api_contract": {
+    "endpoint": "POST /v2/simulations/race",
+    "path": "docs/PHASE6_SIMULATION_API_CONTRACT.json",
+    "routes": "api/v2_simulation_routes.py",
+    "routes_sha256": "fd89b6c2a06a635d3d4113e820a1eed1e01df3bf5644adca09ba439b45236be7",
+    "schemas": "api/v2_simulation_schemas.py",
+    "schemas_sha256": "c3e30b500c64daadab69e7cd604e1b541971bd70d42e1dad0cd13dea703affcf",
+    "service": "api/v2_simulation_service.py",
+    "service_sha256": "97f6623e998ce5fe331a3c03826683b17ac785ee476f60cd74d39cf40e48b5ca",
+    "sha256": "16f94a3d3a63482859bae2b245ae7736c6ca6fa8f1e7831956208e224673a1c5"
+  },
+  "api_main_drift": {
+    "phase4_frozen_sha256": "455910f5ab8d4e82cb2a881cba6be97cb69fa785569df82dcba61bf77671e959",
+    "phase5_final_sha256": "2840271a49ced72720e9fc0fa3028a206ff4b9d8c1178fd6a1eab7ebe118549a",
+    "phase6_final_sha256": "5a0ec4396e8fb5f7c4d1e7efd3882d53f1a786ca146e795760cc40e1aa0fed9a",
+    "reason": "additive Phase-6 simulation router integration (import + include_router + SimulationParameterUnavailableError handler); no scientific module touched"
+  },
+  "commit": null,
+  "contracts": {
+    "eligibility_rule_version": "r3-eligibility-v1",
+    "engine_version": "r4-engine-v1",
+    "estimator_version": "r3-estimator-v1",
+    "execution_policy": "retrospective_product",
+    "monte_carlo_version": "r5-monte-carlo-v1",
+    "parameter_contract_version": "r3-v1",
+    "pit_dynamics_enabled_in_product": true,
+    "pit_dynamics_version": "r6-pit-dynamics-v1",
+    "probability_semantics": "MONTE_CARLO_FREQUENCY",
+    "reliability": "DEFERRED",
+    "residual_sampler": "piecewise-linear empirical quantile interpolation",
+    "rng_algorithm": "PCG64",
+    "rng_seed_sequence": "SeedSequence([master_seed, simulation_id, contract_tag])",
+    "sc_vsc_red_generation": "DEFERRED",
+    "simulation_contract_version": "v1",
+    "traffic_overtaking": "DEFERRED",
+    "weather_evolution": "DEFERRED"
+  },
+  "count_policy": {
+    "async_worker": false,
+    "default": 1000,
+    "maximum_synchronous": 10000,
+    "minimum": 1
+  },
+  "firewall_2025": true,
+  "frontend": {
+    "auto_run": false,
+    "explicit_run_only": true,
+    "feature": "frontend/features/simulator",
+    "normalization": "none",
+    "route": "/simulator",
+    "stale_response_protection": true
+  },
+  "generated_by": "R8 (product integration, hardening, final phase freeze)",
+  "known_limitations": [
+    "No driver-specific pace term (constructor-shared anchor).",
+    "No traffic/overtaking model: free-air ordering only.",
+    "No reliability/DNF hazard: DNF is null. Non-contemporaneous states are refused rather than modelled.",
+    "Independent per-lap residuals; residual representation is ~6-22% wider than the stored sample std.",
+    "No future SC/VSC/red or weather evolution; dry green anchors only.",
+    "Pit timing is historically plausible behaviour, not strategy; systematic over-pitting ~0.3-0.4 stops/driver.",
+    "Lap-boundary 2-lap pit-loss approximation.",
+    "R7 coverage: 42 supported states / 23 races; LATE only 8; calibration subset only 2.",
+    "Product peak RSS reflects the full Phase-4 serving process, not isolation of the simulator."
+  ],
+  "performance_summary": {
+    "cases": [
+      {
+        "count": 1000,
+        "engine_runtime_s": 2.3137001669965684,
+        "fixture": "early",
+        "http_total_s": 2.357088541990379,
+        "invalid": 0,
+        "peak_rss_mb": 1012.390625,
+        "reconstruction_s": 0.031292083993321285,
+        "serialization_s": 0.007739583001239225,
+        "simulation_s": 2.3179800839861855,
+        "valid": 1000
+      },
+      {
+        "count": 1000,
+        "engine_runtime_s": 1.1182659169717226,
+        "fixture": "mid",
+        "http_total_s": 1.1660985830239952,
+        "invalid": 0,
+        "peak_rss_mb": 1012.546875,
+        "reconstruction_s": 0.038279667001916096,
+        "serialization_s": 0.005330375046469271,
+        "simulation_s": 1.1224264999909792,
+        "valid": 1000
+      },
+      {
+        "count": 1000,
+        "engine_runtime_s": 0.7532257499988191,
+        "fixture": "late",
+        "http_total_s": 0.8009984169912059,
+        "invalid": 0,
+        "peak_rss_mb": 1012.75,
+        "reconstruction_s": 0.038265125011093915,
+        "serialization_s": 0.0052856669935863465,
+        "simulation_s": 0.7573867090104613,
+        "valid": 1000
+      },
+      {
+        "count": 10000,
+        "engine_runtime_s": 11.26339924999047,
+        "fixture": "mid",
+        "http_total_s": 11.31085316601093,
+        "invalid": 0,
+        "peak_rss_mb": 1013.0,
+        "reconstruction_s": 0.03759891598019749,
+        "serialization_s": 0.005664375028572977,
+        "simulation_s": 11.267529999982798,
+        "valid": 10000
+      }
+    ],
+    "memory_note": "peak RSS is whole-process with the full Phase-4 serving stack loaded (corpus+history+model); R7 measured simulation-runtime production memory ~170 MB",
+    "path": "POST /v2/simulations/race",
+    "r7_engine_only_context": "10k engine-only: 24.6 s early / 12.7 s mid / 7.3 s late",
+    "service_initialization_s": {
+      "corpus_load_s": 3.6717339160095435,
+      "parameter_load_s": 0.004619166982593015,
+      "service_build_s": 2.2374995751306415e-05,
+      "total_s": 3.676375457987888
+    },
+    "source": "data/v2/simulation/validation/r8_product_benchmark.json"
+  },
+  "phase": "phase-6",
+  "phase_name": "monte-carlo-simulation-engine",
+  "probability_semantics": {
+    "dnf": "null (reliability deferred)",
+    "normalization": "none (service, schema, route, frontend)",
+    "points": "null (points regulation not modelled)",
+    "value": "MONTE_CARLO_FREQUENCY"
+  },
+  "r3_production_parameter": {
+    "artifact_manifest": "4d2f9db5442386dbc65d0c0285dba065475460aaa29bb7e9b1b3c9846743a2d3",
+    "estimation_seasons": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "loaded_once": true,
+    "parameter_contract_version": "r3-v1",
+    "parameter_set_id": "phase6-r3-empirical",
+    "parameter_version": "r3-v1.2024.4c2f85f08f1c",
+    "runtime_estimation": false,
+    "scientific_hash": "4c2f85f08f1ce66cc6477982b2d5c97e9547f70927224b8e949ebe123ff3f140",
+    "through_season": 2024
+  },
+  "r71_contemporaneity_contract": {
+    "drops_drivers": false,
+    "enforcement": "v2.simulation.engine._validate_start_state before stochastic execution",
+    "infers_retirement": false,
+    "max_observation_lap_times": 3.0,
+    "reads_future_information": false,
+    "reason": "non_contemporaneous_roster_member",
+    "whole_state_rejection": true
+  },
+  "r7_final_accepted_validation": {
+    "artifact": "data/v2/simulation/validation/r7_validation.json",
+    "brier": 0.026694492857142853,
+    "clean_artifact": "data/v2/simulation/validation/r7_validation_clean_v1.json",
+    "ece": 0.018987391304347827,
+    "evaluated_seasons": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "exclusions": 75,
+    "expected_finish_mae": 2.445185013690587,
+    "mean_mc_se_actual_winner": 0.012776263082014646,
+    "races": 23,
+    "rps": 0.09280341994750892,
+    "spearman": 0.7983706775557726,
+    "supported_states": 42,
+    "winner_log_loss": 1.2237002936309627
+  },
+  "r7_protocol": {
+    "broad_count": 1000,
+    "calibration_count": 10000,
+    "evaluation_seasons": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "excluded_seasons": [
+      2018,
+      2019,
+      2025
+    ],
+    "master_seed": 20240101,
+    "protocol_identity": "d071b09b40bc6f79853f8d90a0744b73aec887f0efa0e863820bc6c53028ab20",
+    "protocol_version": "r7-validation-v1"
+  },
+  "scientific_file_hashes": {
+    "__init__.py": "ac8ecad017b7d07f3a9123a9e3e725cf75217f1f81a82769f85bfe0b14584258",
+    "adapter.py": "b42f1f77c5059293988c75d79a9bfc5229b13bbd77456a618bdffd14926a8de4",
+    "config.py": "8164553ebfc827098699b58af5333bec403417738f8be57c00ac9a077c61f353",
+    "engine.py": "af47232bd226406c892ca96c2e3eb6266b848c14e32316ce02108b08d672384f",
+    "errors.py": "9b4d13e8e7428f04808ac89487072fa597f380d2064e354b872c1d9dbc006c94",
+    "estimator.py": "25fdac8fe6157f414a01612f022581adf24e8b4cf400a12551676ee81c30a86a",
+    "monte_carlo.py": "f0a3447f18946cb33548e8711d3184602ffef542dad57df17284451dc25e7d6b",
+    "params.py": "efc66b20bfcd3bbd3a0375f92d11e41d542a524c339e816c833944aba1ec0938",
+    "results.py": "4b8827cf0d10290f6d2a4d416db1942796b77d17b468c6388e2c18341a425387",
+    "rng.py": "f357eea5c5743eee175a657c5bf1f8afdc1c66776036b74a7607b3f3584210b5",
+    "state.py": "051922bc96a02cbd4d058e6e5e4c7ea229b545bc603f6303dc769f2b4367e6e3",
+    "validation.py": "f356756f72bcbee204ac7b577c950a1134b40fb3c3ccc53bf1f1750f5b11c800"
+  },
+  "scientific_runtime_unchanged_during_integration": true,
+  "served_seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "status": "FROZEN",
+  "tag": null,
+  "test_summary": {
+    "environment": "Python 3.11.15, NumPy 2.4.2, pandas 2.3.3, macOS arm64 (frozen R7 environment was Python 3.13.14)",
+    "failures": [
+      {
+        "cause": "MonteCarloResult identity is a function of numpy float values; the R7/R7.1 artifacts were pinned under the frozen Python 3.13.14 environment. On Python 3.11.15 the same accepted states and seeds reproduce the recorded state_identity but a different result_identity. Documented as Python-version-sensitive in the R7 report. Not caused by R8 (v2/simulation/* unchanged; hashes verified).",
+        "count": 7,
+        "kind": "python_version_sensitive_frozen_identity",
+        "tests": [
+          "tests/test_v2_phase6_r6.py::test_pit_disabled_reproduces_r5_result_identity",
+          "tests/test_v2_phase6_r71.py::test_accepted_state_matches_pre_fix_result_identity[x6]"
+        ]
+      },
+      {
+        "cause": "api/main.py is a non-scientific router-assembly file. Phase-4 froze 455910f5ab8d4e82cb2a881cba6be97cb69fa785569df82dcba61bf77671e959; Phase-5 additively changed it to 2840271a49ced72720e9fc0fa3028a206ff4b9d8c1178fd6a1eab7ebe118549a; R8 additively changes it to 5a0ec4396e8fb5f7c4d1e7efd3882d53f1a786ca146e795760cc40e1aa0fed9a (simulation router import + include_router + parameter-unavailable exception handler). Historical Phase-4/5 manifests are deliberately NOT rewritten; this manifest documents the drift.",
+        "count": 3,
+        "kind": "authorized_api_main_drift",
+        "tests": [
+          "tests/test_v2_phase4_freeze.py::test_frozen_module_hashes_match",
+          "tests/test_v2_phase5_freeze.py::test_freeze_manifest_file_hashes_match",
+          "tests/test_v2_phase5_freeze.py::test_freeze_manifest_documents_authorized_api_main_drift"
+        ]
+      },
+      {
+        "cause": "Asserts git HEAD == the Phase-4 commit 4f26801ffb0bb1a10725d6c78fba11c5547cb432; HEAD is the Phase-5 freeze commit ddee87106bfa462b5c43ca17dcf937b053c04f34. Stale since the Phase-5 freeze commit; independent of R8.",
+        "count": 1,
+        "kind": "stale_upstream_commit_pin",
+        "tests": [
+          "tests/test_v2_phase5_r7.py::test_head_and_phase4_tag_intact"
+        ]
+      }
+    ],
+    "frontend_build": "success (routes /, /replay, /simulator)",
+    "frontend_lint": "0 errors, 1 pre-existing warning (ResultCards.tsx barClassName unused)",
+    "frontend_typecheck": "0 errors",
+    "frontend_unit": "81 passed / 0 failed (node --test discovery)",
+    "full_python_suite": "2570 passed, 11 failed, 5 skipped, 4 xfailed, 56 warnings in 2869.60s (0:47:49) (pytest tests/)",
+    "phase4_phase5_regression": "included in the full suite; 4 failures documented below",
+    "phase6_freeze_seal": "15 passed (tests/test_v2_phase6_freeze.py)",
+    "phase6_suites": "647 passed, 7 failed, 2 warnings in 44.08s (tests/test_v2_phase6_r1..r71 + r8 + freeze)",
+    "r8_backend": "45 passed (tests/test_v2_phase6_r8.py)"
+  }
+}
