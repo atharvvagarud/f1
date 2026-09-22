@@ -1,7 +1,8 @@
-// Served-race selector (Phase-5 R5).
+// Served-race selector (Phase-5 R5; UI3 workstation control).
 //
 // Renders the backend-served registry as-is, chronological. Never fabricates
-// entries (2025 comes only from the backend, which excludes it).
+// entries (2025 comes only from the backend, which excludes it). Compact,
+// square, monospace control with a programmatically associated label.
 
 "use client";
 
@@ -23,13 +24,16 @@ export function RaceSelector({
   onSelect: (raceId: string) => void;
 }) {
   return (
-    <label className="flex min-w-0 flex-col gap-1">
-      <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+    <div className="flex min-w-0 flex-col gap-1.5">
+      <label
+        htmlFor="replay-race"
+        className="font-ui text-[10px] uppercase tracking-[0.14em] text-fg-dim"
+      >
         Historical race
-      </span>
+      </label>
       <select
-        aria-label="Select historical race"
-        className="w-full rounded-md border border-white/10 bg-slate-900 px-3 py-2 text-sm text-slate-100 focus-visible:outline-2 focus-visible:outline-red-500 disabled:opacity-50"
+        id="replay-race"
+        className="h-9 w-full border border-ink-700 bg-ink-950 px-2.5 font-data text-[13px] text-fg transition-colors focus-visible:border-ink-600 disabled:cursor-not-allowed disabled:text-fg-dim"
         value={raceId ?? ""}
         disabled={disabled || races.length === 0}
         onChange={(event) => onSelect(event.target.value)}
@@ -41,6 +45,11 @@ export function RaceSelector({
           </option>
         ))}
       </select>
-    </label>
+      {raceId ? (
+        <span className="font-data text-[10px] uppercase tracking-[0.1em] text-fg-dim">
+          {races.length} served races · 2018–2024
+        </span>
+      ) : null}
+    </div>
   );
 }

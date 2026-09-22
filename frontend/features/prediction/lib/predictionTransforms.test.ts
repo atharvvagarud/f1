@@ -4,7 +4,7 @@ import { describe, it } from "node:test";
 // type-stripping (the runtime resolves it); tsc without
 // allowImportingTsExtensions cannot, hence the targeted suppression below.
 // @ts-expect-error TS5097 (.ts extension for node type-stripping)
-import { buildChartRows, groupEnsembleSummaryByLap } from "./predictionTransforms.ts";
+import { buildChartRows, buildPredictionView, groupEnsembleSummaryByLap } from "./predictionTransforms.ts";
 import type { EnsembleResult, SingleModelResult } from "../../../lib/predictionTypes";
 
 // Characterisation tests for the view-model transforms used by the
@@ -115,5 +115,71 @@ describe("groupEnsembleSummaryByLap", () => {
     );
     assert.equal(grouped[5].length, 2);
     assert.equal(grouped[10].length, 1);
+  });
+});
+
+describe("buildPredictionView", () => {
+  it("returns null until a matching result exists", () => {
+    assert.equal(
+      buildPredictionView("ensemble", "xgboost", "X", 2023, null, null),
+      null,
+    );
+    assert.equal(
+      buildPredictionView("single", "xgboost", "X", 2023, ensemble, null),
+      null,
+    );
+  });
+
+  it("maps an ensemble result without rewriting probabilities", () => {
+    const view = buildPredictionView(
+      "ensemble",
+      "xgboost",
+      "Abu Dhabi Grand Prix",
+      2023,
+      ensemble,
+      null,
+    );
+    assert.ok(view);
+    assert.equal(view.mode, "ensemble");
+    assert.equal(view.leader.winner, "VER");
+    assert.equal(view.leader.winProbability, 0.6);
+    assert.equal(view.leader.probabilityLabel, "Confidence (XGBoost)");
+    assert.equal(view.leader.lap, 10);
+    assert.equal(view.agreementCount, 3);
+    assert.equal(view.matched, true);
+    assert.deepEqual(
+      view.checkpoints.map((c) => [c.lap, c.modelKey]),
+      [
+        [5, "Logistic Regression"],
+        [5, "XGBoost"],
+        [10, "XGBoost"],
+      ],
+    );
+  });
+
+  it("maps a single-model result from its latest row", () => {
+    const view = buildPredictionView(
+      "single",
+      "hgb",
+      "Abu Dhabi Grand Prix",
+      2023,
+      null,
+      single,
+    );
+    assert.ok(view);
+    assert.equal(view.mode, "single");
+    assert.equal(view.leader.winner, "VER");
+    assert.equal(view.leader.winProbability, 0.6);
+    assert.equal(view.leader.probabilityLabel, "Win probability");
+    assert.equal(view.agreementCount, null);
+    assert.equal(view.field.length, 1);
+    assert.equal(view.field[0].modelKey, "HGB");
+    assert.deepEqual(
+      view.checkpoints.map((c) => [c.lap, c.predictedWinner]),
+      [
+        [10, "VER"],
+        [5, "HAM"],
+      ],
+    );
   });
 });

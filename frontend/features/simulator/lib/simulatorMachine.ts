@@ -89,6 +89,64 @@ export function sortDriversByWin(
   );
 }
 
+/** Deterministic distribution order: expected finish asc, driver_id asc. */
+export function sortDriversByExpectedFinish(
+  drivers: SimulationResponse["drivers"],
+): SimulationResponse["drivers"] {
+  return [...drivers].sort(
+    (a, b) =>
+      a.expected_finish - b.expected_finish ||
+      (a.driver_id < b.driver_id ? -1 : a.driver_id > b.driver_id ? 1 : 0),
+  );
+}
+
+/** Most frequent simulated winner (the head of the deterministic win order). */
+export function mostFrequentWinner(
+  drivers: SimulationResponse["drivers"],
+): SimulationResponse["drivers"][number] | null {
+  return sortDriversByWin(drivers)[0] ?? null;
+}
+
+/**
+ * Ordered finishing-position columns present in the aggregate. Actual
+ * positions only — never an interpolated or invented position. A null
+ * position (contract-allowed) sorts last when the backend returns one.
+ */
+export function distributionPositions(
+  drivers: SimulationResponse["drivers"],
+): (number | null)[] {
+  const positions = new Set<number>();
+  let hasNull = false;
+  for (const driver of drivers) {
+    for (const bucket of driver.finish_position_distribution) {
+      if (bucket.position === null) hasNull = true;
+      else positions.add(bucket.position);
+    }
+  }
+  const ordered = [...positions].sort((a, b) => a - b);
+  return hasNull ? [...ordered, null] : ordered;
+}
+
+/** Discrete neutral intensity step for a frequency (0 = no simulated outcome). */
+export function distributionLevel(frequency: number): 0 | 1 | 2 | 3 {
+  if (!Number.isFinite(frequency) || frequency <= 0) return 0;
+  if (frequency < 0.05) return 1;
+  if (frequency < 0.2) return 2;
+  return 3;
+}
+
+/**
+ * Matrix cell text: the empirical percentage (1 dp), `<0.1` when a non-zero
+ * frequency rounds below display precision, blank exactly at zero. The value
+ * is always text; the intensity step is redundant reinforcement, not meaning.
+ */
+export function formatDistributionCell(frequency: number): string {
+  if (!Number.isFinite(frequency) || frequency <= 0) return "";
+  const percent = frequency * 100;
+  if (percent < 0.05) return "<0.1";
+  return percent.toFixed(1);
+}
+
 /** Verbatim aggregate; never a share, never normalized. */
 export function winMass(drivers: SimulationResponse["drivers"]): number {
   return drivers.reduce((acc, d) => acc + d.win_probability, 0);

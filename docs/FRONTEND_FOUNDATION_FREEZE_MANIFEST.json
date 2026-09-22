@@ -1,0 +1,69 @@
+{
+  "freeze_version": "ui7-frontend-foundation-v1",
+  "date": "2026-09-22",
+  "phase6_checkpoint": {
+    "commit": "b813ffe1",
+    "tag": "v2-monte-carlo-phase6",
+    "status": "FROZEN"
+  },
+  "implemented_routes": [
+    { "surface": "PREDICT", "route": "/", "generation": "V1 legacy winner prediction" },
+    { "surface": "REPLAY", "route": "/replay", "generation": "Phase-5 historical replay v1" },
+    { "surface": "SIMULATE", "route": "/simulator", "generation": "Phase-6 Monte Carlo v1" }
+  ],
+  "deferred_routes": ["MODELS", "ABOUT", "STRATEGY"],
+  "frontend_test_count": 97,
+  "frontend_test_failures": 0,
+  "typecheck_status": "clean",
+  "lint_status": "0 errors / 0 warnings",
+  "build_status": "green",
+  "graph_nodes": 8898,
+  "graph_edges": 21985,
+  "graph_communities": 292,
+  "graph_cycles": 0,
+  "responsive_viewports": [
+    "1440x900",
+    "1024x768",
+    "768x800",
+    "650x800",
+    "390x844",
+    "360x800"
+  ],
+  "page_level_horizontal_overflow": "none",
+  "accessibility_target": "WCAG 2.1 AA",
+  "probability_semantics": {
+    "prediction": "INDEPENDENT_BINARY",
+    "replay_prediction": "INDEPENDENT_BINARY",
+    "simulator": "MONTE_CARLO_FREQUENCY"
+  },
+  "known_limitations": [
+    "Replay prediction cache is not generated/served; winner-model and probability-timeline states return cache_missing (factual replay unaffected).",
+    "Simulator v1 scientific limitations remain backend-frozen (no DNF/points, traffic/overtaking, reliability, weather/SC evolution; empirical pit behaviour).",
+    "MODELS/ABOUT surfaces and the Phase-7 strategy engine are not implemented.",
+    "Cold hard-navigation deep link to a replay frame can settle on frame 0 before the timeline is cached; warm navigation preserves an explicit frame (navigational only).",
+    "PositionDistribution defensively labels a contract-allowed null finishing position as DNF; unreachable under the frozen backend (no null positions observed)."
+  ],
+  "application_code_changes": [
+    {
+      "file": "frontend/next.config.ts",
+      "change": "pin turbopack.root to the frontend directory",
+      "reason": "blocker fix: unrelated root package-lock.json changed Turbopack workspace-root inference and broke next build",
+      "semantics_impact": "none"
+    }
+  ],
+  "phase7_status": "NOT STARTED",
+  "artifacts": {
+    "freeze_report": "docs/FRONTEND_FOUNDATION_FREEZE_REPORT.md",
+    "design_system": "docs/FRONTEND_DESIGN_SYSTEM.md",
+    "redesign_plan": "docs/FRONTEND_REDESIGN_PLAN.md",
+    "design_md": "DESIGN.md",
+    "product_md": "PRODUCT.md"
+  },
+  "sha256": {
+    "docs/FRONTEND_FOUNDATION_FREEZE_REPORT.md": "4f47b6b7c64908fd96d010192042e9bd67f5af372ff972b15641073b8d163576",
+    "docs/FRONTEND_DESIGN_SYSTEM.md": "e6fcb7c85e1e2eac7cea3320a3daaacad446be0fd4adf09b299fdf870f2fe903",
+    "docs/FRONTEND_REDESIGN_PLAN.md": "73165a08a892724b0230be17e950148e1e60e28a660c69cafb654870247c74e5",
+    "DESIGN.md": "647d4e449c855ec1f6d2544ea5d895614f48ca61f4f4b59946735d8ea052e859",
+    "PRODUCT.md": "72eb46143746a5c84c1999af3846ef03340be96850499017802d551d9e7d7c92"
+  }
+}

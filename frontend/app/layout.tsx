@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Space_Grotesk } from "next/font/google";
+import { AppShell } from "@/components/shell/AppShell";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -15,9 +16,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "F1 In-Race Winner Prediction",
+  title: "F1 Intelligence",
   description:
-    "Predict the eventual race winner using tuned machine learning models across multiple race checkpoints.",
+    "Race intelligence workstation for historical F1 winner prediction, frame-accurate replay and Monte Carlo simulation.",
 };
 
 export default function RootLayout({
@@ -30,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${spaceGrotesk.variable} antialiased`}
       >
-        {children}
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

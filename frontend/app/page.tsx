@@ -1,20 +1,25 @@
 "use client";
 
-import { motion } from "motion/react";
-import Link from "next/link";
-import { usePrediction } from "@/features/prediction/hooks/usePrediction";
-import PredictionHero from "@/features/prediction/components/PredictionHero";
-import EnsembleResults from "@/features/prediction/components/EnsembleResults";
-import SingleResults from "@/features/prediction/components/SingleResults";
-import PredictionTabs from "@/components/prediction/PredictionTabs";
-import ControlsPanel from "@/components/prediction/ControlsPanel";
+// Prediction route (UI2). Composition only: page context, control strip,
+// loading/error/empty states, the primary decision block and the result tabs.
+// Selection state, request flow and result shape live in usePrediction and
+// predictionTransforms; no prediction semantics are computed here.
 
-// Prediction route: composes the prediction feature. All selection state,
-// data fetching and request flow live in usePrediction; hero, tab sections
-// and controls are feature/components. This file owns page layout only.
+import { PredictionControls } from "@/components/prediction/PredictionControls";
+import PredictionTabs from "@/components/prediction/PredictionTabs";
+import { PredictionDecision } from "@/features/prediction/components/PredictionDecision";
+import {
+  PredictionCheckpoints,
+  PredictionField,
+  PredictionTrend,
+} from "@/features/prediction/components/PredictionResultPanels";
+import { usePrediction } from "@/features/prediction/hooks/usePrediction";
+import {
+  buildChartRows,
+  buildPredictionView,
+} from "@/features/prediction/lib/predictionTransforms";
 
 export default function HomePage() {
-  const prediction = usePrediction();
   const {
     year,
     years,
@@ -34,96 +39,143 @@ export default function HomePage() {
     setActiveTab,
     handlePredict,
     hasPrediction,
-  } = prediction;
+  } = usePrediction();
+
+  const view = hasPrediction
+    ? buildPredictionView(mode, model, event, year, ensembleResult, singleResult)
+    : null;
+  const chartRows = view
+    ? buildChartRows(mode, model, ensembleResult, singleResult)
+    : {};
+
+  // Persistent polite status for async completion, mirroring Replay and
+  // Simulator. The transient loading paragraph no longer owns the live region,
+  // so the "ready" transition is announced instead of silently swapping out.
+  const statusMessage = loading
+    ? "Running prediction across model checkpoints…"
+    : view
+      ? "Prediction ready."
+      : "";
 
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
-      <div
-        className={`mx-auto max-w-7xl px-6 ${
-          hasPrediction
-            ? "py-10"
-            : "min-h-screen flex items-center justify-center"
-        }`}
-      >
-        <div className="mb-4 flex w-full justify-end gap-2">
-          <Link
-            href="/replay"
-            className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200 hover:border-white/25"
-          >
-            Historical replay →
-          </Link>
-          <Link
-            href="/simulator"
-            className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200 hover:border-white/25"
-          >
-            Simulator →
-          </Link>
-        </div>
-        {error && (
-          <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-200">
-            {error}
-          </div>
-        )}
-        <div className="w-full">
-          <div className="mx-auto grid max-w-6xl grid-cols-12 gap-6">
-            <PredictionHero
-              mode={mode}
-              model={model}
-              event={event}
-              year={year}
-              ensembleResult={ensembleResult}
-              singleResult={singleResult}
-            />
+    <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+      <header className="border-b border-ink-700 pb-4">
+        <p className="font-data text-[11px] font-semibold uppercase tracking-[0.2em] text-fg-muted">
+          Race intelligence
+        </p>
+        <h1 className="mt-1 font-display text-2xl font-bold tracking-tight text-fg">
+          Winner prediction
+        </h1>
+        <p className="mt-1 max-w-3xl text-sm leading-6 text-fg-muted">
+          Read the frozen winner models at their recorded checkpoints for a
+          served historical race. Every driver value is an independent binary
+          win probability, not a share of the race.
+        </p>
+      </header>
 
-            <ControlsPanel
-              year={year}
-              years={years}
-              setYear={setYear}
-              event={event}
-              events={events}
-              setEvent={setEvent}
-              mode={mode}
-              setMode={setMode}
-              model={model}
-              setModel={setModel}
-              loading={loading}
-              handlePredict={handlePredict}
-            />
-          </div>
-        </div>
+      <p role="status" className="sr-only">
+        {statusMessage}
+      </p>
 
-        {hasPrediction && (
-          <div className="mx-auto mt-6 flex max-w-6xl justify-center">
-            <PredictionTabs activeTab={activeTab} setActiveTab={setActiveTab} />
-          </div>
-        )}
-
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          className="mt-6 space-y-6"
-        >
-          {mode === "ensemble" && ensembleResult && (
-            <EnsembleResults
-              ensembleResult={ensembleResult}
-              event={event}
-              year={year}
-              activeTab={activeTab}
-            />
-          )}
-
-          {mode === "single" && singleResult && (
-            <SingleResults
-              singleResult={singleResult}
-              model={model}
-              event={event}
-              year={year}
-              activeTab={activeTab}
-            />
-          )}
-        </motion.section>
+      <div className="mt-4">
+        <PredictionControls
+          year={year}
+          years={years}
+          setYear={setYear}
+          event={event}
+          events={events}
+          setEvent={setEvent}
+          mode={mode}
+          setMode={setMode}
+          model={model}
+          setModel={setModel}
+          loading={loading}
+          handlePredict={handlePredict}
+        />
       </div>
-    </main>
+
+      {error ? (
+        <div
+          role="alert"
+          className="mt-4 flex flex-wrap items-center justify-between gap-3 border border-danger/40 bg-ink-900 px-4 py-3 text-[13px] text-fg"
+        >
+          <span>{error}</span>
+          <button
+            type="button"
+            onClick={handlePredict}
+            disabled={loading}
+            className="h-8 border border-ink-700 px-3 font-ui text-[11px] uppercase tracking-[0.14em] text-fg-muted transition-colors hover:text-fg disabled:opacity-50"
+          >
+            Retry
+          </button>
+        </div>
+      ) : null}
+
+      {loading ? (
+        <p className="mt-4 border border-ink-700 bg-ink-900 px-4 py-3 font-data text-[12px] text-fg-muted">
+          Running prediction across model checkpoints…
+        </p>
+      ) : null}
+
+      {view ? (
+        <div className="mt-4 space-y-4">
+          <PredictionDecision view={view} />
+
+          <div>
+            <PredictionTabs
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
+            <div className="mt-4">
+              <section
+                role="tabpanel"
+                id="pred-panel-field"
+                aria-labelledby="pred-tab-field"
+                hidden={activeTab !== "field"}
+                tabIndex={0}
+              >
+                <PredictionField view={view} />
+              </section>
+              <section
+                role="tabpanel"
+                id="pred-panel-checkpoints"
+                aria-labelledby="pred-tab-checkpoints"
+                hidden={activeTab !== "checkpoints"}
+                tabIndex={0}
+              >
+                <PredictionCheckpoints view={view} />
+              </section>
+              <section
+                role="tabpanel"
+                id="pred-panel-probability"
+                aria-labelledby="pred-tab-probability"
+                hidden={activeTab !== "probability"}
+                tabIndex={0}
+              >
+                <PredictionTrend
+                  chartRows={chartRows}
+                  meta={
+                    view.mode === "ensemble"
+                      ? `${view.field.length} models`
+                      : view.modeLabel
+                  }
+                />
+              </section>
+            </div>
+          </div>
+        </div>
+      ) : !loading && !error ? (
+        <div className="mt-4 border border-ink-700 bg-ink-900 px-4 py-6">
+          <p className="font-display text-[13px] font-bold uppercase tracking-[0.14em] text-fg">
+            No prediction loaded
+          </p>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-fg-muted">
+            Choose a season and Grand Prix above, then run a prediction to read
+            the frozen models&apos; winner estimates at each recorded
+            checkpoint.
+          </p>
+        </div>
+      ) : null}
+    </div>
   );
 }

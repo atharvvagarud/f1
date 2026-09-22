@@ -1,9 +1,10 @@
-// Cached winner-prediction panel (Phase-5 R5).
+// Cached winner-prediction panel (Phase-5 R5; UI3 model intelligence).
 //
-// Checkpoint honesty: non-checkpoint frames never trigger a request and say
-// so; 503 cache absence is an expected, non-fatal state. HIT values render
-// verbatim as independent binary estimates — horizontal bars (never a pie),
-// no normalization, aggregates >100% shown as valid, nulls never 0%.
+// Checkpoint honesty: non-checkpoint frames never trigger a request and say so;
+// 503 cache absence is an expected, non-fatal technical state. HIT values
+// render verbatim as independent binary estimates — horizontal bars (never a
+// pie, never a share), no normalization, aggregates >100% shown as valid,
+// nulls never 0%.
 
 "use client";
 
@@ -13,6 +14,26 @@ import {
   sumProbabilities,
 } from "@/features/replay/lib/replayMachine";
 import { readableDriverId } from "@/features/replay/components/StandingsTable";
+import { Panel, PanelHeader, SemanticsNote } from "@/components/ui/Panel";
+
+function unavailableState(reason: string | null, scope: string) {
+  return (
+    <div className="flex flex-col gap-2">
+      <div
+        role="status"
+        className="border border-warn/40 bg-ink-950 px-3 py-2.5"
+      >
+        <p className="font-display text-[11px] font-bold uppercase tracking-[0.14em] text-warn">
+          Cache not available
+        </p>
+        <p className="mt-1 font-data text-[11px] leading-5 text-fg-muted">
+          Historical prediction cache has not been generated for {scope}
+          {reason ? ` (${reason})` : ""}. Factual replay is unaffected.
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export function PredictionPanel({
   prediction,
@@ -23,58 +44,55 @@ export function PredictionPanel({
   isCheckpoint: boolean;
   checkpointReasons: string[];
 }) {
+  const meta = isCheckpoint
+    ? `Prediction checkpoint${
+        checkpointReasons.length > 0 ? ` · ${checkpointReasons.join(" + ")}` : ""
+      }`
+    : "No model checkpoint";
+
   return (
-    <section aria-label="Cached winner prediction" className="flex flex-col gap-3">
-      <div className="flex items-center justify-between">
-        <h2 className="font-heading text-sm font-bold uppercase tracking-[0.16em] text-slate-300">
-          Winner model
-        </h2>
-        {isCheckpoint ? (
-          <span className="rounded bg-sky-500/15 px-2 py-0.5 text-[11px] font-bold tracking-[0.1em] text-sky-300 ring-1 ring-sky-500/30">
-            PREDICTION CHECKPOINT{checkpointReasons.length > 0 ? ` • ${checkpointReasons.join(" + ")}` : ""}
-          </span>
-        ) : (
-          <span className="rounded bg-white/5 px-2 py-0.5 text-[11px] font-semibold tracking-[0.1em] text-slate-500 ring-1 ring-white/10">
-            NO MODEL CHECKPOINT AT THIS FRAME
-          </span>
+    <Panel>
+      <PanelHeader title="Winner model" meta={meta} />
+
+      <div className="px-4 py-3">
+        {prediction.kind === "none" &&
+          (isCheckpoint ? (
+            <p className="font-data text-[11px] leading-5 text-fg-muted">
+              Awaiting cached prediction for this checkpoint.
+            </p>
+          ) : (
+            <p className="font-data text-[11px] leading-5 text-fg-muted">
+              Factual frame only — model checkpoints are sparse. Step to a
+              checkpoint frame to read the frozen winner estimates.
+            </p>
+          ))}
+
+        {prediction.kind === "loading" && (
+          <p
+            role="status"
+            className="font-data text-[11px] leading-5 text-fg-muted"
+          >
+            Loading cached prediction…
+          </p>
+        )}
+
+        {prediction.kind === "unavailable" &&
+          unavailableState(prediction.reason, "this race's checkpoints")}
+
+        {prediction.kind === "error" && (
+          <div
+            role="alert"
+            className="border border-danger/40 bg-ink-950 px-3 py-2.5 font-data text-[11px] leading-5 text-fg"
+          >
+            {prediction.message}
+          </div>
+        )}
+
+        {prediction.kind === "hit" && (
+          <PredictionHit prediction={prediction.response.prediction} />
         )}
       </div>
-
-      {prediction.kind === "none" && (
-        <p className="text-sm leading-6 text-slate-400">
-          {isCheckpoint
-            ? "Awaiting cached prediction for this checkpoint."
-            : "Factual frame only — model checkpoints are sparse. Step to a checkpoint frame to see winner estimates."}
-        </p>
-      )}
-
-      {prediction.kind === "loading" && (
-        <p role="status" className="text-sm text-slate-400">
-          Loading cached prediction…
-        </p>
-      )}
-
-      {prediction.kind === "unavailable" && (
-        <div role="status" className="rounded-md border border-white/10 bg-white/5 px-3 py-2">
-          <p className="text-sm font-semibold text-slate-200">Prediction unavailable</p>
-          <p className="mt-1 text-sm leading-6 text-slate-400">
-            Historical prediction cache has not been generated for this
-            checkpoint{prediction.reason ? ` (${prediction.reason})` : ""}. Factual
-            replay is unaffected.
-          </p>
-        </div>
-      )}
-
-      {prediction.kind === "error" && (
-        <div role="alert" className="rounded-md border border-red-500/30 bg-red-500/10 px-3 py-2">
-          <p className="text-sm text-red-200">{prediction.message}</p>
-        </div>
-      )}
-
-      {prediction.kind === "hit" && (
-        <PredictionHit prediction={prediction.response.prediction} />
-      )}
-    </section>
+    </Panel>
   );
 }
 
@@ -101,13 +119,14 @@ function PredictionHit({
 
   return (
     <div className="flex flex-col gap-3">
-      <p className="text-[11px] uppercase tracking-[0.14em] text-slate-500">
-        Win probability •{" "}
-        <span className="text-slate-400">
-          independent binary model estimates (Σ {(total * 100).toFixed(1)}% — valid, not shares)
+      <p className="font-data text-[11px] uppercase tracking-[0.12em] text-fg-dim">
+        Win probability ·{" "}
+        <span className="text-fg-muted">
+          independent binary estimates (Σ {(total * 100).toFixed(1)}% — valid,
+          not shares)
         </span>
       </p>
-      <ol className="flex flex-col gap-1.5">
+      <ol className="flex flex-col">
         {ranked.map((entry) => {
           const text = formatProbability(entry.winner_probability);
           const width =
@@ -117,24 +136,27 @@ function PredictionHit({
           return (
             <li
               key={entry.driver_id}
-              className={`flex items-center gap-2 font-mono text-[13px] tabular-nums ${
-                entry.winner_probability === null ? "opacity-45" : ""
+              className={`flex items-center gap-2 border-b border-ink-700 py-1.5 font-data text-[12px] tabular-nums ${
+                entry.winner_probability === null ? "text-fg-dim" : "text-fg"
               }`}
             >
-              <span className="w-36 shrink-0 truncate font-sans text-xs font-semibold text-slate-200">
+              <span className="w-36 shrink-0 truncate font-ui text-[12px] font-semibold text-fg">
                 {readableDriverId(entry.driver_id)}
               </span>
-              <span className="relative h-4 flex-1 overflow-hidden rounded-sm bg-slate-800">
+              <span
+                className="relative h-3 flex-1 overflow-hidden bg-ink-850"
+                aria-hidden="true"
+              >
                 <span
-                  className="absolute inset-y-0 left-0 rounded-sm bg-sky-500"
+                  className="absolute inset-y-0 left-0 bg-info"
                   style={{ width }}
                 />
               </span>
-              <span className="w-20 shrink-0 text-right text-slate-100">
+              <span className="w-20 shrink-0 text-right">
                 {text ?? "n/a"}
               </span>
               {entry.winner_probability === null && (
-                <span className="w-24 shrink-0 text-right text-[10px] uppercase tracking-wide text-slate-500">
+                <span className="w-20 shrink-0 text-right font-ui text-[10px] uppercase tracking-[0.08em] text-fg-dim">
                   {entry.unavailable_reason ?? "unavailable"}
                 </span>
               )}
@@ -142,9 +164,10 @@ function PredictionHit({
           );
         })}
       </ol>
-      <p className="text-[11px] leading-5 text-slate-500">
-        {prediction.probability_semantics}: {prediction.probability_semantics_note}
-      </p>
+      <SemanticsNote>
+        {prediction.probability_semantics}: {prediction.probability_semantics_note}{" "}
+        Not normalised and not a categorical race distribution.
+      </SemanticsNote>
     </div>
   );
 }

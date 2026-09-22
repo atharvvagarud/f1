@@ -7,11 +7,16 @@ import {
   anchorKey,
   clampFrameIndex,
   defaultFrameIndex,
+  distributionLevel,
+  distributionPositions,
+  formatDistributionCell,
   formatExpectedFinish,
   formatPercent,
+  mostFrequentWinner,
   isCurrentSimulationResponse,
   responseMatchesSelection,
   sortDriversByWin,
+  sortDriversByExpectedFinish,
   unsupportedMessage,
   winMass,
 // @ts-expect-error TS5097 (.ts extension for node type-stripping)
@@ -185,8 +190,53 @@ describe("deterministic ordering and verbatim probabilities", () => {
   });
 });
 
-describe("rendering", () => {
-  it("formats probabilities as percent and null stays placeholder", () => {
+describe("position distribution display", () => {
+  it("most frequent winner is the deterministic win-order head", () => {
+    assert.equal(mostFrequentWinner(response().drivers)?.driver_id, "a");
+    assert.equal(mostFrequentWinner([]), null);
+  });
+
+  it("orders drivers by expected finish then id", () => {
+    const ordered = sortDriversByExpectedFinish([
+      { ...response().drivers[1], expected_finish: 5 },
+      { ...response().drivers[0], expected_finish: 2 },
+    ]);
+    assert.deepEqual(ordered.map((d) => d.driver_id), ["a", "b"]);
+  });
+
+  it("collects only the actual positions, null last", () => {
+    assert.deepEqual(distributionPositions(response().drivers), [1, 2]);
+    const withNull = [
+      {
+        ...response().drivers[0],
+        finish_position_distribution: [
+          { position: 3, frequency: 0.5 },
+          { position: null, frequency: 0.5 },
+        ],
+      },
+    ];
+    assert.deepEqual(distributionPositions(withNull), [3, null]);
+    assert.deepEqual(distributionPositions([]), []);
+  });
+
+  it("maps frequency to a discrete intensity step without inventing data", () => {
+    assert.equal(distributionLevel(0), 0);
+    assert.equal(distributionLevel(-1), 0);
+    assert.equal(distributionLevel(Number.NaN), 0);
+    assert.equal(distributionLevel(0.01), 1);
+    assert.equal(distributionLevel(0.1), 2);
+    assert.equal(distributionLevel(0.5), 3);
+  });
+
+  it("formats the matrix cell as text, blank only at exactly zero", () => {
+    assert.equal(formatDistributionCell(0), "");
+    assert.equal(formatDistributionCell(0.123), "12.3");
+    assert.equal(formatDistributionCell(0.0002), "<0.1");
+    assert.equal(formatDistributionCell(Number.NaN), "");
+  });
+});
+
+describe("rendering", () => {  it("formats probabilities as percent and null stays placeholder", () => {
     assert.equal(formatPercent(0.123), "12.3%");
     assert.equal(formatPercent(1), "100.0%");
     assert.equal(formatPercent(null), "—");

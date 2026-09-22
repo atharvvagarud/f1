@@ -1,145 +1,189 @@
 "use client";
 
+// Flat checkpoint-probability chart (UI2). Neutral hairline grid, no
+// gradients. Series are distinguished by weight, dash pattern, marker shape
+// and a labelled legend, never by colour alone. Paths break at missing
+// checkpoints; no value is interpolated.
+
+import { formatPercent, titleCaseModelName } from "@/lib/predictionHelpers";
+
 type ProbabilityChartProps = {
   groupedData: Record<string, { lap: number; value: number }[]>;
 };
 
+const WIDTH = 920;
+const HEIGHT = 320;
+const PAD_LEFT = 46;
+const PAD_RIGHT = 16;
+const PAD_TOP = 16;
+const PAD_BOTTOM = 34;
+
+const SERIES_STYLES = [
+  { color: "var(--color-fg)", dash: undefined, shape: "circle" as const },
+  { color: "var(--color-info)", dash: "7 4", shape: "square" as const },
+  { color: "var(--color-warn)", dash: "2 3", shape: "diamond" as const },
+];
+
+const MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace";
+
+function Marker({
+  x,
+  y,
+  shape,
+  color,
+}: {
+  x: number;
+  y: number;
+  shape: "circle" | "square" | "diamond";
+  color: string;
+}) {
+  if (shape === "square") {
+    return (
+      <rect
+        x={x - 2.8}
+        y={y - 2.8}
+        width={5.6}
+        height={5.6}
+        fill={color}
+        stroke="var(--color-ink-950)"
+        strokeWidth="1"
+      />
+    );
+  }
+
+  if (shape === "diamond") {
+    return (
+      <polygon
+        points={`${x},${y - 3.4} ${x + 3.4},${y} ${x},${y + 3.4} ${x - 3.4},${y}`}
+        fill={color}
+        stroke="var(--color-ink-950)"
+        strokeWidth="1"
+      />
+    );
+  }
+
+  return (
+    <circle
+      cx={x}
+      cy={y}
+      r="2.8"
+      fill={color}
+      stroke="var(--color-ink-950)"
+      strokeWidth="1"
+    />
+  );
+}
+
 export default function ProbabilityChart({
   groupedData,
 }: ProbabilityChartProps) {
-  const width = 860;
-  const height = 360;
-  const padding = 48;
-
-  const allPoints = Object.values(groupedData).flat();
+  const entries = Object.entries(groupedData);
+  const allPoints = entries.flatMap(([, points]) => points);
   if (!allPoints.length) return null;
 
-  const laps = allPoints.map((p) => p.lap);
-  const values = allPoints.map((p) => p.value);
-
+  const laps = allPoints.map((point) => point.lap);
   const minLap = Math.min(...laps);
   const maxLap = Math.max(...laps);
-  const minValue = 0;
-  const maxValue = Math.max(1, ...values);
 
-  const xScale = (lap: number) => {
-    if (maxLap === minLap) return width / 2;
-    return (
-      padding + ((lap - minLap) / (maxLap - minLap)) * (width - padding * 2)
-    );
-  };
+  const chartWidth = WIDTH - PAD_LEFT - PAD_RIGHT;
+  const chartHeight = HEIGHT - PAD_TOP - PAD_BOTTOM;
 
-  const yScale = (value: number) => {
-    if (maxValue === minValue) return height / 2;
-    return (
-      height -
-      padding -
-      ((value - minValue) / (maxValue - minValue)) * (height - padding * 2)
-    );
-  };
+  const xScale = (lap: number) =>
+    maxLap === minLap
+      ? PAD_LEFT + chartWidth / 2
+      : PAD_LEFT + ((lap - minLap) / (maxLap - minLap)) * chartWidth;
 
-  const palette = [
-    "#ffffff",
-    "#94a3b8",
-    "#475569",
-    "#e2e8f0",
-    "#64748b",
-    "#334155",
-  ];
+  const yScale = (value: number) =>
+    PAD_TOP + (1 - Math.max(0, Math.min(1, value))) * chartHeight;
 
-  const entries = Object.entries(groupedData);
+  const uniqueLaps = [...new Set(laps)].sort((a, b) => a - b);
 
   return (
-    <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-6">
-      <div className="mb-4">
-        <p className="text-sm uppercase tracking-[0.3em] text-slate-400">
-          Probability evolution
-        </p>
-        <h3 className="mt-2 text-2xl font-semibold text-white">
-          Win Probability Graph
-        </h3>
-      </div>
-
+    <div>
       <div className="overflow-x-auto">
         <svg
-          viewBox={`0 0 ${width} ${height}`}
-          className="min-w-[760px]"
+          viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
+          className="min-w-[640px]"
           role="img"
-          aria-label="Win probability graph"
+          aria-label={`Win probability by checkpoint for ${entries
+            .map(([name]) => titleCaseModelName(name))
+            .join(", ")}`}
         >
           {[0, 0.25, 0.5, 0.75, 1].map((tick) => (
             <g key={tick}>
               <line
-                x1={padding}
-                x2={width - padding}
+                x1={PAD_LEFT}
+                x2={WIDTH - PAD_RIGHT}
                 y1={yScale(tick)}
                 y2={yScale(tick)}
-                stroke="rgba(148,163,184,0.14)"
-                strokeDasharray="4 6"
+                stroke="var(--color-ink-700)"
+                strokeWidth="1"
               />
               <text
-                x={12}
-                y={yScale(tick) + 4}
-                fill="rgba(148,163,184,0.8)"
-                fontSize="11"
+                x={PAD_LEFT - 8}
+                y={yScale(tick) + 3.5}
+                textAnchor="end"
+                fill="var(--color-fg-dim)"
+                fontFamily={MONO}
+                fontSize="10"
               >
                 {Math.round(tick * 100)}%
               </text>
             </g>
           ))}
 
-          {Array.from(new Set(laps))
-            .sort((a, b) => a - b)
-            .map((lap) => (
-              <g key={lap}>
-                <line
-                  x1={xScale(lap)}
-                  x2={xScale(lap)}
-                  y1={padding}
-                  y2={height - padding}
-                  stroke="rgba(148,163,184,0.08)"
-                />
-                <text
-                  x={xScale(lap)}
-                  y={height - 14}
-                  textAnchor="middle"
-                  fill="rgba(148,163,184,0.8)"
-                  fontSize="11"
-                >
-                  Lap {lap}
-                </text>
-              </g>
-            ))}
+          {uniqueLaps.map((lap) => (
+            <g key={lap}>
+              <line
+                x1={xScale(lap)}
+                x2={xScale(lap)}
+                y1={PAD_TOP}
+                y2={HEIGHT - PAD_BOTTOM}
+                stroke="var(--color-ink-700)"
+                strokeWidth="1"
+              />
+              <text
+                x={xScale(lap)}
+                y={HEIGHT - 12}
+                textAnchor="middle"
+                fill="var(--color-fg-dim)"
+                fontFamily={MONO}
+                fontSize="10"
+              >
+                L{lap}
+              </text>
+            </g>
+          ))}
 
-          {entries.map(([driver, points], index) => {
-            const color = palette[index % palette.length];
-            const path = points
-              .map((point, i) => {
+          {entries.map(([name, points], index) => {
+            const style = SERIES_STYLES[index % SERIES_STYLES.length];
+            const sorted = [...points].sort((a, b) => a.lap - b.lap);
+            const path = sorted
+              .map((point, pointIndex) => {
                 const x = xScale(point.lap);
                 const y = yScale(point.value);
-                return `${i === 0 ? "M" : "L"} ${x} ${y}`;
+                return `${pointIndex === 0 ? "M" : "L"} ${x} ${y}`;
               })
               .join(" ");
 
             return (
-              <g key={driver}>
+              <g key={name}>
                 <path
                   d={path}
                   fill="none"
-                  stroke={color}
-                  strokeWidth={index === 0 ? 3.5 : index === 1 ? 3 : 2.5}
+                  stroke={style.color}
+                  strokeWidth="2"
+                  strokeDasharray={style.dash}
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                {points.map((point) => (
-                  <circle
-                    key={`${driver}-${point.lap}`}
-                    cx={xScale(point.lap)}
-                    cy={yScale(point.value)}
-                    r="5"
-                    fill={color}
-                    stroke="rgba(15,23,42,0.9)"
-                    strokeWidth="1.5"
+                {sorted.map((point) => (
+                  <Marker
+                    key={`${name}-${point.lap}`}
+                    x={xScale(point.lap)}
+                    y={yScale(point.value)}
+                    shape={style.shape}
+                    color={style.color}
                   />
                 ))}
               </g>
@@ -148,20 +192,35 @@ export default function ProbabilityChart({
         </svg>
       </div>
 
-      <div className="mt-5 flex flex-wrap gap-3">
-        {entries.map(([driver], index) => (
-          <div
-            key={driver}
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-slate-300"
-          >
-            <span
-              className="h-2.5 w-2.5 rounded-full"
-              style={{ backgroundColor: palette[index % palette.length] }}
-            />
-            <span>{driver}</span>
-          </div>
-        ))}
-      </div>
+      <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+        {entries.map(([name, points], index) => {
+          const style = SERIES_STYLES[index % SERIES_STYLES.length];
+          const latest = points.reduce((a, b) => (b.lap >= a.lap ? b : a));
+          return (
+            <li
+              key={name}
+              className="inline-flex items-center gap-2 font-data text-[11px] text-fg-muted"
+            >
+              <svg width="26" height="10" aria-hidden="true" className="shrink-0">
+                <line
+                  x1="1"
+                  y1="5"
+                  x2="25"
+                  y2="5"
+                  stroke={style.color}
+                  strokeWidth="2"
+                  strokeDasharray={style.dash}
+                />
+                <Marker x={13} y={5} shape={style.shape} color={style.color} />
+              </svg>
+              <span>{titleCaseModelName(name)}</span>
+              <span className="text-fg tabular-nums">
+                {formatPercent(latest.value)}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

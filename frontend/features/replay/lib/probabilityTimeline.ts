@@ -154,6 +154,35 @@ export function currentFrameAlignment(
   };
 }
 
+// --- series styling (non-colour differentiation; UI3) ---
+//
+// A small categorical set of dash patterns so series stay distinguishable
+// without relying on hue alone. The legend also prints the driver id, so a
+// series is never identified by colour only. `undefined` means a solid line.
+
+const SERIES_DASH_PATTERNS: readonly (string | undefined)[] = [
+  undefined,
+  "7 3",
+  "2 3",
+  "9 3 2 3",
+  "4 2",
+];
+
+/** Deterministic dash pattern for the nth visible series (0 = solid). */
+export function seriesDashPattern(index: number): string | undefined {
+  if (!Number.isFinite(index) || index < 0) return undefined;
+  return SERIES_DASH_PATTERNS[index % SERIES_DASH_PATTERNS.length];
+}
+
+/**
+ * Chart height tracks the measured container width so SVG labels keep their
+ * intended pixel size instead of shrinking with a scaled viewBox.
+ */
+export function chartHeightForWidth(width: number): number {
+  if (!Number.isFinite(width) || width <= 0) return 200;
+  return Math.round(Math.min(300, Math.max(200, width * 0.5)));
+}
+
 // --- SVG geometry (rendering only; raw values, no normalization) ---
 
 export type ChartPadding = {

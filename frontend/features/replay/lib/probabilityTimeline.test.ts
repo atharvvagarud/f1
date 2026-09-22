@@ -1,7 +1,7 @@
 import { strict as assert } from "node:assert";
 import { describe, it } from "node:test";
 // @ts-expect-error TS5097 (.ts extension for node type-stripping)
-import { buildChartGeometry, checkpointAt, checkpointOrdinal, currentFrameAlignment, defaultVisibleDrivers, driverPeakProbabilities, isActualCheckpoint, probabilityAtCheckpoint } from "./probabilityTimeline.ts";
+import { buildChartGeometry, chartHeightForWidth, checkpointAt, checkpointOrdinal, currentFrameAlignment, defaultVisibleDrivers, driverPeakProbabilities, isActualCheckpoint, probabilityAtCheckpoint, seriesDashPattern } from "./probabilityTimeline.ts";
 import type { ProbabilityTimelineResponse } from "@/lib/v2";
 
 // Pure transforms + SVG geometry for R6. No DOM, no network, no pixel
@@ -138,6 +138,27 @@ describe("current frame alignment", () => {
       currentFrameAlignment({ ...t, checkpoints: [] }, 0).kind,
       "none",
     );
+  });
+});
+
+describe("chart presentation helpers (UI3)", () => {
+  it("assigns a deterministic, cycling dash pattern per visible series", () => {
+    assert.equal(seriesDashPattern(0), undefined); // first series is solid
+    assert.equal(seriesDashPattern(1), "7 3");
+    assert.equal(seriesDashPattern(2), "2 3");
+    assert.equal(seriesDashPattern(3), "9 3 2 3");
+    assert.equal(seriesDashPattern(4), "4 2");
+    assert.equal(seriesDashPattern(5), undefined); // cycles
+    assert.equal(seriesDashPattern(-1), undefined); // never negative-index
+  });
+
+  it("keeps chart height bounded and proportional to width", () => {
+    assert.equal(chartHeightForWidth(0), 200);
+    assert.equal(chartHeightForWidth(-10), 200);
+    assert.equal(chartHeightForWidth(400), 200); // 0.5 * 400
+    assert.equal(chartHeightForWidth(560), 280);
+    assert.equal(chartHeightForWidth(2000), 300); // clamped
+    assert.equal(chartHeightForWidth(Number.NaN), 200);
   });
 });
 

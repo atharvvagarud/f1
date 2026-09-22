@@ -1,25 +1,148 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   F1 Intelligence — BRUTALIST MOTORSPORT TELEMETRY foundations (UI0)
+
+   Neutral technical shell. Team/driver colours remain DATA accents supplied by
+   content; the shell itself is deliberately colourless. Radius is 0 by default
+   (chips 2px). No gradients, glass, blur or decorative shadow tokens exist by
+   design. See docs/FRONTEND_DESIGN_SYSTEM.md and DESIGN.md.
+--------------------------------------------------------------------------- */
+
+@theme {
+  /* Shell — neutral, technical near-black */
+  --color-ink-950: #05070a; /* app background */
+  --color-ink-900: #0b0f14; /* panel surface */
+  --color-ink-850: #111721; /* raised / active surface */
+  --color-ink-700: #1c2530; /* subtle 1px border / grid */
+  --color-ink-600: #2b3644; /* strong structural border / separator */
+
+  /* Foreground hierarchy */
+  --color-fg: #e7ecf3; /* primary text */
+  --color-fg-muted: #9aa7b6; /* secondary text */
+  --color-fg-dim: #74828f; /* metadata / disabled (AA on ink-950) */
+
+  /* Signal — status + accents, used sparingly. Meaning never colour-only. */
+  --color-signal: #e10600; /* brand / selected / active */
+  --color-ok: #3fb950; /* green flag, available/supported */
+  --color-warn: #d29922; /* SC/VSC/unknown, stale, caution */
+  --color-danger: #f85149; /* red flag, error, failure */
+  --color-info: #58a6ff; /* model / checkpoint / probability neutral */
+  --color-focus: #f5f7fa; /* focus ring */
+
+  /* Geometry — hard corners are the signature; 2px only for chips/toggles. */
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
+  --radius-chip: 2px;
+}
+
+/* Fonts reference the self-hosted next/font CSS variables at runtime. */
+@theme inline {
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-ui: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-data: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+    monospace;
+}
+
 :root {
   color-scheme: dark;
   --font-heading: var(--font-montserrat);
   --font-body: var(--font-space-grotesk);
 }
 
-html,
-body {
-  min-height: 100%;
-  background: #020617;
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: var(--color-ink-600) var(--color-ink-950);
+  }
+
+  /* next/font defines --font-montserrat / --font-space-grotesk on <body>; the
+     role tokens are declared here so the nested var()s resolve (declaring
+     them at :root would compute invalid and silently fall back to system sans). */
+  body {
+    --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+    --font-ui: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+    --font-data: ui-monospace, SFMono-Regular, Menlo, Consolas,
+      "Liberation Mono", monospace;
+    min-height: 100%;
+    background-color: var(--color-ink-950);
+    color: var(--color-fg);
+    font-family: var(--font-ui);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* DISPLAY role: race numbers, page titles, winner name. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* DATA role: measurements and identifiers never jitter between frames. */
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: var(--font-data);
+    font-variant-numeric: tabular-nums;
+  }
+
+  table {
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+
+  a {
+    color: inherit;
+    text-underline-offset: 2px;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* Accessibility floor: visible focus for keyboard users only. */
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-ink-600);
+    color: var(--color-fg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
-body {
-  font-family: var(--font-space-grotesk), sans-serif;
-}
-
+/* Backward-compatible role helpers (existing markup uses these names). */
 .font-heading {
-  font-family: var(--font-montserrat), sans-serif !important;
+  font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif !important;
 }
 
 .font-body {
-  font-family: var(--font-space-grotesk), sans-serif !important;
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif !important;
 }

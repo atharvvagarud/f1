@@ -59,7 +59,7 @@ export type SingleModelResult = {
   latest: SingleLatest;
 };
 
-export type MainTab = "overview" | "table" | "chart" | "drivers";
+export type MainTab = "field" | "checkpoints" | "probability";
 
 export type PredictionMode = "ensemble" | "single";
 

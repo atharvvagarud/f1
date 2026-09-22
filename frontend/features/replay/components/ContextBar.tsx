@@ -1,13 +1,15 @@
-// Race context header (Phase-5 R5).
+// Race state header (Phase-5 R5; UI3 factual header).
 //
-// Factual header: historical time, leader lap + progress, frame anchor,
-// track-state/flag banner (text + color, never color-only), weather as-of.
-// All values are backend facts; nothing is inferred client-side.
+// The ContextBar is the factual "where are we in the race" strip: leader lap +
+// progress, track state/flag (text + colour, never colour-only), historical T,
+// roster size, current anchor and as-of weather. Every value is a backend fact;
+// nothing is inferred client-side and null renders `—`/`NO DATA`.
 
 "use client";
 
 import type { ReplayFrameResponse } from "@/lib/v2";
 import { formatRaceTime } from "@/features/replay/lib/replayMachine";
+import { readableDriverId } from "@/features/replay/components/StandingsTable";
 
 function flagBanner(trackState: string | null): {
   label: string;
@@ -15,22 +17,43 @@ function flagBanner(trackState: string | null): {
 } {
   switch (trackState) {
     case "red_flag":
-      return { label: "RED FLAG", className: "bg-red-600 text-white" };
+      return { label: "RED FLAG", className: "bg-danger text-ink-950" };
     case "safety_car":
-      return { label: "SAFETY CAR", className: "bg-amber-400 text-black" };
+      return { label: "SAFETY CAR", className: "bg-warn text-ink-950" };
     case "vsc":
     case "vsc_ending":
-      return { label: "VIRTUAL SC", className: "bg-amber-200 text-black" };
+      return { label: "VIRTUAL SC", className: "bg-warn text-ink-950" };
     case "yellow":
-      return { label: "YELLOW", className: "bg-yellow-500 text-black" };
+      return { label: "YELLOW", className: "bg-warn text-ink-950" };
     case "all_clear":
-      return { label: "GREEN", className: "bg-emerald-600 text-white" };
+      return { label: "GREEN", className: "bg-ok text-ink-950" };
     default:
       return {
-        label: (trackState ?? "UNKNOWN").toUpperCase(),
-        className: "bg-slate-700 text-slate-200",
+        label: (trackState ?? "NO DATA").toUpperCase(),
+        className: "border border-ink-600 bg-ink-850 text-fg-muted",
       };
   }
+}
+
+function Fact({
+  label,
+  children,
+  className = "",
+}: {
+  label: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`min-w-0 ${className}`}>
+      <div className="font-ui text-[10px] uppercase tracking-[0.14em] text-fg-dim">
+        {label}
+      </div>
+      <div className="mt-1 font-data text-[13px] text-fg tabular-nums">
+        {children}
+      </div>
+    </div>
+  );
 }
 
 export function ContextBar({ frame }: { frame: ReplayFrameResponse }) {
@@ -41,47 +64,77 @@ export function ContextBar({ frame }: { frame: ReplayFrameResponse }) {
     state.race_context.race_progress_frac !== null
       ? `${(state.race_context.race_progress_frac * 100).toFixed(1)}%`
       : "—";
-  const weather =
-    state.weather.air_temp_c !== null || state.weather.track_temp_c !== null
-      ? `Air ${state.weather.air_temp_c ?? "—"}°C • Track ${state.weather.track_temp_c ?? "—"}°C` +
-        (state.weather.rainfall ? " • RAIN" : "")
-      : "Weather unavailable";
+  const weatherUnavailable =
+    state.weather.air_temp_c === null && state.weather.track_temp_c === null;
+  const bannerKey = rc.track_state === "vsc_ending" ? "vsc" : rc.track_state;
+  const flags = (
+    [
+      { label: "YELLOW", on: rc.flag_yellow, key: "yellow" },
+      { label: "SC", on: rc.flag_safety_car, key: "safety_car" },
+      { label: "VSC", on: rc.flag_vsc, key: "vsc" },
+      { label: "RED", on: rc.flag_red, key: "red_flag" },
+    ] as const
+  )
+    .filter((flag) => flag.on && flag.key !== bannerKey)
+    .map((flag) => flag.label);
 
   return (
-    <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-      <span
-        role="status"
-        aria-label={`Track state: ${banner.label}`}
-        className={`rounded px-2 py-1 text-xs font-bold tracking-[0.12em] ${banner.className}`}
-      >
-        {banner.label}
-      </span>
-      <span className="font-mono text-sm tabular-nums text-slate-100">
-        T {formatRaceTime(state.state_time_s)}
-      </span>
-      <span className="text-sm text-slate-300">
-        Leader lap{" "}
-        <strong className="font-mono tabular-nums">
-          {leader_lap ?? "—"}
-        </strong>{" "}
-        <span className="text-slate-500">({progress})</span>
-      </span>
-      <span className="text-xs text-slate-500">
-        anchor {state.anchor_driver_id} L{state.anchor_lap_number}
-      </span>
-      <span className="text-xs text-slate-400">{weather}</span>
-      {(rc.flag_yellow || rc.flag_safety_car || rc.flag_vsc || rc.flag_red) && (
-        <span className="text-[11px] uppercase tracking-[0.12em] text-slate-400">
-          {[
-            rc.flag_yellow && "yellow",
-            rc.flag_safety_car && "SC",
-            rc.flag_vsc && "VSC",
-            rc.flag_red && "red",
-          ]
-            .filter(Boolean)
-            .join(" • ")}
-        </span>
-      )}
+    <div className="min-w-0">
+      <div className="grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3 lg:grid-cols-6">
+        <Fact label="Track state">
+          <span
+            role="status"
+            aria-label={`Track state: ${banner.label}`}
+            className={`inline-block rounded-chip px-2 py-0.5 font-ui text-[11px] font-bold uppercase tracking-[0.12em] ${banner.className}`}
+          >
+            {banner.label}
+          </span>
+          {flags.length > 0 ? (
+            <span className="mt-1 block font-data text-[10px] uppercase tracking-[0.1em] text-fg-dim">
+              {flags.join(" · ")}
+            </span>
+          ) : null}
+        </Fact>
+
+        <Fact label="Leader lap">
+          <span className="text-lg text-fg">{leader_lap ?? "—"}</span>
+          <span className="ml-2 text-[11px] text-fg-dim">({progress})</span>
+        </Fact>
+
+        <Fact label="Race time">
+          <span className="text-lg text-fg">
+            {formatRaceTime(state.state_time_s)}
+          </span>
+        </Fact>
+
+        <Fact label="Drivers">
+          <span className="text-lg text-fg">{state.roster_size}</span>
+        </Fact>
+
+        <Fact label={`Anchor · L${state.anchor_lap_number}`}>
+          <span
+            className="block truncate text-[12px] text-fg"
+            title={readableDriverId(state.anchor_driver_id)}
+          >
+            {readableDriverId(state.anchor_driver_id)}
+          </span>
+        </Fact>
+
+        <Fact label="Air / track °C">
+          {weatherUnavailable ? (
+            <span className="text-fg-dim">NO DATA</span>
+          ) : (
+            <>
+              <span>{state.weather.air_temp_c ?? "—"}</span>
+              <span className="mx-1 text-fg-dim">/</span>
+              <span>{state.weather.track_temp_c ?? "—"}</span>
+              {state.weather.rainfall ? (
+                <span className="ml-1.5 text-info">RAIN</span>
+              ) : null}
+            </>
+          )}
+        </Fact>
+      </div>
     </div>
   );
 }
