@@ -1,0 +1,46 @@
+{
+  "authorization_version": "phase7-s3-authorized-drift-v3",
+  "historical_phase6_commit": "b813ffe1ebd16644d2ebc5e4b77361cb797f82f4",
+  "historical_phase6_tag": "v2-monte-carlo-phase6",
+  "historical_phase6_manifest": "docs/PHASE6_FREEZE_MANIFEST.json",
+  "phase7_stage": "S3",
+  "reason": "Phase-7 S3 keeps the single frozen simulator file previously authorized at S1/S2 and adds ONLY a narrow, default-off per-index collection hook to the already-authorized surface. MonteCarloEngine.run/run_scalar gain a keyword-only collect_index_outcomes=False argument that, when explicitly requested through the strategy paired runner, records compact terminal per-index outcomes (validity, invalid reason, finish position per roster column) from the SAME terminal batch state used for aggregation -- no second simulation path, no scalar replay of every trajectory, no full trajectory history, and no change to the frozen MonteCarloResult identity or to any draw. Normal product MonteCarloEngine.run(...) remains aggregate-only (the default is False). S2 intervention mechanics are unchanged. It introduces NO compound pace delta, no traffic model, no new distribution, and no new frozen file. With intervention=None and collect_index_outcomes=False the Phase-6 code path is byte-identical (see tests/test_v2_phase7_s1_phase6_compat.py). Phase-6 remains historically frozen at commit edba916f7c129180fcfe63f643ce58aeebc173e3 (tag v2-monte-carlo-phase6) and docs/PHASE6_FREEZE_MANIFEST.json is deliberately NOT rewritten. The historical_sha256 below is the untouched Phase-6 manifest hash.",
+  "authorized_files": [
+    "v2/simulation/monte_carlo.py"
+  ],
+  "historical_sha256": {
+    "v2/simulation/monte_carlo.py": "f0a3447f18946cb33548e8711d3184602ffef542dad57df17284451dc25e7d6b"
+  },
+  "current_sha256": {
+    "v2/simulation/monte_carlo.py": "d2166075e2d4b90bf4604ac3d586fe4d07f1ae577cb413ec8991317309e68c68"
+  },
+  "required_compatibility_test": "tests/test_v2_phase7_s1_phase6_compat.py",
+  "compatibility_fixture": "tests/fixtures/phase7_s1_phase6_baseline.json",
+  "compatibility_fixture_producer": "scripts/capture_phase7_s1_baseline.py",
+  "governance_test": "tests/test_v2_phase6_freeze.py::test_phase6_scientific_hashes_match_except_authorized_phase7_drift",
+  "change_surface": {
+    "v2/simulation/monte_carlo.py": [
+      "S1: import SimulationError from v2.simulation.errors",
+      "S1: define StrategyInterventionNotImplemented(SimulationError) at the neutral simulation boundary",
+      "S1: add keyword-only intervention=None to MonteCarloEngine.run",
+      "S1: add keyword-only intervention=None to MonteCarloEngine.run_scalar",
+      "S2: define StrategyInterventionError(SimulationError) with structured reasons",
+      "S2: define neutral action codes/offsets, statuses and outcome reasons",
+      "S2: _InterventionPlan + _resolve_intervention (state-dependent validation before any draw)",
+      "S2: _InterventionState shared per-driver decision rule (STAY_OUT/PIT_NOW/PIT_NEXT_LAP)",
+      "S2: _ScalarPitRuntime.perform/_draw_next_compound requested_compound override (draw still consumed)",
+      "S2: _evolve_scalar intervention branch at the target driver's own completions",
+      "S2: _ChunkEvolution intervention plan, _intervention_step, force/suppress/override in _maybe_pit, _finalize_intervention",
+      "S2: engine.last_intervention_outcome per-simulation execution metadata (never in MonteCarloResult identity)",
+      "S3: keyword-only collect_index_outcomes=False on MonteCarloEngine.run and run_scalar",
+      "S3: engine.last_index_outcomes compact terminal per-index arrays (valid, invalid_reason, finish_position) from the existing terminal batch/scalar state",
+      "S3: no draw, no identity, no aggregation and no default product-path change (collect_index_outcomes defaults False)"
+    ]
+  },
+  "notes": [
+    "Only v2/simulation/monte_carlo.py changed; no other Phase-6 frozen scientific runtime file changed.",
+    "With intervention=None the Phase-6 path is byte-identical: the compatibility fixture in tests/test_v2_phase7_s1_phase6_compat.py is unchanged and passes.",
+    "The change surface is bounded to the single authorized file; v2/simulation/config.py required no change.",
+    "Every other Phase-6 frozen scientific runtime file must retain its Phase-6 hash; unexpected drift fails the governance test."
+  ]
+}

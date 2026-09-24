@@ -132,6 +132,7 @@ from v2.simulation.engine import (
 )
 from v2.simulation.errors import (
     SimulationContractError,
+    SimulationError,
     SimulationValidationError,
 )
 from v2.simulation.params import DRY_COMPOUNDS, SimulationParameterSet
@@ -162,12 +163,25 @@ __all__ = [
     "TRAFFIC_DEFERRED_NOTE",
     "RELIABILITY_DEFERRED_NOTE",
     "PIT_INVALID_REASONS",
+    "STRATEGY_ACTIONS",
+    "STRATEGY_ACTION_STAY_OUT",
+    "STRATEGY_ACTION_PIT_NOW",
+    "STRATEGY_ACTION_PIT_NEXT_LAP",
+    "STRATEGY_ACTION_LAP_OFFSETS",
+    "STRATEGY_INTERVENTION_REASONS",
+    "INTERVENTION_PENDING",
+    "INTERVENTION_APPLIED",
+    "INTERVENTION_SUPPRESSED",
+    "INTERVENTION_SUPERSEDED",
+    "INTERVENTION_RACE_END_CANCELLED",
     "ResidualSampler",
     "select_residual_sampler",
     "max_residual_draws",
     "PitParameterSet",
     "select_pit_parameters",
     "MonteCarloDiagnostics",
+    "StrategyInterventionNotImplemented",
+    "StrategyInterventionError",
     "run_trajectory_scalar",
     "MonteCarloEngine",
 ]
@@ -237,6 +251,288 @@ PIT_INVALID_REASONS = (
     REASON_INVALID_PIT_LOSS,
     REASON_PIT_LOOP,
 )
+
+
+class StrategyInterventionNotImplemented(SimulationError):
+    """Phase-7 S1 intervention seam: supplied, but not yet implemented.
+
+    The Phase-7 default-off seam accepts an ``intervention`` argument on
+    ``MonteCarloEngine.run``/``run_scalar``. S1 does not implement any
+    strategy mechanics (that is S2), so a non-``None`` intervention raises
+    this error at the engine boundary instead of being silently ignored. The
+    class lives here, at the neutral simulation boundary, so the simulation
+    package never imports ``v2.strategy`` (no dependency cycle); the strategy
+    package re-exports it.
+    """
+
+    def __init__(self, detail: str):
+        super().__init__(detail)
+        self.detail = detail
+
+
+# ---------------------------------------------------------------------------
+# Phase-7 S2 strategy intervention runtime (neutral boundary).
+# ---------------------------------------------------------------------------
+#
+# The strategy layer owns the typed ``StrategyIntervention`` and validates the
+# contract object. This module owns the *mechanics*: the neutral action codes,
+# the shared per-driver decision rule used by BOTH the scalar oracle and the
+# vectorized batch, the forced/suppressed pit application, and the per-index
+# execution status. Nothing here reads ``v2.strategy`` (no dependency cycle):
+# the supplied intervention is read duck-typed at the boundary.
+#
+# Action resolution is defined against the TARGET DRIVER'S OWN completed laps
+# (never the leader lap, a global iteration, wall-clock or event count):
+#   STAY_OUT   -> suppress the baseline decision at L_T + 1
+#   PIT_NOW    -> force one pit at L_T + 1
+#   PIT_NEXT_LAP -> baseline normal at L_T + 1; force one pit at L_T + 2 iff
+#                   no baseline pit occurred at L_T + 1.
+
+STRATEGY_ACTION_STAY_OUT = "STAY_OUT"
+STRATEGY_ACTION_PIT_NOW = "PIT_NOW"
+STRATEGY_ACTION_PIT_NEXT_LAP = "PIT_NEXT_LAP"
+
+STRATEGY_ACTIONS = (
+    STRATEGY_ACTION_STAY_OUT,
+    STRATEGY_ACTION_PIT_NOW,
+    STRATEGY_ACTION_PIT_NEXT_LAP,
+)
+
+#: Decision completion offset (relative to the target's factual lap at T)
+#: for each action.
+STRATEGY_ACTION_LAP_OFFSETS = {
+    STRATEGY_ACTION_STAY_OUT: 1,
+    STRATEGY_ACTION_PIT_NOW: 1,
+    STRATEGY_ACTION_PIT_NEXT_LAP: 2,
+}
+
+# Structured, stable rejection reasons (mirrors the S0/S1 contract reasons).
+REASON_STRATEGY_MALFORMED = "malformed_intervention"
+REASON_STRATEGY_UNSUPPORTED_ACTION = "unsupported_action"
+REASON_STRATEGY_ANCHOR_MISMATCH = "anchor_mismatch"
+REASON_STRATEGY_TARGET_DRIVER_NOT_IN_ROSTER = "target_driver_not_in_roster"
+REASON_STRATEGY_DECISION_LAP_MISMATCH = "decision_lap_mismatch"
+REASON_STRATEGY_UNSUPPORTED_COMPOUND = "unsupported_compound"
+REASON_STRATEGY_DECISION_BEYOND_RACE = "decision_beyond_race"
+REASON_STRATEGY_PIT_DYNAMICS_REQUIRED = "pit_dynamics_required"
+
+STRATEGY_INTERVENTION_REASONS = (
+    REASON_STRATEGY_MALFORMED,
+    REASON_STRATEGY_UNSUPPORTED_ACTION,
+    REASON_STRATEGY_ANCHOR_MISMATCH,
+    REASON_STRATEGY_TARGET_DRIVER_NOT_IN_ROSTER,
+    REASON_STRATEGY_DECISION_LAP_MISMATCH,
+    REASON_STRATEGY_UNSUPPORTED_COMPOUND,
+    REASON_STRATEGY_DECISION_BEYOND_RACE,
+    REASON_STRATEGY_PIT_DYNAMICS_REQUIRED,
+)
+
+# Per-simulation intervention execution statuses (operational metadata only;
+# never part of the frozen Phase-6 ``MonteCarloResult`` identity).
+INTERVENTION_PENDING = "PENDING"
+INTERVENTION_APPLIED = "APPLIED"
+INTERVENTION_SUPPRESSED = "SUPPRESSED"
+INTERVENTION_SUPERSEDED = "SUPERSEDED"
+INTERVENTION_RACE_END_CANCELLED = "RACE_END_CANCELLED"
+
+# Outcome reasons (structured, stable).
+REASON_FORCED_PIT = "forced_pit"
+REASON_BASELINE_PIT_SUPPRESSED = "baseline_pit_suppressed"
+REASON_SUPERSEDED_BY_BASELINE_PIT = "intervention_superseded_by_baseline_pit"
+REASON_RACE_END_SUPPRESSED = "race_end_suppressed"
+
+# Shared per-event decision tokens returned by ``_InterventionState``.
+_DECISION_BASELINE = "BASELINE"
+_DECISION_FORCE = "FORCE"
+_DECISION_SUPPRESS = "SUPPRESS"
+
+
+class StrategyInterventionError(SimulationError):
+    """A supplied Phase-7 strategy intervention cannot be executed.
+
+    Raised at the neutral simulation boundary *before* any trajectory work.
+    It carries a stable ``reason`` (one of ``STRATEGY_INTERVENTION_REASONS``)
+    so the strategy layer can map it without coupling the simulation package
+    to ``v2.strategy``.
+    """
+
+    def __init__(self, reason: str, detail: str):
+        super().__init__(detail)
+        self.reason = reason
+        self.detail = detail
+
+
+@dataclass(frozen=True)
+class _InterventionPlan:
+    """Resolved, neutral intervention runtime plan (one per run).
+
+    Built by ``_resolve_intervention`` from the duck-typed strategy
+    intervention and the live ``SimulationState``. ``target_index`` is the
+    canonical roster index used by both evolution paths.
+    """
+
+    target_index: int
+    target_driver_id: str
+    action: str
+    requested_compound: Optional[str]
+    decision_lap: int
+
+
+def _resolve_intervention(intervention, initial_state: SimulationState,
+                          config: SimulationConfig
+                          ) -> Optional[_InterventionPlan]:
+    """Validate a supplied intervention and build the neutral runtime plan.
+
+    ``None`` is the byte-identical Phase-6 path and returns immediately. A
+    malformed or state-inconsistent intervention raises
+    ``StrategyInterventionError`` with a structured reason before any RNG
+    stream or trajectory exists.
+    """
+    if intervention is None:
+        return None
+    target_id = getattr(intervention, "target_driver_id", None)
+    action = getattr(intervention, "action", None)
+    if hasattr(action, "value"):
+        action = action.value
+    requested = getattr(intervention, "requested_compound", None)
+    decision_lap = getattr(intervention, "decision_lap", None)
+    state_identity = getattr(intervention, "decision_state_identity", None)
+
+    if not isinstance(target_id, str) or not target_id.strip():
+        raise StrategyInterventionError(
+            REASON_STRATEGY_MALFORMED,
+            f"intervention.target_driver_id must be a non-empty string, got "
+            f"{target_id!r}")
+    if action not in STRATEGY_ACTIONS:
+        raise StrategyInterventionError(
+            REASON_STRATEGY_UNSUPPORTED_ACTION,
+            f"intervention.action must be one of {list(STRATEGY_ACTIONS)}, got "
+            f"{action!r}")
+    if state_identity != initial_state.identity():
+        raise StrategyInterventionError(
+            REASON_STRATEGY_ANCHOR_MISMATCH,
+            "intervention.decision_state_identity must exactly equal the "
+            "supplied SimulationState identity (no nearest/partial/race-only/"
+            "lap-only match)")
+    roster = initial_state.roster_driver_ids
+    if target_id not in roster:
+        raise StrategyInterventionError(
+            REASON_STRATEGY_TARGET_DRIVER_NOT_IN_ROSTER,
+            f"target driver {target_id!r} is not in the SimulationState "
+            f"roster {list(roster)}")
+    entry = initial_state.driver_by_id[target_id]
+    if type(decision_lap) is not int or decision_lap != entry.lap_number:
+        raise StrategyInterventionError(
+            REASON_STRATEGY_DECISION_LAP_MISMATCH,
+            "intervention.decision_lap must equal the target driver's factual "
+            f"lap_number at T ({entry.lap_number!r}), got {decision_lap!r}")
+    if requested is not None and requested not in DRY_COMPOUNDS:
+        raise StrategyInterventionError(
+            REASON_STRATEGY_UNSUPPORTED_COMPOUND,
+            f"requested_compound must be None or a dry compound "
+            f"{list(DRY_COMPOUNDS)}, got {requested!r}")
+    offset = STRATEGY_ACTION_LAP_OFFSETS[action]
+    if decision_lap + offset > initial_state.scheduled_laps:
+        raise StrategyInterventionError(
+            REASON_STRATEGY_DECISION_BEYOND_RACE,
+            f"action {action!r} needs the target driver's lap "
+            f"{decision_lap + offset} but the scheduled distance is "
+            f"{initial_state.scheduled_laps}: no room for the decision")
+    if not config.pit_dynamics_enabled:
+        raise StrategyInterventionError(
+            REASON_STRATEGY_PIT_DYNAMICS_REQUIRED,
+            "a strategy intervention requires pit_dynamics_enabled=True; the "
+            "forced/suppressed pit mechanics are the Phase-6 pit model")
+    plan = _InterventionPlan(
+        target_index=roster.index(target_id),
+        target_driver_id=target_id,
+        action=action,
+        requested_compound=requested,
+        decision_lap=int(decision_lap),
+    )
+    return plan
+
+
+class _InterventionState:
+    """Per-trajectory intervention execution state and shared decision rule.
+
+    The SAME ``note_completion`` rule drives the scalar oracle and the
+    vectorized batch, so their intervention mechanics cannot drift.
+    """
+
+    def __init__(self, plan: _InterventionPlan):
+        self.plan = plan
+        self.status = INTERVENTION_PENDING
+        self.reason: Optional[str] = None
+        self.applied_lap: Optional[int] = None
+        self.compound_used: Optional[str] = None
+        self.baseline_pit_suppressed = False
+
+    def _race_end(self) -> None:
+        self.status = INTERVENTION_RACE_END_CANCELLED
+        self.reason = REASON_RACE_END_SUPPRESSED
+
+    def note_completion(self, *, lap_done: int, finished: bool, race_over: bool,
+                        baseline_pit: bool) -> str:
+        """Resolve one target-driver lap completion into a decision token.
+
+        ``baseline_pit`` is whether the frozen R6 rule
+        (``tyre_age >= target_age``) would have pitted at this event.
+        """
+        if self.status != INTERVENTION_PENDING:
+            return _DECISION_BASELINE
+        action = self.plan.action
+        first_lap = self.plan.decision_lap + 1
+        if lap_done == first_lap:
+            if race_over or finished:
+                self._race_end()
+                return _DECISION_BASELINE
+            if action == STRATEGY_ACTION_PIT_NEXT_LAP:
+                if baseline_pit:
+                    self.status = INTERVENTION_SUPERSEDED
+                    self.reason = REASON_SUPERSEDED_BY_BASELINE_PIT
+                return _DECISION_BASELINE
+            if action == STRATEGY_ACTION_STAY_OUT:
+                self.status = INTERVENTION_SUPPRESSED
+                self.applied_lap = lap_done
+                self.baseline_pit_suppressed = bool(baseline_pit)
+                self.reason = (REASON_BASELINE_PIT_SUPPRESSED if baseline_pit
+                               else None)
+                return _DECISION_SUPPRESS
+            # PIT_NOW
+            self.status = INTERVENTION_APPLIED
+            self.applied_lap = lap_done
+            self.reason = REASON_FORCED_PIT
+            return _DECISION_FORCE
+        if (action == STRATEGY_ACTION_PIT_NEXT_LAP
+                and lap_done == self.plan.decision_lap + 2):
+            if race_over or finished:
+                self._race_end()
+                return _DECISION_BASELINE
+            self.status = INTERVENTION_APPLIED
+            self.applied_lap = lap_done
+            self.reason = REASON_FORCED_PIT
+            return _DECISION_FORCE
+        return _DECISION_BASELINE
+
+    def finalize(self) -> None:
+        """A still-PENDING intervention never reached its decision event."""
+        if self.status == INTERVENTION_PENDING:
+            self._race_end()
+
+    def to_dict(self) -> dict:
+        plan = self.plan
+        return {
+            "action": plan.action,
+            "target_driver_id": plan.target_driver_id,
+            "decision_lap": plan.decision_lap,
+            "requested_compound": plan.requested_compound,
+            "status": self.status,
+            "reason": self.reason,
+            "applied_lap": self.applied_lap,
+            "compound_used": self.compound_used,
+            "baseline_pit_suppressed": self.baseline_pit_suppressed,
+        }
 
 
 class _TrajectoryFailure(Exception):
@@ -824,7 +1120,16 @@ class _ScalarPitRuntime:
         raw = grid.conditional_sample_unit(self._next_timing(), float(age))
         return _pit_target_int(raw, age + 1, int(grid.observed_max))
 
-    def _draw_next_compound(self, current: Optional[str]) -> str:
+    def _draw_next_compound(self, current: Optional[str],
+                            requested_compound: Optional[str] = None) -> str:
+        """Draw the transition; a strategy request overrides but is drawn.
+
+        RNG-alignment policy (S0/S1): the baseline ``compound`` domain draw is
+        ALWAYS consumed, even when ``requested_compound`` overrides the
+        sampled value, so the compound stream cursor stays aligned with a
+        baseline pit. The override affects only the realised compound (and
+        hence the future stint grid / transitions), never pace.
+        """
         targets, cumulative = self.params.transition_for(current)
         if self.compound_cursor >= len(self.compound):
             raise _TrajectoryFailure(
@@ -834,7 +1139,8 @@ class _ScalarPitRuntime:
         index = bisect_right(cumulative, uniform)
         if index >= len(targets):
             index = len(targets) - 1
-        target = targets[index]
+        target = (targets[index] if requested_compound is None
+                  else requested_compound)
         if self.collect:
             self.transition_counts[f"{current}->{target}"] += 1
         return target
@@ -859,10 +1165,18 @@ class _ScalarPitRuntime:
         raw = grid.sample_unit(self._next_timing())
         return _pit_target_int(raw, 1, int(grid.observed_max))
 
-    def perform(self, driver: _ScalarDriver) -> dict:
-        """Apply one pit and return a descriptive event (never affects draws)."""
+    def perform(self, driver: _ScalarDriver,
+                requested_compound: Optional[str] = None) -> dict:
+        """Apply one pit and return a descriptive event.
+
+        ``requested_compound`` (a strategy forced pit) overrides the sampled
+        transition while keeping the fixed draw order compound -> pit loss ->
+        next stint target. It changes only the compound identity and the
+        future stint grid / transitions, never pace.
+        """
         before = driver.compound
-        next_compound = self._draw_next_compound(driver.compound)
+        next_compound = self._draw_next_compound(driver.compound,
+                                                 requested_compound)
         loss = self._draw_loss()
         driver.compound = next_compound
         driver.pit_count += 1
@@ -893,12 +1207,17 @@ def _evolve_scalar(initial_state: SimulationState, selection,
                    sampler: Optional[ResidualSampler], pool,
                    zero_noise: bool,
                    pit: Optional[_ScalarPitRuntime] = None,
-                   trace: Optional[List[dict]] = None):
+                   trace: Optional[List[dict]] = None,
+                   intervention: Optional[_InterventionState] = None):
     """Simple per-trajectory event loop: R4 semantics + residual + R6 pits.
 
     Returns ``(classification, pit_counts)`` so the caller can report R6
     diagnostics without a second traversal. ``trace`` (optional) records
     descriptive pit events for oracle tests and never affects draws.
+
+    ``intervention`` (optional) applies the shared Phase-7 decision rule at
+    the TARGET DRIVER'S OWN lap completions only. It never touches any other
+    driver's direct state and never mutates ``initial_state``.
     """
     scheduled = initial_state.scheduled_laps
     drivers = [
@@ -919,7 +1238,12 @@ def _evolve_scalar(initial_state: SimulationState, selection,
         for entry in initial_state.drivers
     ]
 
+    target = (drivers[intervention.plan.target_index]
+              if intervention is not None else None)
+
     if max(driver.lap_number for driver in drivers) >= scheduled:
+        if intervention is not None:
+            intervention.finalize()
         return _classify_scalar(drivers), [d.pit_count for d in drivers]
 
     if pit is not None:
@@ -998,9 +1322,26 @@ def _evolve_scalar(initial_state: SimulationState, selection,
         # Pass 2: pit (if enabled and the race is still running), then
         # reschedule. A pit at the race-end instant is suppressed (R6-AB).
         for driver in batch:
+            decision = _DECISION_BASELINE
+            if intervention is not None and driver is target:
+                decision = intervention.note_completion(
+                    lap_done=int(driver.lap_number),
+                    finished=bool(driver.finished),
+                    race_over=bool(race_over),
+                    baseline_pit=bool(pit is not None and not race_over
+                                      and driver.tyre_age >= driver.target_age),
+                )
             if driver.finished:
                 continue
-            if pit is not None and not race_over \
+            if decision == _DECISION_SUPPRESS:
+                pass  # STAY_OUT: baseline decision suppressed, no draws
+            elif decision == _DECISION_FORCE:
+                event = pit.perform(driver,
+                                    intervention.plan.requested_compound)
+                intervention.compound_used = event["compound_after"]
+                if trace is not None:
+                    trace.append(event)
+            elif pit is not None and not race_over \
                     and driver.tyre_age >= driver.target_age:
                 event = pit.perform(driver)
                 if trace is not None:
@@ -1013,6 +1354,8 @@ def _evolve_scalar(initial_state: SimulationState, selection,
             REASON_ITERATION_LIMIT,
             f"race did not complete within {bound} lap events")
 
+    if intervention is not None:
+        intervention.finalize()
     return _classify_scalar(drivers), [d.pit_count for d in drivers]
 
 
@@ -1039,8 +1382,14 @@ def _scalar_trajectory(initial_state: SimulationState,
                        zero_noise: bool, contract_version: str,
                        pit_params: Optional[PitParameterSet] = None,
                        collect_diagnostics: bool = False,
-                       trace: Optional[List[dict]] = None):
-    """Run one scalar trajectory; return ``(result, diagnostics_fragment)``."""
+                       trace: Optional[List[dict]] = None,
+                       intervention_plan: Optional[_InterventionPlan] = None):
+    """Run one scalar trajectory.
+
+    Returns ``(result, diagnostics_fragment, intervention_state)`` where
+    ``intervention_state`` is ``None`` unless an intervention plan was
+    supplied.
+    """
     simulation_id = _simulation_id(initial_state, parameters, simulation_index)
     pool = None
     if not zero_noise:
@@ -1052,17 +1401,22 @@ def _scalar_trajectory(initial_state: SimulationState,
             pit_params, master_seed, simulation_index,
             initial_state.roster_size, max_draws, contract_version,
             collect_diagnostics)
+    intervention = (_InterventionState(intervention_plan)
+                    if intervention_plan is not None else None)
     try:
         classification, pit_counts = _evolve_scalar(
-            initial_state, selection, sampler, pool, zero_noise, pit, trace)
+            initial_state, selection, sampler, pool, zero_noise, pit, trace,
+            intervention)
     except _TrajectoryFailure as failure:
+        if intervention is not None:
+            intervention.finalize()
         return SimulationRunResult(
             race_id=initial_state.race_id,
             simulation_id=simulation_id,
             simulation_index=simulation_index,
             valid=False,
             invalid_reason=failure.reason,
-        ), None
+        ), None, intervention
     result = SimulationRunResult(
         race_id=initial_state.race_id,
         simulation_id=simulation_id,
@@ -1078,7 +1432,7 @@ def _scalar_trajectory(initial_state: SimulationState,
             "loss_values": pit.loss_values,
             "target_values": pit.target_values,
         }
-    return result, fragment
+    return result, fragment, intervention
 
 
 def run_trajectory_scalar(initial_state: SimulationState,
@@ -1106,7 +1460,7 @@ def run_trajectory_scalar(initial_state: SimulationState,
         pit_params = select_pit_parameters(initial_state, selection,
                                            parameters)
     max_draws = max_residual_draws(initial_state)
-    result, _ = _scalar_trajectory(
+    result, _, _ = _scalar_trajectory(
         initial_state, parameters, selection, sampler, max_draws, master_seed,
         simulation_index, zero_noise, contract_version, pit_params, False,
         trace)
@@ -1133,12 +1487,16 @@ class _ChunkEvolution:
                  master_seed: int, indices: List[int], zero_noise: bool,
                  contract_version: str,
                  pit_params: Optional[PitParameterSet] = None,
-                 collect_diagnostics: bool = False):
+                 collect_diagnostics: bool = False,
+                 intervention_plan: Optional[_InterventionPlan] = None):
         self.state = initial_state
         self.scheduled = int(initial_state.scheduled_laps)
         self.drivers = initial_state.drivers
         self.D = len(self.drivers)
         self.B = len(indices)
+        self.intervention_plan = intervention_plan
+        self.iv = ([_InterventionState(intervention_plan) for _ in range(self.B)]
+                   if intervention_plan is not None else None)
         self.zero_noise = zero_noise
         self.progress_slope = float(selection.progress.value)
         self.degradation_slope = float(selection.degradation.value)
@@ -1260,11 +1618,24 @@ class _ChunkEvolution:
                 self.invalid_reason[row] = reason
             self.traj_done[row] = True
 
-    def _maybe_pit(self, candidate: np.ndarray) -> None:
-        """Apply R6 pit events for ``candidate`` drivers (R6-H/I/J)."""
+    def _maybe_pit(self, candidate: np.ndarray, force=None, suppress=None,
+                   override=None) -> None:
+        """Apply R6 pit events for ``candidate`` drivers (R6-H/I/J).
+
+        ``force`` adds a Phase-7 forced pit at a strategy decision event;
+        ``suppress`` removes the baseline decision there (STAY_OUT). ``force``
+        and ``suppress`` are mutually exclusive per cell. ``override`` holds
+        the requested compound for forced cells (an entry may be None, which
+        means "use the baseline-drawn transition"). All three default to
+        ``None``, reproducing the exact Phase-6 path.
+        """
         if self.pit_params is None:
             return
         mask = candidate & (self.age >= self.target_age)
+        if suppress is not None:
+            mask = mask & ~suppress
+        if force is not None:
+            mask = mask | force
         if not mask.any():
             return
         counts = mask.sum(axis=1)
@@ -1299,6 +1670,19 @@ class _ChunkEvolution:
                                     side="right")
             index = np.clip(index, 0, len(targets) - 1)
             next_compound[subset] = np.asarray(targets, dtype=object)[index]
+
+        # Strategy forced-compound override: the baseline transition draw has
+        # already been consumed above (RNG alignment), but the realised
+        # compound is the requested one. Only compound identity and the
+        # derived stint grid / future transitions change -- never pace.
+        if override is not None and force is not None and force.any():
+            forced_rows, forced_cols = np.where(force)
+            requested = override[forced_rows, forced_cols]
+            selected = np.array([value is not None for value in requested],
+                                dtype=bool)
+            if selected.any():
+                next_compound[forced_rows[selected],
+                              forced_cols[selected]] = requested[selected]
 
         loss = np.interp(loss_uniforms, self.loss_xp, self.loss_fp)
 
@@ -1394,6 +1778,41 @@ class _ChunkEvolution:
         self.next_age = np.where(good, next_age, self.next_age)
         self.next_time = np.where(good, next_time, self.next_time)
 
+    def _intervention_step(self, advance, newly_finished, race_over_rows):
+        """Resolve the target driver's decision at this event (batch path).
+
+        Uses the SAME ``_InterventionState.note_completion`` rule as the
+        scalar oracle so the two paths cannot diverge. Returns
+        ``(force, suppress, override)`` boolean/object arrays plus updates each
+        row's execution status.
+        """
+        force = np.zeros((self.B, self.D), dtype=bool)
+        suppress = np.zeros((self.B, self.D), dtype=bool)
+        override = np.full((self.B, self.D), None, dtype=object)
+        column = self.intervention_plan.target_index
+        for row in np.where(advance[:, column])[0]:
+            state = self.iv[row]
+            if state.status != INTERVENTION_PENDING:
+                continue
+            decision = state.note_completion(
+                lap_done=int(self.lap[row, column]),
+                finished=bool(newly_finished[row, column]),
+                race_over=bool(race_over_rows[row]),
+                baseline_pit=bool(
+                    self.age[row, column] >= self.target_age[row, column]),
+            )
+            if decision == _DECISION_FORCE:
+                force[row, column] = True
+                override[row, column] = self.intervention_plan.requested_compound
+            elif decision == _DECISION_SUPPRESS:
+                suppress[row, column] = True
+        return force, suppress, override
+
+    def _finalize_intervention(self) -> None:
+        if self.iv is not None:
+            for state in self.iv:
+                state.finalize()
+
     def run(self) -> None:
         if not self.initial_done.all():
             mask = np.broadcast_to(~self.initial_done[:, None],
@@ -1405,11 +1824,13 @@ class _ChunkEvolution:
             active = ((~self.finished) & (~self.traj_done[:, None])
                       & (~self.invalid[:, None]))
             if not active.any():
+                self._finalize_intervention()
                 return
             masked = np.where(active, self.next_time, np.inf)
             event_time = masked.min(axis=1)
             advance = active & (self.next_time == event_time[:, None])
             if not advance.any():
+                self._finalize_intervention()
                 return
             # Pass 1: apply lap completion for the whole batch. Pace draw
             # order is unchanged from R5 because pass 2 schedules in the
@@ -1424,8 +1845,18 @@ class _ChunkEvolution:
             # that row, R6-AB), then reschedule. With pits disabled this is
             # exactly the R5 sequence.
             if self.pit_params is not None:
-                self._maybe_pit(
-                    advance & ~newly_finished & ~race_over_rows[:, None])
+                candidate = advance & ~newly_finished & ~race_over_rows[:, None]
+                if self.intervention_plan is None:
+                    self._maybe_pit(candidate)
+                else:
+                    force, suppress, override = self._intervention_step(
+                        advance, newly_finished, race_over_rows)
+                    self._maybe_pit(candidate, force, suppress, override)
+                    column = self.intervention_plan.target_index
+                    for row in np.where(force[:, column])[0]:
+                        value = self.compound[row, column]
+                        self.iv[row].compound_used = (
+                            None if value is None else str(value))
             need = advance & ~newly_finished
             self._schedule(need)
             self.traj_done = self.traj_done | race_over_rows
@@ -1436,6 +1867,7 @@ class _ChunkEvolution:
             self.invalid[row] = True
             self.invalid_reason[row] = REASON_ITERATION_LIMIT
             self.traj_done[row] = True
+        self._finalize_intervention()
 
 
 # ---------------------------------------------------------------------------
@@ -1593,6 +2025,15 @@ class MonteCarloEngine:
     ``pit_dynamics_enabled`` the R6 pit model is added (R6). Pit diagnostics
     (R6-AE) are exposed via ``last_diagnostics`` when ``collect_diagnostics``
     is requested; they never enter the scientific result identity.
+
+    Phase-7 S2 intervention seam: both ``run`` and ``run_scalar`` accept a
+    keyword-only ``intervention=None`` (a duck-typed ``StrategyIntervention``).
+    The default (``None``) follows the exact Phase-6 path byte-for-byte. A
+    supplied intervention is validated against the live state and executed by
+    the shared deterministic action-resolution rule (STAY_OUT / PIT_NOW /
+    PIT_NEXT_LAP) on both paths; per-simulation execution status is exposed
+    via ``last_intervention_outcome`` and never enters the frozen
+    ``MonteCarloResult`` identity.
     """
 
     def __init__(self, *, chunk_size: int = DEFAULT_CHUNK_SIZE) -> None:
@@ -1602,6 +2043,15 @@ class MonteCarloEngine:
                 f"chunk_size must be a positive int, got {chunk_size!r}")
         self.chunk_size = chunk_size
         self.last_diagnostics: Optional[MonteCarloDiagnostics] = None
+        # Phase-7 operational metadata: per-simulation intervention execution
+        # status, never part of the frozen MonteCarloResult identity.
+        self.last_intervention_outcome: Optional[tuple] = None
+        # Phase-7 S3 operational metadata: compact terminal per-index
+        # outcomes (validity, invalid reason, finish position per roster
+        # column). Populated ONLY when explicitly requested through
+        # ``collect_index_outcomes=True``; never part of the frozen
+        # MonteCarloResult identity and never a default product behaviour.
+        self.last_index_outcomes: Optional[dict] = None
 
     # -- vectorized batch path ---------------------------------------------
 
@@ -1612,9 +2062,12 @@ class MonteCarloEngine:
                 ExecutionPolicy.RETROSPECTIVE_PRODUCT),
             zero_noise: bool = False,
             collect_diagnostics: bool = False,
-            contract_version: str = SIMULATION_CONTRACT_VERSION
+            collect_index_outcomes: bool = False,
+            contract_version: str = SIMULATION_CONTRACT_VERSION,
+            intervention: Optional[object] = None
             ) -> MonteCarloResult:
         _require_types(initial_state, parameters, config, assumptions)
+        plan = _resolve_intervention(intervention, initial_state, config)
         selection, sampler = _prepare(initial_state, parameters,
                                       execution_policy, zero_noise)
         pit_params = None
@@ -1623,6 +2076,10 @@ class MonteCarloEngine:
                                                parameters)
         collect = bool(collect_diagnostics) and pit_params is not None
         self.last_diagnostics = None
+        self.last_intervention_outcome = None
+        self.last_index_outcomes = None
+        intervention_outcomes: Optional[List[Optional[dict]]] = (
+            [None] * config.simulation_count if plan is not None else None)
         diagnostic_rows: List[int] = []
         diagnostic_transitions: Counter = Counter()
         diagnostic_losses: List[float] = []
@@ -1631,6 +2088,21 @@ class MonteCarloEngine:
         parameter_identity = parameters.parameter_identity()
         field_size = initial_state.roster_size
         positions = np.arange(1, field_size + 1)
+
+        # Phase-7 S3: compact terminal per-index outcome arrays, built from the
+        # SAME terminal batch state used for aggregation (no second
+        # simulation, no scalar replay, no trajectory history).
+        index_outcomes: Optional[dict] = None
+        if collect_index_outcomes:
+            index_outcomes = {
+                "simulation_index": np.arange(config.simulation_count,
+                                              dtype=np.int64),
+                "valid": np.zeros(config.simulation_count, dtype=bool),
+                "invalid_reason": np.array(
+                    [""] * config.simulation_count, dtype=object),
+                "finish_position": np.zeros(
+                    (config.simulation_count, field_size), dtype=np.int64),
+            }
 
         position_counts = np.zeros((field_size, field_size + 1),
                                    dtype=np.int64)
@@ -1647,8 +2119,12 @@ class MonteCarloEngine:
             evolution = _ChunkEvolution(
                 initial_state, selection, sampler, max_draws,
                 config.master_seed, indices, zero_noise, contract_version,
-                pit_params, collect)
+                pit_params, collect, intervention_plan=plan)
             evolution.run()
+
+            if intervention_outcomes is not None:
+                for local, index in enumerate(indices):
+                    intervention_outcomes[index] = evolution.iv[local].to_dict()
 
             if collect:
                 valid_rows = np.where(~evolution.invalid)[0]
@@ -1671,6 +2147,15 @@ class MonteCarloEngine:
                     position_counts,
                     (order, np.broadcast_to(positions, order.shape)),
                     1)
+                if index_outcomes is not None:
+                    global_rows = np.asarray(indices, dtype=np.int64)[
+                        valid_rows]
+                    rank = np.empty_like(order)
+                    np.put_along_axis(
+                        rank, order,
+                        np.broadcast_to(positions, order.shape), axis=1)
+                    index_outcomes["finish_position"][global_rows] = rank
+                    index_outcomes["valid"][global_rows] = True
                 valid_count += len(valid_rows)
                 if len(samples) < sample_limit:
                     for local, row in enumerate(valid_rows):
@@ -1695,13 +2180,20 @@ class MonteCarloEngine:
             invalid_rows = np.where(evolution.invalid)[0]
             for row in invalid_rows:
                 invalid_count += 1
-                invalid_reasons[str(evolution.invalid_reason[row])] += 1
+                reason = str(evolution.invalid_reason[row])
+                invalid_reasons[reason] += 1
+                if index_outcomes is not None:
+                    index_outcomes["invalid_reason"][indices[row]] = reason
         runtime_s = time.perf_counter() - started
 
         if collect:
             self.last_diagnostics = _finalize_diagnostics(
                 diagnostic_rows, diagnostic_transitions, diagnostic_losses,
                 diagnostic_targets, valid_count, field_size)
+        if intervention_outcomes is not None:
+            self.last_intervention_outcome = tuple(intervention_outcomes)
+        if index_outcomes is not None:
+            self.last_index_outcomes = index_outcomes
 
         return _build_result(
             initial_state=initial_state, config=config,
@@ -1719,9 +2211,12 @@ class MonteCarloEngine:
                        ExecutionPolicy.RETROSPECTIVE_PRODUCT),
                    zero_noise: bool = False,
                    collect_diagnostics: bool = False,
-                   contract_version: str = SIMULATION_CONTRACT_VERSION
+                   collect_index_outcomes: bool = False,
+                   contract_version: str = SIMULATION_CONTRACT_VERSION,
+                   intervention: Optional[object] = None
                    ) -> MonteCarloResult:
         _require_types(initial_state, parameters, config, assumptions)
+        plan = _resolve_intervention(intervention, initial_state, config)
         selection, sampler = _prepare(initial_state, parameters,
                                       execution_policy, zero_noise)
         pit_params = None
@@ -1730,6 +2225,10 @@ class MonteCarloEngine:
                                                parameters)
         collect = bool(collect_diagnostics) and pit_params is not None
         self.last_diagnostics = None
+        self.last_intervention_outcome = None
+        self.last_index_outcomes = None
+        intervention_outcomes: Optional[List[Optional[dict]]] = (
+            [None] * config.simulation_count if plan is not None else None)
         diagnostic_rows: List[int] = []
         diagnostic_transitions: Counter = Counter()
         diagnostic_losses: List[float] = []
@@ -1741,6 +2240,18 @@ class MonteCarloEngine:
             entry.driver_id: index
             for index, entry in enumerate(initial_state.drivers)}
 
+        index_outcomes: Optional[dict] = None
+        if collect_index_outcomes:
+            index_outcomes = {
+                "simulation_index": np.arange(config.simulation_count,
+                                              dtype=np.int64),
+                "valid": np.zeros(config.simulation_count, dtype=bool),
+                "invalid_reason": np.array(
+                    [""] * config.simulation_count, dtype=object),
+                "finish_position": np.zeros(
+                    (config.simulation_count, field_size), dtype=np.int64),
+            }
+
         position_counts = np.zeros((field_size, field_size + 1),
                                    dtype=np.int64)
         valid_count = 0
@@ -1751,13 +2262,18 @@ class MonteCarloEngine:
 
         started = time.perf_counter()
         for index in range(config.simulation_count):
-            result, fragment = _scalar_trajectory(
+            result, fragment, intervention_state = _scalar_trajectory(
                 initial_state, parameters, selection, sampler, max_draws,
                 config.master_seed, index, zero_noise, contract_version,
-                pit_params, collect)
+                pit_params, collect, intervention_plan=plan)
+            if intervention_outcomes is not None:
+                intervention_outcomes[index] = intervention_state.to_dict()
             if not result.valid:
                 invalid_count += 1
-                invalid_reasons[str(result.invalid_reason)] += 1
+                reason = str(result.invalid_reason)
+                invalid_reasons[reason] += 1
+                if index_outcomes is not None:
+                    index_outcomes["invalid_reason"][index] = reason
                 continue
             valid_count += 1
             if fragment is not None:
@@ -1766,8 +2282,13 @@ class MonteCarloEngine:
                 diagnostic_losses.extend(fragment["loss_values"])
                 diagnostic_targets.extend(fragment["target_values"])
             for entry in result.classification.entries:
-                position_counts[index_by_driver[entry.driver_id],
-                                int(entry.finish_position)] += 1
+                column = index_by_driver[entry.driver_id]
+                position_counts[column, int(entry.finish_position)] += 1
+                if index_outcomes is not None:
+                    index_outcomes["finish_position"][
+                        index, column] = int(entry.finish_position)
+            if index_outcomes is not None:
+                index_outcomes["valid"][index] = True
             if len(samples) < sample_limit:
                 samples.append(result.classification)
         runtime_s = time.perf_counter() - started
@@ -1776,6 +2297,10 @@ class MonteCarloEngine:
             self.last_diagnostics = _finalize_diagnostics(
                 diagnostic_rows, diagnostic_transitions, diagnostic_losses,
                 diagnostic_targets, valid_count, field_size)
+        if intervention_outcomes is not None:
+            self.last_intervention_outcome = tuple(intervention_outcomes)
+        if index_outcomes is not None:
+            self.last_index_outcomes = index_outcomes
 
         return _build_result(
             initial_state=initial_state, config=config,

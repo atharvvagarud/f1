@@ -1,0 +1,235 @@
+{
+ "phase": 7,
+ "freeze_version": "v2-strategy-engine-phase7",
+ "generated_utc": "2026-09-24T16:57:19Z",
+ "historical_parents": {
+  "phase6_commit": "b813ffe1ebd16644d2ebc5e4b77361cb797f82f4",
+  "phase6_tag": "v2-monte-carlo-phase6",
+  "phase6_manifest": "docs/PHASE6_FREEZE_MANIFEST.json",
+  "frontend_foundation_commit": "6c04438db53cb30c6a43d0b15ea53836dfd4b80b",
+  "frontend_foundation_tag": "v2-frontend-foundation",
+  "s8_parent_commit": "6c04438"
+ },
+ "contract_versions": {
+  "strategy_contract_version": "s1",
+  "intervention_version": "v1",
+  "candidate_contract_version": "s4-candidates-v1",
+  "comparison_version": "v1",
+  "paired_contract_version": "s3-paired-v1",
+  "uncertainty_version": "v1",
+  "objective_version": "v1",
+  "simulation_contract_version": "v1",
+  "engine_version": "r4-engine-v1",
+  "monte_carlo_version": "r5-monte-carlo-v1",
+  "pit_dynamics_version": "r6-pit-dynamics-v1"
+ },
+ "scientific_semantics": {
+  "probability_semantics": "MONTE_CARLO_FREQUENCY",
+  "counterfactual_semantics": "The historical state at T is factual. Baseline and intervention futures are simulated; alternative strategy outcomes are counterfactual estimates and not observed ground truth. No historical future is used.",
+  "crn_policy": "CRN_ADOPTED_WITH_LIMITATIONS",
+  "delta_estimand": "complete_valid_pairs",
+  "delta_signs": "positive = estimated improvement (win/podium probability; inverted sign convention frozen for expected finish)",
+  "actions": [
+   "STAY_OUT",
+   "PIT_NOW",
+   "PIT_NEXT_LAP"
+  ],
+  "canonical_candidate_space": 9,
+  "compound_semantics": "sampled / SOFT / MEDIUM / HARD where valid; no direct pace delta",
+  "single_decision_scope": "single driver, single decision, then frozen stochastic mechanics",
+  "uncertainty": "Monte Carlo sampling uncertainty only (paired SE + paired percentile bootstrap B=2000, 95%, linear quantile, complete pair as unit); NOT a causal real-world confidence interval",
+  "objectives": [
+   "MAXIMIZE_WIN_PROBABILITY",
+   "MAXIMIZE_PODIUM_PROBABILITY",
+   "MINIMIZE_EXPECTED_FINISH"
+  ],
+  "objective_policy": "explicit objective required; no scientific-service default; no weighted score; no recommendation; point-estimate leader is not a best/optimal strategy",
+  "classifications": [
+   "IMPROVEMENT",
+   "DEGRADATION",
+   "INCONCLUSIVE",
+   "UNCERTAINTY_UNAVAILABLE"
+  ]
+ },
+ "product_contract": {
+  "endpoint": "POST /v2/strategies/compare",
+  "default_simulation_count": 1000,
+  "simulation_count_range": [
+   100,
+   10000
+  ],
+  "max_candidates_synchronous": 9,
+  "max_candidates_at_10000": 3,
+  "default_candidates": [
+   "STAY_OUT:SAMPLED",
+   "PIT_NOW:SAMPLED",
+   "PIT_NOW:MEDIUM",
+   "PIT_NEXT_LAP:SAMPLED"
+  ],
+  "default_candidate_policy": "neutral action-space coverage, not historical performance",
+  "default_master_seed": 20240101,
+  "objective_required": true,
+  "served_seasons": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "served_races": 149,
+  "not_served": [
+   2025
+  ],
+  "frontend_route": "/strategy",
+  "no_per_index_leakage": true
+ },
+ "authorized_phase6_drift": {
+  "record": "docs/PHASE7_AUTHORIZED_PHASE6_DRIFT.json",
+  "authorization_version": "phase7-s3-authorized-drift-v3",
+  "authorized_files": [
+   "v2/simulation/monte_carlo.py"
+  ],
+  "historical_sha256": {
+   "v2/simulation/monte_carlo.py": "f0a3447f18946cb33548e8711d3184602ffef542dad57df17284451dc25e7d6b"
+  },
+  "current_sha256": {
+   "v2/simulation/monte_carlo.py": "d2166075e2d4b90bf4604ac3d586fe4d07f1ae577cb413ec8991317309e68c68"
+  },
+  "compatibility_test": "tests/test_v2_phase7_s1_phase6_compat.py",
+  "compatibility_fixture": "tests/fixtures/phase7_s1_phase6_baseline.json"
+ },
+ "s6_validation_evidence": {
+  "protocol_version": "s6-validation-v1",
+  "validation_artifact": "data/v2/strategy/s6_validation_v1.json (gitignored, reproducible via scripts/run_phase7_s6_validation.py)",
+  "red_team_artifact": "data/v2/strategy/s6_red_team_v1.json (gitignored, reproducible via scripts/run_phase7_s6_red_team.py)",
+  "adversarial_checks": 83,
+  "failures": 0,
+  "blockers": 0,
+  "parameter_identity_through_2024": "4d2f9db5442386dbc65d0c0285dba065475460aaa29bb7e9b1b3c9846743a2d3"
+ },
+ "s7_product_evidence": {
+  "api_tests": 25,
+  "frontend_new_tests": 22,
+  "frontend_total": 119,
+  "measured_latency": {
+   "1k_1cand_s": 2.4,
+   "1k_4cand_s": 6.7,
+   "1k_9cand_s": 12.7,
+   "10k_3cand_s": 48.5
+  },
+  "s8_smoke_latency": {
+   "100_1cand_s": 0.34,
+   "1000_4cand_s": 6.08
+  }
+ },
+ "tracked_file_hashes_sha256": {
+  "v2/strategy/__init__.py": "917d25d8fe619dd656319fd7d5a604436f2de80c3e34419cc58ac44775a5fbd3",
+  "v2/strategy/candidates.py": "ccf8a264bb932887d0a8dc9af9132e7da45297be5c176e1dde432c786da0c445",
+  "v2/strategy/comparison.py": "40a5e0ff2f62e623db51363376d71736d7e00f1a5f109d75344c09392616ec3c",
+  "v2/strategy/contracts.py": "260011dcfaab51bf995ae9e6f44f27cbe85713948c0e778c1dc2971ee1f4cd0c",
+  "v2/strategy/interventions.py": "5bc3e62b249ea71c8c80ce52f93b53594700b76971933245225e96876d76c924",
+  "v2/strategy/objectives.py": "20e3358a65a7de67bb02184242ab9da4d45ffe3eea1c3c8a3dbb75d210cfe157",
+  "v2/strategy/paired.py": "4f3b508207fcd60e42f755b496621c8cdf526129b9e166a0e5056147d28a902f",
+  "v2/strategy/uncertainty.py": "2a4aae8a0bea2e509ed983d78420fdbe5650282916ef626483f3a43d8b733ac4",
+  "v2/simulation/monte_carlo.py": "d2166075e2d4b90bf4604ac3d586fe4d07f1ae577cb413ec8991317309e68c68",
+  "api/v2_strategy_service.py": "254f893b5e5e29f7b8ee8bfe14ed4ce207fd279936614f4f8bc153e84ed32cb5",
+  "api/v2_strategy_schemas.py": "5481e4c0df85d8139111ccbdeafa4388c20a05c0e776650a9c4764522441d337",
+  "api/v2_strategy_routes.py": "7dd139a1599c60af2e842be0256e46e456ab69a723720a927c7e2f5ee3959e96",
+  "api/main.py": "c432212c0504904d90014ba4089774ad776c159c2b50e06c3328f7512b08067e",
+  "tests/test_v2_phase7_s1_contracts.py": "66c947f3d48c2e4c69c7c4ddc05c2e626deadc59bc32b1c73c1db63da40132f2",
+  "tests/test_v2_phase7_s1_phase6_compat.py": "77413b89b9ae3cbeb7310c1f03b679ed8d178f9f120a00aaedb57ac6074d0cf3",
+  "tests/test_v2_phase7_s1_seam.py": "3baa21a9b6200ab8ca6d97d35d828da51c0720b4875f05ceacb793835fab42e1",
+  "tests/test_v2_phase7_s2_mechanics.py": "118c8ac62d48fd3c54012ea266ce0b8916e7209932c6d8811a17f3ff262e2d08",
+  "tests/test_v2_phase7_s3_paired.py": "603e0c22a4bfb0d87ebb3e12d62c7d2c1fa6d5a70d0e127f059bd181b94fb4b2",
+  "tests/test_v2_phase7_s4_comparison.py": "34eaddfa28348c24e7663c2f1d7290f3f37750556c1ff89474d6777bbb3912db",
+  "tests/test_v2_phase7_s5_objectives.py": "4fd5e56f58fa8360b4f31b850c99aed6c0bf2b496027cd237ac22b627f14abd9",
+  "tests/test_v2_phase7_s5_uncertainty.py": "cea3c6ccd8f96cd39b9320b8d44384997133f73ae0fea7be7939ee33ca81df19",
+  "tests/test_v2_phase7_s6_validation.py": "661776c426653d4533f2bceb7f2ee3ad784c90da8e93da506cc707c83ff848c0",
+  "tests/test_v2_phase7_s7_strategy_api.py": "d5e8a981f4ad1d8cfec2b15561ec241671159e59ffa595ed024813d428f1c643",
+  "tests/s6_validation_protocol.py": "d2ad2cb24cb442774710ee27f83a88279f1e009ee7d6dc593e6bd28d1a42aab2",
+  "tests/fixtures/phase7_s1_phase6_baseline.json": "ca2a52eab48e3049bafc80957dbeda986f02dccfb7250c030f6bd4136a08f01b",
+  "docs/PHASE7_STRATEGY_PLAN.md": "676eff6a0ee7817df02dcbff42fe5bbd76f4933ac9d44557d74ad353ff39eb25",
+  "docs/PHASE7_S3_CRN_REPORT.md": "654d766db549f790b96f0ae3bc5c256e3ff7621fc121219f1bdfe01dd9e16d64",
+  "docs/PHASE7_S4_COMPARISON_REPORT.md": "3a644f3dfc8ce4821e688b431deb2f68779d6bb2f3fb7a7786f0a6b020cf576b",
+  "docs/PHASE7_S5_UNCERTAINTY_OBJECTIVE_REPORT.md": "79b9456eb8963463e6ae7304c9cc72fa4659028d853213ab255e0fa702f0b528",
+  "docs/PHASE7_S6_VALIDATION_REPORT.md": "50ae0440e0ffed157bb50e4db8d4f002e3ec5a789f601d8f02a0efc3da0b7a9d",
+  "docs/PHASE7_S7_PRODUCT_INTEGRATION_REPORT.md": "adfafde7f37cf546d2201a21ec2c8c84885a8b00c1a0babd8ab7baf7d7a4eb9c",
+  "docs/PHASE7_STRATEGY_HANDOFF.md": "8fd66bc56eb369c7d4225437cb40d2094c6820a1150764a3b76b9708a2e19a89",
+  "docs/PHASE7_AUTHORIZED_PHASE6_DRIFT.json": "ec1fb9cf0cac51414e03fb58472cb3adf5dbd767c82bba0e64b8bcaba401661a",
+  "frontend/app/strategy/page.tsx": "7947b0e727b4766b2c9c034dfb963dc5d66fad1f06571027f9dfb6918340ad50",
+  "frontend/lib/v2.ts": "aebeceb7c1694f4652632a43daa332490dfeb487dc7664cb9976031faee0f41d",
+  "frontend/features/strategy/lib/strategyMachine.ts": "dfdcc5be8328c30629b50b577fd30164d7d1665dfded0595860890f42e1747c2",
+  "frontend/features/strategy/hooks/useStrategy.ts": "34525b7103bc25357ad374ff2c988ab9542582d93570167cb831b70a5fba6723",
+  "frontend/features/strategy/components/StrategyView.tsx": "0d616e0e81b1b7c6b5c39c1d9c58b57b58471ffe56eb73204bccb8c8ee50d912",
+  "frontend/features/strategy/components/StrategyResults.tsx": "7a823d6e5baefb1a97715548ba2bdb89fda5f19c8feb72acdeb1f5683e6e2d56",
+  "frontend/components/shell/CommandBar.tsx": "c03e675bc627fe57c217bf099f586c77370cccee2b375d0719bc31ed84466ffa",
+  "frontend/lib/v2.strategy.test.ts": "a92513fcf7d23697803c1c771369ee3164f658b41dee7e26966405d92f435857",
+  "frontend/features/strategy/lib/strategyMachine.test.ts": "b848ac5f2874629de9ae76fcf1eb1376afdfd9eeedc78c84ad1281ae38484e23"
+ },
+ "generated_artifacts": {
+  "data/v2/strategy/s3_crn_validation_v1.json": {
+   "sha256": "3aac60652dee16e3cb07d52f8acd39adb5b7d7933fa02a933c9f92d1f1b72430",
+   "policy": "gitignored reproducible validation-only"
+  },
+  "data/v2/strategy/s4_comparison_validation_v1.json": {
+   "sha256": "ef58237c091cd66efcb98ca923e056a52e7a6c90a3d37bbeb4167eccd2ec694c",
+   "policy": "gitignored reproducible validation-only"
+  },
+  "data/v2/strategy/s5_uncertainty_validation_v1.json": {
+   "sha256": "abe61d1b4938a9de68bbb60ee0f3f7098914ed4fe70f702d99042aa1f684e8ef",
+   "policy": "gitignored reproducible validation-only"
+  },
+  "data/v2/strategy/s6_validation_v1.json": {
+   "sha256": "f59a4645e27be3073c0a89011dc0c9e4d8ae958e20b29593c0884e757fceab5f",
+   "policy": "gitignored reproducible validation-only"
+  },
+  "data/v2/strategy/s6_red_team_v1.json": {
+   "sha256": "b7eb4a2728a56581904454e28035c9cc9cfa8c502df83f743425dba7de77ea78",
+   "policy": "gitignored reproducible validation-only"
+  }
+ },
+ "known_limitations": [
+  "counterfactual simulation is not historical truth",
+  "uncertainty is Monte Carlo sampling uncertainty only",
+  "no traffic/overtaking model (free-air rejoin only)",
+  "no direct compound pace delta",
+  "no reliability/DNF, no points",
+  "no weather/Safety-Car evolution",
+  "single-driver single-decision interventions only",
+  "STAY_OUT can be inert; PIT_NEXT_LAP can be superseded",
+  "CRN adopted with limitations (shares stream identities, not trajectories)",
+  "full 9-candidate synchronous runs can be slow (10-35s at 1k)",
+  "10k restricted to <=3 candidates synchronously; no async strategy jobs; no strategy cache",
+  "2025 not served",
+  "no Phase-3 probability mixing"
+ ],
+ "verification": {
+  "strategy_regression": "305 passed, 0 failed in 27.9s (S1-S7 strategy tests + Phase-6 freeze governance)",
+  "frontend": "node --test 119/119; tsc clean; eslint clean; production build green with /strategy",
+  "smoke": "supported 100/1 (200), objective-invariance (same comparison identity), 2025 firewall (404 unknown_race), unsupported target (target_driver_not_in_roster), default 1k/4 in 6.08s",
+  "playwright": "no page overflow on / /replay /simulator /strategy-initial at 1440/1024/768/650/390/360; /strategy result state at 1440+390 no overflow with local table scroll; unsupported state renders eligibility gate",
+  "graphify_pre_freeze": {
+   "nodes": 9979,
+   "edges": 25361,
+   "communities": 298,
+   "simulation_to_strategy": 0,
+   "strategy_to_api": 0,
+   "strategy_cycle": false
+  },
+  "full_python_suite": "11 failed (all pre-existing: 7 env-sensitive NumPy R6x1/R7.1x6 identity pins + 4 Phase-4/5 api/main.py post-freeze drift and HEAD pins, identical set to S6), 2860 passed (+25 S7 API tests vs S6 2835), 5 skipped, 4 xfailed, 3370.7s. No new failures.",
+  "graphify_final": {
+   "nodes": 10002,
+   "edges": 25385,
+   "communities": 294,
+   "simulation_to_strategy": 0,
+   "strategy_to_api": 0,
+   "strategy_cycle": false
+  }
+ },
+ "git_checkpoint": {
+  "commit": "PENDING (recorded in final report)",
+  "tag": "v2-strategy-engine-phase7 (intended)"
+ }
+}

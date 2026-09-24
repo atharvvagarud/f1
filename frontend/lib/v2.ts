@@ -517,3 +517,153 @@ export function isSimulationUnsupported(error: unknown): boolean {
     error.code === "simulation_unsupported"
   );
 }
+
+// --- S7 strategy comparison (Phase-7) ---
+//
+// Typed boundary over POST /v2/strategies/compare. The server reconstructs the
+// exact anchor, runs the frozen S1–S6 Strategy Engine (one shared baseline +
+// paired candidate arms), and returns compact aggregates, paired deltas and
+// selected-objective sampling uncertainty. Per-index outcomes never cross this
+// boundary. All probabilities are MONTE_CARLO_FREQUENCY outcome frequencies
+// passed through verbatim: never normalized, summed, or re-scaled here.
+
+export type StrategyAction = "STAY_OUT" | "PIT_NOW" | "PIT_NEXT_LAP";
+export type StrategyCompound = "SOFT" | "MEDIUM" | "HARD";
+export type StrategyObjective =
+  | "MAXIMIZE_WIN_PROBABILITY"
+  | "MAXIMIZE_PODIUM_PROBABILITY"
+  | "MINIMIZE_EXPECTED_FINISH";
+
+export type StrategyCandidateSelection = {
+  action: StrategyAction;
+  requested_compound?: StrategyCompound | null;
+};
+
+export type StrategyCompareRequest = SimulationAnchor & {
+  target_driver_id: string;
+  objective: StrategyObjective;
+  simulation_count: number;
+  master_seed?: number;
+  candidates?: StrategyCandidateSelection[];
+};
+
+export type StrategyPositionFrequency = {
+  position: number | null;
+  frequency: number;
+};
+
+export type StrategyBaseline = {
+  valid_simulations: number;
+  invalid_simulations: number;
+  win_probability: number;
+  podium_probability: number;
+  expected_finish: number;
+  finish_position_distribution: StrategyPositionFrequency[];
+};
+
+export type StrategyUncertainty = {
+  point_estimate: number | null;
+  paired_se: number | null;
+  ci_low: number | null;
+  ci_high: number | null;
+  classification:
+    | "IMPROVEMENT"
+    | "DEGRADATION"
+    | "INCONCLUSIVE"
+    | "UNCERTAINTY_UNAVAILABLE";
+  availability: string;
+  valid_pairs: number;
+};
+
+export type StrategyExecution = {
+  applied_rate: number;
+  suppressed_rate: number;
+  superseded_rate: number;
+  inert_rate: number;
+  race_end_cancelled_rate: number;
+};
+
+export type StrategyCandidateResult = {
+  candidate_key: string;
+  candidate_identity: string;
+  action: string;
+  requested_compound: string | null;
+  valid: boolean;
+  reason: string | null;
+  evaluated: boolean;
+  win_probability: number | null;
+  podium_probability: number | null;
+  expected_finish: number | null;
+  finish_position_distribution: StrategyPositionFrequency[];
+  delta_win_probability: number | null;
+  delta_podium_probability: number | null;
+  delta_expected_finish: number | null;
+  uncertainty: StrategyUncertainty | null;
+  execution: StrategyExecution | null;
+};
+
+export type StrategyObjectiveAnalysis = {
+  objective: string;
+  metric: string;
+  leader_by_point_estimate: string | null;
+  indistinguishable_from_leader: string[];
+  distinguishable_from_leader: string[];
+  point_estimate_order: string[];
+};
+
+export type StrategyCompareResponse = {
+  strategy_contract_version: string;
+  intervention_version: string;
+  comparison_version: string;
+  objective_version: string;
+  uncertainty_version: string;
+  race_id: string;
+  anchor_driver_id: string;
+  anchor_lap_number: number;
+  anchor_state_time_s: number;
+  target_driver_id: string;
+  simulation_count: number;
+  master_seed: number;
+  objective: string;
+  metric: string;
+  probability_semantics: string;
+  counterfactual_semantics: string;
+  crn_policy: string;
+  comparison_identity: string;
+  baseline: StrategyBaseline | null;
+  supported: boolean;
+  unsupported_reason: string | null;
+  candidates: StrategyCandidateResult[];
+  objective_analysis: StrategyObjectiveAnalysis | null;
+  limitations: string[];
+  runtime: SimulationRuntime;
+};
+
+/** Run one exact-anchor strategy comparison (explicit user action only). */
+export async function postStrategyCompare(
+  request: StrategyCompareRequest,
+  fetcher: FetchLike = fetch,
+  base?: string,
+  signal?: AbortSignal,
+): Promise<StrategyCompareResponse> {
+  return readJson<StrategyCompareResponse>(
+    fetcher,
+    `${baseOf(base)}/v2/strategies/compare`,
+    {
+      method: "POST",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(request),
+      signal,
+    },
+  );
+}
+
+/** True when a 422 is the stable strategy-request validation contract. */
+export function isStrategyRequestInvalid(error: unknown): boolean {
+  return (
+    error instanceof V2ApiError &&
+    error.status === 422 &&
+    error.code === "strategy_request_invalid"
+  );
+}

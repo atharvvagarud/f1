@@ -36,6 +36,7 @@ MANIFEST = ROOT / "docs" / "PHASE6_FREEZE_MANIFEST.json"
 API_CONTRACT = ROOT / "docs" / "PHASE6_SIMULATION_API_CONTRACT.json"
 PHASE4_MANIFEST = ROOT / "docs" / "PHASE4_FREEZE_MANIFEST.json"
 PHASE5_MANIFEST = ROOT / "docs" / "PHASE5_FREEZE_MANIFEST.json"
+PHASE7_DRIFT = (ROOT / "docs" / "PHASE7_AUTHORIZED_PHASE6_DRIFT.json")
 R7_PROTOCOL = (ROOT / "data" / "v2" / "simulation" / "validation"
                / "r7_protocol_v1.json")
 
@@ -70,12 +71,73 @@ def test_manifest_exists_and_is_machine_readable():
     assert manifest["scientific_runtime_unchanged_during_integration"] is True
 
 
-def test_scientific_runtime_files_match_frozen_hashes():
+def test_phase6_scientific_hashes_match_except_authorized_phase7_drift():
+    """Phase-6 hash seal with an explicit, bounded Phase-7 drift allowance.
+
+    The Phase-6 manifest is the historical record and is never rewritten. A
+    file may differ from its Phase-6 hash ONLY if it is listed in
+    ``docs/PHASE7_AUTHORIZED_PHASE6_DRIFT.json``, its recorded historical hash
+    equals the Phase-6 manifest hash, and its live hash equals the recorded
+    current hash. Any other scientific-runtime drift FAILS as unexpected.
+    """
     recorded = _manifest()["scientific_file_hashes"]
+    drift = _load(PHASE7_DRIFT)
+    authorized_paths = set(drift["authorized_files"])
+    authorized = {Path(path).name for path in authorized_paths}
+    historical = drift["historical_sha256"]
+    current = drift["current_sha256"]
+
     assert set(recorded) == set(SIMULATION_FILES)
+    assert authorized <= set(SIMULATION_FILES)
+    assert authorized_paths == {f"v2/simulation/{name}"
+                                for name in authorized}
+
     for name in SIMULATION_FILES:
-        actual = _sha256(ROOT / "v2" / "simulation" / name)
-        assert actual == recorded[name], f"scientific drift in {name}"
+        path = ROOT / "v2" / "simulation" / name
+        phase6_hash = recorded[name]
+        actual = _sha256(path)
+        if name in authorized:
+            # AUTHORIZED PHASE-7 DRIFT: historical hash must still match the
+            # untouched Phase-6 manifest, and the live file must match the
+            # exact current hash recorded in the drift record. A file listed
+            # as drifted but actually unchanged is also a governance error.
+            key = f"v2/simulation/{name}"
+            assert historical[key] == phase6_hash, (
+                f"{name}: drift-record historical hash does not match the "
+                f"Phase-6 manifest")
+            assert actual == current[key], (
+                f"{name}: authorized current hash mismatch "
+                f"({actual} != {current[key]})")
+            assert actual != phase6_hash, (
+                f"{name} is listed as authorized drift but is unchanged")
+        else:
+            # UNEXPECTED SCIENTIFIC DRIFT.
+            assert actual == phase6_hash, f"unauthorized scientific drift in {name}"
+
+
+def test_authorized_phase7_drift_record_is_machine_readable_and_bounded():
+    drift = _load(PHASE7_DRIFT)
+    required = (
+        "authorization_version", "historical_phase6_commit",
+        "historical_phase6_tag", "historical_phase6_manifest",
+        "authorized_files", "historical_sha256", "current_sha256", "reason",
+        "required_compatibility_test", "phase7_stage",
+    )
+    for key in required:
+        assert key in drift, f"authorized drift record missing {key!r}"
+    assert drift["historical_phase6_manifest"] == \
+        "docs/PHASE6_FREEZE_MANIFEST.json"
+    assert drift["historical_phase6_tag"] == "v2-monte-carlo-phase6"
+    # The single authorized file is shared across Phase-7 stages; the stage
+    # label records the most recent authorized revision.
+    assert drift["phase7_stage"] in {"S1", "S2", "S3"}
+    assert set(drift["historical_sha256"]) == set(drift["authorized_files"])
+    assert set(drift["current_sha256"]) == set(drift["authorized_files"])
+    # Bounded to the scientific simulation runtime; no API/frontend files.
+    assert all(path.startswith("v2/simulation/")
+               for path in drift["authorized_files"])
+    assert (ROOT / drift["required_compatibility_test"]).exists()
+    assert (ROOT / drift["compatibility_fixture"]).exists()
 
 
 def test_scientific_runtime_imports_no_model_or_truth():

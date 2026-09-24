@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { href: "/", label: "Predict" },
   { href: "/replay", label: "Replay" },
   { href: "/simulator", label: "Simulate" },
+  { href: "/strategy", label: "Strategy" },
 ] as const;
 
 export function CommandBar() {
