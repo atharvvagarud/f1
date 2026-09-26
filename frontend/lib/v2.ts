@@ -174,8 +174,210 @@ export type ReplayPredictionResponse = {
   cache_status: "HIT";
 };
 
-// --- R6 probability timeline (one response per race) ---
+// --- E4 local (per-checkpoint, per-driver) explanation ---
+//
+// Additive, read-only decomposition of one frozen winner score in model
+// log-odds. Contributions are NEVER win-probability increments and are never
+// normalized; the top-N view is a compact display that does not reconstruct
+// the prediction by itself (the full canonical vector does).
 
+export type LocalContribution = {
+  canonical_feature: string;
+  feature_family: string;
+  feature_type: string;
+  raw_value: string | number | boolean | null;
+  input_state: string;
+  imputed_value: string | number | boolean | null;
+  active_category: string | null;
+  log_odds_contribution: number;
+  direction: string;
+};
+
+export type LocalExplanationIdentity = {
+  race_id: string;
+  frame_index: number;
+  driver_id: string;
+  checkpoint_reasons: string[];
+  leader_lap: number | null;
+  state_time_s: number;
+  anchor_driver_id: string;
+  anchor_lap_number: number;
+  anchor_state_time_s: number;
+  feature_identity: {
+    race_id: string;
+    driver_id: string;
+    lap_number: number;
+    state_time_s: number;
+  };
+  observation: {
+    observed_lap_number: number;
+    observed_time_s: number;
+    observation_age_s: number | null;
+    observed_position: number | null;
+  };
+};
+
+export type LocalExplanationModelIdentity = {
+  feature_set: string;
+  feature_set_version: string;
+  estimator_class: string;
+  specification_fingerprint: string;
+  transformed_dim: number;
+  canonical_feature_count: number;
+  calibration_method: string;
+  probability_kind: string;
+  probability_semantics: string;
+  training_seasons: number[];
+  sklearn_version: string;
+};
+
+export type LocalExplanationResponse = {
+  contract_version: string;
+  format: string;
+  identity: LocalExplanationIdentity;
+  model_identity: LocalExplanationModelIdentity;
+  probability_semantics: string;
+  explanation_space: string;
+  intercept: number;
+  logit: number;
+  probability: number;
+  model_probability: number;
+  cached_probability: number | null;
+  reconstruction: {
+    estimator_decision_function: number;
+    residual: number;
+    logit_abs_tolerance: number;
+    probability_abs_tolerance: number;
+    transformed_contribution_sum: number;
+    canonical_contribution_sum: number;
+  };
+  transformed_feature_count: number;
+  canonical_feature_count: number;
+  top_positive: LocalContribution[];
+  top_negative: LocalContribution[];
+  accounting: {
+    top_n: number;
+    total_positive_log_odds: number;
+    total_negative_log_odds: number;
+    shown_positive_log_odds: number;
+    shown_negative_log_odds: number;
+    omitted_positive_log_odds: number;
+    omitted_negative_log_odds: number;
+    positive_feature_count: number;
+    negative_feature_count: number;
+    full_decomposition_reconstructs_prediction: boolean;
+    top_n_reconstructs_prediction: boolean;
+    note: string;
+  };
+  limitations: string[];
+  cache_status: string;
+};
+
+// --- E5 prediction-change (timeline) explanation ---
+//
+// Exact change in one frozen winner score between two REAL checkpoints A -> B.
+// Contribution deltas are additive model log-odds changes; the top-N view is a
+// compact display that does not reconstruct the change by itself (the full
+// canonical change vector does). The overall probability delta is an aggregate
+// model-prediction change in percentage points and is NEVER decomposed into
+// per-feature percentage-point shares.
+
+export type TimelineChangeStatus =
+  | "AVAILABLE"
+  | "NO_PREVIOUS_CHECKPOINT"
+  | "COMPARISON_UNAVAILABLE";
+
+export type TimelineChangeCheckpointIdentity = {
+  frame_index: number;
+  state_time_s: number;
+  leader_lap: number | null;
+  reasons: string[];
+  anchor_driver_id: string | null;
+  anchor_lap_number: number | null;
+  anchor_state_time_s: number | null;
+  observed_lap_number: number | null;
+  observed_time_s: number | null;
+  observed_position: number | null;
+  observation_age_s: number | null;
+};
+
+export type TimelineChangeIdentity = {
+  race_id: string;
+  driver_id: string;
+  from_frame_index: number | null;
+  to_frame_index: number;
+  from_checkpoint: TimelineChangeCheckpointIdentity | null;
+  to_checkpoint: TimelineChangeCheckpointIdentity;
+};
+
+export type TimelineChangeContribution = {
+  canonical_feature: string;
+  feature_family: string;
+  feature_type: string;
+  from_raw_value: string | number | boolean | null;
+  to_raw_value: string | number | boolean | null;
+  from_input_state: string;
+  to_input_state: string;
+  from_active_category: string | null;
+  to_active_category: string | null;
+  from_contribution: number;
+  to_contribution: number;
+  contribution_delta: number;
+  transition: string;
+};
+
+export type TimelineChangeAccounting = {
+  top_n: number;
+  total_positive_log_odds_delta: number;
+  total_negative_log_odds_delta: number;
+  shown_positive_log_odds_delta: number;
+  shown_negative_log_odds_delta: number;
+  omitted_positive_log_odds_delta: number;
+  omitted_negative_log_odds_delta: number;
+  positive_feature_count: number;
+  negative_feature_count: number;
+  full_decomposition_reconstructs_change: boolean;
+  top_n_reconstructs_change: boolean;
+  note: string;
+};
+
+export type TimelineChangeResponse = {
+  contract_version: string;
+  format: string;
+  status: TimelineChangeStatus;
+  identity: TimelineChangeIdentity;
+  model_identity: LocalExplanationModelIdentity | null;
+  probability_semantics: string;
+  explanation_space: string;
+  reason: string | null;
+  from_probability: number | null;
+  to_probability: number | null;
+  probability_delta: number | null;
+  from_logit: number | null;
+  to_logit: number | null;
+  logit_delta: number | null;
+  cached_from_probability: number | null;
+  cached_to_probability: number | null;
+  reconstruction: {
+    from_logit: number;
+    to_logit: number;
+    logit_delta: number;
+    canonical_delta_sum: number;
+    residual: number;
+    logit_abs_tolerance: number;
+    probability_abs_tolerance: number;
+    intercept_cancels: boolean;
+    full_decomposition_reconstructs_change: boolean;
+  } | null;
+  canonical_feature_count: number | null;
+  top_positive: TimelineChangeContribution[];
+  top_negative: TimelineChangeContribution[];
+  accounting: TimelineChangeAccounting | null;
+  limitations: string[];
+  cache_status: string;
+};
+
+// --- R6 probability timeline (one response per race) ---
 export type V2ModelIdentity = {
   task: string;
   target: string;
@@ -393,6 +595,44 @@ export async function getReplayPrediction(
     `${baseOf(base)}/v2/races/${encodeURIComponent(raceId)}` +
     `/replay/predictions/${frameIndex}`;
   return readJson<ReplayPredictionResponse>(fetcher, url, {
+    cache: "no-store",
+    signal,
+  });
+}
+
+/** Exact local log-odds explanation for one cached checkpoint driver (E4). */
+export async function getReplayExplanation(
+  raceId: string,
+  frameIndex: number,
+  driverId: string,
+  fetcher: FetchLike = fetch,
+  base?: string,
+  signal?: AbortSignal,
+): Promise<LocalExplanationResponse> {
+  const url =
+    `${baseOf(base)}/v2/replay/${encodeURIComponent(raceId)}` +
+    `/frames/${frameIndex}/predictions/` +
+    `${encodeURIComponent(driverId)}/explanation`;
+  return readJson<LocalExplanationResponse>(fetcher, url, {
+    cache: "no-store",
+    signal,
+  });
+}
+
+/** Exact change in the frozen score since the previous checkpoint (E5). */
+export async function getReplayPredictionChange(
+  raceId: string,
+  frameIndex: number,
+  driverId: string,
+  fetcher: FetchLike = fetch,
+  base?: string,
+  signal?: AbortSignal,
+): Promise<TimelineChangeResponse> {
+  const url =
+    `${baseOf(base)}/v2/replay/${encodeURIComponent(raceId)}` +
+    `/frames/${frameIndex}/predictions/` +
+    `${encodeURIComponent(driverId)}/change`;
+  return readJson<TimelineChangeResponse>(fetcher, url, {
     cache: "no-store",
     signal,
   });

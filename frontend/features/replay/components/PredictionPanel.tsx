@@ -14,6 +14,7 @@ import {
   sumProbabilities,
 } from "@/features/replay/lib/replayMachine";
 import { readableDriverId } from "@/features/replay/components/StandingsTable";
+import { LocalExplanationPanel } from "@/features/replay/components/LocalExplanationPanel";
 import { Panel, PanelHeader, SemanticsNote } from "@/components/ui/Panel";
 
 function unavailableState(reason: string | null, scope: string) {
@@ -39,10 +40,14 @@ export function PredictionPanel({
   prediction,
   isCheckpoint,
   checkpointReasons,
+  selectedDriverId,
+  onSelectDriver,
 }: {
   prediction: PredictionView;
   isCheckpoint: boolean;
   checkpointReasons: string[];
+  selectedDriverId: string | null;
+  onSelectDriver: (driverId: string | null) => void;
 }) {
   const meta = isCheckpoint
     ? `Prediction checkpoint${
@@ -89,7 +94,13 @@ export function PredictionPanel({
         )}
 
         {prediction.kind === "hit" && (
-          <PredictionHit prediction={prediction.response.prediction} />
+          <PredictionHit
+            prediction={prediction.response.prediction}
+            raceId={prediction.response.frame.race_id}
+            frameIndex={prediction.response.frame.frame_index}
+            selectedDriverId={selectedDriverId}
+            onSelectDriver={onSelectDriver}
+          />
         )}
       </div>
     </Panel>
@@ -98,6 +109,10 @@ export function PredictionPanel({
 
 function PredictionHit({
   prediction,
+  raceId,
+  frameIndex,
+  selectedDriverId,
+  onSelectDriver,
 }: {
   prediction: {
     probability_semantics: string;
@@ -110,7 +125,21 @@ function PredictionHit({
       unavailable_reason: string | null;
     }[];
   };
+  raceId: string;
+  frameIndex: number;
+  selectedDriverId: string | null;
+  onSelectDriver: (driverId: string | null) => void;
 }) {
+  // Only an observable driver at THIS checkpoint can be expanded; selected
+  // state is shared, so the explanation is gated on the current prediction
+  // rather than trusting the global selection alone.
+  const selected =
+    selectedDriverId !== null &&
+    prediction.predictions.some(
+      (p) => p.driver_id === selectedDriverId && p.observable,
+    )
+      ? selectedDriverId
+      : null;
   const ranked = [...prediction.predictions].sort(
     (a, b) => (b.winner_probability ?? -1) - (a.winner_probability ?? -1),
   );
@@ -140,9 +169,30 @@ function PredictionHit({
                 entry.winner_probability === null ? "text-fg-dim" : "text-fg"
               }`}
             >
-              <span className="w-36 shrink-0 truncate font-ui text-[12px] font-semibold text-fg">
-                {readableDriverId(entry.driver_id)}
-              </span>
+              {entry.observable ? (
+                <button
+                  type="button"
+                  onClick={() =>
+                    onSelectDriver(
+                      selected === entry.driver_id ? null : entry.driver_id,
+                    )
+                  }
+                  aria-expanded={selected === entry.driver_id}
+                  title="Show local model log-odds explanation"
+                  className={`w-36 shrink-0 truncate text-left font-ui text-[12px] font-semibold transition-colors hover:text-info focus-visible:outline-2 focus-visible:outline-focus ${
+                    selected === entry.driver_id ? "text-info" : "text-fg"
+                  }`}
+                >
+                  {readableDriverId(entry.driver_id)}
+                  {selected === entry.driver_id ? (
+                    <span className="sr-only"> (selected)</span>
+                  ) : null}
+                </button>
+              ) : (
+                <span className="w-36 shrink-0 truncate font-ui text-[12px] font-semibold text-fg-dim">
+                  {readableDriverId(entry.driver_id)}
+                </span>
+              )}
               <span
                 className="relative h-3 flex-1 overflow-hidden bg-ink-850"
                 aria-hidden="true"
@@ -156,7 +206,7 @@ function PredictionHit({
                 {text ?? "n/a"}
               </span>
               {entry.winner_probability === null && (
-                <span className="w-20 shrink-0 text-right font-ui text-[10px] uppercase tracking-[0.08em] text-fg-dim">
+                <span className="w-20 shrink-0 text-right font-ui text-[10px] uppercase tracking-[0.08em] text-fg-dim max-xl:min-w-0 max-xl:shrink max-xl:break-words">
                   {entry.unavailable_reason ?? "unavailable"}
                 </span>
               )}
@@ -164,6 +214,14 @@ function PredictionHit({
           );
         })}
       </ol>
+      {selected ? (
+        <LocalExplanationPanel
+          key={`${raceId}|${frameIndex}|${selected}`}
+          raceId={raceId}
+          frameIndex={frameIndex}
+          driverId={selected}
+        />
+      ) : null}
       <SemanticsNote>
         {prediction.probability_semantics}: {prediction.probability_semantics_note}{" "}
         Not normalised and not a categorical race distribution.

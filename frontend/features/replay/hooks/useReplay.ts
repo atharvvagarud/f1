@@ -108,6 +108,10 @@ export function useReplay() {
   );
   const [initialUrl] = useState(readInitialUrl);
   const initialAppliedRef = useRef(false);
+  // The deep-linked ?frame= applies to the first race only. Subsequent race
+  // switches must start at frame 0 rather than re-applying the previous race's
+  // frame index (which would silently drop the user mid-race in a new race).
+  const initialFrameAppliedRef = useRef(false);
 
   const totalFrames = frames.length;
 
@@ -159,9 +163,15 @@ export function useReplay() {
         if (!response) return;
         setFrameIndex(response.frame.frame_index);
         setFrame(response);
-      } catch {
+      } catch (error) {
         if (requestIdRef.current !== requestId) return;
-        setFrameError(`Frame ${target + 1} failed to load. Retry navigation.`);
+        if (error instanceof V2ApiError && error.code === "unknown_frame") {
+          setFrameError(`Frame ${target + 1} is not in this race's timeline.`);
+        } else if (error instanceof V2ApiError && error.code === "unknown_race") {
+          setFrameError(`Race ${race} is no longer served.`);
+        } else {
+          setFrameError(`Frame ${target + 1} failed to load. Retry navigation.`);
+        }
       } finally {
         if (requestIdRef.current === requestId) setFrameLoading(false);
       }
@@ -266,12 +276,13 @@ export function useReplay() {
   useEffect(() => {
     if (timelineLoading || frames.length === 0 || !raceId) return;
     if (frame !== null || frameLoading) return;
-    const wanted =
+    const applyDeepLink =
+      !initialFrameAppliedRef.current &&
       initialUrl.frame !== null &&
       initialUrl.frame >= 0 &&
-      initialUrl.frame < frames.length
-        ? initialUrl.frame
-        : 0;
+      initialUrl.frame < frames.length;
+    const wanted = applyDeepLink ? (initialUrl.frame as number) : 0;
+    initialFrameAppliedRef.current = true;
     void showFrame(raceId, wanted, { keepPlaying: false });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timelineLoading, frames, raceId]);
@@ -316,6 +327,13 @@ export function useReplay() {
           view = { kind: "unavailable", reason: error.reason };
         } else if (error instanceof V2ApiError && error.isNotCheckpoint()) {
           view = { kind: "none" };
+        } else if (error instanceof V2ApiError && error.code === "unknown_frame") {
+          view = { kind: "error", message: "This frame is not in the race timeline." };
+        } else if (error instanceof V2ApiError) {
+          view = {
+            kind: "error",
+            message: `Winner model unavailable (${error.status} ${error.code}).`,
+          };
         } else {
           view = { kind: "error", message: "Prediction request failed." };
         }

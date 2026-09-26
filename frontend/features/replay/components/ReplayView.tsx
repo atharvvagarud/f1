@@ -9,6 +9,8 @@
 
 "use client";
 
+import { useCallback, useState } from "react";
+
 import { useReplay } from "@/features/replay/hooks/useReplay";
 import { RaceSelector } from "@/features/replay/components/RaceSelector";
 import { TimelineScrubber } from "@/features/replay/components/TimelineScrubber";
@@ -21,6 +23,23 @@ import { Panel, PanelHeader } from "@/components/ui/Panel";
 
 export function ReplayView() {
   const replay = useReplay();
+  // Single authoritative selected-driver concept, shared by the Winner model
+  // panel (local explanation) and the change panel. The selection is tagged
+  // with the race it belongs to, so on a race switch it derives to null
+  // immediately (no effect, no window in which race A's driver could drive a
+  // race B explanation surface).
+  const [selection, setSelection] = useState<{
+    raceId: string | null;
+    driverId: string | null;
+  }>({ raceId: null, driverId: null });
+  const selectedDriverId =
+    selection.raceId === replay.raceId ? selection.driverId : null;
+  const onSelectDriver = useCallback(
+    (driverId: string | null) =>
+      setSelection({ raceId: replay.raceId, driverId }),
+    [replay.raceId],
+  );
+
   const {
     races,
     racesLoading,
@@ -184,12 +203,17 @@ export function ReplayView() {
               prediction={prediction}
               isCheckpoint={frame.is_prediction_checkpoint}
               checkpointReasons={frame.checkpoint_reasons}
+              selectedDriverId={selectedDriverId}
+              onSelectDriver={onSelectDriver}
             />
             {raceId && !timelineLoading && totalFrames > 0 ? (
               <ProbabilityTimelineChart
                 key={raceId}
                 view={probabilityTimeline}
                 frameIndex={frameIndex}
+                onSelectFrame={navigation.seek}
+                selectedDriverId={selectedDriverId}
+                onSelectDriver={onSelectDriver}
               />
             ) : null}
           </div>

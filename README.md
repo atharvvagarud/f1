@@ -6,7 +6,9 @@
 > & Prediction Service R0–R7) COMPLETE & FROZEN · Phase 5 (Historical Race
 > Replay) COMPLETE & FROZEN · Phase 6 (Monte Carlo Simulation Engine)
 > COMPLETE & FROZEN · Phase 7 (Counterfactual Pit-Strategy Comparison)
-> COMPLETE & FROZEN.
+> COMPLETE & FROZEN · Phase 8 (Replay Intelligence: cached predictions,
+> probability timelines, global/local/timeline explanations) COMPLETE &
+> FROZEN — see `docs/PHASE8_FINAL_FREEZE_REPORT.md`.
 > This repository contains two systems: the frozen legacy university
 > predictor (**V1**, still serving) and the canonical **V2** platform whose
 > frozen winner model (ALL_84 → train-fitted preprocessing →
@@ -30,9 +32,15 @@ production frozen winner inference, and the V2 historical API
 (independent-binary probability semantics, 2018–2024 serving scope).
 **Still ROADMAP / PLANNED:** calibration, MLOps and any Race Engineer AI do **not**
 exist in this repo. Monte Carlo simulation (Phase 6, frozen), historical
-replay (Phase 5, frozen) and counterfactual pit-strategy comparison with
+replay (Phase 5, frozen), counterfactual pit-strategy comparison with
 Monte Carlo sampling uncertainty (Phase 7, frozen: `POST
-/v2/strategies/compare`, `/strategy`) are implemented; see
+/v2/strategies/compare`, `/strategy`), and replay intelligence
+(Phase 8, frozen: offline E2 prediction cache over 149 races with
+independent-binary semantics, probability timelines, global permutation
+importance, per-checkpoint local log-odds explanations and
+checkpoint-to-checkpoint change explanations; cache build/validation,
+semantics and reports in `docs/PHASE8_FINAL_FREEZE_REPORT.md`) are
+implemented; see
 `docs/PHASE7_STRATEGY_FINAL_REPORT.md`.
 
 ## Currently implemented

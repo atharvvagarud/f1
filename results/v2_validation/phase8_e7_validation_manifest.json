@@ -1,0 +1,235 @@
+{
+ "D_matrix_cache": {
+  "max_abs_diff": 3.331e-16,
+  "n": 71,
+  "tol": 1e-12
+ },
+ "E_recompute_matrix": {
+  "exact": true,
+  "races": [
+   "2021-r12-R",
+   "2023-r01-R"
+  ],
+  "rows": 82
+ },
+ "F_local": {
+  "max_logit_residual": 7.105e-15,
+  "max_prob_residual": 4.441e-16,
+  "n": 71,
+  "tol": 1e-12
+ },
+ "G_grouping": {
+  "categorical_multi_dim": true,
+  "dims_106": true,
+  "feats_84": true
+ },
+ "H_input_states": [
+  "IMPUTED_BOOLEAN_MODE",
+  "IMPUTED_NUMERIC_MEDIAN",
+  "MISSING_CATEGORY",
+  "OBSERVED"
+ ],
+ "I_timeline": {
+  "artifact_identical": true,
+  "checkpoints_compared": 603
+ },
+ "J_change": {
+  "delta_kinds": {
+   "near_zero": 2308,
+   "negative": 6120,
+   "positive": 3765
+  },
+  "max_delta_residual": 3.886e-15,
+  "n": 630,
+  "tol": 1e-12
+ },
+ "K_first_null": {
+  "first": "NO_PREVIOUS_CHECKPOINT",
+  "non_checkpoint": "fail-closed prev=0 next=20",
+  "null_at_B": "DRIVER_NOT_OBSERVABLE_AT_PREVIOUS_CHECKPOINT",
+  "null_entries_checked": 299,
+  "null_not_zero": true,
+  "pass": true,
+  "unknown_driver": "UnknownDriverError"
+ },
+ "L_temporal": {
+  "pass": true,
+  "post_B_AB_stable": true,
+  "post_T_identity_stable": true
+ },
+ "M_2025": {
+  "change": "rejected(RaceNotFoundError)",
+  "explanation": "rejected(RaceNotFoundError)",
+  "matrix_lookup": "rejected(MatrixLookupError)",
+  "matrix_slice": "rejected",
+  "pass": true,
+  "replay": "rejected(RaceNotFoundError)",
+  "validator_scope": "no-2025"
+ },
+ "N_label": {
+  "all84_label_free": true,
+  "injection_ignored": true,
+  "pass": true
+ },
+ "O_probability": {
+  "example_frame": 798,
+  "example_race": "2019-r11-R",
+  "field_sum": 1.9870438393474585,
+  "n_probs": 20,
+  "no_normalization_in_serving_code": true,
+  "pass": true,
+  "sum_gt_1_valid": true
+ },
+ "P_language": {
+  "backend_payloads_checked": 4,
+  "frontend_files_clean": true,
+  "log_odds_framing_present": true,
+  "pass": true
+ },
+ "Q_api": {
+  "flows": [
+   "2018-r01-R",
+   "2021-r12-R",
+   "2023-r06-R",
+   "2024-r01-R"
+  ],
+  "perf_warm_testclient": {
+   "e4": {
+    "n": 4,
+    "p50_ms": 24.5,
+    "p95_ms": 24.7
+   },
+   "e5": {
+    "n": 4,
+    "p50_ms": 41.8,
+    "p95_ms": 41.9
+   },
+   "frame_timeline": {
+    "n": 4,
+    "p50_ms": 28.9,
+    "p95_ms": 30.1
+   }
+  }
+ },
+ "R_frontend_live": {
+  "api_ui_agreement": "hamilton@2018-r01-R/f20 84.94% logit 1.41702->1.72954 d0.31251; verstappen@2024-r01-R/f0 90.51%",
+  "races": [
+   "2018-r01-R",
+   "2021-r12-R",
+   "2024-r01-R"
+  ]
+ },
+ "S_responsive": {
+  "defect_found_and_fixed": "PredictionPanel unavailable-reason label forced page overflow <=1024px; scoped max-xl wrap fix, desktop >=1280 unchanged",
+  "page_overflow": false,
+  "widths": [
+   1440,
+   1024,
+   768,
+   650,
+   390,
+   360
+  ]
+ },
+ "T_accessibility": {
+  "aria_expanded": true,
+  "keyboard_step": true,
+  "live_regions": true,
+  "slider": true
+ },
+ "U_stale": {
+  "no_cross_race_leak": true,
+  "rapid_switch_settles_last": true
+ },
+ "V_perf": {
+  "e4": {
+   "n": 4,
+   "p50_ms": 24.5,
+   "p95_ms": 24.7
+  },
+  "e5": {
+   "n": 4,
+   "p50_ms": 41.8,
+   "p95_ms": 41.9
+  },
+  "frame_timeline": {
+   "n": 4,
+   "p50_ms": 28.9,
+   "p95_ms": 30.1
+  }
+ },
+ "W_determinism": {
+  "e4_bytes": true,
+  "e5_bytes": true,
+  "timeline_bytes": true
+ },
+ "X_preexisting_failures": [
+  "test_v2_phase5_freeze.py::test_freeze_manifest_file_hashes_match (api/main.py +6 Phase-8 router lines)",
+  "test_v2_phase5_freeze.py::test_freeze_manifest_generated_cache_not_required (results/v2_replay exists by E2 design)",
+  "test_v2_phase5_freeze.py::test_freeze_manifest_documents_authorized_api_main_drift (same api/main.py drift)",
+  "test_v2_phase4_freeze.py::test_frozen_module_hashes_match (same api/main.py drift)",
+  "test_v2_phase5_r7.py::test_head_and_phase4_tag_intact (HEAD 17c04b3 postdates pinned 4f26801; 4 commits of legitimate Phase-8 work)"
+ ],
+ "X_tests": {
+  "eslint": "clean",
+  "frontend_node": "148 passed",
+  "next_build": "success",
+  "phase2_features_f2_f6": "155 passed",
+  "phase5_r2_r3_r4_freeze_phase4_freeze_p31": "159 passed, 4 pre-existing freeze-manifest failures",
+  "phase5_r6_r7_phase6_r1": "325 passed 5 skipped, 1 pre-existing HEAD-pin failure",
+  "phase8_e1_e1_6_e3": "73 passed",
+  "phase8_e4_e5": "96 passed",
+  "tsc": "clean"
+ },
+ "authoritative_identities": {
+  "cache_aggregate_sha256": "78a3c059888637fe83cc534d0eb7869b6d18e746724bb1ce0f03ee3b8ba96298",
+  "global_explanation_sha256": "bae84b614a6e9e176d5bb9c33b99dcaf4cba3f376333b0f075c828f73982939f",
+  "matrix_parquet_sha256": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3",
+  "matrix_rows": 189420,
+  "phase2_content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+  "predictive_features": 84,
+  "winner_semantics": "LogisticRegression ALL_84/v8 RAW INDEPENDENT_BINARY",
+  "winner_serving_sha256": "1116b34fc716035c2425e605b9a5cc15541a2d2335e26113f2e2eaf3fcaa59f4"
+ },
+ "cache_corpus": {
+  "checkpoints": 9644,
+  "manifest_rerun_identical": true,
+  "null": 3206,
+  "observable": 189610,
+  "races": 149
+ },
+ "code_changed_by_E7": [
+  "frontend/features/replay/components/PredictionPanel.tsx (1 line, responsive wrap)"
+ ],
+ "deterministic_sample": {
+  "coverage": "2018-2024 first-races + min(2021-r12-R,3) + max(2023-r06-R,95) + null-heavy 2022-r02-R; EARLY/MID/LATE checkpoints; front/mid/rear + null drivers",
+  "null_points": 12,
+  "observable_points": 71,
+  "races": [
+   "2018-r01-R",
+   "2019-r01-R",
+   "2020-r01-R",
+   "2021-r01-R",
+   "2022-r01-R",
+   "2023-r01-R",
+   "2024-r01-R",
+   "2021-r12-R",
+   "2023-r06-R",
+   "2022-r02-R"
+  ]
+ },
+ "graphify": {
+  "communities": 317,
+  "edges": 27276,
+  "nodes": 10721,
+  "science_imports_product": false
+ },
+ "head": "17c04b30b124c087c51243a53d2f55bb3d9feeae",
+ "manifest_version": "phase8-e7-validation-manifest-v1",
+ "node": "v22.23.1",
+ "numpy": "2.4.2",
+ "pandas": "2.3.3",
+ "python": "3.11.15",
+ "scikit_learn": "1.8.0",
+ "status": "E7 COMPLETE \u2014 READY FOR E8 FREEZE"
+}

@@ -24,6 +24,13 @@ import {
   seriesDashPattern,
 } from "@/features/replay/lib/probabilityTimeline";
 import {
+  defaultChangeDriver,
+  formatPercentagePoints,
+  previousCheckpoint,
+  probabilityChange,
+} from "@/features/replay/lib/timelineChange";
+import { ChangeExplanationPanel } from "@/features/replay/components/ChangeExplanationPanel";
+import {
   formatRaceTime,
   sumProbabilities,
 } from "@/features/replay/lib/replayMachine";
@@ -69,9 +76,15 @@ function unavailableState(reason: string | null) {
 export function ProbabilityTimelineChart({
   view,
   frameIndex,
+  onSelectFrame,
+  selectedDriverId,
+  onSelectDriver,
 }: {
   view: ProbabilityTimelineView;
   frameIndex: number;
+  onSelectFrame?: (frameIndex: number) => void;
+  selectedDriverId: string | null;
+  onSelectDriver: (driverId: string | null) => void;
 }) {
   const timeline = view.kind === "ready" ? view.timeline : null;
   // Display-only visibility overrides; the complete series is never altered.
@@ -342,6 +355,9 @@ export function ProbabilityTimelineChart({
         alignmentKind={alignment?.kind ?? "none"}
         frameIndex={frameIndex}
         onSelect={setSelectedOverride}
+        onSelectFrame={onSelectFrame}
+        selectedDriverId={selectedDriverId}
+        onSelectDriver={onSelectDriver}
       />
     </Shell>
   );
@@ -362,6 +378,9 @@ function CheckpointDetails({
   alignmentKind,
   frameIndex,
   onSelect,
+  onSelectFrame,
+  selectedDriverId,
+  onSelectDriver,
 }: {
   timeline: ProbabilityTimelineResponse;
   selected: {
@@ -373,7 +392,18 @@ function CheckpointDetails({
   alignmentKind: string;
   frameIndex: number;
   onSelect: (frame: number | null) => void;
+  onSelectFrame?: (frame: number) => void;
+  selectedDriverId: string | null;
+  onSelectDriver: (driverId: string | null) => void;
 }) {
+  const previous = selected
+    ? previousCheckpoint(timeline, selected.frame_index)
+    : null;
+  const activeChangeDriver =
+    selectedDriverId ??
+    (selected ? defaultChangeDriver(timeline, selected.frame_index) : null);
+  const driverIds = timeline.driver_series.map((s) => s.driver_id);
+
   return (
     <div className="flex flex-col gap-2 border-t border-ink-700 pt-3">
       <div className="flex flex-wrap items-center gap-2">
@@ -410,6 +440,16 @@ function CheckpointDetails({
             probability)
           </span>
         )}
+        {selected && onSelectFrame && selected.frame_index !== frameIndex ? (
+          <button
+            type="button"
+            onClick={() => onSelectFrame(selected.frame_index)}
+            className="h-8 border border-ink-700 px-2 font-data text-[10px] uppercase tracking-[0.12em] text-fg-muted transition-colors hover:border-ink-600 hover:text-fg focus-visible:outline-2 focus-visible:outline-focus"
+            title="Replay this exact checkpoint frame (no nearest-frame snapping)"
+          >
+            Replay frame {selected.frame_index}
+          </button>
+        ) : null}
       </div>
 
       {selected && (
@@ -421,12 +461,16 @@ function CheckpointDetails({
               ? `leader lap ${selected.leader_lap}`
               : "leader lap n/a"}{" "}
             · reasons: {selected.reasons.join(" + ")}
+            {previous
+              ? ` · previous checkpoint frame ${previous.frame_index}`
+              : " · first checkpoint"}
           </p>
           <table className="mt-1 w-full max-w-xl text-left tabular-nums">
             <thead>
               <tr className="font-ui text-[10px] uppercase tracking-[0.1em] text-fg-dim">
                 <th className="py-0.5 pr-3 font-semibold">Driver</th>
-                <th className="py-0.5 font-semibold">Winner probability</th>
+                <th className="py-0.5 pr-3 font-semibold">Winner probability</th>
+                <th className="py-0.5 font-semibold">Δ vs previous (pp)</th>
               </tr>
             </thead>
             <tbody>
@@ -435,11 +479,19 @@ function CheckpointDetails({
                   series,
                   selected.frame_index,
                 );
+                const delta = probabilityChange(
+                  timeline,
+                  series.driver_id,
+                  selected.frame_index,
+                ).delta;
                 return (
                   <tr key={series.driver_id} className="border-t border-ink-700">
                     <td className="py-0.5 pr-3">{series.driver_id}</td>
-                    <td className="py-0.5">
+                    <td className="py-0.5 pr-3">
                       {value === null ? "n/a" : `${(value * 100).toFixed(2)}%`}
+                    </td>
+                    <td className="py-0.5">
+                      {formatPercentagePoints(delta) ?? "n/a"}
                     </td>
                   </tr>
                 );
@@ -455,8 +507,18 @@ function CheckpointDetails({
                 ),
               ) * 100
             ).toFixed(2)}
-            % — independent binary estimates, not shares.
+            % — independent binary estimates, not shares. Probability deltas
+            are overall model-prediction changes; per-feature rows below are
+            model log-odds deltas.
           </p>
+
+          <ChangeExplanationPanel
+            raceId={timeline.race_id}
+            frameIndex={selected.frame_index}
+            driverId={activeChangeDriver}
+            driverIds={driverIds}
+            onSelectDriver={onSelectDriver}
+          />
         </div>
       )}
     </div>
