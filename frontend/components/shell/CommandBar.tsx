@@ -12,6 +12,8 @@ const NAV_ITEMS = [
   { href: "/replay", label: "Replay" },
   { href: "/simulator", label: "Simulate" },
   { href: "/strategy", label: "Strategy" },
+  { href: "/models", label: "Models" },
+  { href: "/about", label: "About" },
 ] as const;
 
 export function CommandBar() {
@@ -35,7 +37,7 @@ export function CommandBar() {
 
         <nav
           aria-label="Primary"
-          className="flex min-h-11 items-stretch border-t border-ink-700 sm:min-h-12 sm:border-t-0 sm:border-l sm:pl-3"
+          className="flex min-h-11 items-stretch overflow-x-auto border-t border-ink-700 sm:min-h-12 sm:border-t-0 sm:border-l sm:pl-3"
         >
           {NAV_ITEMS.map((item) => {
             const active = pathname === item.href;
@@ -44,7 +46,7 @@ export function CommandBar() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`flex items-center border-b-2 px-3 font-ui text-[11px] uppercase tracking-[0.14em] transition-colors ${
+                className={`flex shrink-0 items-center border-b-2 px-3 font-ui text-[11px] uppercase tracking-[0.14em] transition-colors ${
                   active
                     ? "border-signal font-semibold text-fg"
                     : "border-transparent font-medium text-fg-muted hover:text-fg"

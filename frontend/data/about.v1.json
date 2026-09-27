@@ -1,0 +1,337 @@
+{
+  "architecture": {
+    "implemented": [
+      "Next.js frontend",
+      "FastAPI backend",
+      "Canonical Parquet data",
+      "Phase-2 model matrix",
+      "Frozen sklearn serving artifact",
+      "Offline replay cache",
+      "Monte Carlo engine",
+      "Strategy engine"
+    ],
+    "not_used": [
+      "Postgres",
+      "Timescale",
+      "Redis",
+      "WebSockets",
+      "Celery/RQ",
+      "MLflow",
+      "Kubernetes",
+      "Kafka",
+      "live F1 feeds"
+    ]
+  },
+  "capabilities": [
+    {
+      "does": "Canonical 1950-2025 results plus 2018-2025 FastF1 states, manifests and contracts.",
+      "does_not": "Serve live feeds.",
+      "id": "DATA_PLATFORM",
+      "name": "Historical Data Platform",
+      "phase": 1,
+      "semantics": "FACT",
+      "source_ids": [
+        "PHASE8_FREEZE"
+      ],
+      "status": "FROZEN"
+    },
+    {
+      "does": "ALL_84 temporal-safe model matrix, 189420 by 106.",
+      "does_not": "Model telemetry.",
+      "id": "FEATURE_ENGINE",
+      "name": "Temporal Feature Engine",
+      "phase": 2,
+      "semantics": "FACT",
+      "source_ids": [
+        "FEATURE_REGISTRY"
+      ],
+      "status": "FROZEN"
+    },
+    {
+      "does": "Temporal protocol plus frozen LogReg winner.",
+      "does_not": "Retrain or serve experiments.",
+      "id": "MODEL_LAB",
+      "name": "Model Lab",
+      "phase": 3,
+      "semantics": "PREDICTION",
+      "source_ids": [
+        "MODEL_CARD",
+        "MODEL_LAB_FREEZE"
+      ],
+      "status": "FROZEN"
+    },
+    {
+      "does": "Exact at-T state plus independent-binary inference.",
+      "does_not": "Emit normalized distributions.",
+      "id": "RACE_STATE",
+      "name": "Race State plus Prediction",
+      "phase": 4,
+      "semantics": "FACT plus PREDICTION",
+      "source_ids": [
+        "MODEL_CARD"
+      ],
+      "status": "FROZEN"
+    },
+    {
+      "does": "Factual frames and checkpoints for 149 races.",
+      "does_not": "Serve 2025.",
+      "id": "REPLAY",
+      "name": "Historical Replay",
+      "phase": 5,
+      "semantics": "FACT",
+      "source_ids": [
+        "PHASE8_FREEZE"
+      ],
+      "status": "FROZEN"
+    },
+    {
+      "does": "Stochastic mutually exclusive race outcomes.",
+      "does_not": "Predict a single winner.",
+      "id": "MONTE_CARLO",
+      "name": "Monte Carlo Engine",
+      "phase": 6,
+      "semantics": "SIMULATION",
+      "source_ids": [
+        "PHASE8_FREEZE"
+      ],
+      "status": "FROZEN"
+    },
+    {
+      "does": "Paired CRN counterfactual comparisons.",
+      "does_not": "Optimize strategy automatically.",
+      "id": "STRATEGY",
+      "name": "Strategy Engine",
+      "phase": 7,
+      "semantics": "STRATEGY",
+      "source_ids": [
+        "PHASE8_FREEZE"
+      ],
+      "status": "FROZEN"
+    },
+    {
+      "does": "Cached predictions, timelines, global, local and change explanations.",
+      "does_not": "Claim causality or use SHAP.",
+      "id": "REPLAY_INTELLIGENCE",
+      "name": "Replay Intelligence",
+      "phase": 8,
+      "semantics": "PREDICTION plus explanations",
+      "source_ids": [
+        "PHASE8_FREEZE",
+        "E3_GLOBAL_EXPLANATION"
+      ],
+      "status": "FROZEN"
+    }
+  ],
+  "contract_version": "v1",
+  "dataset_statistics": {
+    "phase2": {
+      "predictive_features": 84,
+      "states": 189420
+    },
+    "replay": {
+      "checkpoints": 9644,
+      "observable_predictions": 189610,
+      "served_races": 149
+    },
+    "serving_scope_note": "2025 is available to the historical data platform and is the frozen model holdout; it is NOT served by the frozen replay and prediction product.",
+    "tier_a": {
+      "complete": 171,
+      "driver_laps": 189420,
+      "partial": 2,
+      "pit_stops": 6336,
+      "race_control_rows": 14992,
+      "results": 3458,
+      "seasons": "2018-2025",
+      "stints": 9324,
+      "terminal_sessions": 173,
+      "weather_rows": 25779
+    },
+    "tier_b": {
+      "races": 1149,
+      "results": 25784,
+      "seasons": "1950-2025",
+      "seasons_count": 76
+    }
+  },
+  "limitations": [
+    {
+      "id": "INDEPENDENT_BINARY",
+      "text": "Winner estimates are independent binary probabilities, not a normalized race distribution."
+    },
+    {
+      "id": "HOLDOUT_UNSERVED",
+      "text": "2025 is the frozen holdout and is not served by replay or prediction."
+    },
+    {
+      "id": "PERMUTATION_IN_SAMPLE",
+      "text": "Global permutation evidence is in-sample, not out-of-sample."
+    },
+    {
+      "id": "NON_CAUSAL",
+      "text": "Explanations are associational and model-internal, not causal."
+    },
+    {
+      "id": "NO_SHAP",
+      "text": "SHAP is not part of v1."
+    },
+    {
+      "id": "CHECKPOINT_GRANULARITY",
+      "text": "Timelines operate at prediction checkpoints, not every replay frame."
+    },
+    {
+      "id": "TRACK_VIZ_DEFERRED",
+      "text": "Track visualization remains deferred."
+    },
+    {
+      "id": "NO_EXPLANATION_CACHE",
+      "text": "No explanation cache; on-demand latency is interactive."
+    },
+    {
+      "id": "UNKNOWN_CATEGORY_SYNTHETIC",
+      "text": "No natural historical UNKNOWN_CATEGORY example was found; behavior is synthetically tested."
+    }
+  ],
+  "provenance": {
+    "e2_corpus_aggregate_sha256": "78a3c059888637fe83cc534d0eb7869b6d18e746724bb1ce0f03ee3b8ba96298",
+    "phase8_freeze_commit": "7fa9bf970c4281b7c7d64fecf8b8e9b207a963d8",
+    "phase8_freeze_tag": "v2-replay-intelligence-phase8"
+  },
+  "reproducibility": {
+    "artifact_hashes": {
+      "e3_artifact_sha256": "bae84b614a6e9e176d5bb9c33b99dcaf4cba3f376333b0f075c828f73982939f",
+      "holdout_report_sha256": "2c3a166df1a1af1d20f24fafc6a17283de1cdd1eea2b5f67a26204ed174a7415",
+      "matrix_parquet_sha256": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3",
+      "phase2_content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+      "winner_serving_sha256": "1116b34fc716035c2425e605b9a5cc15541a2d2335e26113f2e2eaf3fcaa59f4"
+    },
+    "deterministic_seeds": [
+      42
+    ],
+    "freeze_tags": [
+      "v2-data-platform-phase1",
+      "v2-temporal-feature-engine-phase2",
+      "v2-model-lab-phase3",
+      "v2-race-state-prediction-phase4",
+      "v2-historical-replay-phase5",
+      "v2-monte-carlo-phase6",
+      "v2-strategy-engine-phase7",
+      "v2-replay-intelligence-phase8"
+    ],
+    "make_targets": [
+      "test-python",
+      "test-frontend",
+      "typecheck",
+      "lint",
+      "build",
+      "verify"
+    ],
+    "manifests": [
+      "docs/generated/phase2_freeze_manifest.json",
+      "docs/MODEL_LAB_FREEZE_MANIFEST.json",
+      "docs/PHASE5_FREEZE_MANIFEST.json",
+      "docs/PHASE6_FREEZE_MANIFEST.json",
+      "results/v2_validation/phase8_freeze_manifest.json"
+    ],
+    "note": "Per-phase validation reports document reproduction; no single-command full reproduction is claimed."
+  },
+  "sources": {
+    "E3_GLOBAL_EXPLANATION": {
+      "note": "Coefficients plus in-sample permutation evidence.",
+      "path": "results/v2_explainability/global_winner_logreg_v1.json",
+      "sha256": "bae84b614a6e9e176d5bb9c33b99dcaf4cba3f376333b0f075c828f73982939f"
+    },
+    "FEATURE_REGISTRY": {
+      "note": "ALL_84 v8 registry authority.",
+      "path": "docs/generated/phase2_freeze_manifest.json"
+    },
+    "FINAL_HOLDOUT_2025": {
+      "note": "One-shot 2025 holdout at stored precision. READ ONLY.",
+      "path": "data/v2/model_lab/reports/final_holdout_2025_v1.json",
+      "sha256": "2c3a166df1a1af1d20f24fafc6a17283de1cdd1eea2b5f67a26204ed174a7415"
+    },
+    "M2_BASELINES": {
+      "note": "Non-ML development floor, D1-D3.",
+      "path": "data/v2/model_lab/reports/baseline_suite_v1.json"
+    },
+    "M3_LOGREG": {
+      "note": "LogReg C=1.0 reference, D1-D3.",
+      "path": "data/v2/model_lab/reports/logreg_reference_v1.json"
+    },
+    "M4_NONLINEAR": {
+      "note": "HGB/XGB fixed specs, D1-D3.",
+      "path": "data/v2/model_lab/reports/nonlinear_candidates_v1.json"
+    },
+    "M5_BAGGED": {
+      "note": "ExtraTrees/RandomForest fixed specs, D1-D3.",
+      "path": "data/v2/model_lab/reports/bagged_candidates_v1.json"
+    },
+    "M6_TUNING": {
+      "note": "Nested temporal tuning, LogReg + ExtraTrees.",
+      "path": "data/v2/model_lab/reports/tuning_selection_v1.json"
+    },
+    "M7_BOUNDARY": {
+      "note": "C boundary resolution; global freeze rule C=0.01.",
+      "path": "data/v2/model_lab/reports/logreg_boundary_resolution_v1.json"
+    },
+    "M8_CALIBRATION": {
+      "note": "RAW/Platt/Isotonic development comparison.",
+      "path": "data/v2/model_lab/reports/calibration_selection_v1.json"
+    },
+    "MODEL_CARD": {
+      "note": "Frozen serving identity and holdout headline.",
+      "path": "docs/MODEL_LAB_FINAL_MODEL_CARD.md"
+    },
+    "MODEL_LAB_FREEZE": {
+      "note": "Frozen spec, fingerprints, holdout artifact SHA.",
+      "path": "docs/MODEL_LAB_FREEZE_MANIFEST.json"
+    },
+    "PHASE8_FREEZE": {
+      "note": "Replay corpus counts, contracts, E7 summary.",
+      "path": "results/v2_validation/phase8_freeze_manifest.json"
+    }
+  },
+  "system_semantics": [
+    {
+      "definition": "Observed or reconstructed information known at replay time T.",
+      "display_name": "Historical fact",
+      "id": "FACT",
+      "not_to_confuse_with": [
+        "PREDICTION",
+        "SIMULATION",
+        "STRATEGY"
+      ]
+    },
+    {
+      "definition": "Frozen LogisticRegression independent-binary winner estimate per driver.",
+      "display_name": "Model prediction",
+      "id": "PREDICTION",
+      "not_to_confuse_with": [
+        "FACT",
+        "SIMULATION",
+        "STRATEGY"
+      ],
+      "probability_semantics": "INDEPENDENT_BINARY"
+    },
+    {
+      "definition": "Monte Carlo frequency from mutually exclusive simulated race outcomes.",
+      "display_name": "Stochastic simulation",
+      "id": "SIMULATION",
+      "not_to_confuse_with": [
+        "FACT",
+        "PREDICTION",
+        "STRATEGY"
+      ],
+      "probability_semantics": "MUTUALLY_EXCLUSIVE_FREQUENCY"
+    },
+    {
+      "definition": "Paired intervention comparison using common random numbers.",
+      "display_name": "Strategy comparison",
+      "id": "STRATEGY",
+      "not_to_confuse_with": [
+        "FACT",
+        "PREDICTION",
+        "SIMULATION"
+      ]
+    }
+  ]
+}

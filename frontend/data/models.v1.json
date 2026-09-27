@@ -1,0 +1,961 @@
+{
+  "calibration_evidence": {
+    "evaluation_class": "FROZEN_DEVELOPMENT_CALIBRATION",
+    "methods": {
+      "ISOTONIC": {
+        "mean": 0.10279296480479416,
+        "per_fold": {
+          "D1": 0.11296173256618881,
+          "D2": 0.05074407168466548,
+          "D3": 0.1446730901635282
+        }
+      },
+      "PLATT": {
+        "mean": 0.07969903219934098,
+        "per_fold": {
+          "D1": 0.09681641462661998,
+          "D2": 0.05071209490743242,
+          "D3": 0.09156858706397052
+        }
+      },
+      "RAW": {
+        "mean": 0.07702664825000978,
+        "per_fold": {
+          "D1": 0.09489161845287315,
+          "D2": 0.05347600504097234,
+          "D3": 0.08271232125618384
+        }
+      }
+    },
+    "metric": "race_macro_log_loss",
+    "population": "D1-D3 outer validation; calibration fit on last train season only; 2025 never touched",
+    "selected_method": "RAW",
+    "selection_rule": "mean_log_loss_primary_with_brier_and_regression_guards",
+    "source_ids": [
+      "M8_CALIBRATION"
+    ]
+  },
+  "coefficient_evidence": {
+    "explanation_space": "LOG_ODDS",
+    "intercept": -5.574170885990861,
+    "reading": "Standardized log-odds scale; negative values are associated with lower model log-odds.",
+    "source_ids": [
+      "E3_GLOBAL_EXPLANATION"
+    ],
+    "top_by_abs": [
+      {
+        "canonical": "gap_to_leader_seconds",
+        "coefficient": -1.0730356371127374,
+        "family": "GAPS",
+        "transformed": "num__gap_to_leader_seconds"
+      },
+      {
+        "canonical": "position",
+        "coefficient": -0.6452122433483389,
+        "family": "STATE",
+        "transformed": "num__position"
+      },
+      {
+        "canonical": "cars_ahead_observable",
+        "coefficient": -0.6171099003474232,
+        "family": "FIELD_CONTEXT",
+        "transformed": "num__cars_ahead_observable"
+      },
+      {
+        "canonical": "prior_driver_mean_finish",
+        "coefficient": -0.5729940148530812,
+        "family": "PRE_RACE_PRIORS",
+        "transformed": "num__prior_driver_mean_finish"
+      },
+      {
+        "canonical": "gap_to_ahead_seconds",
+        "coefficient": -0.500603067806389,
+        "family": "GAPS",
+        "transformed": "num__gap_to_ahead_seconds"
+      },
+      {
+        "canonical": "grid_position",
+        "coefficient": -0.4838422492864034,
+        "family": "PRE_RACE_PRIORS",
+        "transformed": "num__grid_position"
+      },
+      {
+        "canonical": "recent_constructor_points_per_entry_5",
+        "coefficient": 0.4066704340407087,
+        "family": "PRE_RACE_PRIORS",
+        "transformed": "num__recent_constructor_points_per_entry_5"
+      },
+      {
+        "canonical": "prior_driver_points_per_start",
+        "coefficient": 0.3987948727335677,
+        "family": "PRE_RACE_PRIORS",
+        "transformed": "num__prior_driver_points_per_start"
+      },
+      {
+        "canonical": "prior_constructor_races",
+        "coefficient": -0.37362094722220557,
+        "family": "PRE_RACE_PRIORS",
+        "transformed": "num__prior_constructor_races"
+      },
+      {
+        "canonical": "prior_constructor_mean_finish",
+        "coefficient": 0.3368481398833468,
+        "family": "PRE_RACE_PRIORS",
+        "transformed": "num__prior_constructor_mean_finish"
+      }
+    ]
+  },
+  "contract_version": "v1",
+  "development_evidence": {
+    "aggregation": "race_macro",
+    "candidates": [
+      {
+        "development_log_loss": {
+          "mean": 0.21223799289745182,
+          "per_fold": {
+            "D1": 0.21406770926955881,
+            "D2": 0.21130664564207072,
+            "D3": 0.21133962378072588
+          }
+        },
+        "family": "CLASS_PRIOR",
+        "limitation": "Empirical floor, not a contender.",
+        "source_ids": [
+          "M2_BASELINES"
+        ],
+        "variant": "non-ML baseline (positive-rate prior)"
+      },
+      {
+        "development_log_loss": {
+          "mean": 0.07179738859519301,
+          "per_fold": {
+            "D1": 0.08304461199222556,
+            "D2": 0.038914855947138845,
+            "D3": 0.09343269784621461
+          }
+        },
+        "family": "LogisticRegression",
+        "limitation": "Untuned reference point.",
+        "source_ids": [
+          "M3_LOGREG"
+        ],
+        "variant": "C=1.0 fixed reference (M3)"
+      },
+      {
+        "development_log_loss": {
+          "mean": 0.13830499953479525,
+          "per_fold": {
+            "D1": 0.18001979597097367,
+            "D2": 0.0658850102108302,
+            "D3": 0.1690101924225819
+          }
+        },
+        "family": "HistGradientBoosting",
+        "limitation": "One fixed spec; worse development log loss.",
+        "source_ids": [
+          "M4_NONLINEAR"
+        ],
+        "variant": "fixed spec, lr=0.1, 100 iter (M4)"
+      },
+      {
+        "development_log_loss": {
+          "mean": 0.10906265592443225,
+          "per_fold": {
+            "D1": 0.13910080519578838,
+            "D2": 0.06090926509032815,
+            "D3": 0.12717789748718022
+          }
+        },
+        "family": "XGBoost",
+        "limitation": "One fixed spec; worse development log loss.",
+        "source_ids": [
+          "M4_NONLINEAR"
+        ],
+        "variant": "fixed spec, depth=4, 200 rounds (M4)"
+      },
+      {
+        "development_log_loss": {
+          "mean": 0.08147535365327215,
+          "per_fold": {
+            "D1": 0.09899853718354507,
+            "D2": 0.04848403924946249,
+            "D3": 0.09694348452680891
+          }
+        },
+        "family": "ExtraTrees",
+        "limitation": "Fixed spec; tuned further in M6.",
+        "source_ids": [
+          "M5_BAGGED"
+        ],
+        "variant": "fixed spec, 300 trees (M5)"
+      },
+      {
+        "development_log_loss": {
+          "mean": 0.08813733021113822,
+          "per_fold": {
+            "D1": 0.11490885388975641,
+            "D2": 0.046324787854663936,
+            "D3": 0.10317834888899428
+          }
+        },
+        "family": "RandomForest",
+        "limitation": "Fixed spec; not carried into tuning.",
+        "source_ids": [
+          "M5_BAGGED"
+        ],
+        "variant": "fixed spec, 300 trees (M5)"
+      },
+      {
+        "development_log_loss": {
+          "mean": 0.06980381877073968,
+          "per_fold": {
+            "D1": 0.08313246992881515,
+            "D2": 0.040972923600912634,
+            "D3": 0.08530606278249127
+          }
+        },
+        "family": "LogisticRegression",
+        "limitation": "Estimates the tuning procedure, not one vector.",
+        "source_ids": [
+          "M6_TUNING"
+        ],
+        "variant": "nested-tuned outer procedure (M6)"
+      },
+      {
+        "development_log_loss": {
+          "mean": 0.07592741455599249,
+          "per_fold": {
+            "D1": 0.09692991243768229,
+            "D2": 0.04607147286870499,
+            "D3": 0.08478085836159015
+          }
+        },
+        "family": "ExtraTrees",
+        "limitation": "Estimates the tuning procedure, not one vector.",
+        "source_ids": [
+          "M6_TUNING"
+        ],
+        "variant": "nested-tuned outer procedure (M6)"
+      },
+      {
+        "development_log_loss": {
+          "mean": 0.07137432682964805,
+          "per_fold": {
+            "D1": 0.08589998800743466,
+            "D2": 0.04291692969901818,
+            "D3": 0.08530606278249127
+          }
+        },
+        "family": "LogisticRegression",
+        "limitation": "Outer refit per fold with frozen C.",
+        "source_ids": [
+          "M7_BOUNDARY"
+        ],
+        "variant": "frozen-global C=0.01 outer (M7)"
+      }
+    ],
+    "evaluation_class": "FROZEN_DEVELOPMENT_FOLDS",
+    "metric": "race_macro_log_loss",
+    "protocol": "v1",
+    "source_ids": [
+      "M2_BASELINES",
+      "M3_LOGREG",
+      "M4_NONLINEAR",
+      "M5_BAGGED",
+      "M6_TUNING",
+      "M7_BOUNDARY"
+    ],
+    "warning": "Development-only; never ranked against holdout."
+  },
+  "feature_system": {
+    "canonical_total": 84,
+    "families": [
+      {
+        "count": 23,
+        "family": "STATE",
+        "meaning": "Position, laps and session state."
+      },
+      {
+        "count": 12,
+        "family": "PACE",
+        "meaning": "Lap-time pace levels and trends."
+      },
+      {
+        "count": 8,
+        "family": "GAPS",
+        "meaning": "Time gaps to leader and cars ahead."
+      },
+      {
+        "count": 12,
+        "family": "FIELD_CONTEXT",
+        "meaning": "Field spread and cars-around context."
+      },
+      {
+        "count": 4,
+        "family": "RATES_MOMENTUM",
+        "meaning": "Rates of change and momentum."
+      },
+      {
+        "count": 9,
+        "family": "ENVIRONMENT_HISTORY",
+        "meaning": "Weather and track-state history."
+      },
+      {
+        "count": 13,
+        "family": "PRE_RACE_PRIORS",
+        "meaning": "Qualifying and historical priors."
+      },
+      {
+        "count": 3,
+        "family": "INTERACTIONS",
+        "meaning": "Engineered feature interactions."
+      }
+    ],
+    "feature_names_by_family": {
+      "ENVIRONMENT_HISTORY": [
+        "air_temp_change_5min_c",
+        "current_track_state_duration_s",
+        "rain_in_last_5min",
+        "recent_red_fraction_5min",
+        "recent_sc_vsc_fraction_5min",
+        "recent_yellow_fraction_5min",
+        "time_since_rain_observed_s",
+        "track_state_changes_5min",
+        "track_temp_change_5min_c"
+      ],
+      "FIELD_CONTEXT": [
+        "cars_ahead_observable",
+        "cars_behind_observable",
+        "field_pace_comparable_rivals",
+        "in_traffic_2s",
+        "nearby_cars_within_5s",
+        "observable_field_size",
+        "relative_pace_to_car_ahead_s_per_lap",
+        "relative_pace_to_field_median_s_per_lap",
+        "relative_pace_to_teammate_s_per_lap",
+        "teammate_lap_difference",
+        "teammate_observation_age_s",
+        "teammate_position"
+      ],
+      "GAPS": [
+        "ahead_observation_age_s",
+        "gap_to_ahead_laps",
+        "gap_to_ahead_seconds",
+        "gap_to_ahead_seconds_valid",
+        "gap_to_leader_laps",
+        "gap_to_leader_seconds",
+        "gap_to_leader_seconds_valid",
+        "leader_observation_age_s"
+      ],
+      "INTERACTIONS": [
+        "positions_from_grid",
+        "recent_gap_to_ahead_change_in_traffic_s_per_lap",
+        "relative_pace_to_ahead_in_traffic_s_per_lap"
+      ],
+      "PACE": [
+        "current_stint_eligible_laps",
+        "current_stint_pace_mean_s",
+        "current_stint_pace_median_s",
+        "current_stint_pace_trend_s_per_lap",
+        "pace_mean_5",
+        "pace_median_10",
+        "pace_median_3",
+        "pace_median_5",
+        "pace_n_10",
+        "pace_n_3",
+        "pace_n_5",
+        "representative_recent_pace_s"
+      ],
+      "PRE_RACE_PRIORS": [
+        "grid_position",
+        "prior_circuit_mean_pit_stops_per_entry",
+        "prior_circuit_mean_position_change",
+        "prior_circuit_races",
+        "prior_constructor_mean_finish",
+        "prior_constructor_points_per_entry",
+        "prior_constructor_races",
+        "prior_driver_mean_finish",
+        "prior_driver_mean_grid",
+        "prior_driver_points_per_start",
+        "prior_driver_starts",
+        "recent_constructor_points_per_entry_5",
+        "recent_driver_mean_finish_5"
+      ],
+      "RATES_MOMENTUM": [
+        "recent_gap_to_ahead_change_s_per_lap",
+        "recent_gap_to_leader_change_s_per_lap",
+        "recent_pace_change_s_per_lap",
+        "recent_position_change_5laps"
+      ],
+      "STATE": [
+        "compound",
+        "flag_red",
+        "flag_safety_car",
+        "flag_vsc",
+        "flag_yellow",
+        "fresh_tyre",
+        "laps_since_last_pit_stop",
+        "pit_stops_completed_so_far",
+        "position",
+        "race_leader_laps_at_state",
+        "race_progress_frac",
+        "stint_compound",
+        "stint_fresh_tyre",
+        "stint_lap",
+        "track_state",
+        "tyre_life",
+        "wx_air_temp_c",
+        "wx_humidity_pct",
+        "wx_pressure_hpa",
+        "wx_rainfall",
+        "wx_track_temp_c",
+        "wx_wind_direction_deg",
+        "wx_wind_speed"
+      ]
+    },
+    "preprocessing": "median plus StandardScaler numerics; most-frequent booleans; MISSING sentinel plus train-vocabulary one-hot categoricals; fit on TRAIN only",
+    "source_ids": [
+      "FEATURE_REGISTRY",
+      "E3_GLOBAL_EXPLANATION"
+    ],
+    "transformed_dim": 106
+  },
+  "holdout_evidence": {
+    "aggregation": "race_macro (equal weight per race, then row metric)",
+    "evaluation_class": "FROZEN_ONE_SHOT_2025_HOLDOUT",
+    "metrics": [
+      {
+        "aggregation": "race_macro",
+        "description": "Mean per-race mean surprisal of each driver's P(win).",
+        "direction": "lower_is_better",
+        "display_name": "Race-macro log loss",
+        "id": "race_macro_log_loss",
+        "limitation": "Sensitive to tail miscalibration; pair with Brier.",
+        "population": "2025 one-shot holdout, 24 races, 26692 states",
+        "role": "PRIMARY",
+        "source_ids": [
+          "FINAL_HOLDOUT_2025"
+        ],
+        "value": 0.06803537409512433
+      },
+      {
+        "aggregation": "race_macro",
+        "description": "Mean per-race squared error of P(win).",
+        "direction": "lower_is_better",
+        "display_name": "Race-macro Brier score",
+        "id": "race_macro_brier",
+        "limitation": "Less tail-sensitive than log loss.",
+        "population": "2025 one-shot holdout, 24 races, 26692 states",
+        "role": "SECONDARY",
+        "source_ids": [
+          "FINAL_HOLDOUT_2025"
+        ],
+        "value": 0.02001414896371485
+      },
+      {
+        "aggregation": "race_macro",
+        "description": "Precision-recall area at ~5.5% winner prevalence.",
+        "direction": "higher_is_better",
+        "display_name": "PR AUC",
+        "id": "race_macro_pr_auc",
+        "limitation": "More informative than ROC under imbalance.",
+        "population": "2025 one-shot holdout, 24 races, 26692 states",
+        "role": "SECONDARY",
+        "source_ids": [
+          "FINAL_HOLDOUT_2025"
+        ],
+        "value": 0.8032379039185585
+      },
+      {
+        "aggregation": "race_macro",
+        "description": "Fraction of holdout races where the actual winner was the model's top-ranked driver.",
+        "direction": "higher_is_better",
+        "display_name": "Synchronized top-1",
+        "id": "winner_top1",
+        "limitation": "Rank hit-rate, not probabilistic quality.",
+        "population": "2025 one-shot holdout, 24 races, 26692 states",
+        "role": "SECONDARY",
+        "source_ids": [
+          "FINAL_HOLDOUT_2025"
+        ],
+        "value": 0.7960622538908682
+      },
+      {
+        "aggregation": "race_macro",
+        "description": "Fraction of holdout races with the winner in the model's top-3 ranked drivers.",
+        "direction": "higher_is_better",
+        "display_name": "Synchronized top-3",
+        "id": "winner_top3",
+        "limitation": "Lenient rank hit-rate.",
+        "population": "2025 one-shot holdout, 24 races, 26692 states",
+        "role": "SECONDARY",
+        "source_ids": [
+          "FINAL_HOLDOUT_2025"
+        ],
+        "value": 0.9789986874179636
+      },
+      {
+        "aggregation": "race_macro",
+        "description": "Rank discrimination over pooled states.",
+        "direction": "higher_is_better",
+        "display_name": "ROC AUC",
+        "id": "race_macro_roc_auc",
+        "limitation": "Reads high under imbalance; never a headline alone.",
+        "population": "2025 one-shot holdout, 24 races, 26692 states",
+        "role": "TECHNICAL",
+        "source_ids": [
+          "FINAL_HOLDOUT_2025"
+        ],
+        "value": 0.984525688619831
+      },
+      {
+        "aggregation": "state_pooled",
+        "description": "Mean |accuracy minus confidence| over equal-width bins.",
+        "direction": "lower_is_better",
+        "display_name": "ECE (10 bins)",
+        "id": "expected_calibration_error",
+        "limitation": "Small-sample bins are noisy.",
+        "population": "2025 one-shot holdout, 24 races, 26692 states",
+        "role": "TECHNICAL",
+        "source_ids": [
+          "FINAL_HOLDOUT_2025"
+        ],
+        "value": 0.011108157831608437
+      },
+      {
+        "aggregation": "state_pooled",
+        "description": "Diagnostic twin of the headline; large races dominate.",
+        "direction": "lower_is_better",
+        "display_name": "State-pooled log loss",
+        "id": "state_pooled_log_loss",
+        "limitation": "Never a headline.",
+        "population": "2025 one-shot holdout, 24 races, 26692 states",
+        "role": "TECHNICAL",
+        "source_ids": [
+          "FINAL_HOLDOUT_2025"
+        ],
+        "value": 0.067892669482685
+      },
+      {
+        "aggregation": "state_pooled",
+        "description": "Diagnostic twin of the headline Brier.",
+        "direction": "lower_is_better",
+        "display_name": "State-pooled Brier",
+        "id": "state_pooled_brier",
+        "limitation": "Never a headline.",
+        "population": "2025 one-shot holdout, 24 races, 26692 states",
+        "role": "TECHNICAL",
+        "source_ids": [
+          "FINAL_HOLDOUT_2025"
+        ],
+        "value": 0.01985871679225157
+      }
+    ],
+    "population": {
+      "eligibility_mask": "eligible_is_winner",
+      "eligible_states": 26692,
+      "positives": 1444,
+      "races": 24,
+      "seasons": [
+        2025
+      ]
+    },
+    "source_ids": [
+      "FINAL_HOLDOUT_2025"
+    ],
+    "stages": [
+      {
+        "definition": "first third of race_progress_frac",
+        "race_macro_log_loss": 0.07746815465558454,
+        "stage": "EARLY"
+      },
+      {
+        "definition": "middle third of race_progress_frac",
+        "race_macro_log_loss": 0.0698004291939089,
+        "stage": "MID"
+      },
+      {
+        "definition": "final third of race_progress_frac",
+        "race_macro_log_loss": 0.05684734503563236,
+        "stage": "LATE"
+      }
+    ]
+  },
+  "limitations": [
+    {
+      "id": "INDEPENDENT_BINARY",
+      "text": "Winner estimates are independent binary probabilities, not a normalized race distribution."
+    },
+    {
+      "id": "HOLDOUT_ONE_SEASON",
+      "text": "The holdout is one season (24 races); no post-holdout tuning."
+    },
+    {
+      "id": "PERMUTATION_IN_SAMPLE",
+      "text": "Global permutation evidence is PRE_2025_FINAL_FIT_IN_SAMPLE, not out-of-sample."
+    },
+    {
+      "id": "NON_CAUSAL",
+      "text": "Explanations are associational and model-internal, not causal."
+    },
+    {
+      "id": "LOG_ODDS_ONLY",
+      "text": "Contributions are additive in log-odds, never probability-point attributions."
+    },
+    {
+      "id": "NO_SHAP",
+      "text": "SHAP is not part of v1."
+    },
+    {
+      "id": "CHECKPOINT_GRANULARITY",
+      "text": "Timelines operate at prediction checkpoints, not every replay frame."
+    },
+    {
+      "id": "HYPERPARAMETER_UNCERTAINTY",
+      "text": "Development hyperparameter uncertainty is documented in M7."
+    }
+  ],
+  "model_selection": {
+    "engineering_context": "Single linear model; exact log-odds decomposition enables explanations; no calibration layer to maintain.",
+    "limitations": "Development hyperparameter uncertainty documented in M7; not a universality claim.",
+    "measured_evidence": [
+      "LogReg competitive development quality at lowest complexity class (M4/M5/M6).",
+      "C=0.01 from the predeclared M7 global rule.",
+      "RAW from the predeclared M8 rule."
+    ],
+    "selection_rule": "M7 global rule: aggregate inner log-loss fallback (lowest aggregate inner mean 0.0827198539; no strict per-fold majority: D1 0.003, D2 0.01, D3 0.03).",
+    "serving_choice": "LogisticRegression C=0.01 RAW",
+    "source_ids": [
+      "M7_BOUNDARY",
+      "M8_CALIBRATION"
+    ]
+  },
+  "model_spec": {
+    "C": 0.01,
+    "calibration": "RAW",
+    "canonical_feature_count": 84,
+    "class_weight": null,
+    "eligibility": "eligible_is_winner",
+    "estimator": "LogisticRegression",
+    "feature_set": "ALL_84",
+    "feature_version": "v8",
+    "final_fit_seasons": "2018-2024",
+    "holdout_season": 2025,
+    "max_iter": 1000,
+    "penalty": "l2 (sklearn default, not passed explicitly)",
+    "probability_semantics": "INDEPENDENT_BINARY",
+    "random_state": 42,
+    "solver": "lbfgs",
+    "source_ids": [
+      "MODEL_CARD",
+      "MODEL_LAB_FREEZE"
+    ],
+    "target": "is_winner",
+    "task": "winner",
+    "transformed_feature_count": 106
+  },
+  "performance": {
+    "CHANGE_EXPLANATION_API": [
+      {
+        "limitation": "Not pure inference latency.",
+        "metric": "warm_p50_ms",
+        "scope": "E7 TestClient, full API with services",
+        "source_ids": [
+          "PHASE8_FREEZE"
+        ],
+        "value": 41.8
+      }
+    ],
+    "LOCAL_EXPLANATION_API": [
+      {
+        "limitation": "Not pure inference latency.",
+        "metric": "warm_p50_ms",
+        "scope": "E7 TestClient, full API with services",
+        "source_ids": [
+          "PHASE8_FREEZE"
+        ],
+        "value": 24.5
+      }
+    ],
+    "MODEL_INFERENCE": [
+      {
+        "limitation": "Evaluation harness, not an API SLA.",
+        "metric": "batch_throughput_states_per_s",
+        "scope": "M9 holdout transform plus predict",
+        "source_ids": [
+          "MODEL_CARD"
+        ],
+        "value": 478741.84
+      },
+      {
+        "limitation": "Harness timing, not serving latency.",
+        "metric": "single_state_latency_s_mean",
+        "scope": "M9 harness single-state",
+        "source_ids": [
+          "MODEL_CARD"
+        ],
+        "value": 0.008571
+      }
+    ],
+    "OFFLINE_CACHE_BUILD": [
+      {
+        "limitation": "Offline only; E1.6 matrix backend is the fast path.",
+        "metric": "seconds_per_checkpoint",
+        "scope": "E1 serial baseline, single core",
+        "source_ids": [
+          "PHASE8_FREEZE"
+        ],
+        "value": 11.8
+      }
+    ]
+  },
+  "permutation_evidence": {
+    "base_seed": 42,
+    "baseline_metric": 0.07249849466638802,
+    "entries": [
+      {
+        "canonical": "gap_to_leader_seconds",
+        "family": "GAPS",
+        "max_delta": 0.027432722071887253,
+        "mean_delta": 0.02700378324161536,
+        "min_delta": 0.02636575445394955
+      },
+      {
+        "canonical": "gap_to_ahead_seconds_valid",
+        "family": "GAPS",
+        "max_delta": 0.024080926433107955,
+        "mean_delta": 0.023534918854638858,
+        "min_delta": 0.023099062012545635
+      },
+      {
+        "canonical": "position",
+        "family": "STATE",
+        "max_delta": 0.013658120314980274,
+        "mean_delta": 0.0131357580471655,
+        "min_delta": 0.012630782526358103
+      },
+      {
+        "canonical": "cars_ahead_observable",
+        "family": "FIELD_CONTEXT",
+        "max_delta": 0.012369747069145856,
+        "mean_delta": 0.012048246560457257,
+        "min_delta": 0.011766652548149972
+      },
+      {
+        "canonical": "prior_driver_mean_finish",
+        "family": "PRE_RACE_PRIORS",
+        "max_delta": 0.009683068896254796,
+        "mean_delta": 0.009502404463608125,
+        "min_delta": 0.00937646551011749
+      },
+      {
+        "canonical": "grid_position",
+        "family": "PRE_RACE_PRIORS",
+        "max_delta": 0.00724049106453839,
+        "mean_delta": 0.007002300567461012,
+        "min_delta": 0.006663370947145045
+      },
+      {
+        "canonical": "recent_constructor_points_per_entry_5",
+        "family": "PRE_RACE_PRIORS",
+        "max_delta": 0.006980936670898538,
+        "mean_delta": 0.0068171138520550095,
+        "min_delta": 0.006593485620780812
+      },
+      {
+        "canonical": "prior_driver_points_per_start",
+        "family": "PRE_RACE_PRIORS",
+        "max_delta": 0.006314736130520859,
+        "mean_delta": 0.006228080659379747,
+        "min_delta": 0.006179037741377735
+      },
+      {
+        "canonical": "prior_constructor_races",
+        "family": "PRE_RACE_PRIORS",
+        "max_delta": 0.0031821878626199784,
+        "mean_delta": 0.00298818584616293,
+        "min_delta": 0.0027557800945352817
+      },
+      {
+        "canonical": "prior_constructor_mean_finish",
+        "family": "PRE_RACE_PRIORS",
+        "max_delta": 0.0030127318400852143,
+        "mean_delta": 0.0029143356321809978,
+        "min_delta": 0.0027641150358932443
+      }
+    ],
+    "evidence_class": "PRE_2025_FINAL_FIT_IN_SAMPLE",
+    "evidence_class_note": "2018-2024 rows the production artifact was final-fit on; explicitly NOT temporally out-of-sample.",
+    "limitations": "In-sample sensitivity, not causal and not out-of-sample importance.",
+    "metric": "race_macro_log_loss",
+    "permutation_unit": "state_within_race",
+    "repeats": 5,
+    "source_ids": [
+      "E3_GLOBAL_EXPLANATION"
+    ]
+  },
+  "provenance": {
+    "e3_artifact_sha256": "bae84b614a6e9e176d5bb9c33b99dcaf4cba3f376333b0f075c828f73982939f",
+    "holdout_report_sha256": "2c3a166df1a1af1d20f24fafc6a17283de1cdd1eea2b5f67a26204ed174a7415",
+    "matrix_parquet_sha256": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3",
+    "model_spec_fingerprint": "3164de9e61ca94ab958e26590608824ca6c7b05de29c5398d3d204a8c329c24d",
+    "phase2_content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+    "phase8_freeze_commit": "7fa9bf970c4281b7c7d64fecf8b8e9b207a963d8",
+    "phase8_freeze_tag": "v2-replay-intelligence-phase8",
+    "protocol_semantic_hash": "0168f1d7fea584cd8a1e4dfe8267bb54dbec16aae60c92663c31115cb3ef53ce",
+    "winner_serving_sha256": "1116b34fc716035c2425e605b9a5cc15541a2d2335e26113f2e2eaf3fcaa59f4"
+  },
+  "sources": {
+    "E3_GLOBAL_EXPLANATION": {
+      "note": "Coefficients plus in-sample permutation evidence.",
+      "path": "results/v2_explainability/global_winner_logreg_v1.json",
+      "sha256": "bae84b614a6e9e176d5bb9c33b99dcaf4cba3f376333b0f075c828f73982939f"
+    },
+    "FEATURE_REGISTRY": {
+      "note": "ALL_84 v8 registry authority.",
+      "path": "docs/generated/phase2_freeze_manifest.json"
+    },
+    "FINAL_HOLDOUT_2025": {
+      "note": "One-shot 2025 holdout at stored precision. READ ONLY.",
+      "path": "data/v2/model_lab/reports/final_holdout_2025_v1.json",
+      "sha256": "2c3a166df1a1af1d20f24fafc6a17283de1cdd1eea2b5f67a26204ed174a7415"
+    },
+    "M2_BASELINES": {
+      "note": "Non-ML development floor, D1-D3.",
+      "path": "data/v2/model_lab/reports/baseline_suite_v1.json"
+    },
+    "M3_LOGREG": {
+      "note": "LogReg C=1.0 reference, D1-D3.",
+      "path": "data/v2/model_lab/reports/logreg_reference_v1.json"
+    },
+    "M4_NONLINEAR": {
+      "note": "HGB/XGB fixed specs, D1-D3.",
+      "path": "data/v2/model_lab/reports/nonlinear_candidates_v1.json"
+    },
+    "M5_BAGGED": {
+      "note": "ExtraTrees/RandomForest fixed specs, D1-D3.",
+      "path": "data/v2/model_lab/reports/bagged_candidates_v1.json"
+    },
+    "M6_TUNING": {
+      "note": "Nested temporal tuning, LogReg + ExtraTrees.",
+      "path": "data/v2/model_lab/reports/tuning_selection_v1.json"
+    },
+    "M7_BOUNDARY": {
+      "note": "C boundary resolution; global freeze rule C=0.01.",
+      "path": "data/v2/model_lab/reports/logreg_boundary_resolution_v1.json"
+    },
+    "M8_CALIBRATION": {
+      "note": "RAW/Platt/Isotonic development comparison.",
+      "path": "data/v2/model_lab/reports/calibration_selection_v1.json"
+    },
+    "MODEL_CARD": {
+      "note": "Frozen serving identity and holdout headline.",
+      "path": "docs/MODEL_LAB_FINAL_MODEL_CARD.md"
+    },
+    "MODEL_LAB_FREEZE": {
+      "note": "Frozen spec, fingerprints, holdout artifact SHA.",
+      "path": "docs/MODEL_LAB_FREEZE_MANIFEST.json"
+    },
+    "PHASE8_FREEZE": {
+      "note": "Replay corpus counts, contracts, E7 summary.",
+      "path": "results/v2_validation/phase8_freeze_manifest.json"
+    }
+  },
+  "temporal_evaluation": {
+    "development_folds": [
+      {
+        "fold": "D1",
+        "train": "2018-2021",
+        "train_states": 88123,
+        "val_states": 23577,
+        "validate": 2022
+      },
+      {
+        "fold": "D2",
+        "train": "2018-2022",
+        "train_states": 111700,
+        "val_states": 24422,
+        "validate": 2023
+      },
+      {
+        "fold": "D3",
+        "train": "2018-2023",
+        "train_states": 136122,
+        "val_states": 26606,
+        "validate": 2024
+      }
+    ],
+    "final_fit": "2018-2024",
+    "guards": [
+      "train strictly before validation",
+      "2025 unreachable from development paths",
+      "M0 count audits pinned per fold and task"
+    ],
+    "holdout": 2025,
+    "protocol": "v1",
+    "source_ids": [
+      "MODEL_LAB_FREEZE"
+    ]
+  },
+  "temporal_safeguards": {
+    "items": [
+      {
+        "description": "Every state observes the field at the same race time T.",
+        "id": "SYNC",
+        "source_ids": [
+          "FEATURE_REGISTRY"
+        ],
+        "title": "Race-wide synchronized observation"
+      },
+      {
+        "description": "No observation dated after the state time enters features.",
+        "id": "NO_FUTURE",
+        "source_ids": [
+          "FEATURE_REGISTRY"
+        ],
+        "title": "state_time_s <= T"
+      },
+      {
+        "description": "Weather, race-control and pit context attach prior-or-equal rows only.",
+        "id": "NO_FALL_FORWARD",
+        "source_ids": [
+          "FEATURE_REGISTRY"
+        ],
+        "title": "No fall-forward enrichment"
+      },
+      {
+        "description": "Replay resolves frozen rows by exact identity; no tolerance joins.",
+        "id": "EXACT_IDENTITY",
+        "source_ids": [
+          "PHASE8_FREEZE"
+        ],
+        "title": "Exact matrix identity"
+      },
+      {
+        "description": "Labels and masks never enter the design matrix.",
+        "id": "LABEL_SEPARATION",
+        "source_ids": [
+          "MODEL_LAB_FREEZE"
+        ],
+        "title": "Labels structurally separated"
+      },
+      {
+        "description": "2025 unreachable from development and serving paths; one-shot M9 opt-in.",
+        "id": "HOLDOUT_FIREWALL",
+        "source_ids": [
+          "MODEL_LAB_FREEZE"
+        ],
+        "title": "2025 serving firewall"
+      },
+      {
+        "description": "Mutating post-T inputs must not change at-T features or predictions.",
+        "id": "POST_T_MUTATION",
+        "source_ids": [
+          "FEATURE_REGISTRY"
+        ],
+        "title": "Post-T mutation tests"
+      }
+    ],
+    "statement": "No temporal leakage was detected under the implemented adversarial test suite."
+  }
+}
