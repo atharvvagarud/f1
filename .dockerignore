@@ -1,0 +1,88 @@
+# F1 Intelligence v2 — backend build context (P10-1C).
+#
+# CRITICAL: runtime_artifacts/ MUST stay in context (bundle merged onto
+# canonical paths by Dockerfile.backend). It is matched by NO pattern below.
+# Likewise requirements.txt, api/, ml/, v2/, the tracked V1/model inputs
+# re-included under data/*/results/*, and docs/PHASE4_FREEZE_MANIFEST.json
+# MUST stay in context.
+
+# --- version control / tooling ---
+.git/
+.github/
+.gitignore
+.gitattributes
+
+# --- local virtualenvs ---
+.venv/
+venv/
+.env/
+
+# --- python bytecode / caches ---
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- logs / OS metadata ---
+*.log
+.DS_Store
+
+# --- data: exclude everything, re-include only tracked serving inputs ---
+# (excludes 15 GB data/raw, FastF1 caches, generated data/v2 source tree;
+#  runtime corpus arrives via runtime_artifacts/, never from here)
+data/*
+!data/processed/
+!data/interim/
+.fastf1_cache/
+
+# --- results: exclude everything, re-include only tracked serving inputs ---
+# (excludes research-only analysis/baselines/comparisons/debug/data_quality/
+#  v2_validation trees and generated v2_replay/v2_explainability source dirs;
+#  runtime cache/explainability arrive via runtime_artifacts/, serving joblib
+#  is the single re-included file under v2_model_lab/)
+results/*
+!results/models/
+!results/v2_model_lab/
+results/v2_model_lab/*
+!results/v2_model_lab/winner_logreg_raw_v1_serving.joblib
+
+# --- frontend: backend image has no runtime dependency on it, but the
+# frontend build (root context, Dockerfile.frontend) needs frontend source.
+# Only the machine-generated / secret entries are excluded; the backend
+# Dockerfile never COPYs frontend/, so its contract is unchanged. ---
+frontend/node_modules/
+frontend/.next/
+
+# --- not required in the serving image, except the single frozen
+# phase2-identity input read by the replay cache-key path ---
+tests/
+docs/*
+!docs/PHASE4_FREEZE_MANIFEST.json
+!docs/generated/
+docs/generated/*
+!docs/generated/phase2_freeze_manifest.json
+# scripts/ excluded except the single runtime helper imported by the
+# explanation service (namespace-package import needs no __init__.py).
+scripts/*
+!scripts/replay_feature_matrix.py
+graphify-out/
+graphify_out/
+.impeccable/
+.opencode/
+.claude/
+.cursor/
+.gemini/
+.mcp.json
+*.md
+
+# --- local secrets / env files (never in context, never in layers) ---
+.env
+.env.*
+!.env.example
+frontend/.env.local
+
+# --- root tooling manifests (not backend inputs) ---
+package.json
+package-lock.json

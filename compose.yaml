@@ -1,0 +1,58 @@
+# F1 Intelligence v2 — minimal local deployment (P10-1E).
+#
+# Exactly two services: backend (:8000) + frontend (:3000). No databases,
+# queues, proxies, or observability (out of scope until later P10 stages).
+#
+# Browser-facing API base is http://localhost:8000 (host-browser reachable).
+# NEVER http://backend:8000 here — the browser is outside Docker DNS.
+#
+# Canonical lifecycle:
+#   make docker-compose-build   # deployable preflight, then build
+#   make docker-compose-up      # docker compose up -d
+#   make docker-compose-down    # docker compose down
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    environment:
+      V2_PROJECT_ROOT: /app
+      F1_ALLOWED_ORIGINS: http://localhost:3000
+      F1_LOG_LEVEL: INFO
+    # DEPLOYABLE READINESS — GET /ready proves the frozen V2 runtime can
+    # be served (artifacts + identities + network-off posture). GET /health
+    # remains cheap liveness only. stdlib python, no curl added.
+    healthcheck:
+      test: ["CMD", "python", "-c",
+        "import urllib.request; urllib.request.urlopen('http://localhost:8000/ready')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+      args:
+        NEXT_PUBLIC_API_BASE: http://localhost:8000
+    ports:
+      - "3000:3000"
+    # Backend readiness gates frontend startup: the backend healthcheck
+    # now reflects deployable readiness (/ready), not mere liveness.
+    depends_on:
+      backend:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true

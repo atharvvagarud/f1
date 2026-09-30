@@ -320,17 +320,19 @@ def test_present_artifacts_do_not_skip():
         path, purpose="P3.1 unit probe") == path
 
 
-# --- API CORS safety -----------------------------------------------------------
+# --- API CORS safety (P10-3: explicit origins, never wildcard by default) ----
 
 
 def test_api_cors_disallows_credentialed_wildcard():
-    from api.main import app
+    from api.config import get_serving_config
+    from api.main import create_app
 
+    app = create_app(get_serving_config(env={}))
     cors = [m for m in app.user_middleware
             if m.cls.__name__ == "CORSMiddleware"]
     assert cors, "CORSMiddleware must remain configured"
     options = cors[0].kwargs
-    assert options.get("allow_origins") == ["*"]
+    assert options.get("allow_origins") == ["http://localhost:3000"]
     assert options.get("allow_credentials") is False
 
 

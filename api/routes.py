@@ -9,6 +9,7 @@ payloads and error propagation are unchanged from ``api/main.py`` — no
 """
 
 from fastapi import APIRouter
+from fastapi.responses import JSONResponse
 
 from api.schemas import RaceRequest, SingleModelRequest
 from api.services import prediction_service as service
@@ -19,6 +20,17 @@ router = APIRouter()
 @router.get("/health")
 def health():
     return service.get_health_status()
+
+
+@router.get("/ready")
+def readiness():
+    """Deployability readiness (P10-3): 200 ready, 503 with bounded codes."""
+    from api import readiness as readiness_module
+
+    payload = readiness_module.get_readiness()
+    if payload["status"] == "ready":
+        return payload
+    return JSONResponse(status_code=503, content=payload)
 
 
 @router.get("/races")

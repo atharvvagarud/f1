@@ -130,3 +130,8 @@ results/v2_replay/
 # Phase-8 E3 generated global explanation artifact — reproducible via
 # `python -m v2.explainability`, not committed (generated, not source).
 results/v2_explainability/
+
+# P10-1A runtime-artifact staging boundary — generated locally by
+# scripts/prepare_runtime_artifacts.py, validated before Docker build,
+# never committed. Contains ONLY generated runtime-required assets.
+/runtime_artifacts/

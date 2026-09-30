@@ -1,0 +1,80 @@
+# F1 Intelligence v2 — production backend image (P10-1C).
+#
+# Packaging only: installs the exact pinned production dependencies and
+# lays out the tracked source + tracked V1 resources + the P10-1A validated
+# runtime artifact bundle onto canonical application-root paths.
+# No scientific generation runs at build or startup; no network needed.
+#
+# Build (from repo root, after host preflight):
+#   python scripts/prepare_runtime_artifacts.py --validate
+#   python scripts/check_runtime_environment.py --deployable
+#   docker build -f Dockerfile.backend -t f1-intelligence-backend:p10-1c .
+# Or: make docker-backend-build
+
+FROM python:3.11-slim
+
+# Layer 2: runtime environment defaults (P10-1B contract).
+# V2_ALLOW_NETWORK intentionally absent (serving must stay offline).
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    V2_PROJECT_ROOT=/app
+
+WORKDIR /app
+
+# Layer 3-4: deterministic production dependencies (exact pins, wheels).
+# requirements-test.txt is NEVER installed in this image.
+COPY requirements.txt .
+RUN python -m pip install --no-cache-dir -r requirements.txt
+
+# Layer 5: application source (import evidence: api/ -> ml/, v2/;
+# serving resolves everything under these packages).
+COPY api/ ./api/
+COPY ml/ ./ml/
+COPY v2/ ./v2/
+
+# Layer 5b: tracked V1 resources (normal source inputs, NOT in bundle).
+COPY data/processed/ ./data/processed/
+COPY data/interim/ ./data/interim/
+COPY results/models/ ./results/models/
+
+# Layer 5c: tracked V2 serving model (referenced by SHA, copied once).
+COPY results/v2_model_lab/winner_logreg_raw_v1_serving.joblib ./results/v2_model_lab/winner_logreg_raw_v1_serving.joblib
+
+# Layer 5d: frozen identity inputs read on serving paths (phase2 content
+# hash only; prediction/model behavior untouched).
+# - api/v2_replay_service.py:_FREEZE_MANIFEST (replay cache-key path)
+# - scripts/replay_feature_matrix.py:MANIFEST_REL (explanation matrix path)
+COPY docs/PHASE4_FREEZE_MANIFEST.json ./docs/PHASE4_FREEZE_MANIFEST.json
+COPY docs/generated/phase2_freeze_manifest.json ./docs/generated/phase2_freeze_manifest.json
+
+# Layer 5e: single runtime helper imported by the explanation service
+# (api/v2_explanation_service.py imports scripts.replay_feature_matrix;
+#  stdlib+pandas+v2 only, no sibling script modules).
+COPY scripts/replay_feature_matrix.py ./scripts/replay_feature_matrix.py
+
+# Layer 6: validated P10-1A runtime bundle merged onto canonical paths.
+# runtime_artifacts/ mirrors application-root layout, so consumers keep
+# resolving their existing paths unchanged. The staging directory itself
+# is never copied (no duplication).
+COPY runtime_artifacts/data/ ./data/
+COPY runtime_artifacts/results/ ./results/
+
+# Layer 7: startup configuration.
+# Lightweight manifest-presence assertion only (scientific validation
+# lives on the host in scripts/prepare_runtime_artifacts.py --validate).
+RUN test -f results/v2_replay/phase8_e2_cache_manifest_v1.json \
+ && test -f results/v2_explainability/global_winner_logreg_v1.json \
+ && test -f results/v2_explainability/global_winner_logreg_v1.sha256 \
+ && test -f data/v2/simulation/params/r3-v1__through-2024/manifest.json \
+ && test -f results/v2_model_lab/winner_logreg_raw_v1_serving.joblib
+
+# Non-root runtime: read-only serving. Files are readable by the app user;
+# nothing is made world-writable.
+RUN useradd --create-home --uid 10001 --user-group appuser \
+ && chown -R appuser:appuser /app
+USER appuser:appuser
+
+EXPOSE 8000
+
+# P10-1B production command, exact: single process, no --reload.
+CMD ["python", "-m", "uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
