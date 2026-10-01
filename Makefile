@@ -2,7 +2,7 @@
 # behaviour lives in pytest / npm scripts / uvicorn, never here.
 PYTHON ?= python3
 
-.PHONY: backend-dev frontend-dev test-python test-frontend typecheck lint build verify check-python install-python install-python-test install-frontend install preflight preflight-source backend-prod frontend-start docker-backend-build docker-backend-run docker-frontend-build docker-frontend-run docker-compose-build docker-compose-up docker-compose-down docker-compose-logs ci-python ci-frontend ci
+.PHONY: backend-dev frontend-dev test-python test-frontend typecheck lint build verify check-python install-python install-python-test install-frontend install preflight preflight-source backend-prod frontend-start docker-backend-build docker-backend-run docker-frontend-build docker-frontend-run docker-compose-build docker-compose-up docker-compose-down docker-compose-logs ci-python ci-frontend ci science
 
 check-python:  ## Fail fast if PYTHON is broken/no-op (R8 finding: bare python3 shim exits 0 doing nothing)
 	@test "$$( "$(PYTHON)" -c 'print("py-preflight-ok")' 2>/dev/null)" = "py-preflight-ok" || (echo "error: PYTHON='$(PYTHON)' is not a functional Python interpreter (probe produced no output). Override with e.g. 'make PYTHON=/path/to/python <target>'." >&2; exit 1)
@@ -111,3 +111,17 @@ ci-frontend: check-python  ## CI frontend gate: npm ci + source-safe tests (P10-
 	cd frontend && npm ci && $(PYTHON) ../scripts/run_ci_frontend_tests.py && ./node_modules/.bin/tsc --noEmit -p . && npm run lint && NEXT_PUBLIC_API_BASE=http://localhost:8000 npm run build && git diff --exit-code -- package-lock.json
 
 ci: ci-python ci-frontend  ## Full ordinary CI equivalent
+
+# ---- P11-1 Tier-3 full scientific regression (additive; NOT ordinary CI) ----
+# make ci-python = Tier 1 source-safe engineering validation (clean-checkout
+# safe; corpus-dependent + stale-debt nodes excluded via run_ci_tests.py).
+# make science = Tier 3 corpus-backed scientific regression: the COMPLETE
+# pytest suite with NO Tier-1 deselection (all 718 corpus-dependent nodes +
+# all corrected former stale pins run). Requires the canonical ignored
+# local scientific corpus; fails early via check_science_environment.py when
+# it is absent. Never downloads, generates, retrains, or runs FastF1.
+# Neither gate substitutes for the other.
+
+science: check-python  ## Tier-3 full scientific regression (needs canonical corpus)
+	$(PYTHON) scripts/check_science_environment.py
+	$(PYTHON) -m pytest tests/ -q -p no:cacheprovider

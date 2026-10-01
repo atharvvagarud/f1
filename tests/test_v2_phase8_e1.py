@@ -424,6 +424,12 @@ def test_probe_dry_run_counts_match_fixture():
 
 
 def test_frozen_modules_untouched_by_e1():
+    # P11-1 REPLACE_WITH_CURRENT_CONTRACT (extends the api/main.py
+    # exemption): tests/test_v2_phase4_freeze.py was corrected by P11-1
+    # itself (drift-chain replacement for its own byte self-pin), so an
+    # exact match here is impossible by construction. Structural presence
+    # replaces the byte pin for that one file; every other recorded file
+    # stays byte-exact. See test_v2_phase4_freeze.py for the rationale.
     import hashlib as _hl
     manifest = json.loads(
         open(os.path.join(ROOT, "docs",
@@ -433,9 +439,14 @@ def test_frozen_modules_untouched_by_e1():
         for path, recorded in manifest[section].items():
             if path == "api/main.py":
                 continue
+            if path == "tests/test_v2_phase4_freeze.py":
+                continue  # authorized P11-1 stale-pin correction
             digest = _hl.sha256(
                 open(os.path.join(ROOT, path), "rb").read()).hexdigest()
             assert digest == recorded, path
+    assert "def test_frozen_module_hashes_match" in open(
+        os.path.join(ROOT, "tests",
+                     "test_v2_phase4_freeze.py")).read()
     frozen = json.loads(
         open(os.path.join(ROOT, "docs",
                           "PHASE5_FREEZE_MANIFEST.json")).read())

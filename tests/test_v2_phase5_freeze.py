@@ -478,12 +478,73 @@ def test_freeze_manifest_parses_and_has_sections():
 
 
 def test_freeze_manifest_file_hashes_match():
+    # P11-1 REPLACE_WITH_CURRENT_CONTRACT (was: exact hash match of every
+    # Phase-5-manifest file). OLD CONTRACT: all recorded files byte-identical
+    # to the Phase-5 seal. CURRENT CONTRACT: every recorded file EXCEPT
+    # api/main.py is still byte-identical; api/main.py evolved additively
+    # through authorized stages (Phase-6 simulation router per the Phase-6
+    # drift record, Phase-7 routers, P10-3 serving config).
     data = _load(MANIFEST)
+    # Files with authorized post-Phase-5 evolution (exact evolved set):
+    # - api/main.py: Phase-6/7 routers + P10-3 serving config.
+    # - 14 frontend files: Phase-9 workspace/evidence frontend.
+    # - scripts/build_replay_prediction_cache.py: Phase-8 matrix backend.
+    # - .gitignore: P10-1A runtime_artifacts boundary.
+    # - the two self-pinned test files (a byte self-pin cannot survive an
+    #   authorized correction of the test itself).
+    evolved = {"api/main.py",
+               "tests/test_v2_phase5_freeze.py",
+               "tests/test_v2_phase5_r7.py",
+               "scripts/build_replay_prediction_cache.py",
+               ".gitignore",
+               "frontend/app/page.tsx",
+               "frontend/app/replay/page.tsx",
+               "frontend/features/replay/components/ContextBar.tsx",
+               "frontend/features/replay/components/PlaybackControls.tsx",
+               "frontend/features/replay/components/PredictionPanel.tsx",
+               "frontend/features/replay/components/"
+               "ProbabilityTimelineChart.tsx",
+               "frontend/features/replay/components/RaceSelector.tsx",
+               "frontend/features/replay/components/ReplayView.tsx",
+               "frontend/features/replay/components/StandingsTable.tsx",
+               "frontend/features/replay/components/TimelineScrubber.tsx",
+               "frontend/features/replay/hooks/useReplay.ts",
+               "frontend/features/replay/lib/probabilityTimeline.test.ts",
+               "frontend/features/replay/lib/probabilityTimeline.ts",
+               "frontend/lib/v2.ts"}
+    diverged = set()
     for section in HASH_SECTIONS:
         assert data[section], section
         for path, recorded in data[section].items():
             assert (ROOT / path).exists(), path
+            if path in evolved:
+                if _sha(path) != recorded:
+                    diverged.add(path)
+                continue
             assert _sha(path) == recorded, path
+    assert diverged == evolved, diverged ^ evolved
+    # Authorized-evolution evidence per family (stronger than skipping).
+    text = (ROOT / "api" / "main.py").read_text()
+    for marker in ("v2_replay_router", "v2_simulation_router",
+                   "v2_strategy_router", "ServingConfig",
+                   "RequestLoggingMiddleware"):
+        assert marker in text, marker
+    assert (ROOT / "docs" / "PHASE9_FINAL_FREEZE_REPORT.md").is_file()
+    cache_script = (ROOT / "scripts" /
+                    "build_replay_prediction_cache.py").read_text()
+    assert "--feature-source" in cache_script and "matrix" in cache_script
+    assert (ROOT / "docs" /
+            "PHASE8_E2_REPLAY_CACHE_BACKFILL_REPORT.md").is_file()
+    assert "/runtime_artifacts/" in (ROOT / ".gitignore").read_text()
+    for self_test, node in (
+            ("tests/test_v2_phase5_freeze.py",
+             "def test_freeze_manifest_file_hashes_match"),
+            ("tests/test_v2_phase5_r7.py",
+             "def test_head_and_phase4_tag_intact")):
+        assert node in (ROOT / self_test).read_text()
+    assert data["api_modules"]["api/main.py"] == \
+        "2840271a49ced72720e9fc0fa3028a206ff4b9d8c1178fd6a1eab7ebe118549a"
+    assert _sha("api/main.py") != data["api_modules"]["api/main.py"]
     assert _sha("docs/PHASE5_REPLAY_API_CONTRACT.json") == \
         data["api_contract"]["sha256"]
 
@@ -528,20 +589,57 @@ def test_freeze_manifest_contracts_and_corpus():
     assert corpus["prediction_checkpoints"] == 9644
 
 
-def test_freeze_manifest_generated_cache_not_required():
-    data = _load(MANIFEST)
-    blob = json.dumps(data)
-    assert "results/v2_replay" not in blob
-    assert not (ROOT / "results" / "v2_replay").exists()
+def test_generated_cache_required_in_bundle_era():
+    # P11-1 UPDATE_STALE_EXPECTATION (was:
+    # test_freeze_manifest_generated_cache_not_required, asserting
+    # results/v2_replay absent). The Phase-5 manifest predates the Phase-8
+    # E2 backfill; in the bundle era the served replay cache is a REQUIRED
+    # generated artifact (149 races / 9644 checkpoints). The test now pins
+    # the current contract: cache present, E2 manifest present, corpus
+    # counts and aggregate/model identities exact. Corpus-dependent: needs
+    # the ignored generated cache (Tier 3, not Tier 1).
+    cache = ROOT / "results" / "v2_replay"
+    assert cache.is_dir()
+    checkpoints = sorted((cache / "checkpoints").glob("*.json"))
+    assert len(checkpoints) == 149
+    with open(cache / "phase8_e2_cache_manifest_v1.json") as handle:
+        manifest = json.load(handle)
+    assert manifest["race_count"] == 149
+    assert manifest["checkpoint_count"] == 9644
+    assert manifest["aggregate_corpus_sha256"] == \
+        "78a3c059888637fe83cc534d0eb7869b6d18e746724bb1ce0f03ee3b8ba96298"
+    assert manifest["model_identity"]["artifact_sha256"] == \
+        "1116b34fc716035c2425e605b9a5cc15541a2d2335e26113f2e2eaf3fcaa59f4"
 
 
 def test_freeze_manifest_documents_authorized_api_main_drift():
+    # P11-1 UPDATE_STALE_EXPECTATION. The Phase-5 drift record is history
+    # (phase4 455910f5… -> phase5 2840271a…); the file has since evolved
+    # through further authorized stages: Phase-6 simulation router
+    # (phase6 5a0ec439… per docs/PHASE6_FREEZE_MANIFEST.json), Phase-7
+    # routers, P10-3 serving config. The test now asserts chain continuity
+    # across manifests plus authorized markers in the current file, instead
+    # of pinning the superseded Phase-5 SHA as current.
     data = _load(MANIFEST)
     drift = data["api"]["authorized_api_main_drift"]
     phase4_sha = _load(PHASE4_MANIFEST)["phase4_modules"]["api/main.py"]
     assert drift["phase4_frozen_sha256"] == phase4_sha
-    assert drift["phase5_final_sha256"] == _sha("api/main.py")
-    assert drift["phase5_final_sha256"] != drift["phase4_frozen_sha256"]
+    phase6_drift = _load(ROOT / "docs" / "PHASE6_FREEZE_MANIFEST.json")[
+        "api_main_drift"]
+    assert phase6_drift["phase4_frozen_sha256"] == phase4_sha
+    assert phase6_drift["phase5_final_sha256"] == \
+        drift["phase5_final_sha256"]
+    assert phase6_drift["phase6_final_sha256"] == \
+        "5a0ec4396e8fb5f7c4d1e7efd3882d53f1a786ca146e795760cc40e1aa0fed9a"
+    current = _sha("api/main.py")
+    assert current != drift["phase4_frozen_sha256"]
+    assert current != drift["phase5_final_sha256"]
+    assert current != phase6_drift["phase6_final_sha256"]
+    text = (ROOT / "api" / "main.py").read_text()
+    for marker in ("v2_replay_router", "v2_simulation_router",
+                   "v2_strategy_router", "ServingConfig",
+                   "RequestLoggingMiddleware"):
+        assert marker in text, marker
 
 
 # ---------------------------------------------------------------------------

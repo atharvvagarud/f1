@@ -783,3 +783,9 @@ tests/test_v2_phase8_e5.py::test_three_way_probability_consistency
 tests/test_v2_phase8_e5.py::test_top_positive_and_negative_ordering
 tests/test_v2_phase8_e5.py::test_unknown_category_classified
 tests/test_v2_phase8_e5.py::test_unknown_driver_fails_closed
+# tests/test_v2_phase5_freeze.py: generated replay cache (ignored results/v2_replay); P11-1 bundle-era contract
+tests/test_v2_phase5_freeze.py::test_generated_cache_required_in_bundle_era
+# tests/test_v2_phase6_r6.py: simulation corpus (real params + replay seam); P11-1 re-baselined identity
+tests/test_v2_phase6_r6.py::test_pit_disabled_reproduces_r5_result_identity
+# tests/test_v2_phase6_r71.py: simulation corpus (raw artifact + real states); P11-1 post-fix identities
+tests/test_v2_phase6_r71.py::test_accepted_state_matches_pre_fix_result_identity

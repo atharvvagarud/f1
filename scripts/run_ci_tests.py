@@ -52,26 +52,23 @@ CORPUS_MANIFEST = Path(__file__).resolve().parent / "ci_corpus_dependent.txt"
 # Total collected tests/ at the frozen baseline. Pinned fail-closed: any
 # added/removed/renamed test changes collection and forces a manifest
 # review instead of silently entering (or leaving) normal CI.
-# 3184 at Phase-9 freeze + 7 P10-4R CI-contract tests = 3191.
-EXPECTED_COLLECTED = 3191
+# 3184 at Phase-9 freeze + 7 P10-4R CI-contract tests = 3191 at the P10
+# freeze; P11-1 adds 11 Tier-3 contract tests
+# (tests/test_science_validation_contract.py) with no removals
+# (the stale cache test was renamed 1:1) = 3202; P11-3 adds 6
+# benchmark-script unit tests (tests/test_p11_benchmark_script.py, pure
+# computation, source-safe, no corpus) with no removals = 3210.
+EXPECTED_COLLECTED = 3210
 
 # (pytest node id, reason it cannot pass at the frozen baseline)
-KNOWN_STALE_NODE_IDS: tuple[tuple[str, str], ...] = (
-    ("tests/test_v2_phase4_freeze.py::test_frozen_module_hashes_match",
-     "stale pin: Phase-4 module SHAs; Phases 5-9 evolved the files"),
-    ("tests/test_v2_phase5_freeze.py::test_freeze_manifest_file_hashes_match",
-     "stale pin: Phase-5 manifest SHAs; later phases changed files"),
-    ("tests/test_v2_phase5_freeze.py::test_freeze_manifest_generated_cache_not_required",
-     "stale pin: asserts results/v2_replay absent; bundle era needs it"),
-    ("tests/test_v2_phase5_freeze.py::test_freeze_manifest_documents_authorized_api_main_drift",
-     "stale pin: Phase-5 api/main.py SHA; later phases changed it"),
-    ("tests/test_v2_phase5_r7.py::test_head_and_phase4_tag_intact",
-     "stale pin: Phase-4 HEAD; frozen baseline is Phase-9 by contract"),
-    ("tests/test_v2_phase6_r6.py::test_pit_disabled_reproduces_r5_result_identity",
-     "stale pin: R5 Monte Carlo identity; later behavior moved past it"),
-    ("tests/test_v2_phase6_r71.py::test_accepted_state_matches_pre_fix_result_identity",
-     "stale pin: pre-fix identities; post-fix behavior moved past them"),
-)
+# P11-1: the 12 pre-existing stale historical pins were genuinely corrected
+# (drift chains extended, bundle-era cache contract, lineage assertions,
+# Python-3.11 re-baselined MC identities), so this list is empty. Corrected
+# tests that still need the ignored corpus are excluded under the
+# CORPUS_DEPENDENT reason in ci_corpus_dependent.txt, never here. The empty
+# tuple plus the disjointness/non-empty guards below keep the mechanism
+# fail-closed for any future stale debt.
+KNOWN_STALE_NODE_IDS: tuple[tuple[str, str], ...] = ()
 
 # Tests requiring the validated runtime_artifacts bundle. Empty per P10-4
 # evidence (zero failures reference the bundle); kept explicit so a future

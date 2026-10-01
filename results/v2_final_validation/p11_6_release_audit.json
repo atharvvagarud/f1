@@ -1,0 +1,175 @@
+{
+ "schema_version": "p11-6-release-audit-v1",
+ "baseline": {
+  "head": "3c069b529f568dd25ea4a8213a6579afad631c0e",
+  "tag": "v2-productionization-phase10"
+ },
+ "blockers": [],
+ "claims": {
+  "anchor_1041": {
+   "disposition": "SUPPORTED_DURABLE",
+   "meaning": "exact per-race anchor identities enumerable via states total field",
+   "reconstruction": "GET /v2/races/2019-r01-R/states returns total over frozen D9 states in stable canonical order; equals replay total_frames",
+   "usage": "technical case study once, explicitly per-race; README does not use it"
+  },
+  "readme_numeric": "all extracted numeric claims SUPPORTED against fact sheet or named frozen evidence",
+  "case_study_numeric": "all metrics carry provenance; speedup/backfill timings and family comparisons verified"
+ },
+ "commands": {
+  "result": "all nine user-facing commands match Makefile targets or P11-2-verified live behavior",
+  "stale": 0
+ },
+ "dataset_consistency": {
+  "result": "Tier-B/A/matrix populations never conflated; all counts match owning manifests"
+ },
+ "evidence_chain": {
+  "p11_2_sha256": "5091cb777dd9a5362e1db1cc5666b129c3f538ac4747d6aede19632222e0971c",
+  "p11_3_sha256": "c9fe7f89c40001b35ee2f8d3dd11da20b7945bb1168a7667fc1e702d44e45d58",
+  "p11_4_sha256": "b2d9068032dd503f83dd9b6e7a2710594d9d99efe17e0baf12ad23d3038e42f5",
+  "p11_5_sha256": "2eee92422142bb8884533e36728106fee486bd8fe2f55c2202a7628babd12f3f",
+  "status": "all four byte-exact"
+ },
+ "graph": {
+  "communities": 372,
+  "edges": 29275,
+  "nodes": 12120
+ },
+ "limitations": {
+  "result": "all 19 required items represented across README and case study"
+ },
+ "links": {
+  "broken": 0,
+  "checked": 29
+ },
+ "mermaid": {
+  "assets": 11,
+  "blocks": 13,
+  "result": "STATIC_VALIDATION_ONLY; no renderer available and none installed; em-dashes in two node labels are standard UTF-8"
+ },
+ "model_consistency": {
+  "result": "holdout metrics and stage values match frozen report with honest rounding; no composite score; no external ranking"
+ },
+ "performance_consistency": {
+  "result": "all five portfolio numbers match P11-3 container p50/p95 with correct orientation, units, environment, and rounding"
+ },
+ "privacy": {
+  "actual_secrets": 0,
+  "pii_leaks": 0,
+  "suspicious_patterns": 0
+ },
+ "release_inventory": {
+  "EXCLUDE_PREEXISTING": [
+   ".claude/ deletions (11 paths)",
+   ".cursor/ deletions, .gemini/settings.json, .ignore, .mcp.json",
+   "AGENTS.md, GEMINI.md, opencode.json modifications",
+   ".impeccable/, .opencode/, root package.json, package-lock.json"
+  ],
+  "P11_0_RELEASE_REQUIRED": [
+   "docs/PHASE11_P11_0_FINAL_EVALUATION_PORTFOLIO_READINESS_AUDIT.md"
+  ],
+  "P11_1_RELEASE_REQUIRED": [
+   "Makefile",
+   "scripts/run_ci_tests.py (shared with P11-3 pin)",
+   "scripts/ci_corpus_dependent.txt",
+   "scripts/check_science_environment.py",
+   "tests/test_science_validation_contract.py",
+   "tests/test_v2_phase4_freeze.py",
+   "tests/test_v2_phase5_freeze.py",
+   "tests/test_v2_phase5_r7.py",
+   "tests/test_v2_phase6_r6.py",
+   "tests/test_v2_phase6_r71.py",
+   "tests/test_v2_phase8_e1.py",
+   "docs/PHASE11_P11_1_SCIENTIFIC_TEST_DEBT_RELEASE_VALIDATION.md"
+  ],
+  "P11_2_RELEASE_REQUIRED": [
+   "docs/PHASE11_P11_2_FINAL_SCIENTIFIC_ENGINEERING_VALIDATION.md",
+   "results/v2_final_validation/p11_2_validation_summary.json"
+  ],
+  "P11_3_RELEASE_REQUIRED": [
+   "scripts/run_p11_performance_benchmark.py",
+   "tests/test_p11_benchmark_script.py",
+   "docs/PHASE11_P11_3_FINAL_PERFORMANCE_BENCHMARK.md",
+   "results/v2_final_validation/p11_3_performance_benchmark.json"
+  ],
+  "P11_4_RELEASE_REQUIRED": [
+   "docs/case-study/README.md",
+   "docs/case-study/ASSET_MANIFEST.md",
+   "docs/case-study/STORYBOARD.md",
+   "docs/case-study/PORTFOLIO_FACT_SHEET.md",
+   "docs/case-study/diagrams/ (11 files)",
+   "docs/case-study/screenshots/README.md",
+   "docs/PHASE11_P11_4_CASE_STUDY_EVIDENCE_VISUAL_ASSETS.md",
+   "results/v2_final_validation/p11_4_case_study_manifest.json"
+  ],
+  "P11_5_RELEASE_REQUIRED": [
+   "README.md",
+   "PRODUCT.md (banner only)",
+   "docs/case-study/TECHNICAL_CASE_STUDY.md",
+   "docs/PHASE11_P11_5_README_TECHNICAL_CASE_STUDY.md",
+   "results/v2_final_validation/p11_5_documentation_manifest.json"
+  ],
+  "P11_6_RELEASE_REQUIRED": [
+   "docs/PHASE11_P11_6_FINAL_RELEASE_AUDIT.md",
+   "results/v2_final_validation/p11_6_release_audit.json"
+  ]
+ },
+ "repository": {
+  "nothing_staged": true,
+  "unknown_paths": 0
+ },
+ "scientific_firewall": {
+  "ml_v2_api_data_diff": "empty",
+  "frontend_docker_compose_ci_diff": "empty",
+  "permitted_tooling": [
+   "P11-1 test-contract corrections (6 files)",
+   "P11-1 Tier-3 contract tooling and tests",
+   "P11-3 benchmark script, unit tests, selector pin 3202 to 3210"
+  ],
+  "result": "no runtime or science implementation change"
+ },
+ "scientific_identities": {
+  "explainability": "MATCH bae84b61",
+  "phase2_content": "MATCH d2ee966c",
+  "phase2_parquet": "MATCH b0f17b66",
+  "replay_aggregate": "MATCH 78a3c059, 149 races, 9644 checkpoints",
+  "serving_model": "MATCH 1116b34f",
+  "simulation": "MATCH r3-v1 through 2024 phase6-r3-empirical"
+ },
+ "screenshots": {
+  "broken_image_refs": 0,
+  "fake": 0,
+  "required_pending": 6,
+  "status": "CAPTURE_REQUIRED, non-blocking"
+ },
+ "semantic_audit": {
+  "absence_assertions_justified": [
+   "best/recommended/optimal (3 occurrences, all negations)",
+   "zero leakage guaranteed (2 occurrences, both negated evidence wordings)"
+  ],
+  "invariants_hold": [
+   "2025 one-shot holdout unserved",
+   "independent binary unnormalized",
+   "MC mutually exclusive",
+   "prediction and MC distinct objects",
+   "strategy non-prescriptive",
+   "explainability associational",
+   "permutation in-sample",
+   "performance local-only",
+   "frontend timing not browser timing",
+   "endpoint duration not inference latency"
+  ],
+  "unsafe_tokens_remaining": 0
+ },
+ "smoke": {
+  "focused_tests": "19 passed",
+  "preflight_source": "OK under Python 3.11; system 3.14 correctly rejected by the gate"
+ },
+ "test_evidence": {
+  "result": "Tier-1 clean 1971/501/4 and Tier-3 3193/5/4 stated with correct stage attribution; selector 3210/721/0/2489 verified"
+ },
+ "trackability": {
+  "force_add_required": 0,
+  "ignored_release_files": 0,
+  "note": "results/v2_final_validation and docs/case-study paths trackable; nothing ignored"
+ }
+}

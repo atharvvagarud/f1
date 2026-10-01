@@ -47,11 +47,39 @@ def test_contract_constants_frozen():
 
 
 def test_frozen_module_hashes_match():
+    # P11-1 REPLACE_WITH_CURRENT_CONTRACT (was: exact hash match of every
+    # Phase-4-manifest file). OLD CONTRACT: all recorded files byte-identical
+    # to the Phase-4 seal. CURRENT CONTRACT: every recorded file EXCEPT
+    # api/main.py is still byte-identical (later phases never touched them);
+    # api/main.py evolved additively through authorized stages (Phase-5
+    # replay, Phase-6 simulation, Phase-7 strategy/explainability routers,
+    # P10-3 serving config), with each stage's drift pinned in its own
+    # freeze manifest. The replacement keeps exact pins where files are
+    # frozen and asserts authorized evolution where the manifest is a
+    # superseded time capsule — strictly stronger than skipping the file.
     data = _manifest()
     for section in ("phase4_modules", "phase4_tests",
                     "benchmark", "api_contract"):
         for path, recorded in data[section].items():
+            if path in ("api/main.py",
+                        "tests/test_v2_phase4_freeze.py"):
+                continue
             assert _sha(path) == recorded, path
+    # Self-pin: this test file is itself recorded in phase4_tests, so an
+    # exact self-match cannot survive any authorized correction of this
+    # very test (including P11-1). Structural presence replaces the
+    # impossible byte pin; tamper-evidence for the file is git history.
+    assert "def test_frozen_module_hashes_match" in (
+        ROOT / "tests" / "test_v2_phase4_freeze.py").read_text()
+    assert data["phase4_modules"]["api/main.py"] == \
+        "455910f5ab8d4e82cb2a881cba6be97cb69fa785569df82dcba61bf77671e959"
+    assert _sha("api/main.py") != \
+        data["phase4_modules"]["api/main.py"]
+    text = (ROOT / "api" / "main.py").read_text()
+    for marker in ("v2_replay_router", "v2_simulation_router",
+                   "v2_strategy_router", "ServingConfig",
+                   "RequestLoggingMiddleware"):
+        assert marker in text, marker
 
 
 def test_serving_artifact_identity_matches():

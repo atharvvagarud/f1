@@ -1,5 +1,13 @@
 # Product
 
+> HISTORICAL NOTE (P11-5): this is a pre-Phase-7 product sketch, preserved
+> as history. It predates the shipped v2: strategy comparison, the Models
+> and About surfaces, and six-surface scope are all implemented and frozen
+> in the current system. For the current product, read the root README and
+> `docs/case-study/TECHNICAL_CASE_STUDY.md`. Statements below about
+> "planned / not implemented" work are stale by design of this file's age,
+> not by regression.
+
 <!-- impeccable:product-schema 1 -->
 
 ## Platform
