@@ -20,10 +20,10 @@ import json
 import os
 from pathlib import Path
 
-from v2 import explainability as E3
-from v2.config import V2Paths
-from v2.model_lab import serving as SERVING
-from v2.simulation import parameter_storage_dir
+from raceintel.explainability import explainability as E3
+from raceintel.config import V2Paths
+from raceintel.model_lab import serving as SERVING
+from raceintel.simulation import parameter_storage_dir
 
 #: Frozen serving-model identity (same bytes the source preflight pins;
 #: kept as a module constant so the serving layer needs no scripts import).

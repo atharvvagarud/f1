@@ -76,11 +76,11 @@ def test_phase6_baseline_through_phase7_seam(baseline, name):
 def test_no_intervention_reports_current_frozen_runtime_versions(baseline):
     # The intervention seam must not change the frozen scientific contract
     # versions reported in the result payload.
-    from v2.simulation.monte_carlo import (
+    from raceintel.simulation.monte_carlo import (
         MONTE_CARLO_VERSION,
         PIT_DYNAMICS_VERSION,
     )
-    from v2.simulation.results import PROBABILITY_SEMANTICS
+    from raceintel.simulation.results import PROBABILITY_SEMANTICS
 
     first = baseline["cases"][0]["batch"]["result"]
     assert first["simulation_contract_version"] == "v1"

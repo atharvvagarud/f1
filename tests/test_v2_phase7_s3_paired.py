@@ -17,18 +17,18 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from v2.simulation import monte_carlo as mc
-from v2.simulation.config import Assumptions, SimulationConfig
-from v2.simulation.engine import ExecutionPolicy
-from v2.simulation.monte_carlo import MonteCarloEngine
-from v2.simulation.state import SIMULATION_CONTRACT_VERSION
-from v2.strategy import (
+from raceintel.simulation import monte_carlo as mc
+from raceintel.simulation.config import Assumptions, SimulationConfig
+from raceintel.simulation.engine import ExecutionPolicy
+from raceintel.simulation.monte_carlo import MonteCarloEngine
+from raceintel.simulation.state import SIMULATION_CONTRACT_VERSION
+from raceintel.strategy import (
     StrategyAction,
     StrategyIntervention,
     paired_differences,
     run_pair,
 )
-from v2.strategy.paired import (
+from raceintel.strategy.paired import (
     PairingDiagnostics,
     PerIndexOutcome,
     _pairing_diagnostics,
@@ -43,7 +43,7 @@ from test_v2_phase6_r6 import (  # noqa: E402
     pit_field,
     zero_residual,
 )
-from v2.simulation.params import ParameterFamily  # noqa: E402
+from raceintel.simulation.params import ParameterFamily  # noqa: E402
 
 D = StrategyAction
 ROOT = Path(__file__).resolve().parents[1]
@@ -554,15 +554,15 @@ def test_run_pair_does_not_mutate_state_parameters_or_intervention():
 
 
 def test_paired_module_reads_no_future_or_oracle_material():
-    tree = ast.parse((ROOT / "v2" / "strategy" / "paired.py").read_text())
+    tree = ast.parse((ROOT / "raceintel" / "strategy" / "paired.py").read_text())
     imported = []
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
             imported.extend(alias.name for alias in node.names)
         elif isinstance(node, ast.ImportFrom) and node.module:
             imported.append(node.module)
-    banned = ("v2.simulation.validation", "v2.replay", "v2.replay_reconstruction",
-              "v2.prediction", "v2.model_lab", "pandas", "sklearn")
+    banned = ("raceintel.simulation.validation", "raceintel.replay", "raceintel.replay.replay_reconstruction",
+              "raceintel.prediction", "raceintel.model_lab", "pandas", "sklearn")
     for module in imported:
         assert not module.startswith(banned), f"paired.py imports {module}"
     # run_pair accepts only scientific inputs, never an oracle/result argument.

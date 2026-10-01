@@ -16,10 +16,10 @@ import time
 import pandas as pd
 import pytest
 
-from v2 import replay as RP
-from v2.race_state import RaceState
-from v2.race_state_reconstruction import RaceStateReconstructor
-from v2.replay_reconstruction import (
+from raceintel.replay import replay as RP
+from raceintel.race_state.race_state import RaceState
+from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+from raceintel.replay.replay_reconstruction import (
     ReplayReconstructionError,
     ReplayReconstructor,
 )
@@ -360,8 +360,8 @@ def test_repeated_and_shuffled_resolution_identical(
 # ---------------------------------------------------------------------------
 
 def test_no_model_feature_api_imports():
-    source = open("v2/replay_reconstruction.py").read()
-    for token in ("race_state_features", "v2.prediction", "v2.model_lab",
+    source = open("raceintel/replay/replay_reconstruction.py").read()
+    for token in ("race_state_features", "raceintel.prediction", "raceintel.model_lab",
                   "FrozenWinnerPredictor", "fastapi", "from api",
                   "import api", "frontend", "predict_proba",
                   "features_for_batch"):
@@ -369,9 +369,9 @@ def test_no_model_feature_api_imports():
     # Hermetic: importing the R2 module must not pull model/feature/API
     # machinery (subprocess so earlier test imports cannot pollute).
     import subprocess
-    probe = ("import sys, v2.replay_reconstruction; "
+    probe = ("import sys, raceintel.replay.replay_reconstruction; "
              "banned = [m for m in sys.modules if m.startswith("
-             "('v2.race_state_features', 'v2.prediction', 'v2.model_lab',"
+             "('raceintel.race_state.race_state_features', 'raceintel.prediction', 'raceintel.model_lab',"
              " 'api', 'fastapi'))]; "
              "print(','.join(sorted(banned)))")
     out = subprocess.run([sys.executable, "-c", probe], capture_output=True,

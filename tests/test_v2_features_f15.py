@@ -15,15 +15,15 @@ import numpy as np
 import pandas as pd
 import pytest
 
-import v2.features.build_matrix as B
-from v2.config import V2Paths
-from v2.features import (
+import raceintel.features.build_matrix as B
+from raceintel.config import V2Paths
+from raceintel.features import (
     FEATURE_SET_VERSION,
     build_f11_registry,
     features_for_state,
     FeatureRequest,
 )
-from v2.labels import (
+from raceintel.labels import (
     LABEL_SET_VERSION,
     build_label_registry,
     ordinal_training_eligible,

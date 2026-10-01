@@ -4,13 +4,13 @@ import os
 
 import pytest
 
-from v2 import contracts as C
-from v2.config import V2Paths, ConfigError, configure_fastf1_cache
-from v2.ingestion import run_unit
-from v2.manifests import Manifest, UnitStatus
-from v2.retry import RetryPolicy
-from v2.runs import start_run
-from v2.synthetic import synthetic_adapter
+from raceintel import contracts as C
+from raceintel.config import V2Paths, ConfigError, configure_fastf1_cache
+from raceintel.data.ingestion import run_unit
+from raceintel.manifests import Manifest, UnitStatus
+from raceintel.retry import RetryPolicy
+from raceintel.runs import start_run
+from raceintel.data.synthetic import synthetic_adapter
 
 
 def test_explicit_root_isolates_all_writes(tmp_path, monkeypatch):

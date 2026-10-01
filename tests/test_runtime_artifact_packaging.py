@@ -45,7 +45,7 @@ def fixture_root(tmp_path, monkeypatch):
     """Minimal valid source tree with synthetic identities patched in."""
     mod = load_module()
     root = tmp_path / "proj"
-    (root / "v2").mkdir(parents=True)
+    (root / "raceintel").mkdir(parents=True)
     (root / "data").mkdir(parents=True)
 
     model_bytes = b"frozen-model-bytes"

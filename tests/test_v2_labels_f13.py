@@ -14,9 +14,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2.config import V2Paths
-from v2.features import FEATURE_SET_VERSION, build_f11_registry
-from v2.labels import (
+from raceintel.config import V2Paths
+from raceintel.features import FEATURE_SET_VERSION, build_f11_registry
+from raceintel.labels import (
     CANONICAL_LABEL_NAMES,
     LABEL_GRAIN,
     LABEL_SET_VERSION,
@@ -75,14 +75,14 @@ def test_no_dnf_no_expected_finish_labels(label_registry):
 
 
 def test_feature_guard_rejects_canonical_label_names(feature_registry):
-    from v2.features import FeatureDef, FeatureFamily, FeatureStatus
-    from v2.features.contracts import (
+    from raceintel.features import FeatureDef, FeatureFamily, FeatureStatus
+    from raceintel.features.contracts import (
         MinHistory, MinHistoryKind, MissingPolicy, SyncRequirement,
         TemporalRule,
     )
-    from v2 import contracts as C
-    from v2.features.registry import validate_definition
-    from v2.features import InvalidFeatureError
+    from raceintel import contracts as C
+    from raceintel.features.registry import validate_definition
+    from raceintel.features import InvalidFeatureError
     for label_name in CANONICAL_LABEL_NAMES:
         with pytest.raises(InvalidFeatureError):
             validate_definition(FeatureDef(
@@ -98,7 +98,7 @@ def test_feature_guard_rejects_canonical_label_names(feature_registry):
 
 
 def test_no_calculator_imports_labels():
-    import v2.features as pkg
+    import raceintel.features as pkg
     from pathlib import Path
     bad = []
     for path in sorted(Path(pkg.__file__).parent.glob("*.py")):
@@ -110,7 +110,7 @@ def test_no_calculator_imports_labels():
             # calculator. Scoped out here, same as F14's calculator list.
             continue
         text = path.read_text()
-        if "v2.labels" in text or "v2/labels" in text \
+        if "raceintel.labels" in text or "raceintel/labels" in text \
                 or "race_driver_labels" in text:
             bad.append(path.name)
     assert bad == []
@@ -337,7 +337,7 @@ def test_f15_join_contract_fixture():
 def test_features_ignore_label_mutation(feature_registry):
     if not (_HAS_LABELS and _HAS_D9):
         pytest.skip("canonical data not present")
-    from v2.features import (
+    from raceintel.features import (
         FeatureRequest, PriorHistory, features_for_state, results_equal,
     )
     d9 = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(

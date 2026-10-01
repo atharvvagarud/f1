@@ -7,7 +7,7 @@ the frozen Phase-6 Monte Carlo runtime:
     -> runtime eligibility -> MonteCarloEngine (R5/R6) -> aggregate response
 
 Design rules (R8):
-- The scientific runtime (``v2/simulation/*``) is untouched. This module only
+- The scientific runtime (``raceintel/simulation/*``) is untouched. This module only
   composes already-frozen contracts.
 - The exact historical anchor (``race_id``, ``anchor_driver_id``,
   ``anchor_lap_number``, ``anchor_state_time_s``) is authoritative. There is
@@ -36,8 +36,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from v2 import race_state as RS
-from v2.simulation import (
+from raceintel.race_state import race_state as RS
+from raceintel.simulation import (
     Assumptions,
     ExecutionPolicy,
     MonteCarloEngine,
@@ -46,16 +46,16 @@ from v2.simulation import (
     load_simulation_parameters,
     parameter_storage_dir,
 )
-from v2.simulation.adapter import SimulationUnavailableError, from_race_state
-from v2.simulation.engine import ENGINE_VERSION
-from v2.simulation.monte_carlo import (
+from raceintel.simulation.adapter import SimulationUnavailableError, from_race_state
+from raceintel.simulation.engine import ENGINE_VERSION
+from raceintel.simulation.monte_carlo import (
     DEFAULT_CHUNK_SIZE,
     MONTE_CARLO_VERSION,
     PIT_DYNAMICS_VERSION,
 )
-from v2.simulation.results import PROBABILITY_SEMANTICS, PROBABILITY_SEMANTICS_NOTE
-from v2.simulation.state import SIMULATION_CONTRACT_VERSION
-from v2.race_state_reconstruction import RaceNotFoundError
+from raceintel.simulation.results import PROBABILITY_SEMANTICS, PROBABILITY_SEMANTICS_NOTE
+from raceintel.simulation.state import SIMULATION_CONTRACT_VERSION
+from raceintel.race_state.race_state_reconstruction import RaceNotFoundError
 
 _REPO_ROOT = Path(__file__).resolve().parents[1]
 

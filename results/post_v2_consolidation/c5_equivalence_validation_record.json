@@ -1,0 +1,206 @@
+{
+  "artifact_identities": {
+    "explainability": "bae84b61 exact (sidecar sha file)",
+    "phase2_content": "d2ee966c exact (phase2 freeze manifest matrix.content_hash)",
+    "phase2_parquet": "b0f17b66 exact (phase2 freeze manifest matrix.parquet_sha256)",
+    "replay_aggregate": "78a3c059 exact (phase8 freeze manifest artifact identity)",
+    "serving_model": "1116b34f recomputed exact (sha256 of serving joblib)",
+    "simulation_params": "r3-v1__through-2024 present with generator provenance"
+  },
+  "backend_docker": {
+    "image": "f1-intelligence-backend:p10-1c",
+    "python": "3.11.16",
+    "result": "build green (canonical config, layer cache from same Dockerfiles)",
+    "tree_check": "raceintel plus v2 shim plus ml plus api import inside image"
+  },
+  "backend_smoke": {
+    "endpoint_2025_firewall": "404 on state, prediction, replay for 2025-r01-R",
+    "endpoint_explain_local": "200 contract v1 with logit and probability",
+    "endpoint_health": "200",
+    "endpoint_legacy_predict": "200 frozen ensemble shape",
+    "endpoint_mc": "200 with contracted 422s on unobservable/wet/non-contemporaneous anchors",
+    "endpoint_prediction": "200 INDEPENDENT_BINARY with artifact hash in model block",
+    "endpoint_races": "200",
+    "endpoint_ready": "200 with 6/6 checks ok",
+    "endpoint_replay": "200 timeline, frames, probability timeline; frame 798 field sum 1.987044",
+    "endpoint_state": "200",
+    "endpoint_strategy": "200 with ordering and explicit not-a-recommendation disclaimer",
+    "endpoint_timeline_change": "200 contract shape"
+  },
+  "c1_safety": {
+    "archive_sha256_prefix": "ea466002",
+    "archived_paths": 106,
+    "restored_in_worktree": 0,
+    "zip_in_repo": false
+  },
+  "c2_safety": {
+    "active_v2_star_imports": "none (two d11 probe strings repaired to raceintel.pipeline paths, verified live)",
+    "dependency_direction": "api imports raceintel (15 files); raceintel imports no fastapi/api/ml",
+    "duplicate_tree": false,
+    "raceintel_canonical": true,
+    "v2_shim_only": true
+  },
+  "c3_safety": {
+    "dotignore_cover": ".opencode, .impeccable, .env all ignored",
+    "graft_files_absent": true,
+    "motion_absent": true,
+    "policy_files_retained": "AGENTS.md, GEMINI.md, opencode.json unmodified by C5",
+    "python_pins_unchanged": true
+  },
+  "c4_safety": {
+    "current_links_broken": 0,
+    "files_checked": 11
+  },
+  "compose": {
+    "backend": "healthy",
+    "frontend": "started",
+    "services": "backend plus frontend only (no database, worker, queue, or new service)"
+  },
+  "deferred_items": [
+    "C6 clean-baseline freeze commit (clears the expected lock-diff guard signature)",
+    "out-of-band rotation of the ignored .env credential (user action)",
+    "Tier-3 +8-pass difference note: collection exact at 3210, zero failures/errors; frozen reference arithmetic (3193+5+4=3202) leaves 8 additional green nodes, no rebaseline performed"
+  ],
+  "diff_firewall": {
+    "classes": "ARCHIVED_HISTORY (106 C1 removals), PACKAGE_MOVE (118 v2/ deletions plus raceintel/ tree), IMPORT_PATH_REPAIR (117 modified py files, all lines import/path/docstring/mechanical), SERIALIZATION_COMPATIBILITY (3-file v2/ shim), TOOLING_HYGIENE (11 graft deletions accepted, ignore entries, root stub removed), DEPENDENCY_HYGIENE (motion removal only), DOCUMENTATION (README, PRODUCT note, 3 navigation docs), CONSOLIDATION_EVIDENCE (7 records/reports), PREEXISTING_POLICY (AGENTS/GEMINI/opencode worktree state)",
+    "forbidden_surface_changes": "none: feature formulas, registry, labels, temporal sync, RaceState, hyperparameters, preprocessing, probability semantics, replay/simulation/strategy/explainability math, RNG, 2025 firewall, API response semantics all intact (mechanical-diff proof plus green suites)",
+    "unknown": 0
+  },
+  "documentation_commands": {
+    "expensive_executed_in_c5": "preflight-source, make ci, make science, bundle validate, both docker builds, compose up/down",
+    "structural_only": "backend-dev/prod, frontend-dev/start, verify, install targets, single-service docker run targets (targets exist, unchanged since C4 structural validation)",
+    "unresolved": 0
+  },
+  "explainability": {
+    "global": "artifact plus sidecar exact; 84-feature aggregation with in-sample permutation semantics (E-suite green)",
+    "local": "200 live with logit and probability; exact z reconstruction proven by Tier-3 E4 tests",
+    "timeline_change": "200 live contract shape"
+  },
+  "feature_contract": {
+    "features": 84,
+    "label_separation": "asserted by tests and D11 gate (Tier-3 green)",
+    "matrix_identity": "phase2 content/parquet hashes exact; registry/schema asserted by Tier-3 F-suite"
+  },
+  "frontend_docker": {
+    "image": "f1-intelligence-frontend:p10-1d",
+    "motion_missing_dependency": false,
+    "node": "22 (bookworm-slim builder/runner, standalone output)",
+    "result": "build green with NEXT_PUBLIC_API_BASE set; no motion-related warnings"
+  },
+  "frontend_smoke": {
+    "about": 200,
+    "models": 200,
+    "replay": 200,
+    "root": 200,
+    "simulator": 200,
+    "strategy": 200
+  },
+  "frontend_validation": {
+    "build": "green (in make ci chain)",
+    "lint": "pass (in make ci chain)",
+    "tests": "180 pass, 0 fail (collected=17 selected=16 deselected=1)",
+    "tsc": "clean (in make ci chain)"
+  },
+  "graphify": {
+    "after": "11521 nodes, 27911 edges, 349 communities",
+    "direction": "api to raceintel one-way; no raceintel to fastapi/api/ml edges"
+  },
+  "holdout_firewall": {
+    "served_seasons": "2018-2024 (ready block)",
+    "unserved_2025": "404 on prediction, state, replay endpoints (live container proof)"
+  },
+  "performance_sanity": {
+    "comparable": "predict 0.117s warm (ref p50 0.102s); MC 1k 1.2s (ref 1.7s); MC 10k 11.6s (ref 16.5s); strategy 0.87s (ref 1.09s)",
+    "first_hit_note": "cold state/replay/explain hits slower (artifact/cache load); warmed replay-hit 6-13ms, health 4ms, explain 30-64ms, same order as P11 refs",
+    "verdict": "no structural or order-of-magnitude regression; frozen P11 benchmark artifact untouched"
+  },
+  "prediction_contract": {
+    "field_sum_live": "2019-r11-R frame 798 sums to 1.987044 (frozen evidence approximately 1.987), served verbatim",
+    "normalization": "none introduced (response declares INDEPENDENT_BINARY with never-normalize note)",
+    "path": "RaceState to features to frozen winner model, ALL_84 v8 RAW, artifact hash in response",
+    "semantics": "INDEPENDENT_BINARY (ready block, response block, describe path agree)"
+  },
+  "replay": {
+    "aggregate": "78a3c059 record intact",
+    "cache_status": "served from cache with status field (frame 798 CACHE-adjacent path live)",
+    "checkpoints": "149 races, 9644 checkpoints reachable via timeline/frames/probability-timeline",
+    "exact_checkpoints": "422 on invented anchor (no nearest/fall-forward substitution)"
+  },
+  "repairs": [
+    {
+      "cause": "C2 missed two v2.* dotted paths in D11 subprocess probes (worked at v2-final when v2/ existed; ModuleNotFoundError after the raceintel rename, producing false MAJOR/BLOCKER gate findings on manual D11 runs; pytest never executed these functions, hence green suites)",
+      "classification": "CONSOLIDATION_REGRESSION",
+      "id": "C5_REPAIR-1",
+      "scope": "raceintel/pipeline/d11.py probe strings only: v2.d6/d7/d9/d10/d11 to raceintel.pipeline.d6/d7/d9/d10/d11 (2 edits, 0 logic)",
+      "verification": "both probe commands executed live (imports ok; fastf1 not pulled by validators); full Tier-3 green after repair"
+    }
+  ],
+  "repository_safety": {
+    "head": "487f15dee184f32f2adeb94814054eb60c98e505",
+    "staged": "none",
+    "tag": "v2-final points at HEAD",
+    "unknown": 0
+  },
+  "runtime_bundle": {
+    "bytes": 157647360,
+    "files": 1939,
+    "manifest_sha256_prefix": "e4008425",
+    "query": "raceintel/v2-shim/ml/api via Dockerfile COPY (verified); legacy data/results via COPY plus bundle overlay; C1-archived material not required; no secrets",
+    "validation": "VALID via prepare_runtime_artifacts.py --validate"
+  },
+  "runtime_versions": {
+    "backend_image_python": "3.11.16",
+    "frontend_image_node": "node:22-bookworm-slim",
+    "host_node": "v22.23.1",
+    "host_python": "3.11.15 (repo .venv; system python3 is 3.14 and rejected by checks)"
+  },
+  "schema_version": 1,
+  "secret_hygiene": {
+    "credential_rotation": "ROTATION_REQUIRED_OUT_OF_BAND (user action)",
+    "docker_env_excluded": ".dockerignore excludes .env and .env.* (allows only .env.example); no secret COPY in Dockerfiles",
+    "env_ignored": true,
+    "live_ignored_credential_present": true,
+    "runtime_bundle_secrets": "none (content sweep clean)"
+  },
+  "serialization": {
+    "embedded_path": "v2.model_lab.preprocessing (1 occurrence in joblib, raceintel 0)",
+    "fitted_preprocessor_identity": "v2 shim re-export is raceintel implementation (is-check true)",
+    "load_path": "joblib.load through raceintel.model_lab.serving (describe hash exact, estimator C=0.01 lbfgs RAW ALL_84)",
+    "prediction": "served live via API (snapshot 200) and Tier-1 baseline tests",
+    "shim_surface": "v2/__init__.py plus v2/model_lab/__init__.py plus v2/model_lab/preprocessing.py only"
+  },
+  "simulation": {
+    "contracted_rejections_live": "unobserved_roster_member, wet_track_conditions (2019-r11-R wet), non_contemporaneous_roster_member all 422 with reasons (deferred dynamics stay deferred)",
+    "determinism": "same-seed repeats byte-identical except runtime timing fields",
+    "frequency_semantics": "MONTE_CARLO_FREQUENCY; win frequencies sum to exactly 1.0",
+    "parameter_set": "phase6-r3-empirical echoed live",
+    "provenance": "contracts/versions echoed (simulation/contract/engine/monte_carlo/pit_dynamics/mechanics)"
+  },
+  "source_commit": "487f15dee184f32f2adeb94814054eb60c98e505",
+  "source_reference": "v2-final",
+  "static_evidence": {
+    "models_about": "served with INDEPENDENT_BINARY semantics; validators fail-closed in evidence.ts",
+    "recomputation": "none (static libs contain no API fetch)"
+  },
+  "strategy": {
+    "candidates": "4 evaluated (STAY_OUT, PIT_NOW variants, PIT_NEXT_LAP) with distributions",
+    "classification": "point-estimate ordering with distinguishability sets (Tier-3 S-suite asserts IMPROVEMENT/DEGRADATION/INCONCLUSIVE taxonomy)",
+    "delta_orientation": "asserted by Tier-3 paired-comparison tests (green)",
+    "prescription": "none (sole recommend-adjacent string is an explicit not-a-recommendation disclaimer)"
+  },
+  "tier1": {
+    "ci_frontend": "behavior green (tests, tsc, lint, build); terminal lock-diff guard exits 1 solely on the intentional uncommitted C3-B motion-removal diff (EXPECTED_UNCOMMITTED_BASELINE_DIFFERENCE, removal-only proof in C3-B record)",
+    "ci_python": "collected=3210 selected=2489 deselected=721; 2480 passed, 4 xfailed, 0 failed",
+    "collection": 3210,
+    "preflight_source": "pass"
+  },
+  "tier3": {
+    "collection": 3210,
+    "count_accounting": "frozen reference 3193+5+4=3202 leaves 8 additional green nodes; collection exact, zero failed/errors, no rebaseline",
+    "errors": 0,
+    "failed": 0,
+    "result": "3201 passed, 5 skipped, 4 xfailed, 0 failed in 59m22s",
+    "skipped": 5,
+    "xfailed": 4
+  }
+}

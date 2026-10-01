@@ -13,14 +13,14 @@ from pathlib import Path
 
 import pytest
 
-from v2 import race_state as RS
-from v2.prediction import (
+from raceintel.race_state import race_state as RS
+from raceintel.prediction import (
     NO_OBSERVATION_AT_SNAPSHOT,
     DriverPrediction,
     ModelIdentity,
     PredictionSnapshot,
 )
-from v2.race_state_reconstruction import AnchorNotFoundError, RaceNotFoundError
+from raceintel.race_state.race_state_reconstruction import AnchorNotFoundError, RaceNotFoundError
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -385,7 +385,7 @@ def test_prediction_unavailable_null_and_reason(v2_client):
 
 
 def test_prediction_semantics_explicit(v2_client):
-    from v2.prediction import PROBABILITY_SEMANTICS_NOTE
+    from raceintel.prediction import PROBABILITY_SEMANTICS_NOTE
     body = v2_client.post("/v2/predictions/winner-snapshot", json={
         "race_id": RACE_A, **EXACT}).json()
     assert body["probability_semantics"] == "INDEPENDENT_BINARY"
@@ -429,7 +429,7 @@ def test_model_identity_serialized(v2_client):
 
 
 def test_model_unavailable_503():
-    from v2.prediction import ProductionModelUnavailableError
+    from raceintel.prediction import ProductionModelUnavailableError
 
     class _Down:
         def predict_snapshot(self, *args):
@@ -444,7 +444,7 @@ def test_model_unavailable_503():
 
 
 def test_no_legacy_fallback_on_unavailable():
-    from v2.prediction import ProductionModelUnavailableError
+    from raceintel.prediction import ProductionModelUnavailableError
 
     class _Down:
         def predict_snapshot(self, *args):
@@ -520,15 +520,15 @@ def test_v2_import_firewall():
                 continue
             assert banned not in text, (name, banned)
     text = _v2_sources()["v2_routes.py"] + _v2_sources()["v2_service.py"]
-    assert "v2.model_lab.serving" in text or \
-        "from v2.model_lab import serving" in text
+    assert "raceintel.model_lab.serving" in text or \
+        "from raceintel.model_lab import serving" in text
 
 
 def test_legacy_import_firewall():
     for name in ("routes.py", "schemas.py", "services/prediction_service.py",
                  "main.py"):
         text = (ROOT / "api" / name).read_text()
-        assert "v2.prediction" not in text, name
+        assert "raceintel.prediction" not in text, name
         assert "RacePredictionEngine" not in text, name
         assert "RaceStateFeatureBridge" not in text, name
     assert "v2_routes" not in (ROOT / "api" / "routes.py").read_text()

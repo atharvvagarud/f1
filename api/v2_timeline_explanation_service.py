@@ -7,7 +7,7 @@ prediction checkpoint:
     replay service (cached checkpoints + exact RaceState)
       -> previous checkpoint resolved explicitly from the frozen series
       -> two E4 local explanations (A, B) via V2ExplanationService
-      -> v2.timeline_explainability.explain_prediction_change (frozen model)
+      -> raceintel.explainability.timeline_explainability.explain_prediction_change (frozen model)
 
 The E2 prediction cache is required at both endpoints. A missing / stale /
 incomplete cache raises ``PredictionUnavailableError``; a non-checkpoint
@@ -36,7 +36,7 @@ from api.v2_replay_service import (
     V2ReplayService,
     get_v2_replay_service,
 )
-from v2.timeline_explainability import (
+from raceintel.explainability.timeline_explainability import (
     REASON_DRIVER_ABSENT_AT_PREVIOUS,
     REASON_DRIVER_NOT_OBSERVABLE_AT_PREVIOUS,
     REASON_DRIVER_NOT_OBSERVABLE_AT_SELECTED,

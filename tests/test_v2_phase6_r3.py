@@ -22,31 +22,31 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from v2.config import V2Paths
-from v2.simulation.config import (
+from raceintel.config import V2Paths
+from raceintel.simulation.config import (
     Assumptions,
     ParameterIdentity,
     SimulationConfig,
     simulation_request_identity,
 )
-from v2.simulation.errors import (
+from raceintel.simulation.errors import (
     SimulationContractError,
     SimulationValidationError,
 )
-from v2.simulation.estimator import (
+from raceintel.simulation.estimator import (
     D9_COLUMNS,
     eligibility_funnel,
     eligible_laps,
     estimate_simulation_parameters,
 )
-from v2.simulation.params import (
+from raceintel.simulation.params import (
     FAMILY_NAMES,
     SimulationParameterSet,
     SupportEntry,
     load_simulation_parameters,
     parameter_storage_dir,
 )
-from v2.simulation.state import (
+from raceintel.simulation.state import (
     DriverSimState,
     SimulationEnvironment,
     SimulationState,
@@ -592,18 +592,18 @@ def _import_modules(path: Path) -> set:
 
 
 def test_runtime_loader_is_stdlib_only():
-    modules = _import_modules(REPO_ROOT / "v2" / "simulation" / "params.py")
+    modules = _import_modules(REPO_ROOT / "raceintel" / "simulation" / "params.py")
     roots = {m.split(".")[0] for m in modules}
     assert roots <= {"__future__", "collections", "json", "math", "dataclasses",
-                     "pathlib", "typing", "v2"}
+                     "pathlib", "typing", "raceintel"}
 
 
 @pytest.mark.parametrize("module", [
-    "v2/model_lab", "v2/prediction", "v2/replay", "v2/replay_predictions",
-    "v2/replay_probability_timeline", "api", "sklearn", "joblib", "fastapi",
+    "raceintel/model_lab", "raceintel/prediction", "raceintel/replay/replay", "raceintel/replay/replay_predictions",
+    "raceintel/replay/replay_probability_timeline", "api", "sklearn", "joblib", "fastapi",
 ])
 def test_parameter_layer_has_no_forbidden_imports(module):
-    for rel in ("v2/simulation/params.py", "v2/simulation/estimator.py",
+    for rel in ("raceintel/simulation/params.py", "raceintel/simulation/estimator.py",
                 "scripts/build_simulation_parameters.py"):
         modules = _import_modules(REPO_ROOT / rel)
         assert not any(m == module or m.startswith(module + ".")
@@ -613,7 +613,7 @@ def test_parameter_layer_has_no_forbidden_imports(module):
 def test_parameter_layer_source_has_no_label_or_model_coupling():
     forbidden = ("race_driver_labels", "winner_logreg", "is_winner",
                  "final_position", "replay_prediction", "model_lab")
-    for rel in ("v2/simulation/params.py", "v2/simulation/estimator.py"):
+    for rel in ("raceintel/simulation/params.py", "raceintel/simulation/estimator.py"):
         text = (REPO_ROOT / rel).read_text(encoding="utf-8")
         for token in forbidden:
             assert token not in text, (rel, token)

@@ -160,8 +160,9 @@ causal and never probability increments.
 
 Three tiers, kept separate — Tier-1 never implies Tier-3:
 
-- **Tier 1** — source-safe CI (`make ci`): clean-checkout capable, 1971
-  passed / 501 skipped / 4 xfailed, 0 failures.
+- **Tier 1** — source-safe CI (`make ci`): clean-checkout capable, 2480
+  passed / 4 xfailed, 0 failures (2,489 of 3,210 collected; corpus-dependent
+  nodes deselected).
 - **Tier 2** — deployable runtime: validated bundle + Docker/Compose +
   readiness gate + endpoint and workflow smoke.
 - **Tier 3** — full scientific regression (`make science`, canonical corpus
@@ -265,20 +266,31 @@ clarifies.
 
 ## Repository Guide
 
-- `api/` — FastAPI surface (v2 routes, schemas, services, readiness,
-  observability) and legacy V1 routes (frozen).
+- `api/` — FastAPI surface (`/health`, `/ready`, legacy prediction routes,
+  and the versioned `/v2/...` public API routes with schemas, services,
+  readiness, observability). `/v2/` is the API contract version, not the
+  implementation package.
+- `raceintel/` — current race-intelligence implementation: data platform
+  stages (`data/`, `pipeline/`), temporal features (`features/`), labels
+  (`labels/`), race state (`race_state/`), replay (`replay/`), Monte Carlo
+  simulation (`simulation/`), strategy (`strategy/`), explainability
+  (`explainability/`), model lab (`model_lab/`), experiments (`experiments/`).
+- `ml/` — frozen legacy serving compatibility (legacy pipelines behind the
+  legacy prediction routes; covered by regression contracts, do not retrain
+  or migrate).
+- `v2/` — minimal compatibility shim only (re-exports
+  `raceintel.model_lab` so the frozen serving artifact, which embeds the
+  `v2.model_lab.preprocessing.FittedPreprocessor` class path, keeps
+  loading). Not active implementation.
 - `frontend/` — Next.js 16 product (`app/`, `features/`) plus static
   evidence dossiers (`frontend/data/about.v1.json`,
   `frontend/data/models.v1.json`).
-- `ml/` — legacy V1 pipelines (frozen, do not retrain).
-- `v2/` — temporal engine, RaceState, prediction, simulation, strategy,
-  explainability, model lab.
 - `scripts/` — runtime/CI/benchmark tooling (artifact prep, preflights,
   Tier-1 selectors, P11-3 benchmark).
 - `tests/` — 3,210 tests across Tier-1/Tier-3.
-- `docs/` — phase reports and freeze manifests; `docs/case-study/` —
-  portfolio evidence layer; `results/v2_final_validation/` —
-  machine-readable P11 validation records.
+- `docs/` — start at [docs/README.md](docs/README.md): phase reports and
+  freeze manifests; `docs/case-study/` — portfolio evidence layer;
+  `results/v2_final_validation/` — machine-readable P11 validation records.
 
 ## Future Work
 

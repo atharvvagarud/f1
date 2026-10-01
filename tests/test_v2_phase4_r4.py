@@ -19,10 +19,10 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2 import race_state as RS
-from v2.config import V2Paths
-from v2.model_lab import serving as SERVING
-from v2.prediction import (
+from raceintel.race_state import race_state as RS
+from raceintel.config import V2Paths
+from raceintel.model_lab import serving as SERVING
+from raceintel.prediction import (
     NO_OBSERVATION_AT_SNAPSHOT,
     PROBABILITY_SEMANTICS,
     PROBABILITY_SEMANTICS_NOTE,
@@ -37,11 +37,11 @@ from v2.prediction import (
     RacePredictionEngine,
     load_production_prediction_engine,
 )
-from v2.race_state_features import FeatureIdentity
-from v2.race_state_reconstruction import RaceStateReconstructor
+from raceintel.race_state.race_state_features import FeatureIdentity
+from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
 
 ROOT = V2Paths.resolve().root
-SOURCE = ROOT / "v2/prediction.py"
+SOURCE = ROOT / "raceintel/prediction.py"
 _HAS_CANON = (ROOT / "data/v2/processed/driver_lap_state_d9/season=2022"
               ).is_dir()
 
@@ -364,11 +364,11 @@ def test_architecture_import_guard():
     text = SOURCE.read_text()
     lines = [line.strip() for line in text.splitlines()
              if re.match(r"\s*(?:from|import)\s+([\w.]+)", line)]
-    assert any("v2.model_lab" in line and "serving" in line for line in lines), \
-        "must use the narrow v2.model_lab.serving production path"
+    assert any("raceintel.model_lab" in line and "serving" in line for line in lines), \
+        "must use the narrow raceintel.model_lab.serving production path"
     for line in lines:
-        if "v2.model_lab" in line:
-            assert line == "from v2.model_lab import serving as SERVING", \
+        if "raceintel.model_lab" in line:
+            assert line == "from raceintel.model_lab import serving as SERVING", \
                 f"only the narrow serving import is allowed: {line}"
     for banned in ("final_fit", "tuning", "splits", "calibration_selection",
                    "evaluate", "holdout", "experiment", "M7", "M8", "M9",
@@ -387,12 +387,12 @@ def test_no_training_path_at_runtime():
     # P3.1 precedent: the sanctioned serving import itself transitively
     # pulls frozen feature-resolution modules (data/splits/experiments);
     # the fitting/evaluation stack must stay out.
-    probe = ("import sys, v2.prediction as P; "
-             "banned = ('v2.model_lab.runner', 'v2.model_lab.tuning', "
-             "'v2.model_lab.final_fit', 'v2.model_lab.run_final', "
-             "'v2.model_lab.run_calibration', "
-             "'v2.model_lab.calibration_selection', "
-             "'v2.model_lab.model_runner'); "
+    probe = ("import sys, raceintel.prediction as P; "
+             "banned = ('raceintel.model_lab.runner', 'raceintel.model_lab.tuning', "
+             "'raceintel.model_lab.final_fit', 'raceintel.model_lab.run_final', "
+             "'raceintel.model_lab.run_calibration', "
+             "'raceintel.model_lab.calibration_selection', "
+             "'raceintel.model_lab.model_runner'); "
              "hit = [m for m in sys.modules if m in banned]; "
              "extra = [m for m in sys.modules if m.startswith("
              "('ml.', 'api.'))]; "
@@ -418,7 +418,7 @@ def _season_frame(season, entity):
 def history():
     if not _HAS_CANON:
         pytest.skip("canonical data absent")
-    from v2.features.build_matrix import load_history
+    from raceintel.features.build_matrix import load_history
     return load_history(V2Paths.resolve())
 
 
@@ -431,7 +431,7 @@ def predictor():
 
 
 def _dev_engine(season, race_id, driver, lap, history, predictor):
-    from v2.race_state_features import RaceStateFeatureBridge
+    from raceintel.race_state.race_state_features import RaceStateFeatureBridge
     d9 = _season_frame(season, "driver_lap_state_d9")
     results = _season_frame(season, "results")
     races = _season_frame(season, "races")
@@ -510,7 +510,7 @@ def test_direct_serving_parity(history, predictor):
 
 @pytest.mark.skipif(not _HAS_CANON, reason="canonical data absent")
 def test_future_mutation_end_to_end_invariance(history, predictor):
-    from v2.race_state_features import RaceStateFeatureBridge
+    from raceintel.race_state.race_state_features import RaceStateFeatureBridge
     season, race_id, driver, lap = ORDINARY
     engine, snap, sub = _dev_engine(season, race_id, driver, lap, history,
                                     predictor)
@@ -551,7 +551,7 @@ def test_performance_observation(history, predictor):
 def test_production_factory_smoke():
     if not _HAS_CANON:
         pytest.skip("canonical data absent")
-    from v2.features.build_matrix import load_history
+    from raceintel.features.build_matrix import load_history
     sub = _season_frame(2023, "driver_lap_state_d9")
     sub = sub[sub["race_id"] == "2023-r01-R"].reset_index(drop=True)
     try:

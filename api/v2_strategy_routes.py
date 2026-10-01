@@ -36,14 +36,14 @@ from api.v2_strategy_service import (
     V2StrategyService,
     get_v2_strategy_service,
 )
-from v2.race_state import InvalidRaceStateError
-from v2.race_state_reconstruction import (
+from raceintel.race_state.race_state import InvalidRaceStateError
+from raceintel.race_state.race_state_reconstruction import (
     AnchorNotFoundError,
     RaceNotFoundError,
     RaceStateReconstructionError,
 )
-from v2.simulation.adapter import SimulationUnavailableError
-from v2.simulation.engine import SimulationUnsupportedError
+from raceintel.simulation.adapter import SimulationUnavailableError
+from raceintel.simulation.engine import SimulationUnsupportedError
 
 router = APIRouter(prefix="/v2", tags=["v2-strategy"])
 

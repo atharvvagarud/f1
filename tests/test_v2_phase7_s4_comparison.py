@@ -19,11 +19,11 @@ from pathlib import Path
 
 import pytest
 
-from v2.simulation.config import Assumptions, SimulationConfig
-from v2.simulation.engine import REASON_MISSING_TYRE_AGE, ExecutionPolicy
-from v2.simulation.monte_carlo import MonteCarloEngine
-from v2.simulation.results import PROBABILITY_SEMANTICS
-from v2.strategy import (
+from raceintel.simulation.config import Assumptions, SimulationConfig
+from raceintel.simulation.engine import REASON_MISSING_TYRE_AGE, ExecutionPolicy
+from raceintel.simulation.monte_carlo import MonteCarloEngine
+from raceintel.simulation.results import PROBABILITY_SEMANTICS
+from raceintel.strategy import (
     COMPARISON_VERSION,
     CRN_POLICY,
     DELTA_POLICY,
@@ -38,12 +38,12 @@ from v2.strategy import (
     paired_differences,
     run_pair,
 )
-from v2.strategy.candidates import (
+from raceintel.strategy.candidates import (
     CANDIDATE_INVALIDITY_REASONS,
     CANONICAL_CANDIDATE_SPECS,
 )
-from v2.strategy.comparison import CandidateComparison
-from v2.strategy.paired import _pairing_diagnostics
+from raceintel.strategy.comparison import CandidateComparison
+from raceintel.strategy.paired import _pairing_diagnostics
 
 from test_v2_phase6_r6 import (  # noqa: E402
     make_pit_params,
@@ -86,7 +86,7 @@ def one_driver_params(*, stint=2.0, pit_loss=20.0):
 
 
 def intervention(state, *, driver_id="a", action=D.PIT_NOW, compound=None):
-    from v2.strategy import StrategyIntervention
+    from raceintel.strategy import StrategyIntervention
     return StrategyIntervention(
         target_driver_id=driver_id, action=action,
         requested_compound=compound,
@@ -663,11 +663,11 @@ def test_result_exposes_no_ranking_objective_or_production_uncertainty():
 
 
 def test_strategy_modules_read_no_future_oracle_or_phase3_material():
-    banned_prefixes = ("v2.simulation.validation", "v2.replay",
-                       "v2.replay_reconstruction", "v2.prediction",
-                       "v2.model_lab", "pandas", "sklearn")
+    banned_prefixes = ("raceintel.simulation.validation", "raceintel.replay",
+                       "raceintel.replay.replay_reconstruction", "raceintel.prediction",
+                       "raceintel.model_lab", "pandas", "sklearn")
     for name in ("candidates.py", "comparison.py", "paired.py"):
-        tree = ast.parse((ROOT / "v2" / "strategy" / name).read_text())
+        tree = ast.parse((ROOT / "raceintel" / "strategy" / name).read_text())
         imported = []
         for node in ast.walk(tree):
             if isinstance(node, ast.Import):

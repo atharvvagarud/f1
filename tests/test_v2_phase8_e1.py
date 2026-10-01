@@ -32,8 +32,8 @@ from scripts.build_replay_prediction_cache import (  # noqa: E402
     load_race_inputs,
     race_season,
 )
-from v2 import replay as RP  # noqa: E402
-from v2.replay_predictions import (  # noqa: E402
+from raceintel.replay import replay as RP  # noqa: E402
+from raceintel.replay.replay_predictions import (  # noqa: E402
     cache_key,
     canonical_data_identity,
     load_validated_artifact,
@@ -146,9 +146,9 @@ def test_cache_key_invariance_from_fixture_series():
 
 @pytest.fixture(scope="module")
 def _frozen_stack():
-    from v2.config import V2Paths
-    from v2.features.build_matrix import load_history
-    from v2.model_lab import serving as SERVING
+    from raceintel.config import V2Paths
+    from raceintel.features.build_matrix import load_history
+    from raceintel.model_lab import serving as SERVING
     predictor = SERVING.load_frozen_winner_model()
     history = load_history(V2Paths.resolve())
     return predictor, history
@@ -160,10 +160,10 @@ def _checkpoints_early_mid_late(fix, race_id):
 
 
 def test_all84_feature_equivalence_fresh_vs_cached(_frozen_stack):
-    from v2 import replay as RP_MOD
-    from v2.race_state_features import RaceStateFeatureBridge
-    from v2.replay_reconstruction import ReplayReconstructor
-    from v2.race_state_reconstruction import RaceStateReconstructor
+    from raceintel.replay import replay as RP_MOD
+    from raceintel.race_state.race_state_features import RaceStateFeatureBridge
+    from raceintel.replay.replay_reconstruction import ReplayReconstructor
+    from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
     predictor, history = _frozen_stack
     fix = _fixture()
     cache = SeasonStatesCache(BASE)
@@ -189,10 +189,10 @@ def test_all84_feature_equivalence_fresh_vs_cached(_frozen_stack):
 
 
 def test_transformed_logit_probability_equivalence(_frozen_stack):
-    from v2 import replay as RP_MOD
-    from v2.race_state_features import RaceStateFeatureBridge
-    from v2.replay_reconstruction import ReplayReconstructor
-    from v2.race_state_reconstruction import RaceStateReconstructor
+    from raceintel.replay import replay as RP_MOD
+    from raceintel.race_state.race_state_features import RaceStateFeatureBridge
+    from raceintel.replay.replay_reconstruction import ReplayReconstructor
+    from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
     predictor, history = _frozen_stack
     fix = _fixture()
     cache = SeasonStatesCache(BASE)
@@ -434,6 +434,25 @@ def test_frozen_modules_untouched_by_e1():
     manifest = json.loads(
         open(os.path.join(ROOT, "docs",
                           "PHASE4_FREEZE_MANIFEST.json")).read())
+    # C2 structural migration (v2/ -> raceintel/, import-prefix rewrite
+    # only); same mapping as test_v2_phase4_freeze.py.
+    C2_MIGRATED_P4 = {
+        "api/v2_routes.py": "api/v2_routes.py",
+        "api/v2_service.py": "api/v2_service.py",
+        "v2/prediction.py": "raceintel/prediction.py",
+        "v2/race_state.py": "raceintel/race_state/race_state.py",
+        "v2/race_state_features.py":
+            "raceintel/race_state/race_state_features.py",
+        "v2/race_state_reconstruction.py":
+            "raceintel/race_state/race_state_reconstruction.py",
+        "scripts/benchmark_phase4.py": "scripts/benchmark_phase4.py",
+        "tests/test_v2_phase4_r1.py": "tests/test_v2_phase4_r1.py",
+        "tests/test_v2_phase4_r2.py": "tests/test_v2_phase4_r2.py",
+        "tests/test_v2_phase4_r3.py": "tests/test_v2_phase4_r3.py",
+        "tests/test_v2_phase4_r4.py": "tests/test_v2_phase4_r4.py",
+        "tests/test_v2_phase4_r5.py": "tests/test_v2_phase4_r5.py",
+        "tests/test_v2_phase4_r6.py": "tests/test_v2_phase4_r6.py",
+    }
     for section in ("phase4_modules", "phase4_tests", "benchmark",
                     "api_contract"):
         for path, recorded in manifest[section].items():
@@ -441,6 +460,15 @@ def test_frozen_modules_untouched_by_e1():
                 continue
             if path == "tests/test_v2_phase4_freeze.py":
                 continue  # authorized P11-1 stale-pin correction
+            if path in C2_MIGRATED_P4:
+                new = C2_MIGRATED_P4[path]
+                if new != path:
+                    assert not os.path.exists(os.path.join(ROOT, path)), path
+                assert os.path.isfile(os.path.join(ROOT, new)), new
+                digest = _hl.sha256(
+                    open(os.path.join(ROOT, new), "rb").read()).hexdigest()
+                assert digest != recorded, new
+                continue
             digest = _hl.sha256(
                 open(os.path.join(ROOT, path), "rb").read()).hexdigest()
             assert digest == recorded, path
@@ -450,11 +478,33 @@ def test_frozen_modules_untouched_by_e1():
     frozen = json.loads(
         open(os.path.join(ROOT, "docs",
                           "PHASE5_FREEZE_MANIFEST.json")).read())
+    C2_MIGRATED_P5 = {
+        "v2/replay.py": "raceintel/replay/replay.py",
+        "v2/replay_predictions.py":
+            "raceintel/replay/replay_predictions.py",
+        "v2/replay_probability_timeline.py":
+            "raceintel/replay/replay_probability_timeline.py",
+        "v2/replay_reconstruction.py":
+            "raceintel/replay/replay_reconstruction.py",
+        "api/v2_replay_routes.py": "api/v2_replay_routes.py",
+        "api/v2_replay_service.py": "api/v2_replay_service.py",
+        "scripts/benchmark_phase5_replay.py":
+            "scripts/benchmark_phase5_replay.py",
+    }
     for path, recorded in {
             **frozen["domain_modules"],
             **frozen["benchmark_files"]}.items():
         if path == "scripts/build_replay_prediction_cache.py":
             continue  # the single authorized E1 optimization surface
+        if path in C2_MIGRATED_P5:
+            new = C2_MIGRATED_P5[path]
+            if new != path:
+                assert not os.path.exists(os.path.join(ROOT, path)), path
+            assert os.path.isfile(os.path.join(ROOT, new)), new
+            digest = _hl.sha256(
+                open(os.path.join(ROOT, new), "rb").read()).hexdigest()
+            assert digest != recorded, new
+            continue
         digest = _hl.sha256(
             open(os.path.join(ROOT, path), "rb").read()).hexdigest()
         assert digest == recorded, path

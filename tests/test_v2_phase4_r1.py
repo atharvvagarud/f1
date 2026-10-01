@@ -14,7 +14,7 @@ from pathlib import Path
 
 import pytest
 
-from v2 import race_state as rs
+from raceintel.race_state import race_state as rs
 
 
 # ---------------------------------------------------------------------------
@@ -295,7 +295,7 @@ def test_label_firewall_names():
 
 
 def test_firewall_matches_canonical_label_names():
-    from v2.labels.contracts import CANONICAL_LABEL_NAMES
+    from raceintel.labels.contracts import CANONICAL_LABEL_NAMES
     assert rs._CANONICAL_TARGET_NAMES == set(CANONICAL_LABEL_NAMES)
 
 
@@ -351,11 +351,11 @@ def test_field_provenance_complete():
 # ---------------------------------------------------------------------------
 
 def test_no_heavy_imports_in_isolated_interpreter():
-    probe = ("import sys, v2.race_state; "
+    probe = ("import sys, raceintel.race_state.race_state; "
              "banned = [m for m in sys.modules if m.split('.')[0] in "
              "('pandas', 'numpy', 'sklearn', 'scipy', 'fastapi', "
              "'pydantic', 'torch') or m.startswith("
-             "('v2.model_lab', 'ml.', 'api.', 'v2.labels'))]; "
+             "('raceintel.model_lab', 'ml.', 'api.', 'raceintel.labels'))]; "
              "print(','.join(sorted(banned)))")
     out = subprocess.run(
         [sys.executable, "-c", probe], capture_output=True, text=True,

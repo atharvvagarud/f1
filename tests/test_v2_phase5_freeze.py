@@ -74,12 +74,12 @@ def _load(path):
 # ---------------------------------------------------------------------------
 
 def test_contract_versions_frozen():
-    from v2 import replay as RP
-    from v2.replay_predictions import (
+    from raceintel.replay import replay as RP
+    from raceintel.replay.replay_predictions import (
         PHASE4_CONTRACT_VERSION,
         REPLAY_PREDICTION_CONTRACT_VERSION,
     )
-    from v2.replay_probability_timeline import (
+    from raceintel.replay.replay_probability_timeline import (
         PROBABILITY_SEMANTICS,
         PROBABILITY_TIMELINE_CONTRACT_VERSION,
     )
@@ -149,7 +149,7 @@ def test_api_contract_pagination_pins():
 # ---------------------------------------------------------------------------
 
 def test_timeline_representative_rule_is_lap_then_driver():
-    from v2 import replay as RP
+    from raceintel.replay import replay as RP
     df = pd.DataFrame([
         {"race_id": "r", "driver_id": "zeta", "lap_number": 3,
          "state_time_s": 10.0},
@@ -169,8 +169,8 @@ def test_timeline_representative_rule_is_lap_then_driver():
 
 
 def test_shared_t_critical_fixture():
-    from v2 import replay as RP
-    from v2.race_state_reconstruction import RaceStateReconstructor
+    from raceintel.replay import replay as RP
+    from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
 
     states = pd.read_parquet(D9.format(season=2020))
     race_states = states[states["race_id"] == RACE_SHARED_T].copy()
@@ -203,7 +203,7 @@ def test_served_scope_and_2025_exclusion():
     assert VS.MAX_SERVED_SEASON == 2024
     assert 2025 not in VS.SERVED_SEASONS
 
-    from v2 import replay as RP
+    from raceintel.replay import replay as RP
     # Builder is season-agnostic by design; scope is a serving concern.
     df = pd.DataFrame([
         {"race_id": "2025-r01-R", "driver_id": "a", "lap_number": 1,
@@ -216,8 +216,8 @@ def test_served_scope_and_2025_exclusion():
 # ---------------------------------------------------------------------------
 
 def test_checkpoint_policy_identity_synthetic():
-    from v2 import replay as RP
-    from v2.replay_predictions import FLAG_TRANSITION, LEADER_LAP, \
+    from raceintel.replay import replay as RP
+    from raceintel.replay.replay_predictions import FLAG_TRANSITION, LEADER_LAP, \
         select_checkpoints
     df = pd.DataFrame([
         {"race_id": "r", "driver_id": "a", "lap_number": 1,
@@ -245,8 +245,8 @@ def test_checkpoint_policy_identity_synthetic():
 
 def test_corpus_checkpoint_count_model_free():
     """Full 2018-2024 model-free corpus facts (R1/R3/R7 agreement)."""
-    from v2 import replay as RP
-    from v2.replay_predictions import select_checkpoints
+    from raceintel.replay import replay as RP
+    from raceintel.replay.replay_predictions import select_checkpoints
     parts = [pd.read_parquet(D9.format(season=s))
              for s in range(2018, 2025)]
     corpus = pd.concat(parts, ignore_index=True)
@@ -269,8 +269,8 @@ def test_corpus_checkpoint_count_model_free():
 # ---------------------------------------------------------------------------
 
 def test_independent_binary_and_no_normalization_tokens():
-    for path in ("v2/replay.py", "v2/replay_predictions.py",
-                 "v2/replay_probability_timeline.py",
+    for path in ("raceintel/replay/replay.py", "raceintel/replay/replay_predictions.py",
+                 "raceintel/replay/replay_probability_timeline.py",
                  "api/v2_replay_service.py", "api/v2_replay_routes.py",
                  "api/v2_replay_schemas.py"):
         text = (ROOT / path).read_text()
@@ -281,12 +281,12 @@ def test_independent_binary_and_no_normalization_tokens():
             lowered = name.lower()
             assert "normaliz" not in lowered, (path, name)
             assert "softmax" not in lowered, (path, name)
-    from v2.replay_probability_timeline import PROBABILITY_SEMANTICS
+    from raceintel.replay.replay_probability_timeline import PROBABILITY_SEMANTICS
     assert PROBABILITY_SEMANTICS == "INDEPENDENT_BINARY"
 
 
 def test_validate_snapshot_allows_sum_above_one():
-    from v2.replay_predictions import validate_snapshot
+    from raceintel.replay.replay_predictions import validate_snapshot
     roster = ["a", "b"]
     snapshot = {
         "roster_size": 2,
@@ -336,7 +336,7 @@ def test_read_path_has_no_generation_tokens():
             assert token not in called, (path, token)
     # Projection module must never touch the engine/model stack.
     forbidden = ("generate_", "engine", "predict", "sklearn", "joblib")
-    called = _called_and_imported_names("v2/replay_probability_timeline.py")
+    called = _called_and_imported_names("raceintel/replay/replay_probability_timeline.py")
     for token in forbidden:
         assert token not in called, token
 
@@ -344,8 +344,9 @@ def test_read_path_has_no_generation_tokens():
 def test_replay_service_import_is_model_free():
     code = (
         "import sys; import api.v2_replay_service as m; "
-        "forbidden={'v2.prediction','v2.race_state_features',"
-        "'v2.model_lab','api.v2_service','sklearn'}; "
+        "forbidden={'raceintel.prediction',"
+        "'raceintel.race_state.race_state_features',"
+        "'raceintel.model_lab','api.v2_service','sklearn'}; "
         "bad=sorted(forbidden.intersection(sys.modules)); "
         "print('BAD='+','.join(bad) if bad else 'CLEAN')")
     result = subprocess.run(
@@ -402,7 +403,7 @@ def _synthetic_artifact():
 
 
 def test_probability_projection_actual_checkpoints_only():
-    from v2.replay_probability_timeline import build_probability_timeline
+    from raceintel.replay.replay_probability_timeline import build_probability_timeline
     timeline = build_probability_timeline(_synthetic_artifact())
     projected = {c["frame_index"] for c in timeline["checkpoints"]}
     assert projected == {0, 5}
@@ -416,7 +417,7 @@ def test_probability_projection_actual_checkpoints_only():
 
 
 def test_null_probability_is_never_zero():
-    from v2.replay_probability_timeline import build_probability_timeline
+    from raceintel.replay.replay_probability_timeline import build_probability_timeline
     timeline = build_probability_timeline(_synthetic_artifact())
     by_driver = {s["driver_id"]: s for s in timeline["driver_series"]}
     points_a = {p["frame_index"]: p["winner_probability"]
@@ -513,9 +514,32 @@ def test_freeze_manifest_file_hashes_match():
                "frontend/features/replay/lib/probabilityTimeline.ts",
                "frontend/lib/v2.ts"}
     diverged = set()
+    # C2 structural migration (v2/ -> raceintel/, import-prefix rewrite
+    # only): listed files changed bytes and/or paths; they are checked
+    # separately below. New hashes are pinned in the C2 migration record.
+    C2_MIGRATED = {
+        "v2/replay.py": "raceintel/replay/replay.py",
+        "v2/replay_predictions.py":
+            "raceintel/replay/replay_predictions.py",
+        "v2/replay_probability_timeline.py":
+            "raceintel/replay/replay_probability_timeline.py",
+        "v2/replay_reconstruction.py":
+            "raceintel/replay/replay_reconstruction.py",
+        "api/v2_replay_routes.py": "api/v2_replay_routes.py",
+        "api/v2_replay_service.py": "api/v2_replay_service.py",
+        "scripts/benchmark_phase5_replay.py":
+            "scripts/benchmark_phase5_replay.py",
+        "tests/test_v2_phase5_r1.py": "tests/test_v2_phase5_r1.py",
+        "tests/test_v2_phase5_r2.py": "tests/test_v2_phase5_r2.py",
+        "tests/test_v2_phase5_r3.py": "tests/test_v2_phase5_r3.py",
+        "tests/test_v2_phase5_r4.py": "tests/test_v2_phase5_r4.py",
+        "tests/test_v2_phase5_r6.py": "tests/test_v2_phase5_r6.py",
+    }
     for section in HASH_SECTIONS:
         assert data[section], section
         for path, recorded in data[section].items():
+            if path in C2_MIGRATED:
+                continue
             assert (ROOT / path).exists(), path
             if path in evolved:
                 if _sha(path) != recorded:
@@ -523,6 +547,13 @@ def test_freeze_manifest_file_hashes_match():
                 continue
             assert _sha(path) == recorded, path
     assert diverged == evolved, diverged ^ evolved
+    recorded_all = {p: h for section in HASH_SECTIONS
+                    for p, h in data[section].items()}
+    for old, new in C2_MIGRATED.items():
+        if old != new:
+            assert not (ROOT / old).exists(), old
+        assert (ROOT / new).is_file(), new
+        assert _sha(new) != recorded_all[old], new
     # Authorized-evolution evidence per family (stronger than skipping).
     text = (ROOT / "api" / "main.py").read_text()
     for marker in ("v2_replay_router", "v2_simulation_router",
@@ -648,9 +679,27 @@ def test_freeze_manifest_documents_authorized_api_main_drift():
 
 def test_phase4_upstream_module_hashes_except_authorized_drift():
     phase4 = _load(PHASE4_MANIFEST)["phase4_modules"]
+    # C2 structural migration (v2/ -> raceintel/, import-prefix rewrite
+    # only); see test_v2_phase4_freeze.py for the mapping rationale.
+    C2_MIGRATED = {
+        "api/v2_routes.py": "api/v2_routes.py",
+        "api/v2_service.py": "api/v2_service.py",
+        "v2/prediction.py": "raceintel/prediction.py",
+        "v2/race_state.py": "raceintel/race_state/race_state.py",
+        "v2/race_state_features.py":
+            "raceintel/race_state/race_state_features.py",
+        "v2/race_state_reconstruction.py":
+            "raceintel/race_state/race_state_reconstruction.py",
+    }
     for path, recorded in phase4.items():
         if path == "api/main.py":
             assert _sha(path) != recorded  # authorized additive drift
+        elif path in C2_MIGRATED:
+            new = C2_MIGRATED[path]
+            if new != path:
+                assert not (ROOT / path).exists(), path
+            assert (ROOT / new).is_file(), new
+            assert _sha(new) != recorded, new
         else:
             assert _sha(path) == recorded, path
 
@@ -668,7 +717,7 @@ def test_upstream_scientific_identity_recomputed():
     assert _sha("data/v2/processed/model_matrix/matrix_version=v1/"
                 "manifest.json") == phase4["phase2"]["manifest_sha256"]
     # Spec fingerprint from the live serving artifact metadata.
-    from v2.model_lab import serving as S
+    from raceintel.model_lab import serving as S
     record = S.describe_serving_artifact()
     assert record["sha256"] == phase4["phase3"]["serving_artifact_sha256"]
     assert record["specification_fingerprint"] == \

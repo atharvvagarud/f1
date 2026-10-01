@@ -1,6 +1,6 @@
 """D3 CLI tests: framework commands only, tmp roots, offline."""
 
-from v2.cli import main
+from raceintel.cli import main
 
 
 def test_status_without_manifest_fails_clearly(tmp_path):
@@ -42,9 +42,9 @@ def test_run_persists_manifest_after_each_unit(tmp_path, monkeypatch):
     final save, so `status` showed no progress and a kill lost all work)."""
     import json
 
-    import v2.cli as cli_mod
-    from v2.config import V2Paths
-    from v2.synthetic import synthetic_adapter
+    import raceintel.cli as cli_mod
+    from raceintel.config import V2Paths
+    from raceintel.data.synthetic import synthetic_adapter
 
     root = str(tmp_path)
     assert main(["--root", root, "plan", "--season", "2023",
@@ -76,9 +76,9 @@ def test_run_persists_downloading_claim_before_network(tmp_path,
     claim lived only in memory until the unit finished)."""
     import json
 
-    import v2.cli as cli_mod
-    from v2.config import V2Paths
-    from v2.synthetic import synthetic_adapter
+    import raceintel.cli as cli_mod
+    from raceintel.config import V2Paths
+    from raceintel.data.synthetic import synthetic_adapter
 
     root = str(tmp_path)
     assert main(["--root", root, "plan", "--season", "2023",
@@ -106,8 +106,8 @@ def test_run_persists_downloading_claim_before_network(tmp_path,
 
 
 def test_recover_stale_returns_crashed_claims_only(tmp_path):
-    from v2.config import V2Paths
-    from v2.manifests import Manifest, UnitStatus
+    from raceintel.config import V2Paths
+    from raceintel.manifests import Manifest, UnitStatus
 
     root = str(tmp_path)
     assert main(["--root", root, "plan", "--season", "2023",
@@ -127,8 +127,8 @@ def test_recover_stale_returns_crashed_claims_only(tmp_path):
 
 
 def test_retry_requeues_failed(tmp_path):
-    from v2.manifests import Manifest, UnitStatus
-    from v2.config import V2Paths
+    from raceintel.manifests import Manifest, UnitStatus
+    from raceintel.config import V2Paths
 
     root = str(tmp_path)
     assert main(["--root", root, "plan", "--season", "2023",

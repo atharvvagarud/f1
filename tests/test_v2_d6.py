@@ -16,12 +16,12 @@ import json
 import pandas as pd
 import pytest
 
-from v2 import contracts as C
-from v2 import d6schema as S
-from v2 import d6
-from v2.config import V2Paths
-from v2.errors import ErrorCategory, IngestionError
-from v2.storage import atomic_write_parquet, dest_for_unit
+from raceintel import contracts as C
+from raceintel.pipeline import d6schema as S
+from raceintel.pipeline import d6
+from raceintel.config import V2Paths
+from raceintel.errors import ErrorCategory, IngestionError
+from raceintel.storage import atomic_write_parquet, dest_for_unit
 
 LAP_COLS = [c.name for c in C.DRIVER_LAPS.columns]
 RES_COLS = [c.name for c in C.RESULTS.columns]

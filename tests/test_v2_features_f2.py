@@ -8,9 +8,9 @@ import json
 
 import pytest
 
-from v2 import contracts as C
-from v2 import d9schema as D9
-from v2.features import (
+from raceintel import contracts as C
+from raceintel.pipeline import d9schema as D9
+from raceintel.features import (
     FeatureDef,
     FeatureFamily,
     FeatureRegistry,
@@ -31,7 +31,7 @@ from v2.features import (
     results_equal,
     validate_definition,
 )
-from v2.features.engine import PARITY_ABS_TOL, PARITY_REL_TOL
+from raceintel.features.engine import PARITY_ABS_TOL, PARITY_REL_TOL
 
 
 def _base(**kw):
@@ -234,7 +234,7 @@ def test_f2_registry_counts():
 
 
 def test_passthrough_matches_phase1_schema():
-    from v2.features.registry import _phase1_field
+    from raceintel.features.registry import _phase1_field
     r = build_f2_registry()
     for f in r:
         if f.status is not FeatureStatus.PASSTHROUGH:
@@ -248,9 +248,9 @@ def test_passthrough_matches_phase1_schema():
 
 
 def test_no_non_predictive_field_promoted():
-    from v2.features.registry import _phase1_field
-    import v2.d6schema as D6
-    import v2.d7schema as D7
+    from raceintel.features.registry import _phase1_field
+    import raceintel.pipeline.d6schema as D6
+    import raceintel.pipeline.d7schema as D7
     non_pred = {f.name for f in list(D6.STATE_FIELDS)
                 + list(D7.EXTENSION_FIELDS) + list(D9.STATE_EXTENSION_FIELDS)
                 if not f.predictive_eligible}

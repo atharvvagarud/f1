@@ -31,36 +31,36 @@ from pathlib import Path
 
 import pandas as pd
 
-from v2 import race_state as RS
-from v2.simulation import (
+from raceintel.race_state import race_state as RS
+from raceintel.simulation import (
     Assumptions,
     ExecutionPolicy,
     SimulationConfig,
     SimulationParameterSet,
 )
-from v2.simulation.adapter import from_race_state
-from v2.simulation.config import MAX_MASTER_SEED
-from v2.simulation.monte_carlo import DEFAULT_CHUNK_SIZE
-from v2.simulation.results import PROBABILITY_SEMANTICS
-from v2.strategy.candidates import CANONICAL_CANDIDATE_SPECS
-from v2.strategy.comparison import (
+from raceintel.simulation.adapter import from_race_state
+from raceintel.simulation.config import MAX_MASTER_SEED
+from raceintel.simulation.monte_carlo import DEFAULT_CHUNK_SIZE
+from raceintel.simulation.results import PROBABILITY_SEMANTICS
+from raceintel.strategy.candidates import CANONICAL_CANDIDATE_SPECS
+from raceintel.strategy.comparison import (
     COMPARISON_VERSION,
     COUNTERFACTUAL_SEMANTICS,
     CRN_POLICY,
     compare_strategies,
 )
-from v2.strategy.contracts import (
+from raceintel.strategy.contracts import (
     INTERVENTION_VERSION,
     STRATEGY_CONTRACT_VERSION,
 )
-from v2.strategy.objectives import (
+from raceintel.strategy.objectives import (
     OBJECTIVE_VERSION,
     STRATEGY_OBJECTIVES,
     evaluate_objective,
     objective_metric,
 )
-from v2.strategy.uncertainty import UNCERTAINTY_VERSION, candidate_uncertainty
-from v2.race_state_reconstruction import RaceNotFoundError
+from raceintel.strategy.uncertainty import UNCERTAINTY_VERSION, candidate_uncertainty
+from raceintel.race_state.race_state_reconstruction import RaceNotFoundError
 
 _REPO_ROOT = Path(__file__).resolve().parents[1]
 
@@ -303,7 +303,7 @@ def _candidate_payload(candidate_comparison, uncertainty) -> dict:
                 candidate_comparison.delta_expected_finish,
         })
     if uncertainty is not None:
-        from v2.strategy.objectives import classify_uncertainty
+        from raceintel.strategy.objectives import classify_uncertainty
         payload["uncertainty"] = {
             "point_estimate": uncertainty.point_estimate,
             "paired_se": uncertainty.paired_se,
@@ -328,7 +328,7 @@ def _response_payload(*, race_id: str, anchor_driver_id: str,
                       anchor_lap_number: int, anchor_state_time_s: float,
                       target_driver_id: str, objective: str,
                       comparison, objective_result, runtime: dict) -> dict:
-    from v2.strategy.uncertainty import candidate_uncertainty
+    from raceintel.strategy.uncertainty import candidate_uncertainty
     metric = objective_metric(objective)
     baseline = comparison.baseline
     candidates = []

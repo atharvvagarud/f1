@@ -12,15 +12,15 @@ import types
 import pandas as pd
 import pytest
 
-from v2 import contracts as C
-from v2.cli import main as cli_main
-from v2.config import V2Paths
-from v2.errors import ErrorCategory
-from v2.ingestion import run_unit
-from v2.manifests import Manifest, UnitStatus
-from v2.retry import RetryPolicy
-from v2.runs import start_run
-from v2.tiera import (
+from raceintel import contracts as C
+from raceintel.cli import main as cli_main
+from raceintel.config import V2Paths
+from raceintel.errors import ErrorCategory
+from raceintel.data.ingestion import run_unit
+from raceintel.manifests import Manifest, UnitStatus
+from raceintel.retry import RetryPolicy
+from raceintel.runs import start_run
+from raceintel.data.tiera import (
     LoadedRace,
     TIERA_ENTITIES,
     _ordered_stops,
@@ -627,7 +627,7 @@ def _patch_fastf1(monkeypatch, get_session=None, schedule=None):
     # touching the network; the fake parent is only attribute storage.
     monkeypatch.setitem(sys.modules, "fastf1.req", real_req)
     monkeypatch.setitem(sys.modules, "fastf1.core", real_core)
-    import v2.tiera as tiera_mod
+    import raceintel.data.tiera as tiera_mod
 
     monkeypatch.setattr(tiera_mod, "configure_fastf1_cache",
                         lambda directory: directory)
@@ -654,7 +654,7 @@ def test_loader_refuses_without_network_opt_in(tmp_path, monkeypatch):
 def test_loader_missing_round_is_skipped(tmp_path, monkeypatch):
     monkeypatch.setenv("V2_ALLOW_NETWORK", "1")
     _patch_fastf1(monkeypatch, schedule=_schedule_df([]))
-    from v2.errors import IngestionError
+    from raceintel.errors import IngestionError
 
     with pytest.raises(IngestionError) as excinfo:
         load_race_session(2023, 9, tmp_path)
@@ -671,7 +671,7 @@ def test_loader_empty_laps_is_skipped(tmp_path, monkeypatch):
                       race_control_messages=rc_df().iloc[0:0],
                       total_laps=57, f1_api_support=True,
                       t0_date=pd.Timestamp("2023-01-01")))
-    from v2.errors import IngestionError
+    from raceintel.errors import IngestionError
 
     with pytest.raises(IngestionError) as excinfo:
         load_race_session(2023, 1, tmp_path)
@@ -684,7 +684,7 @@ def test_loader_rejects_non_championship(tmp_path, monkeypatch):
         [{"RoundNumber": 1, "EventName": "Pre-Season Testing",
           "EventFormat": "testing", "OfficialEventName": "T",
           "Country": "X", "Location": "Y", "F1ApiSupport": True}]))
-    from v2.errors import IngestionError
+    from raceintel.errors import IngestionError
 
     with pytest.raises(IngestionError) as excinfo:
         load_race_session(2023, 1, tmp_path)
@@ -726,7 +726,7 @@ def test_loader_rate_limit_is_transient(tmp_path, monkeypatch):
         raise real_req.RateLimitExceededError("slow down")
 
     _patch_fastf1(monkeypatch, schedule=_sched_one(), get_session=boom)
-    from v2.errors import IngestionError
+    from raceintel.errors import IngestionError
 
     with pytest.raises(IngestionError) as excinfo:
         load_race_session(2023, 1, tmp_path)
@@ -744,7 +744,7 @@ def test_loader_incomplete_load_is_transient(tmp_path, monkeypatch):
             "See `Session.load`")
 
     _patch_fastf1(monkeypatch, schedule=_sched_one(), get_session=boom)
-    from v2.errors import IngestionError
+    from raceintel.errors import IngestionError
 
     with pytest.raises(IngestionError) as excinfo:
         load_race_session(2023, 1, tmp_path)
@@ -760,7 +760,7 @@ def test_loader_invalid_session_is_missing(tmp_path, monkeypatch):
         raise real_core.InvalidSessionError("no data")
 
     _patch_fastf1(monkeypatch, schedule=_sched_one(), get_session=boom)
-    from v2.errors import IngestionError
+    from raceintel.errors import IngestionError
 
     with pytest.raises(IngestionError) as excinfo:
         load_race_session(2023, 1, tmp_path)
@@ -804,7 +804,7 @@ def test_cli_fastf1_rejects_tierb_units(tmp_path, monkeypatch):
 def test_build_driver_index_rejects_unkeyable():
     bad = results_df([result_row()])
     bad.loc[0, "DriverId"] = None
-    from v2.errors import IngestionError
+    from raceintel.errors import IngestionError
 
     with pytest.raises(IngestionError) as excinfo:
         build_driver_index(bad)

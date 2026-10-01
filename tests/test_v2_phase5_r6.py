@@ -29,16 +29,16 @@ from api.v2_replay_service import (
     PredictionUnavailableError,
     V2ReplayService,
 )
-from v2 import replay as RP
-from v2.race_state_reconstruction import RaceNotFoundError
-from v2.replay_predictions import (
+from raceintel.replay import replay as RP
+from raceintel.race_state.race_state_reconstruction import RaceNotFoundError
+from raceintel.replay.replay_predictions import (
     REPLAY_PREDICTION_CONTRACT_VERSION,
     build_artifact as _build_artifact,
     cache_identity_inputs,
     canonical_data_identity,
     write_artifact,
 )
-from v2.replay_probability_timeline import (
+from raceintel.replay.replay_probability_timeline import (
     PROBABILITY_TIMELINE_CONTRACT_VERSION,
     ProbabilityTimelineError,
     InconsistentTimelineError,
@@ -95,7 +95,7 @@ def get_corpus():
     if _states is None:
         import pandas as pd
 
-        from v2.race_state_reconstruction import RaceStateReconstructor
+        from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
         state_parts, result_parts = [], []
         for season, race in FIXTURES:
             df = pd.read_parquet(D9.format(season=season))
@@ -782,7 +782,7 @@ FORBIDDEN_TOKENS = ["RacePredictionEngine", "FrozenWinnerPredictor",
 
 def test_projection_module_has_no_generation_tokens():
     tree = ast.parse(
-        (ROOT / "v2/replay_probability_timeline.py").read_text())
+        (ROOT / "raceintel/replay/replay_probability_timeline.py").read_text())
     used = set()
     for node in ast.walk(tree):
         if isinstance(node, ast.ImportFrom):
@@ -798,9 +798,9 @@ def test_projection_module_has_no_generation_tokens():
 
 def test_projection_import_hermetic_no_model_stack():
     script = ("import sys; "
-              "import v2.replay_probability_timeline; "
+              "import raceintel.replay.replay_probability_timeline; "
               "banned = [m for m in sys.modules if m.startswith("
-              "('v2.prediction', 'v2.race_state_features', 'v2.model_lab', "
+              "('raceintel.prediction', 'raceintel.race_state.race_state_features', 'raceintel.model_lab', "
               "'api.v2_service', 'sklearn'))]; "
               "assert not banned, banned; print('hermetic ok')")
     completed = subprocess.run(

@@ -16,10 +16,10 @@ No FastF1, no cache, no canonical data, no telemetry.
 import pandas as pd
 import pytest
 
-from v2 import d7
-from v2 import d9
-from v2 import d9schema as S9
-from v2 import d11
+from raceintel.pipeline import d7
+from raceintel.pipeline import d9
+from raceintel.pipeline import d9schema as S9
+from raceintel.pipeline import d11
 
 
 def test_matrix_structure_and_severity_taxonomy():

@@ -10,7 +10,7 @@ Usage:
         --out-dir /tmp/params2022
 
 The artifact is ``manifest.json``: a versioned, hash-addressed parameter
-set consumed read-only by ``v2.simulation.params.load_simulation_parameters``.
+set consumed read-only by ``raceintel.simulation.params.load_simulation_parameters``.
 """
 
 from __future__ import annotations
@@ -22,12 +22,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from v2.config import V2Paths  # noqa: E402
-from v2.simulation.params import (  # noqa: E402
+from raceintel.config import V2Paths  # noqa: E402
+from raceintel.simulation.params import (  # noqa: E402
     PARAMETER_MANIFEST_FILENAME,
     parameter_storage_dir,
 )
-from v2.simulation.estimator import (  # noqa: E402
+from raceintel.simulation.estimator import (  # noqa: E402
     SEASON_MAX,
     SEASON_MIN,
     estimate_simulation_parameters,

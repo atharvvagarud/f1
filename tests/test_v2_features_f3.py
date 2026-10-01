@@ -9,8 +9,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2.config import V2Paths
-from v2.features import (
+from raceintel.config import V2Paths
+from raceintel.features import (
     FeatureRequest,
     RaceIndex,
     SyncState,
@@ -151,7 +151,7 @@ def test_observation_age_rejects_future():
 
 
 def test_no_retirement_inference_surface():
-    import v2.features.temporal as tmod
+    import raceintel.features.temporal as tmod
     for name in ("is_running", "is_retired", "active_driver",
                  "retired", "is_active"):
         assert not hasattr(tmod, name), name

@@ -1,7 +1,7 @@
 """V2 strategy HTTP schemas (Phase-7 S7).
 
 Pydantic representations of the frozen S1–S6 Strategy comparison for the
-versioned API boundary. The ``v2/strategy/*`` domain stays HTTP-independent:
+versioned API boundary. The ``raceintel/strategy/*`` domain stays HTTP-independent:
 the service projects its immutable result types into these models, never the
 reverse. Per-index outcomes stay internal (S6-verified); only compact
 aggregates, paired deltas and selected-objective uncertainty cross this
@@ -14,7 +14,7 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-from v2.simulation.config import MAX_MASTER_SEED
+from raceintel.simulation.config import MAX_MASTER_SEED
 
 from api.v2_strategy_service import (
     DEFAULT_OBJECTIVE,

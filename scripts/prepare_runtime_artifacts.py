@@ -141,10 +141,10 @@ def find_project_root(start: Path | None = None) -> Path:
     """Locate the repo root from this script's own location."""
     anchor = Path(__file__).resolve()
     for parent in (anchor.parent, *anchor.parents):
-        if (parent / "v2").is_dir() and (parent / "data").is_dir():
+        if (parent / "raceintel").is_dir() and (parent / "data").is_dir():
             return parent
     raise ArtifactContractError(
-        f"cannot locate project root from {anchor} (need v2/ + data/)")
+        f"cannot locate project root from {anchor} (need raceintel/ + data/)")
 
 
 def sha256_file(path: Path) -> str:
@@ -539,7 +539,7 @@ def resolve_staging(root: Path, override: str | None) -> Path:
     except ValueError as exc:
         raise ArtifactContractError(
             "staging must live inside the project root") from exc
-    for protected in ("data", "results", "frontend", "tests", "api", "v2"):
+    for protected in ("data", "results", "frontend", "tests", "api", "raceintel"):
         if staging == (root / protected) or (
                 root / protected) in staging.parents:
             raise ArtifactContractError(

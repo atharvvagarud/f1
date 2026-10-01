@@ -1,0 +1,248 @@
+{
+  "broken_current_references_fixed": [
+    "README.md Repository Guide: v2/ rewritten from active implementation to compatibility shim; raceintel/ documented as current implementation with all subpackages; ml/ reframed as frozen legacy serving compatibility",
+    "README.md Tier-1 validation outcome corrected from stale 1971 passed / 501 skipped to make-ci reality (2480 passed / 4 xfailed, 2489 of 3210 selected)",
+    "PRODUCT.md historical note extended (C4) to name two covered stalenesses: Phase-7-not-started line and motion stack entry; body preserved verbatim"
+  ],
+  "canonical_commands": {
+    "backend_development": "make backend-dev",
+    "backend_production": "make backend-prod",
+    "bootstrap": "make PYTHON=<venv-python> install-python-test plus make install-frontend",
+    "docker_compose": "make docker-compose-up / make docker-compose-down (after prepare_runtime_artifacts.py --validate and make preflight)",
+    "evidence_regeneration": "scripts/build_phase9_evidence.py",
+    "frontend_development": "make frontend-dev",
+    "frontend_validation": "make ci-frontend (npm ci plus node tests plus tsc plus lint plus build)",
+    "full_scientific_validation": "make science (Tier-3, canonical corpus required)",
+    "replay_cache_generation": "scripts/build_replay_prediction_cache.py",
+    "runtime_bundle_preparation": "python scripts/prepare_runtime_artifacts.py --validate",
+    "simulation_parameter_generation": "scripts/build_simulation_parameters.py",
+    "source_safe_validation": "make ci (ci-python plus ci-frontend)"
+  },
+  "current_reference_updates": [
+    "README.md",
+    "PRODUCT.md (historical-note extension only; body frozen)"
+  ],
+  "deferred_items": [
+    "C5 full regression, Tier-3 science, Docker image builds, endpoint smoke",
+    "C6 clean-baseline freeze commit",
+    "physical docs/ hierarchy reorganization (rejected: frozen-report churn outweighs benefit; index-first outcome chosen)",
+    "script directory reorganization (rejected again: CI/Makefile/manifest/provenance coupling; all KEEP_CURRENT_PATH)",
+    "repository directory rename to f1-race-intelligence (C6, local-only)",
+    "v2/ shim removal (only when no frozen artifact embeds a v2.* class path)",
+    "DESIGN.md, data/sequences, data/models, tabulate pin (retained uncertains)",
+    "out-of-band rotation of the ignored .env credential (user action)"
+  ],
+  "docs_created": [
+    "docs/README.md",
+    "docs/architecture/CURRENT_ARCHITECTURE.md",
+    "docs/development/DEVELOPMENT.md"
+  ],
+  "docs_updated": [
+    "PRODUCT.md",
+    "README.md"
+  ],
+  "historical_references_preserved": [
+    "all frozen phase reports (Phase 1 through Phase 11, D0, foundation, model-lab, P10/P11 release series)",
+    "all freeze manifests and JSON contracts (byte-identical)",
+    "docs/adr/ADR-0001-telemetry-retention.md",
+    "docs/case-study/ in full (TECHNICAL_CASE_STUDY v2/ namespace is correct-at-write-time provenance)",
+    "docs/LEGACY_V2_DATASET_COMPARISON.md and dataset provenance docs",
+    "PRODUCT.md body (pre-Phase-7 sketch; note extended, prose untouched)",
+    "C0/C1/C2/C3-A/C3-B consolidation reports and records",
+    "provenance strings in raceintel/pipeline/d10.py and simulation estimator/params",
+    "frontend/data/*.v1.json frozen evidence dossiers"
+  ],
+  "link_validation": {
+    "broken_current_links": 0,
+    "files_checked": [
+      "PRODUCT.md",
+      "README.md",
+      "docs/README.md",
+      "docs/architecture/CURRENT_ARCHITECTURE.md",
+      "docs/case-study/ASSET_MANIFEST.md",
+      "docs/case-study/PORTFOLIO_FACT_SHEET.md",
+      "docs/case-study/README.md",
+      "docs/case-study/STORYBOARD.md",
+      "docs/case-study/TECHNICAL_CASE_STUDY.md",
+      "docs/development/DEVELOPMENT.md"
+    ]
+  },
+  "makefile_audit": {
+    "backend-dev": "CANONICAL (reload dirs api/ and ml/ both exist)",
+    "backend-prod": "CANONICAL",
+    "build": "CANONICAL",
+    "check-python": "INTERNAL_HELPER",
+    "ci": "CANONICAL",
+    "ci-frontend": "CANONICAL",
+    "ci-python": "CANONICAL",
+    "docker-backend-build": "CANONICAL",
+    "docker-backend-run": "CANONICAL",
+    "docker-compose-build": "CANONICAL",
+    "docker-compose-down": "CANONICAL",
+    "docker-compose-up": "CANONICAL",
+    "docker-frontend-build": "CANONICAL (NEXT_PUBLIC_API_BASE fail-closed guard intact)",
+    "docker-frontend-run": "CANONICAL",
+    "frontend-dev": "CANONICAL",
+    "frontend-start": "CANONICAL",
+    "install": "CANONICAL",
+    "install-frontend": "CANONICAL",
+    "install-python": "CANONICAL",
+    "install-python-test": "CANONICAL",
+    "lint": "CANONICAL",
+    "preflight": "CANONICAL",
+    "preflight-source": "CANONICAL",
+    "science": "CANONICAL",
+    "test-frontend": "CANONICAL",
+    "test-python": "CANONICAL",
+    "typecheck": "CANONICAL",
+    "verdict": "no STALE targets; Makefile left untouched"
+  },
+  "path_validation": {
+    "api_routes": "/health, /ready, legacy /predict/*, /v2/races/{race_id}/state(s), /v2/predictions/winner-snapshot all resolve in api/ routers; unknown_race guard present",
+    "docker_services": "backend plus frontend in compose.yaml",
+    "make_targets": "all 18 command targets referenced in current docs exist",
+    "modules": "raceintel/pipeline/d6.py, raceintel/pipeline/d11.py, raceintel/cli.py exist",
+    "unresolved": 0
+  },
+  "schema_version": 1,
+  "scientific_identity_checks": {
+    "explainability": "bae84b61 exact (sidecar sha file)",
+    "phase2_content": "d2ee966c exact (phase2 freeze manifest matrix.content_hash)",
+    "phase2_parquet": "b0f17b66 exact (phase2 freeze manifest matrix.parquet_sha256)",
+    "replay_aggregate": "78a3c059 exact (phase8 freeze manifest artifact identity)",
+    "serving_model": "1116b34f recomputed exact (sha256 of serving joblib)",
+    "simulation_params": "r3-v1__through-2024 present"
+  },
+  "script_inventory": [
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": false,
+      "invoked_by": "phase-4 freeze manifest plus frozen-module-hash test",
+      "path": "scripts/benchmark_phase4.py",
+      "references": "docs/PHASE4_FREEZE_MANIFEST.json, tests/test_v2_phase5_r7.py",
+      "responsibility": "phase-4 benchmark evidence (frozen, hash-pinned)"
+    },
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": false,
+      "invoked_by": "phase-5 freeze manifest plus freeze/hash tests",
+      "path": "scripts/benchmark_phase5_replay.py",
+      "references": "docs/PHASE5_FREEZE_MANIFEST.json, tests/test_v2_phase5_freeze.py",
+      "responsibility": "phase-5 replay benchmark evidence (frozen, hash-pinned)"
+    },
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": true,
+      "invoked_by": "frontend evidence contract plus CI frontend gate",
+      "path": "scripts/build_phase9_evidence.py",
+      "references": "scripts/run_ci_frontend_tests.py, frontend/features/models/lib/evidence.ts, results/v2_validation/phase9_freeze_manifest.json",
+      "responsibility": "Models/About evidence dossier generator (read-only over frozen artifacts)"
+    },
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": true,
+      "invoked_by": "phase-5/phase-8 freeze tests plus container contract",
+      "path": "scripts/build_replay_prediction_cache.py",
+      "references": "tests/test_v2_phase5_freeze.py, tests/test_v2_phase8_e*.py, tests/test_backend_container_contract.py",
+      "responsibility": "replay prediction checkpoint builder"
+    },
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": true,
+      "invoked_by": "simulation estimator/params provenance plus container contract",
+      "path": "scripts/build_simulation_parameters.py",
+      "references": "raceintel/simulation/estimator.py, raceintel/simulation/params.py",
+      "responsibility": "simulation parameter estimation provenance"
+    },
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": false,
+      "invoked_by": "phase7-phase6 compatibility test plus drift record",
+      "path": "scripts/capture_phase7_s1_baseline.py",
+      "references": "tests/test_v2_phase7_s1_phase6_compat.py, tests/fixtures/phase7_s1_phase6_baseline.json",
+      "responsibility": "phase-7 baseline capture (frozen evidence)"
+    },
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": true,
+      "invoked_by": "Makefile preflight/preflight-source/ci-python",
+      "path": "scripts/check_runtime_environment.py",
+      "references": "Makefile, scripts/run_ci_tests.py",
+      "responsibility": "runtime environment gate (source and deployable modes)"
+    },
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": true,
+      "invoked_by": "Makefile science",
+      "path": "scripts/check_science_environment.py",
+      "references": "Makefile",
+      "responsibility": "science environment gate (corpus presence, fail early)"
+    },
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": true,
+      "invoked_by": "README, DEVELOPMENT.md, Makefile docker targets, Dockerfile layer 7",
+      "path": "scripts/prepare_runtime_artifacts.py",
+      "references": "Dockerfile.backend, compose.yaml",
+      "responsibility": "runtime artifact bundle staging plus validation"
+    },
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": false,
+      "invoked_by": "api/v2_explanation_service.py import plus Docker image",
+      "path": "scripts/replay_feature_matrix.py",
+      "references": "api/v2_explanation_service.py, Dockerfile.backend",
+      "responsibility": "replay feature matrix shared with explanation service"
+    },
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": false,
+      "invoked_by": "Makefile ci-frontend",
+      "path": "scripts/run_ci_frontend_tests.py",
+      "references": "Makefile",
+      "responsibility": "Tier-1 frontend test selector (source-safe subset)"
+    },
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": false,
+      "invoked_by": "Makefile ci-python (collection pin 3210)",
+      "path": "scripts/run_ci_tests.py",
+      "references": "Makefile, scripts/ci_corpus_dependent.txt",
+      "responsibility": "Tier-1 Python test selector (source-safe subset)"
+    },
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": true,
+      "invoked_by": "P11 benchmark test plus release audit record",
+      "path": "scripts/run_p11_performance_benchmark.py",
+      "references": "tests/test_p11_benchmark_script.py, results/v2_final_validation/",
+      "responsibility": "P11 latency benchmark evidence generator"
+    },
+    {
+      "canonical": true,
+      "decision": "KEEP_CURRENT_PATH",
+      "developer_facing": false,
+      "invoked_by": "phase-6 r7/r71 tests",
+      "path": "scripts/validate_phase6_simulation.py",
+      "references": "tests/test_v2_phase6_r7.py, tests/test_v2_phase6_r71.py",
+      "responsibility": "phase-6 simulation validation helper"
+    }
+  ],
+  "script_moves": "none (all 14 KEEP_CURRENT_PATH)",
+  "source_commit": "487f15dee184f32f2adeb94814054eb60c98e505",
+  "source_reference": "v2-final",
+  "test_layout": "frozen in place (tests/ unchanged); Tier 1 source-safe CI via make ci selectors, Tier 2 deployable/runtime via preflight plus Docker/Compose, Tier 3 full scientific regression via make science"
+}

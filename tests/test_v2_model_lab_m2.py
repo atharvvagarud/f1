@@ -15,17 +15,17 @@ import pandas as pd
 import pytest
 
 from model_lab_helpers import load_canonical_or_skip
-from v2.model_lab import baselines as B
-from v2.model_lab import errors as E
-from v2.model_lab import experiment as EX
-from v2.model_lab import metrics as M
-from v2.model_lab import predictions as PR
-from v2.model_lab import results as RES
-from v2.model_lab import run as RUNCLI
-from v2.model_lab import run_baselines as SUITECLI
-from v2.model_lab import runner as RUN
-from v2.model_lab import splits as S
-from v2.model_lab import suite as SUITE
+from raceintel.model_lab import baselines as B
+from raceintel.model_lab import errors as E
+from raceintel.model_lab import experiment as EX
+from raceintel.model_lab import metrics as M
+from raceintel.model_lab import predictions as PR
+from raceintel.model_lab import results as RES
+from raceintel.model_lab import run as RUNCLI
+from raceintel.model_lab import run_baselines as SUITECLI
+from raceintel.model_lab import runner as RUN
+from raceintel.model_lab import splits as S
+from raceintel.model_lab import suite as SUITE
 
 ROOT_TMP_NOTE = "M2 tests write experiments under tmp_path only"
 
@@ -286,7 +286,7 @@ def test_deterministic_rerun(tmp_path_factory, leader_d1):
 
 def test_no_candidate_estimator_use():
     from pathlib import Path
-    root = Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    root = Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
     forbidden = ("LogisticReg" + "ression", "HistGradient" + "Boosting",
                  "XGB" + "Classifier", "LGBM" + "Classifier",
                  "CatBoost" + "Classifier", "RandomForest" + "Classifier",

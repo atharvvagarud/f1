@@ -17,10 +17,10 @@ from pathlib import Path
 
 import pytest
 
-from v2.simulation.config import Assumptions, SimulationConfig
-from v2.simulation.monte_carlo import MonteCarloEngine
-from v2.simulation.results import PROBABILITY_SEMANTICS
-from v2.strategy import (
+from raceintel.simulation.config import Assumptions, SimulationConfig
+from raceintel.simulation.monte_carlo import MonteCarloEngine
+from raceintel.simulation.results import PROBABILITY_SEMANTICS
+from raceintel.strategy import (
     OBJECTIVE_DEGRADATION,
     OBJECTIVE_IMPROVEMENT,
     OBJECTIVE_INCONCLUSIVE,
@@ -36,8 +36,8 @@ from v2.strategy import (
     objective_metric,
     objective_value,
 )
-from v2.strategy.paired import PerIndexOutcome
-from v2.strategy.uncertainty import MIN_VALID_PAIRS_FOR_CI
+from raceintel.strategy.paired import PerIndexOutcome
+from raceintel.strategy.uncertainty import MIN_VALID_PAIRS_FOR_CI
 
 from test_v2_phase6_r6 import (  # noqa: E402
     make_pit_params,
@@ -227,7 +227,7 @@ def _candidate(comp, key):
 
 
 def test_direct_pairwise_a_beats_b_loses_b_and_equals_b():
-    from v2.strategy import pairwise_uncertainty
+    from raceintel.strategy import pairwise_uncertainty
     comp = make_comparison()
     improved = inject(constant(5), {KEYS[0]: constant(4), KEYS[1]: constant(5)})
     lost = inject(constant(5), {KEYS[0]: constant(5), KEYS[1]: constant(4)})
@@ -308,7 +308,7 @@ def test_direct_pairing_is_used_not_ci_overlap():
 def test_objectives_module_documents_no_ci_overlap_heuristic():
     # The prohibition is explicit in the module and the direct paired method is
     # what is implemented (the behavioural test above pins the actual policy).
-    source = (ROOT / "v2" / "strategy" / "objectives.py").read_text().lower()
+    source = (ROOT / "raceintel" / "strategy" / "objectives.py").read_text().lower()
     assert "ci overlap" in source  # documented as deliberately not implemented
     assert "pairwise_uncertainty" in source  # direct paired method is used
 
@@ -447,7 +447,7 @@ def test_objective_is_deterministic_and_identity_sensitive():
 
 
 def test_unsupported_comparison_yields_empty_objective_result():
-    from v2.simulation.engine import REASON_MISSING_TYRE_AGE
+    from raceintel.simulation.engine import REASON_MISSING_TYRE_AGE
 
     from test_v2_phase6_r6 import sim_driver, sim_state
     drivers = [sim_driver("a", lap=1, race_time=90.0, age=None),
@@ -515,9 +515,9 @@ def test_probability_semantics_preserved_on_the_comparison():
 
 
 def test_objectives_module_reads_no_future_oracle_or_phase3_material():
-    banned = ("v2.simulation.validation", "v2.replay", "v2.prediction",
-              "v2.model_lab", "pandas", "sklearn")
-    tree = ast.parse((ROOT / "v2" / "strategy" / "objectives.py").read_text())
+    banned = ("raceintel.simulation.validation", "raceintel.replay", "raceintel.prediction",
+              "raceintel.model_lab", "pandas", "sklearn")
+    tree = ast.parse((ROOT / "raceintel" / "strategy" / "objectives.py").read_text())
     imported = []
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):

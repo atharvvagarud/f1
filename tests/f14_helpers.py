@@ -11,8 +11,8 @@ import glob
 
 import pandas as pd
 
-from v2.config import V2Paths
-from v2.features import (
+from raceintel.config import V2Paths
+from raceintel.features import (
     FeatureRequest,
     PriorHistory,
     build_f11_registry,
@@ -20,7 +20,7 @@ from v2.features import (
     features_for_state,
     results_equal,
 )
-from v2.labels import build_label_registry
+from raceintel.labels import build_label_registry
 
 ROOT = V2Paths.resolve().root
 

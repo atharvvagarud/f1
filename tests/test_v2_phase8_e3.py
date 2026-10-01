@@ -33,8 +33,8 @@ from model_lab_helpers import (  # noqa: E402
     load_canonical_or_skip,
     require_generated_artifact,
 )
-from v2 import explainability as X  # noqa: E402
-from v2.experiments.feature_sets import PRIMARY_GROUP_ORDER  # noqa: E402
+from raceintel.explainability import explainability as X  # noqa: E402
+from raceintel.experiments.feature_sets import PRIMARY_GROUP_ORDER  # noqa: E402
 
 SERVING_SHA = (
     "1116b34fc716035c2425e605b9a5cc15541a2d2335e26113f2e2eaf3fcaa59f4")
@@ -86,7 +86,7 @@ def test_frozen_model_identity(predictor):
 
 
 def test_serving_artifact_sha_is_frozen():
-    from v2.model_lab import serving as SERVING
+    from raceintel.model_lab import serving as SERVING
 
     path = require_generated_artifact(
         SERVING.default_serving_artifact_path(),

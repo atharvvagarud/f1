@@ -18,12 +18,12 @@ from pathlib import Path
 
 import pytest
 
-from v2.simulation.config import Assumptions, SimulationConfig
-from v2.simulation.monte_carlo import (
+from raceintel.simulation.config import Assumptions, SimulationConfig
+from raceintel.simulation.monte_carlo import (
     MonteCarloEngine,
     StrategyInterventionNotImplemented,
 )
-from v2.strategy import (
+from raceintel.strategy import (
     StrategyAction,
     StrategyIntervention,
     StrategyInterventionError,
@@ -32,7 +32,7 @@ from v2.strategy import (
 from test_v2_phase6_r6 import make_pit_params, noisy_residual, pit_field
 
 ROOT = Path(__file__).resolve().parents[1]
-SIMULATION_DIR = ROOT / "v2" / "simulation"
+SIMULATION_DIR = ROOT / "raceintel" / "simulation"
 
 
 @pytest.fixture(scope="module")
@@ -135,7 +135,7 @@ def test_supplied_intervention_executes_on_the_scalar_path(state, params,
 def test_invalid_intervention_is_rejected_before_any_rng_stream_is_created(
         monkeypatch, state, params, config):
     calls = {"pace": 0, "domain": 0}
-    module = __import__("v2.simulation.monte_carlo", fromlist=["x"])
+    module = __import__("raceintel.simulation.monte_carlo", fromlist=["x"])
     real_sim = module.rng_for_simulation
     real_domain = module.rng_for_domain
 
@@ -166,7 +166,7 @@ def test_the_retained_s1_seam_error_type_is_still_importable():
 
 def test_none_intervention_and_no_argument_create_the_same_streams(
         monkeypatch, state, params, config):
-    module = __import__("v2.simulation.monte_carlo", fromlist=["x"])
+    module = __import__("raceintel.simulation.monte_carlo", fromlist=["x"])
     real_sim = module.rng_for_simulation
     real_domain = module.rng_for_domain
 
@@ -209,5 +209,5 @@ def test_simulation_layer_imports_no_strategy_module():
                 imported.extend(alias.name for alias in node.names)
             elif isinstance(node, ast.ImportFrom) and node.module:
                 imported.append(node.module)
-        assert not any(name.startswith("v2.strategy") for name in imported), \
+        assert not any(name.startswith("raceintel.strategy") for name in imported), \
             f"{path.name} imports the strategy layer (dependency cycle risk)"

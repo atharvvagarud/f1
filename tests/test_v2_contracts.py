@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from v2 import contracts as C
+from raceintel import contracts as C
 
 
 def test_key_formats_are_deterministic():

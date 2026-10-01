@@ -35,8 +35,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from v2 import replay as RP
-from v2.replay_predictions import (
+from raceintel.replay import replay as RP
+from raceintel.replay.replay_predictions import (
     CheckpointCacheMissError,
     IncompleteCacheError,
     StaleCacheError,
@@ -47,13 +47,13 @@ from v2.replay_predictions import (
     read_cached_prediction,
     select_checkpoints,
 )
-from v2.replay_reconstruction import ReplayReconstructor
-from v2.replay_probability_timeline import (
+from raceintel.replay.replay_reconstruction import ReplayReconstructor
+from raceintel.replay.replay_probability_timeline import (
     InconsistentTimelineError,
     ProbabilityTimelineError,
     build_probability_timeline,
 )
-from v2.race_state_reconstruction import RaceNotFoundError
+from raceintel.race_state.race_state_reconstruction import RaceNotFoundError
 
 _REPO_ROOT = Path(__file__).resolve().parents[1]
 _FREEZE_MANIFEST = _REPO_ROOT / "docs" / "PHASE4_FREEZE_MANIFEST.json"
@@ -364,7 +364,7 @@ def live_scientific_inputs(engine, manifest_path: str | None = None) -> dict:
 
 
 def default_checkpoints_dir() -> str:
-    from v2.replay_predictions import DEFAULT_CHECKPOINTS_DIR
+    from raceintel.replay.replay_predictions import DEFAULT_CHECKPOINTS_DIR
     return os.path.join(str(_REPO_ROOT), DEFAULT_CHECKPOINTS_DIR)
 
 

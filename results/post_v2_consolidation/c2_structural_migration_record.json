@@ -1,0 +1,959 @@
+{
+  "schema_version": 1,
+  "source_reference": "v2-final",
+  "source_commit": "487f15dee184f32f2adeb94814054eb60c98e505",
+  "old_package": "v2/",
+  "new_package": "raceintel/",
+  "subsystem_mapping": {
+    "raceintel/data/": [
+      "ingestion.py",
+      "jolpica.py",
+      "synthetic.py",
+      "tiera.py",
+      "tierb.py"
+    ],
+    "raceintel/pipeline/": [
+      "d6.py",
+      "d6schema.py",
+      "d7.py",
+      "d7schema.py",
+      "d8.py",
+      "d9.py",
+      "d9schema.py",
+      "d10.py",
+      "d11.py"
+    ],
+    "raceintel/race_state/": [
+      "race_state.py",
+      "race_state_features.py",
+      "race_state_reconstruction.py"
+    ],
+    "raceintel/replay/": [
+      "replay.py",
+      "replay_predictions.py",
+      "replay_probability_timeline.py",
+      "replay_reconstruction.py"
+    ],
+    "raceintel/explainability/": [
+      "explainability.py",
+      "local_explainability.py",
+      "timeline_explainability.py"
+    ],
+    "raceintel/features/": "moved whole (unchanged layout)",
+    "raceintel/labels/": "moved whole (unchanged layout)",
+    "raceintel/model_lab/": "moved whole (unchanged layout; name kept: pickle path + stable responsibility)",
+    "raceintel/simulation/": "moved whole (unchanged layout)",
+    "raceintel/strategy/": "moved whole (unchanged layout)",
+    "raceintel/experiments/": "moved whole (unchanged layout)",
+    "raceintel/ top level": [
+      "__init__.py",
+      "cli.py",
+      "config.py",
+      "contracts.py",
+      "errors.py",
+      "manifests.py",
+      "prediction.py",
+      "retry.py",
+      "runs.py",
+      "storage.py",
+      "validation.py"
+    ]
+  },
+  "moved_files": [
+    {
+      "old": "v2/__init__.py",
+      "new": "raceintel/__init__.py",
+      "sha256": "5ea0c5ff6e915e08434fc5c453f02c3ad0676c144730399aa050c07f79500a7c"
+    },
+    {
+      "old": "v2/cli.py",
+      "new": "raceintel/cli.py",
+      "sha256": "831707e827b9e512611c29cc006abc1e5c2722317bbb5a8f56ca0b460c390b2e"
+    },
+    {
+      "old": "v2/config.py",
+      "new": "raceintel/config.py",
+      "sha256": "6ed143d6d795f142918a4603bae47ffbf402a20a8f2fbe209fa040a1d8634f00"
+    },
+    {
+      "old": "v2/contracts.py",
+      "new": "raceintel/contracts.py",
+      "sha256": "0468fb69a00cee0a342021ce791e15181f0753ba622ec3f4f8dd99ee33cbce21"
+    },
+    {
+      "old": "v2/d10.py",
+      "new": "raceintel/pipeline/d10.py",
+      "sha256": "1b372e4adb8326d1cdf1cc74e99069869f283360ca0a8e63b85f7488d4a41bc7"
+    },
+    {
+      "old": "v2/d11.py",
+      "new": "raceintel/pipeline/d11.py",
+      "sha256": "b5c3218cde19a9cc8834e746dd9a52d25ad6f5c045a81aac1eb031bf2a661b31"
+    },
+    {
+      "old": "v2/d6.py",
+      "new": "raceintel/pipeline/d6.py",
+      "sha256": "2b3c077c4ec7f5944ac711f44174384d6cb3d46726d74490184557c55b43836c"
+    },
+    {
+      "old": "v2/d6schema.py",
+      "new": "raceintel/pipeline/d6schema.py",
+      "sha256": "cb6f6ef149ff961d417703b1ec34bf287dcbbea7a3c692b67abc5f13267ace53"
+    },
+    {
+      "old": "v2/d7.py",
+      "new": "raceintel/pipeline/d7.py",
+      "sha256": "4b6074d18e445e8b6f2db9334e0a837a84d480ac0d168a983bbbd9096dbe477b"
+    },
+    {
+      "old": "v2/d7schema.py",
+      "new": "raceintel/pipeline/d7schema.py",
+      "sha256": "f3bfc660750a293a2e2d0ea0c24f56788d9d736be7762c4d3cddac2663e1cc34"
+    },
+    {
+      "old": "v2/d8.py",
+      "new": "raceintel/pipeline/d8.py",
+      "sha256": "f5510d55e4747c4453397bd5433293728a51a2e098dc869142d00e32fca2925c"
+    },
+    {
+      "old": "v2/d9.py",
+      "new": "raceintel/pipeline/d9.py",
+      "sha256": "e2b1de5237bbdf777213ce94fd0a5587caa03646242a94092bb481f7c8fc5d6e"
+    },
+    {
+      "old": "v2/d9schema.py",
+      "new": "raceintel/pipeline/d9schema.py",
+      "sha256": "da21ee5a58f46274f376683160583bb637cf7d584ba59aa8e28b20c7152e20dc"
+    },
+    {
+      "old": "v2/errors.py",
+      "new": "raceintel/errors.py",
+      "sha256": "4eee690e65428ea96f75e6644b493ec65d3a969cc7743fcc6aed08da65d8d8e7"
+    },
+    {
+      "old": "v2/experiments/__init__.py",
+      "new": "raceintel/experiments/__init__.py",
+      "sha256": "4501308613a9c8667d5008c6c43667c19838c0296522ba4c71407adc84e3c820"
+    },
+    {
+      "old": "v2/experiments/feature_sets.py",
+      "new": "raceintel/experiments/feature_sets.py",
+      "sha256": "938b502dfcd3c6b1d111d46519e499571ec779d50c1444fac16e11fab7519cb7"
+    },
+    {
+      "old": "v2/explainability.py",
+      "new": "raceintel/explainability/explainability.py",
+      "sha256": "761979ddeceeb1d291025ea4dde5bdd9e1f2badf4792a2d647503162228b6f2e"
+    },
+    {
+      "old": "v2/features/__init__.py",
+      "new": "raceintel/features/__init__.py",
+      "sha256": "bfb80cccca88045ae72c144523583b25618661b2b26615ff23a30dfb4728134e"
+    },
+    {
+      "old": "v2/features/build_matrix.py",
+      "new": "raceintel/features/build_matrix.py",
+      "sha256": "f2d35a2218020195cd3424bec5d19b5f0c062427c6a840023899fcc525fca058"
+    },
+    {
+      "old": "v2/features/context.py",
+      "new": "raceintel/features/context.py",
+      "sha256": "2a841d99031aab2d34130f194281dff9c517c7bfd96cf12c9b7af402b284e29f"
+    },
+    {
+      "old": "v2/features/contracts.py",
+      "new": "raceintel/features/contracts.py",
+      "sha256": "c2ee9cff77bdc6cabfb4b57324dd1cf9c257026674042930bd1f78f653798e2f"
+    },
+    {
+      "old": "v2/features/engine.py",
+      "new": "raceintel/features/engine.py",
+      "sha256": "53486f2949d9b64ab2b0dc27ac9732ae91c030976fd2f0fb7a9abe49c2486bd5"
+    },
+    {
+      "old": "v2/features/environment.py",
+      "new": "raceintel/features/environment.py",
+      "sha256": "0dc46f8ea8ed23deef672a748e46f304ba350f9e5b603ea2149e24b880edb92f"
+    },
+    {
+      "old": "v2/features/gaps.py",
+      "new": "raceintel/features/gaps.py",
+      "sha256": "1649efef119addc7143b6982bc6a0ea7ff404571ca04a23db9a4a412df24a606"
+    },
+    {
+      "old": "v2/features/interactions.py",
+      "new": "raceintel/features/interactions.py",
+      "sha256": "4d69232f2ee6fbf694d5cf151103acf615370cd2c8e925c472e4c3a1ac4b4928"
+    },
+    {
+      "old": "v2/features/pace.py",
+      "new": "raceintel/features/pace.py",
+      "sha256": "3e9657b545f2b3f8f13ba2e5e477c43be9f2f94af1d4e083a59d0c4ea032267b"
+    },
+    {
+      "old": "v2/features/passthrough.py",
+      "new": "raceintel/features/passthrough.py",
+      "sha256": "d4322abae8b79c81be60419e01d306a23ba8286325b1f016c30ba6c179f30530"
+    },
+    {
+      "old": "v2/features/priors.py",
+      "new": "raceintel/features/priors.py",
+      "sha256": "975115b5685c96dac8c38af2dbededded4e0ab2eef687f14646d6a0323567d54"
+    },
+    {
+      "old": "v2/features/rates.py",
+      "new": "raceintel/features/rates.py",
+      "sha256": "96b78e61b4c0fc8878708dc62a205d9c549564a05ee1720830c7cf87e94361ad"
+    },
+    {
+      "old": "v2/features/registry.py",
+      "new": "raceintel/features/registry.py",
+      "sha256": "58aea05eab763f1de65c5a67b6a0946491c3df57aecbe822265f8e9f01ec36b6"
+    },
+    {
+      "old": "v2/features/temporal.py",
+      "new": "raceintel/features/temporal.py",
+      "sha256": "4369c9ca6bab8984e1016d5dde481a3713cf3bd228f554f37d2f813108319694"
+    },
+    {
+      "old": "v2/ingestion.py",
+      "new": "raceintel/data/ingestion.py",
+      "sha256": "19fb5717bcb58548e6fcb820ccad5d2395b0e5acbeb328136661a428ff947412"
+    },
+    {
+      "old": "v2/jolpica.py",
+      "new": "raceintel/data/jolpica.py",
+      "sha256": "fcc48c6ad8d49df2ce03142b6dcc23a5d322a02a75e257244315282a71d13498"
+    },
+    {
+      "old": "v2/labels/__init__.py",
+      "new": "raceintel/labels/__init__.py",
+      "sha256": "dca4e2caf36cc423a50c88708c73fc68b4fed323704e9fa18a1f4f39afe167bb"
+    },
+    {
+      "old": "v2/labels/builder.py",
+      "new": "raceintel/labels/builder.py",
+      "sha256": "e66620212b35b542559873ca9b86dc2b98955f0de51ccce0119bb23c2a594aa2"
+    },
+    {
+      "old": "v2/labels/contracts.py",
+      "new": "raceintel/labels/contracts.py",
+      "sha256": "2d4764b9da39b46d19da92a4f3f23fa32e1d3e5f438499e8892cd20156add655"
+    },
+    {
+      "old": "v2/local_explainability.py",
+      "new": "raceintel/explainability/local_explainability.py",
+      "sha256": "bdab904e45acb464ec23873a83a171152e49bd62132e2de5d8c1cdde0181bae8"
+    },
+    {
+      "old": "v2/manifests.py",
+      "new": "raceintel/manifests.py",
+      "sha256": "1e0e569a95e09e080e9ad031d37ba2df69618e45eb7b7b0da148ddf40cefc9e9"
+    },
+    {
+      "old": "v2/model_lab/__init__.py",
+      "new": "raceintel/model_lab/__init__.py",
+      "sha256": "90a51f7b47c485e4b531badd24486e0a5952a67c575a9c792a69a38693d9c9e1"
+    },
+    {
+      "old": "v2/model_lab/aggregation.py",
+      "new": "raceintel/model_lab/aggregation.py",
+      "sha256": "8b0f60a64f47c8d253c225e2428a5a7638da22aaf95e3696979fa9e9c2136223"
+    },
+    {
+      "old": "v2/model_lab/audit.py",
+      "new": "raceintel/model_lab/audit.py",
+      "sha256": "5819815c0ca1044f0a6de59018c4d03ceebbee0d49a02865c66f78f8ea93e786"
+    },
+    {
+      "old": "v2/model_lab/bagged_candidates.py",
+      "new": "raceintel/model_lab/bagged_candidates.py",
+      "sha256": "a694a2cc1146ae17b7933662af811d4370abcabf8cf665a3749d20d671ac3b2a"
+    },
+    {
+      "old": "v2/model_lab/bagged_runner.py",
+      "new": "raceintel/model_lab/bagged_runner.py",
+      "sha256": "fda085319e87e3bb08a7d851af8c204483d9b4372025ab7e77ac1d8e6e423e3b"
+    },
+    {
+      "old": "v2/model_lab/bagged_suite.py",
+      "new": "raceintel/model_lab/bagged_suite.py",
+      "sha256": "25c44510986cbb826ff1d493457fb5160fe4fd3867e168ab8a430df11058f222"
+    },
+    {
+      "old": "v2/model_lab/baselines.py",
+      "new": "raceintel/model_lab/baselines.py",
+      "sha256": "706cbbf0060e395576d8239bad21b0f0d3d86ab11f34623b1adb4b82c6d53a3e"
+    },
+    {
+      "old": "v2/model_lab/calibration.py",
+      "new": "raceintel/model_lab/calibration.py",
+      "sha256": "b11dd3ffd36f2a3ae2a4c51fe8d18c7e0267c1b6bdeff21d9285d4b24e55295a"
+    },
+    {
+      "old": "v2/model_lab/calibration_selection.py",
+      "new": "raceintel/model_lab/calibration_selection.py",
+      "sha256": "31a31b0951a55d1fa181f3a98f8ff7e603edaa1fd3119b0b1a91a11dec477fdd"
+    },
+    {
+      "old": "v2/model_lab/data.py",
+      "new": "raceintel/model_lab/data.py",
+      "sha256": "71a35eecad69a6036f0d4ac46be0e1f4298b5613da5517e2b1cf01d999b49d4b"
+    },
+    {
+      "old": "v2/model_lab/errors.py",
+      "new": "raceintel/model_lab/errors.py",
+      "sha256": "0e6645c6c1ea164747df6ca29ba035addd2c6e01695929b4ce690342cbdb19f1"
+    },
+    {
+      "old": "v2/model_lab/experiment.py",
+      "new": "raceintel/model_lab/experiment.py",
+      "sha256": "e34b430cc141096f2eed29f4aaf2710ea345ae9a72f58eadcc758583fb8b3748"
+    },
+    {
+      "old": "v2/model_lab/final_fit.py",
+      "new": "raceintel/model_lab/final_fit.py",
+      "sha256": "71a9d5f4b298bb30143d8c83f9d00307a2c0822e58bb60d8a82efed9852572a5"
+    },
+    {
+      "old": "v2/model_lab/inner_splits.py",
+      "new": "raceintel/model_lab/inner_splits.py",
+      "sha256": "dd67f22ac0427ca318ccf074f99c9a6516bb4ad0302ec87b05e6aad53458f8ba"
+    },
+    {
+      "old": "v2/model_lab/logreg.py",
+      "new": "raceintel/model_lab/logreg.py",
+      "sha256": "67f023267fe361d8e9b0b138af3ce1184ea99593b20846082abdb3059231da1a"
+    },
+    {
+      "old": "v2/model_lab/logreg_boundary.py",
+      "new": "raceintel/model_lab/logreg_boundary.py",
+      "sha256": "9c49c5e51edc4050d8882e45e83f01003083b53632a5ef0651943f408ae3ee7d"
+    },
+    {
+      "old": "v2/model_lab/metrics.py",
+      "new": "raceintel/model_lab/metrics.py",
+      "sha256": "6f709a094fe34a37be0e089fd7504c19f7c361ed5ec06ae21f9c9a3eda9fc482"
+    },
+    {
+      "old": "v2/model_lab/model_runner.py",
+      "new": "raceintel/model_lab/model_runner.py",
+      "sha256": "9bbf29751197b7811584652049cf87845d032f5eaf201681dcbd64872b6c1536"
+    },
+    {
+      "old": "v2/model_lab/model_suite.py",
+      "new": "raceintel/model_lab/model_suite.py",
+      "sha256": "5493dac8e06be510faf03be2e388734c022274e0ea8404b6c894e44ad2e6d5ec"
+    },
+    {
+      "old": "v2/model_lab/nonlinear_runner.py",
+      "new": "raceintel/model_lab/nonlinear_runner.py",
+      "sha256": "e475ca6d66148dac0288db07ff3c664b68071042cc301eb691d0bc673c933fd5"
+    },
+    {
+      "old": "v2/model_lab/nonlinear_suite.py",
+      "new": "raceintel/model_lab/nonlinear_suite.py",
+      "sha256": "fd828328c3d1ab83b428cb0ca31f212971169bbe86554dbeb92944e18580dc6b"
+    },
+    {
+      "old": "v2/model_lab/predictions.py",
+      "new": "raceintel/model_lab/predictions.py",
+      "sha256": "90570177cdeb57e3fddaf4d72e43d08e38ba648ddebd1a7b4601b5d142e72c4a"
+    },
+    {
+      "old": "v2/model_lab/preprocessing.py",
+      "new": "raceintel/model_lab/preprocessing.py",
+      "sha256": "4ed229bac730c6507c65297d149e20f1ae5625553647ae559c35ee2cb470c819"
+    },
+    {
+      "old": "v2/model_lab/protocol.py",
+      "new": "raceintel/model_lab/protocol.py",
+      "sha256": "58f9fa7c62290e6288462ae7b7d10af97ec5e8a081ca95a336cfd011ab8c1a4f"
+    },
+    {
+      "old": "v2/model_lab/results.py",
+      "new": "raceintel/model_lab/results.py",
+      "sha256": "b8abe29b65bfdb51015cebe317028b4ea7baabf0ac6216198fd24a39986bef67"
+    },
+    {
+      "old": "v2/model_lab/run.py",
+      "new": "raceintel/model_lab/run.py",
+      "sha256": "d3f0c452b89921a737f374fa35c01d44af491eb82d0369eccfa9f430d4303767"
+    },
+    {
+      "old": "v2/model_lab/run_bagged.py",
+      "new": "raceintel/model_lab/run_bagged.py",
+      "sha256": "f38f1d9c2df0c3e9195bb174c47bc2409d82f0bd250dba3c3039b2f14a808067"
+    },
+    {
+      "old": "v2/model_lab/run_baselines.py",
+      "new": "raceintel/model_lab/run_baselines.py",
+      "sha256": "a5813fde56a7c53f26ad0a5bc178ae05d2b9d94a8e09bffb7c5a0afbfd773827"
+    },
+    {
+      "old": "v2/model_lab/run_boundary.py",
+      "new": "raceintel/model_lab/run_boundary.py",
+      "sha256": "51e970f579ebe51591aadcbbdb7abce61254946314416ea2fd70da0135063017"
+    },
+    {
+      "old": "v2/model_lab/run_calibration.py",
+      "new": "raceintel/model_lab/run_calibration.py",
+      "sha256": "b7b961afd8a7d9f6d77931d8315b01361e06797fc1d0c27951b052346244c61f"
+    },
+    {
+      "old": "v2/model_lab/run_final.py",
+      "new": "raceintel/model_lab/run_final.py",
+      "sha256": "33b8e4ff5a695539ae49846df6bac95ca4f4a8f2e50171b8c994aa52b026a364"
+    },
+    {
+      "old": "v2/model_lab/run_models.py",
+      "new": "raceintel/model_lab/run_models.py",
+      "sha256": "bd825128d15e23b53c712ee35b045fd787142b7a8974685282f491f83b96d072"
+    },
+    {
+      "old": "v2/model_lab/run_nonlinear.py",
+      "new": "raceintel/model_lab/run_nonlinear.py",
+      "sha256": "313b1f5a94dc88ef378c2bd2ebf8db6b7494be66bf20ac0c2d00100381050830"
+    },
+    {
+      "old": "v2/model_lab/run_tuning.py",
+      "new": "raceintel/model_lab/run_tuning.py",
+      "sha256": "5e638c0a8a43cb102f52b27e4dbe557ddc0cd6aff67fca776fb66cbd02f8d4b8"
+    },
+    {
+      "old": "v2/model_lab/runner.py",
+      "new": "raceintel/model_lab/runner.py",
+      "sha256": "e8dfcfeba927cb391a1548e85f04ebd5af7e8a28a425510363b4ee027d0f8542"
+    },
+    {
+      "old": "v2/model_lab/serving.py",
+      "new": "raceintel/model_lab/serving.py",
+      "sha256": "f34392d886339ce6d1099bac7936c93184b3622d8e6663d100c363447f4ae210"
+    },
+    {
+      "old": "v2/model_lab/splits.py",
+      "new": "raceintel/model_lab/splits.py",
+      "sha256": "d907adbd03bd70284fd4fb54d03e4cc23bddaf60eef95137d2b6d3b34945f9a0"
+    },
+    {
+      "old": "v2/model_lab/stages.py",
+      "new": "raceintel/model_lab/stages.py",
+      "sha256": "8a48a17a0566a91e8c052b5eba7bce7eed0fb89d1061da114771f8f8bfa8905c"
+    },
+    {
+      "old": "v2/model_lab/suite.py",
+      "new": "raceintel/model_lab/suite.py",
+      "sha256": "7de36b89d564d8a97b200f76973b89305aaa78a744966dec24d9f823923bb1af"
+    },
+    {
+      "old": "v2/model_lab/tasks.py",
+      "new": "raceintel/model_lab/tasks.py",
+      "sha256": "5dacbcf32791ee9fb105be9b4acdbba81ec7391eb28c81d1d17732b6057aed9b"
+    },
+    {
+      "old": "v2/model_lab/timing.py",
+      "new": "raceintel/model_lab/timing.py",
+      "sha256": "a92e955f74863e998233de8cfa6876d14fd5a94949dc64407e71e4d827910514"
+    },
+    {
+      "old": "v2/model_lab/tree_candidates.py",
+      "new": "raceintel/model_lab/tree_candidates.py",
+      "sha256": "b84984bd5c23e2a07456c92a020d191ede616d1128e185aeefd48cee46eb51ef"
+    },
+    {
+      "old": "v2/model_lab/tuning.py",
+      "new": "raceintel/model_lab/tuning.py",
+      "sha256": "798e8691de15efd77dfd259ab5d6dd6d550467ab74ea82eddfb0c791b72b74fd"
+    },
+    {
+      "old": "v2/model_lab/tuning_candidates.py",
+      "new": "raceintel/model_lab/tuning_candidates.py",
+      "sha256": "6d1166c0105eb962034107ed9fd4a4544d9b4aabac4024aa349d413bc0c2515d"
+    },
+    {
+      "old": "v2/model_lab/tuning_runner.py",
+      "new": "raceintel/model_lab/tuning_runner.py",
+      "sha256": "6b3179e2982252221cca021f20d4e71f394e40902bea2f54186f2658f60db538"
+    },
+    {
+      "old": "v2/model_lab/tuning_suite.py",
+      "new": "raceintel/model_lab/tuning_suite.py",
+      "sha256": "f224907cfbb2f16ab06464572cd60e8e81a4611843fd1f20bc38b330f801d14e"
+    },
+    {
+      "old": "v2/model_lab/winner.py",
+      "new": "raceintel/model_lab/winner.py",
+      "sha256": "613442db9d8f2ef927d64b04cf8e1cf8908747115eb22d2d58e20129acd84779"
+    },
+    {
+      "old": "v2/prediction.py",
+      "new": "raceintel/prediction.py",
+      "sha256": "157cb50df6ec2bb9d5567844b1d8284ccf6756c2be2301f3f180041ffc8d29a8"
+    },
+    {
+      "old": "v2/race_state.py",
+      "new": "raceintel/race_state/race_state.py",
+      "sha256": "dcca082afed4c783b0a8676003cfc0686bbbd2324ece5fc06f1420fb9c6adb82"
+    },
+    {
+      "old": "v2/race_state_features.py",
+      "new": "raceintel/race_state/race_state_features.py",
+      "sha256": "a6a8693549615db425b3609f8603dba86f45fd0451fedcaf2916dc216fe1e116"
+    },
+    {
+      "old": "v2/race_state_reconstruction.py",
+      "new": "raceintel/race_state/race_state_reconstruction.py",
+      "sha256": "7afb3028b3544eceb0bfa620bf3b460c5697f869b1ee108e450ba45aae3e76ab"
+    },
+    {
+      "old": "v2/replay.py",
+      "new": "raceintel/replay/replay.py",
+      "sha256": "17aadfba7c2e95768518741374f5b63c48e52b44e003f07c00f3ee810891dba6"
+    },
+    {
+      "old": "v2/replay_predictions.py",
+      "new": "raceintel/replay/replay_predictions.py",
+      "sha256": "8cc91d7e6a97ee60e97a1020311f2979048e1624fca5a7a0ed8b9193c893c279"
+    },
+    {
+      "old": "v2/replay_probability_timeline.py",
+      "new": "raceintel/replay/replay_probability_timeline.py",
+      "sha256": "9185200aedcb76d47f700ee25d611b99dc0c5da674d7f770289de8b568702e4a"
+    },
+    {
+      "old": "v2/replay_reconstruction.py",
+      "new": "raceintel/replay/replay_reconstruction.py",
+      "sha256": "79cf98f731c3ac2598289fb11fc93f13a176c5948c3d628179e590aba9f999c4"
+    },
+    {
+      "old": "v2/retry.py",
+      "new": "raceintel/retry.py",
+      "sha256": "9a88309b6ba9fe319bdc017c9e3d48d29c6c655a1c91506cc6828e2768eacc9f"
+    },
+    {
+      "old": "v2/runs.py",
+      "new": "raceintel/runs.py",
+      "sha256": "cf36e3981cda1befd442ead91ccc962e3cf38964e309f7ac70317f59a82e90c2"
+    },
+    {
+      "old": "v2/simulation/__init__.py",
+      "new": "raceintel/simulation/__init__.py",
+      "sha256": "693fbe672be350017cb44f30c26fcbafcc829a2edcb3a554cc8978719c5fc10f"
+    },
+    {
+      "old": "v2/simulation/adapter.py",
+      "new": "raceintel/simulation/adapter.py",
+      "sha256": "aab045d3ea45df670f1eaea8e0e2a1b1cc9a6c2876d9315348d0b9a7e0906ec3"
+    },
+    {
+      "old": "v2/simulation/config.py",
+      "new": "raceintel/simulation/config.py",
+      "sha256": "c936b973694cc4d125f15afae630514c7b00784ce2206cc9abc5df8b7c03d3d2"
+    },
+    {
+      "old": "v2/simulation/engine.py",
+      "new": "raceintel/simulation/engine.py",
+      "sha256": "df2912e58d40991a97943cb3af40c21622d80f29ecf5a05456b75e77248445b4"
+    },
+    {
+      "old": "v2/simulation/errors.py",
+      "new": "raceintel/simulation/errors.py",
+      "sha256": "9b4d13e8e7428f04808ac89487072fa597f380d2064e354b872c1d9dbc006c94"
+    },
+    {
+      "old": "v2/simulation/estimator.py",
+      "new": "raceintel/simulation/estimator.py",
+      "sha256": "61e562ed724bca56f2ff3ae972c37b3c3be8d7e376a066813f3ad8e028da3387"
+    },
+    {
+      "old": "v2/simulation/monte_carlo.py",
+      "new": "raceintel/simulation/monte_carlo.py",
+      "sha256": "ad19e824858626e53a7c1e59e0459bb6bd77372282ab8f1107208327e9823afe"
+    },
+    {
+      "old": "v2/simulation/params.py",
+      "new": "raceintel/simulation/params.py",
+      "sha256": "6a5f4590640f0f77b18b92c45d5a328511e0be8c85964f6b5b3d6bf2f2f831d7"
+    },
+    {
+      "old": "v2/simulation/results.py",
+      "new": "raceintel/simulation/results.py",
+      "sha256": "78924fdc906a475511713ab244f675b92782eea82457f07c274082a92dca4c83"
+    },
+    {
+      "old": "v2/simulation/rng.py",
+      "new": "raceintel/simulation/rng.py",
+      "sha256": "f2939a329666434cd681fce024db8629eba04c759fbecd9ca042925f2eba0f80"
+    },
+    {
+      "old": "v2/simulation/state.py",
+      "new": "raceintel/simulation/state.py",
+      "sha256": "d08278b97ad6a18cb464b698f5bc66fbfcb518562f0cd841ba9e96cc912418cb"
+    },
+    {
+      "old": "v2/simulation/validation.py",
+      "new": "raceintel/simulation/validation.py",
+      "sha256": "4998f29515f01107da98d3b674e37a3fa806a652545bdd5b27ed81b9ebd79b6b"
+    },
+    {
+      "old": "v2/storage.py",
+      "new": "raceintel/storage.py",
+      "sha256": "63544da00add302234c0aa19eb98e086d9500a8132453c7a2088670a3f96b63e"
+    },
+    {
+      "old": "v2/strategy/__init__.py",
+      "new": "raceintel/strategy/__init__.py",
+      "sha256": "c90c6f977fdd98685f5aa7a76839c1553f67439ff921e7899be5382fb37a2936"
+    },
+    {
+      "old": "v2/strategy/candidates.py",
+      "new": "raceintel/strategy/candidates.py",
+      "sha256": "7a063f117759cba84f681adfc286da2de413864f323575ab6f2904c98a234000"
+    },
+    {
+      "old": "v2/strategy/comparison.py",
+      "new": "raceintel/strategy/comparison.py",
+      "sha256": "c5381df4ce78ebb594807544a1174f75fd4e71452b3497c6f32b244e9f0a2658"
+    },
+    {
+      "old": "v2/strategy/contracts.py",
+      "new": "raceintel/strategy/contracts.py",
+      "sha256": "4fa9a6fa6dcaa56d55a8cf0827818a5d05be69ce75875580901d9fc1493846b0"
+    },
+    {
+      "old": "v2/strategy/interventions.py",
+      "new": "raceintel/strategy/interventions.py",
+      "sha256": "c3f25708a1151b2d092d678f4f3f723daaec257568a294c7d8fb79fb5f15a20a"
+    },
+    {
+      "old": "v2/strategy/objectives.py",
+      "new": "raceintel/strategy/objectives.py",
+      "sha256": "8389b232a9580ef65578edae8b01d428771223588145aa32eed6228766dc5e11"
+    },
+    {
+      "old": "v2/strategy/paired.py",
+      "new": "raceintel/strategy/paired.py",
+      "sha256": "774781fe57d51a2d0570823a7fd9784030bb8e88a6a10359fb038fbb59173f2d"
+    },
+    {
+      "old": "v2/strategy/uncertainty.py",
+      "new": "raceintel/strategy/uncertainty.py",
+      "sha256": "73ed012f902c273da8230ed150b24d27d5948e0aae774085aec4d5d347b039a2"
+    },
+    {
+      "old": "v2/synthetic.py",
+      "new": "raceintel/data/synthetic.py",
+      "sha256": "3d708588760cd78af61b4db1cb2fbe579be701f8fb2f85fbdc2ad6b01d431dfe"
+    },
+    {
+      "old": "v2/tiera.py",
+      "new": "raceintel/data/tiera.py",
+      "sha256": "9eee280304317e9ad1117f294323964852c94e29a4386ca266b635eb3027c623"
+    },
+    {
+      "old": "v2/tierb.py",
+      "new": "raceintel/data/tierb.py",
+      "sha256": "71029157c0fea25fc785e36a4e2b87d0842c1b93b68c7c466d9ff68cb7db6870"
+    },
+    {
+      "old": "v2/timeline_explainability.py",
+      "new": "raceintel/explainability/timeline_explainability.py",
+      "sha256": "b72a24baca38d8b686e9d95f81fdb4447cb5fa3cebbad2d1f22c8dfc935b3242"
+    },
+    {
+      "old": "v2/validation.py",
+      "new": "raceintel/validation.py",
+      "sha256": "98f3557945249c36c225246b0e4e7fcaa3a429edd6c5b0ea19f4903be294b7d6"
+    }
+  ],
+  "moved_file_count": 121,
+  "compatibility_shims": [
+    {
+      "path": "v2/__init__.py",
+      "reason": "pickle namespace for v2.model_lab.preprocessing.FittedPreprocessor in frozen serving joblib"
+    },
+    {
+      "path": "v2/model_lab/__init__.py",
+      "reason": "re-export raceintel.model_lab for frozen pickle class path"
+    },
+    {
+      "path": "v2/model_lab/preprocessing.py",
+      "reason": "re-export FittedPreprocessor; joblib.load compatibility"
+    }
+  ],
+  "updated_import_files": [
+    "Dockerfile.backend",
+    "V2_FOUNDATION_REFACTOR.md.md",
+    "V2_PHASE_1_DATA_PLATFORM.md",
+    "V2_PHASE_2_TEMPORAL_FEATURE_ENGINE.md",
+    "V2_PHASE_3_MODEL_LAB.md",
+    "api/readiness.py",
+    "api/v2_explanation_routes.py",
+    "api/v2_explanation_service.py",
+    "api/v2_replay_routes.py",
+    "api/v2_replay_service.py",
+    "api/v2_routes.py",
+    "api/v2_service.py",
+    "api/v2_simulation_routes.py",
+    "api/v2_simulation_schemas.py",
+    "api/v2_simulation_service.py",
+    "api/v2_strategy_routes.py",
+    "api/v2_strategy_schemas.py",
+    "api/v2_strategy_service.py",
+    "api/v2_timeline_explanation_routes.py",
+    "api/v2_timeline_explanation_service.py",
+    "data/README.md",
+    "req.md",
+    "results/analysis/error_analysis_hard_races.csv",
+    "results/analysis/error_analysis_model_summary.csv",
+    "results/analysis/error_analysis_race_level.csv",
+    "results/analysis/feature_importance_hgb.csv",
+    "results/analysis/feature_importance_hgb.png",
+    "results/analysis/feature_importance_hgb_folds.csv",
+    "results/analysis/feature_importance_plot.png",
+    "results/analysis/feature_importance_summary.csv",
+    "results/analysis/feature_importance_xgboost.csv",
+    "results/analysis/feature_importance_xgboost.png",
+    "results/analysis/feature_importance_xgboost_folds.csv",
+    "results/analysis/model_accuracy_vs_lap.csv",
+    "results/analysis/model_accuracy_vs_lap_top1.png",
+    "results/analysis/model_accuracy_vs_lap_top3.png",
+    "results/analysis/prediction_accuracy_vs_lap.png",
+    "results/analysis/winner_probability_evolution.png",
+    "results/baselines/lap10_baseline_results.csv",
+    "results/baselines/lap10_baseline_results_cv.csv",
+    "results/baselines/lap10_baseline_results_cv_summary.csv",
+    "results/baselines/lap10_baseline_results_cv_weather.csv",
+    "results/baselines/lap10_baseline_results_cv_weather_summary.csv",
+    "results/baselines/lap15_baseline_results_cv.csv",
+    "results/baselines/lap15_baseline_results_cv_summary.csv",
+    "results/baselines/lap20_baseline_results_cv.csv",
+    "results/baselines/lap20_baseline_results_cv_summary.csv",
+    "results/baselines/lap25_baseline_results_cv.csv",
+    "results/baselines/lap25_baseline_results_cv_summary.csv",
+    "results/baselines/lap5_baseline_results_cv.csv",
+    "results/baselines/lap5_baseline_results_cv_summary.csv",
+    "results/comparisons/lap10_master_comparison.csv",
+    "results/comparisons/lap10_master_comparison.md",
+    "results/comparisons/lap10_master_comparison_numeric.csv",
+    "results/comparisons/lap10_master_comparison_report.csv",
+    "results/comparisons/lap10_model_comparison.csv",
+    "results/comparisons/lap10_model_comparison.md",
+    "results/comparisons/lap10_weather_model_comparison.csv",
+    "results/comparisons/lap10_weather_model_comparison.md",
+    "results/debug/README.txt",
+    "results/debug/archive_pre_alignment/lap10_2019_2023_dataset_failures.csv",
+    "results/debug/archive_pre_alignment/lap10_2019_2023_dataset_year_failures.csv",
+    "results/debug/lap15_2019_2023_dataset_failures.csv",
+    "results/debug/lap20_2019_2023_dataset_failures.csv",
+    "results/debug/lap25_2019_2023_dataset_failures.csv",
+    "results/debug/lap5_2019_2023_dataset_failures.csv",
+    "scripts/analysis/error_analysis.py",
+    "scripts/analysis/feature_importance.py",
+    "scripts/analysis/make_model_accuracy_vs_lap.py",
+    "scripts/analysis/plot_accuracy_vs_lap.py",
+    "scripts/analysis/plot_winner_probability_evolution.py",
+    "scripts/baselines/evaluate_baselines.py",
+    "scripts/baselines/evaluate_baselines_cv.py",
+    "scripts/baselines/evaluate_baselines_cv_multilap.py",
+    "scripts/baselines/evaluate_baselines_cv_weather.py",
+    "scripts/benchmark_phase4.py",
+    "scripts/benchmark_phase5_replay.py",
+    "scripts/benchmark_phase6_monte_carlo.py",
+    "scripts/benchmark_phase6_product.py",
+    "scripts/benchmark_phase7_s3_paired.py",
+    "scripts/build_replay_prediction_cache.py",
+    "scripts/build_simulation_parameters.py",
+    "scripts/capture_phase7_s1_baseline.py",
+    "scripts/cleaning/clean_dataset.py",
+    "scripts/cleaning/clean_dataset_multilap.py",
+    "scripts/cleaning/clean_dataset_weather.py",
+    "scripts/data/__init__.py",
+    "scripts/data/build_dataset_multi_race.py",
+    "scripts/data/build_dataset_multi_race_multilap.py",
+    "scripts/data/build_dataset_multi_race_weather.py",
+    "scripts/data/build_dataset_single_race.py",
+    "scripts/data/build_missing_base_races.py",
+    "scripts/data/inspect_lapX_fields.py",
+    "scripts/dev/clean_windows.ps1",
+    "scripts/dev/run_mac.sh",
+    "scripts/dev/run_windows.ps1",
+    "scripts/dev/setup_mac.sh",
+    "scripts/dev/setup_windows.ps1",
+    "scripts/models/train_hgb_classifier.py",
+    "scripts/models/train_hgb_classifier_multilap.py",
+    "scripts/models/train_logistic_regression.py",
+    "scripts/models/train_logistic_regression_multilap.py",
+    "scripts/models/train_xgboost.py",
+    "scripts/models/train_xgboost_multilap.py",
+    "scripts/models/tune_hgb_classifier.py",
+    "scripts/models/tune_hgb_multilap.py",
+    "scripts/models/tune_logreg_multilap.py",
+    "scripts/models/tune_xgboost_multilap.py",
+    "scripts/models_weather/train_hgb_classifier_weather.py",
+    "scripts/models_weather/train_hgb_classifier_weather_tuned.py",
+    "scripts/models_weather/train_logistic_regression_weather.py",
+    "scripts/models_weather/tune_hgb_classifier_weather.py",
+    "scripts/predict/predict_race_winner.py",
+    "scripts/predict/predict_race_winner_all_checkpoints.py",
+    "scripts/predict/predict_race_winner_ensemble.py",
+    "scripts/prepare_runtime_artifacts.py",
+    "scripts/replay_feature_matrix.py",
+    "scripts/results/make_master_model_comparison.py",
+    "scripts/results/make_model_comparison_table.py",
+    "scripts/results/make_model_comparison_table_weather.py",
+    "scripts/run_phase7_s3_crn_validation.py",
+    "scripts/run_phase7_s4_validation.py",
+    "scripts/run_phase7_s5_validation.py",
+    "scripts/run_phase7_s6_red_team.py",
+    "scripts/run_phase7_s6_validation.py",
+    "scripts/utils/append_missing_into_interim_base.py",
+    "scripts/utils/compare_race_sets.py",
+    "scripts/utils/smoke_test_fastf1.py",
+    "scripts/validate_phase6_simulation.py",
+    "scripts/validate_replay_prediction_cache.py",
+    "section5report.txt",
+    "tests/f14_helpers.py",
+    "tests/model_lab_helpers.py",
+    "tests/s6_validation_protocol.py",
+    "tests/test_readiness.py",
+    "tests/test_runtime_artifact_packaging.py",
+    "tests/test_runtime_environment.py",
+    "tests/test_v2_cli.py",
+    "tests/test_v2_contracts.py",
+    "tests/test_v2_d10.py",
+    "tests/test_v2_d11.py",
+    "tests/test_v2_d6.py",
+    "tests/test_v2_d6_realdata.py",
+    "tests/test_v2_d7.py",
+    "tests/test_v2_d7_realdata.py",
+    "tests/test_v2_d8.py",
+    "tests/test_v2_d9.py",
+    "tests/test_v2_d9_realdata.py",
+    "tests/test_v2_experiments_f16.py",
+    "tests/test_v2_features_f10.py",
+    "tests/test_v2_features_f11.py",
+    "tests/test_v2_features_f12.py",
+    "tests/test_v2_features_f14.py",
+    "tests/test_v2_features_f15.py",
+    "tests/test_v2_features_f2.py",
+    "tests/test_v2_features_f3.py",
+    "tests/test_v2_features_f4.py",
+    "tests/test_v2_features_f5.py",
+    "tests/test_v2_features_f6.py",
+    "tests/test_v2_features_f7.py",
+    "tests/test_v2_features_f8.py",
+    "tests/test_v2_features_f9.py",
+    "tests/test_v2_idempotency.py",
+    "tests/test_v2_jolpica.py",
+    "tests/test_v2_labels_f13.py",
+    "tests/test_v2_manifests.py",
+    "tests/test_v2_model_lab_m0.py",
+    "tests/test_v2_model_lab_m1.py",
+    "tests/test_v2_model_lab_m1_1.py",
+    "tests/test_v2_model_lab_m2.py",
+    "tests/test_v2_model_lab_m3.py",
+    "tests/test_v2_model_lab_m4.py",
+    "tests/test_v2_model_lab_m5.py",
+    "tests/test_v2_model_lab_m6.py",
+    "tests/test_v2_model_lab_m7.py",
+    "tests/test_v2_model_lab_m8.py",
+    "tests/test_v2_model_lab_m9.py",
+    "tests/test_v2_model_lab_p31.py",
+    "tests/test_v2_paths.py",
+    "tests/test_v2_phase4_freeze.py",
+    "tests/test_v2_phase4_r1.py",
+    "tests/test_v2_phase4_r2.py",
+    "tests/test_v2_phase4_r3.py",
+    "tests/test_v2_phase4_r4.py",
+    "tests/test_v2_phase4_r5.py",
+    "tests/test_v2_phase4_r6.py",
+    "tests/test_v2_phase5_freeze.py",
+    "tests/test_v2_phase5_r1.py",
+    "tests/test_v2_phase5_r2.py",
+    "tests/test_v2_phase5_r3.py",
+    "tests/test_v2_phase5_r4.py",
+    "tests/test_v2_phase5_r6.py",
+    "tests/test_v2_phase5_r7.py",
+    "tests/test_v2_phase6_freeze.py",
+    "tests/test_v2_phase6_r1.py",
+    "tests/test_v2_phase6_r2.py",
+    "tests/test_v2_phase6_r3.py",
+    "tests/test_v2_phase6_r4.py",
+    "tests/test_v2_phase6_r5.py",
+    "tests/test_v2_phase6_r6.py",
+    "tests/test_v2_phase6_r7.py",
+    "tests/test_v2_phase6_r71.py",
+    "tests/test_v2_phase6_r8.py",
+    "tests/test_v2_phase7_s1_contracts.py",
+    "tests/test_v2_phase7_s1_phase6_compat.py",
+    "tests/test_v2_phase7_s1_seam.py",
+    "tests/test_v2_phase7_s2_mechanics.py",
+    "tests/test_v2_phase7_s3_paired.py",
+    "tests/test_v2_phase7_s4_comparison.py",
+    "tests/test_v2_phase7_s5_objectives.py",
+    "tests/test_v2_phase7_s5_uncertainty.py",
+    "tests/test_v2_phase7_s6_validation.py",
+    "tests/test_v2_phase7_s7_strategy_api.py",
+    "tests/test_v2_phase8_e1.py",
+    "tests/test_v2_phase8_e1_6.py",
+    "tests/test_v2_phase8_e3.py",
+    "tests/test_v2_phase8_e4.py",
+    "tests/test_v2_phase8_e5.py",
+    "tests/test_v2_retry.py",
+    "tests/test_v2_storage.py",
+    "tests/test_v2_tiera.py",
+    "tests/test_v2_tierb.py"
+  ],
+  "updated_import_file_count": 222,
+  "scripts_moved": [],
+  "tests_moved": [],
+  "docker_changes": [
+    "Dockerfile.backend: COPY raceintel/ added; COPY v2/ kept for pickle shim; comments updated (api/ -> ml/, raceintel/)"
+  ],
+  "ci_changes": [],
+  "focused_validation": [
+    "kernel/api/contracts batch",
+    "features/labels/tiera/tierb batch",
+    "governance P4/P6/S6 drift batch",
+    "replay P5 batch",
+    "simulation R batch",
+    "strategy S batch",
+    "explainability E batch",
+    "model-lab M batch",
+    "legacy R2 batch",
+    "runtime/container/readiness batch"
+  ],
+  "final_validation": {
+    "preflight_source": "pass",
+    "ci_python": "pass: collected=3210 selected=2489 deselected=721; 2480 passed, 4 xfailed, 0 failed",
+    "ci_frontend": "pass (exit 0)",
+    "collection_pin": "3210 intact (no test added/removed/renamed)"
+  },
+  "scientific_identity_checks": {
+    "serving_model": "1116b34fc716035c2425e605b9a5cc15541a2d2335e26113f2e2eaf3fcaa59f4 exact (recomputed + describe_serving_artifact)",
+    "phase2_content": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db record intact",
+    "phase2_parquet": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3 record intact",
+    "explainability": "bae84b614a6e9e176d5bb9c33b99dcaf4cba3f376333b0f075c828f73982939f sidecar intact",
+    "replay_aggregate": "78a3c059888637fe83cc534d0eb7869b6d18e746724bb1ce0f03ee3b8ba96298 manifest intact",
+    "simulation_params": "r3-v1__through-2024 present with generator provenance"
+  },
+  "graphify_before": {
+    "nodes": 11363,
+    "edges": 27731,
+    "communities": 326
+  },
+  "graphify_after": {
+    "nodes": 11390,
+    "edges": 27740,
+    "communities": 322
+  },
+  "deferred_items": [
+    "script directory reorganization (C4; C1-retained refs + manifest coupling)",
+    "test directory reorganization (keep layout; collection pin priority)",
+    "broad docs normalization (C4)",
+    "docker image build (C5; contract tests cover COPY surface)",
+    "Tier-3 science (C5; source-safe CI + identities establish equivalence)",
+    "v2/ shim removal (only when serving artifact no longer embeds v2.* path)"
+  ]
+}

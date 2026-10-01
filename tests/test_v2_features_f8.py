@@ -6,8 +6,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2.config import V2Paths
-from v2.features import (
+from raceintel.config import V2Paths
+from raceintel.features import (
     FEATURE_SET_VERSION,
     F8_FEATURE_NAMES,
     FeatureFamily,
@@ -25,9 +25,9 @@ from v2.features import (
     rate_values_for_target,
     results_equal,
 )
-from v2.features.contracts import MissingPolicy
-from v2.features.gaps import GapStatus, GapResult
-from v2.features.temporal import TemporalError
+from raceintel.features.contracts import MissingPolicy
+from raceintel.features.gaps import GapStatus, GapResult
+from raceintel.features.temporal import TemporalError
 
 ROOT = V2Paths.resolve().root
 _HAS_D9 = (ROOT / "data/v2/processed/driver_lap_state_d9/season=2021").is_dir()
@@ -221,7 +221,7 @@ def test_no_catch_time_features(registry):
 # --- parity ---
 
 def test_single_batch_parity(registry, race):
-    from v2.features import rates_batch
+    from raceintel.features import rates_batch
     batch = rates_batch(race)
     assert len(batch) == len(race)
     for _, row in batch.iterrows():
@@ -298,7 +298,7 @@ def _d9_season(season):
 
 
 def _parity_spot(d9, race_id, registry, k=8):
-    from v2.features import rates_batch
+    from raceintel.features import rates_batch
     sub = d9[d9["race_id"] == race_id]
     batch = rates_batch(sub)
     assert len(batch) == len(sub)
@@ -333,7 +333,7 @@ def test_real_parity_spots(registry, season, race_id):
 def test_full_scope_audit(registry):
     if not _HAS_D9:
         pytest.skip("canonical D9 data not present (data/v2 gitignored)")
-    from v2.features import rates_batch
+    from raceintel.features import rates_batch
     files = sorted(glob.glob(str(ROOT / "data/v2/processed"
                                  / "driver_lap_state_d9"
                                  / "season=*/*.parquet")))

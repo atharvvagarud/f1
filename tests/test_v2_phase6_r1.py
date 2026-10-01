@@ -20,13 +20,13 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-import v2.simulation as S
+import raceintel.simulation as S
 
 SimulationContractError = S.SimulationContractError
 SimulationValidationError = S.SimulationValidationError
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGE_DIR = ROOT / "v2" / "simulation"
+PACKAGE_DIR = ROOT / "raceintel" / "simulation"
 PACKAGE_FILES = ("__init__.py", "errors.py", "state.py", "config.py",
                  "rng.py", "results.py")
 
@@ -450,7 +450,7 @@ def test_environment_weather_defaults_none():
 
 
 def test_environment_accepts_frozen_weather_state():
-    from v2.race_state import WeatherState
+    from raceintel.race_state.race_state import WeatherState
     env = environment(weather=WeatherState(air_temp_c=25.0,
                                            observed_at_s=100.0))
     assert env.weather.air_temp_c == 25.0
@@ -1066,9 +1066,9 @@ def test_monte_carlo_runtime_bad_type_rejected():
 # ---------------------------------------------------------------------------
 
 FORBIDDEN_MODULES = {
-    "v2.prediction", "v2.model_lab", "v2.race_state_features",
-    "v2.replay", "v2.replay_predictions", "v2.replay_probability_timeline",
-    "v2.replay_reconstruction", "sklearn", "joblib",
+    "raceintel.prediction", "raceintel.model_lab", "raceintel.race_state.race_state_features",
+    "raceintel.replay", "raceintel.replay.replay_predictions", "raceintel.replay.replay_probability_timeline",
+    "raceintel.replay.replay_reconstruction", "sklearn", "joblib",
 }
 
 FORBIDDEN_IMPORT_TOKENS = {
@@ -1079,10 +1079,10 @@ FORBIDDEN_IMPORT_TOKENS = {
 
 def test_simulation_package_isolated_from_winner_model():
     code = (
-        "import sys; import v2.simulation; "
-        "forbidden={'v2.prediction','v2.model_lab','v2.race_state_features',"
-        "'v2.replay','v2.replay_predictions',"
-        "'v2.replay_probability_timeline','v2.replay_reconstruction',"
+        "import sys; import raceintel.simulation; "
+        "forbidden={'raceintel.prediction','raceintel.model_lab','raceintel.race_state.race_state_features',"
+        "'raceintel.replay','raceintel.replay.replay_predictions',"
+        "'raceintel.replay.replay_probability_timeline','raceintel.replay.replay_reconstruction',"
         "'sklearn','joblib'}; "
         "bad=sorted(forbidden.intersection(sys.modules)); "
         "print('BAD='+','.join(bad) if bad else 'CLEAN')")

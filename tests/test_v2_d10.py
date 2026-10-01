@@ -12,12 +12,12 @@ Covers the offline-testable D10 audit logic (D10 mission §25):
 - report path portability (relative paths only).
 
 Legacy CSVs and V2 artifacts are never touched here; real-data coverage runs
-in ``python -m v2.d10``.
+in ``python -m raceintel.pipeline.d10``.
 """
 
 import pandas as pd
 
-from v2 import d10
+from raceintel.pipeline import d10
 
 
 def _d7_frame():

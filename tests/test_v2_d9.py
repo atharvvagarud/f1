@@ -23,15 +23,15 @@ No network, no FastF1, no telemetry.
 import pandas as pd
 import pytest
 
-from v2 import contracts as C
-from v2 import d6schema as D6S
-from v2 import d7schema as D7S
-from v2 import d9
-from v2 import d9schema as S
-from v2 import d6
-from v2 import d7
-from v2.config import V2Paths
-from v2.errors import IngestionError
+from raceintel import contracts as C
+from raceintel.pipeline import d6schema as D6S
+from raceintel.pipeline import d7schema as D7S
+from raceintel.pipeline import d9
+from raceintel.pipeline import d9schema as S
+from raceintel.pipeline import d6
+from raceintel.pipeline import d7
+from raceintel.config import V2Paths
+from raceintel.errors import IngestionError
 
 from test_v2_d6 import (  # noqa: E402
     dl_row, res_row, races_frame, write_tiera_season,
@@ -485,7 +485,7 @@ def test_e2e_future_mutation_suite_earlier_derived_state_identical(tmp_path):
     st_mut.loc[future, "stint_start_lap"] = 99
     d7_dest = d9.dest_for_unit(paths.processed_dir, D7S.STATE_ENTITY, 2023,
                                D7S.d7_unit_id(2023))
-    from v2.storage import atomic_write_parquet
+    from raceintel.storage import atomic_write_parquet
     atomic_write_parquet(st_mut, d7_dest)
     # delete the future (lap-4) pit stop entirely
     pits = unit["pit_stops"][

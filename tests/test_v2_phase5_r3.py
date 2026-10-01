@@ -17,8 +17,8 @@ import time
 import pandas as pd
 import pytest
 
-from v2 import replay as RP
-from v2.replay_predictions import (
+from raceintel.replay import replay as RP
+from raceintel.replay.replay_predictions import (
     FLAG_TRANSITION,
     LEADER_LAP,
     PHASE4_CONTRACT_VERSION,
@@ -65,13 +65,13 @@ _series = None
 def get_generation_stack():
     global _engine, _history, _service, _states, _series
     if _engine is None:
-        from v2.config import V2Paths
-        from v2.features.build_matrix import load_history
-        from v2.model_lab import serving as SERVING
-        from v2.prediction import RacePredictionEngine
-        from v2.race_state_features import RaceStateFeatureBridge
-        from v2.race_state_reconstruction import RaceStateReconstructor
-        from v2.replay_reconstruction import ReplayReconstructor
+        from raceintel.config import V2Paths
+        from raceintel.features.build_matrix import load_history
+        from raceintel.model_lab import serving as SERVING
+        from raceintel.prediction import RacePredictionEngine
+        from raceintel.race_state.race_state_features import RaceStateFeatureBridge
+        from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+        from raceintel.replay.replay_reconstruction import ReplayReconstructor
         states = pd.read_parquet(D9.format(season=SEASON))
         states = states[states["race_id"] == RACE].copy()
         results = pd.read_parquet(
@@ -236,10 +236,10 @@ def test_selection_needs_selector_columns():
 
 
 def test_selector_is_model_free():
-    probe = ("import sys, v2.replay_predictions; "
+    probe = ("import sys, raceintel.replay.replay_predictions; "
              "banned = [m for m in sys.modules if m.startswith("
-             "('sklearn', 'scipy', 'v2.model_lab', 'v2.prediction',"
-             " 'v2.race_state_features'))]; "
+             "('sklearn', 'scipy', 'raceintel.model_lab', 'raceintel.prediction',"
+             " 'raceintel.race_state.race_state_features'))]; "
              "print(','.join(sorted(banned)))")
     out = subprocess.run([sys.executable, "-c", probe], capture_output=True,
                          text=True, cwd=".")
@@ -494,8 +494,8 @@ def test_real_checkpoint_adversarial_future_mutation():
                    "race_leader_laps_at_state"):
         sample = mutated.loc[~future, column].dropna()
         mutated.loc[future, column] = sample.iloc[0] if len(sample) else 0
-    from v2.race_state_reconstruction import RaceStateReconstructor
-    from v2.replay_reconstruction import ReplayReconstructor
+    from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+    from raceintel.replay.replay_reconstruction import ReplayReconstructor
     results = pd.read_parquet(RESULTS.format(season=SEASON, race=RACE))
     rebuilt = ReplayReconstructor(
         RP.build_replay_timeline(mutated),

@@ -31,7 +31,7 @@ if REPO_ROOT not in sys.path:
 
 import pandas as pd
 
-from v2.prediction import (
+from raceintel.prediction import (
     NO_OBSERVATION_AT_SNAPSHOT,
     DriverPrediction,
     PredictionSnapshot,
@@ -83,8 +83,8 @@ def _sha256_file(path: str) -> str:
 
 
 def _ordered_all84_names() -> tuple:
-    from v2.experiments.feature_sets import canonical_predictive_names
-    from v2.features.interactions import build_f11_registry
+    from raceintel.experiments.feature_sets import canonical_predictive_names
+    from raceintel.features.interactions import build_f11_registry
     return tuple(canonical_predictive_names(build_f11_registry()))
 
 
@@ -252,7 +252,7 @@ class AcceleratedReplayPredictionBuilder:
     def build_snapshots(self, series, replay_service,
                         bridge) -> dict:
         """Frame index -> frozen snapshot dict (verbatim values)."""
-        from v2.replay_predictions import CheckpointError
+        from raceintel.replay.replay_predictions import CheckpointError
         race_frame = self._matrix.race_slice(series.race_id)
         names = list(self._matrix.feature_names)
         # 1-3. reconstruct every checkpoint, enumerate request identities.
@@ -347,7 +347,7 @@ class AcceleratedReplayPredictionBuilder:
 
     @staticmethod
     def _check_anchor(payload: dict, checkpoint) -> None:
-        from v2.replay_predictions import CheckpointError
+        from raceintel.replay.replay_predictions import CheckpointError
         if payload.get("anchor_driver_id") != checkpoint.anchor_driver_id or \
                 payload.get("anchor_lap_number") != \
                 checkpoint.anchor_lap_number or \

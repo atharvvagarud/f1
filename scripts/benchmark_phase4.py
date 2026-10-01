@@ -56,7 +56,7 @@ FIXTURES = (
 def _load_frame(entity, seasons):
     import glob as _glob
 
-    from v2.config import V2Paths
+    from raceintel.config import V2Paths
 
     paths = V2Paths.resolve()
     frames = []
@@ -124,10 +124,10 @@ def _summarize(samples):
 
 
 def run_context(label, states, frame_desc, anchor, history, reps, predictor):
-    from v2 import race_state as RS
-    from v2.race_state_features import RaceStateFeatureBridge
-    from v2.race_state_reconstruction import RaceStateReconstructor
-    from v2.prediction import RacePredictionEngine
+    from raceintel.race_state import race_state as RS
+    from raceintel.race_state.race_state_features import RaceStateFeatureBridge
+    from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+    from raceintel.prediction import RacePredictionEngine
 
     out = {"context": label, "frame": frame_desc, "anchor": anchor}
 
@@ -220,15 +220,15 @@ def main():
     results["corpus_races"] = int(full_states["race_id"].nunique())
 
     t0 = time.perf_counter()
-    from v2.features.build_matrix import load_history
+    from raceintel.features.build_matrix import load_history
 
-    from v2.config import V2Paths
+    from raceintel.config import V2Paths
 
     history = load_history(V2Paths.resolve())
     results["history_load_s"] = time.perf_counter() - t0
 
     t0 = time.perf_counter()
-    from v2.model_lab.serving import load_frozen_winner_model
+    from raceintel.model_lab.serving import load_frozen_winner_model
 
     predictor = load_frozen_winner_model()
     results["artifact_load_s"] = time.perf_counter() - t0
@@ -236,10 +236,10 @@ def main():
     if args.mode == "memory":
         mem = {"rss_after_init_mb": _rss_mb()}
         mem["corpus_rows"] = len(full_states)
-        from v2 import race_state as RS
-        from v2.prediction import RacePredictionEngine
-        from v2.race_state_features import RaceStateFeatureBridge
-        from v2.race_state_reconstruction import RaceStateReconstructor
+        from raceintel.race_state import race_state as RS
+        from raceintel.prediction import RacePredictionEngine
+        from raceintel.race_state.race_state_features import RaceStateFeatureBridge
+        from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
 
         label, season, race_id, driver, lap, kind = next(
             f for f in FIXTURES if f[0] == args.fixture)
@@ -286,9 +286,9 @@ def main():
         entry = {"label": label, "kind": kind, "anchor": anchor,
                  "per_race_rows": len(per_race)}
         if args.mode == "profile":
-            from v2 import race_state as RS
-            from v2.race_state_features import RaceStateFeatureBridge
-            from v2.race_state_reconstruction import RaceStateReconstructor
+            from raceintel.race_state import race_state as RS
+            from raceintel.race_state.race_state_features import RaceStateFeatureBridge
+            from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
 
             roster = {race_id: sorted(
                 per_race["driver_id"].astype(str).unique().tolist())}

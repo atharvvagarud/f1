@@ -12,8 +12,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2.config import V2Paths
-from v2.features import (
+from raceintel.config import V2Paths
+from raceintel.features import (
     FEATURE_SET_VERSION,
     FeatureRequest,
     NoCalculatorError,
@@ -27,7 +27,7 @@ from v2.features import (
     batch_row_to_result,
     results_equal,
 )
-from v2.features.temporal import TemporalError
+from raceintel.features.temporal import TemporalError
 
 ROOT = V2Paths.resolve().root
 _HAS_D9 = (ROOT / "data/v2/processed/driver_lap_state_d9/season=2021").is_dir()

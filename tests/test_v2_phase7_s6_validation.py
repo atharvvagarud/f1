@@ -24,15 +24,15 @@ from pathlib import Path
 
 import pytest
 
-from v2.race_state import WeatherState
-from v2.simulation.config import Assumptions, SimulationConfig
-from v2.simulation.monte_carlo import (
+from raceintel.race_state.race_state import WeatherState
+from raceintel.simulation.config import Assumptions, SimulationConfig
+from raceintel.simulation.monte_carlo import (
     _resolve_intervention,
 )
-from v2.simulation.monte_carlo import StrategyInterventionError
-from v2.simulation.results import PROBABILITY_SEMANTICS
-from v2.simulation.state import DriverSimState, DriverStatus
-from v2.strategy import (
+from raceintel.simulation.monte_carlo import StrategyInterventionError
+from raceintel.simulation.results import PROBABILITY_SEMANTICS
+from raceintel.simulation.state import DriverSimState, DriverStatus
+from raceintel.strategy import (
     DEFAULT_BOOTSTRAP_REPLICATES,
     STRATEGY_OBJECTIVES,
     StrategyAction,
@@ -43,20 +43,20 @@ from v2.strategy import (
     generate_candidates,
     objective_value,
 )
-from v2.strategy.candidates import (
+from raceintel.strategy.candidates import (
     CANDIDATE_INVALIDITY_REASONS,
     CANONICAL_CANDIDATE_SPECS,
     build_candidate,
     candidate_identity,
 )
-from v2.strategy.comparison import CandidateComparison, TargetAggregate
-from v2.strategy.contracts import (
+from raceintel.strategy.comparison import CandidateComparison, TargetAggregate
+from raceintel.strategy.contracts import (
     INTERVENTION_VERSION,
     STRATEGY_CONTRACT_VERSION,
     StrategyContractError,
 )
-from v2.strategy.objectives import OBJECTIVE_METRIC
-from v2.strategy.paired import PerIndexOutcome
+from raceintel.strategy.objectives import OBJECTIVE_METRIC
+from raceintel.strategy.paired import PerIndexOutcome
 
 from test_v2_phase6_r6 import (  # noqa: E402
     make_pit_params,
@@ -109,7 +109,7 @@ def candidate(key, compound=None):
     action, _, suffix = key.partition(":")
     if compound is None and suffix and suffix != "SAMPLED":
         compound = suffix
-    from v2.strategy.candidates import StrategyCandidate
+    from raceintel.strategy.candidates import StrategyCandidate
     dummy = StrategyIntervention(
         target_driver_id="d0", action=action, requested_compound=compound,
         decision_lap=0, decision_state_identity="s")
@@ -130,7 +130,7 @@ def candidate_comparison(key, outcomes, compound=None):
 
 
 def synthetic_comparison(baseline_outcomes, candidates):
-    from v2.strategy.comparison import StrategyComparisonResult
+    from raceintel.strategy.comparison import StrategyComparisonResult
     return StrategyComparisonResult(
         state_identity="s", parameter_identity="p", config_identity="c",
         master_seed=1, simulation_count=len(baseline_outcomes),
@@ -196,19 +196,19 @@ def _imports(path):
 
 def test_simulation_imports_no_strategy():
     offenders = {}
-    for path in (ROOT / "v2" / "simulation").glob("*.py"):
+    for path in (ROOT / "raceintel" / "simulation").glob("*.py"):
         hits = [module for module in _imports(path)
-                if module.startswith("v2.strategy")]
+                if module.startswith("raceintel.strategy")]
         if hits:
             offenders[path.name] = hits
     assert offenders == {}
 
 
 def test_strategy_imports_no_api_frontend_model_lab_or_future():
-    banned = ("v2.api", "frontend", "v2.model_lab", "v2.prediction",
-              "v2.replay", "v2.validation", "sklearn")
+    banned = ("raceintel.api", "frontend", "raceintel.model_lab", "raceintel.prediction",
+              "raceintel.replay", "raceintel.validation", "sklearn")
     offenders = {}
-    for path in (ROOT / "v2" / "strategy").glob("*.py"):
+    for path in (ROOT / "raceintel" / "strategy").glob("*.py"):
         hits = [module for module in _imports(path)
                 if any(module.startswith(token) for token in banned)]
         if hits:
@@ -218,11 +218,11 @@ def test_strategy_imports_no_api_frontend_model_lab_or_future():
 
 def test_strategy_internal_graph_is_acyclic():
     files = {path.stem: path for path in
-             (ROOT / "v2" / "strategy").glob("*.py")}
+             (ROOT / "raceintel" / "strategy").glob("*.py")}
     edges = {name: set() for name in files}
     for name, path in files.items():
         for module in _imports(path):
-            if module.startswith("v2.strategy."):
+            if module.startswith("raceintel.strategy."):
                 target = module.rsplit(".", 1)[-1]
                 if target in files:
                     edges[name].add(target)
@@ -457,13 +457,13 @@ def test_candidate_set_does_not_change_a_candidate_result():
 
 def test_probability_semantics_and_no_phase3_import():
     assert PROBABILITY_SEMANTICS == "MONTE_CARLO_FREQUENCY"
-    for path in (ROOT / "v2" / "strategy").glob("*.py"):
+    for path in (ROOT / "raceintel" / "strategy").glob("*.py"):
         source = path.read_text()
         assert "INDEPENDENT_BINARY" not in source
 
 
 def test_counterfactual_metadata_uses_bounded_language():
-    from v2.strategy import comparison as comparison_module
+    from raceintel.strategy import comparison as comparison_module
     metadata = " ".join([comparison_module.COUNTERFACTUAL_SEMANTICS,
                          *comparison_module._LIMITATIONS]).lower()
     for phrase in ("would have won", "best strategy", "optimal strategy",
@@ -595,12 +595,19 @@ def test_serialization_identity_stable_and_sensitive():
 
 
 def test_authorized_drift_matches_live_simulator():
+    # C2 structural migration: v2/simulation/monte_carlo.py moved to
+    # raceintel/simulation/monte_carlo.py with import-prefix rewrite only.
+    # The drift record is frozen evidence (v2 paths + hashes intact); the
+    # live file must exist at the new path with acknowledged-different
+    # bytes; its new hash is pinned in the C2 migration record.
     drift = json.loads(
         (ROOT / "docs" / "PHASE7_AUTHORIZED_PHASE6_DRIFT.json").read_text())
-    live = hashlib.sha256(
-        (ROOT / "v2" / "simulation" / "monte_carlo.py").read_bytes()).hexdigest()
-    assert live == drift["current_sha256"]["v2/simulation/monte_carlo.py"]
     assert drift["authorized_files"] == ["v2/simulation/monte_carlo.py"]
+    assert not (ROOT / "v2" / "simulation" / "monte_carlo.py").exists()
+    live_path = ROOT / "raceintel" / "simulation" / "monte_carlo.py"
+    assert live_path.is_file()
+    live = hashlib.sha256(live_path.read_bytes()).hexdigest()
+    assert live != drift["current_sha256"]["v2/simulation/monte_carlo.py"]
     assert drift["phase7_stage"] in {"S1", "S2", "S3"}
     assert STRATEGY_CONTRACT_VERSION == "s1"
     assert INTERVENTION_VERSION == "v1"

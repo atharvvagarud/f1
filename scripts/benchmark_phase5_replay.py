@@ -34,9 +34,9 @@ import pandas as pd
 
 from api.v2_replay_service import V2ReplayService
 from api.v2_replay_service import get_v2_replay_service
-from v2 import replay as RP
-from v2.race_state_reconstruction import RaceStateReconstructor
-from v2.replay_predictions import (
+from raceintel.replay import replay as RP
+from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+from raceintel.replay.replay_predictions import (
     build_artifact,
     cache_identity_inputs,
     canonical_data_identity,
@@ -44,8 +44,8 @@ from v2.replay_predictions import (
     select_checkpoints,
     write_artifact,
 )
-from v2.replay_reconstruction import ReplayReconstructor
-from v2.replay_probability_timeline import build_probability_timeline
+from raceintel.replay.replay_reconstruction import ReplayReconstructor
+from raceintel.replay.replay_probability_timeline import build_probability_timeline
 
 D9 = ("data/v2/processed/driver_lap_state_d9/season={season}/"
       "driver_lap_state_d9__d9-{season}.parquet")

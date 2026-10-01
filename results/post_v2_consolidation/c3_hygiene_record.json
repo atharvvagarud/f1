@@ -1,0 +1,85 @@
+{
+  "deferred_items": [
+    "C4 reference/command/docs normalization (out of scope for C3-B by design)",
+    "C5 full regression, Tier-3 science, Docker image builds",
+    "C6 clean-baseline freeze commit (resolves the intentional lock-diff guard signature)",
+    "DESIGN.md track-vs-ignore verdict with frontend owner (retained, C3-A U3)",
+    "data/sequences and data/models empty placeholder dirs (retained, C3-A U4)",
+    "tabulate pin re-examination only with pipdeptree plus Docker-rebuild proof (retained, C3-A U5)",
+    "out-of-band rotation of the ignored .env credential (user action)"
+  ],
+  "frontend_motion_disposition": {
+    "baseline": "frontend/ pristine since C2 (empty git dirt); C2 ci-frontend green reused as identified baseline evidence",
+    "classification": "REMOVED_CONFIRMED_UNUSED",
+    "lockfile_proof": "zero exact reverse dependents of node_modules/motion; framer-motion depends only on motion-dom/motion-utils/tslib",
+    "post_removal_validation": "standalone ci-frontend behavior green (node 180 pass/0 fail, tsc clean, eslint pass, next build green with static prerender); full make ci behavior identical",
+    "proof": "zero source imports across ts/tsx/css/json; zero dynamic import/require; next.config.ts has no motion reference; only package.json/lockfile plus prefers-reduced-motion CSS substring noise",
+    "removal": "npm rm motion run from frontend/ (4 packages removed: motion, framer-motion, motion-dom, motion-utils); package.json minus 1 line; lockfile removal-only (69 deletions, brace-reflow additions only)"
+  },
+  "gitignore_changes": [
+    ".opencode/",
+    ".impeccable/"
+  ],
+  "local_tooling_ignored": [
+    ".impeccable/",
+    ".opencode/"
+  ],
+  "ponytail_audit_reference": "docs/POST_V2_C3A_PONYTAIL_HYGIENE_AUDIT.md",
+  "policy_files": {
+    "AGENTS.md": "KEEP_TRACKED_CURRENT_VERSION (F1 execution policy plus graphify/headroom sections; no graft refs, no secrets, no machine paths; no hygiene edit needed)",
+    "GEMINI.md": "KEEP_TRACKED_CURRENT_VERSION (F1 execution policy; no graft refs, no secrets; no hygiene edit needed)",
+    "opencode.json": "KEEP_TRACKED_CURRENT_VERSION (shadcn plus playwright MCP entries; no secrets, no machine paths; no hygiene edit needed)"
+  },
+  "python_dependency_changes": "none (requirements.txt and requirements-test.txt untouched per C3-A zero-removable-pins conclusion)",
+  "root_package_disposition": {
+    "classification": "REMOVE_LOCAL_RESIDUE",
+    "evidence": "root package.json held only a shadcn devDependency stub; no components.json anywhere; zero invokers in Makefile/scripts/tests/CI/Docker; frontend uses only frontend/package.json; opencode.json shadcn MCP uses npx shadcn@latest (needs no local stub)",
+    "removed": [
+      "package-lock.json",
+      "package.json"
+    ]
+  },
+  "schema_version": 1,
+  "scientific_identity_checks": {
+    "explainability": "bae84b61 exact (sidecar sha file)",
+    "phase2_content": "d2ee966c record intact (phase2 freeze manifest, git-pristine)",
+    "phase2_parquet": "b0f17b66 record intact (phase2 freeze manifest plus phase8/phase9 manifests, git-pristine)",
+    "replay_aggregate": "78a3c059 record intact (phase8 freeze/validation manifests plus P11 freeze doc, git-pristine)",
+    "serving_model": "1116b34f recomputed exact (sha256 of results/v2_model_lab/winner_logreg_raw_v1_serving.joblib)",
+    "simulation_params": "r3-v1__through-2024 present with generator provenance"
+  },
+  "secret_hygiene": {
+    "credential_rotation": "ROTATION_REQUIRED_OUT_OF_BAND (user action; unchanged since C0)",
+    "env_ignored": true,
+    "env_modified": false,
+    "env_present": true,
+    "live_ignored_credential_present": true
+  },
+  "source_commit": "487f15dee184f32f2adeb94814054eb60c98e505",
+  "source_reference": "v2-final",
+  "tracked_tooling_removed": [
+    ".claude/helpers/graft-hooks.cjs",
+    ".claude/helpers/graft-statusline.cjs",
+    ".claude/settings.json",
+    ".claude/skills/graft/SKILL.md",
+    ".cursor/hooks.json",
+    ".cursor/hooks/graft-hooks.cjs",
+    ".cursor/mcp.json",
+    ".cursor/rules/graft.mdc",
+    ".gemini/settings.json",
+    ".ignore",
+    ".mcp.json"
+  ],
+  "tracked_tooling_removed_rationale": "each file tracked at v2-final, already deleted in the pre-C3-B worktree, exclusively Graft-era (hooks/skill/MCP server/ripgrep re-admit/rule), zero references in Makefile/Compose/Dockerfiles/CI/frontend/policy files, superseded by the Graphify-first workflow, no project contract worth preserving (one file carries a user-machine absolute path, confirming local residue)",
+  "tracked_tooling_retained": [
+    "AGENTS.md",
+    "GEMINI.md",
+    "opencode.json"
+  ],
+  "validation": {
+    "ci_frontend": "behavior green: npm ci ok; node tests 180 pass/0 fail (collected=17 selected=16 deselected=1); tsc clean; eslint pass; next build green with static prerender; terminal git-diff guard exits 1 solely on the intentional uncommitted motion-removal diff (removal-only proof in record)",
+    "ci_python": "pass: collected=3210 selected=2489 deselected=721; 2480 passed, 4 xfailed, 0 failed",
+    "collection_pin": "3210 intact",
+    "preflight_source": "pass (repo 3.11 venv; system python3 is 3.14 and correctly rejected)"
+  }
+}

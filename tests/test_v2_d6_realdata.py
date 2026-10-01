@@ -18,12 +18,12 @@ No network, no FastF1. Build outputs are the gitignored canonical data/v2.
 import pandas as pd
 import pytest
 
-from v2 import contracts as C
-from v2 import d6schema as S
-from v2 import d6
-from v2.config import V2Paths
-from v2.errors import IngestionError
-from v2.storage import dest_for_unit
+from raceintel import contracts as C
+from raceintel.pipeline import d6schema as S
+from raceintel.pipeline import d6
+from raceintel.config import V2Paths
+from raceintel.errors import IngestionError
+from raceintel.storage import dest_for_unit
 
 ROOT = V2Paths.resolve().root
 _HAS_DATA = (ROOT / "data/v2/processed/driver_laps/season=2023").is_dir()

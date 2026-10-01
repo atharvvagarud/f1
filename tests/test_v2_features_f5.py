@@ -8,8 +8,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2.config import V2Paths
-from v2.features import (
+from raceintel.config import V2Paths
+from raceintel.features import (
     FEATURE_SET_VERSION,
     F5_FEATURE_NAMES,
     FeatureFamily,
@@ -27,8 +27,8 @@ from v2.features import (
     pace_values,
     results_equal,
 )
-from v2.features.contracts import MissingPolicy
-from v2.features.temporal import TemporalError
+from raceintel.features.contracts import MissingPolicy
+from raceintel.features.temporal import TemporalError
 
 ROOT = V2Paths.resolve().root
 _HAS_D9 = (ROOT / "data/v2/processed/driver_lap_state_d9/season=2021").is_dir()
@@ -273,7 +273,7 @@ def test_engine_mixed_resolution(fullframe, registry):
 
 
 def test_single_batch_parity(frame, fullframe, registry):
-    from v2.features import passthrough_batch
+    from raceintel.features import passthrough_batch
     pt = passthrough_batch(fullframe, registry)
     pb = pace_batch(frame)
     assert len(pb) == len(frame)

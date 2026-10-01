@@ -31,9 +31,9 @@ from api.v2_replay_service import (
     ReplayFrameNotFoundError,
     V2ReplayService,
 )
-from v2 import replay as RP
-from v2.race_state_reconstruction import RaceNotFoundError
-from v2.replay_predictions import (
+from raceintel.replay import replay as RP
+from raceintel.race_state.race_state_reconstruction import RaceNotFoundError
+from raceintel.replay.replay_predictions import (
     REPLAY_PREDICTION_CONTRACT_VERSION,
     cache_identity_inputs,
     canonical_data_identity,
@@ -88,7 +88,7 @@ _recon = None
 def get_corpus():
     global _states, _results, _recon
     if _states is None:
-        from v2.race_state_reconstruction import RaceStateReconstructor
+        from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
         state_parts, result_parts = [], []
         for season, race in FIXTURES:
             df = pd.read_parquet(D9.format(season=season))
@@ -254,7 +254,7 @@ def test_service_holds_no_model_stack(tmp_path):
     service = make_service(tmp_path)
     for attr in ("_engine", "engine", "_bridge", "_predictor", "_model"):
         assert not hasattr(service, attr), attr
-    assert "v2.prediction" not in str(type(service._reconstructor))
+    assert "raceintel.prediction" not in str(type(service._reconstructor))
 
 
 @pytest.mark.parametrize("method", ["list_frames", "get_frame",
@@ -434,7 +434,7 @@ def test_frame_non_checkpoint_pointers_no_cache(tmp_path):
 
 def _http_state_equals_direct(service, race_id, frame_index):
     from api.v2_schemas import V2RaceStateResponse
-    from v2.replay_reconstruction import ReplayReconstructor
+    from raceintel.replay.replay_reconstruction import ReplayReconstructor
     states, recon = get_corpus()
     direct = ReplayReconstructor(
         service.get_timeline(race_id), recon).state_at(frame_index)
@@ -738,13 +738,13 @@ _live = {}
 
 def get_live_engine_stack():
     if "engine" not in _live:
-        from v2.config import V2Paths
-        from v2.features.build_matrix import load_history
-        from v2.model_lab import serving as SERVING
-        from v2.prediction import RacePredictionEngine
-        from v2.race_state_features import RaceStateFeatureBridge
-        from v2.race_state_reconstruction import RaceStateReconstructor
-        from v2.replay_reconstruction import ReplayReconstructor
+        from raceintel.config import V2Paths
+        from raceintel.features.build_matrix import load_history
+        from raceintel.model_lab import serving as SERVING
+        from raceintel.prediction import RacePredictionEngine
+        from raceintel.race_state.race_state_features import RaceStateFeatureBridge
+        from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+        from raceintel.replay.replay_reconstruction import ReplayReconstructor
         states = race_states(RACE_ORDINARY)
         results = pd.read_parquet(RESULTS.format(season=2023,
                                                  race=RACE_ORDINARY))
@@ -762,7 +762,7 @@ def get_live_engine_stack():
 
 def test_prediction_live_snapshot_parity(tmp_path):
     from api.v2_replay_service import live_scientific_inputs
-    from v2.replay_predictions import generate_checkpoint, read_cached_prediction
+    from raceintel.replay.replay_predictions import generate_checkpoint, read_cached_prediction
     stack = get_live_engine_stack()
     engine = stack["engine"]
     series = select_checkpoints(stack["timeline"], stack["states"])
@@ -840,13 +840,13 @@ def test_replay_modules_import_no_generation_tokens():
 
 def test_replay_import_hermetic_no_model_stack():
     # Banned: the R3 generation path (engine/bridge/predictor/model-lab)
-    # and the Phase-4 prediction service. Allowed: v2.features.* (frozen
+    # and the Phase-4 prediction service. Allowed: raceintel.features.* (frozen
     # factual gap geometry owned by the reconstructor) and everything the
     # R1/R2/R3-read domains need.
     script = ("import sys; "
               "import api.v2_replay_service, api.v2_replay_routes; "
               "banned = [m for m in sys.modules if m.startswith("
-              "('v2.prediction', 'v2.race_state_features', 'v2.model_lab', "
+              "('raceintel.prediction', 'raceintel.race_state.race_state_features', 'raceintel.model_lab', "
               "'api.v2_service'))]; "
               "assert not banned, banned; print('hermetic ok')")
     completed = subprocess.run(

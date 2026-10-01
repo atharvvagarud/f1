@@ -27,19 +27,19 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from v2 import replay as RP
-from v2.race_state import WeatherState
-from v2.race_state_reconstruction import RaceStateReconstructor
-from v2.replay_reconstruction import ReplayReconstructor
-from v2.simulation import engine as E
-from v2.simulation.adapter import from_race_state
-from v2.simulation.config import (
+from raceintel.replay import replay as RP
+from raceintel.race_state.race_state import WeatherState
+from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+from raceintel.replay.replay_reconstruction import ReplayReconstructor
+from raceintel.simulation import engine as E
+from raceintel.simulation.adapter import from_race_state
+from raceintel.simulation.config import (
     Assumptions,
     ParameterIdentity,
     SimulationConfig,
     simulation_request_identity,
 )
-from v2.simulation.engine import (
+from raceintel.simulation.engine import (
     ENGINE_UNSUPPORTED_REASONS,
     ExecutionPolicy,
     SimulationUnsupportedError,
@@ -47,8 +47,8 @@ from v2.simulation.engine import (
     max_lap_events,
     select_pace_parameters,
 )
-from v2.simulation.errors import SimulationContractError
-from v2.simulation.params import (
+from raceintel.simulation.errors import SimulationContractError
+from raceintel.simulation.params import (
     ELIGIBILITY_RULE_VERSION,
     ESTIMATOR_VERSION,
     FAMILY_NAMES,
@@ -59,8 +59,8 @@ from v2.simulation.params import (
     SupportEntry,
     load_simulation_parameters,
 )
-from v2.simulation.results import SimulationRunResult
-from v2.simulation.state import (
+from raceintel.simulation.results import SimulationRunResult
+from raceintel.simulation.state import (
     DriverSimState,
     DriverStatus,
     SimulationEnvironment,
@@ -69,7 +69,7 @@ from v2.simulation.state import (
 )
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-ENGINE_PATH = REPO_ROOT / "v2" / "simulation" / "engine.py"
+ENGINE_PATH = REPO_ROOT / "raceintel" / "simulation" / "engine.py"
 ARTIFACT_DIR = (REPO_ROOT / "data" / "v2" / "simulation" / "params"
                 / "r3-v1__through-2024")
 
@@ -803,15 +803,15 @@ def test_engine_imports_only_contracts():
     modules = _imported_modules(ENGINE_PATH)
     roots = {m.split(".")[0] for m in modules}
     assert roots <= {"__future__", "math", "dataclasses", "enum", "typing",
-                     "v2"}
-    v2_modules = {m for m in modules if m.startswith("v2")}
-    assert all(m.startswith("v2.simulation") for m in v2_modules)
+                     "raceintel"}
+    v2_modules = {m for m in modules if m.startswith("raceintel")}
+    assert all(m.startswith("raceintel.simulation") for m in v2_modules)
 
 
 @pytest.mark.parametrize("forbidden", [
     "pandas", "numpy", "sklearn", "joblib", "fastapi",
-    "v2.race_state", "v2.replay", "v2.replay_predictions",
-    "v2.replay_probability_timeline", "v2.prediction", "v2.model_lab", "api",
+    "raceintel.race_state", "raceintel.replay.replay", "raceintel.replay.replay_predictions",
+    "raceintel.replay.replay_probability_timeline", "raceintel.prediction", "raceintel.model_lab", "api",
 ])
 def test_engine_has_no_forbidden_imports(forbidden):
     modules = _imported_modules(ENGINE_PATH)
@@ -830,11 +830,11 @@ def test_engine_source_has_no_canonical_data_tokens():
 def test_runtime_import_firewall():
     code = (
         "import sys\n"
-        "import v2.simulation.engine\n"
+        "import raceintel.simulation.engine\n"
         "bad = [m for m in sys.modules if m.split('.')[0] in "
         "{'pandas', 'sklearn', 'joblib', 'fastapi'}] + "
-        "[m for m in sys.modules if m.startswith('v2.replay') or "
-        "m.startswith('v2.model_lab') or m.startswith('v2.prediction')]\n"
+        "[m for m in sys.modules if m.startswith('raceintel.replay') or "
+        "m.startswith('raceintel.model_lab') or m.startswith('raceintel.prediction')]\n"
         "assert not bad, bad\n"
     )
     result = subprocess.run([sys.executable, "-c", code],

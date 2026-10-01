@@ -6,7 +6,7 @@ an EXACT local explanation of the frozen winner LogisticRegression score:
     replay service (cached checkpoint + exact RaceState)
       -> exact Phase-2 matrix identity lookup (race_id, driver_id,
          lap_number=observed_lap_number, state_time_s=observed_time_s)
-      -> v2.local_explainability.explain_winner_prediction (frozen model)
+      -> raceintel.explainability.local_explainability.explain_winner_prediction (frozen model)
 
 The E2 prediction cache is required (three-way consistency): a missing /
 stale / incomplete cache raises ``PredictionUnavailableError`` and is never
@@ -31,14 +31,14 @@ from api.v2_replay_service import (
     V2ReplayService,
     get_v2_replay_service,
 )
-from v2 import explainability as E3
-from v2.local_explainability import (
+from raceintel.explainability import explainability as E3
+from raceintel.explainability.local_explainability import (
     LOCAL_EXPLANATION_CONTRACT_VERSION,
     LocalExplanationIdentity,
     explain_winner_prediction,
     public_explanation,
 )
-from v2.race_state_reconstruction import RaceNotFoundError
+from raceintel.race_state.race_state_reconstruction import RaceNotFoundError
 
 _REPO_ROOT = Path(__file__).resolve().parents[1]
 

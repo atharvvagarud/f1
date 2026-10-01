@@ -6,7 +6,7 @@ import dataclasses
 
 import pytest
 
-from v2.strategy import (
+from raceintel.strategy import (
     INTERVENTION_VERSION,
     STRATEGY_CONTRACT_VERSION,
     SUPPORTED_REQUESTED_COMPOUNDS,
@@ -16,8 +16,8 @@ from v2.strategy import (
     StrategyInterventionNotImplemented,
     strategy_action_value,
 )
-from v2.simulation import monte_carlo as mc
-from v2.simulation.state import Provenance, canonical_sha256
+from raceintel.simulation import monte_carlo as mc
+from raceintel.simulation.state import Provenance, canonical_sha256
 
 
 def _intervention(**overrides) -> StrategyIntervention:

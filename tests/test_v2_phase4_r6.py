@@ -32,9 +32,9 @@ import threading
 import pandas as pd
 import pytest
 
-from v2 import race_state as RS
-from v2.config import V2Paths
-from v2.race_state_features import (
+from raceintel.race_state import race_state as RS
+from raceintel.config import V2Paths
+from raceintel.race_state.race_state_features import (
     RaceStateFeatureBridge,
     RaceStateFeatureError,
     RaceStateFeatureMismatchError,
@@ -69,7 +69,7 @@ def _tiny_multi():
 
 @pytest.fixture(scope="module")
 def tiny_bridge():
-    from v2.features.priors import PriorHistory
+    from raceintel.features.priors import PriorHistory
 
     empty = pd.DataFrame()
     history = PriorHistory(empty, empty, empty, empty, empty)
@@ -163,7 +163,7 @@ def test_no_model_or_formula_coupling():
     import ast
     import inspect
 
-    import v2.race_state_features as bridge_mod
+    import raceintel.race_state.race_state_features as bridge_mod
 
     tree = ast.parse(inspect.getsource(bridge_mod))
     imported = set()
@@ -220,7 +220,7 @@ def test_race_summaries_drop_future_season():
 
 def test_require_race_rejects_holdout_shape():
     from api.v2_service import V2Service
-    from v2.race_state_reconstruction import RaceNotFoundError
+    from raceintel.race_state.race_state_reconstruction import RaceNotFoundError
 
     service = V2Service.__new__(V2Service)
     service._races = ({"race_id": "2023-r01-R", "season": 2023,
@@ -252,9 +252,9 @@ def _load_entity(entity, seasons):
 def canon():
     if not _HAS_CANON:
         pytest.skip("canonical data absent")
-    from v2.features.build_matrix import load_history
-    from v2.model_lab.serving import load_frozen_winner_model
-    from v2.race_state_reconstruction import RaceStateReconstructor
+    from raceintel.features.build_matrix import load_history
+    from raceintel.model_lab.serving import load_frozen_winner_model
+    from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
 
     season, race_id, driver, lap = RED
     states = _load_entity("driver_lap_state_d9", range(2018, 2025))
@@ -285,7 +285,7 @@ def _is_na(value):
 @pytest.mark.skipif(not _HAS_CANON, reason="canonical data absent")
 def test_slice_vs_full_frame_oracle_parity(canon):
     """OPT-1/OPT-2 gate: sliced bridge == full-frame engine (ALL_84)."""
-    from v2.features.engine import features_for_batch
+    from raceintel.features.engine import features_for_batch
 
     bridge, snap, batch = (canon["bridge"], canon["snap"], canon["batch"])
     assert tuple(batch.features.columns) == tuple(batch.feature_names)
@@ -333,7 +333,7 @@ def test_slice_vs_full_frame_oracle_parity(canon):
                     reason="canonical data or matrix absent")
 def test_post_opt_matrix_parity(canon):
     """Post-optimization bridge rows == frozen F15 matrix rows (F15 idiom)."""
-    from v2.features.build_matrix import load_matrix
+    from raceintel.features.build_matrix import load_matrix
 
     frame, manifest = load_matrix(V2Paths.resolve())
     batch = canon["batch"]
@@ -373,8 +373,8 @@ def test_post_opt_matrix_parity(canon):
 @pytest.mark.skipif(not _HAS_CANON, reason="canonical data absent")
 def test_prediction_pre_post_parity_and_determinism(canon):
     """R6-K: pre-opt oracle frame vs post-opt snapshot, same artifact."""
-    from v2.features.engine import features_for_batch
-    from v2.prediction import (
+    from raceintel.features.engine import features_for_batch
+    from raceintel.prediction import (
         PROBABILITY_SEMANTICS_NOTE,
         RacePredictionEngine,
     )
@@ -423,8 +423,8 @@ def test_end_to_end_same_lap_future_hazard(canon):
     """R6-L: same-lap future rival row leaves state/batch/snapshot fixed."""
     import pandas as pd
 
-    from v2.prediction import RacePredictionEngine
-    from v2.race_state_reconstruction import RaceStateReconstructor
+    from raceintel.prediction import RacePredictionEngine
+    from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
 
     snap, bridge, batch, predictor = (
         canon["snap"], canon["bridge"], canon["batch"],

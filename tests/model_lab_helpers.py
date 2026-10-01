@@ -58,7 +58,7 @@ def load_canonical_or_skip(**kwargs):
     Only a missing generated prerequisite skips. A present-but-invalid
     matrix still raises (and fails) inside ``load_canonical``.
     """
-    from v2.model_lab import data as DATA
+    from raceintel.model_lab import data as DATA
 
     require_matrix()
     return DATA.load_canonical(**kwargs)

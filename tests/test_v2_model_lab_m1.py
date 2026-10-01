@@ -14,27 +14,27 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2.config import V2Paths
-from v2.features.build_matrix import content_hash, output_dir
-from v2.model_lab import aggregation as AGG
-from v2.model_lab import baselines as B
-from v2.model_lab import calibration as CAL
-from v2.model_lab import data as D
-from v2.model_lab import errors as E
-from v2.model_lab import experiment as EX
-from v2.model_lab import metrics as M
-from v2.model_lab import predictions as PR
-from v2.model_lab import results as RES
-from v2.model_lab import splits as S
-from v2.model_lab import stages as ST
-from v2.model_lab import tasks as T
-from v2.model_lab import timing as TM
-from v2.model_lab.protocol import (
+from raceintel.config import V2Paths
+from raceintel.features.build_matrix import content_hash, output_dir
+from raceintel.model_lab import aggregation as AGG
+from raceintel.model_lab import baselines as B
+from raceintel.model_lab import calibration as CAL
+from raceintel.model_lab import data as D
+from raceintel.model_lab import errors as E
+from raceintel.model_lab import experiment as EX
+from raceintel.model_lab import metrics as M
+from raceintel.model_lab import predictions as PR
+from raceintel.model_lab import results as RES
+from raceintel.model_lab import splits as S
+from raceintel.model_lab import stages as ST
+from raceintel.model_lab import tasks as T
+from raceintel.model_lab import timing as TM
+from raceintel.model_lab.protocol import (
     EXPECTED_MATRIX_CONTENT_HASH,
     MODEL_LAB_PROTOCOL_VERSION,
     PROTECTED_HOLDOUT_SEASON,
 )
-from v2.model_lab.winner import synchronized_winner_top_k
+from raceintel.model_lab.winner import synchronized_winner_top_k
 
 ROOT = Path(__file__).resolve().parents[1]
 _OUT = output_dir(V2Paths.resolve())
@@ -567,7 +567,7 @@ M3_OWNED_MODULES = frozenset({
 
 
 def _model_lab_sources():
-    return sorted((ROOT / "v2" / "model_lab").glob("*.py"))
+    return sorted((ROOT / "raceintel" / "model_lab").glob("*.py"))
 
 
 def test_no_random_split_patterns():

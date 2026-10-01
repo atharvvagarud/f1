@@ -30,14 +30,14 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from v2 import replay as RP
-from v2.race_state_reconstruction import RaceStateReconstructor
-from v2.replay_reconstruction import ReplayReconstructor
-from v2.simulation import engine as E
-from v2.simulation import validation as V
-from v2.simulation.adapter import from_race_state
-from v2.simulation.config import Assumptions, SimulationConfig
-from v2.simulation.engine import (
+from raceintel.replay import replay as RP
+from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+from raceintel.replay.replay_reconstruction import ReplayReconstructor
+from raceintel.simulation import engine as E
+from raceintel.simulation import validation as V
+from raceintel.simulation.adapter import from_race_state
+from raceintel.simulation.config import Assumptions, SimulationConfig
+from raceintel.simulation.engine import (
     CONTEMPORANEITY_MAX_OBSERVATION_LAP_TIMES,
     ENGINE_UNSUPPORTED_REASONS,
     REASON_NON_CONTEMPORANEOUS_ROSTER_MEMBER,
@@ -46,9 +46,9 @@ from v2.simulation.engine import (
     contemporaneous_roster_offenders,
     select_pace_parameters,
 )
-from v2.simulation.monte_carlo import MonteCarloEngine
-from v2.simulation.params import load_simulation_parameters
-from v2.simulation.state import (
+from raceintel.simulation.monte_carlo import MonteCarloEngine
+from raceintel.simulation.params import load_simulation_parameters
+from raceintel.simulation.state import (
     DriverSimState,
     DriverStatus,
     SimulationEnvironment,
@@ -58,9 +58,9 @@ from v2.simulation.state import (
 from test_v2_phase6_r6 import make_params
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-ENGINE_PATH = REPO_ROOT / "v2" / "simulation" / "engine.py"
-ADAPTER_PATH = REPO_ROOT / "v2" / "simulation" / "adapter.py"
-MONTE_CARLO_PATH = REPO_ROOT / "v2" / "simulation" / "monte_carlo.py"
+ENGINE_PATH = REPO_ROOT / "raceintel" / "simulation" / "engine.py"
+ADAPTER_PATH = REPO_ROOT / "raceintel" / "simulation" / "adapter.py"
+MONTE_CARLO_PATH = REPO_ROOT / "raceintel" / "simulation" / "monte_carlo.py"
 RAW_ARTIFACT = (REPO_ROOT / "data" / "v2" / "simulation" / "validation"
                 / "r7_validation_raw_v1.json")
 PROCESSED = REPO_ROOT / "data" / "v2" / "processed"
@@ -515,7 +515,7 @@ def test_future_poisoning_leaves_rejection_reason_identical():
 
 _FORBIDDEN_RUNTIME_TOKENS = (
     "race_driver_labels", "classified_position", "status_text", "dnf_flag",
-    "winner_flag", "position_final", "read_parquet", "v2.simulation.validation",
+    "winner_flag", "position_final", "read_parquet", "raceintel.simulation.validation",
 )
 
 
@@ -535,7 +535,7 @@ def test_runtime_does_not_import_evaluation_module():
                 imported.extend(alias.name for alias in node.names)
             elif isinstance(node, ast.ImportFrom) and node.module:
                 imported.append(node.module)
-        assert not any("v2.simulation.validation" in name for name in imported)
+        assert not any("raceintel.simulation.validation" in name for name in imported)
 
 
 def test_engine_imports_no_data_stack():

@@ -20,26 +20,26 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2 import replay as RP
-from v2.race_state_reconstruction import RaceStateReconstructor
-from v2.replay_reconstruction import ReplayReconstructor
-from v2.simulation import engine as E
-from v2.simulation.adapter import from_race_state
-from v2.simulation.config import (
+from raceintel.replay import replay as RP
+from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+from raceintel.replay.replay_reconstruction import ReplayReconstructor
+from raceintel.simulation import engine as E
+from raceintel.simulation.adapter import from_race_state
+from raceintel.simulation.config import (
     Assumptions,
     SimulationConfig,
     simulation_request_identity,
 )
-from v2.simulation.engine import (
+from raceintel.simulation.engine import (
     DeterministicRaceEngine,
     ExecutionPolicy,
     SimulationUnsupportedError,
 )
-from v2.simulation.errors import (
+from raceintel.simulation.errors import (
     SimulationContractError,
     SimulationValidationError,
 )
-from v2.simulation.monte_carlo import (
+from raceintel.simulation.monte_carlo import (
     DEFAULT_CHUNK_SIZE,
     MONTE_CARLO_VERSION,
     PODIUM_POSITIONS,
@@ -52,7 +52,7 @@ from v2.simulation.monte_carlo import (
     run_trajectory_scalar,
     select_residual_sampler,
 )
-from v2.simulation.params import (
+from raceintel.simulation.params import (
     ELIGIBILITY_RULE_VERSION,
     ESTIMATOR_VERSION,
     FAMILY_NAMES,
@@ -63,12 +63,12 @@ from v2.simulation.params import (
     SupportEntry,
     load_simulation_parameters,
 )
-from v2.simulation.results import (
+from raceintel.simulation.results import (
     PROBABILITY_SEMANTICS,
     MonteCarloResult,
 )
-from v2.simulation.rng import rng_for_simulation
-from v2.simulation.state import (
+from raceintel.simulation.rng import rng_for_simulation
+from raceintel.simulation.state import (
     DriverSimState,
     DriverStatus,
     SimulationEnvironment,
@@ -76,7 +76,7 @@ from v2.simulation.state import (
 )
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-MODULE_PATH = REPO_ROOT / "v2" / "simulation" / "monte_carlo.py"
+MODULE_PATH = REPO_ROOT / "raceintel" / "simulation" / "monte_carlo.py"
 ARTIFACT_DIR = (REPO_ROOT / "data" / "v2" / "simulation" / "params"
                 / "r3-v1__through-2024")
 
@@ -357,13 +357,13 @@ def test_independence_assumption_is_documented():
 # ===========================================================================
 
 def test_residual_pool_matches_direct_stream_draws():
-    from v2.simulation.monte_carlo import _draw_pool
+    from raceintel.simulation.monte_carlo import _draw_pool
     expected = rng_for_simulation(99, 4).random(64)
     assert np.array_equal(_draw_pool(99, 4, 64, "v1"), expected)
 
 
 def test_residual_pool_is_index_and_seed_sensitive():
-    from v2.simulation.monte_carlo import _draw_pool
+    from raceintel.simulation.monte_carlo import _draw_pool
     assert not np.array_equal(_draw_pool(1, 0, 16, "v1"),
                               _draw_pool(1, 1, 16, "v1"))
     assert not np.array_equal(_draw_pool(1, 0, 16, "v1"),
@@ -727,9 +727,9 @@ def _module_imports(path: Path) -> tuple:
 
 def test_monte_carlo_imports_are_firewalled():
     forbidden_prefixes = (
-        "pandas", "sklearn", "joblib", "fastapi", "v2.prediction",
-        "v2.model_lab", "v2.replay", "v2.race_state", "v2.d11", "v2.features",
-        "v2.labels", "api",
+        "pandas", "sklearn", "joblib", "fastapi", "raceintel.prediction",
+        "raceintel.model_lab", "raceintel.replay", "raceintel.race_state", "raceintel.pipeline.d11", "raceintel.features",
+        "raceintel.labels", "api",
     )
     for module in _module_imports(MODULE_PATH):
         assert not module.startswith(forbidden_prefixes), module
@@ -760,10 +760,10 @@ def test_monte_carlo_uses_no_global_rng():
 def test_monte_carlo_imports_cleanly_in_fresh_process():
     code = (
         "import sys;"
-        "import v2.simulation.monte_carlo as m;"
+        "import raceintel.simulation.monte_carlo as m;"
         "assert m.MONTE_CARLO_VERSION;"
-        "assert 'v2.prediction' not in sys.modules;"
-        "assert 'v2.model_lab' not in sys.modules;"
+        "assert 'raceintel.prediction' not in sys.modules;"
+        "assert 'raceintel.model_lab' not in sys.modules;"
         "assert 'pandas' not in sys.modules;"
         "print('ok')")
     proc = subprocess.run([sys.executable, "-c", code],

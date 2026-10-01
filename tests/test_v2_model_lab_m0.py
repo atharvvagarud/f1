@@ -13,12 +13,12 @@ from pathlib import Path
 
 import pytest
 
-from v2.config import V2Paths
-from v2.features.build_matrix import output_dir
-from v2.features.registry import FEATURE_SET_VERSION
-from v2.labels.contracts import LABEL_SET_VERSION
-from v2.model_lab import audit as AUDIT
-from v2.model_lab import protocol as P
+from raceintel.config import V2Paths
+from raceintel.features.build_matrix import output_dir
+from raceintel.features.registry import FEATURE_SET_VERSION
+from raceintel.labels.contracts import LABEL_SET_VERSION
+from raceintel.model_lab import audit as AUDIT
+from raceintel.model_lab import protocol as P
 
 ROOT = V2Paths.resolve().root
 _OUT = output_dir(V2Paths.resolve())
@@ -40,13 +40,13 @@ def freeze(paths):
 
 @pytest.fixture(scope="session")
 def matrix(paths):
-    from v2.features.build_matrix import load_matrix
+    from raceintel.features.build_matrix import load_matrix
     return load_matrix(paths)[0]
 
 
 @pytest.fixture(scope="session")
 def manifest(paths):
-    from v2.features.build_matrix import load_matrix
+    from raceintel.features.build_matrix import load_matrix
     return load_matrix(paths)[1]
 
 
@@ -443,7 +443,7 @@ def test_no_estimator_or_metric_source():
                  "import xg" + "boost", "import light" + "gbm",
                  "import cat" + "boost", "import torch", "log_l" + "oss(",
                  "brier_" + "score(")
-    for path in sorted((ROOT / "v2" / "model_lab").glob("*.py")):
+    for path in sorted((ROOT / "raceintel" / "model_lab").glob("*.py")):
         if path.name in M3_OWNED_MODULES:
             continue
         text = path.read_text()

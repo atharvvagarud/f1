@@ -16,11 +16,11 @@ from sklearn.metrics import (
     root_mean_squared_error,
 )
 
-from v2.model_lab import data as D
-from v2.model_lab import errors as E
-from v2.model_lab import metrics as M
-from v2.model_lab import predictions as PR
-from v2.model_lab.winner import synchronized_winner_top_k
+from raceintel.model_lab import data as D
+from raceintel.model_lab import errors as E
+from raceintel.model_lab import metrics as M
+from raceintel.model_lab import predictions as PR
+from raceintel.model_lab.winner import synchronized_winner_top_k
 
 
 # --- helpers ---------------------------------------------------------------

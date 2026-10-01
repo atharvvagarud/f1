@@ -11,8 +11,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2.config import V2Paths
-from v2.features import (
+from raceintel.config import V2Paths
+from raceintel.features import (
     FEATURE_SET_VERSION,
     F10_FEATURE_NAMES,
     FeatureFamily,
@@ -33,9 +33,9 @@ from v2.features import (
     resolve_grid,
     results_equal,
 )
-from v2.features.contracts import MissingPolicy
-from v2.features.registry import FeatureRegistry
-from v2.features.temporal import TemporalError
+from raceintel.features.contracts import MissingPolicy
+from raceintel.features.registry import FeatureRegistry
+from raceintel.features.temporal import TemporalError
 
 ROOT = V2Paths.resolve().root
 _HAS = (ROOT / "data/v2/processed/hist_results/season=2020").is_dir()
@@ -252,7 +252,7 @@ def _bundle(hist):
          "laps_completed": 57, "dnf_flag": False, "winner_flag": False,
          "podium_flag": False},
     ])
-    from v2.features import PriorHistory
+    from raceintel.features import PriorHistory
     return PriorHistory(hist_results=hist,
                         hist_races=pd.DataFrame(
                             [{"season": 2022, "round_no": 1},
@@ -280,7 +280,7 @@ def _req10(drv="a", t=1000.0):
 
 
 def test_current_result_mutation_invisible(hist, registry):
-    from v2.features import priors_for_state, F10_FEATURE_NAMES
+    from raceintel.features import priors_for_state, F10_FEATURE_NAMES
     h = _bundle(hist)
     st = _states()
     base = priors_for_state(_req10(), registry, st, h)
@@ -295,7 +295,7 @@ def test_current_result_mutation_invisible(hist, registry):
 
 
 def test_future_result_mutation_invisible(hist, registry):
-    from v2.features import priors_for_state
+    from raceintel.features import priors_for_state
     h = _bundle(hist)
     st = _states()
     base = priors_for_state(_req10(), registry, st, h)
@@ -309,7 +309,7 @@ def test_future_result_mutation_invisible(hist, registry):
 
 
 def test_eligible_prior_mutation_visible(hist, registry):
-    from v2.features import priors_for_state
+    from raceintel.features import priors_for_state
     h = _bundle(hist)
     st = _states()
     base = priors_for_state(_req10(), registry, st, h).value_dict()
@@ -328,7 +328,7 @@ def test_eligible_prior_mutation_visible(hist, registry):
 
 
 def test_grid_mutation_isolation(hist, registry):
-    from v2.features import priors_for_state
+    from raceintel.features import priors_for_state
     h = _bundle(hist)
     st = _states()
     base = priors_for_state(_req10(), registry, st, h).value_dict()
@@ -344,7 +344,7 @@ def test_rookie_future_career_adversary(registry):
     hb = pd.DataFrame([
         _hrow(2023, 5 + i, "rookie", pos="1", pts=25.0) for i in range(5)
     ])
-    from v2.features import priors_for_state
+    from raceintel.features import priors_for_state
     h = _bundle(hb)
     st = pd.DataFrame([
         {"race_id": "2023-r02-R", "driver_id": "rookie", "lap_number": 3,
@@ -378,7 +378,7 @@ def test_future_circuit_edition_excluded(registry):
 # --- constancy / parity / identity ---
 
 def test_same_race_constancy(hist, registry):
-    from v2.features import priors_batch
+    from raceintel.features import priors_batch
     h = _bundle(hist)
     st = pd.DataFrame([
         {"race_id": "2023-r02-R", "driver_id": d, "lap_number": lap,
@@ -388,12 +388,12 @@ def test_same_race_constancy(hist, registry):
     ])
     batch = priors_batch(st, h)
     assert len(batch) == 6
-    from v2.features import F10_FEATURE_NAMES
+    from raceintel.features import F10_FEATURE_NAMES
     for n in list(F10_FEATURE_NAMES):
         assert batch.groupby(["race_id", "driver_id"])[n].nunique(
             dropna=False).max() == 1, n
     # single/batch parity
-    from v2.features import priors_for_state
+    from raceintel.features import priors_for_state
     for _, row in batch.iterrows():
         q = FeatureRequest(str(row["race_id"]), str(row["driver_id"]),
                            int(row["lap_number"]), float(row["state_time_s"]))
@@ -410,7 +410,7 @@ def test_same_race_constancy(hist, registry):
 
 
 def test_presentation_identity_mutation(hist, registry):
-    from v2.features import priors_for_state
+    from raceintel.features import priors_for_state
     h = _bundle(hist)
     st = _states()
     base = priors_for_state(_req10(), registry, st, h)
@@ -427,7 +427,7 @@ def test_presentation_identity_mutation(hist, registry):
 
 
 def test_shuffled_input(hist, registry):
-    from v2.features import priors_for_state
+    from raceintel.features import priors_for_state
     h = _bundle(hist)
     st = _states()
     a = priors_for_state(_req10(), registry, st, h)
@@ -441,7 +441,7 @@ def test_shuffled_input(hist, registry):
 def test_f10_registry_metadata(registry):
     assert len(registry) == 81
     assert FEATURE_SET_VERSION == "v8"
-    from v2.features import F10_FEATURE_NAMES as _names
+    from raceintel.features import F10_FEATURE_NAMES as _names
     for name in _names:
         d = registry.get(name)
         assert d.version >= 1 and d.predictive_eligible
@@ -458,7 +458,7 @@ def test_f10_registry_metadata(registry):
 
 
 def test_engine_f10_resolution(hist, registry):
-    from v2.features import priors_for_state
+    from raceintel.features import priors_for_state
     h = _bundle(hist)
     st = _states()
     res = priors_for_state(_req10(), registry, st, h,
@@ -498,13 +498,13 @@ def _real_frames():
     d9 = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(
         str(ROOT / "data/v2/processed/driver_lap_state_d9"
              "/season=*/*.parquet")))], ignore_index=True)
-    from v2.features import PriorHistory
+    from raceintel.features import PriorHistory
     return PriorHistory(hb, hr, ta, tr, ps), d9
 
 
 def test_real_first_2018_race(registry):
     h, d9 = _real_frames()
-    from v2.features import priors_for_state
+    from raceintel.features import priors_for_state
     sub = d9[d9["race_id"] == "2018-r01-R"]
     t = sub.iloc[0]
     v = priors_for_state(FeatureRequest(
@@ -529,7 +529,7 @@ def test_real_grid_nulls_and_pitlane():
     ta = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(
         str(ROOT / "data/v2/processed/results/season=*/*.parquet")))],
         ignore_index=True)
-    from v2.features import resolve_grid
+    from raceintel.features import resolve_grid
     # the 3 known W/DNS rows resolve to null (never imputed)
     assert resolve_grid(ta, "2021-r22-R", "mazepin") is None
     assert resolve_grid(ta, "2022-r02-R", "mick_schumacher") is None
@@ -541,7 +541,7 @@ def test_real_grid_nulls_and_pitlane():
 
 def test_real_midcareer_and_debut(registry):
     h, d9 = _real_frames()
-    from v2.features import priors_for_state, priors_batch
+    from raceintel.features import priors_for_state, priors_batch
     # debut venue: Miami 2022-r05 (first Tier-A edition)
     sub = d9[d9["race_id"] == "2022-r05-R"]
     t = sub.iloc[0]
@@ -552,7 +552,7 @@ def test_real_midcareer_and_debut(registry):
     # constancy over full scope via batch
     batch = priors_batch(d9, h)
     assert len(batch) == 189420
-    from v2.features import F10_FEATURE_NAMES
+    from raceintel.features import F10_FEATURE_NAMES
     for n in list(F10_FEATURE_NAMES):
         assert batch.groupby(["race_id", "driver_id"])[n].nunique(
             dropna=False).max() == 1, n

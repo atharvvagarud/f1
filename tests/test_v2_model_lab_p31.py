@@ -21,10 +21,10 @@ import pytest
 
 import model_lab_helpers as H
 from model_lab_helpers import load_canonical_or_skip, require_generated_artifact
-from v2.model_lab import errors as E
-from v2.model_lab import final_fit as FF
-from v2.model_lab import serving as S
-from v2.model_lab import splits as SPLITS
+from raceintel.model_lab import errors as E
+from raceintel.model_lab import final_fit as FF
+from raceintel.model_lab import serving as S
+from raceintel.model_lab import splits as SPLITS
 
 ROOT = Path(__file__).resolve().parents[1]
 FROZEN_HOLDOUT_SHA256 = (
@@ -172,7 +172,7 @@ def test_serving_reference_equivalence_on_development_fixture(
 
 
 def test_serving_feature_order_enforced(serving_predictor, canonical):
-    from v2.model_lab import data as DATA
+    from raceintel.model_lab import data as DATA
 
     frame = DATA.feature_frame(canonical, "ALL_84").iloc[:8]
     ok = serving_predictor.predict_proba(frame)
@@ -194,7 +194,7 @@ def test_serving_source_guard():
     call predict_proba, but it must never fit, tune, calibrate-select,
     or touch holdout machinery.
     """
-    text = (ROOT / "v2" / "model_lab" / "serving.py").read_text()
+    text = (ROOT / "raceintel" / "model_lab" / "serving.py").read_text()
     for token in (".fit(", "allow_protected_holdout", "materialize_holdout",
                   "evaluate_protected_holdout", "run_m9", "GridSearchCV",
                   "RandomizedSearchCV", "tuning_candidates",
@@ -204,11 +204,11 @@ def test_serving_source_guard():
 
 def test_serving_import_excludes_evaluation_stack():
     """Loading the serving boundary must not need runners/holdout code."""
-    code = ("import sys, v2.model_lab.serving; "
-            "banned = ('v2.model_lab.runner', 'v2.model_lab.tuning', "
-            "'v2.model_lab.final_fit', 'v2.model_lab.run_final', "
-            "'v2.model_lab.calibration_selection', "
-            "'v2.model_lab.model_runner'); "
+    code = ("import sys, raceintel.model_lab.serving; "
+            "banned = ('raceintel.model_lab.runner', 'raceintel.model_lab.tuning', "
+            "'raceintel.model_lab.final_fit', 'raceintel.model_lab.run_final', "
+            "'raceintel.model_lab.calibration_selection', "
+            "'raceintel.model_lab.model_runner'); "
             "hit = [m for m in sys.modules if m in banned]; "
             "assert not hit, hit; print('serving import clean')")
     proc = subprocess.run(
@@ -272,7 +272,7 @@ def test_holdout_artifact_byte_identical():
 
 
 def test_ordinary_holdout_firewall_intact(canonical):
-    from v2.model_lab import runner as RUN
+    from raceintel.model_lab import runner as RUN
 
     with pytest.raises(E.ProtectedHoldoutError):
         SPLITS.get_split(SPLITS.HOLDOUT_ID)

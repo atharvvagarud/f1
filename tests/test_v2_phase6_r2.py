@@ -27,12 +27,12 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from v2 import race_state as RS
-from v2 import replay as RP
-from v2 import simulation as S
-from v2.race_state_reconstruction import RaceStateReconstructor
-from v2.replay_reconstruction import ReplayReconstructor
-from v2.simulation.adapter import (
+from raceintel.race_state import race_state as RS
+from raceintel.replay import replay as RP
+from raceintel import simulation as S
+from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+from raceintel.replay.replay_reconstruction import ReplayReconstructor
+from raceintel.simulation.adapter import (
     ADAPTER_PROVENANCE,
     ADAPTER_SOURCE,
     ADAPTER_UNAVAILABLE_REASONS,
@@ -48,7 +48,7 @@ from v2.simulation.adapter import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-ADAPTER_SOURCE_PATH = ROOT / "v2" / "simulation" / "adapter.py"
+ADAPTER_SOURCE_PATH = ROOT / "raceintel" / "simulation" / "adapter.py"
 
 D9 = (str(ROOT) + "/data/v2/processed/driver_lap_state_d9/season={season}/"
       "driver_lap_state_d9__d9-{season}.parquet")
@@ -819,10 +819,10 @@ def test_adapter_source_does_not_import_replay():
         elif isinstance(node, ast.ImportFrom):
             imported.add(node.module or "")
     for name in imported:
-        assert not name.startswith("v2.replay"), name
-        assert not name.startswith("v2.replay_reconstruction"), name
-        assert not name.startswith("v2.race_state_reconstruction"), name
-    assert "v2.race_state" in imported
+        assert not name.startswith("raceintel.replay"), name
+        assert not name.startswith("raceintel.replay.replay_reconstruction"), name
+        assert not name.startswith("raceintel.race_state.race_state_reconstruction"), name
+    assert "raceintel.race_state.race_state" in imported
 
 
 # ---------------------------------------------------------------------------
@@ -909,8 +909,8 @@ def test_future_poison_matrix(season, race_id, driver, lap):
 
 def test_adapter_source_has_no_forbidden_tokens():
     text = ADAPTER_SOURCE_PATH.read_text()
-    for token in ("v2.prediction", "v2.model_lab", "FrozenWinnerPredictor",
-                  "v2.race_state_features", "replay_prediction",
+    for token in ("raceintel.prediction", "raceintel.model_lab", "FrozenWinnerPredictor",
+                  "raceintel.race_state.race_state_features", "replay_prediction",
                   "features_for_batch", "predict_proba", "sklearn", "joblib",
                   "fastapi", "import api", "from api",
                   "ORACLE_EVALUATION_ONLY", "HISTORICALLY_ESTIMATED"):
@@ -926,16 +926,16 @@ def test_adapter_source_imports_only_contracts():
         elif isinstance(node, ast.ImportFrom):
             names = [node.module or ""]
         for name in names:
-            assert name.startswith(("v2.race_state", "v2.simulation",
+            assert name.startswith(("raceintel.race_state", "raceintel.simulation",
                                     "__future__")), name
 
 
 def test_adapter_runtime_import_firewall():
     probe = (
-        "import sys, v2.simulation.adapter; "
-        "forbidden={'v2.prediction','v2.model_lab','v2.race_state_features',"
-        "'v2.replay','v2.replay_predictions',"
-        "'v2.replay_probability_timeline','v2.replay_reconstruction',"
+        "import sys, raceintel.simulation.adapter; "
+        "forbidden={'raceintel.prediction','raceintel.model_lab','raceintel.race_state.race_state_features',"
+        "'raceintel.replay','raceintel.replay.replay_predictions',"
+        "'raceintel.replay.replay_probability_timeline','raceintel.replay.replay_reconstruction',"
         "'sklearn','joblib','pandas','fastapi','api'}; "
         "bad=sorted(m for m in sys.modules "
         "if m in forbidden or m.split('.')[0] in forbidden); "
@@ -964,7 +964,7 @@ def test_2025_scope_enforced_at_serving_boundary():
 
 def test_adapter_provenance_identity():
     assert ADAPTER_PROVENANCE is S.Provenance.FACTUAL_AT_T
-    assert ADAPTER_SOURCE.startswith("v2.race_state")
+    assert ADAPTER_SOURCE.startswith("raceintel.race_state")
 
 
 def test_adaptation_is_factual_not_oracle():

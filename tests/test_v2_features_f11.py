@@ -6,8 +6,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2.config import V2Paths
-from v2.features import (
+from raceintel.config import V2Paths
+from raceintel.features import (
     FEATURE_SET_VERSION,
     INTERACTION_NAMES,
     FeatureFamily,
@@ -38,7 +38,7 @@ def registry():
 # --- selection guards ---
 
 def test_no_automatic_generation():
-    import v2.features.interactions as ix
+    import raceintel.features.interactions as ix
     src = open(ix.__file__).read()
     assert "PolynomialFeatures" not in src
     assert "sklearn" not in src
@@ -140,7 +140,7 @@ def test_engine_f11_resolution(registry):
         "race_id": "R", "driver_id": "a", "lap_number": 1,
         "state_time_s": 100.0}])
     with pytest.raises(NoCalculatorError):
-        from v2.features import interactions_for_state
+        from raceintel.features import interactions_for_state
         interactions_for_state(
             FeatureRequest("R", "a", 1, 100.0), registry, df,
             names=["grid_position"])
@@ -161,7 +161,7 @@ def _prims(n=6):
 
 
 def test_single_batch_parity(registry):
-    from v2.features import interactions_batch
+    from raceintel.features import interactions_batch
     prims = _prims()
     batch = interactions_batch(prims)
     assert len(batch) == len(prims)
@@ -191,7 +191,7 @@ def test_single_batch_parity(registry):
 
 
 def test_shuffled_input(registry):
-    from v2.features import interactions_batch
+    from raceintel.features import interactions_batch
     a = interactions_batch(_prims())
     b = interactions_batch(_prims().sample(frac=1.0, random_state=23))
     _pd = pd
@@ -205,7 +205,7 @@ def test_shuffled_input(registry):
 def test_future_source_mutation_real(registry):
     if not _HAS_D9:
         pytest.skip("canonical D9 data not present (data/v2 gitignored)")
-    from v2.features import PriorHistory
+    from raceintel.features import PriorHistory
     d9 = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(
         str(ROOT / "data/v2/processed/driver_lap_state_d9"
              "/season=2023/*.parquet")))], ignore_index=True)
@@ -252,7 +252,7 @@ def test_future_source_mutation_real(registry):
 def test_unrelated_input_isolation(registry):
     if not _HAS_D9:
         pytest.skip("canonical D9 data not present (data/v2 gitignored)")
-    from v2.features import PriorHistory
+    from raceintel.features import PriorHistory
     d9 = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(
         str(ROOT / "data/v2/processed/driver_lap_state_d9"
              "/season=2023/*.parquet")))], ignore_index=True)
@@ -292,7 +292,7 @@ def test_unrelated_input_isolation(registry):
 def _spot(registry, season, race_id):
     if not _HAS_D9:
         pytest.skip("canonical D9 data not present (data/v2 gitignored)")
-    from v2.features import PriorHistory
+    from raceintel.features import PriorHistory
     d9 = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(
         str(ROOT / "data/v2/processed/driver_lap_state_d9"
              f"/season={season}/*.parquet")))], ignore_index=True)
@@ -326,7 +326,7 @@ def test_real_spots(registry, season, race_id):
 def test_full_scope_audit(registry):
     if not _HAS_D9:
         pytest.skip("canonical D9 data not present (data/v2 gitignored)")
-    from v2.features import (passthrough_batch, pace_batch, gap_batch,
+    from raceintel.features import (passthrough_batch, pace_batch, gap_batch,
                              context_batch, rates_batch, priors_batch,
                              PriorHistory, interactions_batch)
     d9 = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob(

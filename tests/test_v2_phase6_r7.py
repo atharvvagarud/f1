@@ -24,23 +24,23 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2 import replay as RP
-from v2.race_state_reconstruction import RaceStateReconstructor
-from v2.replay_reconstruction import ReplayReconstructor
-from v2.simulation import validation as V
-from v2.simulation.adapter import from_race_state
-from v2.simulation.config import Assumptions, SimulationConfig
-from v2.simulation.errors import (
+from raceintel.replay import replay as RP
+from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+from raceintel.replay.replay_reconstruction import ReplayReconstructor
+from raceintel.simulation import validation as V
+from raceintel.simulation.adapter import from_race_state
+from raceintel.simulation.config import Assumptions, SimulationConfig
+from raceintel.simulation.errors import (
     SimulationContractError,
     SimulationValidationError,
 )
-from v2.simulation.monte_carlo import MonteCarloEngine
-from v2.simulation.params import load_simulation_parameters
+from raceintel.simulation.monte_carlo import MonteCarloEngine
+from raceintel.simulation.params import load_simulation_parameters
 
 from test_v2_phase6_r6 import make_params
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-VALIDATION_PATH = REPO_ROOT / "v2" / "simulation" / "validation.py"
+VALIDATION_PATH = REPO_ROOT / "raceintel" / "simulation" / "validation.py"
 SCRIPT_PATH = REPO_ROOT / "scripts" / "validate_phase6_simulation.py"
 ARTIFACT_2024 = (REPO_ROOT / "data" / "v2" / "simulation" / "params"
                  / "r3-v1__through-2024")
@@ -54,7 +54,7 @@ RACES = (str(REPO_ROOT) + "/data/v2/processed/races/season={season}/"
 
 def _dist(observed_max, *, probs=(0.5,), quants=(20.0,), observed_min=1.0,
           std=None):
-    from v2.simulation.params import SupportEntry
+    from raceintel.simulation.params import SupportEntry
     return SupportEntry(
         group_key="g", sample_count=1000, support_level="strong",
         fallback_level="global", probabilities=probs,
@@ -202,7 +202,7 @@ def test_historical_truth_does_not_mutate_input_rows():
 
 
 def test_is_contemporaneous_rejects_stale_driver():
-    from v2.simulation.state import (
+    from raceintel.simulation.state import (
         DriverSimState, SimulationEnvironment, SimulationState)
     fresh = DriverSimState("a", lap_number=20, race_time_s=1800.0,
                            observation_age_s=5.0)
@@ -229,7 +229,7 @@ def test_is_contemporaneous_rejects_stale_driver():
 # ===========================================================================
 
 def test_current_order_is_free_air_order():
-    from v2.simulation.state import (
+    from raceintel.simulation.state import (
         DriverSimState, SimulationEnvironment, SimulationState)
     drivers = (
         DriverSimState("a", lap_number=5, race_time_s=100.0),
@@ -411,8 +411,8 @@ def test_aggregate_race_macro_and_stage_grouping():
 
 def test_validation_module_import_firewall():
     tree = ast.parse(VALIDATION_PATH.read_text(encoding="utf-8"))
-    forbidden = ("pandas", "v2.prediction", "v2.model_lab", "v2.replay",
-                 "v2.race_state", "fastapi", "v2.api", "sklearn", "scipy")
+    forbidden = ("pandas", "raceintel.prediction", "raceintel.model_lab", "raceintel.replay",
+                 "raceintel.race_state", "fastapi", "raceintel.api", "sklearn", "scipy")
     imported = []
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
@@ -428,9 +428,9 @@ def test_validation_module_import_firewall():
 def test_validation_module_runs_without_pandas_imported():
     code = (
         "import sys;"
-        "import v2.simulation.validation as v;"
+        "import raceintel.simulation.validation as v;"
         "assert 'pandas' not in sys.modules;"
-        "assert 'v2.prediction' not in sys.modules;"
+        "assert 'raceintel.prediction' not in sys.modules;"
         "print(v.default_protocol().identity()[:8])")
     proc = subprocess.run([sys.executable, "-c", code],
                           capture_output=True, text=True, cwd=str(REPO_ROOT))

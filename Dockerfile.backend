@@ -26,10 +26,11 @@ WORKDIR /app
 COPY requirements.txt .
 RUN python -m pip install --no-cache-dir -r requirements.txt
 
-# Layer 5: application source (import evidence: api/ -> ml/, v2/;
+# Layer 5: application source (import evidence: api/ -> ml/, raceintel/;
 # serving resolves everything under these packages).
 COPY api/ ./api/
 COPY ml/ ./ml/
+COPY raceintel/ ./raceintel/
 COPY v2/ ./v2/
 
 # Layer 5b: tracked V1 resources (normal source inputs, NOT in bundle).
@@ -49,7 +50,7 @@ COPY docs/generated/phase2_freeze_manifest.json ./docs/generated/phase2_freeze_m
 
 # Layer 5e: single runtime helper imported by the explanation service
 # (api/v2_explanation_service.py imports scripts.replay_feature_matrix;
-#  stdlib+pandas+v2 only, no sibling script modules).
+#  stdlib+pandas+raceintel only, no sibling script modules).
 COPY scripts/replay_feature_matrix.py ./scripts/replay_feature_matrix.py
 
 # Layer 6: validated P10-1A runtime bundle merged onto canonical paths.

@@ -29,14 +29,14 @@ sys.path.insert(0, REPO_ROOT)
 import pandas as pd
 
 from api.v2_service import SERVED_SEASONS
-from v2 import replay as RP
-from v2.config import V2Paths
-from v2.features.build_matrix import load_history
-from v2.model_lab import serving as SERVING
-from v2.prediction import RacePredictionEngine
-from v2.race_state_features import RaceStateFeatureBridge
-from v2.race_state_reconstruction import RaceStateReconstructor
-from v2.replay_predictions import (
+from raceintel.replay import replay as RP
+from raceintel.config import V2Paths
+from raceintel.features.build_matrix import load_history
+from raceintel.model_lab import serving as SERVING
+from raceintel.prediction import RacePredictionEngine
+from raceintel.race_state.race_state_features import RaceStateFeatureBridge
+from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+from raceintel.replay.replay_predictions import (
     DEFAULT_CHECKPOINTS_DIR,
     REPLAY_PREDICTION_CONTRACT_VERSION,
     CheckpointCacheError,
@@ -51,7 +51,7 @@ from v2.replay_predictions import (
     select_checkpoints,
     write_artifact,
 )
-from v2.replay_reconstruction import ReplayReconstructor
+from raceintel.replay.replay_reconstruction import ReplayReconstructor
 
 
 def race_season(race_id: str) -> int:

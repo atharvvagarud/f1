@@ -21,19 +21,19 @@ import numpy as np
 import pytest
 
 from model_lab_helpers import load_canonical_or_skip, load_json_artifact_or_skip
-from v2.model_lab import data as D
-from v2.model_lab import errors as E
-from v2.model_lab import inner_splits as IS
-from v2.model_lab import logreg_boundary as B
-from v2.model_lab import preprocessing as PRE
-from v2.model_lab import predictions as PR
-from v2.model_lab import results as RES
-from v2.model_lab import run_boundary as RB
-from v2.model_lab import runner as RUN
-from v2.model_lab import tuning as TUNE
-from v2.model_lab import tuning_candidates as TC
-from v2.model_lab import tuning_runner as TR
-from v2.model_lab.protocol import PROTECTED_HOLDOUT_SEASON
+from raceintel.model_lab import data as D
+from raceintel.model_lab import errors as E
+from raceintel.model_lab import inner_splits as IS
+from raceintel.model_lab import logreg_boundary as B
+from raceintel.model_lab import preprocessing as PRE
+from raceintel.model_lab import predictions as PR
+from raceintel.model_lab import results as RES
+from raceintel.model_lab import run_boundary as RB
+from raceintel.model_lab import runner as RUN
+from raceintel.model_lab import tuning as TUNE
+from raceintel.model_lab import tuning_candidates as TC
+from raceintel.model_lab import tuning_runner as TR
+from raceintel.model_lab.protocol import PROTECTED_HOLDOUT_SEASON
 
 
 @pytest.fixture(scope="module")
@@ -86,7 +86,7 @@ def test_no_adaptive_search_apis_present():
 
 def test_static_guard_m7_modules_train_only_logreg():
     from pathlib import Path
-    root = Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    root = Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
     forbidden = ("ExtraTreesClassifier", "RandomForestClassifier",
                  "HistGradientBoostingClassifier", "XGBClassifier",
                  "LGBMClassifier", "CatBoost", "MLPClassifier",

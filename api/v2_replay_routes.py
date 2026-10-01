@@ -41,8 +41,8 @@ from api.v2_replay_service import (
     V2ReplayService,
     get_v2_replay_service,
 )
-from v2.race_state_reconstruction import RaceNotFoundError
-from v2.replay import ReplayTimelineError
+from raceintel.race_state.race_state_reconstruction import RaceNotFoundError
+from raceintel.replay.replay import ReplayTimelineError
 
 router = APIRouter(prefix="/v2", tags=["v2-replay"])
 

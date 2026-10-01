@@ -9,10 +9,10 @@ import urllib.parse
 
 import pytest
 
-from v2.errors import ErrorCategory, IngestionError
-from v2.jolpica import (BASE_URL, ENDPOINTS, JolpicaClient, JolpicaConfig,
+from raceintel.errors import ErrorCategory, IngestionError
+from raceintel.data.jolpica import (BASE_URL, ENDPOINTS, JolpicaClient, JolpicaConfig,
                         HttpResponse, NETWORK_ENV_VAR)
-from v2.retry import RetryPolicy
+from raceintel.retry import RetryPolicy
 
 
 # --------------------------------------------------------------------------

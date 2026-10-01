@@ -1,12 +1,17 @@
 # Product
 
-> HISTORICAL NOTE (P11-5): this is a pre-Phase-7 product sketch, preserved
-> as history. It predates the shipped v2: strategy comparison, the Models
-> and About surfaces, and six-surface scope are all implemented and frozen
-> in the current system. For the current product, read the root README and
-> `docs/case-study/TECHNICAL_CASE_STUDY.md`. Statements below about
-> "planned / not implemented" work are stale by design of this file's age,
-> not by regression.
+> HISTORICAL NOTE (P11-5, extended C4): this is a pre-Phase-7 product
+> sketch, preserved as history. It predates the shipped v2: strategy
+> comparison, the Models and About surfaces, and six-surface scope are all
+> implemented and frozen in the current system. For the current product,
+> read the root README and `docs/case-study/TECHNICAL_CASE_STUDY.md`.
+> Statements below about "planned / not implemented" work are stale by
+> design of this file's age, not by regression. Two further known
+> stalenesses are covered by this note (body preserved verbatim): the
+> "Phase 7 has NOT started" contract line (strategy has since shipped and
+> frozen), and the `motion` entry in the frontend-stack line (removed from
+> `frontend/package.json` in C3-B as an unused dependency). Current stack:
+> Next.js 16 App Router, React 19, Tailwind v4 CSS-first, `lucide-react`.
 
 <!-- impeccable:product-schema 1 -->
 

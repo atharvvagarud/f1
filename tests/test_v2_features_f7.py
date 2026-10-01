@@ -11,8 +11,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2.config import V2Paths
-from v2.features import (
+from raceintel.config import V2Paths
+from raceintel.features import (
     FEATURE_SET_VERSION,
     F7_FEATURE_NAMES,
     FeatureFamily,
@@ -27,7 +27,7 @@ from v2.features import (
     features_for_state,
     results_equal,
 )
-from v2.features.contracts import MissingPolicy
+from raceintel.features.contracts import MissingPolicy
 
 ROOT = V2Paths.resolve().root
 _HAS_D9 = (ROOT / "data/v2/processed/driver_lap_state_d9/season=2021").is_dir()
@@ -318,10 +318,10 @@ def test_engine_f7_resolution(registry, race):
 # --- parity ---
 
 def test_single_batch_parity(registry, race):
-    from v2.features.context import context_batch
+    from raceintel.features.context import context_batch
     batch = context_batch(race)
     assert len(batch) == len(race)
-    from v2.features import F7_FEATURE_NAMES
+    from raceintel.features import F7_FEATURE_NAMES
     for _, row in batch.iterrows():
         q = FeatureRequest(str(row["race_id"]), str(row["driver_id"]),
                            int(row["lap_number"]), float(row["state_time_s"]))
@@ -393,7 +393,7 @@ def _d9_season(season):
 
 
 def _parity_spot(d9, race_id, registry, k=8):
-    from v2.features import F7_FEATURE_NAMES, context_batch
+    from raceintel.features import F7_FEATURE_NAMES, context_batch
     sub = d9[d9["race_id"] == race_id]
     batch = context_batch(sub)
     assert len(batch) == len(sub)
@@ -430,7 +430,7 @@ def test_real_parity_spots(registry, season, race_id):
 def test_full_scope_audit(registry):
     if not _HAS_D9:
         pytest.skip("canonical D9 data not present (data/v2 gitignored)")
-    from v2.features import F7_FEATURE_NAMES, context_batch
+    from raceintel.features import F7_FEATURE_NAMES, context_batch
     files = sorted(glob.glob(str(ROOT / "data/v2/processed"
                                  / "driver_lap_state_d9"
                                  / "season=*/*.parquet")))

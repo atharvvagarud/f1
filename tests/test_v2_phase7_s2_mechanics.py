@@ -14,12 +14,12 @@ import inspect
 import numpy as np
 import pytest
 
-from v2.simulation import monte_carlo as mc
-from v2.simulation.config import Assumptions, SimulationConfig
-from v2.simulation.engine import ExecutionPolicy
-from v2.simulation.params import ParameterFamily
-from v2.simulation.state import SIMULATION_CONTRACT_VERSION
-from v2.strategy import (
+from raceintel.simulation import monte_carlo as mc
+from raceintel.simulation.config import Assumptions, SimulationConfig
+from raceintel.simulation.engine import ExecutionPolicy
+from raceintel.simulation.params import ParameterFamily
+from raceintel.simulation.state import SIMULATION_CONTRACT_VERSION
+from raceintel.strategy import (
     InterventionOutcome,
     StrategyAction,
     StrategyIntervention,

@@ -3,7 +3,7 @@
 > Phase-1 status: **COMPLETE** (D0–D11, final validation: 44 findings,
 > 0 failed, 0 unresolved BLOCKERs — see `docs/PHASE1_FINAL_VALIDATION.md`).
 > This document is the data-platform README and the **Phase-2 handoff**.
-> Nothing here changes data semantics; the frozen contracts live in `v2/`.
+> Nothing here changes data semantics; the frozen contracts live in `raceintel/`.
 
 ## 1. What the data platform is
 
@@ -54,8 +54,9 @@ Tier-A: `races`, `results`, `driver_laps`, `pit_stops`, `stints`,
   unchanged by D7/D9). Every predictive-eligible field is computable from
   information observable at or before `state_time_s`; availability contracts
   (`PRE_RACE / LAP_START / IN_LAP / LAP_END / POST_RACE / LABEL_ONLY /
-  SOURCE_METADATA`) are machine-readable in `v2/contracts.py`,
-  `v2/d6schema.py`, `v2/d7schema.py`, `v2/d9schema.py`.
+  SOURCE_METADATA`) are machine-readable in `raceintel/contracts.py`,
+  `raceintel/pipeline/d6schema.py`, `raceintel/pipeline/d7schema.py`,
+  `raceintel/pipeline/d9schema.py`.
 - **Label separation:** final outcomes live ONLY in `race_driver_labels`
   (3,458 rows, race×driver grain). State tables carry zero `LABEL_ONLY`
   fields (asserted in tests and in the D11 gate).
@@ -76,14 +77,14 @@ Tier-A: `races`, `results`, `driver_laps`, `pit_stops`, `stints`,
 ## 6. Build / validate / inspect (real commands)
 
 ```bash
-python -m v2.d6 --all --validate        # canonical lap state
-python -m v2.d7 --all --validate --coverage   # temporal enrichment
-python -m v2.d9 --all --validate        # derived state + labels
-python -m v2.d10                        # legacy comparison audit (read-only)
-python -m v2.d11                        # final validation gate
-python -m v2.cli plan --season YYYY --rounds N [N ...]   # bounded scope
-V2_ALLOW_NETWORK=1 python -m v2.cli run --adapter fastf1 --unit <race-id>
-python -m v2.cli status --manifest tiera-<YYYY>.json    # read-only
+python -m raceintel.pipeline.d6 --all --validate        # canonical lap state
+python -m raceintel.pipeline.d7 --all --validate --coverage   # temporal enrichment
+python -m raceintel.pipeline.d9 --all --validate        # derived state + labels
+python -m raceintel.pipeline.d10                        # legacy comparison audit (read-only)
+python -m raceintel.pipeline.d11                        # final validation gate
+python -m raceintel.cli plan --season YYYY --rounds N [N ...]   # bounded scope
+V2_ALLOW_NETWORK=1 python -m raceintel.cli run --adapter fastf1 --unit <race-id>
+python -m raceintel.cli status --manifest tiera-<YYYY>.json    # read-only
 ```
 
 Full rich rebuilds require network, take substantial time, and grow the

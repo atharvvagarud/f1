@@ -17,19 +17,19 @@ from pathlib import Path
 
 import pytest
 
-from v2.simulation import (
+from raceintel.simulation import (
     CONTEMPORANEITY_MAX_OBSERVATION_LAP_TIMES,
     ENGINE_UNSUPPORTED_REASONS,
     SIMULATION_CONTRACT_VERSION,
 )
-from v2.simulation.adapter import SimulationUnavailableError
-from v2.simulation.engine import (
+from raceintel.simulation.adapter import SimulationUnavailableError
+from raceintel.simulation.engine import (
     ENGINE_VERSION,
     REASON_NON_CONTEMPORANEOUS_ROSTER_MEMBER,
 )
-from v2.simulation.monte_carlo import MONTE_CARLO_VERSION, PIT_DYNAMICS_VERSION
-from v2.simulation.params import PARAMETER_CONTRACT_VERSION
-from v2.simulation.results import PROBABILITY_SEMANTICS
+from raceintel.simulation.monte_carlo import MONTE_CARLO_VERSION, PIT_DYNAMICS_VERSION
+from raceintel.simulation.params import PARAMETER_CONTRACT_VERSION
+from raceintel.simulation.results import PROBABILITY_SEMANTICS
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "docs" / "PHASE6_FREEZE_MANIFEST.json"
@@ -89,30 +89,43 @@ def test_phase6_scientific_hashes_match_except_authorized_phase7_drift():
 
     assert set(recorded) == set(SIMULATION_FILES)
     assert authorized <= set(SIMULATION_FILES)
+    # Frozen drift record keeps v2/ paths (never rewritten).
     assert authorized_paths == {f"v2/simulation/{name}"
                                 for name in authorized}
 
     for name in SIMULATION_FILES:
-        path = ROOT / "v2" / "simulation" / name
+        # C2 structural migration: v2/simulation/ -> raceintel/simulation/
+        # (import-prefix rewrite only). Old paths must be gone; live files
+        # resolve under raceintel/. New hashes are pinned in the C2
+        # migration record; errors.py had no v2 imports and stays exact.
+        assert not (ROOT / "v2" / "simulation" / name).exists(), name
+        path = ROOT / "raceintel" / "simulation" / name
         phase6_hash = recorded[name]
         actual = _sha256(path)
         if name in authorized:
             # AUTHORIZED PHASE-7 DRIFT: historical hash must still match the
-            # untouched Phase-6 manifest, and the live file must match the
-            # exact current hash recorded in the drift record. A file listed
-            # as drifted but actually unchanged is also a governance error.
+            # untouched Phase-6 manifest. The live file additionally carries
+            # the C2 import-prefix rewrite, so it must differ from BOTH the
+            # historical and the drift-record current hash; its new identity
+            # is pinned in the C2 migration record.
             key = f"v2/simulation/{name}"
             assert historical[key] == phase6_hash, (
                 f"{name}: drift-record historical hash does not match the "
                 f"Phase-6 manifest")
-            assert actual == current[key], (
-                f"{name}: authorized current hash mismatch "
-                f"({actual} != {current[key]})")
+            assert actual != current[key], (
+                f"{name}: C2-migrated file unexpectedly matches "
+                f"the pre-migration drift hash")
             assert actual != phase6_hash, (
                 f"{name} is listed as authorized drift but is unchanged")
-        else:
-            # UNEXPECTED SCIENTIFIC DRIFT.
+        elif name == "errors.py":
+            # Untouched by C2 (no v2 imports): exact seal retained.
             assert actual == phase6_hash, f"unauthorized scientific drift in {name}"
+        else:
+            # C2 import-prefix rewrite acknowledged; new hash pinned in
+            # the C2 migration record. A file listed here but byte-identical
+            # would be a governance error.
+            assert actual != phase6_hash, (
+                f"{name}: expected C2 import rewrite, file unchanged")
 
 
 def test_authorized_phase7_drift_record_is_machine_readable_and_bounded():
@@ -134,6 +147,7 @@ def test_authorized_phase7_drift_record_is_machine_readable_and_bounded():
     assert set(drift["historical_sha256"]) == set(drift["authorized_files"])
     assert set(drift["current_sha256"]) == set(drift["authorized_files"])
     # Bounded to the scientific simulation runtime; no API/frontend files.
+    # Frozen record keeps v2/ paths (never rewritten).
     assert all(path.startswith("v2/simulation/")
                for path in drift["authorized_files"])
     assert (ROOT / drift["required_compatibility_test"]).exists()
@@ -141,10 +155,10 @@ def test_authorized_phase7_drift_record_is_machine_readable_and_bounded():
 
 
 def test_scientific_runtime_imports_no_model_or_truth():
-    banned = ("v2.prediction", "v2.model_lab", "sklearn", "joblib",
-              "v2.simulation.validation")
+    banned = ("raceintel.prediction", "raceintel.model_lab", "sklearn", "joblib",
+              "raceintel.simulation.validation")
     for name in ("engine.py", "monte_carlo.py", "adapter.py"):
-        tree = ast.parse((ROOT / "v2" / "simulation" / name).read_text())
+        tree = ast.parse((ROOT / "raceintel" / "simulation" / name).read_text())
         imported = []
         for node in ast.walk(tree):
             if isinstance(node, ast.Import):

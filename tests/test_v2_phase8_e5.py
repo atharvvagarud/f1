@@ -56,16 +56,16 @@ from scripts.replay_feature_matrix import (  # noqa: E402
     IDENTITY_COLUMNS,
     FrozenReplayFeatureMatrix,
 )
-from v2 import explainability as E3  # noqa: E402
-from v2 import local_explainability as E4  # noqa: E402
-from v2 import timeline_explainability as E5  # noqa: E402
-from v2.config import V2Paths  # noqa: E402
-from v2.features.build_matrix import load_history  # noqa: E402
-from v2.local_explainability import (  # noqa: E402
+from raceintel.explainability import explainability as E3  # noqa: E402
+from raceintel.explainability import local_explainability as E4  # noqa: E402
+from raceintel.explainability import timeline_explainability as E5  # noqa: E402
+from raceintel.config import V2Paths  # noqa: E402
+from raceintel.features.build_matrix import load_history  # noqa: E402
+from raceintel.explainability.local_explainability import (  # noqa: E402
     LocalExplanationIdentity,
 )
-from v2.model_lab import serving as SERVING  # noqa: E402
-from v2.race_state_reconstruction import (  # noqa: E402
+from raceintel.model_lab import serving as SERVING  # noqa: E402
+from raceintel.race_state.race_state_reconstruction import (  # noqa: E402
     RaceNotFoundError,
     RaceStateReconstructor,
 )
@@ -214,8 +214,8 @@ def test_contract_version_and_semantics():
 
 
 def test_contract_is_additive_versions_untouched():
-    from v2.local_explainability import LOCAL_EXPLANATION_CONTRACT_VERSION
-    from v2.replay_predictions import (
+    from raceintel.explainability.local_explainability import LOCAL_EXPLANATION_CONTRACT_VERSION
+    from raceintel.replay.replay_predictions import (
         ARTIFACT_FORMAT,
         REPLAY_PREDICTION_CONTRACT_VERSION,
     )
@@ -224,7 +224,7 @@ def test_contract_is_additive_versions_untouched():
     assert REPLAY_PREDICTION_CONTRACT_VERSION == "v1"
     assert ARTIFACT_FORMAT == "replay-checkpoints-v1"
     assert E5.TIMELINE_EXPLANATION_FORMAT != ARTIFACT_FORMAT
-    source = (ROOT / "v2" / "timeline_explainability.py").read_text()
+    source = (ROOT / "raceintel" / "explainability" / "timeline_explainability.py").read_text()
     assert "replay_predictions" not in source
     assert "import shap" not in source
 
@@ -739,7 +739,7 @@ def test_label_firewall_matrix_columns(stack):
 
 
 def test_classified_flag_and_labels_not_consumed():
-    source = (ROOT / "v2" / "timeline_explainability.py").read_text()
+    source = (ROOT / "raceintel" / "explainability" / "timeline_explainability.py").read_text()
     for token in ("is_winner", "classified_flag", "eligible_is_winner",
                   "read_parquet", "final_position"):
         assert token not in source
@@ -922,7 +922,7 @@ def test_language_contract(explanation_service, replay_service):
 
 
 def test_no_shap_or_llm_in_module():
-    source = (ROOT / "v2" / "timeline_explainability.py").read_text()
+    source = (ROOT / "raceintel" / "explainability" / "timeline_explainability.py").read_text()
     assert "import shap" not in source
     assert "openai" not in source
     assert "anthropic" not in source

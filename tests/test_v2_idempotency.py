@@ -3,14 +3,14 @@
 import pandas as pd
 import pytest
 
-from v2 import contracts as C
-from v2.config import V2Paths
-from v2.errors import IngestionError
-from v2.ingestion import AdapterResult, run_unit
-from v2.manifests import Manifest, UnitStatus
-from v2.retry import RetryPolicy
-from v2.runs import start_run
-from v2.synthetic import synthetic_adapter
+from raceintel import contracts as C
+from raceintel.config import V2Paths
+from raceintel.errors import IngestionError
+from raceintel.data.ingestion import AdapterResult, run_unit
+from raceintel.manifests import Manifest, UnitStatus
+from raceintel.retry import RetryPolicy
+from raceintel.runs import start_run
+from raceintel.data.synthetic import synthetic_adapter
 
 
 def noop_policy():

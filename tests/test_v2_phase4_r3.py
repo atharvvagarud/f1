@@ -17,21 +17,21 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from v2 import race_state as RS
-from v2.config import V2Paths
-from v2.experiments.feature_sets import EXPECTED_PREDICTIVE_FEATURE_COUNT
-from v2.features.contracts import FeatureRequest
-from v2.features.engine import features_for_batch, results_equal
-from v2.features.interactions import build_f11_registry
-from v2.features.registry import FEATURE_SET_VERSION
-from v2.race_state_features import (
+from raceintel.race_state import race_state as RS
+from raceintel.config import V2Paths
+from raceintel.experiments.feature_sets import EXPECTED_PREDICTIVE_FEATURE_COUNT
+from raceintel.features.contracts import FeatureRequest
+from raceintel.features.engine import features_for_batch, results_equal
+from raceintel.features.interactions import build_f11_registry
+from raceintel.features.registry import FEATURE_SET_VERSION
+from raceintel.race_state.race_state_features import (
     FeatureBatch,
     FeatureIdentity,
     RaceStateFeatureBridge,
     RaceStateFeatureError,
     RaceStateFeatureMismatchError,
 )
-from v2.race_state_reconstruction import RaceStateReconstructor
+from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
 
 ROOT = V2Paths.resolve().root
 _HAS_CANON = (ROOT / "data/v2/processed/driver_lap_state_d9/season=2022"
@@ -70,7 +70,7 @@ def _tiny_state():
 
 @pytest.fixture(scope="module")
 def tiny_bridge():
-    from v2.features.priors import PriorHistory
+    from raceintel.features.priors import PriorHistory
     empty = pd.DataFrame()
     history = PriorHistory(empty, empty, empty, empty, empty)
     return RaceStateFeatureBridge(_tiny(), history)
@@ -86,7 +86,7 @@ def test_bridge_construction_and_authority(tiny_bridge):
 
 
 def test_bridge_rejects_bad_inputs():
-    from v2.features.priors import PriorHistory
+    from raceintel.features.priors import PriorHistory
     empty = pd.DataFrame()
     history = PriorHistory(empty, empty, empty, empty, empty)
     with pytest.raises(RaceStateFeatureError):
@@ -178,7 +178,7 @@ def _season_frame(season, entity):
 def history():
     if not _HAS_CANON:
         pytest.skip("canonical data absent")
-    from v2.features.build_matrix import load_history
+    from raceintel.features.build_matrix import load_history
     return load_history(V2Paths.resolve())
 
 
@@ -186,7 +186,7 @@ def history():
 def matrix():
     if not _HAS_CANON:
         pytest.skip("canonical data absent")
-    from v2.features.build_matrix import load_matrix
+    from raceintel.features.build_matrix import load_matrix
     frame, manifest = load_matrix(V2Paths.resolve())
     return frame, manifest
 
@@ -263,7 +263,7 @@ def test_batch_shape_order_alignment(season, race_id, driver, lap,
 @pytest.mark.parametrize("season,race_id,driver,lap", ANCHORS)
 def test_direct_engine_parity(season, race_id, driver, lap, history):
     """Bridge frame == direct features_for_batch oracle (all 84)."""
-    from v2.features.engine import PARITY_ABS_TOL, PARITY_REL_TOL
+    from raceintel.features.engine import PARITY_ABS_TOL, PARITY_REL_TOL
     snap, sub = _dev_snapshot(season, race_id, driver, lap)
     bridge = _dev_bridge(sub, history)
     batch = bridge.features_for_state(snap)
@@ -526,7 +526,7 @@ def test_performance_observation(history):
 
 def test_no_model_coupling_in_source():
     source = Path(__file__).resolve().parent.parent \
-        / "v2/race_state_features.py"
+        / "raceintel/race_state/race_state_features.py"
     text = source.read_text()
     imported = set()
     for line in text.splitlines():
@@ -534,7 +534,7 @@ def test_no_model_coupling_in_source():
         if match:
             imported.add(match.group(1))
     for module in sorted(imported):
-        for banned in ("v2.model_lab", "ml", "api", "v2.labels", "sklearn",
+        for banned in ("raceintel.model_lab", "ml", "api", "raceintel.labels", "sklearn",
                        "scipy", "fastapi", "pydantic"):
             assert not (module == banned
                         or module.startswith(banned + ".")), \
@@ -547,14 +547,14 @@ def test_no_model_coupling_in_source():
 
 
 def test_no_model_imports_at_runtime():
-    probe = ("import sys, v2.race_state_features as B; "
+    probe = ("import sys, raceintel.race_state.race_state_features as B; "
              "banned = [m for m in sys.modules if m.split('.')[0] in "
              "('sklearn', 'scipy', 'fastapi', 'pydantic', 'torch') or "
-             "m.startswith(('v2.model_lab', 'ml.', 'api.'))]; "
+             "m.startswith(('raceintel.model_lab', 'ml.', 'api.'))]; "
              "print(','.join(sorted(banned))); "
-             "builder = sys.modules.get('v2.labels.builder'); "
+             "builder = sys.modules.get('raceintel.labels.builder'); "
              "refs = [k for k, v in vars(B).items() "
-             "if getattr(v, '__module__', None) == 'v2.labels.builder']; "
+             "if getattr(v, '__module__', None) == 'raceintel.labels.builder']; "
              "print('BUILDER_REFS:' + ','.join(sorted(refs)))")
     out = subprocess.run(
         [sys.executable, "-c", probe], capture_output=True, text=True,
@@ -562,7 +562,7 @@ def test_no_model_imports_at_runtime():
     assert out.returncode == 0, out.stderr
     lines = out.stdout.splitlines()
     assert lines[0] == "", f"heavy imports: {lines[0]}"
-    # v2.labels package __init__ (frozen) imports builder as a side
+    # raceintel.labels package __init__ (frozen) imports builder as a side
     # effect of the contracts name-guard; the bridge itself must hold
     # no reference to label values.
     assert lines[1] == "BUILDER_REFS:", f"label value refs: {lines[1]}"

@@ -11,16 +11,16 @@ import urllib.parse
 import pandas as pd
 import pytest
 
-from v2 import contracts as C
-from v2.cli import main as cli_main
-from v2.config import V2Paths
-from v2.errors import ErrorCategory
-from v2.ingestion import run_unit
-from v2.jolpica import HttpResponse, JolpicaClient, JolpicaConfig
-from v2.manifests import Manifest, UnitStatus
-from v2.retry import RetryPolicy
-from v2.runs import start_run
-from v2.tierb import (TIERB_ENTITIES, check_integrity,
+from raceintel import contracts as C
+from raceintel.cli import main as cli_main
+from raceintel.config import V2Paths
+from raceintel.errors import ErrorCategory
+from raceintel.data.ingestion import run_unit
+from raceintel.data.jolpica import HttpResponse, JolpicaClient, JolpicaConfig
+from raceintel.manifests import Manifest, UnitStatus
+from raceintel.retry import RetryPolicy
+from raceintel.runs import start_run
+from raceintel.data.tierb import (TIERB_ENTITIES, check_integrity,
                       make_tierb_season_adapter, normalize_circuits,
                       normalize_constructors, normalize_drivers,
                       normalize_races, normalize_results, normalize_seasons,

@@ -1,7 +1,7 @@
 """V2 local-explanation HTTP route (Phase-8 E4).
 
 Additive read-only endpoint over ``V2ExplanationService``. Thin routing
-only: the explanation mathematics lives in ``v2.local_explainability`` and
+only: the explanation mathematics lives in ``raceintel.explainability.local_explainability`` and
 orchestration in ``api.v2_explanation_service``; nothing is computed here.
 
 Error mapping (mirrors the R4 replay family):
@@ -40,9 +40,9 @@ from api.v2_replay_service import (
     PredictionUnavailableError,
     ReplayFrameNotFoundError,
 )
-from v2.local_explainability import LocalExplanationError
-from v2.race_state_reconstruction import RaceNotFoundError
-from v2.replay import ReplayTimelineError
+from raceintel.explainability.local_explainability import LocalExplanationError
+from raceintel.race_state.race_state_reconstruction import RaceNotFoundError
+from raceintel.replay.replay import ReplayTimelineError
 
 router = APIRouter(prefix="/v2", tags=["v2-explainability"])
 

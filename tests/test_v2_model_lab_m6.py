@@ -18,19 +18,19 @@ import numpy as np
 import pytest
 
 from model_lab_helpers import load_canonical_or_skip, load_json_artifact_or_skip
-from v2.model_lab import data as D
-from v2.model_lab import errors as E
-from v2.model_lab import inner_splits as IS
-from v2.model_lab import preprocessing as PRE
-from v2.model_lab import predictions as PR
-from v2.model_lab import tuning as TUNE
-from v2.model_lab import tuning_candidates as TC
-from v2.model_lab import tuning_runner as TR
-from v2.model_lab import tuning_suite as TS
-from v2.model_lab import run_tuning as RT
-from v2.model_lab import results as RES
-from v2.model_lab import splits as S
-from v2.model_lab.protocol import PROTECTED_HOLDOUT_SEASON
+from raceintel.model_lab import data as D
+from raceintel.model_lab import errors as E
+from raceintel.model_lab import inner_splits as IS
+from raceintel.model_lab import preprocessing as PRE
+from raceintel.model_lab import predictions as PR
+from raceintel.model_lab import tuning as TUNE
+from raceintel.model_lab import tuning_candidates as TC
+from raceintel.model_lab import tuning_runner as TR
+from raceintel.model_lab import tuning_suite as TS
+from raceintel.model_lab import run_tuning as RT
+from raceintel.model_lab import results as RES
+from raceintel.model_lab import splits as S
+from raceintel.model_lab.protocol import PROTECTED_HOLDOUT_SEASON
 
 
 @pytest.fixture(scope="module")
@@ -166,7 +166,7 @@ def test_only_logreg_and_extratrees_trainable():
 
 def test_static_guard_m6_modules_train_only_two_families():
     from pathlib import Path
-    root = Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    root = Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
     modules = ("tuning.py", "tuning_candidates.py", "tuning_runner.py",
                "tuning_suite.py", "run_tuning.py", "inner_splits.py")
     forbidden = ("HistGradientBoostingClassifier", "XGBClassifier",
@@ -203,7 +203,7 @@ def test_tuned_families_do_not_collide_with_references():
 
 def test_runner_delegates_to_canonical_evaluators():
     from pathlib import Path
-    text = (Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    text = (Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
             / "tuning_runner.py").read_text()
     for token in ("RUN.evaluate_row_metrics", "RUN.evaluate_stages",
                   "RUN.evaluate_calibration", "RUN.evaluate_winner_top_k",

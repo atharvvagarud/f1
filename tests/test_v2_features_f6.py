@@ -8,8 +8,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2.config import V2Paths
-from v2.features import (
+from raceintel.config import V2Paths
+from raceintel.features import (
     FEATURE_SET_VERSION,
     GAP_FEATURE_NAMES,
     FeatureFamily,
@@ -26,8 +26,8 @@ from v2.features import (
     gaps_for_snapshot,
     results_equal,
 )
-from v2.features.contracts import MissingPolicy
-from v2.features.temporal import TargetNotFoundError, synchronized_field_snapshot
+from raceintel.features.contracts import MissingPolicy
+from raceintel.features.temporal import TargetNotFoundError, synchronized_field_snapshot
 
 ROOT = V2Paths.resolve().root
 _HAS_D9 = (ROOT / "data/v2/processed/driver_lap_state_d9/season=2021").is_dir()
@@ -304,7 +304,7 @@ def test_engine_gap_resolution(registry, race):
 # --- parity ---
 
 def test_single_batch_parity(registry, race):
-    from v2.features.gaps import gap_batch
+    from raceintel.features.gaps import gap_batch
     batch = gap_batch(race)
     assert len(batch) == len(race)
     for _, row in batch.iterrows():
@@ -337,7 +337,7 @@ def _d9_season(season):
 
 
 def _parity_spot(d9, race_id, registry, k=10):
-    from v2.features.gaps import gap_batch
+    from raceintel.features.gaps import gap_batch
     sub = d9[d9["race_id"] == race_id]
     batch = gap_batch(sub)
     assert len(batch) == len(sub)
@@ -371,7 +371,7 @@ def test_real_parity_spots(registry, season, race_id):
 
 def test_real_belgium_validity_mix(registry):
     d9 = _d9_season(2021)
-    from v2.features.gaps import gap_batch
+    from raceintel.features.gaps import gap_batch
     batch = gap_batch(d9[d9["race_id"] == "2021-r12-R"])
     assert len(batch) == 60
     # short race: leader gaps computable (same 3-lap window), ahead valid
@@ -383,7 +383,7 @@ def test_real_belgium_validity_mix(registry):
 def test_full_scope_audit(registry):
     if not _HAS_D9:
         pytest.skip("canonical D9 data not present (data/v2 gitignored)")
-    from v2.features.gaps import gap_batch
+    from raceintel.features.gaps import gap_batch
     files = sorted(glob.glob(str(ROOT / "data/v2/processed"
                                  / "driver_lap_state_d9"
                                  / "season=*/*.parquet")))

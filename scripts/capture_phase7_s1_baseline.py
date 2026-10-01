@@ -82,8 +82,8 @@ def specs() -> tuple:
 
 def build_case(spec: dict):
     """Rebuild the exact inputs for one spec (shared by capture and test)."""
-    from v2.simulation.config import Assumptions, SimulationConfig
-    from v2.simulation.engine import ExecutionPolicy
+    from raceintel.simulation.config import Assumptions, SimulationConfig
+    from raceintel.simulation.engine import ExecutionPolicy
 
     if spec["kind"] == "real":
         from test_v2_phase6_r71 import _params_through, _real_state
@@ -120,8 +120,8 @@ def _snapshot(result) -> dict:
 
 
 def run_case(spec: dict) -> dict:
-    from v2.simulation.config import Assumptions
-    from v2.simulation.monte_carlo import MonteCarloEngine
+    from raceintel.simulation.config import Assumptions
+    from raceintel.simulation.monte_carlo import MonteCarloEngine
 
     state, params, config, policy = build_case(spec)
     engine = MonteCarloEngine(chunk_size=spec.get("chunk", 512))

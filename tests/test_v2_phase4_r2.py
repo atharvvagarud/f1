@@ -17,10 +17,10 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2 import race_state as RS
-from v2.config import V2Paths
-from v2.features.gaps import build_f6_registry, gap_batch, gap_for_state
-from v2.race_state_reconstruction import (
+from raceintel.race_state import race_state as RS
+from raceintel.config import V2Paths
+from raceintel.features.gaps import build_f6_registry, gap_batch, gap_for_state
+from raceintel.race_state.race_state_reconstruction import (
     AnchorNotFoundError,
     RaceNotFoundError,
     RaceStateReconstructor,
@@ -323,7 +323,7 @@ def test_missing_required_column_rejected(race_r1, roster_r1):
 # ---------------------------------------------------------------------------
 
 def test_gap_parity_with_gap_for_state(recon, race_r1):
-    from v2.features.contracts import FeatureRequest
+    from raceintel.features.contracts import FeatureRequest
     registry = build_f6_registry()
     snap = recon.reconstruct(_ANCHOR)
     by_id = {d.driver_id: d for d in snap.drivers}
@@ -559,7 +559,7 @@ def test_future_mutation_invariance(recon, race_r1, roster_r1, mutate):
 def test_no_model_coupling_in_source():
     import re
     source = Path(__file__).resolve().parent.parent \
-        / "v2/race_state_reconstruction.py"
+        / "raceintel/race_state/race_state_reconstruction.py"
     text = source.read_text()
     imported = set()
     for line in text.splitlines():
@@ -567,7 +567,7 @@ def test_no_model_coupling_in_source():
         if match:
             imported.add(match.group(1))
     for module in sorted(imported):
-        for banned in ("v2.model_lab", "ml", "api", "v2.labels", "sklearn",
+        for banned in ("raceintel.model_lab", "ml", "api", "raceintel.labels", "sklearn",
                        "scipy", "fastapi", "pydantic"):
             assert not (module == banned
                         or module.startswith(banned + ".")), \
@@ -579,10 +579,10 @@ def test_no_model_coupling_in_source():
 
 
 def test_no_model_imports_at_runtime():
-    probe = ("import sys, v2.race_state_reconstruction; "
+    probe = ("import sys, raceintel.race_state.race_state_reconstruction; "
              "banned = [m for m in sys.modules if m.split('.')[0] in "
              "('sklearn', 'scipy', 'fastapi', 'pydantic', 'torch') or "
-             "m.startswith(('v2.model_lab', 'ml.', 'api.', 'v2.labels'))]; "
+             "m.startswith(('raceintel.model_lab', 'ml.', 'api.', 'raceintel.labels'))]; "
              "print(','.join(sorted(banned)))")
     out = subprocess.run(
         [sys.executable, "-c", probe], capture_output=True, text=True,

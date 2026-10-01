@@ -2,7 +2,7 @@
 
 Additive read-only endpoint over ``V2TimelineExplanationService``. Thin
 routing only: the change mathematics lives in
-``v2.timeline_explainability`` and orchestration in
+``raceintel.explainability.timeline_explainability`` and orchestration in
 ``api.v2_timeline_explanation_service``; nothing is computed here.
 
 The endpoint compares the SELECTED prediction checkpoint with the driver's
@@ -50,10 +50,10 @@ from api.v2_timeline_explanation_service import (
     V2TimelineExplanationService,
     get_v2_timeline_explanation_service,
 )
-from v2.local_explainability import LocalExplanationError
-from v2.race_state_reconstruction import RaceNotFoundError
-from v2.replay import ReplayTimelineError
-from v2.timeline_explainability import TimelineExplanationError
+from raceintel.explainability.local_explainability import LocalExplanationError
+from raceintel.race_state.race_state_reconstruction import RaceNotFoundError
+from raceintel.replay.replay import ReplayTimelineError
+from raceintel.explainability.timeline_explainability import TimelineExplanationError
 
 router = APIRouter(prefix="/v2", tags=["v2-explainability"])
 

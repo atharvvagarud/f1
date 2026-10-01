@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, Field
 
-from v2.simulation.config import MAX_MASTER_SEED
+from raceintel.simulation.config import MAX_MASTER_SEED
 
 from api.v2_simulation_service import (
     DEFAULT_SIMULATION_COUNT,

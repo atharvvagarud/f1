@@ -1,11 +1,25 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
-    "graft": {
+    "shadcn": {
       "type": "local",
       "command": [
-        "graft",
+        "npx",
+        "shadcn@latest",
         "mcp"
+      ],
+      "enabled": true
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "@playwright/mcp@latest",
+        "--headless",
+        "--isolated",
+        "--browser=chromium",
+        "--viewport-size=1440x900",
+        "--output-dir=/tmp/playwright-mcp"
       ],
       "enabled": true
     }

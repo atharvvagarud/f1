@@ -9,14 +9,14 @@ from pathlib import Path
 
 import pytest
 
-from v2 import contracts as C
-from v2 import d9schema as D9
-from v2.features import (
+from raceintel import contracts as C
+from raceintel.pipeline import d9schema as D9
+from raceintel.features import (
     FEATURE_SET_VERSION,
     NoCalculatorError,
     build_f11_registry,
 )
-from v2.config import V2Paths
+from raceintel.config import V2Paths
 
 ROOT = V2Paths.resolve().root
 
@@ -54,13 +54,13 @@ def test_no_telemetry_like_feature_names(registry):
 
 
 def test_no_telemetry_module():
-    import v2.features as pkg
+    import raceintel.features as pkg
     pkg_dir = Path(pkg.__file__).parent
     assert not (pkg_dir / "telemetry.py").exists()
 
 
 def test_no_telemetry_mentions_in_feature_sources():
-    import v2.features as pkg
+    import raceintel.features as pkg
     pkg_dir = Path(pkg.__file__).parent
     hits = []
     for path in sorted(pkg_dir.glob("*.py")):
@@ -71,11 +71,11 @@ def test_no_telemetry_mentions_in_feature_sources():
 
 
 def test_no_telemetry_calculator(registry):
-    from v2.features.contracts import FeatureRequest
+    from raceintel.features.contracts import FeatureRequest
     req = FeatureRequest(race_id="2021-r10-R", driver_id="hamilton",
                          lap_number=10, state_time_s=1000.0)
     with pytest.raises(NoCalculatorError):
-        from v2.features import features_for_state
+        from raceintel.features import features_for_state
         features_for_state(req, registry, states=None,
                            names=["throttle_pressed_frac"])
 

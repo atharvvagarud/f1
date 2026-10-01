@@ -24,25 +24,25 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2 import replay as RP
-from v2.race_state_reconstruction import RaceStateReconstructor
-from v2.replay_reconstruction import ReplayReconstructor
-from v2.simulation import engine as E
-from v2.simulation.adapter import from_race_state
-from v2.simulation.config import (
+from raceintel.replay import replay as RP
+from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+from raceintel.replay.replay_reconstruction import ReplayReconstructor
+from raceintel.simulation import engine as E
+from raceintel.simulation.adapter import from_race_state
+from raceintel.simulation.config import (
     Assumptions,
     SimulationConfig,
     simulation_request_identity,
 )
-from v2.simulation.engine import (
+from raceintel.simulation.engine import (
     ExecutionPolicy,
     SimulationUnsupportedError,
 )
-from v2.simulation.errors import (
+from raceintel.simulation.errors import (
     SimulationContractError,
     SimulationValidationError,
 )
-from v2.simulation.monte_carlo import (
+from raceintel.simulation.monte_carlo import (
     COMPOUND_TRANSITION_FAMILY,
     GLOBAL_COMPOUND_KEY,
     PIT_DYNAMICS_VERSION,
@@ -60,7 +60,7 @@ from v2.simulation.monte_carlo import (
     select_pit_parameters,
     select_residual_sampler,
 )
-from v2.simulation.params import (
+from raceintel.simulation.params import (
     DRY_COMPOUNDS,
     ELIGIBILITY_RULE_VERSION,
     ESTIMATOR_VERSION,
@@ -72,13 +72,13 @@ from v2.simulation.params import (
     SupportEntry,
     load_simulation_parameters,
 )
-from v2.simulation.rng import (
+from raceintel.simulation.rng import (
     _domain_tag,
     rng_for_domain,
     rng_for_simulation,
 )
-from v2.simulation.results import PROBABILITY_SEMANTICS
-from v2.simulation.state import (
+from raceintel.simulation.results import PROBABILITY_SEMANTICS
+from raceintel.simulation.state import (
     DriverSimState,
     DriverStatus,
     SimulationEnvironment,
@@ -86,8 +86,8 @@ from v2.simulation.state import (
 )
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-MODULE_PATH = REPO_ROOT / "v2" / "simulation" / "monte_carlo.py"
-RNG_PATH = REPO_ROOT / "v2" / "simulation" / "rng.py"
+MODULE_PATH = REPO_ROOT / "raceintel" / "simulation" / "monte_carlo.py"
+RNG_PATH = REPO_ROOT / "raceintel" / "simulation" / "rng.py"
 ARTIFACT_DIR = (REPO_ROOT / "data" / "v2" / "simulation" / "params"
                 / "r3-v1__through-2024")
 
@@ -952,9 +952,9 @@ def _module_imports(path: Path) -> tuple:
 
 
 def test_monte_carlo_imports_remain_firewalled():
-    forbidden = ("pandas", "sklearn", "joblib", "fastapi", "v2.prediction",
-                 "v2.model_lab", "v2.replay", "v2.race_state", "v2.d11",
-                 "v2.features", "v2.labels", "api")
+    forbidden = ("pandas", "sklearn", "joblib", "fastapi", "raceintel.prediction",
+                 "raceintel.model_lab", "raceintel.replay", "raceintel.race_state", "raceintel.pipeline.d11",
+                 "raceintel.features", "raceintel.labels", "api")
     for module in _module_imports(MODULE_PATH):
         assert not module.startswith(forbidden), module
         assert "winner" not in module.lower()
@@ -971,10 +971,10 @@ def test_monte_carlo_has_no_global_rng_or_canonical_data():
 def test_monte_carlo_imports_cleanly_in_fresh_process():
     code = (
         "import sys;"
-        "import v2.simulation.monte_carlo as m;"
+        "import raceintel.simulation.monte_carlo as m;"
         "assert m.PIT_DYNAMICS_VERSION;"
-        "assert 'v2.prediction' not in sys.modules;"
-        "assert 'v2.model_lab' not in sys.modules;"
+        "assert 'raceintel.prediction' not in sys.modules;"
+        "assert 'raceintel.model_lab' not in sys.modules;"
         "assert 'pandas' not in sys.modules;"
         "print('ok')")
     proc = subprocess.run([sys.executable, "-c", code],

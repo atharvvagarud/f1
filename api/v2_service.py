@@ -24,12 +24,12 @@ import glob as _glob
 
 import pandas as pd
 
-from v2 import race_state as RS
-from v2.config import V2Paths
-from v2.features.build_matrix import load_history
-from v2.model_lab import serving as SERVING
-from v2.prediction import RacePredictionEngine, load_production_prediction_engine
-from v2.race_state_reconstruction import RaceNotFoundError, RaceStateReconstructor
+from raceintel.race_state import race_state as RS
+from raceintel.config import V2Paths
+from raceintel.features.build_matrix import load_history
+from raceintel.model_lab import serving as SERVING
+from raceintel.prediction import RacePredictionEngine, load_production_prediction_engine
+from raceintel.race_state.race_state_reconstruction import RaceNotFoundError, RaceStateReconstructor
 
 #: Development-era serving registry (inclusive). No 2025 product
 #: inference: the holdout targets are sealed and R0 authorizes dev only.

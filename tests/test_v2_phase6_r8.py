@@ -5,7 +5,7 @@ endpoint, request/response semantics, the replay → simulation seam, the
 unsupported-state contract (including the R7.1 non-contemporaneous
 regression), probability invariants, determinism/concurrency, the 2025
 firewall, and a performance smoke. The scientific runtime
-(``v2/simulation/*``) is exercised, never modified.
+(``raceintel/simulation/*``) is exercised, never modified.
 """
 
 from __future__ import annotations
@@ -30,11 +30,11 @@ from api.v2_simulation_service import (
     build_v2_simulation_service,
     get_v2_simulation_service,
 )
-from v2.race_state import AnchorObservation
-from v2.race_state_reconstruction import AnchorNotFoundError
-from v2.simulation.adapter import SimulationUnavailableError, from_race_state
-from v2.simulation.engine import ENGINE_UNSUPPORTED_REASONS, SimulationUnsupportedError
-from v2.simulation.results import PROBABILITY_SEMANTICS
+from raceintel.race_state.race_state import AnchorObservation
+from raceintel.race_state.race_state_reconstruction import AnchorNotFoundError
+from raceintel.simulation.adapter import SimulationUnavailableError, from_race_state
+from raceintel.simulation.engine import ENGINE_UNSUPPORTED_REASONS, SimulationUnsupportedError
+from raceintel.simulation.results import PROBABILITY_SEMANTICS
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
@@ -66,11 +66,11 @@ NEW_API_FILES = (
     REPO_ROOT / "api" / "v2_simulation_schemas.py",
 )
 RUNTIME_FILES = (
-    REPO_ROOT / "v2" / "simulation" / "engine.py",
-    REPO_ROOT / "v2" / "simulation" / "monte_carlo.py",
-    REPO_ROOT / "v2" / "simulation" / "adapter.py",
-    REPO_ROOT / "v2" / "simulation" / "state.py",
-    REPO_ROOT / "v2" / "simulation" / "results.py",
+    REPO_ROOT / "raceintel" / "simulation" / "engine.py",
+    REPO_ROOT / "raceintel" / "simulation" / "monte_carlo.py",
+    REPO_ROOT / "raceintel" / "simulation" / "adapter.py",
+    REPO_ROOT / "raceintel" / "simulation" / "state.py",
+    REPO_ROOT / "raceintel" / "simulation" / "results.py",
 )
 
 
@@ -448,8 +448,8 @@ def test_concurrent_distinct_requests_do_not_cross_contaminate(sim_service):
 # ===========================================================================
 
 _FORBIDDEN_SERVICE_TOKENS = (
-    "v2.prediction", "v2.model_lab", "sklearn", "joblib",
-    "v2.simulation.validation", "read_parquet", "race_driver_labels",
+    "raceintel.prediction", "raceintel.model_lab", "sklearn", "joblib",
+    "raceintel.simulation.validation", "read_parquet", "race_driver_labels",
     "classified_position", "dnf_flag", "winner_flag", "serving",
 )
 
@@ -462,7 +462,7 @@ def test_new_api_modules_import_no_model_or_truth():
 
 
 def test_runtime_modules_import_no_winner_model_or_labels():
-    banned_prefixes = ("v2.prediction", "v2.model_lab", "sklearn", "joblib",
+    banned_prefixes = ("raceintel.prediction", "raceintel.model_lab", "sklearn", "joblib",
                        "pandas", "fastapi")
     for path in RUNTIME_FILES:
         tree = ast.parse(path.read_text())
@@ -482,7 +482,7 @@ def test_runtime_modules_import_no_winner_model_or_labels():
 
 
 def test_service_module_imports_no_api_engine_into_runtime():
-    tree = ast.parse((REPO_ROOT / "v2" / "simulation" / "monte_carlo.py")
+    tree = ast.parse((REPO_ROOT / "raceintel" / "simulation" / "monte_carlo.py")
                      .read_text())
     imported = []
     for node in ast.walk(tree):

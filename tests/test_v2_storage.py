@@ -3,8 +3,8 @@
 import pandas as pd
 import pytest
 
-from v2.errors import IngestionError
-from v2.storage import atomic_write_parquet, dest_for_unit, read_parquet
+from raceintel.errors import IngestionError
+from raceintel.storage import atomic_write_parquet, dest_for_unit, read_parquet
 
 
 def tiny_frame():

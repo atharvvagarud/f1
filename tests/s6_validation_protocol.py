@@ -22,7 +22,7 @@ Scope firewall (inherited from Phase-6 R7):
   representative corpus; unsupported states are exercised only as explicitly
   labelled adversarial fixtures.
 
-Dependency note: this is a validation/test helper. Production ``v2.strategy``
+Dependency note: this is a validation/test helper. Production ``raceintel.strategy``
 modules never import it.
 """
 
@@ -66,7 +66,7 @@ STAGES = ("EARLY", "MID", "LATE")
 #: any result-based selection.
 BANDS = ("FRONT", "MIDFIELD", "BACK")
 
-#: Canonical candidate space (must match ``v2.strategy.candidates``).
+#: Canonical candidate space (must match ``raceintel.strategy.candidates``).
 CANONICAL_SPECS = (
     ("STAY_OUT", None),
     ("PIT_NOW", None),
@@ -175,8 +175,8 @@ def record_eligibility(record: dict) -> tuple:
     validation (no simulation, no draw), so selection is eligibility-based and
     never Strategy-result-based. A reason is a stable engine reason.
     """
-    from v2.simulation.engine import ExecutionPolicy, SimulationUnsupportedError
-    from v2.simulation.monte_carlo import _prepare
+    from raceintel.simulation.engine import ExecutionPolicy, SimulationUnsupportedError
+    from raceintel.simulation.monte_carlo import _prepare
     state = load_state(record)
     parameters = load_parameters(record["season"])
     try:
@@ -336,6 +336,6 @@ def select_targets(state) -> dict:
 
 
 def make_config(count: int, seed: int):
-    from v2.simulation.config import SimulationConfig
+    from raceintel.simulation.config import SimulationConfig
     return SimulationConfig(simulation_count=count, master_seed=seed,
                             sample_orders=0, pit_dynamics_enabled=True)

@@ -24,12 +24,12 @@ No network, no FastF1, no telemetry reads.
 import pandas as pd
 import pytest
 
-from v2 import contracts as C
-from v2 import d7
-from v2 import d7schema as D7S
-from v2 import d9
-from v2 import d9schema as S
-from v2.config import V2Paths
+from raceintel import contracts as C
+from raceintel.pipeline import d7
+from raceintel.pipeline import d7schema as D7S
+from raceintel.pipeline import d9
+from raceintel.pipeline import d9schema as S
+from raceintel.config import V2Paths
 
 ROOT = V2Paths.resolve().root
 _HAS_DATA = (ROOT / "data/v2/processed/driver_laps/season=2023").is_dir()

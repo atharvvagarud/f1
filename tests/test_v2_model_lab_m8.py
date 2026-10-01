@@ -19,14 +19,14 @@ import numpy as np
 import pytest
 
 from model_lab_helpers import load_canonical_or_skip, load_json_artifact_or_skip
-from v2.model_lab import calibration_selection as CS
-from v2.model_lab import data as D
-from v2.model_lab import errors as E
-from v2.model_lab import preprocessing as PRE
-from v2.model_lab import runner as RUN
-from v2.model_lab import tuning_candidates as TC
-from v2.model_lab.inner_splits import materialize_seasons
-from v2.model_lab.protocol import PROTECTED_HOLDOUT_SEASON
+from raceintel.model_lab import calibration_selection as CS
+from raceintel.model_lab import data as D
+from raceintel.model_lab import errors as E
+from raceintel.model_lab import preprocessing as PRE
+from raceintel.model_lab import runner as RUN
+from raceintel.model_lab import tuning_candidates as TC
+from raceintel.model_lab.inner_splits import materialize_seasons
+from raceintel.model_lab.protocol import PROTECTED_HOLDOUT_SEASON
 
 METHODS = CS.METHODS
 
@@ -122,7 +122,7 @@ def test_no_parameter_tuning_apis_present():
 
 def test_static_guard_m8_modules():
     from pathlib import Path
-    root = Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    root = Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
     forbidden = ("ExtraTreesClassifier", "RandomForestClassifier",
                  "HistGradientBoostingClassifier", "XGBClassifier",
                  "LGBMClassifier", "CatBoost", "MLPClassifier",
@@ -350,7 +350,7 @@ def test_fair_comparison_same_raw_outer_vector(canonical, monkeypatch):
     assert np.array_equal(captured["ISOTONIC"], out["predictions"]["ISOTONIC"])
     # RAW is untouched; Platt and isotonic are monotone maps of the SAME raw
     # vector (isotonic may introduce ties, so rank correlation can drop).
-    from v2.model_lab.metrics import spearman
+    from raceintel.model_lab.metrics import spearman
     assert spearman(captured["RAW"], captured["PLATT"]) == pytest.approx(1.0)
     order = np.argsort(captured["RAW"], kind="mergesort")
     assert np.all(np.diff(captured["PLATT"][order]) >= -1e-12)
@@ -541,7 +541,7 @@ def test_artifact_contract():
 
 
 def test_artifact_traces_methods_to_stored_experiments():
-    from v2.model_lab import results as RES
+    from raceintel.model_lab import results as RES
     summary, _ = _load_summary()
     seen_ids = set()
     for fold in summary["outer_folds"]:

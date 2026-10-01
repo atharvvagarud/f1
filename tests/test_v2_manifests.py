@@ -4,8 +4,8 @@ import json
 
 import pytest
 
-from v2.errors import IngestionError
-from v2.manifests import (IllegalTransitionError, Manifest, ManifestEntry,
+from raceintel.errors import IngestionError
+from raceintel.manifests import (IllegalTransitionError, Manifest, ManifestEntry,
                           UnitStatus)
 
 

@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2 import d8
+from raceintel.pipeline import d8
 
 
 def _tel(n=400, start=0.0, end=100.0, seed=0):

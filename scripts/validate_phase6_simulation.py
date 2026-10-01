@@ -8,7 +8,7 @@ per race, and compares the frozen R6 simulator against factual baselines using
 evaluation-only historical truth.
 
 It performs NO tuning. Selection, seeds, counts, bins and epsilons come from
-``v2.simulation.validation`` (frozen before any scoring). Generated artifacts
+``raceintel.simulation.validation`` (frozen before any scoring). Generated artifacts
 are written under ``data/v2/simulation/validation/`` (repository-untracked).
 
 Usage::
@@ -35,28 +35,28 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-from v2 import replay as RP  # noqa: E402
-from v2.race_state_reconstruction import RaceStateReconstructor  # noqa: E402
-from v2.replay_reconstruction import ReplayReconstructor  # noqa: E402
-from v2.simulation import validation as V  # noqa: E402
-from v2.simulation.adapter import (  # noqa: E402
+from raceintel.replay import replay as RP  # noqa: E402
+from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor  # noqa: E402
+from raceintel.replay.replay_reconstruction import ReplayReconstructor  # noqa: E402
+from raceintel.simulation import validation as V  # noqa: E402
+from raceintel.simulation.adapter import (  # noqa: E402
     SimulationUnavailableError,
     from_race_state,
 )
-from v2.simulation.config import Assumptions, SimulationConfig  # noqa: E402
-from v2.simulation.engine import (  # noqa: E402
+from raceintel.simulation.config import Assumptions, SimulationConfig  # noqa: E402
+from raceintel.simulation.engine import (  # noqa: E402
     DeterministicRaceEngine,
     ExecutionPolicy,
     SimulationUnsupportedError,
     _validate_start_state,
     select_pace_parameters,
 )
-from v2.simulation.monte_carlo import (  # noqa: E402
+from raceintel.simulation.monte_carlo import (  # noqa: E402
     MonteCarloEngine,
     select_pit_parameters,
     select_residual_sampler,
 )
-from v2.simulation.params import (  # noqa: E402
+from raceintel.simulation.params import (  # noqa: E402
     load_simulation_parameters,
     parameter_storage_dir,
 )
@@ -358,9 +358,9 @@ def winner_entropy(result) -> float:
 # ---------------------------------------------------------------------------
 
 def ensure_artifact(season: int, rebuild: bool) -> dict:
-    from v2.simulation.estimator import estimate_simulation_parameters
-    from v2.config import V2Paths
-    from v2.simulation.params import PARAMETER_MANIFEST_FILENAME
+    from raceintel.simulation.estimator import estimate_simulation_parameters
+    from raceintel.config import V2Paths
+    from raceintel.simulation.params import PARAMETER_MANIFEST_FILENAME
 
     through = season - 1
     out_dir = parameter_storage_dir(PROJECT_ROOT, through)

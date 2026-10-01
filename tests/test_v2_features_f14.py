@@ -16,8 +16,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from v2 import contracts as C
-from v2.features import (
+from raceintel import contracts as C
+from raceintel.features import (
     F9_FEATURE_NAMES,
     F5_FEATURE_NAMES,
     FEATURE_SET_VERSION,
@@ -31,14 +31,14 @@ from v2.features import (
     history_before,
     results_equal,
 )
-from v2.features.temporal import (
+from raceintel.features.temporal import (
     RaceIndex,
     TargetNotFoundError,
     TemporalError,
     extract_roster,
     synchronized_field_snapshot,
 )
-from v2.labels import (
+from raceintel.labels import (
     LABEL_SET_VERSION,
     build_label_frame,
     build_label_registry,
@@ -292,7 +292,7 @@ def test_prior_round_off_by_one(history):
     r2023 = (drv["season"].astype(int) == 2023)
     before = drv[r2023 & (drv["round_no"].astype(int) < 1)]
     assert len(before) == 0  # r01 has no same-season prior
-    from v2.features import driver_priors
+    from raceintel.features import driver_priors
     base = driver_priors(hb, "hamilton", 2023, 1)
     h2 = PriorHistory(hb.copy(), h.hist_races.copy(), h.results_tiera.copy(),
                       h.races_tiera.copy(), h.pit_stops.copy())
@@ -321,14 +321,14 @@ def test_season_boundary_chronology():
 # --- §19 feature-name attack ---
 
 def test_label_names_rejected_legit_names_safe():
-    from v2.features import FeatureDef, FeatureFamily, FeatureStatus
-    from v2.features.contracts import (
+    from raceintel.features import FeatureDef, FeatureFamily, FeatureStatus
+    from raceintel.features.contracts import (
         MinHistory, MinHistoryKind, MissingPolicy, SyncRequirement,
         TemporalRule,
     )
-    from v2.features import InvalidFeatureError
-    from v2.features.registry import validate_definition
-    from v2.labels import CANONICAL_LABEL_NAMES
+    from raceintel.features import InvalidFeatureError
+    from raceintel.features.registry import validate_definition
+    from raceintel.labels import CANONICAL_LABEL_NAMES
     for label_name in CANONICAL_LABEL_NAMES:
         with pytest.raises(InvalidFeatureError):
             validate_definition(FeatureDef(
@@ -349,7 +349,7 @@ def test_label_names_rejected_legit_names_safe():
 # --- §20 label source positive control ---
 
 def test_label_source_positive_control():
-    from v2.d9 import labels_from_results
+    from raceintel.pipeline.d9 import labels_from_results
     rows = pd.DataFrame([
         {"race_id": "2099-r01-R", "driver_id": "a", "driver_abbreviation": "A",
          "driver_number": 1, "team_id_at_race": "t1", "grid_position": 2,
@@ -375,7 +375,7 @@ def test_label_source_positive_control():
 # --- §§21-22 state-dependent labels + ordinal eligibility ---
 
 def test_ordinal_eligibility_contract():
-    from v2.labels import ordinal_training_eligible
+    from raceintel.labels import ordinal_training_eligible
     assert ordinal_training_eligible(True, 5) is True
     assert ordinal_training_eligible(False, 20) is False  # W/D back-rank
     assert ordinal_training_eligible(False, None) is False
@@ -484,7 +484,7 @@ def test_reference_change_resets_rates(history):
 # --- §§28-29 pace eligibility + correctness ---
 
 def test_pace_eligibility_matrix():
-    from v2.features import pace_eligibility_mask
+    from raceintel.features import pace_eligibility_mask
     base = {"lap_time_s": 90.0, "pit_in_s": np.nan, "pit_out_s": np.nan,
             "track_state": "all_clear", "lap_number": 5}
     rows = pd.DataFrame([
@@ -506,7 +506,7 @@ def test_pace_eligibility_matrix():
 
 
 def test_f5_correctness_independent_of_parity():
-    from v2.features import pace_values
+    from raceintel.features import pace_values
     rows = pd.DataFrame({
         "state_time_s": [100.0, 190.0, 280.0, 370.0, 460.0],
         "lap_number": [1, 2, 3, 4, 5],
@@ -533,7 +533,7 @@ def test_missingness_contracts_hold():
         if str(d.missing.value) == "deterministic_fallback":
             assert d.fallback_description.strip()
     import pathlib
-    for path in sorted(pathlib.Path("v2/features").glob("*.py")):
+    for path in sorted(pathlib.Path("raceintel/features").glob("*.py")):
         text = path.read_text()
         code = "\n".join(
             ln for ln in text.splitlines()
@@ -552,7 +552,7 @@ def test_leader_has_no_car_ahead(history):
 # --- §31 tri-state ---
 
 def test_tristate_semantics(history):
-    from v2.labels import ordinal_training_eligible  # noqa: F401
+    from raceintel.labels import ordinal_training_eligible  # noqa: F401
     q, sub, t, T = get_target(2023, "2023-r01-R", "alonso", 28)
     v = values_of(full84(q, sub, history))
     assert isinstance(v["in_traffic_2s"], bool)  # known gap here
@@ -581,7 +581,7 @@ def test_duplicate_keys_fail_explicitly():
     sub = d9[d9["race_id"] == "2023-r01-R"].reset_index(drop=True)
     t = sub.iloc[500]
     dup_states = pd.concat([sub, sub.iloc[[500]]], ignore_index=True)
-    from v2.features.temporal import resolve_target
+    from raceintel.features.temporal import resolve_target
     with pytest.raises(TemporalError):
         resolve_target(dup_states, str(t["race_id"]), str(t["driver_id"]),
                        int(t["lap_number"]), float(t["state_time_s"]))
@@ -590,7 +590,7 @@ def test_duplicate_keys_fail_explicitly():
     m = (ta["race_id"] == "2023-r01-R") & (
         ta["driver_id"] == str(t["driver_id"]))
     dup_ta = pd.concat([ta, ta[m].iloc[[0]]], ignore_index=True)
-    from v2.features import resolve_grid
+    from raceintel.features import resolve_grid
     with pytest.raises(TemporalError):
         resolve_grid(dup_ta, "2023-r01-R", str(t["driver_id"]))
     idx = RaceIndex(sub)
@@ -682,13 +682,13 @@ def test_feature_source_firewall():
     calculators = ["pace", "gaps", "context", "rates", "environment",
                    "interactions", "passthrough", "engine"]
     for mod in calculators:
-        text = pathlib.Path(f"v2/features/{mod}.py").read_text()
-        assert "v2.labels" not in text and "v2/labels" not in text, mod
+        text = pathlib.Path(f"raceintel/features/{mod}.py").read_text()
+        assert "raceintel.labels" not in text and "raceintel/labels" not in text, mod
         assert "race_driver_labels" not in text, mod
         assert "labels_from_results" not in text, mod
     readers = set()
     for mod in calculators + ["temporal", "priors"]:
-        text = pathlib.Path(f"v2/features/{mod}.py").read_text()
+        text = pathlib.Path(f"raceintel/features/{mod}.py").read_text()
         if "results_tiera" in text or "hist_results" in text:
             readers.add(mod)
     # priors.py is the single approved reader (H<R + grid identity);
@@ -702,7 +702,7 @@ def test_future_pattern_audit():
     banned = [r"shift\(-1\)", r"bfill\(", r"backfill", r"center\s*=\s*True",
               r"merge_asof", r"nearest\b"]
     hits = []
-    for path in sorted(pathlib.Path("v2/features").glob("*.py")):
+    for path in sorted(pathlib.Path("raceintel/features").glob("*.py")):
         for i, ln in enumerate(path.read_text().splitlines(), 1):
             s = ln.strip()
             if not s or s.startswith(("#", '"""', "'''", "*")):
@@ -720,7 +720,7 @@ def test_final_state_inference_audit():
     import re
     allowed_file = "priors.py"  # H<R historical outcomes only
     hits = []
-    for path in sorted(pathlib.Path("v2/features").glob("*.py")):
+    for path in sorted(pathlib.Path("raceintel/features").glob("*.py")):
         if path.name in ("registry.py", "__init__.py"):
             continue
         for i, ln in enumerate(path.read_text().splitlines(), 1):
@@ -738,8 +738,8 @@ def test_no_race_specific_patches():
     import pathlib
     import re
     hits = []
-    for path in list(sorted(pathlib.Path("v2/features").glob("*.py"))) + \
-            list(sorted(pathlib.Path("v2/labels").glob("*.py"))):
+    for path in list(sorted(pathlib.Path("raceintel/features").glob("*.py"))) + \
+            list(sorted(pathlib.Path("raceintel/labels").glob("*.py"))):
         text = path.read_text()
         for pat in (r"20\d\d-r\d+", r"[Bb]elgium", r"[Jj]apan(?!.*cup)",
                     r"[Mm]onaco", r"special.?case"):

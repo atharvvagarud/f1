@@ -26,17 +26,17 @@ import numpy as np
 import pytest
 
 from model_lab_helpers import load_canonical_or_skip, require_generated_artifact
-from v2.model_lab import errors as E
-from v2.model_lab import final_fit as FF
-from v2.model_lab import inner_splits as IS
-from v2.model_lab import preprocessing as PRE
-from v2.model_lab import predictions as PR
-from v2.model_lab import results as RES
-from v2.model_lab import runner as RUN
-from v2.model_lab import splits as SPLITS
-from v2.model_lab import tuning_candidates as TC
-from v2.model_lab import winner as WINNER
-from v2.model_lab.protocol import (
+from raceintel.model_lab import errors as E
+from raceintel.model_lab import final_fit as FF
+from raceintel.model_lab import inner_splits as IS
+from raceintel.model_lab import preprocessing as PRE
+from raceintel.model_lab import predictions as PR
+from raceintel.model_lab import results as RES
+from raceintel.model_lab import runner as RUN
+from raceintel.model_lab import splits as SPLITS
+from raceintel.model_lab import tuning_candidates as TC
+from raceintel.model_lab import winner as WINNER
+from raceintel.model_lab.protocol import (
     EXPECTED_ABLATION_CONFIG_SHA256,
     EXPECTED_MANIFEST_SHA256,
     EXPECTED_MATRIX_CONTENT_HASH,
@@ -141,11 +141,11 @@ def test_static_guard_m9_modules_train_only_logreg():
                  "CalibratedClassifierCV", "TabPFN", "tabpfn",
                  "IsotonicRegression", "SigmoidCalibration")
     for name in ("final_fit.py", "run_final.py"):
-        text = (ROOT / "v2" / "model_lab" / name).read_text()
+        text = (ROOT / "raceintel" / "model_lab" / name).read_text()
         for token in forbidden:
             assert token not in text, f"{name}: forbidden {token!r}"
     assert "LogisticRegression" in (
-        ROOT / "v2" / "model_lab" / "final_fit.py").read_text()
+        ROOT / "raceintel" / "model_lab" / "final_fit.py").read_text()
 
 
 def test_no_new_dependencies_declared():

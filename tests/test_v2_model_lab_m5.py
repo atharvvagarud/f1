@@ -19,18 +19,18 @@ from model_lab_helpers import (
     load_json_artifact_or_skip,
     require_matrix,
 )
-from v2.model_lab import bagged_candidates as BC
-from v2.model_lab import bagged_runner as BR
-from v2.model_lab import bagged_suite as BS
-from v2.model_lab import data as D
-from v2.model_lab import errors as E
-from v2.model_lab import experiment as EX
-from v2.model_lab import model_suite as MSUITE
-from v2.model_lab import predictions as PR
-from v2.model_lab import preprocessing as PRE
-from v2.model_lab import results as RES
-from v2.model_lab import run_bagged as BCLI
-from v2.model_lab import splits as S
+from raceintel.model_lab import bagged_candidates as BC
+from raceintel.model_lab import bagged_runner as BR
+from raceintel.model_lab import bagged_suite as BS
+from raceintel.model_lab import data as D
+from raceintel.model_lab import errors as E
+from raceintel.model_lab import experiment as EX
+from raceintel.model_lab import model_suite as MSUITE
+from raceintel.model_lab import predictions as PR
+from raceintel.model_lab import preprocessing as PRE
+from raceintel.model_lab import results as RES
+from raceintel.model_lab import run_bagged as BCLI
+from raceintel.model_lab import splits as S
 
 
 @pytest.fixture(scope="module")
@@ -392,7 +392,7 @@ def test_no_2025_in_development_materialization(canonical):
 
 def test_runner_delegates_to_canonical_evaluators():
     from pathlib import Path
-    text = (Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    text = (Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
             / "bagged_runner.py").read_text()
     for token in ("RUN.evaluate_row_metrics", "RUN.evaluate_stages",
                   "RUN.evaluate_calibration", "RUN.evaluate_winner_top_k",
@@ -410,7 +410,7 @@ def test_runner_delegates_to_canonical_evaluators():
 
 def test_suite_reads_stored_references_never_reruns_other_models():
     from pathlib import Path
-    text = (Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    text = (Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
             / "bagged_suite.py").read_text()
     for token in ("load_baseline_suite", "load_logreg_suite",
                   "load_nonlinear_suite"):
@@ -495,7 +495,7 @@ def test_d1_experiment_identity_deterministic(et_d1, rf_d1):
 
 
 def test_model_metrics_route_through_applicability_guard(et_d1, rf_d1):
-    from v2.model_lab import metrics as M
+    from raceintel.model_lab import metrics as M
     M.require_metric_applicability(
         PR.PredictionKind.BINARY_PROBABILITY, "log_loss")
     M.require_metric_applicability(
@@ -511,7 +511,7 @@ def test_model_metrics_route_through_applicability_guard(et_d1, rf_d1):
 
 def test_only_extra_trees_and_random_forest_may_train_in_m5():
     from pathlib import Path
-    root = Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    root = Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
     allowed = {
         "bagged_candidates.py": ("ExtraTreesClassifier",
                                  "RandomForestClassifier",
@@ -542,7 +542,7 @@ def test_only_extra_trees_and_random_forest_may_train_in_m5():
 
 def test_no_tuning_or_calibration_apis_in_m5():
     from pathlib import Path
-    root = Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    root = Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
     forbidden = ("GridSearchCV", "RandomizedSearchCV", "BayesSearchCV",
                  "ParameterSampler", "optuna", "hyperopt",
                  "CalibratedClassifierCV", "IsotonicRegression",
@@ -566,7 +566,7 @@ def test_no_new_dependencies_declared():
 
 def test_m3_and_m4_files_untouched_by_m5():
     from pathlib import Path
-    root = Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    root = Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
     for name in ("model_runner.py", "model_suite.py", "run_models.py",
                  "logreg.py", "nonlinear_runner.py", "nonlinear_suite.py",
                  "run_nonlinear.py", "tree_candidates.py"):

@@ -2,8 +2,8 @@
 
 import pytest
 
-from v2.errors import ErrorCategory, IngestionError
-from v2.retry import (RetryPolicy, compute_backoff, is_retryable_category,
+from raceintel.errors import ErrorCategory, IngestionError
+from raceintel.retry import (RetryPolicy, compute_backoff, is_retryable_category,
                       run_with_retry)
 
 

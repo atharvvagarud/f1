@@ -46,7 +46,7 @@ def _build_healthy_tree(root: Path, model_bytes: bytes = b"frozen-model") -> str
     (explain_dir / "global_winner_logreg_v1.sha256").write_text(
         _sha(payload) + "\n")
 
-    from v2.simulation import parameter_storage_dir
+    from raceintel.simulation import parameter_storage_dir
     sim_dir = parameter_storage_dir(root, 2024)
     sim_dir.mkdir(parents=True)
     (sim_dir / "manifest.json").write_text(json.dumps({
@@ -168,7 +168,7 @@ def test_missing_explainability_artifact(p10_root):
 
 
 def test_missing_simulation_params(p10_root):
-    from v2.simulation import parameter_storage_dir
+    from raceintel.simulation import parameter_storage_dir
     (parameter_storage_dir(p10_root, 2024) / "manifest.json").unlink()
     RD.reset_readiness_cache()
     payload = RD.get_readiness()

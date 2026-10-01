@@ -18,19 +18,19 @@ from model_lab_helpers import (
     load_json_artifact_or_skip,
     require_matrix,
 )
-from v2.model_lab import data as D
-from v2.model_lab import errors as E
-from v2.model_lab import experiment as EX
-from v2.model_lab import model_suite as MSUITE
-from v2.model_lab import nonlinear_runner as NR
-from v2.model_lab import nonlinear_suite as NSUITE
-from v2.model_lab import preprocessing as PRE
-from v2.model_lab import predictions as PR
-from v2.model_lab import results as RES
-from v2.model_lab import run_nonlinear as NLCLI
-from v2.model_lab import runner as RUN
-from v2.model_lab import splits as S
-from v2.model_lab import tree_candidates as TC
+from raceintel.model_lab import data as D
+from raceintel.model_lab import errors as E
+from raceintel.model_lab import experiment as EX
+from raceintel.model_lab import model_suite as MSUITE
+from raceintel.model_lab import nonlinear_runner as NR
+from raceintel.model_lab import nonlinear_suite as NSUITE
+from raceintel.model_lab import preprocessing as PRE
+from raceintel.model_lab import predictions as PR
+from raceintel.model_lab import results as RES
+from raceintel.model_lab import run_nonlinear as NLCLI
+from raceintel.model_lab import runner as RUN
+from raceintel.model_lab import splits as S
+from raceintel.model_lab import tree_candidates as TC
 
 
 @pytest.fixture(scope="module")
@@ -376,7 +376,7 @@ def test_no_2025_in_development_materialization(canonical):
 
 def test_runner_delegates_to_canonical_evaluators():
     from pathlib import Path
-    text = (Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    text = (Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
             / "nonlinear_runner.py").read_text()
     for token in ("RUN.evaluate_row_metrics", "RUN.evaluate_stages",
                   "RUN.evaluate_calibration", "RUN.evaluate_winner_top_k",
@@ -466,7 +466,7 @@ def test_d1_experiment_identity_deterministic(hgb_d1, xgb_d1):
 
 
 def test_model_metrics_route_through_applicability_guard(hgb_d1, xgb_d1):
-    from v2.model_lab import metrics as M
+    from raceintel.model_lab import metrics as M
     M.require_metric_applicability(
         PR.PredictionKind.BINARY_PROBABILITY, "log_loss")
     M.require_metric_applicability(
@@ -482,7 +482,7 @@ def test_model_metrics_route_through_applicability_guard(hgb_d1, xgb_d1):
 
 def test_only_hgb_and_xgb_may_train_in_m4():
     from pathlib import Path
-    root = Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    root = Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
     allowed = {
         "tree_candidates.py": ("HistGradientBoostingClassifier",
                                "XGBClassifier"),
@@ -513,7 +513,7 @@ def test_only_hgb_and_xgb_may_train_in_m4():
 
 def test_no_tuning_or_calibration_apis_in_m4():
     from pathlib import Path
-    root = Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    root = Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
     forbidden = ("GridSearchCV", "RandomizedSearchCV", "BayesSearchCV",
                  "ParameterSampler", "optuna", "hyperopt",
                  "CalibratedClassifierCV", "IsotonicRegression",
@@ -540,7 +540,7 @@ def test_no_new_dependencies_declared():
 
 def test_m3_and_m2_files_untouched_by_m4():
     from pathlib import Path
-    root = Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    root = Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
     for name in ("model_runner.py", "model_suite.py", "run_models.py",
                  "logreg.py", "runner.py", "run.py", "suite.py",
                  "run_baselines.py"):

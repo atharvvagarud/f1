@@ -26,17 +26,17 @@ from fastapi.responses import JSONResponse
 
 from api import v2_schemas as S
 from api.v2_service import V2Service, get_v2_service
-from v2.model_lab.errors import ServingArtifactError
-from v2.prediction import (
+from raceintel.model_lab.errors import ServingArtifactError
+from raceintel.prediction import (
     PredictionAlignmentError,
     PredictionEngineError,
     PredictionFeatureMismatchError,
     PredictionOutputError,
     ProductionModelUnavailableError,
 )
-from v2.race_state import InvalidRaceStateError
-from v2.race_state_features import RaceStateFeatureMismatchError
-from v2.race_state_reconstruction import (
+from raceintel.race_state.race_state import InvalidRaceStateError
+from raceintel.race_state.race_state_features import RaceStateFeatureMismatchError
+from raceintel.race_state.race_state_reconstruction import (
     AnchorNotFoundError,
     RaceNotFoundError,
     RaceStateReconstructionError,

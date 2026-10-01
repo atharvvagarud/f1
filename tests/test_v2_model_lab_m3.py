@@ -13,19 +13,19 @@ import pandas as pd
 import pytest
 
 from model_lab_helpers import load_canonical_or_skip, require_matrix
-from v2.model_lab import data as D
-from v2.model_lab import errors as E
-from v2.model_lab import experiment as EX
-from v2.model_lab import logreg as LR
-from v2.model_lab import model_runner as MR
-from v2.model_lab import model_suite as MSUITE
-from v2.model_lab import preprocessing as PRE
-from v2.model_lab import predictions as PR
-from v2.model_lab import results as RES
-from v2.model_lab import run as RUNCLI
-from v2.model_lab import run_models as MODELSCLI
-from v2.model_lab import runner as RUN
-from v2.model_lab import splits as S
+from raceintel.model_lab import data as D
+from raceintel.model_lab import errors as E
+from raceintel.model_lab import experiment as EX
+from raceintel.model_lab import logreg as LR
+from raceintel.model_lab import model_runner as MR
+from raceintel.model_lab import model_suite as MSUITE
+from raceintel.model_lab import preprocessing as PRE
+from raceintel.model_lab import predictions as PR
+from raceintel.model_lab import results as RES
+from raceintel.model_lab import run as RUNCLI
+from raceintel.model_lab import run_models as MODELSCLI
+from raceintel.model_lab import runner as RUN
+from raceintel.model_lab import splits as S
 
 
 @pytest.fixture(scope="module")
@@ -484,7 +484,7 @@ def test_report_renders_from_summary_only():
 
 def test_only_logreg_may_train():
     from pathlib import Path
-    root = Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    root = Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
     allowed_files = {
         "preprocessing.py": (),
         "logreg.py": ("LogisticRegression",),
@@ -521,7 +521,7 @@ def test_no_new_dependencies_declared():
 
 def test_m2_files_do_not_train_models():
     from pathlib import Path
-    root = Path(__file__).resolve().parents[1] / "v2" / "model_lab"
+    root = Path(__file__).resolve().parents[1] / "raceintel" / "model_lab"
     for name in ("runner.py", "run.py", "suite.py", "run_baselines.py"):
         text = (root / name).read_text()
         assert "from sklearn" not in text and "import sklearn" not in text
@@ -530,7 +530,7 @@ def test_m2_files_do_not_train_models():
 # --- M1.1 applicability through the model path ----------------------------------------------
 
 def test_model_metrics_route_through_applicability_guard(logreg_d1):
-    from v2.model_lab import metrics as M
+    from raceintel.model_lab import metrics as M
     M.require_metric_applicability(
         PR.PredictionKind.BINARY_PROBABILITY, "log_loss")
     M.require_metric_applicability(

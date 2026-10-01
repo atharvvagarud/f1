@@ -34,8 +34,8 @@ from scripts.replay_feature_matrix import (  # noqa: E402
     MatrixScopeError,
     IDENTITY_COLUMNS,
 )
-from v2 import replay as RP  # noqa: E402
-from v2.replay_predictions import select_checkpoints  # noqa: E402
+from raceintel.replay import replay as RP  # noqa: E402
+from raceintel.replay.replay_predictions import select_checkpoints  # noqa: E402
 
 FIXTURE_PATH = os.path.join(ROOT, "tests", "fixtures",
                             "phase8_e1_baseline.json")
@@ -88,8 +88,8 @@ def test_matrix_identity_against_manifest(matrix):
 
 
 def test_all84_registry_order(matrix):
-    from v2.experiments.feature_sets import canonical_predictive_names
-    from v2.features.interactions import build_f11_registry
+    from raceintel.experiments.feature_sets import canonical_predictive_names
+    from raceintel.features.interactions import build_f11_registry
     expected = tuple(
         canonical_predictive_names(build_f11_registry()))
     assert len(expected) == 84
@@ -352,18 +352,18 @@ def test_full_probe_artifacts_byte_identical_to_baseline(tmp_path):
 
 @pytest.fixture(scope="module")
 def _stack():
-    from v2.config import V2Paths
-    from v2.features.build_matrix import load_history
-    from v2.model_lab import serving as SERVING
+    from raceintel.config import V2Paths
+    from raceintel.features.build_matrix import load_history
+    from raceintel.model_lab import serving as SERVING
     return (SERVING.load_frozen_winner_model(),
             load_history(V2Paths.resolve()),
             FrozenReplayFeatureMatrix.load(ROOT))
 
 
 def test_eml_matrix_rows_equal_recomputed_features(_stack):
-    from v2.race_state_features import RaceStateFeatureBridge
-    from v2.replay_reconstruction import ReplayReconstructor
-    from v2.race_state_reconstruction import RaceStateReconstructor
+    from raceintel.race_state.race_state_features import RaceStateFeatureBridge
+    from raceintel.replay.replay_reconstruction import ReplayReconstructor
+    from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
     predictor, history, backend = _stack
     fix = _fixture()
     states, results, meta = load_race_inputs(2023, SMALL_RACE)
@@ -399,9 +399,9 @@ def test_eml_matrix_rows_equal_recomputed_features(_stack):
 
 
 def test_eml_transformed_logit_exact(_stack):
-    from v2.race_state_features import RaceStateFeatureBridge
-    from v2.replay_reconstruction import ReplayReconstructor
-    from v2.race_state_reconstruction import RaceStateReconstructor
+    from raceintel.race_state.race_state_features import RaceStateFeatureBridge
+    from raceintel.replay.replay_reconstruction import ReplayReconstructor
+    from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
     predictor, history, backend = _stack
     fix = _fixture()
     states, results, meta = load_race_inputs(2023, SMALL_RACE)
@@ -445,11 +445,11 @@ def test_corpus_structural_coverage_149_races(matrix):
     race_ids = [r for r in race_ids if int(r.split("-")[0]) in range(2018, 2025)]
     assert len(race_ids) == 149
     from scripts.build_replay_prediction_cache import SeasonStatesCache
-    from v2.race_state_features import RaceStateFeatureBridge
-    from v2.replay_reconstruction import ReplayReconstructor
-    from v2.race_state_reconstruction import RaceStateReconstructor
-    from v2.config import V2Paths
-    from v2.features.build_matrix import load_history
+    from raceintel.race_state.race_state_features import RaceStateFeatureBridge
+    from raceintel.replay.replay_reconstruction import ReplayReconstructor
+    from raceintel.race_state.race_state_reconstruction import RaceStateReconstructor
+    from raceintel.config import V2Paths
+    from raceintel.features.build_matrix import load_history
     history = load_history(V2Paths.resolve())
     season_cache = SeasonStatesCache(base)
     total_ckpts = total_req = exact = missing = ambiguous = 0

@@ -16,7 +16,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from v2.strategy import (
+from raceintel.strategy import (
     MIN_VALID_PAIRS_FOR_CI,
     UNCERTAINTY_AVAILABLE,
     UNCERTAINTY_INSUFFICIENT_PAIRS,
@@ -26,14 +26,14 @@ from v2.strategy import (
     classify_uncertainty,
     compute_uncertainty,
 )
-from v2.strategy.objectives import (
+from raceintel.strategy.objectives import (
     OBJECTIVE_DEGRADATION,
     OBJECTIVE_IMPROVEMENT,
     OBJECTIVE_INCONCLUSIVE,
     OBJECTIVE_UNAVAILABLE,
 )
-from v2.strategy.paired import PerIndexOutcome
-from v2.strategy.uncertainty import (
+from raceintel.strategy.paired import PerIndexOutcome
+from raceintel.strategy.uncertainty import (
     DEFAULT_BOOTSTRAP_REPLICATES,
     QUANTILE_METHOD,
     pairwise_validity_counts,
@@ -315,9 +315,9 @@ def test_uncertainty_is_sampling_only_and_versioned():
 
 
 def test_uncertainty_module_reads_no_future_oracle_or_phase3_material():
-    banned = ("v2.simulation.validation", "v2.replay", "v2.prediction",
-              "v2.model_lab", "pandas", "sklearn")
-    tree = ast.parse((ROOT / "v2" / "strategy" / "uncertainty.py").read_text())
+    banned = ("raceintel.simulation.validation", "raceintel.replay", "raceintel.prediction",
+              "raceintel.model_lab", "pandas", "sklearn")
+    tree = ast.parse((ROOT / "raceintel" / "strategy" / "uncertainty.py").read_text())
     imported = []
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):

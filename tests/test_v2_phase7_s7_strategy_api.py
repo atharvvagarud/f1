@@ -28,7 +28,7 @@ from api.v2_strategy_service import (
     get_v2_strategy_service,
     validate_strategy_request,
 )
-from v2.strategy.objectives import STRATEGY_OBJECTIVES
+from raceintel.strategy.objectives import STRATEGY_OBJECTIVES
 
 ORDINARY = dict(race_id="2022-r01-R", anchor_driver_id="perez",
                 anchor_lap_number=30, anchor_state_time_s=6745.686)

@@ -37,9 +37,9 @@ from api.v2_replay_service import (
     ReplayFrameNotFoundError,
     V2ReplayService,
 )
-from v2 import replay as RP
-from v2.race_state_reconstruction import RaceNotFoundError, RaceStateReconstructor
-from v2.replay_predictions import (
+from raceintel.replay import replay as RP
+from raceintel.race_state.race_state_reconstruction import RaceNotFoundError, RaceStateReconstructor
+from raceintel.replay.replay_predictions import (
     ARTIFACT_FORMAT,
     FLAG_TRANSITION,
     LEADER_LAP,
@@ -52,12 +52,12 @@ from v2.replay_predictions import (
     select_checkpoints,
     write_artifact,
 )
-from v2.replay_probability_timeline import (
+from raceintel.replay.replay_probability_timeline import (
     PROBABILITY_TIMELINE_CONTRACT_VERSION,
     build_probability_timeline,
     canonical_timeline_json,
 )
-from v2.replay_reconstruction import ReplayReconstructor
+from raceintel.replay.replay_reconstruction import ReplayReconstructor
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -261,12 +261,12 @@ def test_contract_versions_pinned():
 def test_checkpoint_reason_tokens_pinned():
     assert LEADER_LAP == "LEADER_LAP"
     assert FLAG_TRANSITION == "FLAG_TRANSITION"
-    from v2.replay_predictions import KNOWN_REASONS
+    from raceintel.replay.replay_predictions import KNOWN_REASONS
     assert KNOWN_REASONS == {"LEADER_LAP", "FLAG_TRANSITION"}
 
 
 def test_default_checkpoints_dir_is_gitignored_generated_path():
-    from v2.replay_predictions import DEFAULT_CHECKPOINTS_DIR
+    from raceintel.replay.replay_predictions import DEFAULT_CHECKPOINTS_DIR
     assert DEFAULT_CHECKPOINTS_DIR == "results/v2_replay/checkpoints"
     ignored = (ROOT / ".gitignore").read_text()
     assert "results/v2_replay/" in ignored
@@ -295,12 +295,12 @@ def _imported_names(path):
 
 
 @pytest.mark.parametrize("path", [
-    "v2/replay.py", "v2/replay_reconstruction.py",
-    "v2/replay_predictions.py", "v2/replay_probability_timeline.py"])
+    "raceintel/replay/replay.py", "raceintel/replay/replay_reconstruction.py",
+    "raceintel/replay/replay_predictions.py", "raceintel/replay/replay_probability_timeline.py"])
 def test_replay_domain_has_no_model_or_api_dependency(path):
     modules = _imported_modules(path)
-    banned_prefixes = ("v2.prediction", "v2.race_state_features",
-                       "v2.model_lab", "sklearn", "api")
+    banned_prefixes = ("raceintel.prediction", "raceintel.race_state.race_state_features",
+                       "raceintel.model_lab", "sklearn", "api")
     for module in modules:
         for banned in banned_prefixes:
             assert not (module == banned or module.startswith(banned + ".")), \
@@ -330,9 +330,9 @@ def test_replay_routes_are_additive_and_do_not_touch_legacy():
 
 
 def test_no_reverse_dependency_from_domain_to_service():
-    for path in ("v2/replay.py", "v2/replay_reconstruction.py",
-                 "v2/replay_predictions.py",
-                 "v2/replay_probability_timeline.py"):
+    for path in ("raceintel/replay/replay.py", "raceintel/replay/replay_reconstruction.py",
+                 "raceintel/replay/replay_predictions.py",
+                 "raceintel/replay/replay_probability_timeline.py"):
         modules = _imported_modules(path)
         assert not any(m.startswith("api") for m in modules), path
 
@@ -966,7 +966,7 @@ def test_partial_artifact_is_never_complete(tmp_path):
 
 
 def test_write_failure_leaves_no_orphan_temp(tmp_path):
-    from v2.replay_predictions import write_artifact as wa
+    from raceintel.replay.replay_predictions import write_artifact as wa
     path = str(tmp_path / "artifact.json")
     original = json.dumps({"artifact_format": ARTIFACT_FORMAT})
 
@@ -1317,6 +1317,25 @@ def test_frozen_module_hashes_unchanged_except_authorized_main():
     # stays byte-exact. See test_v2_phase4_freeze.py for the rationale.
     manifest = json.loads(
         (ROOT / "docs/PHASE4_FREEZE_MANIFEST.json").read_text())
+    # C2 structural migration (v2/ -> raceintel/, import-prefix rewrite
+    # only); same mapping as test_v2_phase4_freeze.py.
+    C2_MIGRATED = {
+        "api/v2_routes.py": "api/v2_routes.py",
+        "api/v2_service.py": "api/v2_service.py",
+        "v2/prediction.py": "raceintel/prediction.py",
+        "v2/race_state.py": "raceintel/race_state/race_state.py",
+        "v2/race_state_features.py":
+            "raceintel/race_state/race_state_features.py",
+        "v2/race_state_reconstruction.py":
+            "raceintel/race_state/race_state_reconstruction.py",
+        "scripts/benchmark_phase4.py": "scripts/benchmark_phase4.py",
+        "tests/test_v2_phase4_r1.py": "tests/test_v2_phase4_r1.py",
+        "tests/test_v2_phase4_r2.py": "tests/test_v2_phase4_r2.py",
+        "tests/test_v2_phase4_r3.py": "tests/test_v2_phase4_r3.py",
+        "tests/test_v2_phase4_r4.py": "tests/test_v2_phase4_r4.py",
+        "tests/test_v2_phase4_r5.py": "tests/test_v2_phase4_r5.py",
+        "tests/test_v2_phase4_r6.py": "tests/test_v2_phase4_r6.py",
+    }
     for section in ("phase4_modules", "phase4_tests", "benchmark",
                     "api_contract"):
         for path, recorded in manifest[section].items():
@@ -1324,6 +1343,15 @@ def test_frozen_module_hashes_unchanged_except_authorized_main():
                 continue  # authorized Phase-5 additive router include
             if path == "tests/test_v2_phase4_freeze.py":
                 continue  # authorized P11-1 stale-pin correction
+            if path in C2_MIGRATED:
+                new = C2_MIGRATED[path]
+                if new != path:
+                    assert not (ROOT / path).exists(), path
+                assert (ROOT / new).is_file(), new
+                digest = hashlib.sha256(
+                    (ROOT / new).read_bytes()).hexdigest()
+                assert digest != recorded, new
+                continue
             digest = hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
             assert digest == recorded, path
     assert "def test_frozen_module_hashes_match" in (
@@ -1338,7 +1366,7 @@ def test_api_main_drift_is_only_the_additive_replay_include():
     # No scientific module may be imported by the app assembly.
     modules = _imported_modules("api/main.py")
     for module in modules:
-        for banned in ("v2.race_state", "v2.prediction", "v2.model_lab",
-                       "v2.race_state_features", "sklearn"):
+        for banned in ("raceintel.race_state", "raceintel.prediction", "raceintel.model_lab",
+                       "raceintel.race_state.race_state_features", "sklearn"):
             assert not (module == banned or module.startswith(banned + ".")), \
                 module

@@ -135,3 +135,9 @@ results/v2_explainability/
 # scripts/prepare_runtime_artifacts.py, validated before Docker build,
 # never committed. Contains ONLY generated runtime-required assets.
 /runtime_artifacts/
+
+# Local developer-tool state (C3-B): opencode plugin runtime env (61M,
+# node_modules + plugins) and impeccable design-skill tokens. Local-only,
+# regenerable, never committed. Narrow entries: only these two tool dirs.
+.opencode/
+.impeccable/

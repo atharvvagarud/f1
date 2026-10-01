@@ -58,11 +58,40 @@ def test_frozen_module_hashes_match():
     # frozen and asserts authorized evolution where the manifest is a
     # superseded time capsule — strictly stronger than skipping the file.
     data = _manifest()
+    # C2 structural migration (v2/ -> raceintel/, import-prefix rewrite
+    # only): listed files changed bytes and/or paths. Old paths must be
+    # gone, new paths must exist with acknowledged-different bytes; new
+    # hashes are pinned in the C2 migration record. Everything else stays
+    # byte-exact against the frozen manifest.
+    C2_MIGRATED = {
+        "api/v2_routes.py": "api/v2_routes.py",
+        "api/v2_service.py": "api/v2_service.py",
+        "v2/prediction.py": "raceintel/prediction.py",
+        "v2/race_state.py": "raceintel/race_state/race_state.py",
+        "v2/race_state_features.py":
+            "raceintel/race_state/race_state_features.py",
+        "v2/race_state_reconstruction.py":
+            "raceintel/race_state/race_state_reconstruction.py",
+        "scripts/benchmark_phase4.py": "scripts/benchmark_phase4.py",
+        "tests/test_v2_phase4_r1.py": "tests/test_v2_phase4_r1.py",
+        "tests/test_v2_phase4_r2.py": "tests/test_v2_phase4_r2.py",
+        "tests/test_v2_phase4_r3.py": "tests/test_v2_phase4_r3.py",
+        "tests/test_v2_phase4_r4.py": "tests/test_v2_phase4_r4.py",
+        "tests/test_v2_phase4_r5.py": "tests/test_v2_phase4_r5.py",
+        "tests/test_v2_phase4_r6.py": "tests/test_v2_phase4_r6.py",
+    }
     for section in ("phase4_modules", "phase4_tests",
                     "benchmark", "api_contract"):
         for path, recorded in data[section].items():
             if path in ("api/main.py",
                         "tests/test_v2_phase4_freeze.py"):
+                continue
+            if path in C2_MIGRATED:
+                new = C2_MIGRATED[path]
+                if new != path:
+                    assert not (ROOT / path).exists(), path
+                assert (ROOT / new).is_file(), new
+                assert _sha(new) != recorded, new
                 continue
             assert _sha(path) == recorded, path
     # Self-pin: this test file is itself recorded in phase4_tests, so an
@@ -83,7 +112,7 @@ def test_frozen_module_hashes_match():
 
 
 def test_serving_artifact_identity_matches():
-    from v2.model_lab import serving as S
+    from raceintel.model_lab import serving as S
     record = S.describe_serving_artifact()
     frozen = _manifest()["phase3"]
     assert record["sha256"] == frozen["serving_artifact_sha256"]
@@ -118,8 +147,8 @@ def test_normalized_openapi_matches_contract_artifact():
 
 
 def test_anchor_and_roster_contracts_represented():
-    from v2 import race_state as RS
-    from v2.prediction import (NO_OBSERVATION_AT_SNAPSHOT,
+    from raceintel.race_state import race_state as RS
+    from raceintel.prediction import (NO_OBSERVATION_AT_SNAPSHOT,
                                PROBABILITY_SEMANTICS)
     assert RS.AnchorObservation.__dataclass_fields__.keys() == {
         "race_id", "anchor_driver_id", "anchor_lap_number",
@@ -161,7 +190,7 @@ def test_no_model_fallback_path():
 
 
 def test_serving_path_has_no_training_entry():
-    for path in ("v2/prediction.py", "v2/race_state_features.py",
+    for path in ("raceintel/prediction.py", "raceintel/race_state/race_state_features.py",
                  "api/v2_service.py", "api/v2_routes.py"):
         text = (ROOT / path).read_text()
         for banned in (".fit(", "joblib", "ml.inference"):

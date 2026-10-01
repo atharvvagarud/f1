@@ -22,7 +22,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 # by duplicating the value here (except the real-SHA guard below, which is
 # the point of that test).
 BANNED_IMPORT_ROOTS = {
-    "fastf1", "sklearn", "pandas", "numpy", "joblib", "v2", "api", "ml",
+    "fastf1", "sklearn", "pandas", "numpy", "joblib", "v2", "raceintel",
+    "api", "ml",
 }
 PY311 = (3, 11, 0, "final", 0)
 
@@ -50,7 +51,7 @@ def _write(path: Path, data: bytes = b"x") -> Path:
 def source_root(mod, tmp_path, monkeypatch):
     """Minimal synthetic tree that passes SOURCE checks."""
     root = tmp_path / "proj"
-    (root / "v2").mkdir(parents=True)
+    (root / "raceintel").mkdir(parents=True)
     (root / "data").mkdir(parents=True)
     model = _write(root / str(mod.SERVING_MODEL_REL), b"synthetic-model")
     monkeypatch.setattr(mod, "EXPECTED_SERVING_MODEL_SHA",

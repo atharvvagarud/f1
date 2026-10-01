@@ -16,8 +16,8 @@ import time
 import pandas as pd
 import pytest
 
-from v2 import replay as RP
-from v2.race_state import AnchorObservation
+from raceintel.replay import replay as RP
+from raceintel.race_state.race_state import AnchorObservation
 
 D9 = "data/v2/processed/driver_lap_state_d9/season={season}/" \
      "driver_lap_state_d9__d9-{season}.parquet"

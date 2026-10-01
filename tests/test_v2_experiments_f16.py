@@ -16,16 +16,16 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from v2.config import V2Paths
-from v2.experiments import feature_sets as A
-from v2.features import build_f11_registry
-from v2.features.build_matrix import (
+from raceintel.config import V2Paths
+from raceintel.experiments import feature_sets as A
+from raceintel.features import build_f11_registry
+from raceintel.features.build_matrix import (
     MATRIX_VERSION,
     content_hash,
     output_dir,
 )
-from v2.features.registry import FEATURE_SET_VERSION
-from v2.labels.contracts import LABEL_SET_VERSION
+from raceintel.features.registry import FEATURE_SET_VERSION
+from raceintel.labels.contracts import LABEL_SET_VERSION
 
 ROOT = V2Paths.resolve().root
 _OUT = output_dir(V2Paths.resolve())
@@ -47,7 +47,7 @@ def registry():
 
 @pytest.fixture(scope="session")
 def canonical(paths):
-    from v2.features.build_matrix import load_matrix
+    from raceintel.features.build_matrix import load_matrix
     return load_matrix(paths)
 
 
@@ -386,7 +386,7 @@ def test_no_matrix_rewrite(paths, manifest, tmp_path):
     A.write_ablation_config(paths, out_dir=tmp_path)
     assert hashlib.sha256(pq.read_bytes()).hexdigest() == before_pq
     assert hashlib.sha256(mf.read_bytes()).hexdigest() == before_mf
-    from v2.features.build_matrix import load_matrix
+    from raceintel.features.build_matrix import load_matrix
     _, m = load_matrix(paths)
     assert m["content_hash"] == manifest["content_hash"]
 
