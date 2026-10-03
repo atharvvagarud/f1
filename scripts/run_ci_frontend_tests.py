@@ -40,7 +40,13 @@ FRONTEND = ROOT / "frontend"
 
 # Total frontend *.test.ts files at the frozen baseline. Pinned
 # fail-closed: a new/renamed test file forces manifest review.
-EXPECTED_TEST_FILES = 17
+# 17 at the P10-4R freeze; P12-6 adds lib/spatial.test.ts (pure
+# spatial client/view-model, node type-stripping, no corpus) = 18;
+# P12-7 adds features/replay/lib/spatialIntegration.test.ts (pure
+# replay-integration guards, node type-stripping, no corpus) = 19;
+# P12-8 adds features/replay/lib/raceStatus.test.ts (pure status
+# view-model, node type-stripping, no corpus) = 20.
+EXPECTED_TEST_FILES = 20
 
 # Repo-root-relative frontend test files requiring the ignored corpus.
 CORPUS_DEPENDENT_TEST_FILES: tuple[tuple[str, str], ...] = (

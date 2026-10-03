@@ -47,7 +47,12 @@ Six surfaces, all served from the same frozen artifacts:
 
 - **Predict** (`/`) — 20-driver winner snapshot at an exact race anchor.
 - **Replay** (`/replay`) — timeline scrubber over exact checkpoints with
-  cached predictions and log-odds explanations.
+  cached predictions and log-odds explanations. The replay page includes a
+  Spatial Track Replay panel (Phase 12): telemetry-derived circuit geometry
+  with causal lap/frame-synchronized driver positions (latest observation
+  at or before replay time only; 2018–2024 served races) plus historical
+  race-status context from the same replay frame. Full semantics, cross-
+  validation, and limitations: `docs/PHASE12_FINAL_REPORT.md`.
 - **Simulator** (`/simulator`) — Monte Carlo outcome distributions from a
   chosen anchor and seed.
 - **Strategy** (`/strategy`) — paired baseline-vs-candidate comparison with

@@ -1,0 +1,168 @@
+{
+  "2025_firewall": {
+    "geometry_2025_races": 24,
+    "is_data_ingestible_2025": true,
+    "is_product_servable_2025": false,
+    "served_seasons": "api.v2_service.SERVED_SEASONS == (2018..2024), unchanged"
+  },
+  "algorithm_version": "p12-3-v1",
+  "baseline": "218f4a653f8e7148d06fefc69798053b275795bc",
+  "corpus_results": {
+    "eligible_observation_races": 170,
+    "failed": 0,
+    "geometry_complete": 170,
+    "geometry_skipped_source_missing": 3
+  },
+  "determinism": {
+    "force_rebuild_races": [
+      "2021-r05-R",
+      "2023-r12-R"
+    ],
+    "geometry_hash_stable": true,
+    "json_canonical_bytes": true,
+    "manifest_identity_stable": true,
+    "same_file_sha_expected": true
+  },
+  "entry_gate": "all P12-3 boxes green; P12-4 not started",
+  "geometry_algorithm": "reference-lap anchor passes -> 2048 arc-length anchors -> heading-gated assignment -> per-bin median (15 m trim) -> cyclic interpolation -> Savitzky-Golay smoothing -> 512-point loop",
+  "geometry_contract": "spatial-geometry-v1 (declared in P12-1, populated in P12-3); per-race scope; JSON artifacts",
+  "geometry_manifest_identity": "6329b205b102df118329d824dfb16af19e2976fb0ea8c5dcd62d0f8ec84fc786",
+  "golden_races": {
+    "2021-r05-R": {
+      "closure_over_segment": 0.98,
+      "geometry_sha256": "e3bab64de7838bb65baeb6cc9aa7180951e3cbf17b1c6517b2c2c215ef7f04d8",
+      "length_m": 3248,
+      "pit": "PIT_GEOMETRY_SUPPORTED",
+      "visual": "clean loop, pit diverge/rejoin, no shortcuts"
+    },
+    "2023-r01-R": {
+      "length_m": 5324,
+      "pit": "PIT_GEOMETRY_SUPPORTED",
+      "visual": "clean loop, pit branch on parallel straight"
+    },
+    "2023-r03-R": {
+      "length_m": 5235,
+      "pit": "PIT_GEOMETRY_SUPPORTED",
+      "visual": "clean loop"
+    },
+    "2024-r04-R": {
+      "length_m": 5757,
+      "pit": "PIT_GEOMETRY_SUPPORTED",
+      "visual": "crossover correct, pit on main straight"
+    }
+  },
+  "known_limitations": [
+    "1 unit ~= 0.1 m inferred descriptive scale (lap-length match); contract stores raw integral units + uniform scale",
+    "reference requires >= 1 gap-free single lap (150 m tolerance + 97% anchor support); persistent fragmentation would fail closed (none observed)",
+    "pit branch needs Tier-A tables; missing tables or failed connections defer per race",
+    "512-point chords deviate up to ~7 m in hairpins (recorded per race; sub-pixel for rendering)",
+    "centerline length is descriptive (feed jitter inflates it; transform is bounds-based)",
+    "quality p95 is all-source (includes stationary fallback clusters); median is the fidelity signal",
+    "geometry reads local files only; no network surface"
+  ],
+  "performance": {
+    "force_rebuild_s_per_race": {
+      "2021-r05-R": 15.8,
+      "2023-r12-R": 10.7
+    },
+    "full_corpus_wall_s": 1983.1,
+    "geometry_races_per_s": 0.086,
+    "golden_race_wall_s": {
+      "2021-r05-R": 12.9,
+      "2023-r01-R": 10.8,
+      "2023-r03-R": 11.4,
+      "2024-r04-R": 10.8
+    },
+    "resume_wall_s": 0.3
+  },
+  "pit_lane_decision": "PIT_GEOMETRY_SUPPORTED where evidenced (168/170); per-race PIT_GEOMETRY_DEFERRED with reason otherwise (2/170: Spa 2021 zero windows; Austin 2021 exit 317u over 300u tolerance). Pit-building GPS fallback freezes (shared cell across stops) excluded by moving-only windows.",
+  "predictive_firewall": {
+    "all_84_count": 84,
+    "no_geometry_model_features": true,
+    "no_predictive_imports_spatial": true,
+    "no_spatial_imports_predictive_api_web": true
+  },
+  "quality_metrics": {
+    "closure_over_median_segment": {
+      "max": 1.0,
+      "median": 0.99
+    },
+    "segment_median_u": {
+      "median": 102.4
+    },
+    "simplification_error_u": {
+      "max": 67.8,
+      "median": 51.2
+    },
+    "source_to_centerline_median_u": {
+      "max": 60.2,
+      "median": 28.8
+    },
+    "source_to_centerline_p95_u": {
+      "median": 144.1,
+      "note": "all-source incl. stationary fallback clusters"
+    }
+  },
+  "render_space": "[0,1]x[0,1], y-down SVG-ready, 3% aspect-fit padding, source orientation preserved (rotation 0), single uniform scale",
+  "schema_version": "p12-3-circuit-geometry-v1",
+  "scientific_identities": {
+    "note": "reverified without regeneration via frozen test surface + zero diff on frozen paths",
+    "phase2_content": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+    "phase2_parquet": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3",
+    "replay_aggregate": "78a3c059888637fe83cc534d0eb7869b6d18e746724bb1ce0f03ee3b8ba96298",
+    "served_explainability": "bae84b614a6e9e176d5bb9c33b99dcaf4cba3f376333b0f075c828f73982939f",
+    "served_model": "1116b34fc716035c2425e605b9a5cc15541a2d2335e26113f2e2eaf3fcaa59f4",
+    "simulation_params": "r3-v1 through 2024, phase6-r3-empirical"
+  },
+  "season_results": {
+    "2018": {
+      "complete": 19,
+      "skipped": 2
+    },
+    "2019": {
+      "complete": 21
+    },
+    "2020": {
+      "complete": 17
+    },
+    "2021": {
+      "complete": 22
+    },
+    "2022": {
+      "complete": 22
+    },
+    "2023": {
+      "complete": 22
+    },
+    "2024": {
+      "complete": 23,
+      "skipped": 1
+    },
+    "2025": {
+      "complete": 24
+    }
+  },
+  "source_manifest_identity": "87797e3fe22e850e47fb751c69e8fd382510d71e5731e0858c57a1d8bcdd2fc1",
+  "source_selection": "moving (step>2u) non-spike (<=5000u) observations; spike neighbors dropped; no coordinate boxes; no lap/outcome labels",
+  "storage": {
+    "largest_race": {
+      "bytes": 94825,
+      "race_id": "2025-r07-R"
+    },
+    "median_bytes_per_race": 94204,
+    "p95_bytes_per_race": 94752,
+    "total_bytes": 15982841,
+    "total_mb": 16.0,
+    "vs_observations": "~35x smaller (16.0MB vs 563.6MB)"
+  },
+  "test_inventory": {
+    "added_nodes": 27,
+    "ci_collection": {
+      "new": 3316,
+      "old": 3289
+    },
+    "new_file": "tests/test_spatial_geometry.py (synthetic loops, tmp dirs; corpus integration outside CI)",
+    "reason": "P12-3 geometry tests, source-safe, no corpus"
+  },
+  "transform": "raw -> translate -> uniform scale -> y-flip; raw+render points stored; validation recomputes render exactly; shared by future driver coordinates (P12-4)"
+}

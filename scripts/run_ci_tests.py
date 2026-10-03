@@ -57,8 +57,21 @@ CORPUS_MANIFEST = Path(__file__).resolve().parent / "ci_corpus_dependent.txt"
 # (tests/test_science_validation_contract.py) with no removals
 # (the stale cache test was renamed 1:1) = 3202; P11-3 adds 6
 # benchmark-script unit tests (tests/test_p11_benchmark_script.py, pure
-# computation, source-safe, no corpus) with no removals = 3210.
-EXPECTED_COLLECTED = 3210
+# computation, source-safe, no corpus) with no removals = 3210; P12-1 adds
+# 48 spatial contract/governance tests (tests/test_spatial_contracts.py,
+# test_spatial_validation.py, test_spatial_manifest.py,
+# test_spatial_firewall.py; pure computation/source-scan, source-safe, no
+# corpus) with no removals = 3258; P12-2 adds 31 spatial ingestion tests
+# (tests/test_spatial_ingestion.py; fake sessions/tmp dirs, source-safe,
+# no corpus) with no removals = 3289; P12-3 adds 27 circuit geometry
+# tests (tests/test_spatial_geometry.py; synthetic loops/tmp dirs,
+# source-safe, no corpus) with no removals = 3316; P12-4 adds 62
+# temporal resolver tests (tests/test_spatial_resolver.py; synthetic
+# series/tmp dirs, source-safe, no corpus) with no removals = 3378;
+# P12-5 adds 29 spatial API tests (tests/test_spatial_api.py; stub
+# replay service/tmp dirs, source-safe, no corpus) with no removals
+# = 3407.
+EXPECTED_COLLECTED = 3407
 
 # (pytest node id, reason it cannot pass at the frozen baseline)
 # P11-1: the 12 pre-existing stale historical pins were genuinely corrected

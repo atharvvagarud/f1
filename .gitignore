@@ -97,6 +97,20 @@ logs/
 # (v2/*.py) and contract tests remain tracked.
 # data/processed + data/interim (legacy baseline) remain tracked.
 /data/v2/
+/data/spatial/
+
+# =========================
+# P12 spatial corpus (generated, NOT version-controlled)
+# =========================
+# data/spatial/ holds per-race canonical observation Parquet plus the
+# deterministic ingestion manifest, built by
+# scripts/build_spatial_observations.py (P12-2) from the local FastF1
+# cache. All generated: reproducible via the versioned ingestion module,
+# never hand-edited, never committed (hundreds of MB). Spatial *code*
+# (raceintel/spatial/), contract tests, reports
+# (docs/PHASE12_*.md) and machine-readable records
+# (results/phase12/*.json) remain tracked; per-race content identities
+# are referenced from the tracked record via the manifest identity.
 
 # =========================
 # Temporary files

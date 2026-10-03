@@ -16,6 +16,7 @@ import { RaceSelector } from "@/features/replay/components/RaceSelector";
 import { TimelineScrubber } from "@/features/replay/components/TimelineScrubber";
 import { PlaybackControls } from "@/features/replay/components/PlaybackControls";
 import { StandingsTable } from "@/features/replay/components/StandingsTable";
+import { SpatialTrackPanel } from "@/features/replay/components/SpatialTrackPanel";
 import { ContextBar } from "@/features/replay/components/ContextBar";
 import { PredictionPanel } from "@/features/replay/components/PredictionPanel";
 import { ProbabilityTimelineChart } from "@/features/replay/components/ProbabilityTimelineChart";
@@ -190,13 +191,25 @@ export function ReplayView() {
 
       {frame ? (
         <div className="mt-5 grid grid-cols-1 gap-4 xl:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
-          <Panel className="overflow-hidden">
-            <PanelHeader
-              title="Running order"
-              meta={`${frame.state.roster_size} drivers`}
-            />
-            <StandingsTable frame={frame} />
-          </Panel>
+          <div className="flex min-w-0 flex-col gap-4">
+            <Panel className="overflow-hidden">
+              <PanelHeader
+                title="Running order"
+                meta={`${frame.state.roster_size} drivers`}
+              />
+              <StandingsTable frame={frame} />
+            </Panel>
+            {raceId ? (
+              <SpatialTrackPanel
+                raceId={raceId}
+                frameIndex={frameIndex}
+                anchorStateTimeS={frame.frame.anchor_state_time_s}
+                raceControl={frame.state.race_control}
+                selectedDriverId={selectedDriverId}
+                selectionRaceId={selection.raceId}
+              />
+            ) : null}
+          </div>
 
           <div className="flex min-w-0 flex-col gap-4">
             <PredictionPanel
