@@ -1,0 +1,16 @@
+{
+  "code_commit": "e99a78f874597dce4639fb56e1b301a08d100506",
+  "contract_identity": {
+    "contract_sha": "abd5300816d79270b1cd5b9b4952ebe447817f770eeddd2c598d0f07fbd5a0a4",
+    "contract_version": "v3.1a-v2"
+  },
+  "dataset_identity": {
+    "dynamics_content": "40ef05809e2932d725785a0e991bcecede8d884f2388affec3f56147611696a1",
+    "phase2_content": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+    "phase2_parquet": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3"
+  },
+  "holdout_season": 2025,
+  "one_shot": true,
+  "preregistration_identity": "b51ad595457062072890344025602d68929713a158e6855b6d8910b352d46e23",
+  "schema_version": "v3.1d-opening-v1"
+}

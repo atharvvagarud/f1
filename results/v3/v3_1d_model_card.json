@@ -1,0 +1,40 @@
+{
+  "artifact": {
+    "note": "research artifact only; frozen v2 serving model untouched; promotion needs a separate stage",
+    "path": "data/v3/v3_1d/final_model_arm_b.joblib",
+    "promoted": true,
+    "sha256": "9a1aac515d12c4e86ac369977392f74394cf7f6853b8e89d948bcdec28f58960"
+  },
+  "calibration": {
+    "a": 0.011108157831608437,
+    "b": 0.009392268865428575,
+    "delta": -0.0017158889661798623
+  },
+  "development_evidence": {
+    "D1": -0.0029393699539292384,
+    "D2": -0.0034812944043951105,
+    "D3": -0.0028803243384419447
+  },
+  "feature_count": 110,
+  "feature_set": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "follower_observation_semantics": "last causally observed follower gap (stale ~one lap); never a live gap",
+  "holdout_evidence": {
+    "bootstrap_ci": [
+      -0.007148080290119344,
+      -0.00215825589129568
+    ],
+    "primary_delta_b_a": -0.004618706297828054
+  },
+  "independent_binary_semantics": "per-driver probabilities; never a normalized field distribution",
+  "known_limitations": [],
+  "live_status": "non-live research artifact",
+  "schema_version": "v3.1d-model-card-v1",
+  "serving_status": "ELIGIBLE_FOR_FUTURE_SERVING_PROMOTION",
+  "stage_behavior": {
+    "EARLY": -0.0025383705235358933,
+    "LATE": -0.005553287765866777,
+    "MID": -0.005683343352831272
+  },
+  "task": "winner (is_winner under eligible_is_winner)",
+  "training_period": "2018-2024 FINAL_FIT"
+}

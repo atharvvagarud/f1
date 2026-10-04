@@ -70,8 +70,18 @@ CORPUS_MANIFEST = Path(__file__).resolve().parent / "ci_corpus_dependent.txt"
 # series/tmp dirs, source-safe, no corpus) with no removals = 3378;
 # P12-5 adds 29 spatial API tests (tests/test_spatial_api.py; stub
 # replay service/tmp dirs, source-safe, no corpus) with no removals
-# = 3407.
-EXPECTED_COLLECTED = 3407
+# = 3407; V3.1B adds 64 dynamics tests (57 source-safe across
+# test_v3_race_dynamics_contract / primitives / calculators / leakage /
+# governance, plus 7 corpus-dependent artifact tests now pinned in
+# ci_corpus_dependent.txt; repaired under V3.1A-C1 v3.1a-v2) with no
+# removals = 3471; V3.1C adds 14 experiment tests (10 source-safe in
+# tests/test_v3_1c_experiment.py plus 4 corpus-dependent in
+# tests/test_v3_1c_corpus.py, pinned in ci_corpus_dependent.txt) with
+# no removals = 3485; V3.1D adds 11 holdout-governance tests (source-safe
+# in tests/test_v3_1d_holdout.py; preregistration, firewall, acceptance
+# policy, verdict serialization, serving non-overwrite) with no removals
+# = 3496.
+EXPECTED_COLLECTED = 3496
 
 # (pytest node id, reason it cannot pass at the frozen baseline)
 # P11-1: the 12 pre-existing stale historical pins were genuinely corrected

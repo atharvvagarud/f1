@@ -563,6 +563,10 @@ M3_OWNED_MODULES = frozenset({
     # P3.1 production-owned module (frozen inference only); the P3.1 test
     # module owns the stricter successor guard (no .fit(, no holdout access).
     "serving.py",
+    # V3.1C stage-owned module (controlled dynamics experiment: frozen
+    # LogReg only); tests/test_v3_1c_experiment.py owns the stricter
+    # successor guard forbidding every other family.
+    "v3_dynamics_experiment.py",
 })
 
 

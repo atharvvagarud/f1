@@ -789,3 +789,18 @@ tests/test_v2_phase5_freeze.py::test_generated_cache_required_in_bundle_era
 tests/test_v2_phase6_r6.py::test_pit_disabled_reproduces_r5_result_identity
 # tests/test_v2_phase6_r71.py: simulation corpus (raw artifact + real states); P11-1 post-fix identities
 tests/test_v2_phase6_r71.py::test_accepted_state_matches_pre_fix_result_identity
+
+# tests/test_v3_dynamics_artifact.py: V3.1 dynamics sidecar corpus (ignored data/v3/race_dynamics); V3.1B construction (repaired under V3.1A-C1 v3.1a-v2)
+tests/test_v3_dynamics_artifact.py::test_row_count_and_identity_unique
+tests/test_v3_dynamics_artifact.py::test_schema_dtypes_order
+tests/test_v3_dynamics_artifact.py::test_join_integrity_both_directions
+tests/test_v3_dynamics_artifact.py::test_provenance_complete_and_pinned
+tests/test_v3_dynamics_artifact.py::test_determinism_rebuild
+tests/test_v3_dynamics_artifact.py::test_season_and_stage_coverage
+tests/test_v3_dynamics_artifact.py::test_missingness_and_distribution_sanity
+
+# tests/test_v3_1c_corpus.py: V3.1C experiment corpus (matrix + sidecar); V3.1C controlled experiment
+tests/test_v3_1c_corpus.py::test_arm_a_fidelity_d1_per_race
+tests/test_v3_1c_corpus.py::test_population_equality_d1
+tests/test_v3_1c_corpus.py::test_prediction_determinism_d1
+tests/test_v3_1c_corpus.py::test_no_holdout_rows_in_predictions

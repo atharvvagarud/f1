@@ -100,6 +100,17 @@ logs/
 /data/spatial/
 
 # =========================
+# V3 dynamics artifacts (generated, NOT version-controlled)
+# =========================
+# data/v3/ holds the V3.1 dynamics sidecar Parquet + provenance built by
+# scripts/build_v3_race_dynamics.py from frozen Phase-2 artifacts. All
+# generated: reproducible via the versioned builder, never hand-edited,
+# never committed. V3.1 *code* (raceintel/features/dynamics/),
+# contract/tests/reports (docs/V3_*.md, results/v3/*.json) remain tracked;
+# content identity is referenced from the tracked record.
+/data/v3/
+
+# =========================
 # P12 spatial corpus (generated, NOT version-controlled)
 # =========================
 # data/spatial/ holds per-race canonical observation Parquet plus the

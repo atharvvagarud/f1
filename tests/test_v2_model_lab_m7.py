@@ -186,11 +186,18 @@ def test_preprocessing_fit_once_per_inner_fold(canonical, monkeypatch):
 
 def test_estimator_fresh_per_c_and_only_c_varies(canonical, monkeypatch):
     recorded: list = []
+    keepalive: list = []
     original_build = TC.build_estimator
 
     def recording_build(family, parameters):
         estimator = original_build(family, parameters)
         recorded.append((family, dict(parameters), id(estimator)))
+        # Hold every built estimator for the test duration: without a live
+        # reference CPython may recycle addresses, making id()-uniqueness
+        # allocation-timing dependent (flake under suite memory pressure).
+        # Holding refs keeps the freshness check deterministic; a genuinely
+        # reused estimator object would still show duplicate ids.
+        keepalive.append(estimator)
         return estimator
 
     monkeypatch.setattr(TC, "build_estimator", recording_build)
