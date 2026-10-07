@@ -1,0 +1,59 @@
+{
+  "compound_boundary": {
+    "r6_boundary": "R6 dry-filtered; a causal wet/dry compound choice is Strategy 2.0 territory",
+    "weather_flip_same_family_no_stop": 1031,
+    "weather_flip_same_family_with_stop_within_2laps": 289
+  },
+  "compound_gate": "FAIL",
+  "folds": {
+    "H1": {
+      "l0_cells_kept": 6,
+      "l0_cells_total": 11,
+      "l1_cells": {
+        "2018-2021|INTERMEDIATE|rain=False": 1912,
+        "2018-2021|INTERMEDIATE|rain=True": 624,
+        "2018-2021|WET|rain=False": 119
+      },
+      "mae_s": 14.434292944785275,
+      "n": 1630,
+      "n_cross_era": 1378,
+      "n_l0": 252,
+      "n_l1": 0,
+      "n_unpredicted": 168
+    },
+    "H2": {
+      "l0_cells_kept": 15,
+      "l0_cells_total": 21,
+      "l1_cells": {
+        "2018-2021|INTERMEDIATE|rain=False": 1912,
+        "2018-2021|INTERMEDIATE|rain=True": 624,
+        "2018-2021|WET|rain=False": 119,
+        "2022-2024|INTERMEDIATE|rain=False": 953,
+        "2022-2024|INTERMEDIATE|rain=True": 614,
+        "2022-2024|WET|rain=False": 63,
+        "2022-2024|WET|rain=True": 168
+      },
+      "mae_s": 12.989840425531916,
+      "n": 1692,
+      "n_cross_era": 0,
+      "n_l0": 0,
+      "n_l1": 1692,
+      "n_unpredicted": 0
+    }
+  },
+  "gates": {
+    "H1": "FAIL",
+    "H2": "FAIL"
+  },
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "schema_version": "v3.2h-wet-parameters-v1",
+  "weather_transition": {
+    "counts": {
+      "False->False": 8303,
+      "False->True": 32,
+      "True->False": 35,
+      "True->True": 407
+    },
+    "identity": "counts-only; no admitted transition model (needs compound policy first)"
+  }
+}

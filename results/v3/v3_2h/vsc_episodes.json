@@ -1,0 +1,567 @@
+{
+  "episodes": [
+    {
+      "circuit": "albert_park",
+      "duration_laps": 2,
+      "entry_frac": 0.43218390804597706,
+      "entry_lap": 25,
+      "exit_lap": 26,
+      "race_id": "2018-r01-R",
+      "season": 2018,
+      "token": "vsc"
+    },
+    {
+      "circuit": "bahrain",
+      "duration_laps": 2,
+      "entry_frac": 0.03508771929824561,
+      "entry_lap": 2,
+      "exit_lap": 3,
+      "race_id": "2018-r02-R",
+      "season": 2018,
+      "token": "vsc"
+    },
+    {
+      "circuit": "catalunya",
+      "duration_laps": 2,
+      "entry_frac": 0.6151515151515151,
+      "entry_lap": 40,
+      "exit_lap": 41,
+      "race_id": "2018-r05-R",
+      "season": 2018,
+      "token": "vsc"
+    },
+    {
+      "circuit": "monaco",
+      "duration_laps": 1,
+      "entry_frac": 0.9268476621417799,
+      "entry_lap": 72,
+      "exit_lap": 72,
+      "race_id": "2018-r06-R",
+      "season": 2018,
+      "token": "vsc"
+    },
+    {
+      "circuit": "ricard",
+      "duration_laps": 1,
+      "entry_frac": 0.9705188679245281,
+      "entry_lap": 51,
+      "exit_lap": 51,
+      "race_id": "2018-r08-R",
+      "season": 2018,
+      "token": "vsc"
+    },
+    {
+      "circuit": "red_bull_ring",
+      "duration_laps": 1,
+      "entry_frac": 0.2120500782472614,
+      "entry_lap": 15,
+      "exit_lap": 15,
+      "race_id": "2018-r09-R",
+      "season": 2018,
+      "token": "vsc"
+    },
+    {
+      "circuit": "hungaroring",
+      "duration_laps": 1,
+      "entry_frac": 0.08571428571428569,
+      "entry_lap": 6,
+      "exit_lap": 6,
+      "race_id": "2018-r12-R",
+      "season": 2018,
+      "token": "vsc"
+    },
+    {
+      "circuit": "monza",
+      "duration_laps": 1,
+      "entry_frac": 0.018867924528301886,
+      "entry_lap": 1,
+      "exit_lap": 1,
+      "race_id": "2018-r14-R",
+      "season": 2018,
+      "token": "vsc"
+    },
+    {
+      "circuit": "suzuka",
+      "duration_laps": 1,
+      "entry_frac": 0.7591564927857937,
+      "entry_lap": 40,
+      "exit_lap": 40,
+      "race_id": "2018-r17-R",
+      "season": 2018,
+      "token": "vsc"
+    },
+    {
+      "circuit": "americas",
+      "duration_laps": 1,
+      "entry_frac": 0.17857142857142852,
+      "entry_lap": 10,
+      "exit_lap": 10,
+      "race_id": "2018-r18-R",
+      "season": 2018,
+      "token": "vsc"
+    },
+    {
+      "circuit": "rodriguez",
+      "duration_laps": 2,
+      "entry_frac": 0.42772424017790955,
+      "entry_lap": 29,
+      "exit_lap": 30,
+      "race_id": "2018-r19-R",
+      "season": 2018,
+      "token": "vsc"
+    },
+    {
+      "circuit": "rodriguez",
+      "duration_laps": 1,
+      "entry_frac": 0.8632974316487158,
+      "entry_lap": 60,
+      "exit_lap": 60,
+      "race_id": "2018-r19-R",
+      "season": 2018,
+      "token": "vsc"
+    },
+    {
+      "circuit": "yas_marina",
+      "duration_laps": 1,
+      "entry_frac": 0.12822966507177033,
+      "entry_lap": 7,
+      "exit_lap": 7,
+      "race_id": "2018-r21-R",
+      "season": 2018,
+      "token": "vsc"
+    },
+    {
+      "circuit": "shanghai",
+      "duration_laps": 1,
+      "entry_frac": 0.017857142857142853,
+      "entry_lap": 1,
+      "exit_lap": 1,
+      "race_id": "2019-r03-R",
+      "season": 2019,
+      "token": "vsc"
+    },
+    {
+      "circuit": "baku",
+      "duration_laps": 1,
+      "entry_frac": 0.7693194925028837,
+      "entry_lap": 39,
+      "exit_lap": 39,
+      "race_id": "2019-r04-R",
+      "season": 2019,
+      "token": "vsc"
+    },
+    {
+      "circuit": "hockenheimring",
+      "duration_laps": 1,
+      "entry_frac": 0.4273897058823529,
+      "entry_lap": 27,
+      "exit_lap": 27,
+      "race_id": "2019-r11-R",
+      "season": 2019,
+      "token": "vsc"
+    },
+    {
+      "circuit": "sochi",
+      "duration_laps": 1,
+      "entry_frac": 0.5116537180910099,
+      "entry_lap": 27,
+      "exit_lap": 27,
+      "race_id": "2019-r16-R",
+      "season": 2019,
+      "token": "vsc"
+    },
+    {
+      "circuit": "rodriguez",
+      "duration_laps": 1,
+      "entry_frac": 0.014084507042253521,
+      "entry_lap": 1,
+      "exit_lap": 1,
+      "race_id": "2019-r18-R",
+      "season": 2019,
+      "token": "vsc"
+    },
+    {
+      "circuit": "istanbul",
+      "duration_laps": 1,
+      "entry_frac": 0.22504537205081668,
+      "entry_lap": 13,
+      "exit_lap": 13,
+      "race_id": "2020-r14-R",
+      "season": 2020,
+      "token": "vsc"
+    },
+    {
+      "circuit": "yas_marina",
+      "duration_laps": 1,
+      "entry_frac": 0.18181818181818177,
+      "entry_lap": 10,
+      "exit_lap": 10,
+      "race_id": "2020-r17-R",
+      "season": 2020,
+      "token": "vsc"
+    },
+    {
+      "circuit": "bahrain",
+      "duration_laps": 1,
+      "entry_frac": 0.07142857142857141,
+      "entry_lap": 4,
+      "exit_lap": 4,
+      "race_id": "2021-r01-R",
+      "season": 2021,
+      "token": "vsc"
+    },
+    {
+      "circuit": "interlagos",
+      "duration_laps": 2,
+      "entry_frac": 0.16901408450704217,
+      "entry_lap": 12,
+      "exit_lap": 13,
+      "race_id": "2021-r19-R",
+      "season": 2021,
+      "token": "vsc"
+    },
+    {
+      "circuit": "losail",
+      "duration_laps": 1,
+      "entry_frac": 0.9590643274853802,
+      "entry_lap": 54,
+      "exit_lap": 54,
+      "race_id": "2021-r20-R",
+      "season": 2021,
+      "token": "vsc"
+    },
+    {
+      "circuit": "jeddah",
+      "duration_laps": 1,
+      "entry_frac": 0.46,
+      "entry_lap": 23,
+      "exit_lap": 23,
+      "race_id": "2021-r21-R",
+      "season": 2021,
+      "token": "vsc"
+    },
+    {
+      "circuit": "jeddah",
+      "duration_laps": 3,
+      "entry_frac": 0.5812499999999999,
+      "entry_lap": 29,
+      "exit_lap": 31,
+      "race_id": "2021-r21-R",
+      "season": 2021,
+      "token": "vsc"
+    },
+    {
+      "circuit": "yas_marina",
+      "duration_laps": 2,
+      "entry_frac": 0.6056034482758622,
+      "entry_lap": 35,
+      "exit_lap": 36,
+      "race_id": "2021-r22-R",
+      "season": 2021,
+      "token": "vsc"
+    },
+    {
+      "circuit": "jeddah",
+      "duration_laps": 2,
+      "entry_frac": 0.7599999999999999,
+      "entry_lap": 38,
+      "exit_lap": 39,
+      "race_id": "2022-r02-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "albert_park",
+      "duration_laps": 1,
+      "entry_frac": 0.6724137931034483,
+      "entry_lap": 39,
+      "exit_lap": 39,
+      "race_id": "2022-r03-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "miami",
+      "duration_laps": 1,
+      "entry_frac": 0.7036011080332413,
+      "entry_lap": 40,
+      "exit_lap": 40,
+      "race_id": "2022-r05-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "monaco",
+      "duration_laps": 1,
+      "entry_frac": 0.34126984126984133,
+      "entry_lap": 26,
+      "exit_lap": 26,
+      "race_id": "2022-r07-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "baku",
+      "duration_laps": 1,
+      "entry_frac": 0.17647058823529405,
+      "entry_lap": 9,
+      "exit_lap": 9,
+      "race_id": "2022-r08-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "baku",
+      "duration_laps": 1,
+      "entry_frac": 0.6495098039215687,
+      "entry_lap": 33,
+      "exit_lap": 33,
+      "race_id": "2022-r08-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "villeneuve",
+      "duration_laps": 1,
+      "entry_frac": 0.12857142857142856,
+      "entry_lap": 9,
+      "exit_lap": 9,
+      "race_id": "2022-r09-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "villeneuve",
+      "duration_laps": 1,
+      "entry_frac": 0.2714285714285714,
+      "entry_lap": 19,
+      "exit_lap": 19,
+      "race_id": "2022-r09-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "red_bull_ring",
+      "duration_laps": 2,
+      "entry_frac": 0.8090766823161188,
+      "entry_lap": 57,
+      "exit_lap": 58,
+      "race_id": "2022-r11-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "hungaroring",
+      "duration_laps": 2,
+      "entry_frac": 0.014285714285714287,
+      "entry_lap": 1,
+      "exit_lap": 2,
+      "race_id": "2022-r13-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "hungaroring",
+      "duration_laps": 1,
+      "entry_frac": 0.9669172932330828,
+      "entry_lap": 67,
+      "exit_lap": 67,
+      "race_id": "2022-r13-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "zandvoort",
+      "duration_laps": 2,
+      "entry_frac": 0.6593567251461989,
+      "entry_lap": 47,
+      "exit_lap": 48,
+      "race_id": "2022-r15-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "marina_bay",
+      "duration_laps": 1,
+      "entry_frac": 0.3442622950819673,
+      "entry_lap": 21,
+      "exit_lap": 21,
+      "race_id": "2022-r17-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "marina_bay",
+      "duration_laps": 2,
+      "entry_frac": 0.4590163934426228,
+      "entry_lap": 28,
+      "exit_lap": 29,
+      "race_id": "2022-r17-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "interlagos",
+      "duration_laps": 2,
+      "entry_frac": 0.7348798674399339,
+      "entry_lap": 52,
+      "exit_lap": 53,
+      "race_id": "2022-r21-R",
+      "season": 2022,
+      "token": "vsc"
+    },
+    {
+      "circuit": "bahrain",
+      "duration_laps": 1,
+      "entry_frac": 0.7036011080332412,
+      "entry_lap": 40,
+      "exit_lap": 40,
+      "race_id": "2023-r01-R",
+      "season": 2023,
+      "token": "vsc"
+    },
+    {
+      "circuit": "albert_park",
+      "duration_laps": 1,
+      "entry_frac": 0.34482758620689663,
+      "entry_lap": 18,
+      "exit_lap": 18,
+      "race_id": "2023-r03-R",
+      "season": 2023,
+      "token": "vsc"
+    },
+    {
+      "circuit": "villeneuve",
+      "duration_laps": 1,
+      "entry_frac": 0.10000000000000002,
+      "entry_lap": 7,
+      "exit_lap": 7,
+      "race_id": "2023-r08-R",
+      "season": 2023,
+      "token": "vsc"
+    },
+    {
+      "circuit": "red_bull_ring",
+      "duration_laps": 1,
+      "entry_frac": 0.19718309859154937,
+      "entry_lap": 14,
+      "exit_lap": 14,
+      "race_id": "2023-r09-R",
+      "season": 2023,
+      "token": "vsc"
+    },
+    {
+      "circuit": "silverstone",
+      "duration_laps": 1,
+      "entry_frac": 0.6153846153846152,
+      "entry_lap": 32,
+      "exit_lap": 32,
+      "race_id": "2023-r10-R",
+      "season": 2023,
+      "token": "vsc"
+    },
+    {
+      "circuit": "marina_bay",
+      "duration_laps": 2,
+      "entry_frac": 0.6935483870967741,
+      "entry_lap": 43,
+      "exit_lap": 44,
+      "race_id": "2023-r15-R",
+      "season": 2023,
+      "token": "vsc"
+    },
+    {
+      "circuit": "suzuka",
+      "duration_laps": 1,
+      "entry_frac": 0.24627606752730888,
+      "entry_lap": 13,
+      "exit_lap": 13,
+      "race_id": "2023-r16-R",
+      "season": 2023,
+      "token": "vsc"
+    },
+    {
+      "circuit": "rodriguez",
+      "duration_laps": 1,
+      "entry_frac": 0.05633802816901409,
+      "entry_lap": 4,
+      "exit_lap": 4,
+      "race_id": "2023-r19-R",
+      "season": 2023,
+      "token": "vsc"
+    },
+    {
+      "circuit": "vegas",
+      "duration_laps": 1,
+      "entry_frac": 0.020000000000000004,
+      "entry_lap": 1,
+      "exit_lap": 1,
+      "race_id": "2023-r21-R",
+      "season": 2023,
+      "token": "vsc"
+    },
+    {
+      "circuit": "albert_park",
+      "duration_laps": 2,
+      "entry_frac": 0.9898580121703852,
+      "entry_lap": 57,
+      "exit_lap": 58,
+      "race_id": "2024-r03-R",
+      "season": 2024,
+      "token": "vsc"
+    },
+    {
+      "circuit": "shanghai",
+      "duration_laps": 2,
+      "entry_frac": 0.375,
+      "entry_lap": 21,
+      "exit_lap": 22,
+      "race_id": "2024-r05-R",
+      "season": 2024,
+      "token": "vsc"
+    },
+    {
+      "circuit": "miami",
+      "duration_laps": 1,
+      "entry_frac": 0.38596491228070184,
+      "entry_lap": 22,
+      "exit_lap": 22,
+      "race_id": "2024-r06-R",
+      "season": 2024,
+      "token": "vsc"
+    },
+    {
+      "circuit": "baku",
+      "duration_laps": 2,
+      "entry_frac": 0.9825708061002177,
+      "entry_lap": 50,
+      "exit_lap": 51,
+      "race_id": "2024-r17-R",
+      "season": 2024,
+      "token": "vsc"
+    },
+    {
+      "circuit": "interlagos",
+      "duration_laps": 1,
+      "entry_frac": 0.392109500805153,
+      "entry_lap": 27,
+      "exit_lap": 27,
+      "race_id": "2024-r21-R",
+      "season": 2024,
+      "token": "vsc"
+    },
+    {
+      "circuit": "yas_marina",
+      "duration_laps": 1,
+      "entry_frac": 0.034482758620689655,
+      "entry_lap": 2,
+      "exit_lap": 2,
+      "race_id": "2024-r24-R",
+      "season": 2024,
+      "token": "vsc"
+    }
+  ],
+  "n": 56,
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "schema_version": "v3.2h-vsc-episodes-v1"
+}

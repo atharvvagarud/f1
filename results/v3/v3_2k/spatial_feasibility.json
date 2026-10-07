@@ -1,0 +1,5 @@
+{
+ "schema_version": "v3.2k-spatial-feasibility-v1",
+ "verdict": "NOT_NEEDED",
+ "reason": "lapped representation is non-blocking for MC2 (own lap_number first-class); no spatial coupling evaluated"
+}

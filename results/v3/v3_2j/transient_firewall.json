@@ -1,0 +1,1580 @@
+{
+  "n_checkpoints_in_any_window": 101,
+  "n_hazard_checkpoints": 92,
+  "n_windows": 19,
+  "schema_version": "v3.2j-transient-firewall-v1",
+  "windows": [
+    {
+      "checkpoints_where_driver_is_stale_offender": 25,
+      "cleared_at_s": 5973.004,
+      "driver": "alonso",
+      "hits": [
+        {
+          "T": 3937.607,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": false,
+          "frame_index": 767,
+          "stale_offenders": [
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4012.875,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": false,
+          "frame_index": 783,
+          "stale_offenders": [
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4087.313,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 800,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4162.105,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 816,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4236.667,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 833,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4310.981,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 849,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4385.807,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 866,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4460.246,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 883,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4535.035,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 899,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4609.26,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 916,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4684.298,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 932,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4759.194,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 948,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4833.665,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 965,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4907.629,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 982,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 4981.695,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 999,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 5055.922,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 1015,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 5130.487,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 1032,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 5204.99,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 1049,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 5279.638,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 1065,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 5354.677,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 1082,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 5429.153,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 1099,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 5504.221,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 1115,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 5578.718,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 1132,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 5653.723,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 1149,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 5728.408,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 1166,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 5803.514,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 1183,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        },
+        {
+          "T": 5879.359,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION",
+            "TERMINAL_STATE"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 1200,
+          "stale_offenders": [
+            "alonso",
+            "brendon_hartley",
+            "stroll"
+          ]
+        }
+      ],
+      "n_checkpoints_in_window": 27,
+      "race_id": "2018-r07-R",
+      "set_at_s": 3924.792,
+      "window_s": 2048.212
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 1,
+      "cleared_at_s": 1671.251,
+      "driver": "ricciardo",
+      "hits": [
+        {
+          "T": 1443.979,
+          "all_blockers": [
+            "MISSING_TYRE_STATE",
+            "UNSUPPORTED_TRACK_STATE"
+          ],
+          "driver_is_stale_offender": false,
+          "frame_index": 17,
+          "stale_offenders": []
+        },
+        {
+          "T": 1615.038,
+          "all_blockers": [
+            "MISSING_TYRE_STATE",
+            "STALE_ROSTER_OBSERVATION",
+            "UNSUPPORTED_TRACK_STATE"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 33,
+          "stale_offenders": [
+            "alonso",
+            "hulkenberg",
+            "leclerc",
+            "ricciardo"
+          ]
+        }
+      ],
+      "n_checkpoints_in_window": 2,
+      "race_id": "2018-r13-R",
+      "set_at_s": 1402.925,
+      "window_s": 268.326
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 37,
+      "cleared_at_s": 7298.145,
+      "driver": "max_verstappen",
+      "hits": [
+        {
+          "T": 3526.596,
+          "all_blockers": [],
+          "driver_is_stale_offender": false,
+          "frame_index": 299,
+          "stale_offenders": []
+        },
+        {
+          "T": 3623.045,
+          "all_blockers": [],
+          "driver_is_stale_offender": false,
+          "frame_index": 318,
+          "stale_offenders": []
+        },
+        {
+          "T": 3724.58,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 337,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 3819.803,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 356,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 3915.153,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 375,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 4012.35,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 394,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 4105.874,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 412,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 4199.084,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 431,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 4292.393,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 450,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 4385.906,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 469,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 4479.843,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 487,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 4573.845,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 505,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 4667.427,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 524,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 4760.847,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 540,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 4855.377,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 558,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 4948.827,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 577,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 5042.736,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 595,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 5135.902,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 614,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 5229.087,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 633,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 5323.108,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 651,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 5418.961,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 670,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 5522.016,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 689,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 5614.621,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 708,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 5707.267,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 727,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 5800.108,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 746,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 5893.205,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 765,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 5989.072,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 784,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 6086.42,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 802,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 6178.624,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 821,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 6271.033,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 840,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 6364.586,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 858,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 6457.802,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 875,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 6550.069,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 892,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 6641.931,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 911,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 6734.436,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 930,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 6827.172,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 949,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 6920.358,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 968,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 6971.094,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION",
+            "UNSUPPORTED_TRACK_STATE"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 980,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        },
+        {
+          "T": 7015.113,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION",
+            "TERMINAL_STATE",
+            "UNSUPPORTED_TRACK_STATE"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 987,
+          "stale_offenders": [
+            "max_verstappen"
+          ]
+        }
+      ],
+      "n_checkpoints_in_window": 39,
+      "race_id": "2019-r17-R",
+      "set_at_s": 3516.033,
+      "window_s": 3782.1120000000005
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 0,
+      "cleared_at_s": 5259.119,
+      "driver": "leclerc",
+      "hits": [],
+      "n_checkpoints_in_window": 0,
+      "race_id": "2020-r08-R",
+      "set_at_s": 5246.439,
+      "window_s": 12.679999999999382
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 1,
+      "cleared_at_s": 9135.786,
+      "driver": "albon",
+      "hits": [
+        {
+          "T": 9130.799,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 603,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "gasly",
+            "giovinazzi",
+            "grosjean",
+            "hamilton",
+            "kevin_magnussen",
+            "kvyat",
+            "latifi",
+            "leclerc",
+            "max_verstappen",
+            "norris",
+            "ocon",
+            "perez",
+            "raikkonen",
+            "russell",
+            "sainz",
+            "stroll",
+            "vettel"
+          ]
+        }
+      ],
+      "n_checkpoints_in_window": 1,
+      "race_id": "2020-r09-R",
+      "set_at_s": 9122.116,
+      "window_s": 13.670000000000073
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 0,
+      "cleared_at_s": 9130.096,
+      "driver": "bottas",
+      "hits": [],
+      "n_checkpoints_in_window": 0,
+      "race_id": "2020-r09-R",
+      "set_at_s": 9122.116,
+      "window_s": 7.979999999999563
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 0,
+      "cleared_at_s": 9127.341,
+      "driver": "hamilton",
+      "hits": [],
+      "n_checkpoints_in_window": 0,
+      "race_id": "2020-r09-R",
+      "set_at_s": 9120.576,
+      "window_s": 6.765000000001237
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 1,
+      "cleared_at_s": 9145.224,
+      "driver": "kvyat",
+      "hits": [
+        {
+          "T": 9130.799,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 603,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "gasly",
+            "giovinazzi",
+            "grosjean",
+            "hamilton",
+            "kevin_magnussen",
+            "kvyat",
+            "latifi",
+            "leclerc",
+            "max_verstappen",
+            "norris",
+            "ocon",
+            "perez",
+            "raikkonen",
+            "russell",
+            "sainz",
+            "stroll",
+            "vettel"
+          ]
+        }
+      ],
+      "n_checkpoints_in_window": 1,
+      "race_id": "2020-r09-R",
+      "set_at_s": 9122.116,
+      "window_s": 23.108000000000175
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 1,
+      "cleared_at_s": 9149.388,
+      "driver": "leclerc",
+      "hits": [
+        {
+          "T": 9130.799,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 603,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "gasly",
+            "giovinazzi",
+            "grosjean",
+            "hamilton",
+            "kevin_magnussen",
+            "kvyat",
+            "latifi",
+            "leclerc",
+            "max_verstappen",
+            "norris",
+            "ocon",
+            "perez",
+            "raikkonen",
+            "russell",
+            "sainz",
+            "stroll",
+            "vettel"
+          ]
+        }
+      ],
+      "n_checkpoints_in_window": 1,
+      "race_id": "2020-r09-R",
+      "set_at_s": 9122.116,
+      "window_s": 27.272000000000844
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 1,
+      "cleared_at_s": 9142.625,
+      "driver": "norris",
+      "hits": [
+        {
+          "T": 9130.799,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 603,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "gasly",
+            "giovinazzi",
+            "grosjean",
+            "hamilton",
+            "kevin_magnussen",
+            "kvyat",
+            "latifi",
+            "leclerc",
+            "max_verstappen",
+            "norris",
+            "ocon",
+            "perez",
+            "raikkonen",
+            "russell",
+            "sainz",
+            "stroll",
+            "vettel"
+          ]
+        }
+      ],
+      "n_checkpoints_in_window": 1,
+      "race_id": "2020-r09-R",
+      "set_at_s": 9122.116,
+      "window_s": 20.509000000000015
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 1,
+      "cleared_at_s": 9137.37,
+      "driver": "perez",
+      "hits": [
+        {
+          "T": 9130.799,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 603,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "gasly",
+            "giovinazzi",
+            "grosjean",
+            "hamilton",
+            "kevin_magnussen",
+            "kvyat",
+            "latifi",
+            "leclerc",
+            "max_verstappen",
+            "norris",
+            "ocon",
+            "perez",
+            "raikkonen",
+            "russell",
+            "sainz",
+            "stroll",
+            "vettel"
+          ]
+        }
+      ],
+      "n_checkpoints_in_window": 1,
+      "race_id": "2020-r09-R",
+      "set_at_s": 9122.116,
+      "window_s": 15.254000000000815
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 0,
+      "cleared_at_s": 9130.865,
+      "driver": "ricciardo",
+      "hits": [
+        {
+          "T": 9130.799,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": false,
+          "frame_index": 603,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "gasly",
+            "giovinazzi",
+            "grosjean",
+            "hamilton",
+            "kevin_magnussen",
+            "kvyat",
+            "latifi",
+            "leclerc",
+            "max_verstappen",
+            "norris",
+            "ocon",
+            "perez",
+            "raikkonen",
+            "russell",
+            "sainz",
+            "stroll",
+            "vettel"
+          ]
+        }
+      ],
+      "n_checkpoints_in_window": 1,
+      "race_id": "2020-r09-R",
+      "set_at_s": 9122.116,
+      "window_s": 8.748999999999796
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 1,
+      "cleared_at_s": 9153.527,
+      "driver": "russell",
+      "hits": [
+        {
+          "T": 9130.799,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 603,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "gasly",
+            "giovinazzi",
+            "grosjean",
+            "hamilton",
+            "kevin_magnussen",
+            "kvyat",
+            "latifi",
+            "leclerc",
+            "max_verstappen",
+            "norris",
+            "ocon",
+            "perez",
+            "raikkonen",
+            "russell",
+            "sainz",
+            "stroll",
+            "vettel"
+          ]
+        }
+      ],
+      "n_checkpoints_in_window": 1,
+      "race_id": "2020-r09-R",
+      "set_at_s": 9122.116,
+      "window_s": 31.411000000000058
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 1,
+      "cleared_at_s": 9156.204,
+      "driver": "vettel",
+      "hits": [
+        {
+          "T": 9130.799,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 603,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "gasly",
+            "giovinazzi",
+            "grosjean",
+            "hamilton",
+            "kevin_magnussen",
+            "kvyat",
+            "latifi",
+            "leclerc",
+            "max_verstappen",
+            "norris",
+            "ocon",
+            "perez",
+            "raikkonen",
+            "russell",
+            "sainz",
+            "stroll",
+            "vettel"
+          ]
+        }
+      ],
+      "n_checkpoints_in_window": 1,
+      "race_id": "2020-r09-R",
+      "set_at_s": 9122.116,
+      "window_s": 34.08799999999974
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 0,
+      "cleared_at_s": 5947.993,
+      "driver": "kevin_magnussen",
+      "hits": [
+        {
+          "T": 5928.696,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION",
+            "WET_CONDITIONS"
+          ],
+          "driver_is_stale_offender": false,
+          "frame_index": 672,
+          "stale_offenders": [
+            "giovinazzi"
+          ]
+        }
+      ],
+      "n_checkpoints_in_window": 1,
+      "race_id": "2020-r14-R",
+      "set_at_s": 5918.257,
+      "window_s": 29.736000000000786
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 0,
+      "cleared_at_s": 6177.225,
+      "driver": "leclerc",
+      "hits": [],
+      "n_checkpoints_in_window": 0,
+      "race_id": "2022-r08-R",
+      "set_at_s": 6163.257,
+      "window_s": 13.968000000000757
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 0,
+      "cleared_at_s": 5775.215,
+      "driver": "albon",
+      "hits": [],
+      "n_checkpoints_in_window": 0,
+      "race_id": "2022-r18-R",
+      "set_at_s": 5774.205,
+      "window_s": 1.0100000000002183
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 0,
+      "cleared_at_s": 10331.467,
+      "driver": "sainz",
+      "hits": [],
+      "n_checkpoints_in_window": 0,
+      "race_id": "2022-r18-R",
+      "set_at_s": 10330.346,
+      "window_s": 1.121000000001004
+    },
+    {
+      "checkpoints_where_driver_is_stale_offender": 22,
+      "cleared_at_s": 7935.286,
+      "driver": "perez",
+      "hits": [
+        {
+          "T": 5612.043,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": false,
+          "frame_index": 290,
+          "stale_offenders": [
+            "bottas"
+          ]
+        },
+        {
+          "T": 5721.344,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": false,
+          "frame_index": 308,
+          "stale_offenders": [
+            "bottas"
+          ]
+        },
+        {
+          "T": 5824.796,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 326,
+          "stale_offenders": [
+            "bottas",
+            "perez"
+          ]
+        },
+        {
+          "T": 5925.236,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 344,
+          "stale_offenders": [
+            "bottas",
+            "perez"
+          ]
+        },
+        {
+          "T": 6022.58,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 362,
+          "stale_offenders": [
+            "bottas",
+            "perez"
+          ]
+        },
+        {
+          "T": 6120.145,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 380,
+          "stale_offenders": [
+            "bottas",
+            "perez"
+          ]
+        },
+        {
+          "T": 6217.737,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 397,
+          "stale_offenders": [
+            "bottas",
+            "perez"
+          ]
+        },
+        {
+          "T": 6315.459,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 413,
+          "stale_offenders": [
+            "bottas",
+            "perez"
+          ]
+        },
+        {
+          "T": 6413.173,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 430,
+          "stale_offenders": [
+            "bottas",
+            "perez",
+            "stroll"
+          ]
+        },
+        {
+          "T": 6511.119,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 446,
+          "stale_offenders": [
+            "bottas",
+            "perez",
+            "stroll"
+          ]
+        },
+        {
+          "T": 6609.022,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 462,
+          "stale_offenders": [
+            "bottas",
+            "perez",
+            "stroll"
+          ]
+        },
+        {
+          "T": 6706.887,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 478,
+          "stale_offenders": [
+            "bottas",
+            "perez",
+            "sargeant",
+            "stroll"
+          ]
+        },
+        {
+          "T": 6804.445,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 493,
+          "stale_offenders": [
+            "bottas",
+            "perez",
+            "sargeant",
+            "stroll"
+          ]
+        },
+        {
+          "T": 6901.869,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 508,
+          "stale_offenders": [
+            "bottas",
+            "perez",
+            "sargeant",
+            "stroll"
+          ]
+        },
+        {
+          "T": 6999.468,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 523,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "perez",
+            "sargeant",
+            "stroll"
+          ]
+        },
+        {
+          "T": 7097.067,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 538,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "perez",
+            "sargeant",
+            "stroll"
+          ]
+        },
+        {
+          "T": 7194.987,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 553,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "perez",
+            "sargeant",
+            "stroll"
+          ]
+        },
+        {
+          "T": 7292.642,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 567,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "perez",
+            "sargeant",
+            "stroll"
+          ]
+        },
+        {
+          "T": 7390.375,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 582,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "perez",
+            "sargeant",
+            "stroll"
+          ]
+        },
+        {
+          "T": 7488.163,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 597,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "perez",
+            "sargeant",
+            "stroll"
+          ]
+        },
+        {
+          "T": 7585.983,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 612,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "perez",
+            "sargeant",
+            "stroll"
+          ]
+        },
+        {
+          "T": 7686.247,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 627,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "perez",
+            "sargeant",
+            "stroll"
+          ]
+        },
+        {
+          "T": 7802.325,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 643,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "perez",
+            "sargeant",
+            "stroll"
+          ]
+        },
+        {
+          "T": 7896.508,
+          "all_blockers": [
+            "STALE_ROSTER_OBSERVATION"
+          ],
+          "driver_is_stale_offender": true,
+          "frame_index": 658,
+          "stale_offenders": [
+            "albon",
+            "bottas",
+            "perez",
+            "sargeant",
+            "stroll"
+          ]
+        }
+      ],
+      "n_checkpoints_in_window": 24,
+      "race_id": "2023-r16-R",
+      "set_at_s": 5571.141,
+      "window_s": 2364.1450000000004
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "c393e4ee82d4c9df5aa5fbc0984dd1bfa6553704f0c631005b48ee499e837910",
+  "diagnostics": {
+    "n_inpit_updates": 68,
+    "n_malformed_rows": 0,
+    "n_messages": 51795,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 68,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 22
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2020-r10-R",
+  "raw_sha256": "acc41846156cd16566e77c1d800d359fb6ec5a66f5a621bef95ca260ea72cfd5",
+  "round": 10,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2020,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2020/2020-09-27_Russian_Grand_Prix/2020-09-27_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        6.08,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        6.08,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

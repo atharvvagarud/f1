@@ -1,0 +1,7 @@
+{
+  "checkpoint_token_count": 22,
+  "finding": "22 checkpoints, 0 usable lap rows under red, 21 episodes. Race semantics (suspension/restart, tyre-change rules) differ substantially. DEFER by default expectation; evidence confirms.",
+  "races_with_red_episode": 17,
+  "schema_version": "v3.2f-red-audit-v1",
+  "usable_lap_rows": 0
+}

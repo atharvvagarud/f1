@@ -1,0 +1,7 @@
+{
+ "schema_version": "v3.2k-direct-candidates-v1",
+ "rule": "every stale offender complete validated causal state + all other gates pass; PARTIAL tyre state does not satisfy the required-state definition",
+ "n_direct_recovery_candidates": 0,
+ "n_partial_only_checkpoints": 0,
+ "verdict": "zero FULL candidates (tyre state unavailable from TimingData); partials are not admitted"
+}

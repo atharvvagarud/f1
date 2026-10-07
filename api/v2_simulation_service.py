@@ -47,11 +47,20 @@ from raceintel.simulation import (
     parameter_storage_dir,
 )
 from raceintel.simulation.adapter import SimulationUnavailableError, from_race_state
-from raceintel.simulation.engine import ENGINE_VERSION
+from raceintel.simulation.engine import (
+    ENGINE_VERSION,
+    REASON_NON_CONTEMPORANEOUS_ROSTER_MEMBER,
+    SimulationUnsupportedError,
+)
 from raceintel.simulation.monte_carlo import (
     DEFAULT_CHUNK_SIZE,
     MONTE_CARLO_VERSION,
     PIT_DYNAMICS_VERSION,
+)
+from raceintel.simulation.presence import (
+    dns_exclusions,
+    prepare_initial_state,
+    without_drivers,
 )
 from raceintel.simulation.results import PROBABILITY_SEMANTICS, PROBABILITY_SEMANTICS_NOTE
 from raceintel.simulation.state import SIMULATION_CONTRACT_VERSION
@@ -96,7 +105,10 @@ class V2SimulationService:
 
     def __init__(self, states: pd.DataFrame, reconstructor,
                  served_race_ids, parameters: SimulationParameterSet, *,
-                 chunk_size: int = DEFAULT_CHUNK_SIZE):
+                 chunk_size: int = DEFAULT_CHUNK_SIZE,
+                 grid_by_race: dict | None = None,
+                 status_resolver=None,
+                 status_windows: dict | None = None):
         if not isinstance(states, pd.DataFrame):
             raise ValueError(f"states must be a DataFrame, got {type(states)}")
         if not isinstance(parameters, SimulationParameterSet):
@@ -108,6 +120,16 @@ class V2SimulationService:
         self._served = tuple(served_race_ids)
         self._parameters = parameters
         self._chunk_size = int(chunk_size)
+        # Pre-race grid slots per race (V3.2C DNS exclusion). ``None``
+        # preserves exact pre-V3.2C behavior (no exclusion, refuse on any
+        # unobserved member).
+        self._grid_by_race = (dict(grid_by_race) if grid_by_race is not None
+                              else None)
+        # V3.2J retired-status relief (exclusion-only, preloaded local
+        # artifacts; never fetched at request time). ``None`` preserves
+        # exact pre-V3.2J behavior.
+        self._status_resolver = status_resolver
+        self._status_windows = status_windows
 
     @property
     def race_ids(self) -> tuple:
@@ -152,15 +174,46 @@ class V2SimulationService:
         race_state = self._reconstructor.reconstruct(anchor)
         reconstructed = time.perf_counter()
 
-        sim_state = from_race_state(race_state)
+        # V3.2C active-field step (Part E/G): proven DNS members (no
+        # observation <= T AND no pre-race grid slot) do not belong to
+        # the simulated field and are removed before adaptation. Every
+        # other roster member follows the unchanged path: with no DNS
+        # member the state object is untouched, so previously valid
+        # requests adapt bit-identically. Refusals still raise the same
+        # frozen errors for the route's 422 mapping.
+        grid = (self._grid_by_race.get(race_id, {})
+                if self._grid_by_race is not None else {})
+        dns_ids = dns_exclusions(race_state, grid) if grid else ()
+        sim_state = from_race_state(
+            without_drivers(race_state, dns_ids) if dns_ids else race_state)
         adapted = time.perf_counter()
 
         config = SimulationConfig(
             simulation_count=count, master_seed=seed,
             pit_dynamics_enabled=True)
-        result = MonteCarloEngine(chunk_size=self._chunk_size).run(
-            sim_state, self._parameters, config, Assumptions(),
-            execution_policy=ExecutionPolicy.RETROSPECTIVE_PRODUCT)
+        try:
+            result = MonteCarloEngine(chunk_size=self._chunk_size).run(
+                sim_state, self._parameters, config, Assumptions(),
+                execution_policy=ExecutionPolicy.RETROSPECTIVE_PRODUCT)
+        except SimulationUnsupportedError as exc:
+            # V3.2J status relief (STALE-only, additive): a stale roster
+            # refusal may be repaired when every offender is
+            # authoritatively retired at T. Any other reason, no
+            # resolver, or failed relief re-raises unchanged (stable 422).
+            if (getattr(exc, "reason", None)
+                    != REASON_NON_CONTEMPORANEOUS_ROSTER_MEMBER
+                    or self._status_resolver is None):
+                raise
+            relief = prepare_initial_state(
+                race_state, grid_by_driver=grid, parameters=self._parameters,
+                execution_policy=ExecutionPolicy.RETROSPECTIVE_PRODUCT,
+                status_resolver=self._status_resolver,
+                status_windows=self._status_windows)
+            if not relief.eligible or relief.state is None:
+                raise
+            result = MonteCarloEngine(chunk_size=self._chunk_size).run(
+                relief.state, self._parameters, config, Assumptions(),
+                execution_policy=ExecutionPolicy.RETROSPECTIVE_PRODUCT)
         simulated = time.perf_counter()
 
         payload = _response_payload(
@@ -242,13 +295,17 @@ def load_production_parameters(
 
 def build_v2_simulation_service(
         v2_service, *, parameters: SimulationParameterSet | None = None,
-        chunk_size: int = DEFAULT_CHUNK_SIZE) -> V2SimulationService:
+        chunk_size: int = DEFAULT_CHUNK_SIZE,
+        status_resolver=None,
+        status_windows: dict | None = None) -> V2SimulationService:
     """Share the loaded corpus/reconstructor read-only; build no model.
 
     ``v2_service`` is touched only for its already-loaded canonical ``states``
     frame, its reusable ``RaceStateReconstructor``, and its served race
     registry. The frozen ``api/v2_service.py`` module is unchanged and the
-    Phase-3 winner model is never read here.
+    Phase-3 winner model is never read here.     ``status_resolver`` (V3.2J,
+    preloaded local artifacts) is ``None`` by default: exact pre-V3.2J
+    product behavior.
     """
     from api.v2_service import V2Service as _V2Service
     if not isinstance(v2_service, _V2Service):
@@ -256,10 +313,17 @@ def build_v2_simulation_service(
             f"v2_service must be a V2Service, got {type(v2_service)}")
     if parameters is None:
         parameters = load_production_parameters()
+    grid_by_race = None
+    grid_fn = getattr(v2_service, "grid_slots", None)
+    if callable(grid_fn):
+        grid_by_race = {race_id: grid_fn(race_id)
+                        for race_id in v2_service.race_ids}
     return V2SimulationService(
         v2_service._states,  # noqa: SLF001 - shared read-only corpus
         v2_service._reconstructor,  # noqa: SLF001 - shared read-only index
-        v2_service.race_ids, parameters, chunk_size=chunk_size)
+        v2_service.race_ids, parameters, chunk_size=chunk_size,
+        grid_by_race=grid_by_race, status_resolver=status_resolver,
+        status_windows=status_windows)
 
 
 @functools.lru_cache(maxsize=1)

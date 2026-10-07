@@ -1,0 +1,7 @@
+{
+  "decision": "LOCAL_RAW_STATUS_SOURCE_PARTIALLY_VIABLE",
+  "next_stage": "V3.2J DECISION: fetch 2019-2023 streams, validate per-race, then integrate as exclusion-only presence input; re-test parity; recompute coverage",
+  "projected_coverage": "2685/9644 (27.84%)",
+  "reason": "TimingData.Retired is an explicit, timestamped, causal per-driver retirement signal (winners never flagged; flips measured and handled by state-at-T; 0 checkpoint impact from the one genuine transient), but local holdings cover only 2018+2024 and feed recall vs official DNF is ~39% (misses are intrinsic: non-starters, garage retirements, abandoned-without-flag). 2019-2023 completion is probe-verified obtainable from the same public static host. No heuristic re-attempted; runtime untouched.",
+  "schema_version": "v3.2i-decision-v1"
+}

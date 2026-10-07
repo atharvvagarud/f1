@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "821ef171c5fbdd372b78c022827fc132b246b81fe426874e20baecbaca0e9888",
+  "diagnostics": {
+    "n_inpit_updates": 66,
+    "n_malformed_rows": 0,
+    "n_messages": 49747,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 64,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2020-r04-R",
+  "raw_sha256": "9d66ad7fdbbb5516e73d7e5c9533e589a9d67950c7cdf6f59d8a33c3c4f31460",
+  "round": 4,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2020,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2020/2020-08-02_British_Grand_Prix/2020-08-02_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        7.305,
+        false
+      ],
+      [
+        2124.861,
+        true
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        7.305,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        7.305,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

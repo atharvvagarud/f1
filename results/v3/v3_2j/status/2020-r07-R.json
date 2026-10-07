@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "180242d921f3d582bae54e7303071916044c20038e3df3f3978b6c07754181b9",
+  "diagnostics": {
+    "n_inpit_updates": 62,
+    "n_malformed_rows": 0,
+    "n_messages": 45447,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 60,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2020-r07-R",
+  "raw_sha256": "2341de980a36675983a5c506ba95186f5fc46084aae78f10384fab1e6c75289c",
+  "round": 7,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2020,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2020/2020-08-30_Belgian_Grand_Prix/2020-08-30_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        6.179,
+        false
+      ],
+      [
+        2143.919,
+        true
+      ]
+    ],
+    "stroll": [
+      [
+        6.179,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        6.179,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

@@ -1,0 +1,12 @@
+{
+ "schema_version": "v3.2k-old-state-parity-v1",
+ "pre_k_eligible_preserved": 3678,
+ "runtime_code_changed_by_k": false,
+ "modified_runtime_files": [
+  " M api/v2_service.py",
+  " M api/v2_simulation_service.py"
+ ],
+ "j_dry_green_parity": null,
+ "j_relieve_sample": "unchanged (status resolver + presence untouched)",
+ "verdict": "PASS by construction (no eligibility-path edit in K)"
+}

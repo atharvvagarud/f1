@@ -1,0 +1,10 @@
+{
+  "rule": "never backdate retirement; pre-signal checkpoints stay ACTIVE/UNKNOWN (and usually refused); latency further caps recoverable coverage",
+  "schema_version": "v3.2g-latency-v1",
+  "stopped_msg_minus_last_timed_s": {
+    "max": 417.4,
+    "p10": 49.7,
+    "p50": 97.5,
+    "p90": 159.9
+  }
+}

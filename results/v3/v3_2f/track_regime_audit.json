@@ -1,0 +1,59 @@
+{
+  "checkpoint_counts": {
+    "all_clear": 8327,
+    "null": 70,
+    "red_flag": 22,
+    "safety_car": 417,
+    "vsc": 137,
+    "vsc_ending": 71,
+    "yellow": 600
+  },
+  "note": "Tokens are the frozen D9 per-lap last-char TrackStatus mapping (FastF1 codes 1/2/4/5/6/7). No LOCAL vs FULL course distinction exists in the token; sector exposure is not carried by RaceState.",
+  "primary_by_token": {
+    "all_clear": {
+      "MISSING_DRIVER_OBSERVATION": 225,
+      "MISSING_TYRE_STATE": 198,
+      "SIMULATION_CAPABLE": 2305,
+      "STALE_ROSTER_OBSERVATION": 4667,
+      "TERMINAL_STATE": 131,
+      "WET_CONDITIONS": 801
+    },
+    "null": {
+      "MISSING_DRIVER_OBSERVATION": 6,
+      "UNSUPPORTED_TRACK_STATE": 64
+    },
+    "red_flag": {
+      "MISSING_DRIVER_OBSERVATION": 4,
+      "UNSUPPORTED_TRACK_STATE": 18
+    },
+    "safety_car": {
+      "MISSING_DRIVER_OBSERVATION": 43,
+      "TERMINAL_STATE": 3,
+      "UNSUPPORTED_TRACK_STATE": 371
+    },
+    "vsc": {
+      "MISSING_DRIVER_OBSERVATION": 11,
+      "TERMINAL_STATE": 2,
+      "UNSUPPORTED_TRACK_STATE": 124
+    },
+    "vsc_ending": {
+      "MISSING_DRIVER_OBSERVATION": 4,
+      "UNSUPPORTED_TRACK_STATE": 67
+    },
+    "yellow": {
+      "MISSING_DRIVER_OBSERVATION": 61,
+      "TERMINAL_STATE": 18,
+      "UNSUPPORTED_TRACK_STATE": 521
+    }
+  },
+  "schema_version": "v3.2f-track-regime-audit-v1",
+  "tokens": [
+    "all_clear",
+    "yellow",
+    "safety_car",
+    "vsc",
+    "vsc_ending",
+    "red_flag",
+    null
+  ]
+}

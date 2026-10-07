@@ -1,0 +1,906 @@
+{
+ "schema_version": "v3.2n-coverage-by-race-v1",
+ "races_with_ge1_supported": 104,
+ "zero_support_races": 45,
+ "median_race_coverage": 0.20689655172413793,
+ "ge50": 56,
+ "ge75": 40,
+ "ge95": 17,
+ "full": 0,
+ "races": [
+  {
+   "race_id": "2018-r01-R",
+   "season": 2018,
+   "eligible": 4,
+   "total": 72
+  },
+  {
+   "race_id": "2018-r02-R",
+   "season": 2018,
+   "eligible": 0,
+   "total": 65
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "eligible": 22,
+   "total": 58
+  },
+  {
+   "race_id": "2018-r04-R",
+   "season": 2018,
+   "eligible": 0,
+   "total": 58
+  },
+  {
+   "race_id": "2018-r05-R",
+   "season": 2018,
+   "eligible": 0,
+   "total": 73
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "eligible": 43,
+   "total": 86
+  },
+  {
+   "race_id": "2018-r07-R",
+   "season": 2018,
+   "eligible": 0,
+   "total": 70
+  },
+  {
+   "race_id": "2018-r08-R",
+   "season": 2018,
+   "eligible": 0,
+   "total": 57
+  },
+  {
+   "race_id": "2018-r09-R",
+   "season": 2018,
+   "eligible": 10,
+   "total": 81
+  },
+  {
+   "race_id": "2018-r10-R",
+   "season": 2018,
+   "eligible": 0,
+   "total": 59
+  },
+  {
+   "race_id": "2018-r11-R",
+   "season": 2018,
+   "eligible": 3,
+   "total": 80
+  },
+  {
+   "race_id": "2018-r12-R",
+   "season": 2018,
+   "eligible": 0,
+   "total": 75
+  },
+  {
+   "race_id": "2018-r13-R",
+   "season": 2018,
+   "eligible": 0,
+   "total": 45
+  },
+  {
+   "race_id": "2018-r14-R",
+   "season": 2018,
+   "eligible": 0,
+   "total": 57
+  },
+  {
+   "race_id": "2018-r15-R",
+   "season": 2018,
+   "eligible": 0,
+   "total": 61
+  },
+  {
+   "race_id": "2018-r16-R",
+   "season": 2018,
+   "eligible": 50,
+   "total": 55
+  },
+  {
+   "race_id": "2018-r17-R",
+   "season": 2018,
+   "eligible": 35,
+   "total": 57
+  },
+  {
+   "race_id": "2018-r18-R",
+   "season": 2018,
+   "eligible": 10,
+   "total": 63
+  },
+  {
+   "race_id": "2018-r19-R",
+   "season": 2018,
+   "eligible": 5,
+   "total": 82
+  },
+  {
+   "race_id": "2018-r20-R",
+   "season": 2018,
+   "eligible": 69,
+   "total": 75
+  },
+  {
+   "race_id": "2018-r21-R",
+   "season": 2018,
+   "eligible": 0,
+   "total": 57
+  },
+  {
+   "race_id": "2019-r01-R",
+   "season": 2019,
+   "eligible": 12,
+   "total": 60
+  },
+  {
+   "race_id": "2019-r02-R",
+   "season": 2019,
+   "eligible": 52,
+   "total": 72
+  },
+  {
+   "race_id": "2019-r03-R",
+   "season": 2019,
+   "eligible": 54,
+   "total": 57
+  },
+  {
+   "race_id": "2019-r04-R",
+   "season": 2019,
+   "eligible": 39,
+   "total": 57
+  },
+  {
+   "race_id": "2019-r05-R",
+   "season": 2019,
+   "eligible": 44,
+   "total": 68
+  },
+  {
+   "race_id": "2019-r06-R",
+   "season": 2019,
+   "eligible": 12,
+   "total": 87
+  },
+  {
+   "race_id": "2019-r07-R",
+   "season": 2019,
+   "eligible": 9,
+   "total": 74
+  },
+  {
+   "race_id": "2019-r08-R",
+   "season": 2019,
+   "eligible": 51,
+   "total": 63
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "eligible": 69,
+   "total": 71
+  },
+  {
+   "race_id": "2019-r10-R",
+   "season": 2019,
+   "eligible": 18,
+   "total": 57
+  },
+  {
+   "race_id": "2019-r11-R",
+   "season": 2019,
+   "eligible": 0,
+   "total": 84
+  },
+  {
+   "race_id": "2019-r12-R",
+   "season": 2019,
+   "eligible": 67,
+   "total": 70
+  },
+  {
+   "race_id": "2019-r13-R",
+   "season": 2019,
+   "eligible": 0,
+   "total": 45
+  },
+  {
+   "race_id": "2019-r14-R",
+   "season": 2019,
+   "eligible": 27,
+   "total": 61
+  },
+  {
+   "race_id": "2019-r15-R",
+   "season": 2019,
+   "eligible": 33,
+   "total": 64
+  },
+  {
+   "race_id": "2019-r16-R",
+   "season": 2019,
+   "eligible": 0,
+   "total": 58
+  },
+  {
+   "race_id": "2019-r17-R",
+   "season": 2019,
+   "eligible": 50,
+   "total": 54
+  },
+  {
+   "race_id": "2019-r18-R",
+   "season": 2019,
+   "eligible": 67,
+   "total": 73
+  },
+  {
+   "race_id": "2019-r19-R",
+   "season": 2019,
+   "eligible": 8,
+   "total": 57
+  },
+  {
+   "race_id": "2019-r20-R",
+   "season": 2019,
+   "eligible": 50,
+   "total": 74
+  },
+  {
+   "race_id": "2019-r21-R",
+   "season": 2019,
+   "eligible": 53,
+   "total": 55
+  },
+  {
+   "race_id": "2020-r01-R",
+   "season": 2020,
+   "eligible": 11,
+   "total": 76
+  },
+  {
+   "race_id": "2020-r02-R",
+   "season": 2020,
+   "eligible": 67,
+   "total": 71
+  },
+  {
+   "race_id": "2020-r03-R",
+   "season": 2020,
+   "eligible": 32,
+   "total": 79
+  },
+  {
+   "race_id": "2020-r04-R",
+   "season": 2020,
+   "eligible": 0,
+   "total": 58
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "eligible": 50,
+   "total": 54
+  },
+  {
+   "race_id": "2020-r06-R",
+   "season": 2020,
+   "eligible": 64,
+   "total": 68
+  },
+  {
+   "race_id": "2020-r07-R",
+   "season": 2020,
+   "eligible": 9,
+   "total": 47
+  },
+  {
+   "race_id": "2020-r08-R",
+   "season": 2020,
+   "eligible": 18,
+   "total": 57
+  },
+  {
+   "race_id": "2020-r09-R",
+   "season": 2020,
+   "eligible": 0,
+   "total": 64
+  },
+  {
+   "race_id": "2020-r10-R",
+   "season": 2020,
+   "eligible": 0,
+   "total": 56
+  },
+  {
+   "race_id": "2020-r11-R",
+   "season": 2020,
+   "eligible": 14,
+   "total": 70
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "eligible": 64,
+   "total": 66
+  },
+  {
+   "race_id": "2020-r13-R",
+   "season": 2020,
+   "eligible": 29,
+   "total": 69
+  },
+  {
+   "race_id": "2020-r14-R",
+   "season": 2020,
+   "eligible": 0,
+   "total": 81
+  },
+  {
+   "race_id": "2020-r15-R",
+   "season": 2020,
+   "eligible": 0,
+   "total": 60
+  },
+  {
+   "race_id": "2020-r16-R",
+   "season": 2020,
+   "eligible": 0,
+   "total": 94
+  },
+  {
+   "race_id": "2020-r17-R",
+   "season": 2020,
+   "eligible": 8,
+   "total": 57
+  },
+  {
+   "race_id": "2021-r01-R",
+   "season": 2021,
+   "eligible": 0,
+   "total": 57
+  },
+  {
+   "race_id": "2021-r02-R",
+   "season": 2021,
+   "eligible": 0,
+   "total": 74
+  },
+  {
+   "race_id": "2021-r03-R",
+   "season": 2021,
+   "eligible": 1,
+   "total": 67
+  },
+  {
+   "race_id": "2021-r04-R",
+   "season": 2021,
+   "eligible": 6,
+   "total": 67
+  },
+  {
+   "race_id": "2021-r05-R",
+   "season": 2021,
+   "eligible": 76,
+   "total": 78
+  },
+  {
+   "race_id": "2021-r06-R",
+   "season": 2021,
+   "eligible": 27,
+   "total": 59
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "eligible": 51,
+   "total": 53
+  },
+  {
+   "race_id": "2021-r08-R",
+   "season": 2021,
+   "eligible": 69,
+   "total": 71
+  },
+  {
+   "race_id": "2021-r09-R",
+   "season": 2021,
+   "eligible": 0,
+   "total": 74
+  },
+  {
+   "race_id": "2021-r10-R",
+   "season": 2021,
+   "eligible": 0,
+   "total": 56
+  },
+  {
+   "race_id": "2021-r11-R",
+   "season": 2021,
+   "eligible": 0,
+   "total": 71
+  },
+  {
+   "race_id": "2021-r12-R",
+   "season": 2021,
+   "eligible": 0,
+   "total": 3
+  },
+  {
+   "race_id": "2021-r13-R",
+   "season": 2021,
+   "eligible": 70,
+   "total": 74
+  },
+  {
+   "race_id": "2021-r14-R",
+   "season": 2021,
+   "eligible": 25,
+   "total": 59
+  },
+  {
+   "race_id": "2021-r15-R",
+   "season": 2021,
+   "eligible": 45,
+   "total": 67
+  },
+  {
+   "race_id": "2021-r16-R",
+   "season": 2021,
+   "eligible": 0,
+   "total": 64
+  },
+  {
+   "race_id": "2021-r17-R",
+   "season": 2021,
+   "eligible": 54,
+   "total": 61
+  },
+  {
+   "race_id": "2021-r18-R",
+   "season": 2021,
+   "eligible": 0,
+   "total": 71
+  },
+  {
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "eligible": 65,
+   "total": 78
+  },
+  {
+   "race_id": "2021-r20-R",
+   "season": 2021,
+   "eligible": 54,
+   "total": 68
+  },
+  {
+   "race_id": "2021-r21-R",
+   "season": 2021,
+   "eligible": 8,
+   "total": 63
+  },
+  {
+   "race_id": "2021-r22-R",
+   "season": 2021,
+   "eligible": 36,
+   "total": 66
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "eligible": 45,
+   "total": 63
+  },
+  {
+   "race_id": "2022-r02-R",
+   "season": 2022,
+   "eligible": 0,
+   "total": 56
+  },
+  {
+   "race_id": "2022-r03-R",
+   "season": 2022,
+   "eligible": 1,
+   "total": 62
+  },
+  {
+   "race_id": "2022-r04-R",
+   "season": 2022,
+   "eligible": 0,
+   "total": 65
+  },
+  {
+   "race_id": "2022-r05-R",
+   "season": 2022,
+   "eligible": 39,
+   "total": 63
+  },
+  {
+   "race_id": "2022-r06-R",
+   "season": 2022,
+   "eligible": 64,
+   "total": 70
+  },
+  {
+   "race_id": "2022-r07-R",
+   "season": 2022,
+   "eligible": 0,
+   "total": 89
+  },
+  {
+   "race_id": "2022-r08-R",
+   "season": 2022,
+   "eligible": 9,
+   "total": 59
+  },
+  {
+   "race_id": "2022-r09-R",
+   "season": 2022,
+   "eligible": 8,
+   "total": 76
+  },
+  {
+   "race_id": "2022-r10-R",
+   "season": 2022,
+   "eligible": 0,
+   "total": 56
+  },
+  {
+   "race_id": "2022-r11-R",
+   "season": 2022,
+   "eligible": 36,
+   "total": 76
+  },
+  {
+   "race_id": "2022-r12-R",
+   "season": 2022,
+   "eligible": 17,
+   "total": 61
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "eligible": 49,
+   "total": 82
+  },
+  {
+   "race_id": "2022-r14-R",
+   "season": 2022,
+   "eligible": 0,
+   "total": 46
+  },
+  {
+   "race_id": "2022-r15-R",
+   "season": 2022,
+   "eligible": 44,
+   "total": 81
+  },
+  {
+   "race_id": "2022-r16-R",
+   "season": 2022,
+   "eligible": 12,
+   "total": 58
+  },
+  {
+   "race_id": "2022-r17-R",
+   "season": 2022,
+   "eligible": 0,
+   "total": 75
+  },
+  {
+   "race_id": "2022-r18-R",
+   "season": 2022,
+   "eligible": 0,
+   "total": 29
+  },
+  {
+   "race_id": "2022-r19-R",
+   "season": 2022,
+   "eligible": 16,
+   "total": 58
+  },
+  {
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "eligible": 66,
+   "total": 75
+  },
+  {
+   "race_id": "2022-r21-R",
+   "season": 2022,
+   "eligible": 0,
+   "total": 73
+  },
+  {
+   "race_id": "2022-r22-R",
+   "season": 2022,
+   "eligible": 57,
+   "total": 62
+  },
+  {
+   "race_id": "2023-r01-R",
+   "season": 2023,
+   "eligible": 41,
+   "total": 61
+  },
+  {
+   "race_id": "2023-r02-R",
+   "season": 2023,
+   "eligible": 15,
+   "total": 51
+  },
+  {
+   "race_id": "2023-r03-R",
+   "season": 2023,
+   "eligible": 0,
+   "total": 62
+  },
+  {
+   "race_id": "2023-r04-R",
+   "season": 2023,
+   "eligible": 8,
+   "total": 54
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "eligible": 55,
+   "total": 57
+  },
+  {
+   "race_id": "2023-r06-R",
+   "season": 2023,
+   "eligible": 51,
+   "total": 95
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "eligible": 64,
+   "total": 66
+  },
+  {
+   "race_id": "2023-r08-R",
+   "season": 2023,
+   "eligible": 7,
+   "total": 77
+  },
+  {
+   "race_id": "2023-r09-R",
+   "season": 2023,
+   "eligible": 11,
+   "total": 73
+  },
+  {
+   "race_id": "2023-r10-R",
+   "season": 2023,
+   "eligible": 31,
+   "total": 53
+  },
+  {
+   "race_id": "2023-r11-R",
+   "season": 2023,
+   "eligible": 68,
+   "total": 72
+  },
+  {
+   "race_id": "2023-r12-R",
+   "season": 2023,
+   "eligible": 1,
+   "total": 45
+  },
+  {
+   "race_id": "2023-r13-R",
+   "season": 2023,
+   "eligible": 0,
+   "total": 78
+  },
+  {
+   "race_id": "2023-r14-R",
+   "season": 2023,
+   "eligible": 49,
+   "total": 51
+  },
+  {
+   "race_id": "2023-r15-R",
+   "season": 2023,
+   "eligible": 2,
+   "total": 74
+  },
+  {
+   "race_id": "2023-r16-R",
+   "season": 2023,
+   "eligible": 27,
+   "total": 60
+  },
+  {
+   "race_id": "2023-r17-R",
+   "season": 2023,
+   "eligible": 0,
+   "total": 61
+  },
+  {
+   "race_id": "2023-r18-R",
+   "season": 2023,
+   "eligible": 54,
+   "total": 57
+  },
+  {
+   "race_id": "2023-r19-R",
+   "season": 2023,
+   "eligible": 30,
+   "total": 79
+  },
+  {
+   "race_id": "2023-r20-R",
+   "season": 2023,
+   "eligible": 0,
+   "total": 71
+  },
+  {
+   "race_id": "2023-r21-R",
+   "season": 2023,
+   "eligible": 2,
+   "total": 57
+  },
+  {
+   "race_id": "2023-r22-R",
+   "season": 2023,
+   "eligible": 56,
+   "total": 58
+  },
+  {
+   "race_id": "2024-r01-R",
+   "season": 2024,
+   "eligible": 55,
+   "total": 60
+  },
+  {
+   "race_id": "2024-r02-R",
+   "season": 2024,
+   "eligible": 5,
+   "total": 51
+  },
+  {
+   "race_id": "2024-r03-R",
+   "season": 2024,
+   "eligible": 18,
+   "total": 64
+  },
+  {
+   "race_id": "2024-r04-R",
+   "season": 2024,
+   "eligible": 0,
+   "total": 57
+  },
+  {
+   "race_id": "2024-r05-R",
+   "season": 2024,
+   "eligible": 19,
+   "total": 59
+  },
+  {
+   "race_id": "2024-r06-R",
+   "season": 2024,
+   "eligible": 27,
+   "total": 61
+  },
+  {
+   "race_id": "2024-r07-R",
+   "season": 2024,
+   "eligible": 61,
+   "total": 63
+  },
+  {
+   "race_id": "2024-r08-R",
+   "season": 2024,
+   "eligible": 1,
+   "total": 83
+  },
+  {
+   "race_id": "2024-r09-R",
+   "season": 2024,
+   "eligible": 0,
+   "total": 75
+  },
+  {
+   "race_id": "2024-r10-R",
+   "season": 2024,
+   "eligible": 63,
+   "total": 66
+  },
+  {
+   "race_id": "2024-r11-R",
+   "season": 2024,
+   "eligible": 70,
+   "total": 78
+  },
+  {
+   "race_id": "2024-r12-R",
+   "season": 2024,
+   "eligible": 16,
+   "total": 52
+  },
+  {
+   "race_id": "2024-r13-R",
+   "season": 2024,
+   "eligible": 68,
+   "total": 72
+  },
+  {
+   "race_id": "2024-r14-R",
+   "season": 2024,
+   "eligible": 41,
+   "total": 44
+  },
+  {
+   "race_id": "2024-r15-R",
+   "season": 2024,
+   "eligible": 70,
+   "total": 72
+  },
+  {
+   "race_id": "2024-r16-R",
+   "season": 2024,
+   "eligible": 51,
+   "total": 53
+  },
+  {
+   "race_id": "2024-r17-R",
+   "season": 2024,
+   "eligible": 49,
+   "total": 55
+  },
+  {
+   "race_id": "2024-r18-R",
+   "season": 2024,
+   "eligible": 60,
+   "total": 62
+  },
+  {
+   "race_id": "2024-r19-R",
+   "season": 2024,
+   "eligible": 1,
+   "total": 59
+  },
+  {
+   "race_id": "2024-r20-R",
+   "season": 2024,
+   "eligible": 0,
+   "total": 71
+  },
+  {
+   "race_id": "2024-r21-R",
+   "season": 2024,
+   "eligible": 0,
+   "total": 85
+  },
+  {
+   "race_id": "2024-r22-R",
+   "season": 2024,
+   "eligible": 48,
+   "total": 50
+  },
+  {
+   "race_id": "2024-r23-R",
+   "season": 2024,
+   "eligible": 0,
+   "total": 64
+  },
+  {
+   "race_id": "2024-r24-R",
+   "season": 2024,
+   "eligible": 1,
+   "total": 66
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+  "catalogue": {
+    "checkpoints": 9644,
+    "eligible_checkpoints": 2305,
+    "runs": 5000
+  },
+  "eligible_only_h": {
+    "serial": 22.8
+  },
+  "full_catalogue_h": {
+    "serial": 95.2,
+    "x4_workers_extrapolated": 23.8,
+    "x8_workers_extrapolated": 11.9
+  },
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "scaling_note": "worker columns are linear extrapolations, not measured speedups; no perfect-scaling claim",
+  "schema_version": "v3.2h-precompute-cost-v1",
+  "throughput_runs_per_s": {
+    "basis": "measured this stage",
+    "measured": 140.7
+  }
+}

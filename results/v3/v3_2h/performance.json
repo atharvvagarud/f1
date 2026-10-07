@@ -1,0 +1,10 @@
+{
+  "dry_green": {
+    "latency_5000_s": 35.5,
+    "method": "measured: 200 MC2-E arm-E runs, single green checkpoint",
+    "runs_per_s": 140.7
+  },
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "regime_cost": "N/A_NO_ADMITTED_REGIME",
+  "schema_version": "v3.2h-performance-v1"
+}

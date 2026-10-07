@@ -1,0 +1,235 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "f21107eff7d3b36c5240245bdb2d38c06536943f4ad772014cbd368d78121077",
+  "diagnostics": {
+    "n_inpit_updates": 154,
+    "n_malformed_rows": 0,
+    "n_messages": 38660,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 152,
+    "n_retired_updates": 42,
+    "n_stopped_updates": 50
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 42,
+  "race_id": "2020-r09-R",
+  "raw_sha256": "b364a3ec55f4b67bf21b8d2036eadec5d736ee815a3309bdfe18dcdadb66ece3",
+  "round": 9,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2020,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2020/2020-09-13_Tuscan_Grand_Prix/2020-09-13_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        3.736,
+        false
+      ],
+      [
+        9122.116,
+        true
+      ],
+      [
+        9135.786,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        3.736,
+        false
+      ],
+      [
+        9122.116,
+        true
+      ],
+      [
+        9130.096,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.736,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        3.736,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        3.736,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        3.736,
+        false
+      ],
+      [
+        9120.576,
+        true
+      ],
+      [
+        9127.341,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        3.736,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        3.736,
+        false
+      ],
+      [
+        9122.116,
+        true
+      ],
+      [
+        9145.224,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        3.736,
+        false
+      ],
+      [
+        4056.246,
+        true
+      ]
+    ],
+    "leclerc": [
+      [
+        3.736,
+        false
+      ],
+      [
+        9122.116,
+        true
+      ],
+      [
+        9149.388,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.736,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        3.736,
+        false
+      ],
+      [
+        9122.116,
+        true
+      ],
+      [
+        9142.625,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        3.736,
+        false
+      ],
+      [
+        4621.673,
+        true
+      ]
+    ],
+    "perez": [
+      [
+        3.736,
+        false
+      ],
+      [
+        9122.116,
+        true
+      ],
+      [
+        9137.37,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        3.736,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        3.736,
+        false
+      ],
+      [
+        9122.116,
+        true
+      ],
+      [
+        9130.865,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        3.736,
+        false
+      ],
+      [
+        9122.116,
+        true
+      ],
+      [
+        9153.527,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.736,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        3.736,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        3.736,
+        false
+      ],
+      [
+        9122.116,
+        true
+      ],
+      [
+        9156.204,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

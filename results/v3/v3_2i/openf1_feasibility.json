@@ -1,0 +1,9 @@
+{
+  "access": "free, no key, 3 req/s + 30 req/min; CC BY-NC-SA 4.0; unofficial community project",
+  "endpoints": 18,
+  "historical_since": "2023 (vendor FAQ, verified 2026-10-06)",
+  "probe": "live API 2026-10-06: Austria 2024 NOR position ends 14:21:36 pos 20; session_result dnf=false; race_control has flags, no per-driver retirement",
+  "retirement_transition_endpoint": "NONE (position, laps, intervals, pits, race_control, session_result surveyed; position stream ends at retirement = absence, not signal; session_result.dnf mirrors final classification, e.g. Norris Austria 2024 dnf=false despite on-track retirement)",
+  "schema_version": "v3.2i-openf1-v1",
+  "verdict": "VALIDATION_ONLY (2023+ cross-check); NOT_VIABLE as causal 2018-2024 source (no 2018-2022; no retirement transition semantics)"
+}

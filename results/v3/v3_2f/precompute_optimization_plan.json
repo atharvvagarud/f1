@@ -1,0 +1,21 @@
+{
+  "bottlenecks": [
+    "mechanism preparation (anchor history scan per driver, pandas row loops in _prepare_state_and_mechanisms)",
+    "per-simulation Python event loop in run_mc2 (earliest-first scheduling, ~97 runs/s)",
+    "parquet reload per worker job (no shared frame cache)",
+    "result serialization per checkpoint (full position distributions)"
+  ],
+  "constraint": "Any future optimization must preserve bit/scientific equivalence with accepted MC2 E; no risky optimization in V3.2F.",
+  "forbidden": [
+    "kernel math rewrites without parity proof",
+    "RNG stream reassignment",
+    "reduced n_runs without TV-gate revalidation"
+  ],
+  "safe_vectors": [
+    "vectorize anchor/dynamics preparation over drivers (numpy batch, verified bit-exact on parity corpus)",
+    "multiprocessing over checkpoints (already used; measured efficiency assumption in V3.2E)",
+    "shared-memory frame cache across workers",
+    "batched residual draws per simulation (CRN-preserving reorder with proof)"
+  ],
+  "schema_version": "v3.2f-precompute-optimization-plan-v1"
+}

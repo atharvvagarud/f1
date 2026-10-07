@@ -1,0 +1,35 @@
+{
+  "max_regime_only_headroom": 468,
+  "multi_blocker_pairs": {
+    "UNSUPPORTED_TRACK_STATExWET_CONDITIONS": 278
+  },
+  "n_blockers_dist": {
+    "1": 5307,
+    "2": 1684,
+    "3": 336,
+    "4": 12
+  },
+  "n_refused": 7339,
+  "regime_x_other": {
+    "TRACK_only": 292,
+    "TRACK_x_MISSING_DRIVER": 129,
+    "TRACK_x_MISSING_TYRE": 88,
+    "TRACK_x_STALE": 811,
+    "TRACK_x_TERMINAL": 23,
+    "TRACK_x_WET": 278,
+    "WET_only": 176,
+    "WET_x_MISSING_DRIVER": 102,
+    "WET_x_MISSING_TYRE": 68,
+    "WET_x_STALE": 799,
+    "WET_x_TERMINAL": 13
+  },
+  "schema_version": "v3.2f-blocker-intersections-v1",
+  "single_blocker": {
+    "('MISSING_DRIVER_OBSERVATION',)": 158,
+    "('MISSING_TYRE_STATE',)": 6,
+    "('STALE_ROSTER_OBSERVATION',)": 4667,
+    "('TERMINAL_STATE',)": 8,
+    "('UNSUPPORTED_TRACK_STATE',)": 292,
+    "('WET_CONDITIONS',)": 176
+  }
+}

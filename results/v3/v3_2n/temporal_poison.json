@@ -1,0 +1,31 @@
+{
+ "schema_version": "v3.2n-temporal-poison-v1",
+ "rule": "remove all post-T laps/pits/positions/race-control influence: eligibility(T), status(T), initial state(T) unchanged",
+ "rows": [
+  {
+   "race_id": "2018-r01-R",
+   "frame_index": 90,
+   "verdict": "SIMULATION_CAPABLE",
+   "future_rows_removed": 849,
+   "eligibility_unchanged": true,
+   "status_prefix_closed": true
+  },
+  {
+   "race_id": "2018-r03-R",
+   "frame_index": 1077,
+   "verdict": "SIMULATION_CAPABLE",
+   "future_rows_removed": 37,
+   "eligibility_unchanged": true,
+   "status_prefix_closed": true
+  },
+  {
+   "race_id": "2018-r01-R",
+   "frame_index": 155,
+   "verdict": "STALE_ROSTER_OBSERVATION",
+   "future_rows_removed": 784,
+   "eligibility_unchanged": true,
+   "status_prefix_closed": true
+  }
+ ],
+ "all_green": true
+}

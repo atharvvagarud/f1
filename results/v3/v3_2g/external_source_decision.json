@@ -1,0 +1,7 @@
+{
+  "corpus_adequate": false,
+  "note": "current FastF1-derived corpus exposes no authoritative causal terminal vocabulary",
+  "provider": "NOT integrated in V3.2G (specification only, no fabrication)",
+  "required_information_class": "timestamped official retirement/driver-status events (on-track retirement time per driver, causally timestamped at or before T)",
+  "schema_version": "v3.2g-external-source-decision-v1"
+}

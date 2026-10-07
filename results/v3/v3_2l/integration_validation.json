@@ -1,0 +1,5 @@
+{
+ "verdict": "NOT_APPLICABLE",
+ "reason": "no runtime integration (decision REJECT)",
+ "schema_version": "v3.2l-integration-validation-v1"
+}

@@ -1,0 +1,751 @@
+{
+  "n_races": 149,
+  "races": {
+    "2018-r01-R": {
+      "fraction": 0.0556,
+      "n": 72,
+      "supported": 4
+    },
+    "2018-r02-R": {
+      "fraction": 0.0,
+      "n": 65,
+      "supported": 0
+    },
+    "2018-r03-R": {
+      "fraction": 0.3621,
+      "n": 58,
+      "supported": 21
+    },
+    "2018-r04-R": {
+      "fraction": 0.0,
+      "n": 58,
+      "supported": 0
+    },
+    "2018-r05-R": {
+      "fraction": 0.0,
+      "n": 73,
+      "supported": 0
+    },
+    "2018-r06-R": {
+      "fraction": 0.5,
+      "n": 86,
+      "supported": 43
+    },
+    "2018-r07-R": {
+      "fraction": 0.0,
+      "n": 70,
+      "supported": 0
+    },
+    "2018-r08-R": {
+      "fraction": 0.0,
+      "n": 57,
+      "supported": 0
+    },
+    "2018-r09-R": {
+      "fraction": 0.1235,
+      "n": 81,
+      "supported": 10
+    },
+    "2018-r10-R": {
+      "fraction": 0.0,
+      "n": 59,
+      "supported": 0
+    },
+    "2018-r11-R": {
+      "fraction": 0.0375,
+      "n": 80,
+      "supported": 3
+    },
+    "2018-r12-R": {
+      "fraction": 0.0,
+      "n": 75,
+      "supported": 0
+    },
+    "2018-r13-R": {
+      "fraction": 0.0,
+      "n": 45,
+      "supported": 0
+    },
+    "2018-r14-R": {
+      "fraction": 0.0,
+      "n": 57,
+      "supported": 0
+    },
+    "2018-r15-R": {
+      "fraction": 0.0,
+      "n": 61,
+      "supported": 0
+    },
+    "2018-r16-R": {
+      "fraction": 0.0909,
+      "n": 55,
+      "supported": 5
+    },
+    "2018-r17-R": {
+      "fraction": 0.0877,
+      "n": 57,
+      "supported": 5
+    },
+    "2018-r18-R": {
+      "fraction": 0.0317,
+      "n": 63,
+      "supported": 2
+    },
+    "2018-r19-R": {
+      "fraction": 0.061,
+      "n": 82,
+      "supported": 5
+    },
+    "2018-r20-R": {
+      "fraction": 0.3067,
+      "n": 75,
+      "supported": 23
+    },
+    "2018-r21-R": {
+      "fraction": 0.0,
+      "n": 57,
+      "supported": 0
+    },
+    "2019-r01-R": {
+      "fraction": 0.2,
+      "n": 60,
+      "supported": 12
+    },
+    "2019-r02-R": {
+      "fraction": 0.25,
+      "n": 72,
+      "supported": 18
+    },
+    "2019-r03-R": {
+      "fraction": 0.3158,
+      "n": 57,
+      "supported": 18
+    },
+    "2019-r04-R": {
+      "fraction": 0.5965,
+      "n": 57,
+      "supported": 34
+    },
+    "2019-r05-R": {
+      "fraction": 0.6471,
+      "n": 68,
+      "supported": 44
+    },
+    "2019-r06-R": {
+      "fraction": 0.0345,
+      "n": 87,
+      "supported": 3
+    },
+    "2019-r07-R": {
+      "fraction": 0.1216,
+      "n": 74,
+      "supported": 9
+    },
+    "2019-r08-R": {
+      "fraction": 0.7619,
+      "n": 63,
+      "supported": 48
+    },
+    "2019-r09-R": {
+      "fraction": 0.9718,
+      "n": 71,
+      "supported": 69
+    },
+    "2019-r10-R": {
+      "fraction": 0.1579,
+      "n": 57,
+      "supported": 9
+    },
+    "2019-r11-R": {
+      "fraction": 0.0,
+      "n": 84,
+      "supported": 0
+    },
+    "2019-r12-R": {
+      "fraction": 0.7429,
+      "n": 70,
+      "supported": 52
+    },
+    "2019-r13-R": {
+      "fraction": 0.0,
+      "n": 45,
+      "supported": 0
+    },
+    "2019-r14-R": {
+      "fraction": 0.4426,
+      "n": 61,
+      "supported": 27
+    },
+    "2019-r15-R": {
+      "fraction": 0.5156,
+      "n": 64,
+      "supported": 33
+    },
+    "2019-r16-R": {
+      "fraction": 0.0,
+      "n": 58,
+      "supported": 0
+    },
+    "2019-r17-R": {
+      "fraction": 0.2778,
+      "n": 54,
+      "supported": 15
+    },
+    "2019-r18-R": {
+      "fraction": 0.6849,
+      "n": 73,
+      "supported": 50
+    },
+    "2019-r19-R": {
+      "fraction": 0.1404,
+      "n": 57,
+      "supported": 8
+    },
+    "2019-r20-R": {
+      "fraction": 0.6757,
+      "n": 74,
+      "supported": 50
+    },
+    "2019-r21-R": {
+      "fraction": 0.8727,
+      "n": 55,
+      "supported": 48
+    },
+    "2020-r01-R": {
+      "fraction": 0.1316,
+      "n": 76,
+      "supported": 10
+    },
+    "2020-r02-R": {
+      "fraction": 0.0,
+      "n": 71,
+      "supported": 0
+    },
+    "2020-r03-R": {
+      "fraction": 0.1772,
+      "n": 79,
+      "supported": 14
+    },
+    "2020-r04-R": {
+      "fraction": 0.0,
+      "n": 58,
+      "supported": 0
+    },
+    "2020-r05-R": {
+      "fraction": 0.8519,
+      "n": 54,
+      "supported": 46
+    },
+    "2020-r06-R": {
+      "fraction": 0.6029,
+      "n": 68,
+      "supported": 41
+    },
+    "2020-r07-R": {
+      "fraction": 0.0638,
+      "n": 47,
+      "supported": 3
+    },
+    "2020-r08-R": {
+      "fraction": 0.1228,
+      "n": 57,
+      "supported": 7
+    },
+    "2020-r09-R": {
+      "fraction": 0.0,
+      "n": 64,
+      "supported": 0
+    },
+    "2020-r10-R": {
+      "fraction": 0.0,
+      "n": 56,
+      "supported": 0
+    },
+    "2020-r11-R": {
+      "fraction": 0.2,
+      "n": 70,
+      "supported": 14
+    },
+    "2020-r12-R": {
+      "fraction": 0.8333,
+      "n": 66,
+      "supported": 55
+    },
+    "2020-r13-R": {
+      "fraction": 0.1449,
+      "n": 69,
+      "supported": 10
+    },
+    "2020-r14-R": {
+      "fraction": 0.0,
+      "n": 81,
+      "supported": 0
+    },
+    "2020-r15-R": {
+      "fraction": 0.0,
+      "n": 60,
+      "supported": 0
+    },
+    "2020-r16-R": {
+      "fraction": 0.0,
+      "n": 94,
+      "supported": 0
+    },
+    "2020-r17-R": {
+      "fraction": 0.1404,
+      "n": 57,
+      "supported": 8
+    },
+    "2021-r01-R": {
+      "fraction": 0.0,
+      "n": 57,
+      "supported": 0
+    },
+    "2021-r02-R": {
+      "fraction": 0.0,
+      "n": 74,
+      "supported": 0
+    },
+    "2021-r03-R": {
+      "fraction": 0.0149,
+      "n": 67,
+      "supported": 1
+    },
+    "2021-r04-R": {
+      "fraction": 0.0896,
+      "n": 67,
+      "supported": 6
+    },
+    "2021-r05-R": {
+      "fraction": 0.0385,
+      "n": 78,
+      "supported": 3
+    },
+    "2021-r06-R": {
+      "fraction": 0.0678,
+      "n": 59,
+      "supported": 4
+    },
+    "2021-r07-R": {
+      "fraction": 0.9623,
+      "n": 53,
+      "supported": 51
+    },
+    "2021-r08-R": {
+      "fraction": 0.0423,
+      "n": 71,
+      "supported": 3
+    },
+    "2021-r09-R": {
+      "fraction": 0.0,
+      "n": 74,
+      "supported": 0
+    },
+    "2021-r10-R": {
+      "fraction": 0.0,
+      "n": 56,
+      "supported": 0
+    },
+    "2021-r11-R": {
+      "fraction": 0.0,
+      "n": 71,
+      "supported": 0
+    },
+    "2021-r12-R": {
+      "fraction": 0.0,
+      "n": 3,
+      "supported": 0
+    },
+    "2021-r13-R": {
+      "fraction": 0.5946,
+      "n": 74,
+      "supported": 44
+    },
+    "2021-r14-R": {
+      "fraction": 0.0339,
+      "n": 59,
+      "supported": 2
+    },
+    "2021-r15-R": {
+      "fraction": 0.4925,
+      "n": 67,
+      "supported": 33
+    },
+    "2021-r16-R": {
+      "fraction": 0.0,
+      "n": 64,
+      "supported": 0
+    },
+    "2021-r17-R": {
+      "fraction": 0.2623,
+      "n": 61,
+      "supported": 16
+    },
+    "2021-r18-R": {
+      "fraction": 0.0,
+      "n": 71,
+      "supported": 0
+    },
+    "2021-r19-R": {
+      "fraction": 0.5897,
+      "n": 78,
+      "supported": 46
+    },
+    "2021-r20-R": {
+      "fraction": 0.7794,
+      "n": 68,
+      "supported": 53
+    },
+    "2021-r21-R": {
+      "fraction": 0.127,
+      "n": 63,
+      "supported": 8
+    },
+    "2021-r22-R": {
+      "fraction": 0.4394,
+      "n": 66,
+      "supported": 29
+    },
+    "2022-r01-R": {
+      "fraction": 0.7143,
+      "n": 63,
+      "supported": 45
+    },
+    "2022-r02-R": {
+      "fraction": 0.0,
+      "n": 56,
+      "supported": 0
+    },
+    "2022-r03-R": {
+      "fraction": 0.0161,
+      "n": 62,
+      "supported": 1
+    },
+    "2022-r04-R": {
+      "fraction": 0.0,
+      "n": 65,
+      "supported": 0
+    },
+    "2022-r05-R": {
+      "fraction": 0.127,
+      "n": 63,
+      "supported": 8
+    },
+    "2022-r06-R": {
+      "fraction": 0.4,
+      "n": 70,
+      "supported": 28
+    },
+    "2022-r07-R": {
+      "fraction": 0.0,
+      "n": 89,
+      "supported": 0
+    },
+    "2022-r08-R": {
+      "fraction": 0.1525,
+      "n": 59,
+      "supported": 9
+    },
+    "2022-r09-R": {
+      "fraction": 0.1053,
+      "n": 76,
+      "supported": 8
+    },
+    "2022-r10-R": {
+      "fraction": 0.0,
+      "n": 56,
+      "supported": 0
+    },
+    "2022-r11-R": {
+      "fraction": 0.3553,
+      "n": 76,
+      "supported": 27
+    },
+    "2022-r12-R": {
+      "fraction": 0.2787,
+      "n": 61,
+      "supported": 17
+    },
+    "2022-r13-R": {
+      "fraction": 0.5976,
+      "n": 82,
+      "supported": 49
+    },
+    "2022-r14-R": {
+      "fraction": 0.0,
+      "n": 46,
+      "supported": 0
+    },
+    "2022-r15-R": {
+      "fraction": 0.5432,
+      "n": 81,
+      "supported": 44
+    },
+    "2022-r16-R": {
+      "fraction": 0.2069,
+      "n": 58,
+      "supported": 12
+    },
+    "2022-r17-R": {
+      "fraction": 0.0,
+      "n": 75,
+      "supported": 0
+    },
+    "2022-r18-R": {
+      "fraction": 0.0,
+      "n": 29,
+      "supported": 0
+    },
+    "2022-r19-R": {
+      "fraction": 0.0517,
+      "n": 58,
+      "supported": 3
+    },
+    "2022-r20-R": {
+      "fraction": 0.7067,
+      "n": 75,
+      "supported": 53
+    },
+    "2022-r21-R": {
+      "fraction": 0.0,
+      "n": 73,
+      "supported": 0
+    },
+    "2022-r22-R": {
+      "fraction": 0.4677,
+      "n": 62,
+      "supported": 29
+    },
+    "2023-r01-R": {
+      "fraction": 0.2459,
+      "n": 61,
+      "supported": 15
+    },
+    "2023-r02-R": {
+      "fraction": 0.2941,
+      "n": 51,
+      "supported": 15
+    },
+    "2023-r03-R": {
+      "fraction": 0.0,
+      "n": 62,
+      "supported": 0
+    },
+    "2023-r04-R": {
+      "fraction": 0.1481,
+      "n": 54,
+      "supported": 8
+    },
+    "2023-r05-R": {
+      "fraction": 0.9649,
+      "n": 57,
+      "supported": 55
+    },
+    "2023-r06-R": {
+      "fraction": 0.5368,
+      "n": 95,
+      "supported": 51
+    },
+    "2023-r07-R": {
+      "fraction": 0.9697,
+      "n": 66,
+      "supported": 64
+    },
+    "2023-r08-R": {
+      "fraction": 0.0909,
+      "n": 77,
+      "supported": 7
+    },
+    "2023-r09-R": {
+      "fraction": 0.1507,
+      "n": 73,
+      "supported": 11
+    },
+    "2023-r10-R": {
+      "fraction": 0.2075,
+      "n": 53,
+      "supported": 11
+    },
+    "2023-r11-R": {
+      "fraction": 0.0417,
+      "n": 72,
+      "supported": 3
+    },
+    "2023-r12-R": {
+      "fraction": 0.0222,
+      "n": 45,
+      "supported": 1
+    },
+    "2023-r13-R": {
+      "fraction": 0.0,
+      "n": 78,
+      "supported": 0
+    },
+    "2023-r14-R": {
+      "fraction": 0.0588,
+      "n": 51,
+      "supported": 3
+    },
+    "2023-r15-R": {
+      "fraction": 0.027,
+      "n": 74,
+      "supported": 2
+    },
+    "2023-r16-R": {
+      "fraction": 0.1333,
+      "n": 60,
+      "supported": 8
+    },
+    "2023-r17-R": {
+      "fraction": 0.0,
+      "n": 61,
+      "supported": 0
+    },
+    "2023-r18-R": {
+      "fraction": 0.1404,
+      "n": 57,
+      "supported": 8
+    },
+    "2023-r19-R": {
+      "fraction": 0.038,
+      "n": 79,
+      "supported": 3
+    },
+    "2023-r20-R": {
+      "fraction": 0.0,
+      "n": 71,
+      "supported": 0
+    },
+    "2023-r21-R": {
+      "fraction": 0.0351,
+      "n": 57,
+      "supported": 2
+    },
+    "2023-r22-R": {
+      "fraction": 0.9655,
+      "n": 58,
+      "supported": 56
+    },
+    "2024-r01-R": {
+      "fraction": 0.9167,
+      "n": 60,
+      "supported": 55
+    },
+    "2024-r02-R": {
+      "fraction": 0.0588,
+      "n": 51,
+      "supported": 3
+    },
+    "2024-r03-R": {
+      "fraction": 0.0938,
+      "n": 64,
+      "supported": 6
+    },
+    "2024-r04-R": {
+      "fraction": 0.0,
+      "n": 57,
+      "supported": 0
+    },
+    "2024-r05-R": {
+      "fraction": 0.322,
+      "n": 59,
+      "supported": 19
+    },
+    "2024-r06-R": {
+      "fraction": 0.4426,
+      "n": 61,
+      "supported": 27
+    },
+    "2024-r07-R": {
+      "fraction": 0.873,
+      "n": 63,
+      "supported": 55
+    },
+    "2024-r08-R": {
+      "fraction": 0.012,
+      "n": 83,
+      "supported": 1
+    },
+    "2024-r09-R": {
+      "fraction": 0.0,
+      "n": 75,
+      "supported": 0
+    },
+    "2024-r10-R": {
+      "fraction": 0.9545,
+      "n": 66,
+      "supported": 63
+    },
+    "2024-r11-R": {
+      "fraction": 0.859,
+      "n": 78,
+      "supported": 67
+    },
+    "2024-r12-R": {
+      "fraction": 0.0577,
+      "n": 52,
+      "supported": 3
+    },
+    "2024-r13-R": {
+      "fraction": 0.4861,
+      "n": 72,
+      "supported": 35
+    },
+    "2024-r14-R": {
+      "fraction": 0.1818,
+      "n": 44,
+      "supported": 8
+    },
+    "2024-r15-R": {
+      "fraction": 0.9722,
+      "n": 72,
+      "supported": 70
+    },
+    "2024-r16-R": {
+      "fraction": 0.1698,
+      "n": 53,
+      "supported": 9
+    },
+    "2024-r17-R": {
+      "fraction": 0.2909,
+      "n": 55,
+      "supported": 16
+    },
+    "2024-r18-R": {
+      "fraction": 0.2903,
+      "n": 62,
+      "supported": 18
+    },
+    "2024-r19-R": {
+      "fraction": 0.0169,
+      "n": 59,
+      "supported": 1
+    },
+    "2024-r20-R": {
+      "fraction": 0.0,
+      "n": 71,
+      "supported": 0
+    },
+    "2024-r21-R": {
+      "fraction": 0.0,
+      "n": 85,
+      "supported": 0
+    },
+    "2024-r22-R": {
+      "fraction": 0.34,
+      "n": 50,
+      "supported": 17
+    },
+    "2024-r23-R": {
+      "fraction": 0.0,
+      "n": 64,
+      "supported": 0
+    },
+    "2024-r24-R": {
+      "fraction": 0.0152,
+      "n": 66,
+      "supported": 1
+    }
+  },
+  "schema_version": "v3.2g-race-coverage-v1"
+}

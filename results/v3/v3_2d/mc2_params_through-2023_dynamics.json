@@ -1,0 +1,31 @@
+{
+ "conditioning_hierarchy": [
+  "driver past-only endpoint delta"
+ ],
+ "content_hash": "850695a899a9625da78c7666157896be0f16e92740add7d049efedeb059d408d",
+ "estimator_config": {
+  "admitted": [
+   "dyn_pace_slope_l3",
+   "dyn_pace_slope_l10"
+  ],
+  "bound_s": 1.5,
+  "decay": 0.5,
+  "horizon_laps": 6
+ },
+ "fallback_rules": {
+  "missing_slope": "zero drift contribution"
+ },
+ "minimum_n": {
+  "slope_points": 2
+ },
+ "parameter_family": "pace_dynamics",
+ "schema_version": "mc2-params-v1",
+ "training_seasons": {
+  "min": 2018,
+  "through": 2023
+ },
+ "values": {
+  "decay": 0.5,
+  "drift_bound_s": 1.5
+ }
+}

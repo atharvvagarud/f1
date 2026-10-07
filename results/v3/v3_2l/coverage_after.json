@@ -1,0 +1,8 @@
+{
+ "total": 9644,
+ "eligible": 3678,
+ "fraction": 0.3814,
+ "method": "identity (decision REJECT; no integration)",
+ "gain_vs_before": 0,
+ "schema_version": "v3.2l-coverage-after-v1"
+}

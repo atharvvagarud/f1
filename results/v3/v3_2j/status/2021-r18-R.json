@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "2b3737aba3c82a9cfdd004953c128b2c77b63c8a50c1b97dea36921fa1698f01",
+  "diagnostics": {
+    "n_inpit_updates": 158,
+    "n_malformed_rows": 0,
+    "n_messages": 60628,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 70,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 24
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2021-r18-R",
+  "raw_sha256": "e193ee9a0ecb408a11cd4f67165a90683e5bcc8be728e512f14d7232218fa953",
+  "round": 18,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2021,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2021/2021-11-07_Mexico_City_Grand_Prix/2021-11-07_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "mazepin": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        6.226,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        6.226,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

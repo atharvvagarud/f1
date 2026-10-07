@@ -1,0 +1,5229 @@
+{
+ "population_hash": "5d038db83111a1a9dc9e885ed107358d8e018ad1c3a4570f14d1f78697b8383d",
+ "races": {
+  "2020-r01-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 4.681738461538461,
+     "invalid": 0,
+     "podium_brier": 0.11514506,
+     "rps": 0.20361465425101216,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.6838000000000001,
+     "valid": 10000,
+     "winner_brier": 0.00811267,
+     "winner_logloss": 0.3824846331149181
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 4.419746153846153,
+     "invalid": 0,
+     "podium_brier": 0.16547982000000003,
+     "rps": 0.13616166583333336,
+     "top1": 0.9,
+     "top3": 1.0,
+     "top_prob": 0.7504,
+     "valid": 10000,
+     "winner_brier": 0.00999971,
+     "winner_logloss": 0.4194360433107849
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 4.4185307692307685,
+     "invalid": 0,
+     "podium_brier": 0.16559355000000003,
+     "rps": 0.13744861083333335,
+     "top1": 0.9,
+     "top3": 1.0,
+     "top_prob": 0.748,
+     "valid": 10000,
+     "winner_brier": 0.010101260000000003,
+     "winner_logloss": 0.4227187437962196
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 4.4185307692307685,
+     "invalid": 0,
+     "podium_brier": 0.16559355000000003,
+     "rps": 0.13744861083333335,
+     "top1": 0.9,
+     "top3": 1.0,
+     "top_prob": 0.748,
+     "valid": 10000,
+     "winner_brier": 0.010101260000000003,
+     "winner_logloss": 0.4227187437962196
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 4.457546153846154,
+     "invalid": 0,
+     "podium_brier": 0.16095499,
+     "rps": 0.1333416987698413,
+     "top1": 0.9,
+     "top3": 1.0,
+     "top_prob": 0.6763999999999999,
+     "valid": 10000,
+     "winner_brier": 0.011987790000000002,
+     "winner_logloss": 0.5215608242238785
+    }
+   },
+   "n_checkpoints": 10,
+   "season": 2020,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2020-r03-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.03256015037594,
+     "invalid": 0,
+     "podium_brier": 0.013557314285714286,
+     "rps": 0.08124988068856352,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.9582142857142857,
+     "valid": 14000,
+     "winner_brier": 0.00020269285714285726,
+     "winner_logloss": 0.04333743708725919
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.383251879699248,
+     "invalid": 0,
+     "podium_brier": 0.025593964285714286,
+     "rps": 0.04613521428571428,
+     "top1": 0.9285714285714286,
+     "top3": 1.0,
+     "top_prob": 0.9355714285714284,
+     "valid": 14000,
+     "winner_brier": 0.0027124571428571434,
+     "winner_logloss": 0.09349144639299045
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.3835902255639096,
+     "invalid": 0,
+     "podium_brier": 0.025431164285714288,
+     "rps": 0.04514019642857142,
+     "top1": 0.9285714285714286,
+     "top3": 1.0,
+     "top_prob": 0.9346428571428572,
+     "valid": 14000,
+     "winner_brier": 0.002713185714285714,
+     "winner_logloss": 0.0944233476289781
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.3835902255639096,
+     "invalid": 0,
+     "podium_brier": 0.025431164285714288,
+     "rps": 0.04514019642857142,
+     "top1": 0.9285714285714286,
+     "top3": 1.0,
+     "top_prob": 0.9346428571428572,
+     "valid": 14000,
+     "winner_brier": 0.002713185714285714,
+     "winner_logloss": 0.0944233476289781
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.377063909774436,
+     "invalid": 0,
+     "podium_brier": 0.02427347857142857,
+     "rps": 0.04623486904761905,
+     "top1": 0.9285714285714286,
+     "top3": 1.0,
+     "top_prob": 0.9112142857142856,
+     "valid": 14000,
+     "winner_brier": 0.00285067142857143,
+     "winner_logloss": 0.11350416951114871
+    }
+   },
+   "n_checkpoints": 14,
+   "season": 2020,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2020-r05-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.5217734553775741,
+     "invalid": 0,
+     "podium_brier": 0.009190315217391302,
+     "rps": 0.06276524292424425,
+     "top1": 0.3695652173913043,
+     "top3": 0.9782608695652174,
+     "top_prob": 0.7515217391304347,
+     "valid": 46000,
+     "winner_brier": 0.04797229565217391,
+     "winner_logloss": 2.3890346249447574
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.4905102974828377,
+     "invalid": 0,
+     "podium_brier": 0.007885376086956523,
+     "rps": 0.1658589384230504,
+     "top1": 0.5869565217391305,
+     "top3": 0.9782608695652174,
+     "top_prob": 0.8092826086956526,
+     "valid": 46000,
+     "winner_brier": 0.033874739130434775,
+     "winner_logloss": 1.562916998402157
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.4881693363844393,
+     "invalid": 0,
+     "podium_brier": 0.007876034782608695,
+     "rps": 0.16945202152777775,
+     "top1": 0.5652173913043478,
+     "top3": 0.9782608695652174,
+     "top_prob": 0.8075217391304348,
+     "valid": 46000,
+     "winner_brier": 0.033821043478260863,
+     "winner_logloss": 1.5799905276035717
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.4881693363844393,
+     "invalid": 0,
+     "podium_brier": 0.007876034782608695,
+     "rps": 0.16945202152777775,
+     "top1": 0.5652173913043478,
+     "top3": 0.9782608695652174,
+     "top_prob": 0.8075217391304348,
+     "valid": 46000,
+     "winner_brier": 0.033821043478260863,
+     "winner_logloss": 1.5799905276035717
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.4799244851258582,
+     "invalid": 0,
+     "podium_brier": 0.009108860869565217,
+     "rps": 0.11682755320048309,
+     "top1": 0.5869565217391305,
+     "top3": 0.9782608695652174,
+     "top_prob": 0.7784565217391305,
+     "valid": 46000,
+     "winner_brier": 0.032842199999999995,
+     "winner_logloss": 1.3671314595709376
+    }
+   },
+   "n_checkpoints": 46,
+   "season": 2020,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2020-r06-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.9968356867779204,
+     "invalid": 0,
+     "podium_brier": 0.006607121951219512,
+     "rps": 0.08237548307546785,
+     "top1": 0.975609756097561,
+     "top3": 1.0,
+     "top_prob": 0.7320000000000002,
+     "valid": 41000,
+     "winner_brier": 0.008903182926829265,
+     "winner_logloss": 0.3609407770040824
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.7007548138639275,
+     "invalid": 0,
+     "podium_brier": 0.0033956609756097557,
+     "rps": 0.1452534314847077,
+     "top1": 0.8048780487804879,
+     "top3": 0.975609756097561,
+     "top_prob": 0.8144146341463414,
+     "valid": 41000,
+     "winner_brier": 0.011509304878048781,
+     "winner_logloss": 0.7045896271589639
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.7053504492939664,
+     "invalid": 0,
+     "podium_brier": 0.0033961634146341454,
+     "rps": 0.14713426021099496,
+     "top1": 0.8048780487804879,
+     "top3": 0.975609756097561,
+     "top_prob": 0.8164634146341462,
+     "valid": 41000,
+     "winner_brier": 0.011845280487804878,
+     "winner_logloss": 0.7128469657422605
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.7053504492939664,
+     "invalid": 0,
+     "podium_brier": 0.0033961634146341454,
+     "rps": 0.14713426021099496,
+     "top1": 0.8048780487804879,
+     "top3": 0.975609756097561,
+     "top_prob": 0.8164634146341462,
+     "valid": 41000,
+     "winner_brier": 0.011845280487804878,
+     "winner_logloss": 0.7128469657422605
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.6827650834403083,
+     "invalid": 0,
+     "podium_brier": 0.003598707317073171,
+     "rps": 0.1303410455720093,
+     "top1": 0.8292682926829268,
+     "top3": 0.9512195121951219,
+     "top_prob": 0.7707073170731708,
+     "valid": 41000,
+     "winner_brier": 0.011962365853658535,
+     "winner_logloss": 0.5692016835777961
+    }
+   },
+   "n_checkpoints": 41,
+   "season": 2020,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2020-r07-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.2897647058823534,
+     "invalid": 0,
+     "podium_brier": 0.030849900000000003,
+     "rps": 0.13920093085655313,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.523,
+     "valid": 3000,
+     "winner_brier": 0.020093133333333332,
+     "winner_logloss": 0.649167942094844
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.219627450980392,
+     "invalid": 0,
+     "podium_brier": 0.01948213333333333,
+     "rps": 0.13247059629629632,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.6916666666666668,
+     "valid": 3000,
+     "winner_brier": 0.0563641,
+     "winner_logloss": 1.726572295770645
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.219627450980392,
+     "invalid": 0,
+     "podium_brier": 0.01948213333333333,
+     "rps": 0.13247059629629632,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.6916666666666668,
+     "valid": 3000,
+     "winner_brier": 0.0563641,
+     "winner_logloss": 1.726572295770645
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.219627450980392,
+     "invalid": 0,
+     "podium_brier": 0.01948213333333333,
+     "rps": 0.13247059629629632,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.6916666666666668,
+     "valid": 3000,
+     "winner_brier": 0.0563641,
+     "winner_logloss": 1.726572295770645
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.2038627450980393,
+     "invalid": 0,
+     "podium_brier": 0.021430266666666666,
+     "rps": 0.09134108492063493,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.6,
+     "valid": 3000,
+     "winner_brier": 0.04900090000000001,
+     "winner_logloss": 1.5930526419014412
+    }
+   },
+   "n_checkpoints": 3,
+   "season": 2020,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2020-r08-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 5.028410714285714,
+     "invalid": 0,
+     "podium_brier": 0.25976325714285714,
+     "rps": 0.23061310338345867,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.7505714285714287,
+     "valid": 7000,
+     "winner_brier": 0.08091250000000001,
+     "winner_logloss": 13.815510557964274
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 4.741116071428571,
+     "invalid": 0,
+     "podium_brier": 0.2823283857142857,
+     "rps": 0.4801818366666667,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.8524285714285715,
+     "valid": 7000,
+     "winner_brier": 0.08891264285714286,
+     "winner_logloss": 13.815510557964274
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 4.738625,
+     "invalid": 0,
+     "podium_brier": 0.28249032857142853,
+     "rps": 0.43715568611111116,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.852857142857143,
+     "valid": 7000,
+     "winner_brier": 0.08895517142857144,
+     "winner_logloss": 13.815510557964274
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 4.738625,
+     "invalid": 0,
+     "podium_brier": 0.28249032857142853,
+     "rps": 0.43715568611111116,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.852857142857143,
+     "valid": 7000,
+     "winner_brier": 0.08895517142857144,
+     "winner_logloss": 13.815510557964274
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 4.660178571428571,
+     "invalid": 0,
+     "podium_brier": 0.2723630714285714,
+     "rps": 0.38207918285714293,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.8037142857142857,
+     "valid": 7000,
+     "winner_brier": 0.08570142857142858,
+     "winner_logloss": 13.815510557964274
+    }
+   },
+   "n_checkpoints": 7,
+   "season": 2020,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2020-r11-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 4.728642857142858,
+     "invalid": 0,
+     "podium_brier": 0.11152903571428573,
+     "rps": 0.2087136619047619,
+     "top1": 0.6428571428571429,
+     "top3": 1.0,
+     "top_prob": 0.5717142857142858,
+     "valid": 14000,
+     "winner_brier": 0.020356935714285714,
+     "winner_logloss": 0.6193991522605057
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 4.215471428571429,
+     "invalid": 0,
+     "podium_brier": 0.1021502642857143,
+     "rps": 0.13294174107142856,
+     "top1": 0.7142857142857143,
+     "top3": 1.0,
+     "top_prob": 0.7578571428571428,
+     "valid": 14000,
+     "winner_brier": 0.012024021428571428,
+     "winner_logloss": 0.3919919996579565
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 4.213966666666666,
+     "invalid": 0,
+     "podium_brier": 0.1021502642857143,
+     "rps": 0.13079890178571427,
+     "top1": 0.7142857142857143,
+     "top3": 1.0,
+     "top_prob": 0.7546428571428573,
+     "valid": 14000,
+     "winner_brier": 0.011726164285714288,
+     "winner_logloss": 0.38643729790812215
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 4.213966666666666,
+     "invalid": 0,
+     "podium_brier": 0.1021502642857143,
+     "rps": 0.13079890178571427,
+     "top1": 0.7142857142857143,
+     "top3": 1.0,
+     "top_prob": 0.7546428571428573,
+     "valid": 14000,
+     "winner_brier": 0.011726164285714288,
+     "winner_logloss": 0.38643729790812215
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 4.182885714285715,
+     "invalid": 0,
+     "podium_brier": 0.10195328571428573,
+     "rps": 0.11889844285714284,
+     "top1": 0.7857142857142857,
+     "top3": 1.0,
+     "top_prob": 0.7122142857142857,
+     "valid": 14000,
+     "winner_brier": 0.012298485714285714,
+     "winner_logloss": 0.42801087084774553
+    }
+   },
+   "n_checkpoints": 14,
+   "season": 2020,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2020-r12-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.436873684210526,
+     "invalid": 0,
+     "podium_brier": 0.03704482727272726,
+     "rps": 0.10868320740367662,
+     "top1": 0.6545454545454545,
+     "top3": 1.0,
+     "top_prob": 0.878090909090909,
+     "valid": 55000,
+     "winner_brier": 0.021008843636363638,
+     "winner_logloss": 0.5760878035933368
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.4245339712918668,
+     "invalid": 0,
+     "podium_brier": 0.03730782909090911,
+     "rps": 0.06760058957070708,
+     "top1": 0.6727272727272727,
+     "top3": 1.0,
+     "top_prob": 0.866490909090909,
+     "valid": 55000,
+     "winner_brier": 0.020773694545454552,
+     "winner_logloss": 0.6114494918776057
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.4256775119617227,
+     "invalid": 0,
+     "podium_brier": 0.03755709454545457,
+     "rps": 0.0696730368939394,
+     "top1": 0.6727272727272727,
+     "top3": 1.0,
+     "top_prob": 0.8661818181818182,
+     "valid": 55000,
+     "winner_brier": 0.020665589090909098,
+     "winner_logloss": 0.6133952144956821
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.4256775119617227,
+     "invalid": 0,
+     "podium_brier": 0.03755709454545457,
+     "rps": 0.0696730368939394,
+     "top1": 0.6727272727272727,
+     "top3": 1.0,
+     "top_prob": 0.8661818181818182,
+     "valid": 55000,
+     "winner_brier": 0.020665589090909098,
+     "winner_logloss": 0.6133952144956821
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.4216679425837313,
+     "invalid": 0,
+     "podium_brier": 0.03589364545454545,
+     "rps": 0.059081789603174596,
+     "top1": 0.6727272727272727,
+     "top3": 1.0,
+     "top_prob": 0.8264363636363636,
+     "valid": 55000,
+     "winner_brier": 0.019045003636363633,
+     "winner_logloss": 0.5669875528119295
+    }
+   },
+   "n_checkpoints": 55,
+   "season": 2020,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2020-r13-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 4.510893333333334,
+     "invalid": 0,
+     "podium_brier": 0.07489501,
+     "rps": 0.20583718526315792,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.8722000000000001,
+     "valid": 10000,
+     "winner_brier": 0.07743445999999998,
+     "winner_logloss": 2.192810587177614
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 4.534680000000001,
+     "invalid": 0,
+     "podium_brier": 0.08028796,
+     "rps": 0.18023586944444445,
+     "top1": 0.0,
+     "top3": 0.8,
+     "top_prob": 0.8686,
+     "valid": 10000,
+     "winner_brier": 0.07679540999999998,
+     "winner_logloss": 4.277861355288306
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 4.535466666666666,
+     "invalid": 0,
+     "podium_brier": 0.08032014999999999,
+     "rps": 0.17804588020833334,
+     "top1": 0.0,
+     "top3": 0.8,
+     "top_prob": 0.8675,
+     "valid": 10000,
+     "winner_brier": 0.07648985,
+     "winner_logloss": 4.261466346016105
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 4.535466666666666,
+     "invalid": 0,
+     "podium_brier": 0.08032014999999999,
+     "rps": 0.17804588020833334,
+     "top1": 0.0,
+     "top3": 0.8,
+     "top_prob": 0.8675,
+     "valid": 10000,
+     "winner_brier": 0.07648985,
+     "winner_logloss": 4.261466346016105
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 4.543106666666667,
+     "invalid": 0,
+     "podium_brier": 0.07963276999999999,
+     "rps": 0.14319737916666667,
+     "top1": 0.0,
+     "top3": 0.8,
+     "top_prob": 0.8045,
+     "valid": 10000,
+     "winner_brier": 0.06823181,
+     "winner_logloss": 4.036118120033793
+    }
+   },
+   "n_checkpoints": 10,
+   "season": 2020,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2020-r17-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.9591447368421058,
+     "invalid": 0,
+     "podium_brier": 0.0056028625,
+     "rps": 0.12822190650969528,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.5205,
+     "valid": 8000,
+     "winner_brier": 0.056357225,
+     "winner_logloss": 2.0056306946380333
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.405046052631579,
+     "invalid": 0,
+     "podium_brier": 0.0007236875000000002,
+     "rps": 0.03696218819444445,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.6785,
+     "valid": 8000,
+     "winner_brier": 0.010127775,
+     "winner_logloss": 0.3977000452912135
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.408625,
+     "invalid": 0,
+     "podium_brier": 0.0007351625000000002,
+     "rps": 0.036537681249999995,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.6797500000000001,
+     "valid": 8000,
+     "winner_brier": 0.010007974999999999,
+     "winner_logloss": 0.395688101222557
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.408625,
+     "invalid": 0,
+     "podium_brier": 0.0007351625000000002,
+     "rps": 0.036537681249999995,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.6797500000000001,
+     "valid": 8000,
+     "winner_brier": 0.010007974999999999,
+     "winner_logloss": 0.395688101222557
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.3942697368421046,
+     "invalid": 0,
+     "podium_brier": 0.0016492,
+     "rps": 0.04007657976190477,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.636125,
+     "valid": 8000,
+     "winner_brier": 0.0120875125,
+     "winner_logloss": 0.46214654396239424
+    }
+   },
+   "n_checkpoints": 8,
+   "season": 2020,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2021-r03-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.9990000000000006,
+     "invalid": 0,
+     "podium_brier": 0.0593027,
+     "rps": 0.1262358808864266,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.46,
+     "valid": 1000,
+     "winner_brier": 0.029583800000000004,
+     "winner_logloss": 0.9390477189967712
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.0037368421052633,
+     "invalid": 0,
+     "podium_brier": 0.0600836,
+     "rps": 0.18452256,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.4580000000000001,
+     "valid": 1000,
+     "winner_brier": 0.030066800000000005,
+     "winner_logloss": 0.9597202898014909
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.0037368421052633,
+     "invalid": 0,
+     "podium_brier": 0.0600836,
+     "rps": 0.18452256,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.4580000000000001,
+     "valid": 1000,
+     "winner_brier": 0.030066800000000005,
+     "winner_logloss": 0.9597202898014909
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.0037368421052633,
+     "invalid": 0,
+     "podium_brier": 0.0600836,
+     "rps": 0.18452256,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.4580000000000001,
+     "valid": 1000,
+     "winner_brier": 0.030066800000000005,
+     "winner_logloss": 0.9597202898014909
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.9933684210526317,
+     "invalid": 0,
+     "podium_brier": 0.05765170000000001,
+     "rps": 0.16854823333333335,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.382,
+     "valid": 1000,
+     "winner_brier": 0.02847589999999999,
+     "winner_logloss": 0.9996723408132061
+    }
+   },
+   "n_checkpoints": 1,
+   "season": 2021,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2021-r04-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.4815526315789476,
+     "invalid": 0,
+     "podium_brier": 0.03901371666666666,
+     "rps": 0.1068815350877193,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.5704999999999999,
+     "valid": 6000,
+     "winner_brier": 0.013374099999999998,
+     "winner_logloss": 0.5700624831224977
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.9292719298245613,
+     "invalid": 0,
+     "podium_brier": 0.030310116666666664,
+     "rps": 0.041076533055555565,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.6995,
+     "valid": 6000,
+     "winner_brier": 0.009096566666666668,
+     "winner_logloss": 0.3733321609171894
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.9302456140350877,
+     "invalid": 0,
+     "podium_brier": 0.030379183333333334,
+     "rps": 0.04288110250000001,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.6968333333333333,
+     "valid": 6000,
+     "winner_brier": 0.0092475,
+     "winner_logloss": 0.37705151563761397
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.9302456140350877,
+     "invalid": 0,
+     "podium_brier": 0.030379183333333334,
+     "rps": 0.04288110250000001,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.6968333333333333,
+     "valid": 6000,
+     "winner_brier": 0.0092475,
+     "winner_logloss": 0.37705151563761397
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.9292280701754387,
+     "invalid": 0,
+     "podium_brier": 0.03187023333333333,
+     "rps": 0.057633066805555556,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.6426666666666666,
+     "valid": 6000,
+     "winner_brier": 0.011915733333333333,
+     "winner_logloss": 0.461730983523317
+    }
+   },
+   "n_checkpoints": 6,
+   "season": 2021,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2021-r05-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.2376111111111108,
+     "invalid": 0,
+     "podium_brier": 0.15913646666666667,
+     "rps": 0.13820176315789476,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.5026666666666667,
+     "valid": 3000,
+     "winner_brier": 0.06196879999999999,
+     "winner_logloss": 3.155210900542104
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.703981481481481,
+     "invalid": 0,
+     "podium_brier": 0.13547220000000001,
+     "rps": 0.21002131666666668,
+     "top1": 0.0,
+     "top3": 0.6666666666666666,
+     "top_prob": 0.43533333333333335,
+     "valid": 3000,
+     "winner_brier": 0.0424638,
+     "winner_logloss": 1.724298262220822
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.703981481481481,
+     "invalid": 0,
+     "podium_brier": 0.13547220000000001,
+     "rps": 0.21002131666666668,
+     "top1": 0.0,
+     "top3": 0.6666666666666666,
+     "top_prob": 0.43533333333333335,
+     "valid": 3000,
+     "winner_brier": 0.0424638,
+     "winner_logloss": 1.724298262220822
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.703981481481481,
+     "invalid": 0,
+     "podium_brier": 0.13547220000000001,
+     "rps": 0.21002131666666668,
+     "top1": 0.0,
+     "top3": 0.6666666666666666,
+     "top_prob": 0.43533333333333335,
+     "valid": 3000,
+     "winner_brier": 0.0424638,
+     "winner_logloss": 1.724298262220822
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.7232592592592595,
+     "invalid": 0,
+     "podium_brier": 0.1312616666666667,
+     "rps": 0.2020198666666667,
+     "top1": 0.0,
+     "top3": 0.6666666666666666,
+     "top_prob": 0.4080000000000001,
+     "valid": 3000,
+     "winner_brier": 0.04185300000000001,
+     "winner_logloss": 1.6472975046265066
+    }
+   },
+   "n_checkpoints": 3,
+   "season": 2021,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2021-r06-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 5.027046875,
+     "invalid": 0,
+     "podium_brier": 0.22080412500000002,
+     "rps": 0.2275960699013158,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.54125,
+     "valid": 4000,
+     "winner_brier": 0.066899625,
+     "winner_logloss": 4.015901866418562
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 4.801078125,
+     "invalid": 0,
+     "podium_brier": 0.21288669999999998,
+     "rps": 0.25868325029761907,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.632,
+     "valid": 4000,
+     "winner_brier": 0.07033972499999999,
+     "winner_logloss": 3.51544742117016
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 4.801078125,
+     "invalid": 0,
+     "podium_brier": 0.21288669999999998,
+     "rps": 0.25868325029761907,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.632,
+     "valid": 4000,
+     "winner_brier": 0.07033972499999999,
+     "winner_logloss": 3.51544742117016
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 4.801078125,
+     "invalid": 0,
+     "podium_brier": 0.21288669999999998,
+     "rps": 0.25868325029761907,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.632,
+     "valid": 4000,
+     "winner_brier": 0.07033972499999999,
+     "winner_logloss": 3.51544742117016
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 4.7868125,
+     "invalid": 0,
+     "podium_brier": 0.20283617499999995,
+     "rps": 0.23096207149470901,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.5607500000000001,
+     "valid": 4000,
+     "winner_brier": 0.06469040000000001,
+     "winner_logloss": 2.903449018838801
+    }
+   },
+   "n_checkpoints": 4,
+   "season": 2021,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2021-r07-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.472743137254902,
+     "invalid": 0,
+     "podium_brier": 0.07460665490196079,
+     "rps": 0.110870255624355,
+     "top1": 0.0,
+     "top3": 0.7450980392156863,
+     "top_prob": 0.5920784313725492,
+     "valid": 51000,
+     "winner_brier": 0.06855860980392156,
+     "winner_logloss": 4.170837791425147
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.8782098039215693,
+     "invalid": 0,
+     "podium_brier": 0.061177674509803937,
+     "rps": 0.22040568828976034,
+     "top1": 0.23529411764705882,
+     "top3": 0.9607843137254902,
+     "top_prob": 0.6748235294117645,
+     "valid": 51000,
+     "winner_brier": 0.050440007843137256,
+     "winner_logloss": 1.9150217052335694
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.8803392156862746,
+     "invalid": 0,
+     "podium_brier": 0.06097461176470591,
+     "rps": 0.22449305302287584,
+     "top1": 0.2549019607843137,
+     "top3": 0.9607843137254902,
+     "top_prob": 0.6774117647058824,
+     "valid": 51000,
+     "winner_brier": 0.05101827058823529,
+     "winner_logloss": 1.9139344673895569
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.8803392156862746,
+     "invalid": 0,
+     "podium_brier": 0.06097461176470591,
+     "rps": 0.22449305302287584,
+     "top1": 0.2549019607843137,
+     "top3": 0.9607843137254902,
+     "top_prob": 0.6774117647058824,
+     "valid": 51000,
+     "winner_brier": 0.05101827058823529,
+     "winner_logloss": 1.9139344673895569
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.8820921568627451,
+     "invalid": 0,
+     "podium_brier": 0.05629529019607843,
+     "rps": 0.19354163216230938,
+     "top1": 0.2549019607843137,
+     "top3": 0.9607843137254902,
+     "top_prob": 0.6216470588235294,
+     "valid": 51000,
+     "winner_brier": 0.04710634117647059,
+     "winner_logloss": 1.5876743542990652
+    }
+   },
+   "n_checkpoints": 51,
+   "season": 2021,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2021-r08-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.8181111111111112,
+     "invalid": 0,
+     "podium_brier": 0.028475666666666666,
+     "rps": 0.07857760428849903,
+     "top1": 0.0,
+     "top3": 0.6666666666666666,
+     "top_prob": 0.5433333333333333,
+     "valid": 3000,
+     "winner_brier": 0.06571753333333333,
+     "winner_logloss": 2.9996161459608164
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.6189629629629632,
+     "invalid": 0,
+     "podium_brier": 0.06796663333333335,
+     "rps": 0.14193770833333333,
+     "top1": 0.0,
+     "top3": 0.6666666666666666,
+     "top_prob": 0.636,
+     "valid": 3000,
+     "winner_brier": 0.06087446666666666,
+     "winner_logloss": 5.790699796296607
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.6189629629629632,
+     "invalid": 0,
+     "podium_brier": 0.06796663333333335,
+     "rps": 0.14193770833333333,
+     "top1": 0.0,
+     "top3": 0.6666666666666666,
+     "top_prob": 0.636,
+     "valid": 3000,
+     "winner_brier": 0.06087446666666666,
+     "winner_logloss": 5.790699796296607
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.6189629629629632,
+     "invalid": 0,
+     "podium_brier": 0.06796663333333335,
+     "rps": 0.14193770833333333,
+     "top1": 0.0,
+     "top3": 0.6666666666666666,
+     "top_prob": 0.636,
+     "valid": 3000,
+     "winner_brier": 0.06087446666666666,
+     "winner_logloss": 5.790699796296607
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.5980740740740742,
+     "invalid": 0,
+     "podium_brier": 0.06276046666666667,
+     "rps": 0.15606710277777777,
+     "top1": 0.0,
+     "top3": 0.6666666666666666,
+     "top_prob": 0.556,
+     "valid": 3000,
+     "winner_brier": 0.055063566666666675,
+     "winner_logloss": 3.3371133531718677
+    }
+   },
+   "n_checkpoints": 3,
+   "season": 2021,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2021-r13-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.4753207070707075,
+     "invalid": 0,
+     "podium_brier": 0.0018788840909090903,
+     "rps": 0.06394877046783626,
+     "top1": 0.7954545454545454,
+     "top3": 0.9545454545454546,
+     "top_prob": 0.7416363636363635,
+     "valid": 44000,
+     "winner_brier": 0.026866722727272727,
+     "winner_logloss": 1.7449803816605098
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.4729191919191924,
+     "invalid": 0,
+     "podium_brier": 0.0018039500000000001,
+     "rps": 0.1163080806502525,
+     "top1": 0.7272727272727273,
+     "top3": 1.0,
+     "top_prob": 0.6889772727272727,
+     "valid": 44000,
+     "winner_brier": 0.029978986363636374,
+     "winner_logloss": 1.4161162064897097
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.4742954545454545,
+     "invalid": 0,
+     "podium_brier": 0.0018983681818181824,
+     "rps": 0.11044243166035356,
+     "top1": 0.7272727272727273,
+     "top3": 0.9772727272727273,
+     "top_prob": 0.6909545454545456,
+     "valid": 44000,
+     "winner_brier": 0.030032199999999995,
+     "winner_logloss": 1.628314304839999
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.4742954545454545,
+     "invalid": 0,
+     "podium_brier": 0.0018983681818181824,
+     "rps": 0.11044243166035356,
+     "top1": 0.7272727272727273,
+     "top3": 0.9772727272727273,
+     "top_prob": 0.6909545454545456,
+     "valid": 44000,
+     "winner_brier": 0.030032199999999995,
+     "winner_logloss": 1.628314304839999
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.4801818181818183,
+     "invalid": 0,
+     "podium_brier": 0.003570552272727274,
+     "rps": 0.10195960133838385,
+     "top1": 0.7045454545454546,
+     "top3": 1.0,
+     "top_prob": 0.6434090909090909,
+     "valid": 44000,
+     "winner_brier": 0.030592463636363643,
+     "winner_logloss": 1.296592595998645
+    }
+   },
+   "n_checkpoints": 44,
+   "season": 2021,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2021-r14-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.8024999999999993,
+     "invalid": 0,
+     "podium_brier": 0.22967084999999998,
+     "rps": 0.1723543842105263,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.566,
+     "valid": 2000,
+     "winner_brier": 0.06901360000000001,
+     "winner_logloss": 13.815510557964274
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.8825333333333334,
+     "invalid": 0,
+     "podium_brier": 0.242513,
+     "rps": 0.17596407500000003,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.5660000000000001,
+     "valid": 2000,
+     "winner_brier": 0.06899795,
+     "winner_logloss": 13.815510557964274
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.8825333333333334,
+     "invalid": 0,
+     "podium_brier": 0.242513,
+     "rps": 0.17596407500000003,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.5660000000000001,
+     "valid": 2000,
+     "winner_brier": 0.06899795,
+     "winner_logloss": 13.815510557964274
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.8825333333333334,
+     "invalid": 0,
+     "podium_brier": 0.242513,
+     "rps": 0.17596407500000003,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.5660000000000001,
+     "valid": 2000,
+     "winner_brier": 0.06899795,
+     "winner_logloss": 13.815510557964274
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.891733333333333,
+     "invalid": 0,
+     "podium_brier": 0.2323741,
+     "rps": 0.20060059007936504,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.49,
+     "valid": 2000,
+     "winner_brier": 0.0658797,
+     "winner_logloss": 13.815510557964274
+    }
+   },
+   "n_checkpoints": 2,
+   "season": 2021,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2021-r15-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.30179744816587,
+     "invalid": 0,
+     "podium_brier": 0.11484841212121213,
+     "rps": 0.149399,
+     "top1": 0.3939393939393939,
+     "top3": 0.9393939393939394,
+     "top_prob": 0.704151515151515,
+     "valid": 33000,
+     "winner_brier": 0.03791112121212121,
+     "winner_logloss": 2.3130533780114253
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.0818580542264744,
+     "invalid": 0,
+     "podium_brier": 0.12353720909090905,
+     "rps": 0.2201795002912799,
+     "top1": 0.3333333333333333,
+     "top3": 0.7878787878787878,
+     "top_prob": 0.6834242424242424,
+     "valid": 33000,
+     "winner_brier": 0.05294408787878788,
+     "winner_logloss": 2.2982340289364642
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.0862950558213718,
+     "invalid": 0,
+     "podium_brier": 0.1237830303030303,
+     "rps": 0.23004458312834014,
+     "top1": 0.30303030303030304,
+     "top3": 0.7878787878787878,
+     "top_prob": 0.6843030303030305,
+     "valid": 33000,
+     "winner_brier": 0.05260834242424242,
+     "winner_logloss": 2.306826113163688
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.0862950558213718,
+     "invalid": 0,
+     "podium_brier": 0.1237830303030303,
+     "rps": 0.23004458312834014,
+     "top1": 0.30303030303030304,
+     "top3": 0.7878787878787878,
+     "top_prob": 0.6843030303030305,
+     "valid": 33000,
+     "winner_brier": 0.05260834242424242,
+     "winner_logloss": 2.306826113163688
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.0621897926634762,
+     "invalid": 0,
+     "podium_brier": 0.11803189393939392,
+     "rps": 0.1997160025568842,
+     "top1": 0.30303030303030304,
+     "top3": 0.8181818181818182,
+     "top_prob": 0.6216969696969697,
+     "valid": 33000,
+     "winner_brier": 0.0497869606060606,
+     "winner_logloss": 1.954580063747843
+    }
+   },
+   "n_checkpoints": 33,
+   "season": 2021,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2021-r17-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.0490551470588234,
+     "invalid": 0,
+     "podium_brier": 0.03911216875,
+     "rps": 0.0891038306888545,
+     "top1": 0.0,
+     "top3": 0.75,
+     "top_prob": 0.771,
+     "valid": 16000,
+     "winner_brier": 0.06973131875,
+     "winner_logloss": 2.784759928257264
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.7667095588235293,
+     "invalid": 0,
+     "podium_brier": 0.010969068750000003,
+     "rps": 0.13719023819444445,
+     "top1": 0.375,
+     "top3": 0.9375,
+     "top_prob": 0.7358750000000001,
+     "valid": 16000,
+     "winner_brier": 0.0387998125,
+     "winner_logloss": 1.1923552948802751
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.767702205882353,
+     "invalid": 0,
+     "podium_brier": 0.010902956250000002,
+     "rps": 0.138113778125,
+     "top1": 0.375,
+     "top3": 0.9375,
+     "top_prob": 0.736625,
+     "valid": 16000,
+     "winner_brier": 0.0388301875,
+     "winner_logloss": 1.191175252022266
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.767702205882353,
+     "invalid": 0,
+     "podium_brier": 0.010902956250000002,
+     "rps": 0.138113778125,
+     "top1": 0.375,
+     "top3": 0.9375,
+     "top_prob": 0.736625,
+     "valid": 16000,
+     "winner_brier": 0.0388301875,
+     "winner_logloss": 1.191175252022266
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.7581654411764704,
+     "invalid": 0,
+     "podium_brier": 0.010587949999999999,
+     "rps": 0.10230480763888887,
+     "top1": 0.375,
+     "top3": 0.9375,
+     "top_prob": 0.6881875000000001,
+     "valid": 16000,
+     "winner_brier": 0.035246425000000005,
+     "winner_logloss": 1.0752240130098356
+    }
+   },
+   "n_checkpoints": 16,
+   "season": 2021,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2021-r19-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.7920169082125599,
+     "invalid": 0,
+     "podium_brier": 0.02639689999999999,
+     "rps": 0.07423857208237986,
+     "top1": 0.8260869565217391,
+     "top3": 0.9782608695652174,
+     "top_prob": 0.5859782608695653,
+     "valid": 46000,
+     "winner_brier": 0.0202377847826087,
+     "winner_logloss": 0.7692200616653402
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.4583840579710146,
+     "invalid": 0,
+     "podium_brier": 0.02737011304347826,
+     "rps": 0.0692977913164251,
+     "top1": 0.782608695652174,
+     "top3": 1.0,
+     "top_prob": 0.6833260869565217,
+     "valid": 46000,
+     "winner_brier": 0.0163224304347826,
+     "winner_logloss": 0.55193878079514
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.4583152173913043,
+     "invalid": 0,
+     "podium_brier": 0.027073278260869568,
+     "rps": 0.06791593766304349,
+     "top1": 0.782608695652174,
+     "top3": 1.0,
+     "top_prob": 0.6852391304347826,
+     "valid": 46000,
+     "winner_brier": 0.016416263043478263,
+     "winner_logloss": 0.5532023810244029
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.4583152173913043,
+     "invalid": 0,
+     "podium_brier": 0.027073278260869568,
+     "rps": 0.06791593766304349,
+     "top1": 0.782608695652174,
+     "top3": 1.0,
+     "top_prob": 0.6852391304347826,
+     "valid": 46000,
+     "winner_brier": 0.016416263043478263,
+     "winner_logloss": 0.5532023810244029
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.46398309178744,
+     "invalid": 0,
+     "podium_brier": 0.02730415434782609,
+     "rps": 0.06492382725845411,
+     "top1": 0.8043478260869565,
+     "top3": 1.0,
+     "top_prob": 0.6253913043478261,
+     "valid": 46000,
+     "winner_brier": 0.017385447826086958,
+     "winner_logloss": 0.607990113847208
+    }
+   },
+   "n_checkpoints": 46,
+   "season": 2021,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2021-r20-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.7378469601677144,
+     "invalid": 0,
+     "podium_brier": 0.07240106415094341,
+     "rps": 0.07296427066092905,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.9583396226415093,
+     "valid": 53000,
+     "winner_brier": 0.00039028301886792497,
+     "winner_logloss": 0.04497718612554588
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.5845262054507339,
+     "invalid": 0,
+     "podium_brier": 0.0705594,
+     "rps": 0.01264199121743037,
+     "top1": 0.9811320754716981,
+     "top3": 1.0,
+     "top_prob": 0.939377358490566,
+     "valid": 53000,
+     "winner_brier": 0.0016996509433962268,
+     "winner_logloss": 0.09381521790383107
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.585783018867924,
+     "invalid": 0,
+     "podium_brier": 0.0707550528301887,
+     "rps": 0.012991672035040433,
+     "top1": 0.9811320754716981,
+     "top3": 1.0,
+     "top_prob": 0.9388113207547172,
+     "valid": 53000,
+     "winner_brier": 0.0017194245283018868,
+     "winner_logloss": 0.09450252468983547
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.585783018867924,
+     "invalid": 0,
+     "podium_brier": 0.0707550528301887,
+     "rps": 0.012991672035040433,
+     "top1": 0.9811320754716981,
+     "top3": 1.0,
+     "top_prob": 0.9388113207547172,
+     "valid": 53000,
+     "winner_brier": 0.0017194245283018868,
+     "winner_logloss": 0.09450252468983547
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.5755345911949685,
+     "invalid": 0,
+     "podium_brier": 0.06868467169811321,
+     "rps": 0.017069187038511804,
+     "top1": 0.9811320754716981,
+     "top3": 1.0,
+     "top_prob": 0.9106981132075468,
+     "valid": 53000,
+     "winner_brier": 0.0022457792452830203,
+     "winner_logloss": 0.12346824684245575
+    }
+   },
+   "n_checkpoints": 53,
+   "season": 2021,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2021-r21-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.3205666666666662,
+     "invalid": 0,
+     "podium_brier": 0.040450625000000004,
+     "rps": 0.14026334824561404,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.49774999999999997,
+     "valid": 8000,
+     "winner_brier": 0.0328859625,
+     "winner_logloss": 1.00258674629254
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.0451250000000005,
+     "invalid": 0,
+     "podium_brier": 0.0317790125,
+     "rps": 0.19647391527777774,
+     "top1": 0.25,
+     "top3": 0.75,
+     "top_prob": 0.737,
+     "valid": 8000,
+     "winner_brier": 0.052222899999999996,
+     "winner_logloss": 4.569149542032492
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.0418750000000006,
+     "invalid": 0,
+     "podium_brier": 0.031775175,
+     "rps": 0.1964743145833333,
+     "top1": 0.375,
+     "top3": 0.75,
+     "top_prob": 0.736625,
+     "valid": 8000,
+     "winner_brier": 0.05197614999999999,
+     "winner_logloss": 4.56513741249586
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.0418750000000006,
+     "invalid": 0,
+     "podium_brier": 0.031775175,
+     "rps": 0.1964743145833333,
+     "top1": 0.375,
+     "top3": 0.75,
+     "top_prob": 0.736625,
+     "valid": 8000,
+     "winner_brier": 0.05197614999999999,
+     "winner_logloss": 4.56513741249586
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.0210833333333333,
+     "invalid": 0,
+     "podium_brier": 0.033287725,
+     "rps": 0.17685633506944445,
+     "top1": 0.25,
+     "top3": 0.625,
+     "top_prob": 0.6669999999999999,
+     "valid": 8000,
+     "winner_brier": 0.048336087500000006,
+     "winner_logloss": 3.5520579046817002
+    }
+   },
+   "n_checkpoints": 8,
+   "season": 2021,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2021-r22-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.9795333333333325,
+     "invalid": 0,
+     "podium_brier": 0.07829959709618874,
+     "rps": 0.14130770025542785,
+     "top1": 0.0,
+     "top3": 0.6206896551724138,
+     "top_prob": 0.9448620689655172,
+     "valid": 29000,
+     "winner_brier": 0.09992496188747732,
+     "winner_logloss": 7.19536891180844
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.9543402298850574,
+     "invalid": 0,
+     "podium_brier": 0.07621947731397459,
+     "rps": 0.31298826532738094,
+     "top1": 0.0,
+     "top3": 0.7586206896551724,
+     "top_prob": 0.9351034482758619,
+     "valid": 29000,
+     "winner_brier": 0.09885431578947367,
+     "winner_logloss": 6.470468186628612
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.9573540229885054,
+     "invalid": 0,
+     "podium_brier": 0.0764223049001815,
+     "rps": 0.3317080095238096,
+     "top1": 0.0,
+     "top3": 0.7586206896551724,
+     "top_prob": 0.9362758620689653,
+     "valid": 29000,
+     "winner_brier": 0.09896954264972778,
+     "winner_logloss": 6.020782558340849
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.9573540229885054,
+     "invalid": 0,
+     "podium_brier": 0.0764223049001815,
+     "rps": 0.3317080095238096,
+     "top1": 0.0,
+     "top3": 0.7586206896551724,
+     "top_prob": 0.9362758620689653,
+     "valid": 29000,
+     "winner_brier": 0.09896954264972778,
+     "winner_logloss": 6.020782558340849
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.9844827586206892,
+     "invalid": 0,
+     "podium_brier": 0.0738701451905626,
+     "rps": 0.25245784429563495,
+     "top1": 0.0,
+     "top3": 0.6551724137931034,
+     "top_prob": 0.9046896551724136,
+     "valid": 29000,
+     "winner_brier": 0.09493093647912883,
+     "winner_logloss": 4.549046797500781
+    }
+   },
+   "n_checkpoints": 29,
+   "season": 2021,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2022-r01-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.952530994152047,
+     "invalid": 0,
+     "podium_brier": 0.09929797111111112,
+     "rps": 0.16903597636195758,
+     "top1": 0.8222222222222222,
+     "top3": 1.0,
+     "top_prob": 0.5249777777777778,
+     "valid": 45000,
+     "winner_brier": 0.0219185911111111,
+     "winner_logloss": 0.8034104832274366
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 4.023474853801169,
+     "invalid": 0,
+     "podium_brier": 0.10470652666666663,
+     "rps": 0.05578637807345746,
+     "top1": 0.8666666666666667,
+     "top3": 0.9555555555555556,
+     "top_prob": 0.6908888888888888,
+     "valid": 45000,
+     "winner_brier": 0.015755024444444442,
+     "winner_logloss": 0.9295172915757517
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 4.022595321637426,
+     "invalid": 0,
+     "podium_brier": 0.10494078444444445,
+     "rps": 0.06206557571785646,
+     "top1": 0.8666666666666667,
+     "top3": 0.9555555555555556,
+     "top_prob": 0.6932888888888888,
+     "valid": 45000,
+     "winner_brier": 0.01551301777777778,
+     "winner_logloss": 0.9230928026444365
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 4.022595321637426,
+     "invalid": 0,
+     "podium_brier": 0.10494078444444445,
+     "rps": 0.06206557571785646,
+     "top1": 0.8666666666666667,
+     "top3": 0.9555555555555556,
+     "top_prob": 0.6932888888888888,
+     "valid": 45000,
+     "winner_brier": 0.01551301777777778,
+     "winner_logloss": 0.9230928026444365
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 4.0157649122807015,
+     "invalid": 0,
+     "podium_brier": 0.10280168222222225,
+     "rps": 0.10679966287694592,
+     "top1": 0.8666666666666667,
+     "top3": 0.9555555555555556,
+     "top_prob": 0.636488888888889,
+     "valid": 45000,
+     "winner_brier": 0.016815526666666667,
+     "winner_logloss": 0.9348941293704822
+    }
+   },
+   "n_checkpoints": 45,
+   "season": 2022,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2022-r03-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.5924117647058824,
+     "invalid": 0,
+     "podium_brier": 0.14999139999999994,
+     "rps": 0.1182346718266254,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.915,
+     "valid": 1000,
+     "winner_brier": 0.0901057,
+     "winner_logloss": 4.017383521085972
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.613529411764706,
+     "invalid": 0,
+     "podium_brier": 0.14628000000000002,
+     "rps": 0.12489740485829966,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.92,
+     "valid": 1000,
+     "winner_brier": 0.0914538,
+     "winner_logloss": 4.710530701645918
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.613529411764706,
+     "invalid": 0,
+     "podium_brier": 0.14628000000000002,
+     "rps": 0.12489740485829966,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.92,
+     "valid": 1000,
+     "winner_brier": 0.0914538,
+     "winner_logloss": 4.710530701645918
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.613529411764706,
+     "invalid": 0,
+     "podium_brier": 0.14628000000000002,
+     "rps": 0.12489740485829966,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.92,
+     "valid": 1000,
+     "winner_brier": 0.0914538,
+     "winner_logloss": 4.710530701645918
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.737294117647059,
+     "invalid": 0,
+     "podium_brier": 0.1479624,
+     "rps": 0.1246408223684211,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.837,
+     "valid": 1000,
+     "winner_brier": 0.08226559999999997,
+     "winner_logloss": 3.540459448995663
+    }
+   },
+   "n_checkpoints": 1,
+   "season": 2022,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2022-r05-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.1130220588235296,
+     "invalid": 0,
+     "podium_brier": 0.06540507499999998,
+     "rps": 0.11294126509287924,
+     "top1": 0.875,
+     "top3": 0.875,
+     "top_prob": 0.31225,
+     "valid": 8000,
+     "winner_brier": 0.033148500000000004,
+     "winner_logloss": 1.4443537961915731
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.2655220588235294,
+     "invalid": 0,
+     "podium_brier": 0.0661604625,
+     "rps": 0.08387842414434525,
+     "top1": 0.75,
+     "top3": 0.875,
+     "top_prob": 0.42837499999999995,
+     "valid": 8000,
+     "winner_brier": 0.038248525,
+     "winner_logloss": 1.5894523838975283
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.261698529411764,
+     "invalid": 0,
+     "podium_brier": 0.06587037500000001,
+     "rps": 0.0859890693447041,
+     "top1": 0.75,
+     "top3": 1.0,
+     "top_prob": 0.43187499999999995,
+     "valid": 8000,
+     "winner_brier": 0.03803075,
+     "winner_logloss": 1.578218488777922
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.261698529411764,
+     "invalid": 0,
+     "podium_brier": 0.06587037500000001,
+     "rps": 0.0859890693447041,
+     "top1": 0.75,
+     "top3": 1.0,
+     "top_prob": 0.43187499999999995,
+     "valid": 8000,
+     "winner_brier": 0.03803075,
+     "winner_logloss": 1.578218488777922
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.3238823529411765,
+     "invalid": 0,
+     "podium_brier": 0.07261418749999998,
+     "rps": 0.10248051273455164,
+     "top1": 0.75,
+     "top3": 0.875,
+     "top_prob": 0.387,
+     "valid": 8000,
+     "winner_brier": 0.0397598625,
+     "winner_logloss": 1.7220848672554996
+    }
+   },
+   "n_checkpoints": 8,
+   "season": 2022,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2022-r06-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.499924603174604,
+     "invalid": 0,
+     "podium_brier": 0.06530355357142857,
+     "rps": 0.0986512926065163,
+     "top1": 0.25,
+     "top3": 0.7142857142857143,
+     "top_prob": 0.56525,
+     "valid": 28000,
+     "winner_brier": 0.05712789285714286,
+     "winner_logloss": 2.494654955410925
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.2105476190476194,
+     "invalid": 0,
+     "podium_brier": 0.06976528571428572,
+     "rps": 0.044932922686925655,
+     "top1": 0.2857142857142857,
+     "top3": 0.8928571428571429,
+     "top_prob": 0.7873928571428569,
+     "valid": 28000,
+     "winner_brier": 0.06484206785714286,
+     "winner_logloss": 2.96921238982678
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.216236111111111,
+     "invalid": 0,
+     "podium_brier": 0.07013601428571428,
+     "rps": 0.05543607457987919,
+     "top1": 0.2857142857142857,
+     "top3": 0.8214285714285714,
+     "top_prob": 0.7875357142857142,
+     "valid": 28000,
+     "winner_brier": 0.06472729642857143,
+     "winner_logloss": 2.9034739754729246
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.216236111111111,
+     "invalid": 0,
+     "podium_brier": 0.07013601428571428,
+     "rps": 0.05543607457987919,
+     "top1": 0.2857142857142857,
+     "top3": 0.8214285714285714,
+     "top_prob": 0.7875357142857142,
+     "valid": 28000,
+     "winner_brier": 0.06472729642857143,
+     "winner_logloss": 2.9034739754729246
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.22040873015873,
+     "invalid": 0,
+     "podium_brier": 0.06987303928571428,
+     "rps": 0.051482944173474945,
+     "top1": 0.25,
+     "top3": 0.8571428571428571,
+     "top_prob": 0.7335357142857141,
+     "valid": 28000,
+     "winner_brier": 0.06148372857142855,
+     "winner_logloss": 2.5724080070975672
+    }
+   },
+   "n_checkpoints": 28,
+   "season": 2022,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2022-r08-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.871097222222222,
+     "invalid": 0,
+     "podium_brier": 0.08932378888888888,
+     "rps": 0.09658359429824562,
+     "top1": 0.0,
+     "top3": 0.8888888888888888,
+     "top_prob": 0.4817777777777777,
+     "valid": 9000,
+     "winner_brier": 0.05445798888888889,
+     "winner_logloss": 3.5802331994383048
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.026465277777777,
+     "invalid": 0,
+     "podium_brier": 0.10436167777777776,
+     "rps": 0.07922256423350041,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.5844444444444444,
+     "valid": 9000,
+     "winner_brier": 0.05850624444444444,
+     "winner_logloss": 2.801490576525312
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.028798611111111,
+     "invalid": 0,
+     "podium_brier": 0.1043099,
+     "rps": 0.09159592209064327,
+     "top1": 0.0,
+     "top3": 0.8888888888888888,
+     "top_prob": 0.5821111111111111,
+     "valid": 9000,
+     "winner_brier": 0.05862695555555556,
+     "winner_logloss": 3.497732731888222
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.028798611111111,
+     "invalid": 0,
+     "podium_brier": 0.1043099,
+     "rps": 0.09159592209064327,
+     "top1": 0.0,
+     "top3": 0.8888888888888888,
+     "top_prob": 0.5821111111111111,
+     "valid": 9000,
+     "winner_brier": 0.05862695555555556,
+     "winner_logloss": 3.497732731888222
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.0272986111111115,
+     "invalid": 0,
+     "podium_brier": 0.10356692222222222,
+     "rps": 0.07618539429824563,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.5448888888888889,
+     "valid": 9000,
+     "winner_brier": 0.05546292222222222,
+     "winner_logloss": 2.357202581480347
+    }
+   },
+   "n_checkpoints": 9,
+   "season": 2022,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2022-r09-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.4475367647058826,
+     "invalid": 0,
+     "podium_brier": 0.08161841250000001,
+     "rps": 0.12198539047987618,
+     "top1": 0.875,
+     "top3": 1.0,
+     "top_prob": 0.3535,
+     "valid": 8000,
+     "winner_brier": 0.0386252625,
+     "winner_logloss": 1.7706382166561445
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.3139558823529414,
+     "invalid": 0,
+     "podium_brier": 0.0579242625,
+     "rps": 0.10333569419908314,
+     "top1": 0.625,
+     "top3": 0.75,
+     "top_prob": 0.56125,
+     "valid": 8000,
+     "winner_brier": 0.024054787499999997,
+     "winner_logloss": 2.440934884839192
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.312419117647059,
+     "invalid": 0,
+     "podium_brier": 0.057527737499999995,
+     "rps": 0.1283938166154569,
+     "top1": 0.625,
+     "top3": 0.75,
+     "top_prob": 0.5592499999999999,
+     "valid": 8000,
+     "winner_brier": 0.0243062125,
+     "winner_logloss": 2.4448047792050094
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.312419117647059,
+     "invalid": 0,
+     "podium_brier": 0.057527737499999995,
+     "rps": 0.1283938166154569,
+     "top1": 0.625,
+     "top3": 0.75,
+     "top_prob": 0.5592499999999999,
+     "valid": 8000,
+     "winner_brier": 0.0243062125,
+     "winner_logloss": 2.4448047792050094
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.2691617647058826,
+     "invalid": 0,
+     "podium_brier": 0.0566090125,
+     "rps": 0.09272833044590642,
+     "top1": 0.625,
+     "top3": 0.75,
+     "top_prob": 0.514375,
+     "valid": 8000,
+     "winner_brier": 0.024736250000000005,
+     "winner_logloss": 2.4427337218385103
+    }
+   },
+   "n_checkpoints": 8,
+   "season": 2022,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2022-r11-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.270596949891067,
+     "invalid": 0,
+     "podium_brier": 0.07666012962962963,
+     "rps": 0.11663296709092996,
+     "top1": 0.5925925925925926,
+     "top3": 1.0,
+     "top_prob": 0.481111111111111,
+     "valid": 27000,
+     "winner_brier": 0.025842485185185178,
+     "winner_logloss": 1.0016903415925689
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.246631808278867,
+     "invalid": 0,
+     "podium_brier": 0.0900534925925926,
+     "rps": 0.04561178517865147,
+     "top1": 0.6296296296296297,
+     "top3": 1.0,
+     "top_prob": 0.6556296296296295,
+     "valid": 27000,
+     "winner_brier": 0.02238452592592593,
+     "winner_logloss": 0.733187347400949
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.2505860566448805,
+     "invalid": 0,
+     "podium_brier": 0.08949628518518515,
+     "rps": 0.05426341261923873,
+     "top1": 0.6296296296296297,
+     "top3": 1.0,
+     "top_prob": 0.6571851851851853,
+     "valid": 27000,
+     "winner_brier": 0.022943951851851854,
+     "winner_logloss": 0.7511322190343699
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.2505860566448805,
+     "invalid": 0,
+     "podium_brier": 0.08949628518518515,
+     "rps": 0.05426341261923873,
+     "top1": 0.6296296296296297,
+     "top3": 1.0,
+     "top_prob": 0.6571851851851853,
+     "valid": 27000,
+     "winner_brier": 0.022943951851851854,
+     "winner_logloss": 0.7511322190343699
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.295742919389978,
+     "invalid": 0,
+     "podium_brier": 0.0857007888888889,
+     "rps": 0.04215399201281389,
+     "top1": 0.6296296296296297,
+     "top3": 1.0,
+     "top_prob": 0.596037037037037,
+     "valid": 27000,
+     "winner_brier": 0.023277929629629632,
+     "winner_logloss": 0.7916398852566134
+    }
+   },
+   "n_checkpoints": 27,
+   "season": 2022,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2022-r12-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.841654411764706,
+     "invalid": 0,
+     "podium_brier": 0.09095361176470589,
+     "rps": 0.06880453521671828,
+     "top1": 0.0,
+     "top3": 0.8823529411764706,
+     "top_prob": 0.4689411764705882,
+     "valid": 17000,
+     "winner_brier": 0.03937003529411765,
+     "winner_logloss": 2.197524826765303
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.8155257352941176,
+     "invalid": 0,
+     "podium_brier": 0.10191321764705884,
+     "rps": 0.0477107681151408,
+     "top1": 0.35294117647058826,
+     "top3": 0.8823529411764706,
+     "top_prob": 0.6815882352941175,
+     "valid": 17000,
+     "winner_brier": 0.04042043529411765,
+     "winner_logloss": 1.5814356389994355
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.815794117647059,
+     "invalid": 0,
+     "podium_brier": 0.10208178823529412,
+     "rps": 0.04801463357475858,
+     "top1": 0.35294117647058826,
+     "top3": 0.8823529411764706,
+     "top_prob": 0.6824705882352942,
+     "valid": 17000,
+     "winner_brier": 0.04053888823529412,
+     "winner_logloss": 1.5618457425860006
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.815794117647059,
+     "invalid": 0,
+     "podium_brier": 0.10208178823529412,
+     "rps": 0.04801463357475858,
+     "top1": 0.35294117647058826,
+     "top3": 0.8823529411764706,
+     "top_prob": 0.6824705882352942,
+     "valid": 17000,
+     "winner_brier": 0.04053888823529412,
+     "winner_logloss": 1.5618457425860006
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.8415808823529414,
+     "invalid": 0,
+     "podium_brier": 0.09725247647058824,
+     "rps": 0.046638272867933726,
+     "top1": 0.35294117647058826,
+     "top3": 0.9411764705882353,
+     "top_prob": 0.6318823529411766,
+     "valid": 17000,
+     "winner_brier": 0.03859237647058823,
+     "winner_logloss": 1.4371396533546406
+    }
+   },
+   "n_checkpoints": 17,
+   "season": 2022,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2022-r13-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.4161897959183674,
+     "invalid": 0,
+     "podium_brier": 0.1034770020408163,
+     "rps": 0.09478822051557466,
+     "top1": 0.08163265306122448,
+     "top3": 0.1836734693877551,
+     "top_prob": 0.531326530612245,
+     "valid": 49000,
+     "winner_brier": 0.0583669530612245,
+     "winner_logloss": 3.6859192444492894
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.347459183673469,
+     "invalid": 0,
+     "podium_brier": 0.10581991632653065,
+     "rps": 0.173755303784398,
+     "top1": 0.20408163265306123,
+     "top3": 0.5510204081632653,
+     "top_prob": 0.593408163265306,
+     "valid": 49000,
+     "winner_brier": 0.05242653877551019,
+     "winner_logloss": 2.916584622515133
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.3503183673469388,
+     "invalid": 0,
+     "podium_brier": 0.10547590408163263,
+     "rps": 0.17859990655292168,
+     "top1": 0.20408163265306123,
+     "top3": 0.5306122448979592,
+     "top_prob": 0.5966530612244897,
+     "valid": 49000,
+     "winner_brier": 0.052439691836734685,
+     "winner_logloss": 2.8894082972740156
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.3503183673469388,
+     "invalid": 0,
+     "podium_brier": 0.10547590408163263,
+     "rps": 0.17859990655292168,
+     "top1": 0.20408163265306123,
+     "top3": 0.5306122448979592,
+     "top_prob": 0.5966530612244897,
+     "valid": 49000,
+     "winner_brier": 0.052439691836734685,
+     "winner_logloss": 2.8894082972740156
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.3198081632653067,
+     "invalid": 0,
+     "podium_brier": 0.09899802448979593,
+     "rps": 0.09750662253414287,
+     "top1": 0.1836734693877551,
+     "top3": 0.5102040816326531,
+     "top_prob": 0.5394897959183674,
+     "valid": 49000,
+     "winner_brier": 0.0493664387755102,
+     "winner_logloss": 2.3781690566844262
+    }
+   },
+   "n_checkpoints": 49,
+   "season": 2022,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2022-r15-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.7441666666666669,
+     "invalid": 0,
+     "podium_brier": 0.05478245454545456,
+     "rps": 0.06459094776714513,
+     "top1": 0.7727272727272727,
+     "top3": 1.0,
+     "top_prob": 0.6195454545454543,
+     "valid": 44000,
+     "winner_brier": 0.020720981818181813,
+     "winner_logloss": 0.8079361199425975
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.5966338383838385,
+     "invalid": 0,
+     "podium_brier": 0.05480127499999999,
+     "rps": 0.050380231894253426,
+     "top1": 0.9772727272727273,
+     "top3": 1.0,
+     "top_prob": 0.7254772727272728,
+     "valid": 44000,
+     "winner_brier": 0.007733334090909091,
+     "winner_logloss": 0.34980812219412233
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.5945845959595955,
+     "invalid": 0,
+     "podium_brier": 0.055077329545454544,
+     "rps": 0.0509156102265817,
+     "top1": 0.9772727272727273,
+     "top3": 1.0,
+     "top_prob": 0.7231818181818181,
+     "valid": 44000,
+     "winner_brier": 0.007892706818181819,
+     "winner_logloss": 0.3539709805855699
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.5945845959595955,
+     "invalid": 0,
+     "podium_brier": 0.055077329545454544,
+     "rps": 0.0509156102265817,
+     "top1": 0.9772727272727273,
+     "top3": 1.0,
+     "top_prob": 0.7231818181818181,
+     "valid": 44000,
+     "winner_brier": 0.007892706818181819,
+     "winner_logloss": 0.3539709805855699
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.5723055555555554,
+     "invalid": 0,
+     "podium_brier": 0.052961811363636355,
+     "rps": 0.05050937509922461,
+     "top1": 0.9772727272727273,
+     "top3": 1.0,
+     "top_prob": 0.653340909090909,
+     "valid": 44000,
+     "winner_brier": 0.010610918181818179,
+     "winner_logloss": 0.46066234266158507
+    }
+   },
+   "n_checkpoints": 44,
+   "season": 2022,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2022-r16-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.8223125000000002,
+     "invalid": 0,
+     "podium_brier": 0.04624453333333334,
+     "rps": 0.11723377521929827,
+     "top1": 0.0,
+     "top3": 0.8333333333333334,
+     "top_prob": 0.45633333333333326,
+     "valid": 12000,
+     "winner_brier": 0.04592023333333334,
+     "winner_logloss": 1.8259794791019066
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.716203125,
+     "invalid": 0,
+     "podium_brier": 0.01071498333333333,
+     "rps": 0.047936294517543845,
+     "top1": 0.3333333333333333,
+     "top3": 1.0,
+     "top_prob": 0.5125000000000001,
+     "valid": 12000,
+     "winner_brier": 0.031406924999999995,
+     "winner_logloss": 0.9724338365205826
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.706119791666667,
+     "invalid": 0,
+     "podium_brier": 0.010833183333333331,
+     "rps": 0.05719109781200159,
+     "top1": 0.3333333333333333,
+     "top3": 1.0,
+     "top_prob": 0.5110000000000001,
+     "valid": 12000,
+     "winner_brier": 0.031847183333333334,
+     "winner_logloss": 0.9825153708733757
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.706119791666667,
+     "invalid": 0,
+     "podium_brier": 0.010833183333333331,
+     "rps": 0.05719109781200159,
+     "top1": 0.3333333333333333,
+     "top3": 1.0,
+     "top_prob": 0.5110000000000001,
+     "valid": 12000,
+     "winner_brier": 0.031847183333333334,
+     "winner_logloss": 0.9825153708733757
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.612354166666667,
+     "invalid": 0,
+     "podium_brier": 0.01188255,
+     "rps": 0.05172085552631579,
+     "top1": 0.4166666666666667,
+     "top3": 1.0,
+     "top_prob": 0.4937499999999999,
+     "valid": 12000,
+     "winner_brier": 0.031090183333333337,
+     "winner_logloss": 0.994812034627958
+    }
+   },
+   "n_checkpoints": 12,
+   "season": 2022,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2022-r19-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.4320000000000004,
+     "invalid": 0,
+     "podium_brier": 0.08003633333333333,
+     "rps": 0.11366760165118679,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.319,
+     "valid": 3000,
+     "winner_brier": 0.026679166666666667,
+     "winner_logloss": 1.148970283738077
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.3622156862745096,
+     "invalid": 0,
+     "podium_brier": 0.08025286666666669,
+     "rps": 0.08115292002063985,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.5793333333333334,
+     "valid": 3000,
+     "winner_brier": 0.0131698,
+     "winner_logloss": 0.6168379940129679
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.3622156862745096,
+     "invalid": 0,
+     "podium_brier": 0.08025286666666669,
+     "rps": 0.08115292002063985,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.5793333333333334,
+     "valid": 3000,
+     "winner_brier": 0.0131698,
+     "winner_logloss": 0.6168379940129679
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.3622156862745096,
+     "invalid": 0,
+     "podium_brier": 0.08025286666666669,
+     "rps": 0.08115292002063985,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.5793333333333334,
+     "valid": 3000,
+     "winner_brier": 0.0131698,
+     "winner_logloss": 0.6168379940129679
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.3893333333333335,
+     "invalid": 0,
+     "podium_brier": 0.08140503333333333,
+     "rps": 0.06882887822497422,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.4876666666666667,
+     "valid": 3000,
+     "winner_brier": 0.0180139,
+     "winner_logloss": 0.824813451019407
+    }
+   },
+   "n_checkpoints": 3,
+   "season": 2022,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2022-r20-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.1955223435948366,
+     "invalid": 0,
+     "podium_brier": 0.03424440000000001,
+     "rps": 0.08618655145560027,
+     "top1": 0.8113207547169812,
+     "top3": 1.0,
+     "top_prob": 0.6127547169811319,
+     "valid": 53000,
+     "winner_brier": 0.023416141509433965,
+     "winner_logloss": 0.9688189764351735
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.0239682224429,
+     "invalid": 0,
+     "podium_brier": 0.02445034716981131,
+     "rps": 0.04573478108639854,
+     "top1": 0.7735849056603774,
+     "top3": 0.9622641509433962,
+     "top_prob": 0.6599433962264148,
+     "valid": 53000,
+     "winner_brier": 0.017202571698113206,
+     "winner_logloss": 0.7057446564233198
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.024153922542204,
+     "invalid": 0,
+     "podium_brier": 0.02467415283018869,
+     "rps": 0.04836436205869414,
+     "top1": 0.7735849056603774,
+     "top3": 0.9622641509433962,
+     "top_prob": 0.661566037735849,
+     "valid": 53000,
+     "winner_brier": 0.01724097924528302,
+     "winner_logloss": 0.7050469841647159
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.024153922542204,
+     "invalid": 0,
+     "podium_brier": 0.02467415283018869,
+     "rps": 0.04836436205869414,
+     "top1": 0.7735849056603774,
+     "top3": 0.9622641509433962,
+     "top_prob": 0.661566037735849,
+     "valid": 53000,
+     "winner_brier": 0.01724097924528302,
+     "winner_logloss": 0.7050469841647159
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.0046732869910624,
+     "invalid": 0,
+     "podium_brier": 0.02631668301886792,
+     "rps": 0.02907088338438953,
+     "top1": 0.7547169811320755,
+     "top3": 0.9622641509433962,
+     "top_prob": 0.6029056603773586,
+     "valid": 53000,
+     "winner_brier": 0.018625494339622642,
+     "winner_logloss": 0.7607407703196298
+    }
+   },
+   "n_checkpoints": 53,
+   "season": 2022,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2022-r22-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.4832232304900184,
+     "invalid": 0,
+     "podium_brier": 0.03376665172413793,
+     "rps": 0.09408302856051198,
+     "top1": 0.9655172413793104,
+     "top3": 1.0,
+     "top_prob": 0.8792758620689655,
+     "valid": 29000,
+     "winner_brier": 0.003243651724137931,
+     "winner_logloss": 0.16583155043639666
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.4618511796733213,
+     "invalid": 0,
+     "podium_brier": 0.03251665172413793,
+     "rps": 0.15466964818565934,
+     "top1": 0.9310344827586207,
+     "top3": 1.0,
+     "top_prob": 0.8662758620689657,
+     "valid": 29000,
+     "winner_brier": 0.0035987517241379313,
+     "winner_logloss": 0.1816439651041822
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.4508239564428314,
+     "invalid": 0,
+     "podium_brier": 0.032269541379310346,
+     "rps": 0.22652612013897627,
+     "top1": 0.9310344827586207,
+     "top3": 1.0,
+     "top_prob": 0.8680689655172414,
+     "valid": 29000,
+     "winner_brier": 0.003591544827586207,
+     "winner_logloss": 0.180181000573105
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.4508239564428314,
+     "invalid": 0,
+     "podium_brier": 0.032269541379310346,
+     "rps": 0.22652612013897627,
+     "top1": 0.9310344827586207,
+     "top3": 1.0,
+     "top_prob": 0.8680689655172414,
+     "valid": 29000,
+     "winner_brier": 0.003591544827586207,
+     "winner_logloss": 0.180181000573105
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.5115390199637027,
+     "invalid": 0,
+     "podium_brier": 0.037490189655172416,
+     "rps": 0.16452835466427987,
+     "top1": 0.9310344827586207,
+     "top3": 1.0,
+     "top_prob": 0.7773793103448273,
+     "valid": 29000,
+     "winner_brier": 0.005450262068965518,
+     "winner_logloss": 0.2876763763884137
+    }
+   },
+   "n_checkpoints": 29,
+   "season": 2022,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2023-r01-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.47193725490196,
+     "invalid": 0,
+     "podium_brier": 0.08003060666666667,
+     "rps": 0.08666387492260062,
+     "top1": 0.9333333333333333,
+     "top3": 1.0,
+     "top_prob": 0.4814666666666667,
+     "valid": 15000,
+     "winner_brier": 0.023138540000000003,
+     "winner_logloss": 0.9452922132586058
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.4904627450980388,
+     "invalid": 0,
+     "podium_brier": 0.09501018,
+     "rps": 0.05664595772192968,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.8548000000000001,
+     "valid": 15000,
+     "winner_brier": 0.0040925066666666655,
+     "winner_logloss": 0.22185747812007506
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.4977137254901955,
+     "invalid": 0,
+     "podium_brier": 0.09508105333333332,
+     "rps": 0.058646418756615346,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.8564666666666666,
+     "valid": 15000,
+     "winner_brier": 0.0039982333333333335,
+     "winner_logloss": 0.2194642081364567
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.4977137254901955,
+     "invalid": 0,
+     "podium_brier": 0.09508105333333332,
+     "rps": 0.058646418756615346,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.8564666666666666,
+     "valid": 15000,
+     "winner_brier": 0.0039982333333333335,
+     "winner_logloss": 0.2194642081364567
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.502482352941177,
+     "invalid": 0,
+     "podium_brier": 0.09345403999999999,
+     "rps": 0.04239227788531129,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.7981333333333335,
+     "valid": 15000,
+     "winner_brier": 0.00550092,
+     "winner_logloss": 0.3097897115786225
+    }
+   },
+   "n_checkpoints": 15,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r02-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.1466777777777777,
+     "invalid": 0,
+     "podium_brier": 0.08090879333333331,
+     "rps": 0.0858156746588694,
+     "top1": 0.8,
+     "top3": 1.0,
+     "top_prob": 0.42266666666666663,
+     "valid": 15000,
+     "winner_brier": 0.023769553333333325,
+     "winner_logloss": 0.9824188712599525
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.2464074074074074,
+     "invalid": 0,
+     "podium_brier": 0.08274190666666667,
+     "rps": 0.051484341970667404,
+     "top1": 0.8666666666666667,
+     "top3": 0.9333333333333333,
+     "top_prob": 0.7322000000000001,
+     "valid": 15000,
+     "winner_brier": 0.01273232,
+     "winner_logloss": 0.557968336158413
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.246096296296296,
+     "invalid": 0,
+     "podium_brier": 0.08263261333333334,
+     "rps": 0.059091638128887035,
+     "top1": 0.8666666666666667,
+     "top3": 0.9333333333333333,
+     "top_prob": 0.7349333333333333,
+     "valid": 15000,
+     "winner_brier": 0.012663999999999998,
+     "winner_logloss": 0.5547840994900708
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.246096296296296,
+     "invalid": 0,
+     "podium_brier": 0.08263261333333334,
+     "rps": 0.059091638128887035,
+     "top1": 0.8666666666666667,
+     "top3": 0.9333333333333333,
+     "top_prob": 0.7349333333333333,
+     "valid": 15000,
+     "winner_brier": 0.012663999999999998,
+     "winner_logloss": 0.5547840994900708
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.2124925925925925,
+     "invalid": 0,
+     "podium_brier": 0.07924993333333333,
+     "rps": 0.0638113667153996,
+     "top1": 0.8666666666666667,
+     "top3": 0.9333333333333333,
+     "top_prob": 0.6762,
+     "valid": 15000,
+     "winner_brier": 0.014674633333333333,
+     "winner_logloss": 0.6478322280895257
+    }
+   },
+   "n_checkpoints": 15,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r04-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.694965277777778,
+     "invalid": 0,
+     "podium_brier": 0.0523886375,
+     "rps": 0.0698032839912281,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.315875,
+     "valid": 8000,
+     "winner_brier": 0.04210381249999999,
+     "winner_logloss": 1.7776081127212484
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.2775555555555556,
+     "invalid": 0,
+     "podium_brier": 0.04133608750000001,
+     "rps": 0.0472026246051052,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.584,
+     "valid": 8000,
+     "winner_brier": 0.053193387499999994,
+     "winner_logloss": 1.7082621556823647
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.2778472222222224,
+     "invalid": 0,
+     "podium_brier": 0.041641575,
+     "rps": 0.048115337637686655,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.58525,
+     "valid": 8000,
+     "winner_brier": 0.053440249999999995,
+     "winner_logloss": 1.7249677114538418
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.2778472222222224,
+     "invalid": 0,
+     "podium_brier": 0.041641575,
+     "rps": 0.048115337637686655,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.58525,
+     "valid": 8000,
+     "winner_brier": 0.053440249999999995,
+     "winner_logloss": 1.7249677114538418
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.3585625000000001,
+     "invalid": 0,
+     "podium_brier": 0.0474597125,
+     "rps": 0.04868412373642441,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.511375,
+     "valid": 8000,
+     "winner_brier": 0.04845384999999999,
+     "winner_logloss": 1.6483127466659977
+    }
+   },
+   "n_checkpoints": 8,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r05-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.7525181818181816,
+     "invalid": 0,
+     "podium_brier": 0.03247560181818181,
+     "rps": 0.06187142755980862,
+     "top1": 0.4909090909090909,
+     "top3": 0.8363636363636363,
+     "top_prob": 0.6355999999999999,
+     "valid": 55000,
+     "winner_brier": 0.026872641818181824,
+     "winner_logloss": 1.0407903199585182
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.7871999999999997,
+     "invalid": 0,
+     "podium_brier": 0.033961109090909096,
+     "rps": 0.08476400898576267,
+     "top1": 0.6727272727272727,
+     "top3": 0.7818181818181819,
+     "top_prob": 0.6952909090909091,
+     "valid": 55000,
+     "winner_brier": 0.020058963636363634,
+     "winner_logloss": 1.1382472716613803
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.786205454545454,
+     "invalid": 0,
+     "podium_brier": 0.0337278,
+     "rps": 0.09091364036468952,
+     "top1": 0.6909090909090909,
+     "top3": 0.7818181818181819,
+     "top_prob": 0.6932909090909092,
+     "valid": 55000,
+     "winner_brier": 0.02008656363636363,
+     "winner_logloss": 1.1342507155539767
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.786205454545454,
+     "invalid": 0,
+     "podium_brier": 0.0337278,
+     "rps": 0.09091364036468952,
+     "top1": 0.6909090909090909,
+     "top3": 0.7818181818181819,
+     "top_prob": 0.6932909090909092,
+     "valid": 55000,
+     "winner_brier": 0.02008656363636363,
+     "winner_logloss": 1.1342507155539767
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.8537909090909084,
+     "invalid": 0,
+     "podium_brier": 0.036798059999999994,
+     "rps": 0.08100984186706996,
+     "top1": 0.6727272727272727,
+     "top3": 0.7636363636363637,
+     "top_prob": 0.6626909090909091,
+     "valid": 55000,
+     "winner_brier": 0.02030718363636362,
+     "winner_logloss": 1.2787213784280471
+    }
+   },
+   "n_checkpoints": 55,
+   "season": 2023,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2023-r06-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.13708359133127,
+     "invalid": 0,
+     "podium_brier": 0.046485031372549016,
+     "rps": 0.07817749780022813,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.7238627450980393,
+     "valid": 51000,
+     "winner_brier": 0.00772916862745098,
+     "winner_logloss": 0.37070772503921934
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.8214210526315786,
+     "invalid": 0,
+     "podium_brier": 0.061827309803921565,
+     "rps": 0.10530757539347549,
+     "top1": 0.7254901960784313,
+     "top3": 0.8823529411764706,
+     "top_prob": 0.8359411764705882,
+     "valid": 51000,
+     "winner_brier": 0.022350519607843154,
+     "winner_logloss": 1.4018323083442343
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.8201578947368424,
+     "invalid": 0,
+     "podium_brier": 0.06180470588235292,
+     "rps": 0.0917909494264412,
+     "top1": 0.7058823529411765,
+     "top3": 0.8823529411764706,
+     "top_prob": 0.8372549019607842,
+     "valid": 51000,
+     "winner_brier": 0.022538054901960786,
+     "winner_logloss": 1.4230479789162696
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.8201578947368424,
+     "invalid": 0,
+     "podium_brier": 0.06180470588235292,
+     "rps": 0.0917909494264412,
+     "top1": 0.7058823529411765,
+     "top3": 0.8823529411764706,
+     "top_prob": 0.8372549019607842,
+     "valid": 51000,
+     "winner_brier": 0.022538054901960786,
+     "winner_logloss": 1.4230479789162696
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.800597523219815,
+     "invalid": 0,
+     "podium_brier": 0.06131009411764707,
+     "rps": 0.10046439215285978,
+     "top1": 0.7058823529411765,
+     "top3": 0.8823529411764706,
+     "top_prob": 0.7845098039215683,
+     "valid": 51000,
+     "winner_brier": 0.02155974705882353,
+     "winner_logloss": 1.0187393377988663
+    }
+   },
+   "n_checkpoints": 51,
+   "season": 2023,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2023-r07-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.6581171874999998,
+     "invalid": 0,
+     "podium_brier": 0.03537256093749999,
+     "rps": 0.059739795559210544,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.8693593749999999,
+     "valid": 64000,
+     "winner_brier": 0.0028332953124999994,
+     "winner_logloss": 0.16730011500450062
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.5171406250000004,
+     "invalid": 0,
+     "podium_brier": 0.032948984375000004,
+     "rps": 0.031333269997605315,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.962421875,
+     "valid": 64000,
+     "winner_brier": 0.00022927968749999995,
+     "winner_logloss": 0.0390292419299409
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.5141468750000004,
+     "invalid": 0,
+     "podium_brier": 0.032685137499999996,
+     "rps": 0.04901946796419505,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.9631562499999998,
+     "valid": 64000,
+     "winner_brier": 0.00021602812499999996,
+     "winner_logloss": 0.03819885687744569
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.5141468750000004,
+     "invalid": 0,
+     "podium_brier": 0.032685137499999996,
+     "rps": 0.04901946796419505,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.9631562499999998,
+     "valid": 64000,
+     "winner_brier": 0.00021602812499999996,
+     "winner_logloss": 0.03819885687744569
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.5417640625000004,
+     "invalid": 0,
+     "podium_brier": 0.03142127343749999,
+     "rps": 0.05848520309432435,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.94,
+     "valid": 64000,
+     "winner_brier": 0.0005662468749999999,
+     "winner_logloss": 0.06392087306316041
+    }
+   },
+   "n_checkpoints": 64,
+   "season": 2023,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2023-r08-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.717611111111111,
+     "invalid": 0,
+     "podium_brier": 0.08094729999999999,
+     "rps": 0.12476558354218882,
+     "top1": 0.7142857142857143,
+     "top3": 0.8571428571428571,
+     "top_prob": 0.44242857142857145,
+     "valid": 7000,
+     "winner_brier": 0.049736757142857135,
+     "winner_logloss": 2.511097965393948
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.156412698412698,
+     "invalid": 0,
+     "podium_brier": 0.03948087142857142,
+     "rps": 0.07171232856897143,
+     "top1": 0.42857142857142855,
+     "top3": 0.7142857142857143,
+     "top_prob": 0.4268571428571429,
+     "valid": 7000,
+     "winner_brier": 0.03460897142857143,
+     "winner_logloss": 1.8804349105570246
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.15597619047619,
+     "invalid": 0,
+     "podium_brier": 0.039478571428571425,
+     "rps": 0.07171232856897143,
+     "top1": 0.42857142857142855,
+     "top3": 0.7142857142857143,
+     "top_prob": 0.4272857142857142,
+     "valid": 7000,
+     "winner_brier": 0.03458577142857143,
+     "winner_logloss": 1.8798384289269559
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.15597619047619,
+     "invalid": 0,
+     "podium_brier": 0.039478571428571425,
+     "rps": 0.07171232856897143,
+     "top1": 0.42857142857142855,
+     "top3": 0.7142857142857143,
+     "top_prob": 0.4272857142857142,
+     "valid": 7000,
+     "winner_brier": 0.03458577142857143,
+     "winner_logloss": 1.8798384289269559
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.148198412698413,
+     "invalid": 0,
+     "podium_brier": 0.042763457142857154,
+     "rps": 0.0778081147285425,
+     "top1": 0.2857142857142857,
+     "top3": 0.7142857142857143,
+     "top_prob": 0.38500000000000006,
+     "valid": 7000,
+     "winner_brier": 0.034849471428571435,
+     "winner_logloss": 1.807367759562381
+    }
+   },
+   "n_checkpoints": 7,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r09-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.100349282296651,
+     "invalid": 0,
+     "podium_brier": 0.10205084545454546,
+     "rps": 0.11649817501888694,
+     "top1": 0.8181818181818182,
+     "top3": 0.9090909090909091,
+     "top_prob": 0.3682727272727272,
+     "valid": 11000,
+     "winner_brier": 0.03608738181818182,
+     "winner_logloss": 2.5450039226182386
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.9452966507177036,
+     "invalid": 0,
+     "podium_brier": 0.12037993636363636,
+     "rps": 0.06731469180461762,
+     "top1": 0.5454545454545454,
+     "top3": 0.9090909090909091,
+     "top_prob": 0.4799090909090909,
+     "valid": 11000,
+     "winner_brier": 0.02577698181818181,
+     "winner_logloss": 2.0082715373185818
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.94666985645933,
+     "invalid": 0,
+     "podium_brier": 0.12035050909090908,
+     "rps": 0.10061393762887323,
+     "top1": 0.5454545454545454,
+     "top3": 0.9090909090909091,
+     "top_prob": 0.48045454545454547,
+     "valid": 11000,
+     "winner_brier": 0.025893827272727266,
+     "winner_logloss": 2.009942041827188
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.94666985645933,
+     "invalid": 0,
+     "podium_brier": 0.12035050909090908,
+     "rps": 0.10061393762887323,
+     "top1": 0.5454545454545454,
+     "top3": 0.9090909090909091,
+     "top_prob": 0.48045454545454547,
+     "valid": 11000,
+     "winner_brier": 0.025893827272727266,
+     "winner_logloss": 2.009942041827188
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.9292488038277513,
+     "invalid": 0,
+     "podium_brier": 0.11765712727272727,
+     "rps": 0.10843408767612811,
+     "top1": 0.6363636363636364,
+     "top3": 0.9090909090909091,
+     "top_prob": 0.43336363636363634,
+     "valid": 11000,
+     "winner_brier": 0.02704633636363636,
+     "winner_logloss": 2.084905800546942
+    }
+   },
+   "n_checkpoints": 11,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r10-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.2531363636363637,
+     "invalid": 0,
+     "podium_brier": 0.08281581818181817,
+     "rps": 0.11395825598086123,
+     "top1": 0.7272727272727273,
+     "top3": 1.0,
+     "top_prob": 0.29809090909090913,
+     "valid": 11000,
+     "winner_brier": 0.031483399999999995,
+     "winner_logloss": 1.3802789557354793
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.1598838383838386,
+     "invalid": 0,
+     "podium_brier": 0.08737281818181818,
+     "rps": 0.08516762117954571,
+     "top1": 0.7272727272727273,
+     "top3": 1.0,
+     "top_prob": 0.5856363636363636,
+     "valid": 11000,
+     "winner_brier": 0.01713741818181818,
+     "winner_logloss": 0.7141018050832254
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.1621060606060607,
+     "invalid": 0,
+     "podium_brier": 0.0868618818181818,
+     "rps": 0.08988663706075199,
+     "top1": 0.7272727272727273,
+     "top3": 1.0,
+     "top_prob": 0.5875454545454546,
+     "valid": 11000,
+     "winner_brier": 0.017044281818181815,
+     "winner_logloss": 0.7115882166351587
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.1621060606060607,
+     "invalid": 0,
+     "podium_brier": 0.0868618818181818,
+     "rps": 0.08988663706075199,
+     "top1": 0.7272727272727273,
+     "top3": 1.0,
+     "top_prob": 0.5875454545454546,
+     "valid": 11000,
+     "winner_brier": 0.017044281818181815,
+     "winner_logloss": 0.7115882166351587
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.1502525252525255,
+     "invalid": 0,
+     "podium_brier": 0.08463644545454545,
+     "rps": 0.10708278800789851,
+     "top1": 0.8181818181818182,
+     "top3": 1.0,
+     "top_prob": 0.517,
+     "valid": 11000,
+     "winner_brier": 0.019432090909090913,
+     "winner_logloss": 0.8272460579944027
+    }
+   },
+   "n_checkpoints": 11,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r11-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.110907407407407,
+     "invalid": 0,
+     "podium_brier": 0.09665486666666666,
+     "rps": 0.11245450000000003,
+     "top1": 0.6666666666666666,
+     "top3": 1.0,
+     "top_prob": 0.19033333333333333,
+     "valid": 3000,
+     "winner_brier": 0.0371921,
+     "winner_logloss": 1.7469659585601836
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.125148148148148,
+     "invalid": 0,
+     "podium_brier": 0.16037146666666666,
+     "rps": 0.10242837474200207,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.3293333333333333,
+     "valid": 3000,
+     "winner_brier": 0.06046046666666666,
+     "winner_logloss": 7.101623880924483
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.125148148148148,
+     "invalid": 0,
+     "podium_brier": 0.16037146666666666,
+     "rps": 0.10242837474200207,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.3293333333333333,
+     "valid": 3000,
+     "winner_brier": 0.06046046666666666,
+     "winner_logloss": 7.101623880924483
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.125148148148148,
+     "invalid": 0,
+     "podium_brier": 0.16037146666666666,
+     "rps": 0.10242837474200207,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.3293333333333333,
+     "valid": 3000,
+     "winner_brier": 0.06046046666666666,
+     "winner_logloss": 7.101623880924483
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.169518518518519,
+     "invalid": 0,
+     "podium_brier": 0.15311753333333333,
+     "rps": 0.10130400004690872,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.29033333333333333,
+     "valid": 3000,
+     "winner_brier": 0.05753626666666666,
+     "winner_logloss": 6.7008964497404335
+    }
+   },
+   "n_checkpoints": 3,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r12-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.8706111111111112,
+     "invalid": 0,
+     "podium_brier": 0.08207449999999998,
+     "rps": 0.09729688011695908,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.313,
+     "valid": 1000,
+     "winner_brier": 0.04785570000000001,
+     "winner_logloss": 2.2072749131897207
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.284777777777778,
+     "invalid": 0,
+     "podium_brier": 0.119943,
+     "rps": 0.12179367251461991,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.311,
+     "valid": 1000,
+     "winner_brier": 0.04549270000000001,
+     "winner_logloss": 2.017406150760383
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.284777777777778,
+     "invalid": 0,
+     "podium_brier": 0.119943,
+     "rps": 0.12179367251461991,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.311,
+     "valid": 1000,
+     "winner_brier": 0.04549270000000001,
+     "winner_logloss": 2.017406150760383
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.284777777777778,
+     "invalid": 0,
+     "podium_brier": 0.119943,
+     "rps": 0.12179367251461991,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.311,
+     "valid": 1000,
+     "winner_brier": 0.04549270000000001,
+     "winner_logloss": 2.017406150760383
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.4215000000000004,
+     "invalid": 0,
+     "podium_brier": 0.11548009999999997,
+     "rps": 0.12489843567251466,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.246,
+     "valid": 1000,
+     "winner_brier": 0.0442452,
+     "winner_logloss": 2.0874737133771
+    }
+   },
+   "n_checkpoints": 1,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r14-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.1226388888888885,
+     "invalid": 0,
+     "podium_brier": 0.08794585000000002,
+     "rps": 0.10640341374269008,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.21250000000000002,
+     "valid": 2000,
+     "winner_brier": 0.043213150000000006,
+     "winner_logloss": 2.091423980406752
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.609972222222222,
+     "invalid": 0,
+     "podium_brier": 0.09007415,
+     "rps": 0.08615913128654973,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.277,
+     "valid": 2000,
+     "winner_brier": 0.044160099999999994,
+     "winner_logloss": 1.9278213359960192
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.609972222222222,
+     "invalid": 0,
+     "podium_brier": 0.09007415,
+     "rps": 0.08615913128654973,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.277,
+     "valid": 2000,
+     "winner_brier": 0.044160099999999994,
+     "winner_logloss": 1.9278213359960192
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.609972222222222,
+     "invalid": 0,
+     "podium_brier": 0.09007415,
+     "rps": 0.08615913128654973,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.277,
+     "valid": 2000,
+     "winner_brier": 0.044160099999999994,
+     "winner_logloss": 1.9278213359960192
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.767277777777778,
+     "invalid": 0,
+     "podium_brier": 0.0922473,
+     "rps": 0.10802673015873018,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.2235,
+     "valid": 2000,
+     "winner_brier": 0.04346849999999999,
+     "winner_logloss": 2.0004271095673807
+    }
+   },
+   "n_checkpoints": 2,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r15-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.75103125,
+     "invalid": 0,
+     "podium_brier": 0.08900763157894737,
+     "rps": 0.13676926562500002,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.3795,
+     "valid": 2000,
+     "winner_brier": 0.02406121052631579,
+     "winner_logloss": 1.0816290138864733
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 4.75625,
+     "invalid": 0,
+     "podium_brier": 0.1819283157894737,
+     "rps": 0.07858990873015873,
+     "top1": 0.5,
+     "top3": 0.5,
+     "top_prob": 0.9735,
+     "valid": 2000,
+     "winner_brier": 0.05191142105263158,
+     "winner_logloss": 3.127715046471223
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 4.75625,
+     "invalid": 0,
+     "podium_brier": 0.1819283157894737,
+     "rps": 0.07858990873015873,
+     "top1": 0.5,
+     "top3": 0.5,
+     "top_prob": 0.9735,
+     "valid": 2000,
+     "winner_brier": 0.05191142105263158,
+     "winner_logloss": 3.127715046471223
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 4.75625,
+     "invalid": 0,
+     "podium_brier": 0.1819283157894737,
+     "rps": 0.07858990873015873,
+     "top1": 0.5,
+     "top3": 0.5,
+     "top_prob": 0.9735,
+     "valid": 2000,
+     "winner_brier": 0.05191142105263158,
+     "winner_logloss": 3.127715046471223
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 4.69571875,
+     "invalid": 0,
+     "podium_brier": 0.1803343684210526,
+     "rps": 0.1680496419753087,
+     "top1": 0.5,
+     "top3": 0.5,
+     "top_prob": 0.9515,
+     "valid": 2000,
+     "winner_brier": 0.05121842105263158,
+     "winner_logloss": 2.7970158053485408
+    }
+   },
+   "n_checkpoints": 2,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r16-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.2777666666666665,
+     "invalid": 0,
+     "podium_brier": 0.059732574999999996,
+     "rps": 0.08332234824561405,
+     "top1": 0.875,
+     "top3": 0.875,
+     "top_prob": 0.312875,
+     "valid": 8000,
+     "winner_brier": 0.0324611,
+     "winner_logloss": 2.789418141995267
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.0195333333333334,
+     "invalid": 0,
+     "podium_brier": 0.0417015625,
+     "rps": 0.04387723895154554,
+     "top1": 0.5,
+     "top3": 0.75,
+     "top_prob": 0.536,
+     "valid": 8000,
+     "winner_brier": 0.030864812499999995,
+     "winner_logloss": 2.7062177612742566
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.0201083333333334,
+     "invalid": 0,
+     "podium_brier": 0.0416876,
+     "rps": 0.04454623438805348,
+     "top1": 0.5,
+     "top3": 0.75,
+     "top_prob": 0.536625,
+     "valid": 8000,
+     "winner_brier": 0.030844399999999994,
+     "winner_logloss": 2.7054523105005166
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.0201083333333334,
+     "invalid": 0,
+     "podium_brier": 0.0416876,
+     "rps": 0.04454623438805348,
+     "top1": 0.5,
+     "top3": 0.75,
+     "top_prob": 0.536625,
+     "valid": 8000,
+     "winner_brier": 0.030844399999999994,
+     "winner_logloss": 2.7054523105005166
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.055125,
+     "invalid": 0,
+     "podium_brier": 0.0446787625,
+     "rps": 0.05806140244317391,
+     "top1": 0.5,
+     "top3": 0.75,
+     "top_prob": 0.49025,
+     "valid": 8000,
+     "winner_brier": 0.030171325000000002,
+     "winner_logloss": 2.7059017393949985
+    }
+   },
+   "n_checkpoints": 8,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r18-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 4.655044117647059,
+     "invalid": 0,
+     "podium_brier": 0.0750873125,
+     "rps": 0.17191531114551084,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.3383749999999999,
+     "valid": 8000,
+     "winner_brier": 0.0500540875,
+     "winner_logloss": 2.383223696951603
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 5.101838235294118,
+     "invalid": 0,
+     "podium_brier": 0.0981904375,
+     "rps": 0.16655317679210027,
+     "top1": 0.0,
+     "top3": 0.25,
+     "top_prob": 0.48750000000000004,
+     "valid": 8000,
+     "winner_brier": 0.06402914999999999,
+     "winner_logloss": 3.441240676672927
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 5.10341911764706,
+     "invalid": 0,
+     "podium_brier": 0.0984591875,
+     "rps": 0.1644360022361165,
+     "top1": 0.0,
+     "top3": 0.125,
+     "top_prob": 0.484875,
+     "valid": 8000,
+     "winner_brier": 0.0640027125,
+     "winner_logloss": 3.432332799170241
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 5.10341911764706,
+     "invalid": 0,
+     "podium_brier": 0.0984591875,
+     "rps": 0.1644360022361165,
+     "top1": 0.0,
+     "top3": 0.125,
+     "top_prob": 0.484875,
+     "valid": 8000,
+     "winner_brier": 0.0640027125,
+     "winner_logloss": 3.432332799170241
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 5.021977941176471,
+     "invalid": 0,
+     "podium_brier": 0.0935876625,
+     "rps": 0.2088031906146596,
+     "top1": 0.0,
+     "top3": 0.25,
+     "top_prob": 0.4285,
+     "valid": 8000,
+     "winner_brier": 0.059413987499999994,
+     "winner_logloss": 2.9616719918092955
+    }
+   },
+   "n_checkpoints": 8,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r19-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.184176470588236,
+     "invalid": 0,
+     "podium_brier": 0.07971940000000001,
+     "rps": 0.11096631682146545,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.2223333333333333,
+     "valid": 3000,
+     "winner_brier": 0.03339176666666668,
+     "winner_logloss": 1.513695850000122
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.1364705882352943,
+     "invalid": 0,
+     "podium_brier": 0.1089891,
+     "rps": 0.08774142462638075,
+     "top1": 0.0,
+     "top3": 0.3333333333333333,
+     "top_prob": 0.5133333333333333,
+     "valid": 3000,
+     "winner_brier": 0.06638673333333334,
+     "winner_logloss": 6.7057706226962805
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.1364705882352943,
+     "invalid": 0,
+     "podium_brier": 0.1089891,
+     "rps": 0.08774142462638075,
+     "top1": 0.0,
+     "top3": 0.3333333333333333,
+     "top_prob": 0.5133333333333333,
+     "valid": 3000,
+     "winner_brier": 0.06638673333333334,
+     "winner_logloss": 6.7057706226962805
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.1364705882352943,
+     "invalid": 0,
+     "podium_brier": 0.1089891,
+     "rps": 0.08774142462638075,
+     "top1": 0.0,
+     "top3": 0.3333333333333333,
+     "top_prob": 0.5133333333333333,
+     "valid": 3000,
+     "winner_brier": 0.06638673333333334,
+     "winner_logloss": 6.7057706226962805
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.213019607843137,
+     "invalid": 0,
+     "podium_brier": 0.11178216666666668,
+     "rps": 0.10178561106811146,
+     "top1": 0.0,
+     "top3": 0.3333333333333333,
+     "top_prob": 0.4443333333333334,
+     "valid": 3000,
+     "winner_brier": 0.06165853333333333,
+     "winner_logloss": 4.200892375068714
+    }
+   },
+   "n_checkpoints": 3,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r21-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 5.506263157894737,
+     "invalid": 0,
+     "podium_brier": 0.14951789999999998,
+     "rps": 0.2270352880886426,
+     "top1": 0.0,
+     "top3": 0.5,
+     "top_prob": 0.6145,
+     "valid": 2000,
+     "winner_brier": 0.07297859999999998,
+     "winner_logloss": 8.529852095408382
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 5.537421052631579,
+     "invalid": 0,
+     "podium_brier": 0.14968895,
+     "rps": 0.2255153808479532,
+     "top1": 0.0,
+     "top3": 0.5,
+     "top_prob": 0.617,
+     "valid": 2000,
+     "winner_brier": 0.07407014999999999,
+     "winner_logloss": 8.613379137739965
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 5.537421052631579,
+     "invalid": 0,
+     "podium_brier": 0.14968895,
+     "rps": 0.2255153808479532,
+     "top1": 0.0,
+     "top3": 0.5,
+     "top_prob": 0.617,
+     "valid": 2000,
+     "winner_brier": 0.07407014999999999,
+     "winner_logloss": 8.613379137739965
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 5.537421052631579,
+     "invalid": 0,
+     "podium_brier": 0.14968895,
+     "rps": 0.2255153808479532,
+     "top1": 0.0,
+     "top3": 0.5,
+     "top_prob": 0.617,
+     "valid": 2000,
+     "winner_brier": 0.07407014999999999,
+     "winner_logloss": 8.613379137739965
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 5.382131578947368,
+     "invalid": 0,
+     "podium_brier": 0.14528525,
+     "rps": 0.18187332769423556,
+     "top1": 0.0,
+     "top3": 0.5,
+     "top_prob": 0.541,
+     "valid": 2000,
+     "winner_brier": 0.06657909999999997,
+     "winner_logloss": 8.251879065885152
+    }
+   },
+   "n_checkpoints": 2,
+   "season": 2023,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2023-r22-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.1695392857142854,
+     "invalid": 0,
+     "podium_brier": 0.05521704107142855,
+     "rps": 0.08366961983082707,
+     "top1": 0.8928571428571429,
+     "top3": 0.9821428571428571,
+     "top_prob": 0.9239107142857145,
+     "valid": 56000,
+     "winner_brier": 0.009741849999999991,
+     "winner_logloss": 0.5024658501987412
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.1673714285714283,
+     "invalid": 0,
+     "podium_brier": 0.05459695178571428,
+     "rps": 0.09107957171777147,
+     "top1": 0.8928571428571429,
+     "top3": 0.9642857142857143,
+     "top_prob": 0.9147857142857141,
+     "valid": 56000,
+     "winner_brier": 0.009530398214285708,
+     "winner_logloss": 0.46819543631350363
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.1602249999999996,
+     "invalid": 0,
+     "podium_brier": 0.05457196428571428,
+     "rps": 0.08928338459163132,
+     "top1": 0.8928571428571429,
+     "top3": 0.9642857142857143,
+     "top_prob": 0.9154464285714283,
+     "valid": 56000,
+     "winner_brier": 0.00949766785714285,
+     "winner_logloss": 0.46632119034481306
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.1602249999999996,
+     "invalid": 0,
+     "podium_brier": 0.05457196428571428,
+     "rps": 0.08928338459163132,
+     "top1": 0.8928571428571429,
+     "top3": 0.9642857142857143,
+     "top_prob": 0.9154464285714283,
+     "valid": 56000,
+     "winner_brier": 0.00949766785714285,
+     "winner_logloss": 0.46632119034481306
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.2270160714285714,
+     "invalid": 0,
+     "podium_brier": 0.05679661964285714,
+     "rps": 0.09060227720072206,
+     "top1": 0.8928571428571429,
+     "top3": 0.9821428571428571,
+     "top_prob": 0.8582142857142856,
+     "valid": 56000,
+     "winner_brier": 0.009674460714285713,
+     "winner_logloss": 0.4519939385433908
+    }
+   },
+   "n_checkpoints": 56,
+   "season": 2023,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2024-r01-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.368334545454546,
+     "invalid": 0,
+     "podium_brier": 0.010693374545454541,
+     "rps": 0.05131702296650717,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.8859818181818183,
+     "valid": 55000,
+     "winner_brier": 0.002197214545454546,
+     "winner_logloss": 0.12863808019741532
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.1035400000000004,
+     "invalid": 0,
+     "podium_brier": 0.014270389090909089,
+     "rps": 0.010739198041805014,
+     "top1": 0.9818181818181818,
+     "top3": 1.0,
+     "top_prob": 0.9252545454545457,
+     "valid": 55000,
+     "winner_brier": 0.0014973109090909093,
+     "winner_logloss": 0.0877266400112209
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.1040145454545456,
+     "invalid": 0,
+     "podium_brier": 0.014439483636363642,
+     "rps": 0.009361063761016102,
+     "top1": 0.9818181818181818,
+     "top3": 1.0,
+     "top_prob": 0.9269818181818181,
+     "valid": 55000,
+     "winner_brier": 0.0013553981818181808,
+     "winner_logloss": 0.08418773284917462
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.1040145454545456,
+     "invalid": 0,
+     "podium_brier": 0.014439483636363642,
+     "rps": 0.009361063761016102,
+     "top1": 0.9818181818181818,
+     "top3": 1.0,
+     "top_prob": 0.9269818181818181,
+     "valid": 55000,
+     "winner_brier": 0.0013553981818181808,
+     "winner_logloss": 0.08418773284917462
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.137467272727273,
+     "invalid": 0,
+     "podium_brier": 0.014835354545454543,
+     "rps": 0.01700828207306293,
+     "top1": 0.9818181818181818,
+     "top3": 1.0,
+     "top_prob": 0.9029636363636365,
+     "valid": 55000,
+     "winner_brier": 0.0017911927272727278,
+     "winner_logloss": 0.11278034032627945
+    }
+   },
+   "n_checkpoints": 55,
+   "season": 2024,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2024-r02-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.5253888888888887,
+     "invalid": 0,
+     "podium_brier": 0.011547300000000002,
+     "rps": 0.1390830614035088,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.5876666666666667,
+     "valid": 3000,
+     "winner_brier": 0.015842166666666668,
+     "winner_logloss": 0.5316351326061443
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.8180185185185187,
+     "invalid": 0,
+     "podium_brier": 0.0064210666666666685,
+     "rps": 0.05568404605263157,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.6503333333333333,
+     "valid": 3000,
+     "winner_brier": 0.011459666666666665,
+     "winner_logloss": 0.4366534425410287
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.8180185185185187,
+     "invalid": 0,
+     "podium_brier": 0.0064210666666666685,
+     "rps": 0.05568404605263157,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.6503333333333333,
+     "valid": 3000,
+     "winner_brier": 0.011459666666666665,
+     "winner_logloss": 0.4366534425410287
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.8180185185185187,
+     "invalid": 0,
+     "podium_brier": 0.0064210666666666685,
+     "rps": 0.05568404605263157,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.6503333333333333,
+     "valid": 3000,
+     "winner_brier": 0.011459666666666665,
+     "winner_logloss": 0.4366534425410287
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.8019074074074077,
+     "invalid": 0,
+     "podium_brier": 0.010355000000000001,
+     "rps": 0.07941728289473682,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.61,
+     "valid": 3000,
+     "winner_brier": 0.013469166666666666,
+     "winner_logloss": 0.49679283056794277
+    }
+   },
+   "n_checkpoints": 3,
+   "season": 2024,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2024-r03-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 4.438372549019608,
+     "invalid": 0,
+     "podium_brier": 0.14066773684210526,
+     "rps": 0.19053040740740743,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.6350000000000001,
+     "valid": 6000,
+     "winner_brier": 0.06653422807017544,
+     "winner_logloss": 2.4352930576166556
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.7980588235294115,
+     "invalid": 0,
+     "podium_brier": 0.09297991228070175,
+     "rps": 0.19511041826499118,
+     "top1": 0.6666666666666666,
+     "top3": 1.0,
+     "top_prob": 0.614,
+     "valid": 6000,
+     "winner_brier": 0.024824824561403513,
+     "winner_logloss": 0.9631579115753834
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.7983235294117645,
+     "invalid": 0,
+     "podium_brier": 0.09291608771929825,
+     "rps": 0.21714974754739857,
+     "top1": 0.6666666666666666,
+     "top3": 1.0,
+     "top_prob": 0.613,
+     "valid": 6000,
+     "winner_brier": 0.024896438596491228,
+     "winner_logloss": 0.9646092995573475
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.7983235294117645,
+     "invalid": 0,
+     "podium_brier": 0.09291608771929825,
+     "rps": 0.21714974754739857,
+     "top1": 0.6666666666666666,
+     "top3": 1.0,
+     "top_prob": 0.613,
+     "valid": 6000,
+     "winner_brier": 0.024896438596491228,
+     "winner_logloss": 0.9646092995573475
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.735450980392157,
+     "invalid": 0,
+     "podium_brier": 0.08927142105263158,
+     "rps": 0.1564650603485839,
+     "top1": 0.6666666666666666,
+     "top3": 1.0,
+     "top_prob": 0.5368333333333333,
+     "valid": 6000,
+     "winner_brier": 0.026585982456140352,
+     "winner_logloss": 0.9867962282497316
+    }
+   },
+   "n_checkpoints": 6,
+   "season": 2024,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2024-r05-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.23559133126935,
+     "invalid": 0,
+     "podium_brier": 0.07890983157894736,
+     "rps": 0.092037143229591,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.6783157894736841,
+     "valid": 19000,
+     "winner_brier": 0.010429784210526318,
+     "winner_logloss": 0.39825097448921476
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.142130030959752,
+     "invalid": 0,
+     "podium_brier": 0.041950600000000005,
+     "rps": 0.025664246502659485,
+     "top1": 0.8421052631578947,
+     "top3": 0.9473684210526315,
+     "top_prob": 0.8535263157894736,
+     "valid": 19000,
+     "winner_brier": 0.009654563157894733,
+     "winner_logloss": 0.37635923918273023
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.143433436532508,
+     "invalid": 0,
+     "podium_brier": 0.04202014736842106,
+     "rps": 0.039500032028185375,
+     "top1": 0.8421052631578947,
+     "top3": 0.9473684210526315,
+     "top_prob": 0.852842105263158,
+     "valid": 19000,
+     "winner_brier": 0.009671057894736839,
+     "winner_logloss": 0.37713761819510355
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.143433436532508,
+     "invalid": 0,
+     "podium_brier": 0.04202014736842106,
+     "rps": 0.039500032028185375,
+     "top1": 0.8421052631578947,
+     "top3": 0.9473684210526315,
+     "top_prob": 0.852842105263158,
+     "valid": 19000,
+     "winner_brier": 0.009671057894736839,
+     "winner_logloss": 0.37713761819510355
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.0669164086687304,
+     "invalid": 0,
+     "podium_brier": 0.041664847368421055,
+     "rps": 0.048614738864909184,
+     "top1": 0.8421052631578947,
+     "top3": 0.9473684210526315,
+     "top_prob": 0.8185263157894737,
+     "valid": 19000,
+     "winner_brier": 0.01010661052631579,
+     "winner_logloss": 0.3956201820216851
+    }
+   },
+   "n_checkpoints": 19,
+   "season": 2024,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2024-r06-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.448771929824562,
+     "invalid": 0,
+     "podium_brier": 0.11550075185185188,
+     "rps": 0.0977769590643275,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.7117777777777777,
+     "valid": 27000,
+     "winner_brier": 0.07943054074074073,
+     "winner_logloss": 13.559667769853824
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.2964288499025343,
+     "invalid": 0,
+     "podium_brier": 0.09550205925925927,
+     "rps": 0.1876671359283626,
+     "top1": 0.037037037037037035,
+     "top3": 0.1111111111111111,
+     "top_prob": 0.705962962962963,
+     "valid": 27000,
+     "winner_brier": 0.07614001851851852,
+     "winner_logloss": 8.91537203891044
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.300608187134503,
+     "invalid": 0,
+     "podium_brier": 0.09534763703703703,
+     "rps": 0.1948333443340494,
+     "top1": 0.037037037037037035,
+     "top3": 0.1111111111111111,
+     "top_prob": 0.7071111111111115,
+     "valid": 27000,
+     "winner_brier": 0.07602006666666666,
+     "winner_logloss": 9.393897748784559
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.300608187134503,
+     "invalid": 0,
+     "podium_brier": 0.09534763703703703,
+     "rps": 0.1948333443340494,
+     "top1": 0.037037037037037035,
+     "top3": 0.1111111111111111,
+     "top_prob": 0.7071111111111115,
+     "valid": 27000,
+     "winner_brier": 0.07602006666666666,
+     "winner_logloss": 9.393897748784559
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.31359649122807,
+     "invalid": 0,
+     "podium_brier": 0.0917399,
+     "rps": 0.13193317978775607,
+     "top1": 0.037037037037037035,
+     "top3": 0.1111111111111111,
+     "top_prob": 0.6410740740740741,
+     "valid": 27000,
+     "winner_brier": 0.07184956666666668,
+     "winner_logloss": 7.993085708698574
+    }
+   },
+   "n_checkpoints": 27,
+   "season": 2024,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2024-r07-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.0823435406698563,
+     "invalid": 0,
+     "podium_brier": 0.0739754072727273,
+     "rps": 0.08266863696801813,
+     "top1": 0.9818181818181818,
+     "top3": 1.0,
+     "top_prob": 0.8734,
+     "valid": 55000,
+     "winner_brier": 0.0024013545454545445,
+     "winner_logloss": 0.15401477532833535
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.531444019138756,
+     "invalid": 0,
+     "podium_brier": 0.04027614727272729,
+     "rps": 0.03803313337923627,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.8760000000000001,
+     "valid": 55000,
+     "winner_brier": 0.0014727418181818173,
+     "winner_logloss": 0.13451591360994736
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.5336641148325363,
+     "invalid": 0,
+     "podium_brier": 0.04048878727272727,
+     "rps": 0.04814709860111849,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.8760545454545455,
+     "valid": 55000,
+     "winner_brier": 0.0014735200000000003,
+     "winner_logloss": 0.13455261096657162
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.5336641148325363,
+     "invalid": 0,
+     "podium_brier": 0.04048878727272727,
+     "rps": 0.04814709860111849,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.8760545454545455,
+     "valid": 55000,
+     "winner_brier": 0.0014735200000000003,
+     "winner_logloss": 0.13455261096657162
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.5224038277511958,
+     "invalid": 0,
+     "podium_brier": 0.03980984545454546,
+     "rps": 0.04948960198502148,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.8297272727272726,
+     "valid": 55000,
+     "winner_brier": 0.0025202090909090913,
+     "winner_logloss": 0.18991141762816915
+    }
+   },
+   "n_checkpoints": 55,
+   "season": 2024,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2024-r08-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 5.3199375,
+     "invalid": 0,
+     "podium_brier": 0.2567945,
+     "rps": 0.22918949671052632,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.998,
+     "valid": 1000,
+     "winner_brier": 0.09980039999999998,
+     "winner_logloss": 13.815510557964274
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 5.261875,
+     "invalid": 0,
+     "podium_brier": 0.256702,
+     "rps": null,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.992,
+     "valid": 1000,
+     "winner_brier": 0.0992057,
+     "winner_logloss": 13.815510557964274
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 5.261875,
+     "invalid": 0,
+     "podium_brier": 0.256702,
+     "rps": null,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.992,
+     "valid": 1000,
+     "winner_brier": 0.0992057,
+     "winner_logloss": 13.815510557964274
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 5.261875,
+     "invalid": 0,
+     "podium_brier": 0.256702,
+     "rps": null,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.992,
+     "valid": 1000,
+     "winner_brier": 0.0992057,
+     "winner_logloss": 13.815510557964274
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 5.127375000000001,
+     "invalid": 0,
+     "podium_brier": 0.24303690000000003,
+     "rps": 0.08729842105263155,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.988,
+     "valid": 1000,
+     "winner_brier": 0.0988124,
+     "winner_logloss": 13.815510557964274
+    }
+   },
+   "n_checkpoints": 1,
+   "season": 2024,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2024-r10-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.3577015873015867,
+     "invalid": 0,
+     "podium_brier": 0.0880114857142857,
+     "rps": 0.051549723893065995,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.870206349206349,
+     "valid": 63000,
+     "winner_brier": 0.0025370412698412694,
+     "winner_logloss": 0.15080677675162163
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.0488412698412701,
+     "invalid": 0,
+     "podium_brier": 0.06652777301587301,
+     "rps": 0.060171218489573214,
+     "top1": 0.9523809523809523,
+     "top3": 1.0,
+     "top_prob": 0.8544920634920633,
+     "valid": 63000,
+     "winner_brier": 0.004860422222222224,
+     "winner_logloss": 0.22847884574321928
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.0513793650793655,
+     "invalid": 0,
+     "podium_brier": 0.06688438095238095,
+     "rps": 0.04651734544504165,
+     "top1": 0.9523809523809523,
+     "top3": 1.0,
+     "top_prob": 0.8548253968253967,
+     "valid": 63000,
+     "winner_brier": 0.005004606349206349,
+     "winner_logloss": 0.2333827186551033
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.0513793650793655,
+     "invalid": 0,
+     "podium_brier": 0.06688438095238095,
+     "rps": 0.04651734544504165,
+     "top1": 0.9523809523809523,
+     "top3": 1.0,
+     "top_prob": 0.8548253968253967,
+     "valid": 63000,
+     "winner_brier": 0.005004606349206349,
+     "winner_logloss": 0.2333827186551033
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.0784619047619046,
+     "invalid": 0,
+     "podium_brier": 0.06452724444444441,
+     "rps": 0.04480590198137859,
+     "top1": 0.9523809523809523,
+     "top3": 1.0,
+     "top_prob": 0.8112857142857144,
+     "valid": 63000,
+     "winner_brier": 0.005782249206349203,
+     "winner_logloss": 0.27757758928819115
+    }
+   },
+   "n_checkpoints": 63,
+   "season": 2024,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2024-r11-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.2088477611940305,
+     "invalid": 0,
+     "podium_brier": 0.14289741492537322,
+     "rps": 0.14071704328358206,
+     "top1": 0.05970149253731343,
+     "top3": 0.40298507462686567,
+     "top_prob": 0.8853134328358209,
+     "valid": 67000,
+     "winner_brier": 0.08469613582089552,
+     "winner_logloss": 5.184127593446103
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.8797328358208962,
+     "invalid": 0,
+     "podium_brier": 0.13845891940298513,
+     "rps": 0.314312032467805,
+     "top1": 0.05970149253731343,
+     "top3": 0.7014925373134329,
+     "top_prob": 0.8804179104477613,
+     "valid": 67000,
+     "winner_brier": 0.0828149208955224,
+     "winner_logloss": 4.78678312547714
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.8789940298507455,
+     "invalid": 0,
+     "podium_brier": 0.13825764626865672,
+     "rps": 0.2934128195314043,
+     "top1": 0.05970149253731343,
+     "top3": 0.7164179104477612,
+     "top_prob": 0.8814776119402985,
+     "valid": 67000,
+     "winner_brier": 0.08292004328358206,
+     "winner_logloss": 4.914305941391259
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.8789940298507455,
+     "invalid": 0,
+     "podium_brier": 0.13825764626865672,
+     "rps": 0.2934128195314043,
+     "top1": 0.05970149253731343,
+     "top3": 0.7164179104477612,
+     "top_prob": 0.8814776119402985,
+     "valid": 67000,
+     "winner_brier": 0.08292004328358206,
+     "winner_logloss": 4.914305941391259
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.8487641791044775,
+     "invalid": 0,
+     "podium_brier": 0.13455806119402985,
+     "rps": 0.12709152521174072,
+     "top1": 0.05970149253731343,
+     "top3": 0.7910447761194029,
+     "top_prob": 0.8409104477611941,
+     "valid": 67000,
+     "winner_brier": 0.07919357761194028,
+     "winner_logloss": 4.291296085959324
+    }
+   },
+   "n_checkpoints": 67,
+   "season": 2024,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2024-r12-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 5.3437222222222225,
+     "invalid": 0,
+     "podium_brier": 0.12273283333333333,
+     "rps": 0.22755903996101365,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.781,
+     "valid": 3000,
+     "winner_brier": 0.0794337,
+     "winner_logloss": 4.082298213350143
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 4.695425925925927,
+     "invalid": 0,
+     "podium_brier": 0.11518659999999999,
+     "rps": 0.20345333333333335,
+     "top1": 0.0,
+     "top3": 0.6666666666666666,
+     "top_prob": 0.5636666666666666,
+     "valid": 3000,
+     "winner_brier": 0.06838316666666666,
+     "winner_logloss": 4.135492236624964
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 4.695425925925927,
+     "invalid": 0,
+     "podium_brier": 0.11518659999999999,
+     "rps": 0.20345333333333335,
+     "top1": 0.0,
+     "top3": 0.6666666666666666,
+     "top_prob": 0.5636666666666666,
+     "valid": 3000,
+     "winner_brier": 0.06838316666666666,
+     "winner_logloss": 4.135492236624964
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 4.695425925925927,
+     "invalid": 0,
+     "podium_brier": 0.11518659999999999,
+     "rps": 0.20345333333333335,
+     "top1": 0.0,
+     "top3": 0.6666666666666666,
+     "top_prob": 0.5636666666666666,
+     "valid": 3000,
+     "winner_brier": 0.06838316666666666,
+     "winner_logloss": 4.135492236624964
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 4.633055555555557,
+     "invalid": 0,
+     "podium_brier": 0.11293360000000001,
+     "rps": 0.22850480961663408,
+     "top1": 0.0,
+     "top3": 0.6666666666666666,
+     "top_prob": 0.5263333333333334,
+     "valid": 3000,
+     "winner_brier": 0.06506046666666666,
+     "winner_logloss": 3.2855855500161737
+    }
+   },
+   "n_checkpoints": 3,
+   "season": 2024,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2024-r13-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.7956285714285705,
+     "invalid": 0,
+     "podium_brier": 0.20002558857142858,
+     "rps": 0.11228800277008315,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.799914285714286,
+     "valid": 35000,
+     "winner_brier": 0.08342224,
+     "winner_logloss": 12.68552736684979
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.9021864661654133,
+     "invalid": 0,
+     "podium_brier": 0.10097964000000001,
+     "rps": 0.2143498807735754,
+     "top1": 0.02857142857142857,
+     "top3": 0.7428571428571429,
+     "top_prob": 0.6830857142857141,
+     "valid": 35000,
+     "winner_brier": 0.06265488857142856,
+     "winner_logloss": 2.795512735649507
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.9039187969924818,
+     "invalid": 0,
+     "podium_brier": 0.10139414285714286,
+     "rps": 0.2258174757954126,
+     "top1": 0.02857142857142857,
+     "top3": 0.7714285714285715,
+     "top_prob": 0.682,
+     "valid": 35000,
+     "winner_brier": 0.06285606000000002,
+     "winner_logloss": 2.8417711378815182
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.9039187969924818,
+     "invalid": 0,
+     "podium_brier": 0.10139414285714286,
+     "rps": 0.2258174757954126,
+     "top1": 0.02857142857142857,
+     "top3": 0.7714285714285715,
+     "top_prob": 0.682,
+     "valid": 35000,
+     "winner_brier": 0.06285606000000002,
+     "winner_logloss": 2.8417711378815182
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.8758315789473683,
+     "invalid": 0,
+     "podium_brier": 0.09677435714285715,
+     "rps": 0.10071664963127462,
+     "top1": 0.02857142857142857,
+     "top3": 0.7142857142857143,
+     "top_prob": 0.6196571428571428,
+     "valid": 35000,
+     "winner_brier": 0.058176285714285736,
+     "winner_logloss": 2.5877788631366125
+    }
+   },
+   "n_checkpoints": 35,
+   "season": 2024,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2024-r14-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.3751052631578946,
+     "invalid": 0,
+     "podium_brier": 0.1469288375,
+     "rps": 0.13295393282548476,
+     "top1": 0.0,
+     "top3": 0.75,
+     "top_prob": 0.6025,
+     "valid": 8000,
+     "winner_brier": 0.067556975,
+     "winner_logloss": 3.175190351873768
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.926414473684211,
+     "invalid": 0,
+     "podium_brier": 0.11776243750000003,
+     "rps": 0.05243209117705287,
+     "top1": 0.875,
+     "top3": 0.875,
+     "top_prob": 0.7873749999999999,
+     "valid": 8000,
+     "winner_brier": 0.014187374999999997,
+     "winner_logloss": 0.9481432748386989
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.9193421052631585,
+     "invalid": 0,
+     "podium_brier": 0.11786508750000002,
+     "rps": 0.05286501665022826,
+     "top1": 0.875,
+     "top3": 0.875,
+     "top_prob": 0.7906249999999999,
+     "valid": 8000,
+     "winner_brier": 0.014083449999999997,
+     "winner_logloss": 0.9439015154895913
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.9193421052631585,
+     "invalid": 0,
+     "podium_brier": 0.11786508750000002,
+     "rps": 0.05286501665022826,
+     "top1": 0.875,
+     "top3": 0.875,
+     "top_prob": 0.7906249999999999,
+     "valid": 8000,
+     "winner_brier": 0.014083449999999997,
+     "winner_logloss": 0.9439015154895913
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.905164473684211,
+     "invalid": 0,
+     "podium_brier": 0.11265105000000002,
+     "rps": 0.13204517332347412,
+     "top1": 0.875,
+     "top3": 0.875,
+     "top_prob": 0.7178749999999999,
+     "valid": 8000,
+     "winner_brier": 0.0158095125,
+     "winner_logloss": 1.170184974675439
+    }
+   },
+   "n_checkpoints": 8,
+   "season": 2024,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2024-r15-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 1.862687142857143,
+     "invalid": 0,
+     "podium_brier": 0.06383443714285715,
+     "rps": 0.07399424263157897,
+     "top1": 0.21428571428571427,
+     "top3": 0.37142857142857144,
+     "top_prob": 0.7895285714285711,
+     "valid": 70000,
+     "winner_brier": 0.06186090142857144,
+     "winner_logloss": 7.315638320497365
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.360487142857143,
+     "invalid": 0,
+     "podium_brier": 0.03468519857142858,
+     "rps": 0.04487005272715073,
+     "top1": 0.6428571428571429,
+     "top3": 0.7571428571428571,
+     "top_prob": 0.7738142857142858,
+     "valid": 70000,
+     "winner_brier": 0.030237167142857135,
+     "winner_logloss": 2.011283281828759
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.3599628571428573,
+     "invalid": 0,
+     "podium_brier": 0.03454317714285715,
+     "rps": 0.04304608670143196,
+     "top1": 0.6428571428571429,
+     "top3": 0.7571428571428571,
+     "top_prob": 0.7736714285714287,
+     "valid": 70000,
+     "winner_brier": 0.03005567,
+     "winner_logloss": 1.999076759948909
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.3599628571428573,
+     "invalid": 0,
+     "podium_brier": 0.03454317714285715,
+     "rps": 0.04304608670143196,
+     "top1": 0.6428571428571429,
+     "top3": 0.7571428571428571,
+     "top_prob": 0.7736714285714287,
+     "valid": 70000,
+     "winner_brier": 0.03005567,
+     "winner_logloss": 1.999076759948909
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.3815071428571426,
+     "invalid": 0,
+     "podium_brier": 0.03564856714285714,
+     "rps": 0.04662377785728694,
+     "top1": 0.6428571428571429,
+     "top3": 0.7571428571428571,
+     "top_prob": 0.7286714285714285,
+     "valid": 70000,
+     "winner_brier": 0.02948179142857142,
+     "winner_logloss": 1.8495370305498795
+    }
+   },
+   "n_checkpoints": 70,
+   "season": 2024,
+   "stages": [
+    "EARLY",
+    "LATE",
+    "MID"
+   ]
+  },
+  "2024-r16-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.6718947368421055,
+     "invalid": 0,
+     "podium_brier": 0.19005385555555557,
+     "rps": 0.15536245244690672,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.5035555555555555,
+     "valid": 9000,
+     "winner_brier": 0.06353807777777777,
+     "winner_logloss": 2.758722048906152
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.5043567251461982,
+     "invalid": 0,
+     "podium_brier": 0.1056136222222222,
+     "rps": 0.05536221957153231,
+     "top1": 0.7777777777777778,
+     "top3": 1.0,
+     "top_prob": 0.554,
+     "valid": 9000,
+     "winner_brier": 0.021909188888888893,
+     "winner_logloss": 0.9583511173396704
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.504561403508772,
+     "invalid": 0,
+     "podium_brier": 0.1062036111111111,
+     "rps": 0.050218331890455985,
+     "top1": 0.7777777777777778,
+     "top3": 1.0,
+     "top_prob": 0.5545555555555556,
+     "valid": 9000,
+     "winner_brier": 0.021849333333333335,
+     "winner_logloss": 0.9571534773071496
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.504561403508772,
+     "invalid": 0,
+     "podium_brier": 0.1062036111111111,
+     "rps": 0.050218331890455985,
+     "top1": 0.7777777777777778,
+     "top3": 1.0,
+     "top_prob": 0.5545555555555556,
+     "valid": 9000,
+     "winner_brier": 0.021849333333333335,
+     "winner_logloss": 0.9571534773071496
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.490140350877193,
+     "invalid": 0,
+     "podium_brier": 0.10119386666666667,
+     "rps": 0.06387980838770856,
+     "top1": 0.7777777777777778,
+     "top3": 1.0,
+     "top_prob": 0.4941111111111111,
+     "valid": 9000,
+     "winner_brier": 0.024004155555555556,
+     "winner_logloss": 1.0071848720067162
+    }
+   },
+   "n_checkpoints": 9,
+   "season": 2024,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2024-r17-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 4.599,
+     "invalid": 0,
+     "podium_brier": 0.17654812499999997,
+     "rps": 0.20394909210526319,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.6125625,
+     "valid": 16000,
+     "winner_brier": 0.07399601875,
+     "winner_logloss": 13.38377585302789
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 4.03925,
+     "invalid": 0,
+     "podium_brier": 0.14884822499999997,
+     "rps": 0.14685285335650827,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.7379999999999999,
+     "valid": 16000,
+     "winner_brier": 0.08106899375,
+     "winner_logloss": 7.155294353186346
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 4.040332236842105,
+     "invalid": 0,
+     "podium_brier": 0.14926354375,
+     "rps": 0.14812017832674634,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.7395625,
+     "valid": 16000,
+     "winner_brier": 0.08121333749999998,
+     "winner_logloss": 8.116446131609065
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 4.040332236842105,
+     "invalid": 0,
+     "podium_brier": 0.14926354375,
+     "rps": 0.14812017832674634,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.7395625,
+     "valid": 16000,
+     "winner_brier": 0.08121333749999998,
+     "winner_logloss": 8.116446131609065
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.9878519736842106,
+     "invalid": 0,
+     "podium_brier": 0.14025133125,
+     "rps": 0.21338748417480857,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.6903125,
+     "valid": 16000,
+     "winner_brier": 0.07742348749999999,
+     "winner_logloss": 6.496238715117585
+    }
+   },
+   "n_checkpoints": 16,
+   "season": 2024,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2024-r18-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.815973684210526,
+     "invalid": 0,
+     "podium_brier": 0.14518760555555554,
+     "rps": 0.11645662680824868,
+     "top1": 0.0,
+     "top3": 0.05555555555555555,
+     "top_prob": 0.7934444444444443,
+     "valid": 18000,
+     "winner_brier": 0.0832510111111111,
+     "winner_logloss": 10.578790035947184
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.9191754385964914,
+     "invalid": 0,
+     "podium_brier": 0.08102342222222222,
+     "rps": 0.03641021143374169,
+     "top1": 0.5555555555555556,
+     "top3": 0.8888888888888888,
+     "top_prob": 0.7947777777777776,
+     "valid": 18000,
+     "winner_brier": 0.030913644444444444,
+     "winner_logloss": 1.2021801170702062
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.9171140350877194,
+     "invalid": 0,
+     "podium_brier": 0.08118556666666667,
+     "rps": 0.0376399820931679,
+     "top1": 0.5555555555555556,
+     "top3": 0.8888888888888888,
+     "top_prob": 0.7948333333333333,
+     "valid": 18000,
+     "winner_brier": 0.030765744444444434,
+     "winner_logloss": 1.196956955048143
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.9171140350877194,
+     "invalid": 0,
+     "podium_brier": 0.08118556666666667,
+     "rps": 0.0376399820931679,
+     "top1": 0.5555555555555556,
+     "top3": 0.8888888888888888,
+     "top_prob": 0.7948333333333333,
+     "valid": 18000,
+     "winner_brier": 0.030765744444444434,
+     "winner_logloss": 1.196956955048143
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.9202426900584797,
+     "invalid": 0,
+     "podium_brier": 0.07928356111111112,
+     "rps": 0.05447538931167812,
+     "top1": 0.5555555555555556,
+     "top3": 0.8888888888888888,
+     "top_prob": 0.7475555555555558,
+     "valid": 18000,
+     "winner_brier": 0.029456033333333336,
+     "winner_logloss": 1.168038005679663
+    }
+   },
+   "n_checkpoints": 18,
+   "season": 2024,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2024-r19-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.855578947368422,
+     "invalid": 0,
+     "podium_brier": 0.0559172,
+     "rps": 0.155723351800554,
+     "top1": 0.0,
+     "top3": 1.0,
+     "top_prob": 0.595,
+     "valid": 1000,
+     "winner_brier": 0.0667677,
+     "winner_logloss": 2.7488721956224653
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.78778947368421,
+     "invalid": 0,
+     "podium_brier": 0.059339300000000005,
+     "rps": 0.07549773684210524,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.553,
+     "valid": 1000,
+     "winner_brier": 0.0157347,
+     "winner_logloss": 0.5923972774598022
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.78778947368421,
+     "invalid": 0,
+     "podium_brier": 0.059339300000000005,
+     "rps": 0.07549773684210524,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.553,
+     "valid": 1000,
+     "winner_brier": 0.0157347,
+     "winner_logloss": 0.5923972774598022
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.78778947368421,
+     "invalid": 0,
+     "podium_brier": 0.059339300000000005,
+     "rps": 0.07549773684210524,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.553,
+     "valid": 1000,
+     "winner_brier": 0.0157347,
+     "winner_logloss": 0.5923972774598022
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.778315789473684,
+     "invalid": 0,
+     "podium_brier": 0.0518035,
+     "rps": 0.07370865789473684,
+     "top1": 1.0,
+     "top3": 1.0,
+     "top_prob": 0.524,
+     "valid": 1000,
+     "winner_brier": 0.017057799999999998,
+     "winner_logloss": 0.6462635946610948
+    }
+   },
+   "n_checkpoints": 1,
+   "season": 2024,
+   "stages": [
+    "EARLY"
+   ]
+  },
+  "2024-r22-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.479937908496732,
+     "invalid": 0,
+     "podium_brier": 0.1371751294117647,
+     "rps": 0.13781505039559686,
+     "top1": 0.058823529411764705,
+     "top3": 0.5882352941176471,
+     "top_prob": 0.662529411764706,
+     "valid": 17000,
+     "winner_brier": 0.06409169411764706,
+     "winner_logloss": 2.6776922748848873
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.0118398692810455,
+     "invalid": 0,
+     "podium_brier": 0.1045924588235294,
+     "rps": 0.11600600289364284,
+     "top1": 0.7058823529411765,
+     "top3": 0.7647058823529411,
+     "top_prob": 0.7065882352941175,
+     "valid": 17000,
+     "winner_brier": 0.021674705882352936,
+     "winner_logloss": 1.549872650222218
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.0152385620915028,
+     "invalid": 0,
+     "podium_brier": 0.10450474705882351,
+     "rps": 0.09233803964735073,
+     "top1": 0.7058823529411765,
+     "top3": 0.7647058823529411,
+     "top_prob": 0.7074117647058822,
+     "valid": 17000,
+     "winner_brier": 0.02160647647058824,
+     "winner_logloss": 1.5474716699945912
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.0152385620915028,
+     "invalid": 0,
+     "podium_brier": 0.10450474705882351,
+     "rps": 0.09233803964735073,
+     "top1": 0.7058823529411765,
+     "top3": 0.7647058823529411,
+     "top_prob": 0.7074117647058822,
+     "valid": 17000,
+     "winner_brier": 0.02160647647058824,
+     "winner_logloss": 1.5474716699945912
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.988650326797386,
+     "invalid": 0,
+     "podium_brier": 0.09985126470588235,
+     "rps": 0.09217884177188934,
+     "top1": 0.7058823529411765,
+     "top3": 0.7647058823529411,
+     "top_prob": 0.6461764705882351,
+     "valid": 17000,
+     "winner_brier": 0.021778935294117646,
+     "winner_logloss": 1.0756271107723527
+    }
+   },
+   "n_checkpoints": 17,
+   "season": 2024,
+   "stages": [
+    "EARLY",
+    "MID"
+   ]
+  },
+  "2024-r24-R": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 3.095470588235294,
+     "invalid": 0,
+     "podium_brier": 0.1606341,
+     "rps": 0.1250725665634675,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.912,
+     "valid": 1000,
+     "winner_brier": 0.0917975,
+     "winner_logloss": 13.815510557964274
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 3.1621176470588237,
+     "invalid": 0,
+     "podium_brier": 0.1612247,
+     "rps": 0.035166105263157894,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.91,
+     "valid": 1000,
+     "winner_brier": 0.0916004,
+     "winner_logloss": 13.815510557964274
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 3.1621176470588237,
+     "invalid": 0,
+     "podium_brier": 0.1612247,
+     "rps": 0.035166105263157894,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.91,
+     "valid": 1000,
+     "winner_brier": 0.0916004,
+     "winner_logloss": 13.815510557964274
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 3.1621176470588237,
+     "invalid": 0,
+     "podium_brier": 0.1612247,
+     "rps": 0.035166105263157894,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.91,
+     "valid": 1000,
+     "winner_brier": 0.0916004,
+     "winner_logloss": 13.815510557964274
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 3.1688823529411763,
+     "invalid": 0,
+     "podium_brier": 0.1599195,
+     "rps": 0.059821671052631586,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top_prob": 0.876,
+     "valid": 1000,
+     "winner_brier": 0.0887279,
+     "winner_logloss": 13.815510557964274
+    }
+   },
+   "n_checkpoints": 1,
+   "season": 2024,
+   "stages": [
+    "EARLY"
+   ]
+  }
+ },
+ "schema_version": "v3.2e-race-results-v1"
+}

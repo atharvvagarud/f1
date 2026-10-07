@@ -1,0 +1,31 @@
+{
+ "ablations": {
+  "anchor_A_vs_B": {
+   "ci95_high": 1.0042897152543115,
+   "ci95_low": -0.02033914139454635,
+   "mean": 0.47654507688794906,
+   "n_races": 75
+  },
+  "ar1_D_vs_E": {
+   "ci95_high": 0.37498759274128485,
+   "ci95_low": 0.13310765491884144,
+   "mean": 0.24616516732306148,
+   "n_races": 75
+  },
+  "dynamics_B_vs_C": {
+   "ci95_high": 0.00562851587332454,
+   "ci95_low": -0.0639689431637986,
+   "mean": -0.026458030824363855,
+   "n_races": 75
+  },
+  "variance_C_vs_D": {
+   "ci95_high": 0.0,
+   "ci95_low": 0.0,
+   "mean": 0.0,
+   "n_races": 75
+  }
+ },
+ "population_hash": "5d038db83111a1a9dc9e885ed107358d8e018ad1c3a4570f14d1f78697b8383d",
+ "primary": "winner_logloss",
+ "schema_version": "v3.2e-ablations-v1"
+}

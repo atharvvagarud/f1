@@ -1,0 +1,10 @@
+{
+  "schema_version": "v3.2g-projected-intersections-v1",
+  "status": "NOT_APPLICABLE_NO_ADMISSION",
+  "v32f_handoff": {
+    "TRACK_only": 292,
+    "TRACK_x_STALE": 811,
+    "WET_only": 176,
+    "WET_x_STALE": 799
+  }
+}

@@ -1,0 +1,10 @@
+{
+ "schema_version": "v3.2l-stale-reconciliation-v1",
+ "k_classes": {
+  "RAW_SOURCE_STALE": 2866,
+  "LIFECYCLE_AMBIGUOUS": 147,
+  "MULTIPLE_OFFENDER_MIXED": 281
+ },
+ "reconciliation": "K RAW_SOURCE_STALE = raw feed equally stale AND last raw state Stopped=True in most cases; L re-expresses via stopped-signal availability: see opportunity.json checkpoint categories",
+ "n_offender_rows": 7977
+}

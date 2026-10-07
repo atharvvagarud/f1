@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "03345a24135383b8d7581fe31902e2cbc5920a9107d44449d407dbac344e8de7",
+  "diagnostics": {
+    "n_inpit_updates": 134,
+    "n_malformed_rows": 0,
+    "n_messages": 62689,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 134,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2020-r15-R",
+  "raw_sha256": "500bd66e13425038aa44e975f91b770419a8dc9afa22a3d6f3c07796847d23d1",
+  "round": 15,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2020,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2020/2020-11-29_Bahrain_Grand_Prix/2020-11-29_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        3.554,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        3.554,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

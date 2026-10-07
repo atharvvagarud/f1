@@ -1,0 +1,144 @@
+{
+ "schema_version": "v3.2d-summary-v1",
+ "baseline": {
+  "tag": "v3.1-race-dynamics",
+  "commit": "64c5af094bd1304e23a5c7d3d5b782b0eef11aca",
+  "head_matches_tag": true,
+  "serving": "frozen V2, no V3.1 promotion"
+ },
+ "v3_2c_parent": {
+  "verdict": "V3.2C COMPLETE — READY FOR V3.2D",
+  "eligible": "2305/9644 (0.2390)",
+  "eligible_races": "103/149",
+  "field_contract": "mc2-field-v1",
+  "presence_adapter": "v3.2c-presence-v1"
+ },
+ "r3_identity": {
+  "parameter_contract": "r3-v1",
+  "parameter_set": "phase6-r3-empirical",
+  "estimator": "r3-estimator-v1",
+  "monte_carlo": "r5-monte-carlo-v1",
+  "pit_dynamics": "r6-pit-dynamics-v1",
+  "through_2024_hash": "4c2f85f08f1ce66cc6477982b2d5c97e9547f70927224b8e949ebe123ff3f140",
+  "immutable": true
+ },
+ "state_contract_identity": "713d6e4df22bf09664ca3c6a2a99fea1941c57492d5afe55fb836e7bdab32691",
+ "common_population": {
+  "source": "results/v3/v3_2c_coverage.json",
+  "eligible_checkpoints": 2305,
+  "total_checkpoints": 9644,
+  "development_sample": ["2020-r05-R@340", "2021-r07-R@340", "2022-r01-R@360", "2023-r05-R@360", "2024-r01-R@359"]
+ },
+ "temporal_folds": [
+  {"fold": "D1", "train_through": 2019, "evaluate": [2020, 2021]},
+  {"fold": "D2", "train_through": 2021, "evaluate": [2022, 2023]},
+  {"fold": "D3", "train_through": 2023, "evaluate": [2024]}
+ ],
+ "preregistration_identity": "dc0ae2dbade08514ed3b7cbf5e4be965edccf40b60d7bcad86c99f245854ee16",
+ "candidate_arms": ["A_R3_BASELINE", "B_DRIVER_ANCHOR", "C_DRIVER_ANCHOR_PLUS_DYNAMICS", "D_CONDITIONED_VARIANCE", "E_AR1_RESIDUAL", "F_TRAFFIC_CONTEXT"],
+ "anchor": {
+  "definition": "shrink(n) * median(clean deviations vs contemporary R3 expectation)",
+  "windows": [3, 5, 8],
+  "primary_window": 5,
+  "shrinkage_k": 4,
+  "clip_s": 3.0,
+  "fallbacks": ["evidence", "thin", "none"],
+  "dev_fallback_counts": {"evidence": 100},
+  "temporal_safe": true
+ },
+ "dynamics": {
+  "admitted_features": ["dyn_pace_slope_l3", "dyn_pace_slope_l10"],
+  "mechanism": "combined_drift = clip(short + 0.5*long, 1.5) exponential decay 0.5/lap",
+  "decay_candidates": [0.3, 0.5, 0.7],
+  "drift_bound_s": 1.5,
+  "bounded": true
+ },
+ "variance": {
+  "hierarchy": ["circuit|era", "era", "global"],
+  "min_n": {"circuit|era": 2000, "era": 30, "global": 1},
+  "floor_s": 0.3,
+  "ceiling_s": 4.0,
+  "dev_fallback": "100% era by design (no per-circuit R3 residual groups)"
+ },
+ "residual_distribution": {
+  "adopted": "R3 empirical quantile retained as stored (zero-median, heavy positive tail)",
+  "std_by_fold": {"through-2019": 0.9767, "through-2021": 1.4571, "through-2023-global": 1.5832},
+  "parametric_replacement": "none"
+ },
+ "autocorrelation": {
+  "reference": 0.264,
+  "re_estimated": {"D1": {"rho": 0.2246, "n_pairs": 1208}, "D2": {"rho": 0.4847, "n_pairs": 1588}, "D3": {"rho": 0.3647, "n_pairs": 2054}},
+  "stable_all_folds": true
+ },
+ "ar1": {
+  "equation": "eps_t = rho*eps_{t-1} + sqrt(1-rho^2)*innovation_t",
+  "bound": 0.8,
+  "own_driver_only": true,
+  "stationary_variance_test": "pass (20k draws, mean<0.05, var within 5%)"
+ },
+ "traffic": {
+  "verdict": "NOT_RUN",
+  "reason": "no temporally-safe conditioned penalty family estimated; observed-gap penalties confounded"
+ },
+ "stint_context": "audited, no compound modifiers added (R3 mu already carries age-clamped degradation)",
+ "pit_boundary": "frozen R6 semantics; dev comparisons pits-off both arms",
+ "dnf_boundary": "no future-DNF simulation; V3.2C roster only",
+ "track_weather_boundary": "DRY_GREEN only",
+ "parameter_hierarchy": {
+  "schema": "mc2-params-v1",
+  "families": ["driver_anchor", "pace_dynamics", "residual_variance", "residual_ar1"],
+  "folds": [2019, 2021, 2023],
+  "artifact_hashes_through_2023": {"anchor": "6416a46ca3ab03ab", "dynamics": "850695a899a9625d", "variance": "10d7808ecc0204a1", "ar1": "4dd9d7e2c880e2a7"}
+ },
+ "temporal_estimation": "fold Y uses history before Y only; check_temporal enforces through<Y; 2025 never read",
+ "mc2_architecture": "eligible state -> anchor -> bounded dynamics -> context variance -> AR(1) -> [traffic OFF] -> R4 base + R6 pit boundary -> terminal order",
+ "research_version": "mc2-r1-research+mc2-kernel-v1+mc2-rng-v1+state:mc2-field-v1+presence:v3.2c-presence-v1",
+ "contract_identity": "25b35762c4f175dc04416a06f9b5162e98f4194bf7e3b9b04027caea04837953",
+ "output_semantics": ["winner_frequency", "expected_finish", "position_distribution", "sample_orders", "valid_invalid_counts"],
+ "probability_firewall": "no classifier import/invocation in MC2 namespace (import-level scan green)",
+ "construction_validation": "18/18 tests green (16 source-safe, 2 corpus-dependent)",
+ "temporal_poison": "post-T mutations leave all causal inputs identical; simulated traffic from simulated state only",
+ "r3_regression": "parity spot check 2018-r01-R@90 bit-exact (abs 1e-9); no R3 file modified",
+ "parameter_diagnostics": "anchor 100/100 evidence; variance 0% inadequate; lag-1 stable all folds; traffic NOT_RUN",
+ "development_ablation": {
+  "scope": "5 checkpoints x paired A vs B-E, n=200, seed 20240101",
+  "winner_tv_vs_A": {"B": [0.145, 0.09, 0.165, 0.145, 0.34], "C": [0.135, 0.115, 0.145, 0.155, 0.32], "D": "== C", "E": [0.09, 0.13, 0.12, 0.145, 0.35]},
+  "invalid": "0 on all 25 arm-runs",
+  "verdict": "diagnostics only; no KEEP/REJECT (V3.2E)"
+ },
+ "coverage": "identical population both arms (2305/9644); 0 eligibility delta",
+ "performance": {"runs_per_sec": {"A_R3": 1619, "B": 188, "C": 156, "D": 155, "E_AR1": 146}, "slowdown_E_vs_A": "~11x (unoptimized research loop)"},
+ "convergence": {"arm_E_winner_TV_vs_n1000": {"n100": 0.068, "n200": 0.051, "n500": 0.019}, "run_count_frozen": false},
+ "runtime_estimate": {"eligible_states": 2305, "n1000_serial_h": 4.37, "n1000_parallel8w_h": 0.55, "n10000_serial_h": 43.7, "note": "planning evidence only"},
+ "selected_candidate": "ADVANCE_E",
+ "strategy_compatibility": "deterministic (seed, sim) streams, event-order consumption, CRN-pairable; no Phase-7 migration",
+ "scientific_identities": {
+  "v3_1_tag": "v3.1-race-dynamics -> 64c5af094bd1304e23a5c7d3d5b782b0eef11aca",
+  "v2_serving": "1116b34fc716035c2425e605b9a5cc15541a2d2335e26113f2e2eaf3fcaa59f4",
+  "phase2_content": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+  "phase2_parquet": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3",
+  "explainability": "bae84b614a6e9e176d5bb9c33b99dcaf4cba3f376333b0f075c828f73982939f",
+  "replay": "78a3c059888637fe83cc534d0eb7869b6d18e746724bb1ce0f03ee3b8ba96298",
+  "simulation": "r3-v1 through 2024 phase6-r3-empirical (4c2f85f08f1ce66cc6477982b2d5c97e9547f70927224b8e949ebe123ff3f140)",
+  "v3_1_artifact": "9a1aac515d12c4e86ac369977392f74394cf7f6853b8e89d948bcdec28f58960 (unpromoted)",
+  "field_contract": "mc2-field-v1 -> 713d6e4df22bf09664ca3c6a2a99fea1941c57492d5afe55fb836e7bdab32691",
+  "presence_adapter": "v3.2c-presence-v1",
+  "mc2_contract": "25b35762c4f175dc04416a06f9b5162e98f4194bf7e3b9b04027caea04837953",
+  "mc2_preregistration": "dc0ae2dbade08514ed3b7cbf5e4be965edccf40b60d7bcad86c99f245854ee16"
+ },
+ "known_limitations": [
+  "dev sample is 5 checkpoints, not the catalogue backtest (V3.2E)",
+  "D==C in dev (era-only variance levels); circuit|era variance needs a new residual family",
+  "anchor window 5 structural, not outcome-tuned",
+  "convergence TV<=0.005 not reached at n=1000; research loop 11x slower than R3",
+  "traffic NOT_RUN; wet/neutralised/DNF/strategy untouched by design"
+ ],
+ "v3_2e_entry_gate": {
+  "preregistration": "dc0ae2dbade08514ed3b7cbf5e4be965edccf40b60d7bcad86c99f245854ee16",
+  "population": "2305/9644 mc2-field-v1",
+  "folds": "D1-D3 with through-{2019,2021,2023} artifacts",
+  "candidate": "ADVANCE_E with mechanistic justification",
+  "r3_bit_exact": true,
+  "forbidden": "no 2025, no model training, no serving promotion, no public cache, no frontend, nothing staged/committed/tagged/pushed"
+ }
+}

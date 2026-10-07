@@ -1,0 +1,135 @@
+{
+ "all_match": true,
+ "checks": [
+  {
+   "consumer": "V3.2J scripts + N audit",
+   "exists": true,
+   "hash_actual_bytes": "c6f293e6bd26f9fa848cf612ba29f929f277c0c78f691ca7360c2249ccde6d82",
+   "hash_actual_compact_sep": "c6f293e6bd26f9fa848cf612ba29f929f277c0c78f691ca7360c2249ccde6d82",
+   "hash_actual_default_sep": "ead0aaa4054ffbf5e628c4af2db031ef044cd929ee50dd2bf663bf19e599b69f",
+   "hash_expected": "ead0aaa4054ffbf5e628c4af2db031ef044cd929ee50dd2bf663bf19e599b69f",
+   "match": true,
+   "name": "V3.2J preregistration",
+   "path": "results/v3/v3_2j/preregistration.json"
+  },
+  {
+   "consumer": "V3.2K scripts + N audit",
+   "exists": true,
+   "hash_actual_bytes": "04e4f92f240325e075cbd4e2f8427309efa031670b228351ed90b43d90dca852",
+   "hash_actual_compact_sep": "04e4f92f240325e075cbd4e2f8427309efa031670b228351ed90b43d90dca852",
+   "hash_actual_default_sep": "567260af8072d2e1700a4d1e9ad24265fc458c838010dc8a0d27b745c6a2f22b",
+   "hash_expected": "567260af8072d2e1700a4d1e9ad24265fc458c838010dc8a0d27b745c6a2f22b",
+   "match": true,
+   "name": "V3.2K preregistration",
+   "path": "results/v3/v3_2k/preregistration.json"
+  },
+  {
+   "consumer": "V3.2L scripts + N audit",
+   "exists": true,
+   "hash_actual_bytes": "aeea47d7b3a1f5645d688535671e35798a22d84105b692fb19587cdc8b81620c",
+   "hash_actual_compact_sep": "aeea47d7b3a1f5645d688535671e35798a22d84105b692fb19587cdc8b81620c",
+   "hash_actual_default_sep": "4c3eb5c8cdfe9ebf44555de540ee1378d0b12089d5c8cbc44dea7c0de6c48533",
+   "hash_expected": "4c3eb5c8cdfe9ebf44555de540ee1378d0b12089d5c8cbc44dea7c0de6c48533",
+   "match": true,
+   "name": "V3.2L preregistration",
+   "path": "results/v3/v3_2l/preregistration.json"
+  },
+  {
+   "consumer": "V3.2M scripts + N audit",
+   "exists": true,
+   "hash_actual_bytes": "3161cf5275e8a2cfe3ef71032315c0084f3a6ca09fd297940576c1a74123bea6",
+   "hash_actual_compact_sep": "3161cf5275e8a2cfe3ef71032315c0084f3a6ca09fd297940576c1a74123bea6",
+   "hash_actual_default_sep": "cfb6fba0e7a2abbceba9bfebe62213eb92d5b25551450238cdc911164d090e9f",
+   "hash_expected": "3161cf5275e8a2cfe3ef71032315c0084f3a6ca09fd297940576c1a74123bea6",
+   "match": true,
+   "name": "V3.2M preregistration",
+   "path": "results/v3/v3_2m/preregistration.json"
+  },
+  {
+   "consumer": "presence/driver_status resolver",
+   "exists": true,
+   "hash_actual": "8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30",
+   "hash_expected": "8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30",
+   "match": true,
+   "name": "J status corpus",
+   "path": "results/v3/v3_2j/status_corpus_identity.json"
+  },
+  {
+   "consumer": "O parity gate",
+   "exists": true,
+   "hash_expected": "7ae97c3c8575679a",
+   "match": true,
+   "name": "dry-green parity",
+   "note": "substring pin",
+   "path": "results/v3/v3_2j/dry_green_parity.json"
+  },
+  {
+   "consumer": "M audit + N correction",
+   "exists": true,
+   "hash_expected": "v3.2l-episode-corpus-v1",
+   "match": true,
+   "name": "L episode corpus",
+   "note": "substring pin",
+   "path": "results/v3/v3_2l/episode_corpus.json"
+  },
+  {
+   "consumer": "N audit",
+   "exists": true,
+   "hash_actual": "4c3eb5c8cdfe9ebf44555de540ee1378d0b12089d5c8cbc44dea7c0de6c48533",
+   "hash_expected": "4c3eb5c8cdfe9ebf44555de540ee1378d0b12089d5c8cbc44dea7c0de6c48533",
+   "match": true,
+   "name": "L prereg embedded",
+   "path": "results/v3/v3_2l_causal_driver_lifecycle.json"
+  },
+  {
+   "consumer": "N audit",
+   "exists": true,
+   "hash_actual": "567260af8072d2e1700a4d1e9ad24265fc458c838010dc8a0d27b745c6a2f22b",
+   "hash_expected": "567260af8072d2e1700a4d1e9ad24265fc458c838010dc8a0d27b745c6a2f22b",
+   "match": true,
+   "name": "K prereg embedded",
+   "path": "results/v3/v3_2k_raw_timing_state_reconstruction.json"
+  },
+  {
+   "consumer": "runtime/presence",
+   "exists": true,
+   "match": true,
+   "name": "code:field contract",
+   "path": "raceintel/simulation/field_contract.py",
+   "token": "mc2-field-v1"
+  },
+  {
+   "consumer": "runtime/presence",
+   "exists": true,
+   "match": true,
+   "name": "code:presence adapter C",
+   "path": "raceintel/simulation/presence.py",
+   "token": "v3.2c-presence-v1"
+  },
+  {
+   "consumer": "runtime/presence",
+   "exists": true,
+   "match": true,
+   "name": "code:presence adapter J",
+   "path": "raceintel/simulation/presence.py",
+   "token": "v3.2j-presence-v2"
+  },
+  {
+   "consumer": "runtime/presence",
+   "exists": true,
+   "match": true,
+   "name": "code:status contract",
+   "path": "raceintel/simulation/driver_status.py",
+   "token": "v3.2j-driver-status-v1"
+  },
+  {
+   "consumer": "runtime/presence",
+   "exists": true,
+   "match": true,
+   "name": "code:raw adapter",
+   "path": "raceintel/simulation/driver_status.py",
+   "token": "v3.2j-raw-adapter-v1"
+  }
+ ],
+ "schema_version": "v3.2n-artifact-identity-audit-v1"
+}

@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "2450ba14d9b29304ee633f9df5887ac9a72a7bed7b4c107b337cb1a75cdf1ec6",
+  "diagnostics": {
+    "n_inpit_updates": 210,
+    "n_malformed_rows": 0,
+    "n_messages": 60284,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 104,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2022-r11-R",
+  "raw_sha256": "e01e75c30a707aa7fc29619412e023dea4bd1ca8e716c02633d294afef673945",
+  "round": 11,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2022,
+  "served_by": "fastf1_mirror",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2022/2022-07-10_Austrian_Grand_Prix/2022-07-10_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        3.773,
+        false
+      ],
+      [
+        7385.656,
+        true
+      ]
+    ],
+    "leclerc": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        3.773,
+        false
+      ],
+      [
+        5675.671,
+        true
+      ]
+    ],
+    "ricciardo": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        3.773,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        3.773,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

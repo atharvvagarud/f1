@@ -1,0 +1,11 @@
+{
+  "f1_static_jsonstream": {
+    "auth": "none (public S3 static hosting; same host FastF1 itself fetches)",
+    "pattern": "livetiming.formula1.com/static/{Y}/{date}_{GP}/{date}_Race/TimingData.jsonStream",
+    "probe": "HEAD 2021-12-12 stream -> HTTP 200, 5.5 MB; one full GET parsed: 2021 schema identical (Retired/Stopped/InPit bools, 3 Retired:true for #7/#63/#11)",
+    "seasons_obtainable": "2018-2024 at minimum (2018+2024 cached locally; 2021 probe-fetched; pattern is season-uniform)",
+    "verdict": "VIABLE completion path for 2019-2023 (mechanical fetch in V3.2J, not bulk-downloaded here)"
+  },
+  "other_candidates": "none needed: official static host covers 2018-2024; no fan-page scraping, no Wikipedia-as-data, no fabricated providers",
+  "schema_version": "v3.2i-external-v1"
+}

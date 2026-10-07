@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "53ea514c2296ac2edd378a64487b8174d2b5ea82a83c11414f7f2586085dee07",
+  "diagnostics": {
+    "n_inpit_updates": 158,
+    "n_malformed_rows": 0,
+    "n_messages": 53008,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 62,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 26
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2022-r17-R",
+  "raw_sha256": "1539aa8918402dbcf58dc5904e11d325cb91d968166ddc70c7734b90bb332eec",
+  "round": 17,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2022,
+  "served_by": "fastf1_mirror",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2022/2022-10-02_Singapore_Grand_Prix/2022-10-02_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        5.464,
+        false
+      ],
+      [
+        11093.737,
+        true
+      ]
+    ],
+    "alonso": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        5.464,
+        false
+      ],
+      [
+        8773.772,
+        true
+      ]
+    ],
+    "leclerc": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        5.464,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        5.464,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

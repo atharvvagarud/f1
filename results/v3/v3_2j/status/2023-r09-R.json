@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "0175e5b43bd99d1238cd787fb30fbc9743ec522cc4ed39adc7fd1981f873c3dc",
+  "diagnostics": {
+    "n_inpit_updates": 266,
+    "n_malformed_rows": 0,
+    "n_messages": 61621,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 146,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 21
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2023-r09-R",
+  "raw_sha256": "c0608ed8f23159bb216b4e61ac304b37b6d2eebb01c7d1c641f9291c9b6dc7c3",
+  "round": 9,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2023,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2023/2023-07-02_Austrian_Grand_Prix/2023-07-02_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "de_vries": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "sargeant": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        7.769,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        7.769,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

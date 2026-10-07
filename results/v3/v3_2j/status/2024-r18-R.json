@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "57129df77f38f241cf04feed341fdd212366ba4d86fe500205b627e49c7b473e",
+  "diagnostics": {
+    "n_inpit_updates": 170,
+    "n_malformed_rows": 0,
+    "n_messages": 64581,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 66,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 22
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2024-r18-R",
+  "raw_sha256": "4564a57e03f06ffece13e425e707baf0ce35a72b17ffe73cc34afc28ec18ce8b",
+  "round": 18,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2024,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2024/2024-09-22_Singapore_Grand_Prix/2024-09-22_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        10.458,
+        false
+      ],
+      [
+        5104.185,
+        true
+      ]
+    ],
+    "alonso": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "colapinto": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        10.458,
+        false
+      ],
+      [
+        9354.209,
+        true
+      ]
+    ],
+    "leclerc": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        10.458,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        10.458,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

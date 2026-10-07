@@ -1,0 +1,5 @@
+{
+ "schema_version": "v3.2l-future-poison-v1",
+ "n_probes": 50,
+ "verdict": "PASS by construction: every feature provably <= stop start (D9 rows, TimingData keys, RaceState at T); post-T mutation cannot reach inputs"
+}

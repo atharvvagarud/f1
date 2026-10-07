@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "f46da702c9f06280d9d9c2c5cc64693f74965d19a6f4f3e72fd2906150f4a6e4",
+  "diagnostics": {
+    "n_inpit_updates": 67,
+    "n_malformed_rows": 0,
+    "n_messages": 60724,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 64,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 20
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2021-r07-R",
+  "raw_sha256": "745a1658ba87160953688c00a04f571533f6a3578ebf3dfee6cf87d04bcb5268",
+  "round": 7,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2021,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2021/2021-06-20_French_Grand_Prix/2021-06-20_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "mazepin": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        6.489,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        6.489,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

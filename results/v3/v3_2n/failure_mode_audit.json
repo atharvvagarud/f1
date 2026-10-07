@@ -1,0 +1,54 @@
+{
+ "schema_version": "v3.2n-failure-mode-audit-v1",
+ "rows": [
+  {
+   "blocker": "STALE_ROSTER_OBSERVATION",
+   "race_id": "2018-r01-R",
+   "frame_index": 155,
+   "http": 422,
+   "explicit_refusal": true,
+   "reason": "non_contemporaneous_roster_member"
+  },
+  {
+   "blocker": "UNSUPPORTED_TRACK_STATE",
+   "race_id": "2018-r01-R",
+   "frame_index": 20,
+   "http": 422,
+   "explicit_refusal": true,
+   "reason": "unknown_track_state"
+  },
+  {
+   "blocker": "WET_CONDITIONS",
+   "race_id": "2018-r05-R",
+   "frame_index": 136,
+   "http": 422,
+   "explicit_refusal": true,
+   "reason": "wet_track_conditions"
+  },
+  {
+   "blocker": "MISSING_DRIVER_OBSERVATION",
+   "race_id": "2018-r01-R",
+   "frame_index": 0,
+   "http": 422,
+   "explicit_refusal": true,
+   "reason": "unobserved_roster_member"
+  },
+  {
+   "blocker": "MISSING_TYRE_STATE",
+   "race_id": "2018-r02-R",
+   "frame_index": 59,
+   "http": 422,
+   "explicit_refusal": true,
+   "reason": "missing_tyre_age"
+  },
+  {
+   "blocker": "TERMINAL_STATE",
+   "race_id": "2018-r01-R",
+   "frame_index": 925,
+   "http": 422,
+   "explicit_refusal": true,
+   "reason": "non_contemporaneous_roster_member"
+  }
+ ],
+ "all_explicit": true
+}

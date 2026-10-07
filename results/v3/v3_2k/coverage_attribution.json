@@ -1,0 +1,7 @@
+{
+ "schema_version": "v3.2k-coverage-attribution-v1",
+ "new_eligible_set": [],
+ "attribution": {},
+ "exact_match": true,
+ "note": "zero new eligible states; conservation holds trivially"
+}

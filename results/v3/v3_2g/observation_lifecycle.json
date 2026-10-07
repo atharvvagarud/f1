@@ -1,0 +1,7 @@
+{
+  "lap_jump_interruptions": 0,
+  "lifecycle": "per-driver lap sequences are contiguous (0 lap-jump interruptions corpus-wide); transience lives at checkpoint grain (stale-then-reobserved: 407 V3.2C records incl 55 top-5/6 winners) and in 9 returned-after-STOPPED rows. Trailing end is either feed cutoff (finishers) or absence (retirees); indistinguishable at T",
+  "n_driver_races": 2973,
+  "no_explicit_terminal_signal": true,
+  "schema_version": "v3.2g-observation-lifecycle-v1"
+}

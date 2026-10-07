@@ -1,0 +1,47 @@
+{
+  "regimes": {
+    "DRY_GREEN": {
+      "coverage": 0.2768,
+      "supported": 2305,
+      "total": 8327,
+      "unsupported": 6022
+    },
+    "RED_FLAG": {
+      "coverage": 0.0,
+      "supported": 0,
+      "total": 22,
+      "unsupported": 22
+    },
+    "SAFETY_CAR": {
+      "coverage": 0.0,
+      "supported": 0,
+      "total": 417,
+      "unsupported": 417
+    },
+    "UNKNOWN": {
+      "coverage": 0.0,
+      "supported": 0,
+      "total": 70,
+      "unsupported": 70
+    },
+    "VSC": {
+      "coverage": 0.0,
+      "supported": 0,
+      "total": 137,
+      "unsupported": 137
+    },
+    "VSC_ENDING": {
+      "coverage": 0.0,
+      "supported": 0,
+      "total": 71,
+      "unsupported": 71
+    },
+    "YELLOW": {
+      "coverage": 0.0,
+      "supported": 0,
+      "total": 600,
+      "unsupported": 600
+    }
+  },
+  "schema_version": "v3.2f-regime-coverage-v1"
+}

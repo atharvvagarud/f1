@@ -1,0 +1,8 @@
+{
+ "schema_version": "v3.2k-pit-validation-v1",
+ "n": 5563,
+ "agreement": 0.9412,
+ "gate_threshold": 0.95,
+ "gate": "FAIL",
+ "note": "NumberOfPitStops vs canonical pit_stops_completed_so_far; InPit/PitOut transition timestamps audited via freshness census only"
+}

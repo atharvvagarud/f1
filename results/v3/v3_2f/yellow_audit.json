@@ -1,0 +1,63 @@
+{
+  "affected_driver_fractions": {
+    "drivers_per_lap": {
+      "mean": 11.375,
+      "n": 315,
+      "p10": 5,
+      "p50": 11,
+      "p90": 18,
+      "sd": 4.49
+    },
+    "frac_slowed": {
+      "mean": 0.149,
+      "n": 315,
+      "p10": 0.0,
+      "p50": 0.059,
+      "p90": 0.4,
+      "sd": 0.232
+    },
+    "n_yellow_laps": 315
+  },
+  "checkpoint_token_count": 600,
+  "finding": "Median yellow-lap field impact +0.46s with median 5.9% of drivers slowed >2s: the token is overwhelmingly local. Last-message RC channel is stale/unrelated in most rows (median age 16.9s; 2202/5877 rows carry no flag). No causal sector->driver exposure mapping exists in frozen RaceState.",
+  "pace_delta_s": {
+    "mean": 1.283,
+    "n": 3982,
+    "p10": -1.925,
+    "p50": 0.463,
+    "p90": 4.055,
+    "sd": 6.153
+  },
+  "rc_semantics": {
+    "n_texts": 5803,
+    "n_yellow_rows": 5877,
+    "rc_age_s": {
+      "mean": 25.34,
+      "n": 5803,
+      "p10": 2.057,
+      "p50": 16.903,
+      "p90": 63.628,
+      "sd": 24.867
+    },
+    "rc_category": {
+      "CarEvent": 617,
+      "Drs": 178,
+      "Flag": 3675,
+      "None": 74,
+      "Other": 1313,
+      "SafetyCar": 20
+    },
+    "rc_flag": {
+      "BLACK AND WHITE": 1,
+      "BLUE": 607,
+      "CHEQUERED": 102,
+      "CLEAR": 1720,
+      "DOUBLE YELLOW": 471,
+      "None": 2202,
+      "RED": 3,
+      "YELLOW": 771
+    },
+    "sector_mention_rows": 3155
+  },
+  "schema_version": "v3.2f-yellow-audit-v1"
+}

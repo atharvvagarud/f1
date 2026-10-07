@@ -1,0 +1,163 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "d61456a6947c602d25e0ac33db18bf3933da9c8a09f55db5cbdefbc7c84ec971",
+  "diagnostics": {
+    "n_inpit_updates": 206,
+    "n_malformed_rows": 0,
+    "n_messages": 29910,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 104,
+    "n_retired_updates": 24,
+    "n_stopped_updates": 32
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 24,
+  "race_id": "2022-r18-R",
+  "raw_sha256": "7bcfd276775e249cf8c19183b2b499ef032d17c2555de21df4591c0ef653a50e",
+  "round": 18,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2022,
+  "served_by": "fastf1_mirror",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2022/2022-10-09_Japanese_Grand_Prix/2022-10-09_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        1.841,
+        false
+      ],
+      [
+        5774.205,
+        true
+      ],
+      [
+        5775.215,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        1.841,
+        false
+      ],
+      [
+        10330.346,
+        true
+      ],
+      [
+        10331.467,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        1.841,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        1.841,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

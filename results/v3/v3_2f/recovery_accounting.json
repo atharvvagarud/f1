@@ -1,0 +1,9 @@
+{
+  "by_admission": {},
+  "by_state_source_improvement": {},
+  "missing_tyre_note": "198 MISSING_TYRE states inspected: lap-1 all-null tyre rows and early-retirement data gaps; no causal tyre source exists (stint fields null too). V3.2C deferral stands with evidence.",
+  "newly_supported_checkpoints": 0,
+  "position_null_note": "DEFER_POSITION_NULL: no semantic proof found; V3.2C 0-false-positive finding cited, not promoted.",
+  "schema_version": "v3.2f-recovery-accounting-v1",
+  "unexplained_growth": 0
+}

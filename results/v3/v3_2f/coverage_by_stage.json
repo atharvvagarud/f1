@@ -1,0 +1,37 @@
+{
+  "after": {
+    "EARLY": {
+      "coverage": 0.3955,
+      "n": 3080,
+      "supported": 1218
+    },
+    "LATE": {
+      "coverage": 0.1014,
+      "n": 3342,
+      "supported": 339
+    },
+    "MID": {
+      "coverage": 0.2322,
+      "n": 3222,
+      "supported": 748
+    }
+  },
+  "before": {
+    "EARLY": {
+      "coverage": 0.3955,
+      "n": 3080,
+      "supported": 1218
+    },
+    "LATE": {
+      "coverage": 0.1014,
+      "n": 3342,
+      "supported": 339
+    },
+    "MID": {
+      "coverage": 0.2322,
+      "n": 3222,
+      "supported": 748
+    }
+  },
+  "schema_version": "v3.2f-stage-coverage-v1"
+}

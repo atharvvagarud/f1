@@ -1,0 +1,291 @@
+{
+  "absolute_checkpoint_gain": 0,
+  "accepted_mc2": {
+    "arm": "E_AR1_RESIDUAL",
+    "kernel_schema": "mc2-kernel-v1",
+    "presence_adapter": "v3.2c-presence-v1",
+    "research_version": "mc2-r1-research",
+    "rho": 0.264,
+    "rng_schema": "mc2-rng-v1",
+    "state_contract": "mc2-field-v1"
+  },
+  "admission_decisions": {
+    "RED": {
+      "decision": "DEFER_RED",
+      "gate_failed": "evidence (n=22, 0 usable laps)",
+      "reason": "RED_DEFERRED_DEFAULT_EXPECTATION_CONFIRMED"
+    },
+    "SAFETY_CAR": {
+      "decision": "DEFER_SC",
+      "gate_failed": "explicit simulation mechanism",
+      "reason": "SC_DEFERRED_COMPRESSION_RESTART_OUT_OF_SCOPE"
+    },
+    "VSC": {
+      "decision": "DEFER_VSC",
+      "gate_failed": "explicit simulation mechanism + parameter estimation",
+      "reason": "VSC_DEFERRED_DURATION_RESTART_ANCHOR_EVIDENCE_THIN"
+    },
+    "WET": {
+      "decision": "DEFER_WET",
+      "gate_failed": "weather evolution + compound transition boundaries",
+      "reason": "WET_DEFERRED_EVOLUTION_TRANSITION_NO_CAUSAL_MECHANISM"
+    },
+    "YELLOW": {
+      "decision": "DEFER_YELLOW",
+      "gate_failed": "causal initial state",
+      "reason": "YELLOW_DEFERRED_INSUFFICIENT_SPATIAL_SEMANTICS"
+    }
+  },
+  "api_behavior": "deferred regimes -> explicit 422 simulation_unsupported; never silent fallback",
+  "baseline": {
+    "commit": "64c5af0",
+    "head_matches_tag": true,
+    "staged_changes": 0,
+    "tag": "v3.1-race-dynamics"
+  },
+  "blocker_intersections": {
+    "TRACK_only": 292,
+    "TRACK_x_MISSING_DRIVER": 129,
+    "TRACK_x_MISSING_TYRE": 88,
+    "TRACK_x_STALE": 811,
+    "TRACK_x_TERMINAL": 23,
+    "TRACK_x_WET": 278,
+    "WET_only": 176,
+    "WET_x_MISSING_DRIVER": 102,
+    "WET_x_MISSING_TYRE": 68,
+    "WET_x_STALE": 799,
+    "WET_x_TERMINAL": 13
+  },
+  "compound_transition": "R6_DRY_FILTERED_ONLY",
+  "coverage_after": {
+    "coverage": 0.239,
+    "eligible": 2305,
+    "total": 9644
+  },
+  "coverage_before": {
+    "eligible": 2305,
+    "fraction": 0.239,
+    "total": 9644
+  },
+  "coverage_opportunity": {
+    "max_regime_only_headroom": 468,
+    "naive_sum_rejected": "1165+801 double-counts multi-blocker states",
+    "single_blocker": {
+      "('MISSING_DRIVER_OBSERVATION',)": 158,
+      "('MISSING_TYRE_STATE',)": 6,
+      "('STALE_ROSTER_OBSERVATION',)": 4667,
+      "('TERMINAL_STATE',)": 8,
+      "('UNSUPPORTED_TRACK_STATE',)": 292,
+      "('WET_CONDITIONS',)": 176
+    }
+  },
+  "deferred_regimes": [
+    "YELLOW",
+    "VSC",
+    "SAFETY_CAR",
+    "WET",
+    "RED"
+  ],
+  "dry_green_parity": {
+    "corpus": "dry_green_parity_corpus.json",
+    "corpus_hash": "7ae97c3c8575679ae8039a60b494767c19ccf08cf1c0706ac31461e0ea175de1",
+    "members": 50,
+    "n_runs": 500,
+    "seed": 20240101,
+    "status": "PARITY_OK_BIT_EXACT"
+  },
+  "future_regime_firewall": "POISON_TESTED (TrackStatus, rainfall, compounds)",
+  "implemented_regimes": [],
+  "known_limitations": [
+    "no regime admitted: coverage unchanged at 23.90%",
+    "LATE-stage coverage 10.14% remains weak",
+    "46 races have zero supported checkpoints",
+    "STALE_ROSTER (6407 all-blocker sets) is the next limiting factor but roster safety forbids exclusion",
+    "VSC duration/restart and wet evolution/transition need V3.2G+ research programs"
+  ],
+  "parameter_identities": {
+    "new_families_estimated": 0,
+    "pattern": "mc2-params-v1 (schema, regime, seasons, conditioning, minimum N, fallback, estimator, content hash)"
+  },
+  "parameter_policy": "evaluation Y -> through-(Y-1); no 2025",
+  "performance": {
+    "inherited_v32e": {
+      "at_8_workers_h": 5.9,
+      "catalogue_serial_h": 33.1,
+      "mc2e_runs_per_s": 97,
+      "r3_slowdown": 13.6
+    },
+    "parity_runs_per_s": 992.1
+  },
+  "position_null": "DEFER_POSITION_NULL (no semantic proof)",
+  "precompute_optimization": "plan only (no risky optimization)",
+  "recovery_accounting": {
+    "newly_supported": 0,
+    "unexplained_growth": 0
+  },
+  "red": {
+    "checkpoints": 22,
+    "decision": "DEFER_RED",
+    "usable_laps": 0
+  },
+  "regime_coverage": {
+    "DRY_GREEN": {
+      "coverage": 0.2768,
+      "supported": 2305,
+      "total": 8327,
+      "unsupported": 6022
+    },
+    "RED_FLAG": {
+      "coverage": 0.0,
+      "supported": 0,
+      "total": 22,
+      "unsupported": 22
+    },
+    "SAFETY_CAR": {
+      "coverage": 0.0,
+      "supported": 0,
+      "total": 417,
+      "unsupported": 417
+    },
+    "UNKNOWN": {
+      "coverage": 0.0,
+      "supported": 0,
+      "total": 70,
+      "unsupported": 70
+    },
+    "VSC": {
+      "coverage": 0.0,
+      "supported": 0,
+      "total": 137,
+      "unsupported": 137
+    },
+    "VSC_ENDING": {
+      "coverage": 0.0,
+      "supported": 0,
+      "total": 71,
+      "unsupported": 71
+    },
+    "YELLOW": {
+      "coverage": 0.0,
+      "supported": 0,
+      "total": 600,
+      "unsupported": 600
+    }
+  },
+  "regime_validation": "NOT_APPLICABLE_NO_ADMITTED_REGIME",
+  "remaining_blockers": {
+    "MISSING_DRIVER": 354,
+    "MISSING_TYRE": 198,
+    "STALE_ROSTER": 4667,
+    "TERMINAL": 154,
+    "TRACK_STATE": 1165,
+    "WET": 801
+  },
+  "result_provenance": "no admitted regimes: schema unchanged (MC2 identity + presence identity + seed + n_runs carried by existing artifacts)",
+  "rng_domains": {
+    "domains": [
+      "mc2-vsc-duration",
+      "mc2-sc-duration",
+      "mc2-weather-transition"
+    ],
+    "status": "RESERVED_UNCONSUMED"
+  },
+  "roster_safety": "STALE_ROSTER safety unchanged (V3.2C authoritative; absence != retirement)",
+  "safety_car": {
+    "decision": "DEFER_SC",
+    "lap_episodes": 104,
+    "pace_median_delta_s": 33.245
+  },
+  "schema_version": "v3.2f-regime-coverage-v1",
+  "scientific_identities": {
+    "field_contract": "mc2-field-v1",
+    "presence_adapter": "v3.2c-presence-v1",
+    "regime_support": "v3.2f-regime-support-v1"
+  },
+  "season_coverage": {
+    "2018": {
+      "coverage": 0.0873,
+      "n": 1386,
+      "supported": 121
+    },
+    "2019": {
+      "coverage": 0.4019,
+      "n": 1361,
+      "supported": 547
+    },
+    "2020": {
+      "coverage": 0.1846,
+      "n": 1127,
+      "supported": 208
+    },
+    "2021": {
+      "coverage": 0.2134,
+      "n": 1401,
+      "supported": 299
+    },
+    "2022": {
+      "coverage": 0.2321,
+      "n": 1435,
+      "supported": 333
+    },
+    "2023": {
+      "coverage": 0.2288,
+      "n": 1412,
+      "supported": 323
+    },
+    "2024": {
+      "coverage": 0.3114,
+      "n": 1522,
+      "supported": 474
+    }
+  },
+  "stage_coverage": {
+    "EARLY": {
+      "coverage": 0.3955,
+      "n": 3080,
+      "supported": 1218
+    },
+    "LATE": {
+      "coverage": 0.1014,
+      "n": 3342,
+      "supported": 339
+    },
+    "MID": {
+      "coverage": 0.2322,
+      "n": 3222,
+      "supported": 748
+    }
+  },
+  "tests": {
+    "ci_total_delta": "+23 (3649 -> 3672)",
+    "corpus_dependent": 14,
+    "source_safe": 9
+  },
+  "track_decomposition": {
+    "all_clear": 8327,
+    "null": 70,
+    "red_flag": 22,
+    "safety_car": 417,
+    "vsc": 137,
+    "vsc_ending": 71,
+    "yellow": 600
+  },
+  "v3_2e_parent": "KEEP_MC2_E (accepted scientific candidate, DRY_GREEN behavior frozen)",
+  "v3_2g_entry_gate": "READY (evidence + contracts + dataset published; parity preserved; noG started)",
+  "vsc": {
+    "decision": "DEFER_VSC",
+    "lap_episodes": 55,
+    "pace_median_delta_s": 19.623
+  },
+  "weather_evolution": "NO_MECHANISM_IN_SCOPE (persistence/transition unvalidated)",
+  "wet": {
+    "decision": "DEFER_WET",
+    "rain_falling": 553,
+    "wet_compound": 946
+  },
+  "yellow": {
+    "decision": "DEFER_YELLOW",
+    "median_affected_fraction": 0.059,
+    "yellow_lap_median_delta_s": 0.463
+  }
+}

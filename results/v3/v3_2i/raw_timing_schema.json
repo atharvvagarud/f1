@@ -1,0 +1,44 @@
+{
+  "delta_framing": "12-char session-time prefix + JSON delta; first messages carry full snapshot, later messages carry changed keys only",
+  "per_driver_top_keys_by_era": {
+    "2018": {
+      "BestLapTime": 91,
+      "GapToLeader": 3366,
+      "InPit": 23,
+      "IntervalToPositionAhead": 3387,
+      "LastLapTime": 134,
+      "Line": 65,
+      "NumberOfLaps": 134,
+      "NumberOfPitStops": 2,
+      "PitOut": 22,
+      "Position": 65,
+      "RacingNumber": 20,
+      "Retired": 20,
+      "Sectors": 434,
+      "ShowPosition": 20,
+      "Speeds": 616,
+      "Stopped": 21
+    },
+    "2024": {
+      "BestLapTime": 20,
+      "GapToLeader": 772,
+      "InPit": 120,
+      "IntervalToPositionAhead": 793,
+      "LastLapTime": 20,
+      "Line": 269,
+      "NumberOfLaps": 20,
+      "NumberOfPitStops": 1,
+      "PitOut": 21,
+      "Position": 269,
+      "RacingNumber": 20,
+      "Retired": 20,
+      "Sectors": 3204,
+      "ShowPosition": 20,
+      "Speeds": 154,
+      "Status": 121,
+      "Stopped": 20
+    }
+  },
+  "schema_version": "v3.2i-raw-timing-schema-v1",
+  "timestamp_source": "live-timing session clock prefix per message (same clock family as D9 state_time_s; empirically cross-checked in causal_timeline.json)"
+}

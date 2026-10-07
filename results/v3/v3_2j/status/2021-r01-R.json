@@ -1,0 +1,159 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "4adf14533b76ff5ad9325a5877822e8284b58d660585e7d315d7bc6d006ff59d",
+  "diagnostics": {
+    "n_inpit_updates": 107,
+    "n_malformed_rows": 0,
+    "n_messages": 63760,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 100,
+    "n_retired_updates": 23,
+    "n_stopped_updates": 24
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 23,
+  "race_id": "2021-r01-R",
+  "raw_sha256": "378f98483a20801b8cc4f4c99fb9cdb01effbb0063414dcf1740d665ad966941",
+  "round": 1,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2021,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2021/2021-03-28_Bahrain_Grand_Prix/2021-03-28_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        4.26,
+        false
+      ],
+      [
+        5676.829,
+        true
+      ]
+    ],
+    "bottas": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        4.26,
+        false
+      ],
+      [
+        7616.9,
+        true
+      ]
+    ],
+    "giovinazzi": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        4.26,
+        false
+      ],
+      [
+        7581.766,
+        true
+      ]
+    ],
+    "leclerc": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "mazepin": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        4.26,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        4.26,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

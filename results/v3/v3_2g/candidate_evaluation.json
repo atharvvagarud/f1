@@ -1,0 +1,39 @@
+{
+  "C3": {
+    "false_terminal": {
+      "podiums": 7,
+      "top5": 9,
+      "winners": 3
+    },
+    "precision_vs_dnf": [
+      207,
+      261
+    ]
+  },
+  "C4": {
+    "false_terminal_classified": 3,
+    "later_rows": 6,
+    "precision_vs_dnf": [
+      47,
+      50
+    ],
+    "recall": "below C3 (intersection)"
+  },
+  "C5": {
+    "distinct_bad": 14,
+    "false_terminal": {
+      "podiums": 1,
+      "top5": 1,
+      "winners": 1
+    },
+    "later_rows": 9,
+    "precision_vs_dnf": [
+      57,
+      62
+    ],
+    "recall": 0.1033
+  },
+  "freeze_hash": "1465c11b50e898ca094ed35dd87bd075b446c26bdb55d73fe878bb14e0d7b0a8",
+  "primary_metric": "FALSE TERMINAL EXCLUSIONS",
+  "schema_version": "v3.2g-candidate-evaluation-v1"
+}

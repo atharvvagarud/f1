@@ -1,0 +1,159 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "5e4d555a1d046113d9248065ca081b9929b728bfa09633fda7d137a7a8889f16",
+  "diagnostics": {
+    "n_inpit_updates": 101,
+    "n_malformed_rows": 0,
+    "n_messages": 27111,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 94,
+    "n_retired_updates": 23,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 23,
+  "race_id": "2019-r03-R",
+  "raw_sha256": "bd7018ad32d98b099ee04ddcfc0be7c8177a2a1630ed755de2b7cf787d77e02f",
+  "round": 3,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2019,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2019/2019-04-14_Chinese_Grand_Prix/2019-04-14_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        4.213,
+        false
+      ],
+      [
+        3800.214,
+        true
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "kubica": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        4.213,
+        false
+      ],
+      [
+        6356.025,
+        true
+      ]
+    ],
+    "leclerc": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        4.213,
+        false
+      ],
+      [
+        7280.311,
+        true
+      ]
+    ],
+    "perez": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        4.213,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        4.213,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

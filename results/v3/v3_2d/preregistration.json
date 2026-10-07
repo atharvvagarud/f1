@@ -1,0 +1,122 @@
+{
+ "ablation_order": [
+  "A_R3_BASELINE",
+  "B_DRIVER_ANCHOR",
+  "C_DRIVER_ANCHOR_PLUS_DYNAMICS",
+  "D_CONDITIONED_VARIANCE",
+  "E_AR1_RESIDUAL"
+ ],
+ "acceptance_interpretation": "development diagnostics only; no KEEP/REJECT verdict in V3.2D (V3.2E)",
+ "anchor": {
+  "primary": 5,
+  "shrinkage_k": 4,
+  "windows": [
+   3,
+   5,
+   8
+  ]
+ },
+ "ar1": {
+  "admission": "0.05 < rho_fold < 0.8, else arm E disabled",
+  "bound": 0.8,
+  "reference_rho": 0.264
+ },
+ "arms": [
+  "A_R3_BASELINE",
+  "B_DRIVER_ANCHOR",
+  "C_DRIVER_ANCHOR_PLUS_DYNAMICS",
+  "D_CONDITIONED_VARIANCE",
+  "E_AR1_RESIDUAL",
+  "F_TRAFFIC_CONTEXT"
+ ],
+ "common_population": {
+  "development_sample": "5 parity-corpus checkpoints, one per eval season 2020-2024 (deterministic)",
+  "eligible_checkpoints": 2305,
+  "presence_adapter": "v3.2c-presence-v1",
+  "source": "results/v3/v3_2c_coverage.json",
+  "state_contract": "mc2-field-v1",
+  "total_checkpoints": 9644
+ },
+ "contract_identity": "25b35762c4f175dc04416a06f9b5162e98f4194bf7e3b9b04027caea04837953",
+ "dynamics": {
+  "decay_candidates": [
+   0.3,
+   0.5,
+   0.7
+  ],
+  "drift_bound_s": 1.5,
+  "horizon_laps": 6,
+  "primary_decay": 0.5
+ },
+ "failure_policy": "numerical trajectory failures count as invalid; never silently dropped or refilled",
+ "kernel_identity": "mc2-r1-research+mc2-kernel-v1+mc2-rng-v1+state:mc2-field-v1+presence:v3.2c-presence-v1",
+ "metrics": [
+  "winner_total_variation_vs_A",
+  "expected_finish_mae_vs_A",
+  "invalid_rate",
+  "coverage_parity",
+  "residual_variance_ratio",
+  "runs_per_sec"
+ ],
+ "parameter_training_policy": "fold evaluating Y uses artifacts through Y-1 only; 2025 never read",
+ "prereg_hash": "dc0ae2dbade08514ed3b7cbf5e4be965edccf40b60d7bcad86c99f245854ee16",
+ "random_seeds": {
+  "master_seed": 20240101,
+  "mc2_domain": "mc2-ar1",
+  "r3_streams": "unperturbed"
+ },
+ "research_version": "mc2-r1-research",
+ "schema_version": "v3.2d-prereg-v1",
+ "simulation_counts": {
+  "convergence": [
+   100,
+   200,
+   500,
+   1000
+  ],
+  "development": 200
+ },
+ "temporal_folds": [
+  {
+   "evaluate": [
+    2020,
+    2021
+   ],
+   "fold": "D1",
+   "train_through": 2019
+  },
+  {
+   "evaluate": [
+    2022,
+    2023
+   ],
+   "fold": "D2",
+   "train_through": 2021
+  },
+  {
+   "evaluate": [
+    2024
+   ],
+   "fold": "D3",
+   "train_through": 2023
+  }
+ ],
+ "traffic_gate": {
+  "reason": "no temporally-safe conditioned traffic-penalty family estimated in V3.2D; observed-gap penalties confound pace-deficit selection with traffic causation; inventing a penalty to complete the ladder is forbidden (Part F/V/Y)",
+  "verdict": "NOT_RUN"
+ },
+ "variance": {
+  "ceiling_s": 4.0,
+  "floor_s": 0.3,
+  "hierarchy": [
+   "circuit|era",
+   "era",
+   "global"
+  ],
+  "min_n": {
+   "circuit|era": 2000,
+   "era": 30,
+   "global": 1
+  }
+ }
+}

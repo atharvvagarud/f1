@@ -1,0 +1,8 @@
+{
+ "preregistration_sha256": "4c3eb5c8cdfe9ebf44555de540ee1378d0b12089d5c8cbc44dea7c0de6c48533",
+ "seeds": "deterministic (numpy IRLS fixed init, no RNG draws)",
+ "frozen_inputs": [
+  "8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30"
+ ],
+ "schema_version": "v3.2l-reproducibility-v1"
+}

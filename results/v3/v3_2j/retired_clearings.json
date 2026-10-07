@@ -1,0 +1,139 @@
+{
+  "clearings": [
+    {
+      "cleared_at_s": 5973.004,
+      "driver": "alonso",
+      "race_id": "2018-r07-R",
+      "season": 2018,
+      "set_at_s": 3924.792
+    },
+    {
+      "cleared_at_s": 1671.251,
+      "driver": "ricciardo",
+      "race_id": "2018-r13-R",
+      "season": 2018,
+      "set_at_s": 1402.925
+    },
+    {
+      "cleared_at_s": 7298.145,
+      "driver": "max_verstappen",
+      "race_id": "2019-r17-R",
+      "season": 2019,
+      "set_at_s": 3516.033
+    },
+    {
+      "cleared_at_s": 5259.119,
+      "driver": "leclerc",
+      "race_id": "2020-r08-R",
+      "season": 2020,
+      "set_at_s": 5246.439
+    },
+    {
+      "cleared_at_s": 9135.786,
+      "driver": "albon",
+      "race_id": "2020-r09-R",
+      "season": 2020,
+      "set_at_s": 9122.116
+    },
+    {
+      "cleared_at_s": 9130.096,
+      "driver": "bottas",
+      "race_id": "2020-r09-R",
+      "season": 2020,
+      "set_at_s": 9122.116
+    },
+    {
+      "cleared_at_s": 9127.341,
+      "driver": "hamilton",
+      "race_id": "2020-r09-R",
+      "season": 2020,
+      "set_at_s": 9120.576
+    },
+    {
+      "cleared_at_s": 9145.224,
+      "driver": "kvyat",
+      "race_id": "2020-r09-R",
+      "season": 2020,
+      "set_at_s": 9122.116
+    },
+    {
+      "cleared_at_s": 9149.388,
+      "driver": "leclerc",
+      "race_id": "2020-r09-R",
+      "season": 2020,
+      "set_at_s": 9122.116
+    },
+    {
+      "cleared_at_s": 9142.625,
+      "driver": "norris",
+      "race_id": "2020-r09-R",
+      "season": 2020,
+      "set_at_s": 9122.116
+    },
+    {
+      "cleared_at_s": 9137.37,
+      "driver": "perez",
+      "race_id": "2020-r09-R",
+      "season": 2020,
+      "set_at_s": 9122.116
+    },
+    {
+      "cleared_at_s": 9130.865,
+      "driver": "ricciardo",
+      "race_id": "2020-r09-R",
+      "season": 2020,
+      "set_at_s": 9122.116
+    },
+    {
+      "cleared_at_s": 9153.527,
+      "driver": "russell",
+      "race_id": "2020-r09-R",
+      "season": 2020,
+      "set_at_s": 9122.116
+    },
+    {
+      "cleared_at_s": 9156.204,
+      "driver": "vettel",
+      "race_id": "2020-r09-R",
+      "season": 2020,
+      "set_at_s": 9122.116
+    },
+    {
+      "cleared_at_s": 5947.993,
+      "driver": "kevin_magnussen",
+      "race_id": "2020-r14-R",
+      "season": 2020,
+      "set_at_s": 5918.257
+    },
+    {
+      "cleared_at_s": 6177.225,
+      "driver": "leclerc",
+      "race_id": "2022-r08-R",
+      "season": 2022,
+      "set_at_s": 6163.257
+    },
+    {
+      "cleared_at_s": 5775.215,
+      "driver": "albon",
+      "race_id": "2022-r18-R",
+      "season": 2022,
+      "set_at_s": 5774.205
+    },
+    {
+      "cleared_at_s": 10331.467,
+      "driver": "sainz",
+      "race_id": "2022-r18-R",
+      "season": 2022,
+      "set_at_s": 10330.346
+    },
+    {
+      "cleared_at_s": 7935.286,
+      "driver": "perez",
+      "race_id": "2023-r16-R",
+      "season": 2023,
+      "set_at_s": 5571.141
+    }
+  ],
+  "n_clearings": 19,
+  "schema_version": "v3.2j-retired-clearings-v1"
+}

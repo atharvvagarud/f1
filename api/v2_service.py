@@ -67,6 +67,7 @@ class V2Service:
         self._history = load_history(paths)
         self._reconstructor = RaceStateReconstructor(
             states, results, race_meta=_race_meta(races))
+        self._grid_by_race = _grid_slots_by_race(results)
         self._engine = load_production_prediction_engine(
             states, self._history)
         self._races = _race_summaries(races)
@@ -78,6 +79,19 @@ class V2Service:
     @property
     def engine(self) -> RacePredictionEngine:
         return self._engine
+
+    def grid_slots(self, race_id: str) -> dict:
+        """Pre-race grid slots: ``driver_id -> grid_position or None``.
+
+        Causally pre-race (qualifying order) metadata carried on the
+        results entity; only ``grid_position`` null-ness is ever read
+        downstream (DNS shape). Final positions, DNF flags, points, and
+        winner facts are never consulted here or by callers of this map.
+        Unknown races yield an empty map (strictly conservative: the
+        presence adapter then refuses unobserved members instead of
+        assuming DNS).
+        """
+        return dict(self._grid_by_race.get(race_id, {}))
 
     def list_races(self) -> list[dict]:
         """Factual race registry, (season, round_no, race_id) order."""
@@ -130,6 +144,20 @@ class V2Service:
     def _require_race(self, race_id: str) -> None:
         if race_id not in set(self.race_ids):
             raise RaceNotFoundError(race_id)
+
+
+def _grid_slots_by_race(results: pd.DataFrame) -> dict:
+    """Pre-race grid-slot map: ``race_id -> {driver_id: grid or None}``.
+
+    Reads identity + ``grid_position`` only. No post-race outcome column
+    is touched, so post-race mutations cannot change this map (tested).
+    """
+    slots: dict = {}
+    for row in results.itertuples():
+        grid = getattr(row, "grid_position", None)
+        slots.setdefault(str(row.race_id), {})[str(row.driver_id)] = (
+            None if grid is None or pd.isna(grid) else float(grid))
+    return slots
 
 
 def _race_meta(races: pd.DataFrame) -> dict:

@@ -1,0 +1,5 @@
+{
+ "schema_version": "v3.2k-pace-validation-v1",
+ "verdict": "NO_DRIVER_HISTORY_NEED",
+ "evidence": "select_pace_parameters consumes circuit/season/constructor-level parameters only (engine.py); kernel anchors on lap_number, race_time_s, tyre_age; no per-driver recent lap history required at T"
+}

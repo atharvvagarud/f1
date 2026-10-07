@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "ca2a625e5c13018eb490c2abc7131dc034284bfe37673fd77b77b3c653db98b7",
+  "diagnostics": {
+    "n_inpit_updates": 218,
+    "n_malformed_rows": 0,
+    "n_messages": 5983,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 20,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 20
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2021-r12-R",
+  "raw_sha256": "74c50f9435ddb70ab514141c6473bf7c6f6b03cdce5a695003f4d2473eac7874",
+  "round": 12,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2021,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2021/2021-08-29_Belgian_Grand_Prix/2021-08-29_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "mazepin": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        5.575,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        5.575,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

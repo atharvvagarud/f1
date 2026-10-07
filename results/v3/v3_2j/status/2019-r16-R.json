@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "5a3226768fce008581add99fffb55e37e5dbb03a6fbe729b380387729346e30b",
+  "diagnostics": {
+    "n_inpit_updates": 76,
+    "n_malformed_rows": 0,
+    "n_messages": 27297,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 70,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 25
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2019-r16-R",
+  "raw_sha256": "084e95c2479ba2df7f066d4f63cf7d526654ece20de701fd78d02ff253106f07",
+  "round": 16,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2019,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2019/2019-09-29_Russian_Grand_Prix/2019-09-29_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "kubica": [
+      [
+        4.672,
+        false
+      ],
+      [
+        5233.065,
+        true
+      ]
+    ],
+    "kvyat": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        4.672,
+        false
+      ],
+      [
+        4753.08,
+        true
+      ]
+    ],
+    "russell": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        4.672,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        4.672,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

@@ -1,0 +1,9 @@
+{
+ "schema_version": "v3.2n-precompute-estimate-v1",
+ "scope": "3678 eligible checkpoints x 5000 runs",
+ "assumptions": "linear scaling; parallel efficiency 0.85 at 4 workers, 0.75 at 8 workers (stated, not measured)",
+ "serial_hours": 10.8,
+ "hours_4_workers": 3.2,
+ "hours_8_workers": 1.8,
+ "note": "planning only; no full cache generated in N"
+}

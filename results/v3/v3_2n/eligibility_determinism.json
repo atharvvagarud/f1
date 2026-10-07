@@ -1,0 +1,7 @@
+{
+ "schema_version": "v3.2n-eligibility-determinism-v1",
+ "n": 9644,
+ "pass_a_hash": "368ec94f90ac265f5dd231078b123ffc61796655b15665da618ada4942b334c0",
+ "pass_b_hash": "368ec94f90ac265f5dd231078b123ffc61796655b15665da618ada4942b334c0",
+ "identical": true
+}

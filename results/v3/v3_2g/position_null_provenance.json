@@ -1,0 +1,16 @@
+{
+  "chain": "FastF1 laps FastF1Generated -> tiera.py:412 verbatim bool -> driver_laps.fastf1_generated -> D6/D7/D9 passthrough -> RaceState.position (to_int_or_null of NaN Position)",
+  "decision": "UNSAFE_FOR_RUNTIME",
+  "overlap": {
+    "generated_AND_null": 294,
+    "generated_rows": 294,
+    "non_generated_null": 0,
+    "position_nulls": 294
+  },
+  "schema_version": "v3.2g-position-null-provenance-v1",
+  "upstream_processes": [
+    "no-timing-data driver synthesis (Time=session min)",
+    "retired-on-track last-lap synthesis (assumed end time)",
+    "missing final-lap timing of classified finishers"
+  ]
+}

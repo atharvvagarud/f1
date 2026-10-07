@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "84adad15b1682ff3850da9a644f8ae1a00caf4a49faa5f54912e38e7899e4ef7",
+  "diagnostics": {
+    "n_inpit_updates": 166,
+    "n_malformed_rows": 0,
+    "n_messages": 56205,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 64,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 24
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2024-r17-R",
+  "raw_sha256": "1e3480b60c894883dedd39c88242e735f13ac5fd58e5437b3181f01bd1218785",
+  "round": 17,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2024,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2024/2024-09-15_Azerbaijan_Grand_Prix/2024-09-15_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "bearman": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "colapinto": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        9.612,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        9.612,
+        false
+      ],
+      [
+        8500.123,
+        true
+      ]
+    ],
+    "tsunoda": [
+      [
+        9.612,
+        false
+      ],
+      [
+        5120.096,
+        true
+      ]
+    ],
+    "zhou": [
+      [
+        9.612,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

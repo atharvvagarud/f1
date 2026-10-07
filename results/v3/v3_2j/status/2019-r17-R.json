@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "5f35e66b343b1738d1079327ff57b509a40df56905204eb43d8a6b548a36faa6",
+  "diagnostics": {
+    "n_inpit_updates": 87,
+    "n_malformed_rows": 0,
+    "n_messages": 29710,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 82,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 24
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2019-r17-R",
+  "raw_sha256": "ce9e256a1a27f633c6e590657f4a8eb7404fc34abcac03ee80b1228fe4b11313",
+  "round": 17,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2019,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2019/2019-10-13_Japanese_Grand_Prix/2019-10-13_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "kubica": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        5.041,
+        false
+      ],
+      [
+        3516.033,
+        true
+      ],
+      [
+        7298.145,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        5.041,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        5.041,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

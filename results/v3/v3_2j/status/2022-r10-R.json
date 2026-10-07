@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "681324c4e1260ec2f786490134b947c47e716f4a5fe9067e1a337e73f794749d",
+  "diagnostics": {
+    "n_inpit_updates": 212,
+    "n_malformed_rows": 0,
+    "n_messages": 46102,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 114,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 26
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2022-r10-R",
+  "raw_sha256": "753ba15fc1d70f25bf425c7328e6cd9aa60da97052f0ee1eb776421b84459ab9",
+  "round": 10,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2022,
+  "served_by": "fastf1_mirror",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2022/2022-07-03_British_Grand_Prix/2022-07-03_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        8.101,
+        false
+      ],
+      [
+        8987.768,
+        true
+      ]
+    ],
+    "gasly": [
+      [
+        8.101,
+        false
+      ],
+      [
+        9572.751,
+        true
+      ]
+    ],
+    "hamilton": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        8.101,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        8.101,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

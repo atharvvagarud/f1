@@ -1,0 +1,8 @@
+{
+ "runtime_lines_added": 0,
+ "artifact_bytes": "see results/v3/v3_2l",
+ "inference_overhead": "none (no integration)",
+ "coverage_gain": 0,
+ "verdict": "no complexity admitted; value preserved as evidence",
+ "schema_version": "v3.2l-complexity-value-v1"
+}

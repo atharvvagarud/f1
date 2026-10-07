@@ -1,0 +1,604 @@
+{
+  "accepted_mc2": "unchanged MC2-E (no rho/anchor/dynamics/variance change)",
+  "api_behavior": "opt-in status support; success on relieved; frozen error (422) otherwise; no request-time network",
+  "baseline": {
+    "commit": "64c5af094bd1304e23a5c7d3d5b782b0eef11aca",
+    "tag": "v3.1-race-dynamics"
+  },
+  "clearings": {
+    "n_true_to_false": 19,
+    "terminal_post_race": 6,
+    "unreliable_windows": 13
+  },
+  "clock_alignment": {
+    "conversion": "HH:MM:SS.mmm prefix -> h*3600+m*60+s.sss",
+    "gap_first_retired_minus_last_lap_s": {
+      "max": 6574.721,
+      "min": -3172.152,
+      "n": 211,
+      "negative": 13,
+      "p50": 229.35300000000097,
+      "p90": 291.2330000000002
+    },
+    "n_timelines": 211,
+    "rule": "feed session clock shares the live-timing session origin with D9 state_time_s; query is latest delta timestamp <= T (exact equality counts); no nearest-future lookup",
+    "schema_version": "v3.2j-clock-alignment-v1"
+  },
+  "coverage_after": {
+    "eligible": 3678,
+    "total": 9644
+  },
+  "coverage_attribution": {
+    "exact_match": true,
+    "gain": 1373,
+    "pp_gain": 14.24
+  },
+  "coverage_before": {
+    "eligible": 2305,
+    "total": 9644
+  },
+  "delta_reconstruction": {
+    "adapter": "v3.2j-raw-adapter-v1",
+    "rule": "latest Retired value with t<=T; missing key preserves state"
+  },
+  "dns_preservation": "DNS path untouched; dns_recovered states unchanged (31 V3.2C states)",
+  "dry_green_parity": {
+    "corpus": "7ae97c3c8575679a (50 checkpoints, V3.2F dry_green_parity_corpus.json)",
+    "field_parity_with_resolver": "50/50 eligible with identical state identity and roster vs resolver-free path (tests/test_v3_2j_status_corpus.py::test_dry_green_parity_with_resolver)",
+    "mc2_rng_parity": "bit-exact valid/invalid/winner_counts/winner_frequency/expected_finish/position_counts/sample_order (tests/test_v3_2f_regime_corpus.py::test_dry_green_parity_corpus_bit_exact, re-run post-J)",
+    "schema_version": "v3.2j-dry-green-parity-v1",
+    "verdict": "PASS"
+  },
+  "fetch": {
+    "n_failed": 0,
+    "n_ok": 104,
+    "n_required": 104,
+    "preregistration_sha256": "ead0aaa4054ffbf5e628c4af2db031ef044cd929ee50dd2bf663bf19e599b69f",
+    "schema_version": "v3.2j-fetch-report-v1"
+  },
+  "field_safety": "every removed stale offender authoritative Retired-True at T; one unresolved offender keeps refusal (22 suppression refusals + hazard 0)",
+  "known_limitations": [
+    "official-DNF recall is partial (225 DNFs never flagged: e.g. crash Stopped-without-Retired); unknown stays unknown",
+    "source reliability rests on build-time unreliable-window pinning (13 windows); future seasons need re-validation",
+    "2022 served via FastF1 mirror (official host 403 on 2022 prefix); bytes verified as TimingData schema",
+    "no wet/track/terminal relief; STALE remains largest blocker (3294 primary)"
+  ],
+  "label_diagnostics": {
+    "classified_with_retired_fp": 40,
+    "dnf_without_retired_fn": 225,
+    "drivers_with_retired_true": 2973,
+    "note": "diagnostic-only; runtime never reads final labels",
+    "precision_like_tp": 171,
+    "schema_version": "v3.2j-label-diagnostics-v1"
+  },
+  "new_state_validation": {
+    "api_still_unsupported": {
+      "error": "SimulationUnsupportedError",
+      "reason": "non_contemporaneous_roster_member",
+      "refused": true
+    },
+    "master_seed": 20240101,
+    "n_ok": 14,
+    "n_sampled": 14,
+    "no_runtime_network": true,
+    "schema_version": "v3.2j-integration-validation-v1",
+    "simulation_count": 500
+  },
+  "performance": {
+    "corpus_load_s": 0.069,
+    "note": "status overhead negligible vs MC2 (500-sim runs measured in run_s above)",
+    "presence_with_resolver_s": 0.0,
+    "presence_without_resolver_s": 0.0,
+    "schema_version": "v3.2j-performance-v1",
+    "status_lookup_s": 9.306252468377351e-08
+  },
+  "preregistration": {
+    "contract": "v3.2j-driver-status-v1",
+    "sha256": "ead0aaa4054ffbf5e628c4af2db031ef044cd929ee50dd2bf663bf19e599b69f"
+  },
+  "presence_integration": {
+    "mode": "two-pass STALE-only relief, resolver optional (None=V3.2C behavior)",
+    "module": "raceintel/simulation/presence.py",
+    "relieved_version": "v3.2j-presence-v2"
+  },
+  "provenance": {
+    "adapter": "v3.2j-raw-adapter-v1",
+    "contract": "v3.2j-driver-status-v1",
+    "corpus_hash": "8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30",
+    "served_by_recorded_per_race": true
+  },
+  "race_coverage": {
+    "before": {
+      "full": 0,
+      "ge50": 30,
+      "ge75": 15,
+      "ge95": 7,
+      "median_race_coverage": 0.0938,
+      "races_with_ge1_supported": 103,
+      "zero_support_races": 46
+    },
+    "full": 0,
+    "ge50": 56,
+    "ge75": 40,
+    "ge95": 17,
+    "median_race_coverage": 0.2069,
+    "races_with_ge1_supported": 104,
+    "schema_version": "v3.2j-race-coverage-v1",
+    "zero_support_races": 45
+  },
+  "raw_data_policy": "raw streams ignored (data/raw/fastf1_cache/v3_2j_timing/ + sqlite cache); only manifest/hashes/transitions committed",
+  "regime_opportunity_after": {
+    "note": "informational for roadmap only; V3.2H scientific rejection remains frozen; more opportunity does not invalidate failed regime science",
+    "schema_version": "v3.2j-regime-opportunity-after-v1",
+    "track_only_after": 292,
+    "wet_only_after": 176
+  },
+  "remaining_blockers": {
+    "all_blocker_sets_after": {
+      "MISSING_DRIVER_OBSERVATION": 158,
+      "MISSING_DRIVER_OBSERVATION+MISSING_TYRE_STATE": 4,
+      "MISSING_DRIVER_OBSERVATION+MISSING_TYRE_STATE+UNSUPPORTED_TRACK_STATE": 13,
+      "MISSING_DRIVER_OBSERVATION+MISSING_TYRE_STATE+UNSUPPORTED_TRACK_STATE+WET_CONDITIONS": 1,
+      "MISSING_DRIVER_OBSERVATION+UNSUPPORTED_TRACK_STATE": 77,
+      "MISSING_DRIVER_OBSERVATION+UNSUPPORTED_TRACK_STATE+WET_CONDITIONS": 38,
+      "MISSING_DRIVER_OBSERVATION+WET_CONDITIONS": 63,
+      "MISSING_TYRE_STATE": 6,
+      "MISSING_TYRE_STATE+STALE_ROSTER_OBSERVATION": 190,
+      "MISSING_TYRE_STATE+STALE_ROSTER_OBSERVATION+TERMINAL_STATE": 6,
+      "MISSING_TYRE_STATE+STALE_ROSTER_OBSERVATION+UNSUPPORTED_TRACK_STATE": 39,
+      "MISSING_TYRE_STATE+STALE_ROSTER_OBSERVATION+UNSUPPORTED_TRACK_STATE+WET_CONDITIONS": 11,
+      "MISSING_TYRE_STATE+STALE_ROSTER_OBSERVATION+WET_CONDITIONS": 38,
+      "MISSING_TYRE_STATE+UNSUPPORTED_TRACK_STATE": 16,
+      "MISSING_TYRE_STATE+UNSUPPORTED_TRACK_STATE+WET_CONDITIONS": 8,
+      "MISSING_TYRE_STATE+WET_CONDITIONS": 10,
+      "STALE_ROSTER_OBSERVATION": 3294,
+      "STALE_ROSTER_OBSERVATION+TERMINAL_STATE": 104,
+      "STALE_ROSTER_OBSERVATION+TERMINAL_STATE+UNSUPPORTED_TRACK_STATE": 23,
+      "STALE_ROSTER_OBSERVATION+TERMINAL_STATE+WET_CONDITIONS": 12,
+      "STALE_ROSTER_OBSERVATION+UNSUPPORTED_TRACK_STATE": 579,
+      "STALE_ROSTER_OBSERVATION+UNSUPPORTED_TRACK_STATE+WET_CONDITIONS": 159,
+      "STALE_ROSTER_OBSERVATION+WET_CONDITIONS": 579,
+      "TERMINAL_STATE": 8,
+      "TERMINAL_STATE+WET_CONDITIONS": 1,
+      "UNSUPPORTED_TRACK_STATE": 292,
+      "UNSUPPORTED_TRACK_STATE+WET_CONDITIONS": 61,
+      "WET_CONDITIONS": 176
+    },
+    "primary_after": {
+      "MISSING_DRIVER_OBSERVATION": 354,
+      "MISSING_TYRE_STATE": 198,
+      "SIMULATION_CAPABLE": 3678,
+      "STALE_ROSTER_OBSERVATION": 3294,
+      "TERMINAL_STATE": 154,
+      "UNSUPPORTED_TRACK_STATE": 1165,
+      "WET_CONDITIONS": 801
+    },
+    "schema_version": "v3.2j-blockers-after-v1",
+    "track_only_after": 292,
+    "track_x_stale_after": 579,
+    "wet_only_after": 176,
+    "wet_x_stale_after": 579
+  },
+  "reproducibility": {
+    "adapter": "raceintel/simulation/driver_status.py (RAW_ADAPTER_VERSION v3.2j-raw-adapter-v1; stdlib-only, no network, no labels)",
+    "artifacts": "tracked under results/v3/v3_2j/ (manifest, hashes, transitions, firewalls, coverage); raw streams ignored under data/raw/fastf1_cache/v3_2j_timing/",
+    "build_derived_timelines": ".venv/bin/python scripts/build_v3_2j_status.py",
+    "fetch_required_raw": ".venv/bin/python scripts/fetch_v3_2j_streams.py  # resume-safe; official host then FastF1 mirror fallback; records served_by per race",
+    "freeze_manifest": ".venv/bin/python scripts/build_v3_2j_manifest.py  # population from frozen replay catalogue, never from download success",
+    "recompute_coverage": ".venv/bin/python scripts/recount_v3_2j_coverage.py && .venv/bin/python scripts/aggregate_v3_2j_coverage.py",
+    "run_tests": ".venv/bin/python -m pytest tests/test_v3_2j_status_models.py  # Tier-1 source-safe; corpus tests in tests/test_v3_2j_status_corpus.py (Tier-3)",
+    "run_validation": ".venv/bin/python scripts/validate_v3_2j_new_states.py  # 14 x 500-sim runs + API refusal + performance",
+    "schema_version": "v3.2j-reproducibility-v1",
+    "verify_hashes": ".venv/bin/python scripts/build_v3_2j_manifest.py  # asserts cached shas; fetch_report.json records fetched shas"
+  },
+  "retired_semantics": "current-state flag, first-True never sticky",
+  "schema": {
+    "schema_version": "v3.2j-schema-by-season-v1",
+    "seasons": {
+      "2018": {
+        "sample_race": "2018-r01-R",
+        "top_keys": {
+          "BestLapTime": 91,
+          "GapToLeader": 3366,
+          "InPit": 23,
+          "IntervalToPositionAhead": 3387,
+          "LastLapTime": 134,
+          "Line": 65,
+          "NumberOfLaps": 134,
+          "NumberOfPitStops": 2,
+          "PitOut": 22,
+          "Position": 65,
+          "RacingNumber": 20,
+          "Retired": 20,
+          "Sectors": 434,
+          "ShowPosition": 20,
+          "Speeds": 616,
+          "Stopped": 21
+        }
+      },
+      "2019": {
+        "sample_race": "2019-r01-R",
+        "top_keys": {
+          "BestLapTime": 89,
+          "GapToLeader": 3315,
+          "InPit": 24,
+          "IntervalToPositionAhead": 3354,
+          "LastLapTime": 136,
+          "Line": 70,
+          "NumberOfLaps": 136,
+          "NumberOfPitStops": 2,
+          "PitOut": 24,
+          "Position": 70,
+          "RacingNumber": 20,
+          "Retired": 20,
+          "Sectors": 438,
+          "ShowPosition": 20,
+          "Speeds": 591,
+          "Stopped": 20
+        }
+      },
+      "2020": {
+        "sample_race": "2020-r01-R",
+        "top_keys": {
+          "BestLapTime": 40,
+          "GapToLeader": 1050,
+          "InPit": 113,
+          "IntervalToPositionAhead": 1069,
+          "LastLapTime": 40,
+          "Line": 77,
+          "NumberOfLaps": 40,
+          "PitOut": 20,
+          "Position": 77,
+          "RacingNumber": 20,
+          "Retired": 20,
+          "Sectors": 2947,
+          "ShowPosition": 20,
+          "Speeds": 259,
+          "Status": 113,
+          "Stopped": 20
+        }
+      },
+      "2021": {
+        "sample_race": "2021-r01-R",
+        "top_keys": {
+          "BestLapTime": 38,
+          "GapToLeader": 1306,
+          "InPit": 26,
+          "IntervalToPositionAhead": 1343,
+          "LastLapTime": 48,
+          "Line": 219,
+          "NumberOfLaps": 38,
+          "NumberOfPitStops": 1,
+          "PitOut": 22,
+          "Position": 219,
+          "RacingNumber": 20,
+          "Retired": 20,
+          "Sectors": 2780,
+          "ShowPosition": 20,
+          "Speeds": 232,
+          "Status": 29,
+          "Stopped": 21
+        }
+      },
+      "2022": {
+        "sample_race": "2022-r01-R",
+        "top_keys": {
+          "BestLapTime": 20,
+          "GapToLeader": 929,
+          "InPit": 92,
+          "IntervalToPositionAhead": 969,
+          "LastLapTime": 20,
+          "Line": 223,
+          "NumberOfLaps": 20,
+          "PitOut": 20,
+          "Position": 223,
+          "RacingNumber": 20,
+          "Retired": 20,
+          "Sectors": 3079,
+          "ShowPosition": 20,
+          "Speeds": 172,
+          "Status": 92,
+          "Stopped": 20
+        }
+      },
+      "2023": {
+        "sample_race": "2023-r01-R",
+        "top_keys": {
+          "BestLapTime": 20,
+          "GapToLeader": 854,
+          "InPit": 106,
+          "IntervalToPositionAhead": 901,
+          "LastLapTime": 20,
+          "Line": 224,
+          "NumberOfLaps": 20,
+          "PitOut": 20,
+          "Position": 224,
+          "RacingNumber": 20,
+          "Retired": 20,
+          "Sectors": 3137,
+          "ShowPosition": 20,
+          "Speeds": 156,
+          "Status": 106,
+          "Stopped": 20
+        }
+      },
+      "2024": {
+        "sample_race": "2024-r01-R",
+        "top_keys": {
+          "BestLapTime": 20,
+          "GapToLeader": 772,
+          "InPit": 120,
+          "IntervalToPositionAhead": 793,
+          "LastLapTime": 20,
+          "Line": 269,
+          "NumberOfLaps": 20,
+          "NumberOfPitStops": 1,
+          "PitOut": 21,
+          "Position": 269,
+          "RacingNumber": 20,
+          "Retired": 20,
+          "Sectors": 3204,
+          "ShowPosition": 20,
+          "Speeds": 154,
+          "Status": 121,
+          "Stopped": 20
+        }
+      }
+    }
+  },
+  "schema_version": "v3.2j-raw-timing-status-v1",
+  "scientific_identities": {
+    "adapter": "v3.2j-raw-adapter-v1",
+    "contract": "v3.2j-driver-status-v1",
+    "corpus": "8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30",
+    "parity": "7ae97c3c8575679a",
+    "prereg": "ead0aaa4054ffbf5e628c4af2db031ef044cd929ee50dd2bf663bf19e599b69f"
+  },
+  "season_coverage": {
+    "by_season": {
+      "2018": {
+        "after": 251,
+        "after_cov": 0.1811,
+        "before": 121,
+        "before_cov": 0.0873,
+        "total": 1386
+      },
+      "2019": {
+        "after": 715,
+        "after_cov": 0.5253,
+        "before": 547,
+        "before_cov": 0.4019,
+        "total": 1361
+      },
+      "2020": {
+        "after": 366,
+        "after_cov": 0.3248,
+        "before": 208,
+        "before_cov": 0.1846,
+        "total": 1127
+      },
+      "2021": {
+        "after": 587,
+        "after_cov": 0.419,
+        "before": 299,
+        "before_cov": 0.2134,
+        "total": 1401
+      },
+      "2022": {
+        "after": 463,
+        "after_cov": 0.3226,
+        "before": 333,
+        "before_cov": 0.2321,
+        "total": 1435
+      },
+      "2023": {
+        "after": 572,
+        "after_cov": 0.4051,
+        "before": 323,
+        "before_cov": 0.2288,
+        "total": 1412
+      },
+      "2024": {
+        "after": 724,
+        "after_cov": 0.4757,
+        "before": 474,
+        "before_cov": 0.3114,
+        "total": 1522
+      }
+    },
+    "schema_version": "v3.2j-season-coverage-v1"
+  },
+  "signal_coverage": {
+    "by_season": {
+      "2018": {
+        "clearings": 2,
+        "drivers_with_retired_true": 420,
+        "fp": 4,
+        "missed_dnf": 55,
+        "official_dnf_count": 80,
+        "tp": 25
+      },
+      "2019": {
+        "clearings": 1,
+        "drivers_with_retired_true": 420,
+        "fp": 3,
+        "missed_dnf": 29,
+        "official_dnf_count": 50,
+        "tp": 21
+      },
+      "2020": {
+        "clearings": 12,
+        "drivers_with_retired_true": 340,
+        "fp": 11,
+        "missed_dnf": 27,
+        "official_dnf_count": 53,
+        "tp": 26
+      },
+      "2021": {
+        "clearings": 0,
+        "drivers_with_retired_true": 439,
+        "fp": 7,
+        "missed_dnf": 29,
+        "official_dnf_count": 52,
+        "tp": 23
+      },
+      "2022": {
+        "clearings": 3,
+        "drivers_with_retired_true": 438,
+        "fp": 6,
+        "missed_dnf": 37,
+        "official_dnf_count": 64,
+        "tp": 27
+      },
+      "2023": {
+        "clearings": 1,
+        "drivers_with_retired_true": 438,
+        "fp": 6,
+        "missed_dnf": 24,
+        "official_dnf_count": 50,
+        "tp": 26
+      },
+      "2024": {
+        "clearings": 0,
+        "drivers_with_retired_true": 478,
+        "fp": 3,
+        "missed_dnf": 24,
+        "official_dnf_count": 47,
+        "tp": 23
+      }
+    },
+    "note": "final-label diagnostic join; 'recall-like' only, never a runtime input",
+    "schema_version": "v3.2j-signal-coverage-v1"
+  },
+  "source_manifest": {
+    "n_local_cache": 45,
+    "n_pending_fetch_at_freeze": 104,
+    "n_races": 149,
+    "retrieval_complete": true
+  },
+  "stage_coverage": {
+    "by_stage": {
+      "EARLY": {
+        "after": 1492,
+        "after_cov": 0.4844,
+        "before": 1218,
+        "before_cov": 0.3955,
+        "total": 3080
+      },
+      "LATE": {
+        "after": 920,
+        "after_cov": 0.2753,
+        "before": 339,
+        "before_cov": 0.1014,
+        "total": 3342
+      },
+      "MID": {
+        "after": 1266,
+        "after_cov": 0.3929,
+        "before": 748,
+        "before_cov": 0.2322,
+        "total": 3222
+      }
+    },
+    "schema_version": "v3.2j-stage-coverage-v1"
+  },
+  "status_contract": {
+    "adapter_version": "v3.2j-raw-adapter-v1",
+    "clock": "TimingData 12-char HH:MM:SS.mmm session-clock prefix, same live-timing session origin as D9 state_time_s (Part I cross-checked: first-Retired gaps cluster within one lap after last timed lap; 13 pre-lap negatives all fall inside pinned unreliable windows or terminal/post-race clears)",
+    "contract": "RETIRED_KNOWN_AT_T iff latest causally observed raw TimingData Retired value with delta timestamp <= T is True; otherwise this source proves nothing (never proves activity)",
+    "exclusion_only": true,
+    "forbidden_evidence": [
+      "absence",
+      "Stopped",
+      "InPit",
+      "PitOut",
+      "position_null",
+      "final DNF",
+      "final classification",
+      "future deltas",
+      "future race-control",
+      "future telemetry",
+      "future position",
+      "future laps",
+      "future pits",
+      "garage inference",
+      "VSC/SC/WET/YELLOW/RED regimes"
+    ],
+    "presence_binding": "V3.2C presence resolution plus additive exclusion: a stale offender may be excluded only when every stale offender is authoritative Retired=True at T; one unresolved offender keeps the checkpoint refused; DNS semantics byte-identical",
+    "query": "latest delta timestamp <= T (exact equality counts); no nearest-future lookup; missing Retired key preserves prior state (never False); first-True never sticky",
+    "reliability_pinning": "13 unreliable windows pinned at build time (stream + lap-continuation only, no result labels): a True retracted while the driver demonstrably continued cannot exclude; 6 terminal/post-race clears stay reliable; 22 checkpoints kept refused by suppression; 0 continuation hazards corpus-wide",
+    "runtime_inputs": [
+      "local derived status artifacts (results/v3/v3_2j/status/)",
+      "pinned unreliable windows (results/v3/v3_2j/unreliable_windows.json)"
+    ],
+    "runtime_network": "none (fail closed: artifact absent / hash mismatch / unknown schema / race unavailable -> V3.2C behavior)",
+    "schema_version": "v3.2j-status-contract-v1",
+    "status_contract_version": "v3.2j-driver-status-v1"
+  },
+  "status_corpus": {
+    "adapter": "v3.2j-raw-adapter-v1",
+    "corpus_hash": "8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30",
+    "n_races": 149
+  },
+  "temporal_poison": {
+    "n_checks": 8,
+    "rule": "removing all raw rows after T leaves status(T) unchanged (prefix-closed reconstruction)",
+    "schema_version": "v3.2j-temporal-poison-v1"
+  },
+  "tests": {
+    "mc2_parity": "bit-exact re-run green",
+    "tier1_file": "tests/test_v3_2j_status_models.py",
+    "tier1_source_safe": 18,
+    "tier3_corpus": 11,
+    "tier3_file": "tests/test_v3_2j_status_corpus.py"
+  },
+  "top5_firewall": {
+    "all_suppressed": true,
+    "n_hits": 3
+  },
+  "transient_firewall": {
+    "n_checkpoints_in_any_window": 101,
+    "n_hazard_checkpoints": 92,
+    "n_windows": 19,
+    "schema_version": "v3.2j-transient-firewall-v1"
+  },
+  "v3_2i_parent": "LOCAL_RAW_STATUS_SOURCE PARTIALLY VIABLE (45 races, partial projection +380)",
+  "v3_2k_handoff": "coverage 3678/9644 (38.14%); remaining STALE 3294 primary; next: H-regime opportunities (TRACK-only 292, WET-only 176) or alternative stale signals; status corpus pinned by corpus hash",
+  "winner_firewall": {
+    "mandatory": [
+      {
+        "driver": "vettel",
+        "first_retired_s": null,
+        "race_id": "2018-r02-R",
+        "verdict": "PASS (never retired)"
+      },
+      {
+        "driver": "bottas",
+        "first_retired_s": null,
+        "race_id": "2020-r01-R",
+        "verdict": "PASS (never retired)"
+      },
+      {
+        "driver": "perez",
+        "first_retired_s": null,
+        "race_id": "2021-r06-R",
+        "verdict": "PASS (never retired)"
+      },
+      {
+        "driver": "verstappen",
+        "first_retired_s": null,
+        "race_id": "2022-r18-R",
+        "verdict": "PASS (never retired)"
+      }
+    ],
+    "schema_version": "v3.2j-winner-firewall-v1",
+    "verdict": "PASS",
+    "winner_retired_at_checkpoint_hits": [],
+    "winners_with_any_true_event": [
+      [
+        "2020-r09-R",
+        "hamilton"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "feed_recall_vs_official_dnf": {
+    "fn": 79,
+    "miss_classes": "non-starters (lap-0, no stream events possible), pit/garage retirements without track flag, abandoned-without-Retired (Baku 2018: 7/7 missed despite Stopped)",
+    "tp": 48
+  },
+  "local_streams": "45/149 races (2018: 21/21; 2024: 24/24; 2019-2023: 0)",
+  "schema_version": "v3.2i-completeness-v1",
+  "unknown_vs_active": "absence of Retired NEVER implies active; unknown is the default (V3.2G preserved)",
+  "verdict": "explicit retirement signal exists but is not universal: partial recall is intrinsic, not a bug"
+}

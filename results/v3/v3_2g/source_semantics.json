@@ -1,0 +1,69 @@
+{
+  "findings": [
+    {
+      "confidence": "high (code-proven)",
+      "documented": true,
+      "evidence": "installed fastf1 3.7.0 core.py + 294/294 overlap with position nulls",
+      "field": "driver_laps.fastf1_generated",
+      "semantics": "verbatim FastF1 FastF1Generated: row synthesized by FastF1 (no-timing-data drivers; retired-on-track last-lap synthesis per _fix_missing_laps_retired_on_track; missing final laps of finishers)",
+      "stable": true
+    },
+    {
+      "confidence": "high (code-proven)",
+      "documented": true,
+      "evidence": "fastf1 core.py position-numbering block + corpus overlap",
+      "field": "driver_laps.position",
+      "semantics": "per-lap running order from lap timing; NaN exactly on generated rows (dnf_and_generated exclusion)",
+      "stable": true
+    },
+    {
+      "confidence": "medium (form census, no upstream doc)",
+      "documented": false,
+      "evidence": "message form census (63 rows) + 9 later-row cases + zero RETIRED family",
+      "field": "race_control STOPPED (CAR N (XXX) STOPPED AT TURN T)",
+      "semantics": "CarEvent: car observed stopped on track; says nothing about retirement, restart, or future observations",
+      "stable": false
+    },
+    {
+      "confidence": "high",
+      "documented": "n/a",
+      "evidence": "full-corpus text search over 14992 messages",
+      "field": "race_control RETIRED family",
+      "semantics": "DOES NOT EXIST in corpus (0 rows match RETIRE*)",
+      "stable": true
+    },
+    {
+      "confidence": "high",
+      "documented": "n/a",
+      "evidence": "direct blob inspection (22/22 2023 blobs)",
+      "field": "timing-app columns",
+      "semantics": "no driver-status vocabulary (LapNumber/Driver/LapTime/Stint/TotalLaps/Compound/New/TyresNotChanged/Time/LapFlags/LapCountTime/StartLaps/Outlap)",
+      "stable": true
+    },
+    {
+      "confidence": "high",
+      "documented": true,
+      "evidence": "direct blob inspection",
+      "field": "session-status",
+      "semantics": "SESSION-level only (Inactive/Started/Finished/Finalised/Ends); not driver status",
+      "stable": true
+    },
+    {
+      "confidence": "low (single race sampled)",
+      "documented": false,
+      "evidence": "20/20 drivers Bahrain 2023",
+      "field": "position-data Status",
+      "semantics": "uniformly OnTrack where sampled; no terminal vocabulary observed",
+      "stable": "unresolved"
+    },
+    {
+      "confidence": "high",
+      "documented": "n/a",
+      "evidence": "369 stops >120s corpus-wide; duration distribution",
+      "field": "pit_stops.duration_s",
+      "semantics": "stop length; long stays include red-flag suspensions (max 7610s) and repairs-then-return; NOT retirement",
+      "stable": true
+    }
+  ],
+  "schema_version": "v3.2g-source-semantics-v1"
+}

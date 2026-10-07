@@ -1,0 +1,1048 @@
+{
+  "field": "TimingData.Lines[driver].Retired (bool, delta updates with session-clock prefix)",
+  "flipback": "Retired is a CURRENT-status flag, not a terminal event: 2 measured true->false clearings in 45 races (ricciardo Belgium 2018 mid-race PitOut clearing = one genuine transient; alonso Canada 2018 post-race clearing = benign). Causal state-at-T is the last value <= T; first-true alone is UNSAFE",
+  "per_race": [
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "ericsson": 1133.898,
+        "gasly": 1878.787
+      },
+      "first_retired_by_driver": {
+        "ericsson": 1133.898,
+        "gasly": 1878.787
+      },
+      "missed_fn": 3,
+      "n_drivers_stream": 20,
+      "n_messages": 26092,
+      "n_official_dnf": 5,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "ericsson",
+        "gasly",
+        "grosjean",
+        "kevin_magnussen",
+        "sirotkin"
+      ],
+      "race_id": "2018-r01-R",
+      "recall_tp": 2,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "raikkonen": 4014.718
+      },
+      "first_retired_by_driver": {
+        "raikkonen": 4014.718
+      },
+      "missed_fn": 2,
+      "n_drivers_stream": 20,
+      "n_messages": 30413,
+      "n_official_dnf": 3,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "max_verstappen",
+        "raikkonen",
+        "ricciardo"
+      ],
+      "race_id": "2018-r02-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 1,
+      "final_retired_by_driver": {
+        "brendon_hartley": 5907.539
+      },
+      "first_retired_by_driver": {
+        "brendon_hartley": 5907.539
+      },
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 27996,
+      "n_official_dnf": 0,
+      "n_retired_events": 1,
+      "official_dnf": [],
+      "race_id": "2018-r03-R",
+      "recall_tp": 0,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {},
+      "first_retired_by_driver": {},
+      "missed_fn": 7,
+      "n_drivers_stream": 20,
+      "n_messages": 23496,
+      "n_official_dnf": 7,
+      "n_retired_events": 0,
+      "official_dnf": [
+        "bottas",
+        "grosjean",
+        "hulkenberg",
+        "max_verstappen",
+        "ocon",
+        "ricciardo",
+        "sirotkin"
+      ],
+      "race_id": "2018-r04-R",
+      "recall_tp": 0,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "raikkonen": 2955.737,
+        "vandoorne": 4969.195
+      },
+      "first_retired_by_driver": {
+        "raikkonen": 2955.737,
+        "vandoorne": 4969.195
+      },
+      "missed_fn": 4,
+      "n_drivers_stream": 20,
+      "n_messages": 24252,
+      "n_official_dnf": 6,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "gasly",
+        "grosjean",
+        "hulkenberg",
+        "ocon",
+        "raikkonen",
+        "vandoorne"
+      ],
+      "race_id": "2018-r05-R",
+      "recall_tp": 2,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "brendon_hartley": 6201.307
+      },
+      "first_retired_by_driver": {
+        "brendon_hartley": 6201.307
+      },
+      "missed_fn": 2,
+      "n_drivers_stream": 20,
+      "n_messages": 36494,
+      "n_official_dnf": 3,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "alonso",
+        "brendon_hartley",
+        "leclerc"
+      ],
+      "race_id": "2018-r06-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "alonso": 3924.792
+      },
+      "first_retired_by_driver": {
+        "alonso": 3924.792
+      },
+      "missed_fn": 2,
+      "n_drivers_stream": 20,
+      "n_messages": 26256,
+      "n_official_dnf": 3,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "alonso",
+        "brendon_hartley",
+        "stroll"
+      ],
+      "race_id": "2018-r07-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 1,
+      "final_retired_by_driver": {
+        "alonso": 5957.889,
+        "perez": 3590.822
+      },
+      "first_retired_by_driver": {
+        "alonso": 5957.889,
+        "perez": 3590.822
+      },
+      "missed_fn": 2,
+      "n_drivers_stream": 20,
+      "n_messages": 26592,
+      "n_official_dnf": 3,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "gasly",
+        "ocon",
+        "perez"
+      ],
+      "race_id": "2018-r08-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 1,
+      "final_retired_by_driver": {
+        "vandoorne": 5256.085
+      },
+      "first_retired_by_driver": {
+        "vandoorne": 5256.085
+      },
+      "missed_fn": 5,
+      "n_drivers_stream": 20,
+      "n_messages": 28185,
+      "n_official_dnf": 5,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "bottas",
+        "brendon_hartley",
+        "hamilton",
+        "hulkenberg",
+        "ricciardo"
+      ],
+      "race_id": "2018-r09-R",
+      "recall_tp": 0,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "brendon_hartley": 733.327
+      },
+      "first_retired_by_driver": {
+        "brendon_hartley": 733.327
+      },
+      "missed_fn": 5,
+      "n_drivers_stream": 20,
+      "n_messages": 25098,
+      "n_official_dnf": 6,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "brendon_hartley",
+        "ericsson",
+        "grosjean",
+        "leclerc",
+        "max_verstappen",
+        "sainz"
+      ],
+      "race_id": "2018-r10-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 1,
+      "final_retired_by_driver": {
+        "alonso": 6028.952,
+        "stroll": 4996.261
+      },
+      "first_retired_by_driver": {
+        "alonso": 6028.952,
+        "stroll": 4996.261
+      },
+      "missed_fn": 3,
+      "n_drivers_stream": 20,
+      "n_messages": 31850,
+      "n_official_dnf": 4,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "ricciardo",
+        "sirotkin",
+        "stroll",
+        "vettel"
+      ],
+      "race_id": "2018-r11-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {},
+      "first_retired_by_driver": {},
+      "missed_fn": 3,
+      "n_drivers_stream": 20,
+      "n_messages": 28937,
+      "n_official_dnf": 3,
+      "n_retired_events": 0,
+      "official_dnf": [
+        "leclerc",
+        "max_verstappen",
+        "vandoorne"
+      ],
+      "race_id": "2018-r12-R",
+      "recall_tp": 0,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "raikkonen": 2427.942,
+        "ricciardo": 4812.864
+      },
+      "first_retired_by_driver": {
+        "raikkonen": 2427.942,
+        "ricciardo": 1402.925
+      },
+      "missed_fn": 3,
+      "n_drivers_stream": 20,
+      "n_messages": 20076,
+      "n_official_dnf": 5,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "alonso",
+        "hulkenberg",
+        "leclerc",
+        "raikkonen",
+        "ricciardo"
+      ],
+      "race_id": "2018-r13-R",
+      "recall_tp": 2,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "alonso": 2157.457
+      },
+      "first_retired_by_driver": {
+        "alonso": 2157.457
+      },
+      "missed_fn": 3,
+      "n_drivers_stream": 20,
+      "n_messages": 26228,
+      "n_official_dnf": 4,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "alonso",
+        "brendon_hartley",
+        "grosjean",
+        "ricciardo"
+      ],
+      "race_id": "2018-r14-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {},
+      "first_retired_by_driver": {},
+      "missed_fn": 1,
+      "n_drivers_stream": 20,
+      "n_messages": 31336,
+      "n_official_dnf": 1,
+      "n_retired_events": 0,
+      "official_dnf": [
+        "ocon"
+      ],
+      "race_id": "2018-r15-R",
+      "recall_tp": 0,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "brendon_hartley": 1736.311,
+        "gasly": 1696.308
+      },
+      "first_retired_by_driver": {
+        "brendon_hartley": 1736.311,
+        "gasly": 1696.308
+      },
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 27801,
+      "n_official_dnf": 2,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "brendon_hartley",
+        "gasly"
+      ],
+      "race_id": "2018-r16-R",
+      "recall_tp": 2,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "hulkenberg": 5062.68,
+        "kevin_magnussen": 2247.858
+      },
+      "first_retired_by_driver": {
+        "hulkenberg": 5062.68,
+        "kevin_magnussen": 2247.858
+      },
+      "missed_fn": 1,
+      "n_drivers_stream": 20,
+      "n_messages": 27979,
+      "n_official_dnf": 3,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "hulkenberg",
+        "kevin_magnussen",
+        "leclerc"
+      ],
+      "race_id": "2018-r17-R",
+      "recall_tp": 2,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "alonso": 2275.209,
+        "grosjean": 2420.204,
+        "leclerc": 5435.769
+      },
+      "first_retired_by_driver": {
+        "alonso": 2275.209,
+        "grosjean": 2420.204,
+        "leclerc": 5435.769
+      },
+      "missed_fn": 3,
+      "n_drivers_stream": 20,
+      "n_messages": 23078,
+      "n_official_dnf": 6,
+      "n_retired_events": 3,
+      "official_dnf": [
+        "alonso",
+        "grosjean",
+        "kevin_magnussen",
+        "leclerc",
+        "ocon",
+        "ricciardo"
+      ],
+      "race_id": "2018-r18-R",
+      "recall_tp": 3,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "perez": 5432.067
+      },
+      "first_retired_by_driver": {
+        "perez": 5432.067
+      },
+      "missed_fn": 3,
+      "n_drivers_stream": 20,
+      "n_messages": 30270,
+      "n_official_dnf": 4,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "alonso",
+        "perez",
+        "ricciardo",
+        "sainz"
+      ],
+      "race_id": "2018-r19-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "ericsson": 3710.414,
+        "hulkenberg": 4560.455
+      },
+      "first_retired_by_driver": {
+        "ericsson": 3710.414,
+        "hulkenberg": 4560.455
+      },
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 31238,
+      "n_official_dnf": 2,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "ericsson",
+        "hulkenberg"
+      ],
+      "race_id": "2018-r20-R",
+      "recall_tp": 2,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "ocon": 7242.041,
+        "raikkonen": 3152.621
+      },
+      "first_retired_by_driver": {
+        "ocon": 7242.041,
+        "raikkonen": 3152.621
+      },
+      "missed_fn": 3,
+      "n_drivers_stream": 20,
+      "n_messages": 25897,
+      "n_official_dnf": 5,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "ericsson",
+        "gasly",
+        "hulkenberg",
+        "ocon",
+        "raikkonen"
+      ],
+      "race_id": "2018-r21-R",
+      "recall_tp": 2,
+      "winners_flagged": [],
+      "year": 2018
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {},
+      "first_retired_by_driver": {},
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 70208,
+      "n_official_dnf": 0,
+      "n_retired_events": 0,
+      "official_dnf": [],
+      "race_id": "2024-r01-R",
+      "recall_tp": 0,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "gasly": 3825.91
+      },
+      "first_retired_by_driver": {
+        "gasly": 3825.91
+      },
+      "missed_fn": 1,
+      "n_drivers_stream": 20,
+      "n_messages": 51036,
+      "n_official_dnf": 2,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "gasly",
+        "stroll"
+      ],
+      "race_id": "2024-r02-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "max_verstappen": 3989.18
+      },
+      "first_retired_by_driver": {
+        "max_verstappen": 3989.18
+      },
+      "missed_fn": 1,
+      "n_drivers_stream": 19,
+      "n_messages": 49989,
+      "n_official_dnf": 2,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "hamilton",
+        "max_verstappen"
+      ],
+      "race_id": "2024-r03-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "zhou": 6854.585
+      },
+      "first_retired_by_driver": {
+        "zhou": 6854.585
+      },
+      "missed_fn": 2,
+      "n_drivers_stream": 20,
+      "n_messages": 51389,
+      "n_official_dnf": 3,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "albon",
+        "ricciardo",
+        "zhou"
+      ],
+      "race_id": "2024-r04-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "ricciardo": 7240.319
+      },
+      "first_retired_by_driver": {
+        "ricciardo": 7240.319
+      },
+      "missed_fn": 2,
+      "n_drivers_stream": 20,
+      "n_messages": 52445,
+      "n_official_dnf": 3,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "bottas",
+        "ricciardo",
+        "tsunoda"
+      ],
+      "race_id": "2024-r05-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {},
+      "first_retired_by_driver": {},
+      "missed_fn": 1,
+      "n_drivers_stream": 20,
+      "n_messages": 62459,
+      "n_official_dnf": 1,
+      "n_retired_events": 0,
+      "official_dnf": [
+        "sargeant"
+      ],
+      "race_id": "2024-r06-R",
+      "recall_tp": 0,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "albon": 7847.822
+      },
+      "first_retired_by_driver": {
+        "albon": 7847.822
+      },
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 58168,
+      "n_official_dnf": 1,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "albon"
+      ],
+      "race_id": "2024-r07-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "ocon": 5879.747
+      },
+      "first_retired_by_driver": {
+        "ocon": 5879.747
+      },
+      "missed_fn": 3,
+      "n_drivers_stream": 20,
+      "n_messages": 58246,
+      "n_official_dnf": 4,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "hulkenberg",
+        "kevin_magnussen",
+        "ocon",
+        "perez"
+      ],
+      "race_id": "2024-r08-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "leclerc": 4294.992,
+        "perez": 5185.088,
+        "sainz": 5270.093
+      },
+      "first_retired_by_driver": {
+        "leclerc": 4294.992,
+        "perez": 5185.088,
+        "sainz": 5270.093
+      },
+      "missed_fn": 2,
+      "n_drivers_stream": 20,
+      "n_messages": 53860,
+      "n_official_dnf": 5,
+      "n_retired_events": 3,
+      "official_dnf": [
+        "albon",
+        "leclerc",
+        "perez",
+        "sainz",
+        "sargeant"
+      ],
+      "race_id": "2024-r09-R",
+      "recall_tp": 3,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {},
+      "first_retired_by_driver": {},
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 62541,
+      "n_official_dnf": 0,
+      "n_retired_events": 0,
+      "official_dnf": [],
+      "race_id": "2024-r10-R",
+      "recall_tp": 0,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 1,
+      "final_retired_by_driver": {
+        "norris": 8042.94
+      },
+      "first_retired_by_driver": {
+        "norris": 8042.94
+      },
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 63969,
+      "n_official_dnf": 0,
+      "n_retired_events": 1,
+      "official_dnf": [],
+      "race_id": "2024-r11-R",
+      "recall_tp": 0,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "gasly": 3616.866,
+        "russell": 6791.745
+      },
+      "first_retired_by_driver": {
+        "gasly": 3616.866,
+        "russell": 6791.745
+      },
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 54198,
+      "n_official_dnf": 2,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "gasly",
+        "russell"
+      ],
+      "race_id": "2024-r12-R",
+      "recall_tp": 2,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "gasly": 6285.557
+      },
+      "first_retired_by_driver": {
+        "gasly": 6285.557
+      },
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 61596,
+      "n_official_dnf": 1,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "gasly"
+      ],
+      "race_id": "2024-r13-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "zhou": 4097.449
+      },
+      "first_retired_by_driver": {
+        "zhou": 4097.449
+      },
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 51037,
+      "n_official_dnf": 1,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "zhou"
+      ],
+      "race_id": "2024-r14-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {},
+      "first_retired_by_driver": {},
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 73565,
+      "n_official_dnf": 0,
+      "n_retired_events": 0,
+      "official_dnf": [],
+      "race_id": "2024-r15-R",
+      "recall_tp": 0,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "tsunoda": 4111.55
+      },
+      "first_retired_by_driver": {
+        "tsunoda": 4111.55
+      },
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 49012,
+      "n_official_dnf": 1,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "tsunoda"
+      ],
+      "race_id": "2024-r16-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 1,
+      "final_retired_by_driver": {
+        "stroll": 8500.123,
+        "tsunoda": 5120.096
+      },
+      "first_retired_by_driver": {
+        "stroll": 8500.123,
+        "tsunoda": 5120.096
+      },
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 56205,
+      "n_official_dnf": 1,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "tsunoda"
+      ],
+      "race_id": "2024-r17-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 1,
+      "final_retired_by_driver": {
+        "albon": 5104.185,
+        "kevin_magnussen": 9354.209
+      },
+      "first_retired_by_driver": {
+        "albon": 5104.185,
+        "kevin_magnussen": 9354.209
+      },
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 64581,
+      "n_official_dnf": 1,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "albon"
+      ],
+      "race_id": "2024-r18-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {},
+      "first_retired_by_driver": {},
+      "missed_fn": 1,
+      "n_drivers_stream": 20,
+      "n_messages": 51422,
+      "n_official_dnf": 1,
+      "n_retired_events": 0,
+      "official_dnf": [
+        "hamilton"
+      ],
+      "race_id": "2024-r19-R",
+      "recall_tp": 0,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "alonso": 5012.899
+      },
+      "first_retired_by_driver": {
+        "alonso": 5012.899
+      },
+      "missed_fn": 2,
+      "n_drivers_stream": 20,
+      "n_messages": 58091,
+      "n_official_dnf": 3,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "albon",
+        "alonso",
+        "tsunoda"
+      ],
+      "race_id": "2024-r20-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "hulkenberg": 8760.14
+      },
+      "first_retired_by_driver": {
+        "#23": 4435.144,
+        "hulkenberg": 8760.14
+      },
+      "missed_fn": 4,
+      "n_drivers_stream": 20,
+      "n_messages": 52208,
+      "n_official_dnf": 5,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "albon",
+        "colapinto",
+        "hulkenberg",
+        "sainz",
+        "stroll"
+      ],
+      "race_id": "2024-r21-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "albon": 6040.38,
+        "gasly": 5045.32
+      },
+      "first_retired_by_driver": {
+        "albon": 6040.38,
+        "gasly": 5045.32
+      },
+      "missed_fn": 0,
+      "n_drivers_stream": 20,
+      "n_messages": 46354,
+      "n_official_dnf": 2,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "albon",
+        "gasly"
+      ],
+      "race_id": "2024-r22-R",
+      "recall_tp": 2,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "stroll": 4382.047
+      },
+      "first_retired_by_driver": {
+        "stroll": 4382.047
+      },
+      "missed_fn": 4,
+      "n_drivers_stream": 20,
+      "n_messages": 49660,
+      "n_official_dnf": 5,
+      "n_retired_events": 1,
+      "official_dnf": [
+        "colapinto",
+        "hulkenberg",
+        "ocon",
+        "perez",
+        "stroll"
+      ],
+      "race_id": "2024-r23-R",
+      "recall_tp": 1,
+      "winners_flagged": [],
+      "year": 2024
+    },
+    {
+      "false_positive": 0,
+      "final_retired_by_driver": {
+        "bottas": 6377.973,
+        "colapinto": 6002.878
+      },
+      "first_retired_by_driver": {
+        "bottas": 6377.973,
+        "colapinto": 6002.878
+      },
+      "missed_fn": 1,
+      "n_drivers_stream": 20,
+      "n_messages": 55419,
+      "n_official_dnf": 3,
+      "n_retired_events": 2,
+      "official_dnf": [
+        "bottas",
+        "colapinto",
+        "perez"
+      ],
+      "race_id": "2024-r24-R",
+      "recall_tp": 2,
+      "winners_flagged": [],
+      "year": 2024
+    }
+  ],
+  "retired_vs_inpit": "distinct keys; InPit/PitOut carried alongside, never conflated",
+  "retired_vs_stopped": "distinct keys in the same delta namespace; Stopped also present (track-stop vs retirement kept separate by the source schema)",
+  "schema_version": "v3.2i-status-semantics-v1",
+  "true_to_false_flips": [
+    {
+      "cleared_at_s": 5973.004,
+      "driver": "alonso",
+      "race_id": "2018-r07-R"
+    },
+    {
+      "cleared_at_s": 1671.251,
+      "driver": "ricciardo",
+      "race_id": "2018-r13-R"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "inherited_v32e": {
+    "at_8_workers_h": 5.9,
+    "catalogue_serial_h": 33.1,
+    "mc2e_runs_per_s": 97,
+    "r3_slowdown": 13.6
+  },
+  "mc2e_parity_corpus": {
+    "members": 50,
+    "n_runs": 500,
+    "runs_per_s": 992.1,
+    "wall_clock_s": 25.2
+  },
+  "note": "No admitted regimes: no new runtime paths to benchmark. Accepted MC2 E science untouched (mechanical bit-exact preservation only).",
+  "regime_audit_scan": {
+    "n_checkpoints": 9644,
+    "wall_clock_s": 89.3
+  },
+  "schema_version": "v3.2f-performance-v1"
+}

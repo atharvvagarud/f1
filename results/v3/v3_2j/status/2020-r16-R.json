@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "1686c07a8601351c1a0e24df28a656e593e8b489c1a05e3915c7e57b0a276117",
+  "diagnostics": {
+    "n_inpit_updates": 98,
+    "n_malformed_rows": 0,
+    "n_messages": 63042,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 98,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2020-r16-R",
+  "raw_sha256": "e77a9b1559475fb90207a679aacae5181d7338280159f26d214ac4a8e70f8ebe",
+  "round": 16,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2020,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2020/2020-12-06_Sakhir_Grand_Prix/2020-12-06_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "aitken": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "albon": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "pietro_fittipaldi": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        3.563,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        3.563,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

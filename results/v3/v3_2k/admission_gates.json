@@ -1,0 +1,13 @@
+{
+ "schema_version": "v3.2k-admission-gates-v1",
+ "preregistration_sha256": "567260af8072d2e1700a4d1e9ad24265fc458c838010dc8a0d27b745c6a2f22b",
+ "gates": {
+  "position_agreement": "FAIL",
+  "trusted_lap_agreement": "FAIL",
+  "pit_boundary": "FAIL",
+  "tyre_state_safety": "FAIL (TimingData carries no compound/age; 2019-2023 TimingAppData not local)",
+  "season_consistency": "see timing_schema census",
+  "lapped_state_safety": "PASS (non-blocking by construction)",
+  "pace_state_safety": "PASS (no driver-history need)"
+ }
+}

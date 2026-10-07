@@ -1,0 +1,154 @@
+{
+  "schema_version": "v3.2j-schema-by-season-v1",
+  "seasons": {
+    "2018": {
+      "sample_race": "2018-r01-R",
+      "top_keys": {
+        "BestLapTime": 91,
+        "GapToLeader": 3366,
+        "InPit": 23,
+        "IntervalToPositionAhead": 3387,
+        "LastLapTime": 134,
+        "Line": 65,
+        "NumberOfLaps": 134,
+        "NumberOfPitStops": 2,
+        "PitOut": 22,
+        "Position": 65,
+        "RacingNumber": 20,
+        "Retired": 20,
+        "Sectors": 434,
+        "ShowPosition": 20,
+        "Speeds": 616,
+        "Stopped": 21
+      }
+    },
+    "2019": {
+      "sample_race": "2019-r01-R",
+      "top_keys": {
+        "BestLapTime": 89,
+        "GapToLeader": 3315,
+        "InPit": 24,
+        "IntervalToPositionAhead": 3354,
+        "LastLapTime": 136,
+        "Line": 70,
+        "NumberOfLaps": 136,
+        "NumberOfPitStops": 2,
+        "PitOut": 24,
+        "Position": 70,
+        "RacingNumber": 20,
+        "Retired": 20,
+        "Sectors": 438,
+        "ShowPosition": 20,
+        "Speeds": 591,
+        "Stopped": 20
+      }
+    },
+    "2020": {
+      "sample_race": "2020-r01-R",
+      "top_keys": {
+        "BestLapTime": 40,
+        "GapToLeader": 1050,
+        "InPit": 113,
+        "IntervalToPositionAhead": 1069,
+        "LastLapTime": 40,
+        "Line": 77,
+        "NumberOfLaps": 40,
+        "PitOut": 20,
+        "Position": 77,
+        "RacingNumber": 20,
+        "Retired": 20,
+        "Sectors": 2947,
+        "ShowPosition": 20,
+        "Speeds": 259,
+        "Status": 113,
+        "Stopped": 20
+      }
+    },
+    "2021": {
+      "sample_race": "2021-r01-R",
+      "top_keys": {
+        "BestLapTime": 38,
+        "GapToLeader": 1306,
+        "InPit": 26,
+        "IntervalToPositionAhead": 1343,
+        "LastLapTime": 48,
+        "Line": 219,
+        "NumberOfLaps": 38,
+        "NumberOfPitStops": 1,
+        "PitOut": 22,
+        "Position": 219,
+        "RacingNumber": 20,
+        "Retired": 20,
+        "Sectors": 2780,
+        "ShowPosition": 20,
+        "Speeds": 232,
+        "Status": 29,
+        "Stopped": 21
+      }
+    },
+    "2022": {
+      "sample_race": "2022-r01-R",
+      "top_keys": {
+        "BestLapTime": 20,
+        "GapToLeader": 929,
+        "InPit": 92,
+        "IntervalToPositionAhead": 969,
+        "LastLapTime": 20,
+        "Line": 223,
+        "NumberOfLaps": 20,
+        "PitOut": 20,
+        "Position": 223,
+        "RacingNumber": 20,
+        "Retired": 20,
+        "Sectors": 3079,
+        "ShowPosition": 20,
+        "Speeds": 172,
+        "Status": 92,
+        "Stopped": 20
+      }
+    },
+    "2023": {
+      "sample_race": "2023-r01-R",
+      "top_keys": {
+        "BestLapTime": 20,
+        "GapToLeader": 854,
+        "InPit": 106,
+        "IntervalToPositionAhead": 901,
+        "LastLapTime": 20,
+        "Line": 224,
+        "NumberOfLaps": 20,
+        "PitOut": 20,
+        "Position": 224,
+        "RacingNumber": 20,
+        "Retired": 20,
+        "Sectors": 3137,
+        "ShowPosition": 20,
+        "Speeds": 156,
+        "Status": 106,
+        "Stopped": 20
+      }
+    },
+    "2024": {
+      "sample_race": "2024-r01-R",
+      "top_keys": {
+        "BestLapTime": 20,
+        "GapToLeader": 772,
+        "InPit": 120,
+        "IntervalToPositionAhead": 793,
+        "LastLapTime": 20,
+        "Line": 269,
+        "NumberOfLaps": 20,
+        "NumberOfPitStops": 1,
+        "PitOut": 21,
+        "Position": 269,
+        "RacingNumber": 20,
+        "Retired": 20,
+        "Sectors": 3204,
+        "ShowPosition": 20,
+        "Speeds": 154,
+        "Status": 121,
+        "Stopped": 20
+      }
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "2c058ef156c83769b26e3e027eaa2b8d383670ec40b4093abce37b2a40aef9d7",
+  "diagnostics": {
+    "n_inpit_updates": 179,
+    "n_malformed_rows": 0,
+    "n_messages": 58168,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 74,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 21
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2024-r07-R",
+  "raw_sha256": "51a9fa711376f14ffc38a702e6a4fffd2652344d536dd7466f4a9f1b9774b348",
+  "round": 7,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2024,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2024/2024-05-19_Emilia_Romagna_Grand_Prix/2024-05-19_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        3.965,
+        false
+      ],
+      [
+        7847.822,
+        true
+      ]
+    ],
+    "alonso": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "sargeant": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        3.965,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        3.965,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "e4a08894d8d2833ed0be1c8eee0f2b5cb434e2fe976dece3efc05c2a93e5307a",
+  "diagnostics": {
+    "n_inpit_updates": 197,
+    "n_malformed_rows": 0,
+    "n_messages": 61660,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 94,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 21
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2023-r22-R",
+  "raw_sha256": "4f11b17ed2ee018dc15b6a491fc34560be65e8de0d282fb77400d137d83868f7",
+  "round": 22,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2023,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2023/2023-11-26_Abu_Dhabi_Grand_Prix/2023-11-26_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        5.203,
+        false
+      ],
+      [
+        9078.224,
+        true
+      ]
+    ],
+    "sargeant": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        5.203,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        5.203,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

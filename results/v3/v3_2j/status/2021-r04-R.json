@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "6e92e81032cfcf62231632428c0077f7e02d72370692e099b70f583b5e05710e",
+  "diagnostics": {
+    "n_inpit_updates": 94,
+    "n_malformed_rows": 0,
+    "n_messages": 58993,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 94,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 21
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2021-r04-R",
+  "raw_sha256": "d3c06de9ea5c5b7ffccb5d38633813b3a662ef642b0f9f5d544e42a492e41dee",
+  "round": 4,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2021,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2021/2021-05-09_Spanish_Grand_Prix/2021-05-09_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "mazepin": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        5.147,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        5.147,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

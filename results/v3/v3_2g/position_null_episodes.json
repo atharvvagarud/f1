@@ -1,0 +1,55 @@
+{
+  "all_trailing": true,
+  "freeze_hash": "1465c11b50e898ca094ed35dd87bd075b446c26bdb55d73fe878bb14e0d7b0a8",
+  "n_episodes": 261,
+  "n_rows": 294,
+  "non_terminal": 54,
+  "podiums": [
+    [
+      "2018-r02-R",
+      "bottas"
+    ],
+    [
+      "2018-r02-R",
+      "hamilton"
+    ],
+    [
+      "2018-r02-R",
+      "vettel"
+    ],
+    [
+      "2020-r01-R",
+      "bottas"
+    ],
+    [
+      "2020-r01-R",
+      "leclerc"
+    ],
+    [
+      "2020-r01-R",
+      "norris"
+    ],
+    [
+      "2022-r18-R",
+      "max_verstappen"
+    ]
+  ],
+  "returned_after_null": 0,
+  "schema_version": "v3.2g-position-null-episodes-v1",
+  "terminal_dnf": 207,
+  "top5": 9,
+  "winners": [
+    [
+      "2018-r02-R",
+      "vettel"
+    ],
+    [
+      "2020-r01-R",
+      "bottas"
+    ],
+    [
+      "2022-r18-R",
+      "max_verstappen"
+    ]
+  ]
+}

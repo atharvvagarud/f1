@@ -1,0 +1,22 @@
+{
+ "schema_version": "v3.2l-baselines-v1",
+ "n_clean": 211,
+ "global_terminal_freq": 0.8578199052132701,
+ "by_x_stage": {
+  "MID": {
+   "terminal": 40,
+   "n": 49,
+   "freq": 0.8163265306122449
+  },
+  "EARLY": {
+   "terminal": 68,
+   "n": 83,
+   "freq": 0.8192771084337349
+  },
+  "LATE": {
+   "terminal": 73,
+   "n": 79,
+   "freq": 0.9240506329113924
+  }
+ }
+}

@@ -1,0 +1,159 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "0591d2566878f02a9ddfa3b5864e01b55b4c1e12f7aee1aa34e54d9e0eecb81a",
+  "diagnostics": {
+    "n_inpit_updates": 84,
+    "n_malformed_rows": 0,
+    "n_messages": 27093,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 72,
+    "n_retired_updates": 23,
+    "n_stopped_updates": 24
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 23,
+  "race_id": "2019-r04-R",
+  "raw_sha256": "8767809f4a21f83baf321161758cfa08beca40adad3fda8364f08d5edd58847f",
+  "round": 4,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2019,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2019/2019-04-28_Azerbaijan_Grand_Prix/2019-04-28_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        4.16,
+        false
+      ],
+      [
+        6408.067,
+        true
+      ]
+    ],
+    "hamilton": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "kubica": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        4.16,
+        false
+      ],
+      [
+        5833.27,
+        true
+      ]
+    ],
+    "leclerc": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        4.16,
+        false
+      ],
+      [
+        5618.098,
+        true
+      ]
+    ],
+    "russell": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        4.16,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        4.16,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

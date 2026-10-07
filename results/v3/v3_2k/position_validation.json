@@ -1,0 +1,7 @@
+{
+ "schema_version": "v3.2k-position-validation-v1",
+ "n": 8381,
+ "exact_agreement": 0.8551,
+ "gate_threshold": 0.99,
+ "gate": "FAIL"
+}

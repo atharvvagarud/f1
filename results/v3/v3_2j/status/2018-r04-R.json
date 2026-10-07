@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "30482cb5a560768694db27e08ed04d1711d0c997d16479618080946d5c6388f8",
+  "diagnostics": {
+    "n_inpit_updates": 92,
+    "n_malformed_rows": 0,
+    "n_messages": 23496,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 92,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 27
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2018-r04-R",
+  "raw_sha256": "1f41a20bee30c55f7628e1694d5e0a907c18a0ebfcbf4995308328bdf02a3776",
+  "round": 4,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2018,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2018/2018-04-29_Azerbaijan_Grand_Prix/2018-04-29_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "brendon_hartley": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "ericsson": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "sirotkin": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "vandoorne": [
+      [
+        4.18,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        4.18,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

@@ -1,0 +1,15 @@
+{
+ "schema_version": "v3.2n-performance-v1",
+ "environment": {
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "python": "3.11.15",
+  "workers": 8
+ },
+ "mc2e_5000_validation": {
+  "n_checkpoints": 21,
+  "wall_clock_s": 221.0,
+  "runs_per_sec_8_workers": 475.1,
+  "sec_per_5000_checkpoint": 10.52
+ },
+ "note": "measured, not extrapolated (8-worker pool; state prep included in wall clock)"
+}

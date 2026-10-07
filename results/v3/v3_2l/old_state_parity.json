@@ -1,0 +1,6 @@
+{
+ "pre_k_eligible_preserved": 3678,
+ "runtime_code_changed_by_l": false,
+ "verdict": "PASS by construction (no eligibility-path edit)",
+ "schema_version": "v3.2l-old-state-parity-v1"
+}

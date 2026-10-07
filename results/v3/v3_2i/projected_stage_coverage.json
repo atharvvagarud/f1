@@ -1,0 +1,27 @@
+{
+  "current": {
+    "EARLY": 0.3955,
+    "LATE": 0.1014,
+    "MID": 0.2322
+  },
+  "note": "LATE recovery depends on late-race retirements being feed-flagged; counts above are the offline upper bound for cached races",
+  "schema_version": "v3.2i-projected-stage-v1",
+  "stale_relief_by_stage": {
+    "EARLY": {
+      "resolved": 83,
+      "unresolved": 338
+    },
+    "LATE": {
+      "resolved": 204,
+      "unresolved": 650
+    },
+    "MID": {
+      "resolved": 182,
+      "unresolved": 547
+    },
+    "None": {
+      "resolved": 0,
+      "unresolved": 0
+    }
+  }
+}

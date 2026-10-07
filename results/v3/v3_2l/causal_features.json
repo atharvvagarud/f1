@@ -1,0 +1,28 @@
+{
+ "schema_version": "v3.2l-causal-features-v1",
+ "features": [
+  "elapsed stopped duration at T",
+  "race stage/fraction",
+  "laps remaining from scheduled distance",
+  "last known position/lap/lap deficit",
+  "last known pit state/pit-stop count",
+  "last known tyre state if causal",
+  "track status at T",
+  "race-control messages issued <= T",
+  "stop context if causally available",
+  "recent pre-stop pace descriptors"
+ ],
+ "availability": {
+  "elapsed stopped duration at T": "available at episode start",
+  "race stage/fraction": "available at episode start",
+  "laps remaining from scheduled distance": "available at episode start",
+  "last known position/lap/lap deficit": "available at episode start",
+  "last known pit state/pit-stop count": "available at episode start",
+  "last known tyre state if causal": "available at episode start",
+  "track status at T": "available at episode start",
+  "race-control messages issued <= T": "available at episode start",
+  "stop context if causally available": "available at episode start",
+  "recent pre-stop pace descriptors": "available at episode start"
+ },
+ "provenance": "all X from D9 rows <= stop_start_t, TimingData keys <= T, RaceState track/weather at T; no driver identity; no future labels"
+}

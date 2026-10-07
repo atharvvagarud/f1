@@ -1,0 +1,167 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "e93e080110009e0e8036679d971c764e4fe2f200a42c32534cd67d140fdb5ee6",
+  "diagnostics": {
+    "n_inpit_updates": 99,
+    "n_malformed_rows": 0,
+    "n_messages": 50429,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 94,
+    "n_retired_updates": 25,
+    "n_stopped_updates": 30
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 25,
+  "race_id": "2020-r08-R",
+  "raw_sha256": "dfc1ce9880d7936fcb192a94aeae5b003790db937b1a0357db78c15e6d22699b",
+  "round": 8,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2020,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2020/2020-09-06_Italian_Grand_Prix/2020-09-06_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        6.745,
+        false
+      ],
+      [
+        4901.497,
+        true
+      ]
+    ],
+    "kvyat": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        6.745,
+        false
+      ],
+      [
+        5246.439,
+        true
+      ],
+      [
+        5259.119,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        6.745,
+        false
+      ],
+      [
+        6630.083,
+        true
+      ]
+    ],
+    "norris": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        6.745,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        6.745,
+        false
+      ],
+      [
+        2720.739,
+        true
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

@@ -1,0 +1,9 @@
+{
+ "schema_version": "v3.2l-rng-contract-v1",
+ "design_only": true,
+ "domains": [
+  "mc2-lifecycle-terminal",
+  "mc2-lifecycle-return-time"
+ ],
+ "isolation": "existing MC2-E streams untouched by design; no draws consumed in L (no integration)"
+}

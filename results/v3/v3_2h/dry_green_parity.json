@@ -1,0 +1,9 @@
+{
+  "corpus_hash": "7ae97c3c8575679ae8039a60b494767c19ccf08cf1c0706ac31461e0ea175de1",
+  "members": 50,
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "runtime_touched": false,
+  "schema_version": "v3.2h-dry-green-parity-v1",
+  "status": "PARITY_OK_BIT_EXACT",
+  "verified": "freeze_v3_2f_parity_corpus.py verify (H entry gate); rerun as H final gate before freeze"
+}

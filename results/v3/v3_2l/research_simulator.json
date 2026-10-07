@@ -1,0 +1,5 @@
+{
+ "schema_version": "v3.2l-research-simulator-v1",
+ "verdict": "NOT_RUN",
+ "reason": "B-arm (MC2-E + lifecycle) not built: return branch needs kernel hold support and finish contract extension; evaluation population frozen (3294 targets) for any future arm"
+}

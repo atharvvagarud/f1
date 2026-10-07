@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "14d5c4ec5fff7dcf41a51a78ca3a4bfd11cf838cde4dc8ead3b8a09a94629b10",
+  "diagnostics": {
+    "n_inpit_updates": 161,
+    "n_malformed_rows": 0,
+    "n_messages": 54135,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 66,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 22
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2023-r04-R",
+  "raw_sha256": "f4af5c61632130f57e98926db21604aff1ad8c32b1107a29ccbbcb63b822c721",
+  "round": 4,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2023,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2023/2023-04-30_Azerbaijan_Grand_Prix/2023-04-30_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "de_vries": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "sargeant": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        1.78,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        1.78,
+        false
+      ],
+      [
+        7968.417,
+        true
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

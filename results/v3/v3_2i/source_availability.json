@@ -1,0 +1,86 @@
+{
+  "local_timingdata_streams": {
+    "2018": {
+      "drivers_seen": "20-per-race (stream namespace)",
+      "official_dnfs": 80,
+      "race_ids": [
+        "2018-r01-R",
+        "2018-r02-R",
+        "2018-r03-R",
+        "2018-r04-R",
+        "2018-r05-R",
+        "2018-r06-R",
+        "2018-r07-R",
+        "2018-r08-R",
+        "2018-r09-R",
+        "2018-r10-R",
+        "2018-r11-R",
+        "2018-r12-R",
+        "2018-r13-R",
+        "2018-r14-R",
+        "2018-r15-R",
+        "2018-r16-R",
+        "2018-r17-R",
+        "2018-r18-R",
+        "2018-r19-R",
+        "2018-r20-R",
+        "2018-r21-R"
+      ],
+      "races": 21,
+      "retirement_events": 29
+    },
+    "2019": {
+      "note": "no TimingData.jsonStream in local sqlite cache",
+      "races": 0
+    },
+    "2020": {
+      "note": "no TimingData.jsonStream in local sqlite cache",
+      "races": 0
+    },
+    "2021": {
+      "note": "no TimingData.jsonStream in local sqlite cache",
+      "races": 0
+    },
+    "2022": {
+      "note": "no TimingData.jsonStream in local sqlite cache",
+      "races": 0
+    },
+    "2023": {
+      "note": "no TimingData.jsonStream in local sqlite cache",
+      "races": 0
+    },
+    "2024": {
+      "drivers_seen": "20-per-race (stream namespace)",
+      "official_dnfs": 47,
+      "race_ids": [
+        "2024-r01-R",
+        "2024-r02-R",
+        "2024-r03-R",
+        "2024-r04-R",
+        "2024-r05-R",
+        "2024-r06-R",
+        "2024-r07-R",
+        "2024-r08-R",
+        "2024-r09-R",
+        "2024-r10-R",
+        "2024-r11-R",
+        "2024-r12-R",
+        "2024-r13-R",
+        "2024-r14-R",
+        "2024-r15-R",
+        "2024-r16-R",
+        "2024-r17-R",
+        "2024-r18-R",
+        "2024-r19-R",
+        "2024-r20-R",
+        "2024-r21-R",
+        "2024-r22-R",
+        "2024-r23-R",
+        "2024-r24-R"
+      ],
+      "races": 24,
+      "retirement_events": 27
+    }
+  },
+  "schema_version": "v3.2i-source-availability-v1"
+}

@@ -1,0 +1,14 @@
+{
+  "checkpoint_grain_note": "no winner is Retired<=T at any race checkpoint (vacuous: winners have no Retired event at all)",
+  "other_firewall_cases": {
+    "bottas_2020_r01": "UNTESTABLE_LOCALLY (no 2020 stream)",
+    "perez_2021_r06": "UNTESTABLE_LOCALLY (no 2021 stream)",
+    "verstappen_2022_r18": "UNTESTABLE_LOCALLY (no 2022 stream)"
+  },
+  "schema_version": "v3.2i-winner-firewall-v1",
+  "vettel_2018_r02": {
+    "first_retired_s": null,
+    "verdict": "PASS (never retired)"
+  },
+  "winners_flagged_any_time": []
+}

@@ -1,0 +1,6 @@
+{
+ "schema_version": "v3.2l-terminal-mechanism-v1",
+ "design_only": true,
+ "mechanism": "sampled-terminal drivers remain non-progressing; SIMULATED FUTURE outcome, never an assertion of retirement at T",
+ "note": "same kernel hold requirement as return branch"
+}

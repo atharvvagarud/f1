@@ -1,0 +1,14 @@
+{
+ "schema_version": "v3.2n-reproducibility-v1",
+ "verify_artifacts": ".venv/bin/python scripts/build_v3_2n_ledger.py",
+ "l_correction": ".venv/bin/python scripts/analyze_v3_2n_l_correction.py",
+ "recompute_eligibility": ".venv/bin/python scripts/recompute_v3_2n_eligibility.py  # ~11 min, 2 passes",
+ "status_checks": ".venv/bin/python scripts/validate_v3_2n_status.py",
+ "science_poison": ".venv/bin/python scripts/check_v3_2n_science.py",
+ "api_replay": ".venv/bin/python scripts/check_v3_2n_api_replay.py",
+ "validation_5000": ".venv/bin/python scripts/run_v3_2n_final_validation.py full  # then rerun",
+ "focused_tests": ".venv/bin/python -m pytest tests/test_v3_2n_final_validation.py -q",
+ "full_tier1": ".venv/bin/python scripts/run_ci_tests.py  # once, after focused gates",
+ "corpus_tests": "per scripts/ci_corpus_dependent.txt",
+ "graphify": "graphify update ."
+}

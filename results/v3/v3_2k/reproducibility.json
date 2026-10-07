@@ -1,0 +1,8 @@
+{
+ "schema_version": "v3.2k-reproducibility-v1",
+ "preregistration_sha256": "567260af8072d2e1700a4d1e9ad24265fc458c838010dc8a0d27b745c6a2f22b",
+ "seeds": "deterministic (no RNG consumed)",
+ "frozen_inputs": [
+  "8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30"
+ ]
+}

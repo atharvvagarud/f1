@@ -1,0 +1,22 @@
+{
+  "bar_failures": {
+    "C3": [
+      "future observations required to resolve trailing ambiguity",
+      "false-positive risk unacceptable (3W/7P/9T5)"
+    ],
+    "C4": [
+      "3 classified false-positives",
+      "6 later-row exceptions",
+      "season availability failure"
+    ],
+    "C5": [
+      "transient return after signal (9)",
+      "false-positive (winner + 4 classified)",
+      "season behavior unstable (2023 silent)",
+      "recall 0.10 with latency p50 97.5s"
+    ]
+  },
+  "runtime_implemented": false,
+  "schema_version": "v3.2g-admission-decision-v1",
+  "verdict": "NO_AUTHORITATIVE_STATUS_ADMITTED"
+}

@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "4260d7a903e6c99438c803a85d2bd94159166db269b1b564465747007159523c",
+  "diagnostics": {
+    "n_inpit_updates": 209,
+    "n_malformed_rows": 0,
+    "n_messages": 69772,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 136,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2022-r01-R",
+  "raw_sha256": "ca688ed48f657e2ed82fae017f934a35128d94658a7c58e5e5d178e158cee262",
+  "round": 1,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2022,
+  "served_by": "fastf1_mirror",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2022/2022-03-20_Bahrain_Grand_Prix/2022-03-20_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        7.812,
+        false
+      ],
+      [
+        9476.667,
+        true
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        7.812,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        7.812,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

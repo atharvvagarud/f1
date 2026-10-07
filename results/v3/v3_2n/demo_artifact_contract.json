@@ -1,0 +1,18 @@
+{
+ "schema_version": "v3.2n-demo-artifact-contract-v1",
+ "runs": 5000,
+ "seed_policy": "master_seed 20240101; per-sim stream",
+ "each_artifact_contains": [
+  "race identity",
+  "checkpoint identity",
+  "state_time_s",
+  "runs=5000",
+  "seed policy",
+  "MC2 version",
+  "MC2 parameter identity",
+  "eligibility/status identity",
+  "input RaceState identity",
+  "output content hash"
+ ],
+ "note": "contract only; no public cache generation in N"
+}

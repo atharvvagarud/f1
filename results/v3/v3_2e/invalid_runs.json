@@ -1,0 +1,31 @@
+{
+ "arms": {
+  "A_R3_BASELINE": {
+   "invalid": 0,
+   "invalid_rate": 0.0,
+   "valid": 1636000
+  },
+  "B_DRIVER_ANCHOR": {
+   "invalid": 0,
+   "invalid_rate": 0.0,
+   "valid": 1636000
+  },
+  "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+   "invalid": 0,
+   "invalid_rate": 0.0,
+   "valid": 1636000
+  },
+  "D_CONDITIONED_VARIANCE": {
+   "invalid": 0,
+   "invalid_rate": 0.0,
+   "valid": 1636000
+  },
+  "E_AR1_RESIDUAL": {
+   "invalid": 0,
+   "invalid_rate": 0.0,
+   "valid": 1636000
+  }
+ },
+ "population_hash": "5d038db83111a1a9dc9e885ed107358d8e018ad1c3a4570f14d1f78697b8383d",
+ "schema_version": "v3.2e-invalid-v1"
+}

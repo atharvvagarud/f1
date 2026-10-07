@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "64bdce57778d97c48b4aa2f2182ef792c383760765e854126ae2f820da320ffe",
+  "diagnostics": {
+    "n_inpit_updates": 62,
+    "n_malformed_rows": 0,
+    "n_messages": 26092,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 62,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 27
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2018-r01-R",
+  "raw_sha256": "3288c8795c816f33c056161c9644e6c29f9a10df9037f64314cdf407408112f1",
+  "round": 1,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2018,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2018/2018-03-25_Australian_Grand_Prix/2018-03-25_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "brendon_hartley": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "ericsson": [
+      [
+        4.103,
+        false
+      ],
+      [
+        1133.898,
+        true
+      ]
+    ],
+    "gasly": [
+      [
+        4.103,
+        false
+      ],
+      [
+        1878.787,
+        true
+      ]
+    ],
+    "grosjean": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "sirotkin": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "vandoorne": [
+      [
+        4.103,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        4.103,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

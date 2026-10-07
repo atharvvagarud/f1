@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "8dd81d10f2da29eb499678f88d80a5b567c051e75bf1dac809b41f67297cae8b",
+  "diagnostics": {
+    "n_inpit_updates": 69,
+    "n_malformed_rows": 0,
+    "n_messages": 33413,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 66,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 20
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2019-r09-R",
+  "raw_sha256": "72ed628c7e7b01b2d5bf3955fae7586d8a48bbd3cc9f658fa5604e5a7465f90c",
+  "round": 9,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2019,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2019/2019-06-30_Austrian_Grand_Prix/2019-06-30_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "kubica": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        8.39,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        8.39,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

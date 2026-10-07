@@ -1,0 +1,59 @@
+{
+ "schema_version": "v3.2k-season-coverage-v1",
+ "before": {
+  "by_season": {
+   "2018": {
+    "after": 251,
+    "after_cov": 0.1811,
+    "before": 121,
+    "before_cov": 0.0873,
+    "total": 1386
+   },
+   "2019": {
+    "after": 715,
+    "after_cov": 0.5253,
+    "before": 547,
+    "before_cov": 0.4019,
+    "total": 1361
+   },
+   "2020": {
+    "after": 366,
+    "after_cov": 0.3248,
+    "before": 208,
+    "before_cov": 0.1846,
+    "total": 1127
+   },
+   "2021": {
+    "after": 587,
+    "after_cov": 0.419,
+    "before": 299,
+    "before_cov": 0.2134,
+    "total": 1401
+   },
+   "2022": {
+    "after": 463,
+    "after_cov": 0.3226,
+    "before": 333,
+    "before_cov": 0.2321,
+    "total": 1435
+   },
+   "2023": {
+    "after": 572,
+    "after_cov": 0.4051,
+    "before": 323,
+    "before_cov": 0.2288,
+    "total": 1412
+   },
+   "2024": {
+    "after": 724,
+    "after_cov": 0.4757,
+    "before": 474,
+    "before_cov": 0.3114,
+    "total": 1522
+   }
+  },
+  "schema_version": "v3.2j-season-coverage-v1"
+ },
+ "after": "IDENTICAL (no K recovery admitted)",
+ "delta": 0
+}

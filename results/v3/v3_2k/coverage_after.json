@@ -1,0 +1,9 @@
+{
+ "schema_version": "v3.2k-coverage-after-v1",
+ "method": "identity recount: K adds no runtime eligibility change (decision REJECT); aggregates re-derived from frozen J coverage_after.json corpus_hash 8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30",
+ "total": 9644,
+ "eligible": 3678,
+ "fraction": 0.3814,
+ "gain_vs_j": 0,
+ "pp_gain": 0.0
+}

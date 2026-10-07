@@ -1,0 +1,159 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "0319ab40066bdb8f40340b22619a9c8e23e980182c134542395c056022225d2d",
+  "diagnostics": {
+    "n_inpit_updates": 71,
+    "n_malformed_rows": 0,
+    "n_messages": 23078,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 68,
+    "n_retired_updates": 23,
+    "n_stopped_updates": 24
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 23,
+  "race_id": "2018-r18-R",
+  "raw_sha256": "a2379d0c9a596beace83b7484a35813455c508f8c7bd4e29e13ab6cb646d0cb9",
+  "round": 18,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2018,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2018/2018-10-21_United_States_Grand_Prix/2018-10-21_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        4.011,
+        false
+      ],
+      [
+        2275.209,
+        true
+      ]
+    ],
+    "bottas": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "brendon_hartley": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "ericsson": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        4.011,
+        false
+      ],
+      [
+        2420.204,
+        true
+      ]
+    ],
+    "hamilton": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        4.011,
+        false
+      ],
+      [
+        5435.769,
+        true
+      ]
+    ],
+    "max_verstappen": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "sirotkin": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "vandoorne": [
+      [
+        4.011,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        4.011,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

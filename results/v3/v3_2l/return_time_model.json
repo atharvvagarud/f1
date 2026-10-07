@@ -1,0 +1,69 @@
+{
+ "schema_version": "v3.2l-return-time-model-v1",
+ "n_returned": 30,
+ "downtime_quantiles_s": {
+  "0.1": 74.8,
+  "0.25": 106.4,
+  "0.5": 155.4,
+  "0.75": 450.3,
+  "0.9": 2274.2
+ },
+ "conditional_on_age_tables": {
+  "0": {
+   "n": 30,
+   "quantiles": {
+    "0.1": 74.8,
+    "0.25": 106.4,
+    "0.5": 155.4,
+    "0.75": 450.3,
+    "0.9": 2274.2
+   },
+   "note": "P(additional downtime | already stopped A, RETURNED stratum); terminal branch handled separately by P(RETURN)"
+  },
+  "60": {
+   "n": 27,
+   "quantiles": {
+    "0.1": 40.4,
+    "0.25": 47.6,
+    "0.5": 123.7,
+    "0.75": 657.3,
+    "0.9": 2353.2
+   },
+   "note": "P(additional downtime | already stopped A, RETURNED stratum); terminal branch handled separately by P(RETURN)"
+  },
+  "180": {
+   "n": 14,
+   "quantiles": {
+    "0.1": 39.0,
+    "0.25": 60.4,
+    "0.5": 537.3,
+    "0.75": 1964.8,
+    "0.9": 3365.3
+   },
+   "note": "P(additional downtime | already stopped A, RETURNED stratum); terminal branch handled separately by P(RETURN)"
+  },
+  "300": {
+   "n": 9,
+   "quantiles": {
+    "0.1": 155.7,
+    "0.25": 657.5,
+    "0.5": 1595.7,
+    "0.75": 2391.3,
+    "0.9": 3777.3
+   },
+   "note": "P(additional downtime | already stopped A, RETURNED stratum); terminal branch handled separately by P(RETURN)"
+  },
+  "600": {
+   "n": 7,
+   "quantiles": {
+    "0.1": 466.6,
+    "0.25": 917.5,
+    "0.5": 1627.8,
+    "0.75": 2701.3,
+    "0.9": 3643.4
+   },
+   "note": "P(additional downtime | already stopped A, RETURNED stratum); terminal branch handled separately by P(RETURN)"
+  }
+ },
+ "sampling_rule": "inverse-CDF over empirical table for the episode age bin (deterministic given RNG draw); never sample total duration from start (no return before T)"
+}

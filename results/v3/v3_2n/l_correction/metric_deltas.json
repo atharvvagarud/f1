@@ -1,0 +1,164 @@
+{
+ "schema_version": "v3.2n-l-corrected-metrics-v1",
+ "corrected_clean_n": 171,
+ "corrected_returned_n": 26,
+ "original_clean_n": 211,
+ "original_returned_n": 30,
+ "baselines": {
+  "schema_version": "v3.2n-l-corrected-baselines-v1",
+  "n_clean": 171,
+  "global_terminal_freq": 0.847953216374269
+ },
+ "fold_metrics": {
+  "2020->2021": {
+   "n_train": 85,
+   "n_eval": 18,
+   "eval_return_rate": 0.3333333333333333,
+   "log_loss": 0.4117,
+   "brier": 0.1397,
+   "roc_auc": 0.9306,
+   "ece": 0.1602,
+   "n": 18,
+   "n_pos": 6
+  },
+  "2021->2022": {
+   "n_train": 103,
+   "n_eval": 31,
+   "eval_return_rate": 0.0967741935483871,
+   "log_loss": 0.1254,
+   "brier": 0.0307,
+   "roc_auc": 1.0,
+   "ece": 0.0848,
+   "n": 31,
+   "n_pos": 3
+  },
+  "2022->2023": {
+   "n_train": 134,
+   "n_eval": 23,
+   "eval_return_rate": 0.21739130434782608,
+   "log_loss": 0.4101,
+   "brier": 0.1211,
+   "roc_auc": 0.7111,
+   "ece": 0.0974,
+   "n": 23,
+   "n_pos": 5
+  },
+  "2023->2024": {
+   "n_train": 157,
+   "n_eval": 14,
+   "eval_return_rate": 0.07142857142857142,
+   "log_loss": 0.2332,
+   "brier": 0.0652,
+   "roc_auc": 0.6154,
+   "ece": 0.0691,
+   "n": 14,
+   "n_pos": 1
+  }
+ },
+ "metric_deltas_original_vs_corrected": {
+  "2020->2021": {
+   "n_train": [
+    101,
+    85
+   ],
+   "n_eval": [
+    24,
+    18
+   ],
+   "log_loss": [
+    0.4823,
+    0.4117
+   ],
+   "brier": [
+    0.1379,
+    0.1397
+   ],
+   "roc_auc": [
+    0.9167,
+    0.9306
+   ],
+   "ece": [
+    0.2319,
+    0.1602
+   ]
+  },
+  "2021->2022": {
+   "n_train": [
+    125,
+    103
+   ],
+   "n_eval": [
+    42,
+    31
+   ],
+   "log_loss": [
+    0.1533,
+    0.1254
+   ],
+   "brier": [
+    0.0357,
+    0.0307
+   ],
+   "roc_auc": [
+    0.9573,
+    1.0
+   ],
+   "ece": [
+    0.0834,
+    0.0848
+   ]
+  },
+  "2022->2023": {
+   "n_train": [
+    167,
+    134
+   ],
+   "n_eval": [
+    24,
+    23
+   ],
+   "log_loss": [
+    0.4446,
+    0.4101
+   ],
+   "brier": [
+    0.1248,
+    0.1211
+   ],
+   "roc_auc": [
+    0.6211,
+    0.7111
+   ],
+   "ece": [
+    0.1532,
+    0.0974
+   ]
+  },
+  "2023->2024": {
+   "n_train": [
+    191,
+    157
+   ],
+   "n_eval": [
+    20,
+    14
+   ],
+   "log_loss": [
+    0.2177,
+    0.2332
+   ],
+   "brier": [
+    0.0514,
+    0.0652
+   ],
+   "roc_auc": [
+    0.4211,
+    0.6154
+   ],
+   "ece": [
+    0.0735,
+    0.0691
+   ]
+  }
+ }
+}

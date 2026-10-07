@@ -1,0 +1,2686 @@
+{
+ "schema_version": "v3.2a-audit-v1",
+ "baseline": {
+  "tag": "v3.1-race-dynamics",
+  "commit": "64c5af094bd1304e23a5c7d3d5b782b0eef11aca",
+  "head_matches_tag": true,
+  "worktree": "clean except intentionally ignored generated V3 data",
+  "staged": "nothing",
+  "v3_1_verdict": "KEEP",
+  "v3_1_winner_feature_set": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "v3_1_winner_feature_count": 110,
+  "v3_1_training": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "holdout_2025": "sealed KEEP",
+  "serving_artifact": "frozen V2, no V3.1 promotion"
+ },
+ "simulation_identity": {
+  "simulation_contract_version": "v1",
+  "monte_carlo_version": "r5-monte-carlo-v1",
+  "engine_version": "r4-engine-v1",
+  "pit_dynamics_version": "r6-pit-dynamics-v1",
+  "parameter_contract": "r3-v1",
+  "parameter_set_id": "phase6-r3-empirical",
+  "parameter_through_season": 2024,
+  "parameter_scientific_hash": "4c2f85f08f1ce66cc6477982b2d5c97e9547f70927224b8e949ebe123ff3f140",
+  "adapter_version": "v1",
+  "assumptions_version": "v1",
+  "rng_algorithm": "PCG64",
+  "production_defaults": {
+   "pit_dynamics_enabled": false,
+   "reliability_enabled": false,
+   "default_simulation_count": 1000,
+   "max_synchronous_simulations": 10000,
+   "default_master_seed": 20240101,
+   "chunk_size": 512,
+   "execution_policy": "retrospective_product"
+  }
+ },
+ "graphify": {
+  "nodes": 13164,
+  "edges": 31207,
+  "communities": 354,
+  "topology_change_from_audit": "none expected except audit script/test"
+ },
+ "architecture": {
+  "stages": [
+   "R1 contracts/state/config/rng",
+   "R2 RaceState adapter",
+   "R3 empirical parameters",
+   "R4 deterministic kernel",
+   "R5 stochastic Monte Carlo",
+   "R6 pit dynamics (opt-in)",
+   "R7 validation (evaluation only)",
+   "R8 product service"
+  ],
+  "request_path": "exact anchor -> RaceState (Phase-4) -> SimulationState (R2) -> eligibility -> MonteCarloEngine (R5/R6) -> MonteCarloResult",
+  "service": "api/v2_simulation_service.py V2SimulationService",
+  "routes": "api/v2_simulation_routes.py POST /v2/simulations/race; 422 simulation_unsupported, never fallback"
+ },
+ "run_semantics": {
+  "one_simulation": "one independent deterministically-seeded trajectory: SimulationState at checkpoint T evolved lap by lap by the R4 kernel with per-lap independent R3 residual draws until the leader completes scheduled_laps; terminal order from free-air (laps DESC, time ASC, driver_id ASC); exactly one winner per valid trial",
+  "stochastic": "per-lap epsilon ~ empirical R3 quantile residual (Uniform(0,1) interpolated, bounded by observed support); median-centered, mean slightly positive, NOT recentered",
+  "fixed": "starting state, pace anchor (circuit|era base + constructor offset), progress/degradation deltas from T, roster, scheduled distance, RNG streams",
+  "events_possible": [
+   "lap completions",
+   "position changes via cumulative time",
+   "pit stops with loss/compound transition when pits enabled",
+   "numerical invalid runs (counted, excluded)"
+  ],
+  "events_impossible": [
+   "overtakes",
+   "traffic impedance",
+   "retirements/DNF",
+   "safety-car/VSC/red-flag generation",
+   "weather evolution",
+   "strategy optimisation",
+   "compound pace offsets (deferred zero)"
+  ],
+  "aggregation": "integer position counts over valid trials; frequencies = counts / valid_count"
+ },
+ "input_contract": [
+  {
+   "name": "race_id",
+   "family": "RaceState",
+   "level": "race",
+   "deterministic": true,
+   "conditioning": "race"
+  },
+  {
+   "name": "season/round_no/circuit_id",
+   "family": "RaceState",
+   "level": "race",
+   "deterministic": true,
+   "conditioning": "season/circuit; season gates era 2018-2024"
+  },
+  {
+   "name": "scheduled_laps",
+   "family": "RaceState",
+   "level": "race",
+   "deterministic": true,
+   "conditioning": "race"
+  },
+  {
+   "name": "leader_laps_done",
+   "family": "RaceState",
+   "level": "race",
+   "deterministic": true,
+   "conditioning": "race"
+  },
+  {
+   "name": "simulation_time_s (T)",
+   "family": "RaceState",
+   "level": "race",
+   "deterministic": true,
+   "conditioning": "race"
+  },
+  {
+   "name": "per-driver lap_number/race_time_s/position",
+   "family": "RaceState",
+   "level": "driver",
+   "deterministic": true,
+   "conditioning": "none (own factual progress)"
+  },
+  {
+   "name": "per-driver compound/tyre_age/stint/pit_count/constructor_id",
+   "family": "RaceState",
+   "level": "driver",
+   "deterministic": true,
+   "conditioning": "null-preserving; tyre_age None refused"
+  },
+  {
+   "name": "per-driver status",
+   "family": "RaceState",
+   "level": "driver",
+   "deterministic": true,
+   "conditioning": "always ACTIVE from adapter; RETIRED refused"
+  },
+  {
+   "name": "per-driver observation_age_s",
+   "family": "RaceState",
+   "level": "driver",
+   "deterministic": true,
+   "conditioning": "eligibility bound 3.0x expected lap time"
+  },
+  {
+   "name": "environment track_state/weather",
+   "family": "RaceState",
+   "level": "race",
+   "deterministic": true,
+   "conditioning": "only all_clear + no rainfall accepted"
+  },
+  {
+   "name": "anchor_frame_index",
+   "family": "static race metadata",
+   "level": "race",
+   "deterministic": true,
+   "conditioning": "replay handle only"
+  },
+  {
+   "name": "R3 pace families (base, constructor offset, progress, degradation)",
+   "family": "empirical simulation parameter",
+   "level": "race/driver",
+   "deterministic": true,
+   "conditioning": "circuit|era -> era/global fallback hierarchy"
+  },
+  {
+   "name": "R3 residual distribution",
+   "family": "empirical simulation parameter",
+   "level": "race",
+   "deterministic": false,
+   "conditioning": "sampled per lap; era -> global"
+  },
+  {
+   "name": "R3 pit families (stint, transitions, losses)",
+   "family": "empirical simulation parameter",
+   "level": "driver",
+   "deterministic": false,
+   "conditioning": "sampled on domain-separated streams; pits only"
+  },
+  {
+   "name": "SimulationConfig (count, seed, sample_orders, switches)",
+   "family": "other",
+   "level": "race",
+   "deterministic": true,
+   "conditioning": "execution semantics; seed explicit"
+  },
+  {
+   "name": "Assumptions",
+   "family": "other",
+   "level": "race",
+   "deterministic": true,
+   "conditioning": "USER_ASSUMPTION v1, no speculative controls"
+  },
+  {
+   "name": "NOT consumed",
+   "family": "other",
+   "level": "race",
+   "deterministic": true,
+   "conditioning": "no winner model, no feature engine, no labels, no replay cache, no future rows (AST-pinned)"
+  }
+ ],
+ "output_contract": {
+  "win_probability": "SUPPORTED (count/valid, sums to 1)",
+  "podium_probability": "SUPPORTED (top-3 counts/valid)",
+  "expected_finish": "SUPPORTED (mean of position distribution)",
+  "finish_position_distribution": "SUPPORTED (full per-driver 1..K frequencies)",
+  "sample_orders": "SUPPORTED (0..N retained full FinishOrders)",
+  "valid_invalid_counts": "SUPPORTED (valid+invalid == requested)",
+  "points_probability": "NOT_SUPPORTED (None; no points table)",
+  "expected_points": "NOT_SUPPORTED (None)",
+  "dnf_probability": "NOT_SUPPORTED (None; no hazard model)",
+  "trajectory": "NOT_SUPPORTED (only terminal classifications)",
+  "event_log": "NOT_SUPPORTED",
+  "per_lap_uncertainty": "NOT_SUPPORTED"
+ },
+ "probability_semantics": {
+  "ml": "INDEPENDENT_BINARY per-driver winner probabilities; do NOT sum to 1; never renormalized",
+  "mc": "MONTE_CARLO_FREQUENCY over mutually exclusive simulated winners; sums to 1 by construction (one winner per valid trial; invariant-enforced)",
+  "prohibited": [
+   "naive averaging of ML and MC",
+   "renormalizing ML scores into an MC distribution",
+   "treating ML and MC as interchangeable estimators"
+  ]
+ },
+ "randomness": {
+  "algorithm": "PCG64 via SeedSequence([master_seed, simulation_id, contract_tag])",
+  "per_run_stream": true,
+  "domain_separation": "R6 pit/compound/loss/reliability streams use a 4th entropy word; R5 pace stream frozen",
+  "determinism_verified_live": {
+   "same_seed_same_chunk_identity_equal": true,
+   "chunk_64_vs_512_identity_equal": true,
+   "request_identity_stable": true
+  },
+  "common_random_numbers": "adopted with limitations (shared per-(seed,index) streams; not universal variance reduction after divergence)",
+  "parallelism_effects": "none on science (per-simulation streams; chunk size operational only)",
+  "ordering_sensitivity": "event order fixed: earliest next completion, driver_id tiebreak",
+  "nondeterminism": "none found; runtime_s excluded from identity"
+ },
+ "circuit_agnosticism": {
+  "verdict": "CIRCUIT_CONDITIONED, no hardcoding",
+  "hardcoded_circuits": [],
+  "hardcoded_races": [],
+  "circuit_conditioned": [
+   "pace_base_s circuit|era",
+   "race_progress_slope circuit|era",
+   "pit_effective_loss_s circuit",
+   "pit_lane_transit_s circuit",
+   "stint_length_laps era|circuit|compound"
+  ],
+  "generic": [
+   "kernel evolution",
+   "RNG",
+   "aggregation",
+   "adapter mapping",
+   "free-air ordering"
+  ],
+  "unknown": []
+ },
+ "race_agnosticism": {
+  "fixed_field_size": false,
+  "fixed_race_length": false,
+  "specific_years_required": "2018-2024 era bounds only",
+  "specific_regulations": "two eras 2018-2021/2022-2024, no regulation-specific branches",
+  "specific_compounds": "dry only; wet refused, not branched",
+  "safety_car_handling": "anchor-only refusal; no SC evolution",
+  "pit_patterns": "empirical behaviour model, no fixed patterns"
+ },
+ "supported_seasons": {
+  "engine_eras": [
+   "2018-2021",
+   "2022-2024"
+  ],
+  "estimation_window": "2018..through_season, 2025 never read",
+  "r7_evaluation": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "r7_excluded": [
+   2018,
+   2019,
+   2025
+  ],
+  "demo_cache_policy": "retrospective_product through-2024; all replay seasons 2018-2024 eligible in principle"
+ },
+ "replay_catalogue": {
+  "races": 149,
+  "checkpoints": 9644,
+  "aggregate_corpus_sha256": "78a3c059888637fe83cc534d0eb7869b6d18e746724bb1ce0f03ee3b8ba96298",
+  "served_seasons": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "generation_mode": "matrix",
+  "verified_by": "direct artifact count"
+ },
+ "eligibility": {
+  "classifier": "RaceState -> from_race_state -> terminal check (leader>=scheduled) -> select_pace_parameters -> _validate_start_state; input validation only, no MC",
+  "policy": "retrospective_product with through-2024 parameters",
+  "stage_rule": "fraction=leader_done/scheduled; EARLY<1/3, MID<2/3, else LATE",
+  "taxonomy": [
+   "SIMULATION_CAPABLE",
+   "TERMINAL_STATE",
+   "UNSUPPORTED_TRACK_STATE",
+   "WET_CONDITIONS",
+   "MISSING_TYRE_STATE",
+   "STALE_ROSTER_OBSERVATION",
+   "MISSING_RACE_METADATA",
+   "MISSING_DRIVER_OBSERVATION",
+   "MISSING_SIM_PARAMETER",
+   "UNSUPPORTED_SEASON",
+   "TEMPORAL_POLICY",
+   "RETIRED_DRIVER_PRESENT",
+   "INVALID_INPUT",
+   "RECONSTRUCTION_FAILURE",
+   "OTHER"
+  ],
+  "unobserved_tokens": [
+   "MISSING_RACE_METADATA",
+   "MISSING_SIM_PARAMETER",
+   "UNSUPPORTED_SEASON",
+   "TEMPORAL_POLICY",
+   "RETIRED_DRIVER_PRESENT",
+   "INVALID_INPUT",
+   "RECONSTRUCTION_FAILURE",
+   "OTHER"
+  ]
+ },
+ "overall_coverage": {
+  "total_checkpoints": 9644,
+  "eligible_checkpoints": 2274,
+  "ineligible_checkpoints": 7370,
+  "coverage_fraction": 0.2358,
+  "by_verdict": {
+   "MISSING_DRIVER_OBSERVATION": 492,
+   "MISSING_TYRE_STATE": 198,
+   "SIMULATION_CAPABLE": 2274,
+   "STALE_ROSTER_OBSERVATION": 4590,
+   "TERMINAL_STATE": 151,
+   "UNSUPPORTED_TRACK_STATE": 1138,
+   "WET_CONDITIONS": 801
+  },
+  "eligible_races": 101,
+  "partially_eligible_races": 101,
+  "zero_coverage_races": 48,
+  "fully_covered_races": 0,
+  "median_race_coverage": 0.091
+ },
+ "season_coverage": {
+  "2018": {
+   "races": 21,
+   "checkpoints": 1386,
+   "eligible": 121,
+   "coverage": 0.0873,
+   "full": 0,
+   "partial": 10,
+   "zero": 11
+  },
+  "2019": {
+   "races": 21,
+   "checkpoints": 1361,
+   "eligible": 547,
+   "coverage": 0.4019,
+   "full": 0,
+   "partial": 18,
+   "zero": 3
+  },
+  "2020": {
+   "races": 17,
+   "checkpoints": 1127,
+   "eligible": 208,
+   "coverage": 0.1846,
+   "full": 0,
+   "partial": 10,
+   "zero": 7
+  },
+  "2021": {
+   "races": 22,
+   "checkpoints": 1401,
+   "eligible": 270,
+   "coverage": 0.1927,
+   "full": 0,
+   "partial": 13,
+   "zero": 9
+  },
+  "2022": {
+   "races": 22,
+   "checkpoints": 1435,
+   "eligible": 333,
+   "coverage": 0.2321,
+   "full": 0,
+   "partial": 14,
+   "zero": 8
+  },
+  "2023": {
+   "races": 22,
+   "checkpoints": 1412,
+   "eligible": 321,
+   "coverage": 0.2273,
+   "full": 0,
+   "partial": 17,
+   "zero": 5
+  },
+  "2024": {
+   "races": 24,
+   "checkpoints": 1522,
+   "eligible": 474,
+   "coverage": 0.3114,
+   "full": 0,
+   "partial": 19,
+   "zero": 5
+  }
+ },
+ "race_coverage": [
+  {
+   "race_id": "2018-r01-R",
+   "season": 2018,
+   "round": 1,
+   "checkpoint_count": 72,
+   "eligible_count": 4,
+   "coverage": 0.0556,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r02-R",
+   "season": 2018,
+   "round": 2,
+   "checkpoint_count": 65,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "MISSING_TYRE_STATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "round": 3,
+   "checkpoint_count": 58,
+   "eligible_count": 21,
+   "coverage": 0.3621,
+   "dominant_failure": "UNSUPPORTED_TRACK_STATE"
+  },
+  {
+   "race_id": "2018-r04-R",
+   "season": 2018,
+   "round": 4,
+   "checkpoint_count": 58,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r05-R",
+   "season": 2018,
+   "round": 5,
+   "checkpoint_count": 73,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "round": 6,
+   "checkpoint_count": 86,
+   "eligible_count": 43,
+   "coverage": 0.5,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r07-R",
+   "season": 2018,
+   "round": 7,
+   "checkpoint_count": 70,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r08-R",
+   "season": 2018,
+   "round": 8,
+   "checkpoint_count": 57,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r09-R",
+   "season": 2018,
+   "round": 9,
+   "checkpoint_count": 81,
+   "eligible_count": 10,
+   "coverage": 0.1235,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r10-R",
+   "season": 2018,
+   "round": 10,
+   "checkpoint_count": 59,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "MISSING_TYRE_STATE"
+  },
+  {
+   "race_id": "2018-r11-R",
+   "season": 2018,
+   "round": 11,
+   "checkpoint_count": 80,
+   "eligible_count": 3,
+   "coverage": 0.0375,
+   "dominant_failure": "UNSUPPORTED_TRACK_STATE"
+  },
+  {
+   "race_id": "2018-r12-R",
+   "season": 2018,
+   "round": 12,
+   "checkpoint_count": 75,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r13-R",
+   "season": 2018,
+   "round": 13,
+   "checkpoint_count": 45,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r14-R",
+   "season": 2018,
+   "round": 14,
+   "checkpoint_count": 57,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r15-R",
+   "season": 2018,
+   "round": 15,
+   "checkpoint_count": 61,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r16-R",
+   "season": 2018,
+   "round": 16,
+   "checkpoint_count": 55,
+   "eligible_count": 5,
+   "coverage": 0.0909,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r17-R",
+   "season": 2018,
+   "round": 17,
+   "checkpoint_count": 57,
+   "eligible_count": 5,
+   "coverage": 0.0877,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r18-R",
+   "season": 2018,
+   "round": 18,
+   "checkpoint_count": 63,
+   "eligible_count": 2,
+   "coverage": 0.0317,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r19-R",
+   "season": 2018,
+   "round": 19,
+   "checkpoint_count": 82,
+   "eligible_count": 5,
+   "coverage": 0.061,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r20-R",
+   "season": 2018,
+   "round": 20,
+   "checkpoint_count": 75,
+   "eligible_count": 23,
+   "coverage": 0.3067,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2018-r21-R",
+   "season": 2018,
+   "round": 21,
+   "checkpoint_count": 57,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r01-R",
+   "season": 2019,
+   "round": 1,
+   "checkpoint_count": 60,
+   "eligible_count": 12,
+   "coverage": 0.2,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r02-R",
+   "season": 2019,
+   "round": 2,
+   "checkpoint_count": 72,
+   "eligible_count": 18,
+   "coverage": 0.25,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r03-R",
+   "season": 2019,
+   "round": 3,
+   "checkpoint_count": 57,
+   "eligible_count": 18,
+   "coverage": 0.3158,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r04-R",
+   "season": 2019,
+   "round": 4,
+   "checkpoint_count": 57,
+   "eligible_count": 34,
+   "coverage": 0.5965,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r05-R",
+   "season": 2019,
+   "round": 5,
+   "checkpoint_count": 68,
+   "eligible_count": 44,
+   "coverage": 0.6471,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r06-R",
+   "season": 2019,
+   "round": 6,
+   "checkpoint_count": 87,
+   "eligible_count": 3,
+   "coverage": 0.0345,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2019-r07-R",
+   "season": 2019,
+   "round": 7,
+   "checkpoint_count": 74,
+   "eligible_count": 9,
+   "coverage": 0.1216,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r08-R",
+   "season": 2019,
+   "round": 8,
+   "checkpoint_count": 63,
+   "eligible_count": 48,
+   "coverage": 0.7619,
+   "dominant_failure": "UNSUPPORTED_TRACK_STATE"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "round": 9,
+   "checkpoint_count": 71,
+   "eligible_count": 69,
+   "coverage": 0.9718,
+   "dominant_failure": "MISSING_DRIVER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r10-R",
+   "season": 2019,
+   "round": 10,
+   "checkpoint_count": 57,
+   "eligible_count": 9,
+   "coverage": 0.1579,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r11-R",
+   "season": 2019,
+   "round": 11,
+   "checkpoint_count": 84,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2019-r12-R",
+   "season": 2019,
+   "round": 12,
+   "checkpoint_count": 70,
+   "eligible_count": 52,
+   "coverage": 0.7429,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r13-R",
+   "season": 2019,
+   "round": 13,
+   "checkpoint_count": 45,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r14-R",
+   "season": 2019,
+   "round": 14,
+   "checkpoint_count": 61,
+   "eligible_count": 27,
+   "coverage": 0.4426,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r15-R",
+   "season": 2019,
+   "round": 15,
+   "checkpoint_count": 64,
+   "eligible_count": 33,
+   "coverage": 0.5156,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r16-R",
+   "season": 2019,
+   "round": 16,
+   "checkpoint_count": 58,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r17-R",
+   "season": 2019,
+   "round": 17,
+   "checkpoint_count": 54,
+   "eligible_count": 15,
+   "coverage": 0.2778,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r18-R",
+   "season": 2019,
+   "round": 18,
+   "checkpoint_count": 73,
+   "eligible_count": 50,
+   "coverage": 0.6849,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r19-R",
+   "season": 2019,
+   "round": 19,
+   "checkpoint_count": 57,
+   "eligible_count": 8,
+   "coverage": 0.1404,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2019-r20-R",
+   "season": 2019,
+   "round": 20,
+   "checkpoint_count": 74,
+   "eligible_count": 50,
+   "coverage": 0.6757,
+   "dominant_failure": "UNSUPPORTED_TRACK_STATE"
+  },
+  {
+   "race_id": "2019-r21-R",
+   "season": 2019,
+   "round": 21,
+   "checkpoint_count": 55,
+   "eligible_count": 48,
+   "coverage": 0.8727,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r01-R",
+   "season": 2020,
+   "round": 1,
+   "checkpoint_count": 76,
+   "eligible_count": 10,
+   "coverage": 0.1316,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r02-R",
+   "season": 2020,
+   "round": 2,
+   "checkpoint_count": 71,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r03-R",
+   "season": 2020,
+   "round": 3,
+   "checkpoint_count": 79,
+   "eligible_count": 14,
+   "coverage": 0.1772,
+   "dominant_failure": "MISSING_TYRE_STATE"
+  },
+  {
+   "race_id": "2020-r04-R",
+   "season": 2020,
+   "round": 4,
+   "checkpoint_count": 58,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "round": 5,
+   "checkpoint_count": 54,
+   "eligible_count": 46,
+   "coverage": 0.8519,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r06-R",
+   "season": 2020,
+   "round": 6,
+   "checkpoint_count": 68,
+   "eligible_count": 41,
+   "coverage": 0.6029,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r07-R",
+   "season": 2020,
+   "round": 7,
+   "checkpoint_count": 47,
+   "eligible_count": 3,
+   "coverage": 0.0638,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r08-R",
+   "season": 2020,
+   "round": 8,
+   "checkpoint_count": 57,
+   "eligible_count": 7,
+   "coverage": 0.1228,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r09-R",
+   "season": 2020,
+   "round": 9,
+   "checkpoint_count": 64,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r10-R",
+   "season": 2020,
+   "round": 10,
+   "checkpoint_count": 56,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r11-R",
+   "season": 2020,
+   "round": 11,
+   "checkpoint_count": 70,
+   "eligible_count": 14,
+   "coverage": 0.2,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "round": 12,
+   "checkpoint_count": 66,
+   "eligible_count": 55,
+   "coverage": 0.8333,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r13-R",
+   "season": 2020,
+   "round": 13,
+   "checkpoint_count": 69,
+   "eligible_count": 10,
+   "coverage": 0.1449,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r14-R",
+   "season": 2020,
+   "round": 14,
+   "checkpoint_count": 81,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2020-r15-R",
+   "season": 2020,
+   "round": 15,
+   "checkpoint_count": 60,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r16-R",
+   "season": 2020,
+   "round": 16,
+   "checkpoint_count": 94,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2020-r17-R",
+   "season": 2020,
+   "round": 17,
+   "checkpoint_count": 57,
+   "eligible_count": 8,
+   "coverage": 0.1404,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r01-R",
+   "season": 2021,
+   "round": 1,
+   "checkpoint_count": 57,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r02-R",
+   "season": 2021,
+   "round": 2,
+   "checkpoint_count": 74,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2021-r03-R",
+   "season": 2021,
+   "round": 3,
+   "checkpoint_count": 67,
+   "eligible_count": 1,
+   "coverage": 0.0149,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r04-R",
+   "season": 2021,
+   "round": 4,
+   "checkpoint_count": 67,
+   "eligible_count": 6,
+   "coverage": 0.0896,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r05-R",
+   "season": 2021,
+   "round": 5,
+   "checkpoint_count": 78,
+   "eligible_count": 3,
+   "coverage": 0.0385,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r06-R",
+   "season": 2021,
+   "round": 6,
+   "checkpoint_count": 59,
+   "eligible_count": 4,
+   "coverage": 0.0678,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "round": 7,
+   "checkpoint_count": 53,
+   "eligible_count": 51,
+   "coverage": 0.9623,
+   "dominant_failure": "MISSING_DRIVER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r08-R",
+   "season": 2021,
+   "round": 8,
+   "checkpoint_count": 71,
+   "eligible_count": 3,
+   "coverage": 0.0423,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r09-R",
+   "season": 2021,
+   "round": 9,
+   "checkpoint_count": 74,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r10-R",
+   "season": 2021,
+   "round": 10,
+   "checkpoint_count": 56,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r11-R",
+   "season": 2021,
+   "round": 11,
+   "checkpoint_count": 71,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2021-r12-R",
+   "season": 2021,
+   "round": 12,
+   "checkpoint_count": 3,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "MISSING_DRIVER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r13-R",
+   "season": 2021,
+   "round": 13,
+   "checkpoint_count": 74,
+   "eligible_count": 44,
+   "coverage": 0.5946,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r14-R",
+   "season": 2021,
+   "round": 14,
+   "checkpoint_count": 59,
+   "eligible_count": 2,
+   "coverage": 0.0339,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r15-R",
+   "season": 2021,
+   "round": 15,
+   "checkpoint_count": 67,
+   "eligible_count": 33,
+   "coverage": 0.4925,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r16-R",
+   "season": 2021,
+   "round": 16,
+   "checkpoint_count": 64,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2021-r17-R",
+   "season": 2021,
+   "round": 17,
+   "checkpoint_count": 61,
+   "eligible_count": 16,
+   "coverage": 0.2623,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r18-R",
+   "season": 2021,
+   "round": 18,
+   "checkpoint_count": 71,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "round": 19,
+   "checkpoint_count": 78,
+   "eligible_count": 46,
+   "coverage": 0.5897,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r20-R",
+   "season": 2021,
+   "round": 20,
+   "checkpoint_count": 68,
+   "eligible_count": 53,
+   "coverage": 0.7794,
+   "dominant_failure": "UNSUPPORTED_TRACK_STATE"
+  },
+  {
+   "race_id": "2021-r21-R",
+   "season": 2021,
+   "round": 21,
+   "checkpoint_count": 63,
+   "eligible_count": 8,
+   "coverage": 0.127,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2021-r22-R",
+   "season": 2021,
+   "round": 22,
+   "checkpoint_count": 66,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "MISSING_DRIVER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "round": 1,
+   "checkpoint_count": 63,
+   "eligible_count": 45,
+   "coverage": 0.7143,
+   "dominant_failure": "UNSUPPORTED_TRACK_STATE"
+  },
+  {
+   "race_id": "2022-r02-R",
+   "season": 2022,
+   "round": 2,
+   "checkpoint_count": 56,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "MISSING_DRIVER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r03-R",
+   "season": 2022,
+   "round": 3,
+   "checkpoint_count": 62,
+   "eligible_count": 1,
+   "coverage": 0.0161,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r04-R",
+   "season": 2022,
+   "round": 4,
+   "checkpoint_count": 65,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2022-r05-R",
+   "season": 2022,
+   "round": 5,
+   "checkpoint_count": 63,
+   "eligible_count": 8,
+   "coverage": 0.127,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r06-R",
+   "season": 2022,
+   "round": 6,
+   "checkpoint_count": 70,
+   "eligible_count": 28,
+   "coverage": 0.4,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r07-R",
+   "season": 2022,
+   "round": 7,
+   "checkpoint_count": 89,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2022-r08-R",
+   "season": 2022,
+   "round": 8,
+   "checkpoint_count": 59,
+   "eligible_count": 9,
+   "coverage": 0.1525,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r09-R",
+   "season": 2022,
+   "round": 9,
+   "checkpoint_count": 76,
+   "eligible_count": 8,
+   "coverage": 0.1053,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r10-R",
+   "season": 2022,
+   "round": 10,
+   "checkpoint_count": 56,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r11-R",
+   "season": 2022,
+   "round": 11,
+   "checkpoint_count": 76,
+   "eligible_count": 27,
+   "coverage": 0.3553,
+   "dominant_failure": "MISSING_TYRE_STATE"
+  },
+  {
+   "race_id": "2022-r12-R",
+   "season": 2022,
+   "round": 12,
+   "checkpoint_count": 61,
+   "eligible_count": 17,
+   "coverage": 0.2787,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "round": 13,
+   "checkpoint_count": 82,
+   "eligible_count": 49,
+   "coverage": 0.5976,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2022-r14-R",
+   "season": 2022,
+   "round": 14,
+   "checkpoint_count": 46,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r15-R",
+   "season": 2022,
+   "round": 15,
+   "checkpoint_count": 81,
+   "eligible_count": 44,
+   "coverage": 0.5432,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r16-R",
+   "season": 2022,
+   "round": 16,
+   "checkpoint_count": 58,
+   "eligible_count": 12,
+   "coverage": 0.2069,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r17-R",
+   "season": 2022,
+   "round": 17,
+   "checkpoint_count": 75,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2022-r18-R",
+   "season": 2022,
+   "round": 18,
+   "checkpoint_count": 29,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2022-r19-R",
+   "season": 2022,
+   "round": 19,
+   "checkpoint_count": 58,
+   "eligible_count": 3,
+   "coverage": 0.0517,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "round": 20,
+   "checkpoint_count": 75,
+   "eligible_count": 53,
+   "coverage": 0.7067,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r21-R",
+   "season": 2022,
+   "round": 21,
+   "checkpoint_count": 73,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2022-r22-R",
+   "season": 2022,
+   "round": 22,
+   "checkpoint_count": 62,
+   "eligible_count": 29,
+   "coverage": 0.4677,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r01-R",
+   "season": 2023,
+   "round": 1,
+   "checkpoint_count": 61,
+   "eligible_count": 15,
+   "coverage": 0.2459,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r02-R",
+   "season": 2023,
+   "round": 2,
+   "checkpoint_count": 51,
+   "eligible_count": 15,
+   "coverage": 0.2941,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r03-R",
+   "season": 2023,
+   "round": 3,
+   "checkpoint_count": 62,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r04-R",
+   "season": 2023,
+   "round": 4,
+   "checkpoint_count": 54,
+   "eligible_count": 8,
+   "coverage": 0.1481,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "round": 5,
+   "checkpoint_count": 57,
+   "eligible_count": 55,
+   "coverage": 0.9649,
+   "dominant_failure": "MISSING_DRIVER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r06-R",
+   "season": 2023,
+   "round": 6,
+   "checkpoint_count": 95,
+   "eligible_count": 51,
+   "coverage": 0.5368,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "round": 7,
+   "checkpoint_count": 66,
+   "eligible_count": 64,
+   "coverage": 0.9697,
+   "dominant_failure": "MISSING_DRIVER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r08-R",
+   "season": 2023,
+   "round": 8,
+   "checkpoint_count": 77,
+   "eligible_count": 7,
+   "coverage": 0.0909,
+   "dominant_failure": "MISSING_TYRE_STATE"
+  },
+  {
+   "race_id": "2023-r09-R",
+   "season": 2023,
+   "round": 9,
+   "checkpoint_count": 73,
+   "eligible_count": 11,
+   "coverage": 0.1507,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r10-R",
+   "season": 2023,
+   "round": 10,
+   "checkpoint_count": 53,
+   "eligible_count": 11,
+   "coverage": 0.2075,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r11-R",
+   "season": 2023,
+   "round": 11,
+   "checkpoint_count": 72,
+   "eligible_count": 3,
+   "coverage": 0.0417,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r12-R",
+   "season": 2023,
+   "round": 12,
+   "checkpoint_count": 45,
+   "eligible_count": 1,
+   "coverage": 0.0222,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r13-R",
+   "season": 2023,
+   "round": 13,
+   "checkpoint_count": 78,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r14-R",
+   "season": 2023,
+   "round": 14,
+   "checkpoint_count": 51,
+   "eligible_count": 3,
+   "coverage": 0.0588,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r15-R",
+   "season": 2023,
+   "round": 15,
+   "checkpoint_count": 74,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "MISSING_DRIVER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r16-R",
+   "season": 2023,
+   "round": 16,
+   "checkpoint_count": 60,
+   "eligible_count": 8,
+   "coverage": 0.1333,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r17-R",
+   "season": 2023,
+   "round": 17,
+   "checkpoint_count": 61,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "MISSING_DRIVER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r18-R",
+   "season": 2023,
+   "round": 18,
+   "checkpoint_count": 57,
+   "eligible_count": 8,
+   "coverage": 0.1404,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r19-R",
+   "season": 2023,
+   "round": 19,
+   "checkpoint_count": 79,
+   "eligible_count": 3,
+   "coverage": 0.038,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r20-R",
+   "season": 2023,
+   "round": 20,
+   "checkpoint_count": 71,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r21-R",
+   "season": 2023,
+   "round": 21,
+   "checkpoint_count": 57,
+   "eligible_count": 2,
+   "coverage": 0.0351,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2023-r22-R",
+   "season": 2023,
+   "round": 22,
+   "checkpoint_count": 58,
+   "eligible_count": 56,
+   "coverage": 0.9655,
+   "dominant_failure": "MISSING_DRIVER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r01-R",
+   "season": 2024,
+   "round": 1,
+   "checkpoint_count": 60,
+   "eligible_count": 55,
+   "coverage": 0.9167,
+   "dominant_failure": "UNSUPPORTED_TRACK_STATE"
+  },
+  {
+   "race_id": "2024-r02-R",
+   "season": 2024,
+   "round": 2,
+   "checkpoint_count": 51,
+   "eligible_count": 3,
+   "coverage": 0.0588,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r03-R",
+   "season": 2024,
+   "round": 3,
+   "checkpoint_count": 64,
+   "eligible_count": 6,
+   "coverage": 0.0938,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r04-R",
+   "season": 2024,
+   "round": 4,
+   "checkpoint_count": 57,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r05-R",
+   "season": 2024,
+   "round": 5,
+   "checkpoint_count": 59,
+   "eligible_count": 19,
+   "coverage": 0.322,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r06-R",
+   "season": 2024,
+   "round": 6,
+   "checkpoint_count": 61,
+   "eligible_count": 27,
+   "coverage": 0.4426,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r07-R",
+   "season": 2024,
+   "round": 7,
+   "checkpoint_count": 63,
+   "eligible_count": 55,
+   "coverage": 0.873,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r08-R",
+   "season": 2024,
+   "round": 8,
+   "checkpoint_count": 83,
+   "eligible_count": 1,
+   "coverage": 0.012,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r09-R",
+   "season": 2024,
+   "round": 9,
+   "checkpoint_count": 75,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2024-r10-R",
+   "season": 2024,
+   "round": 10,
+   "checkpoint_count": 66,
+   "eligible_count": 63,
+   "coverage": 0.9545,
+   "dominant_failure": "MISSING_DRIVER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r11-R",
+   "season": 2024,
+   "round": 11,
+   "checkpoint_count": 78,
+   "eligible_count": 67,
+   "coverage": 0.859,
+   "dominant_failure": "UNSUPPORTED_TRACK_STATE"
+  },
+  {
+   "race_id": "2024-r12-R",
+   "season": 2024,
+   "round": 12,
+   "checkpoint_count": 52,
+   "eligible_count": 3,
+   "coverage": 0.0577,
+   "dominant_failure": "WET_CONDITIONS"
+  },
+  {
+   "race_id": "2024-r13-R",
+   "season": 2024,
+   "round": 13,
+   "checkpoint_count": 72,
+   "eligible_count": 35,
+   "coverage": 0.4861,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r14-R",
+   "season": 2024,
+   "round": 14,
+   "checkpoint_count": 44,
+   "eligible_count": 8,
+   "coverage": 0.1818,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r15-R",
+   "season": 2024,
+   "round": 15,
+   "checkpoint_count": 72,
+   "eligible_count": 70,
+   "coverage": 0.9722,
+   "dominant_failure": "MISSING_DRIVER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r16-R",
+   "season": 2024,
+   "round": 16,
+   "checkpoint_count": 53,
+   "eligible_count": 9,
+   "coverage": 0.1698,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r17-R",
+   "season": 2024,
+   "round": 17,
+   "checkpoint_count": 55,
+   "eligible_count": 16,
+   "coverage": 0.2909,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r18-R",
+   "season": 2024,
+   "round": 18,
+   "checkpoint_count": 62,
+   "eligible_count": 18,
+   "coverage": 0.2903,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r19-R",
+   "season": 2024,
+   "round": 19,
+   "checkpoint_count": 59,
+   "eligible_count": 1,
+   "coverage": 0.0169,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r20-R",
+   "season": 2024,
+   "round": 20,
+   "checkpoint_count": 71,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r21-R",
+   "season": 2024,
+   "round": 21,
+   "checkpoint_count": 85,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "MISSING_DRIVER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r22-R",
+   "season": 2024,
+   "round": 22,
+   "checkpoint_count": 50,
+   "eligible_count": 17,
+   "coverage": 0.34,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r23-R",
+   "season": 2024,
+   "round": 23,
+   "checkpoint_count": 64,
+   "eligible_count": 0,
+   "coverage": 0.0,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  },
+  {
+   "race_id": "2024-r24-R",
+   "season": 2024,
+   "round": 24,
+   "checkpoint_count": 66,
+   "eligible_count": 1,
+   "coverage": 0.0152,
+   "dominant_failure": "STALE_ROSTER_OBSERVATION"
+  }
+ ],
+ "stage_coverage": {
+  "EARLY": {
+   "checkpoints": 2830,
+   "eligible": 1198,
+   "coverage": 0.423
+  },
+  "MID": {
+   "checkpoints": 3103,
+   "eligible": 737,
+   "coverage": 0.238
+  },
+  "LATE": {
+   "checkpoints": 3219,
+   "eligible": 339,
+   "coverage": 0.105
+  },
+  "note": "492 adapter-level failures carry no stage (no fraction); eligibility decays with race progress as retirements accumulate"
+ },
+ "failure_taxonomy": {
+  "STALE_ROSTER_OBSERVATION": {
+   "count": 4590,
+   "mechanism": "a roster member's latest observation is older than 3.0 expected lap times",
+   "dominant_cause": "factual pre-T retirements stop producing observations"
+  },
+  "UNSUPPORTED_TRACK_STATE": {
+   "count": 1138,
+   "mechanism": "anchor track_state is red_flag / yellow/safety_car/vsc/vsc_ending / null"
+  },
+  "WET_CONDITIONS": {
+   "count": 801,
+   "mechanism": "rainfall=True weather or INTERMEDIATE/WET compound (dry-only kernel)"
+  },
+  "MISSING_DRIVER_OBSERVATION": {
+   "count": 492,
+   "mechanism": "unobserved roster member (esp. frame 0) or missing pit count"
+  },
+  "MISSING_TYRE_STATE": {
+   "count": 198,
+   "mechanism": "tyre_age null for a roster member at T"
+  },
+  "TERMINAL_STATE": {
+   "count": 151,
+   "mechanism": "leader_laps_done >= scheduled_laps"
+  }
+ },
+ "representative_failures": [
+  {
+   "race": "2018-r05-R",
+   "verdict": "STALE_ROSTER_OBSERVATION",
+   "evidence": "offenders match factual DNFs (6 retirements in results); observation ages thousands of seconds",
+   "classification": "SCIENTIFICALLY_REQUIRED"
+  },
+  {
+   "race": "2018-r05-R lap 9+",
+   "verdict": "WET_CONDITIONS",
+   "evidence": "rainfall=True mid-race; dry pace excludes wet laps",
+   "classification": "SCIENTIFICALLY_REQUIRED"
+  },
+  {
+   "race": "2018-r02-R",
+   "verdict": "MISSING_TYRE_STATE",
+   "evidence": "wholesale null tyre_life across checkpoints; zero-coverage race",
+   "classification": "DATA_LIMITATION"
+  },
+  {
+   "race": "2018-r01-R frame 20",
+   "verdict": "UNSUPPORTED_TRACK_STATE",
+   "evidence": "track_state null at leader lap 2; all tyre ages null",
+   "classification": "DATA_LIMITATION"
+  },
+  {
+   "race": "all races frame 0",
+   "verdict": "MISSING_DRIVER_OBSERVATION",
+   "evidence": "lap-1 roster not yet fully observed",
+   "classification": "INTENTIONAL_PRODUCT_BOUNDARY"
+  },
+  {
+   "race": "all races final checkpoint",
+   "verdict": "TERMINAL_STATE",
+   "evidence": "leader_laps_done == scheduled_laps",
+   "classification": "SCIENTIFICALLY_REQUIRED"
+  }
+ ],
+ "performance": {
+  "measured_rows": [
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 160,
+    "n_runs": 100,
+    "wall_clock_s": 0.067,
+    "runs_per_s": 1489.8,
+    "output_bytes": 19666,
+    "valid": 100,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 160,
+    "n_runs": 1000,
+    "wall_clock_s": 0.403,
+    "runs_per_s": 2479.3,
+    "output_bytes": 20059,
+    "valid": 1000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 160,
+    "n_runs": 10000,
+    "wall_clock_s": 4.377,
+    "runs_per_s": 2284.6,
+    "output_bytes": 20529,
+    "valid": 10000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 540,
+    "n_runs": 100,
+    "wall_clock_s": 0.054,
+    "runs_per_s": 1837.7,
+    "output_bytes": 19679,
+    "valid": 100,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 540,
+    "n_runs": 1000,
+    "wall_clock_s": 0.287,
+    "runs_per_s": 3489.2,
+    "output_bytes": 20044,
+    "valid": 1000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 540,
+    "n_runs": 10000,
+    "wall_clock_s": 2.717,
+    "runs_per_s": 3680.4,
+    "output_bytes": 20466,
+    "valid": 10000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 939,
+    "n_runs": 100,
+    "wall_clock_s": 0.017,
+    "runs_per_s": 5940.1,
+    "output_bytes": 19610,
+    "valid": 100,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 939,
+    "n_runs": 1000,
+    "wall_clock_s": 0.09,
+    "runs_per_s": 11072.0,
+    "output_bytes": 19945,
+    "valid": 1000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 939,
+    "n_runs": 10000,
+    "wall_clock_s": 0.876,
+    "runs_per_s": 11415.3,
+    "output_bytes": 20366,
+    "valid": 10000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r07-R",
+    "frame_index": 180,
+    "n_runs": 100,
+    "wall_clock_s": 0.081,
+    "runs_per_s": 1232.2,
+    "output_bytes": 19643,
+    "valid": 100,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r07-R",
+    "frame_index": 180,
+    "n_runs": 1000,
+    "wall_clock_s": 0.515,
+    "runs_per_s": 1941.0,
+    "output_bytes": 20005,
+    "valid": 1000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r07-R",
+    "frame_index": 180,
+    "n_runs": 10000,
+    "wall_clock_s": 5.153,
+    "runs_per_s": 1940.4,
+    "output_bytes": 20481,
+    "valid": 10000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r07-R",
+    "frame_index": 640,
+    "n_runs": 100,
+    "wall_clock_s": 0.051,
+    "runs_per_s": 1964.6,
+    "output_bytes": 19668,
+    "valid": 100,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r07-R",
+    "frame_index": 640,
+    "n_runs": 1000,
+    "wall_clock_s": 0.338,
+    "runs_per_s": 2962.2,
+    "output_bytes": 20085,
+    "valid": 1000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r07-R",
+    "frame_index": 640,
+    "n_runs": 10000,
+    "wall_clock_s": 2.886,
+    "runs_per_s": 3465.5,
+    "output_bytes": 20392,
+    "valid": 10000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r07-R",
+    "frame_index": 1094,
+    "n_runs": 100,
+    "wall_clock_s": 0.018,
+    "runs_per_s": 5562.5,
+    "output_bytes": 19549,
+    "valid": 100,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r07-R",
+    "frame_index": 1094,
+    "n_runs": 1000,
+    "wall_clock_s": 0.1,
+    "runs_per_s": 10036.4,
+    "output_bytes": 19919,
+    "valid": 1000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2023-r07-R",
+    "frame_index": 1094,
+    "n_runs": 10000,
+    "wall_clock_s": 0.922,
+    "runs_per_s": 10845.8,
+    "output_bytes": 20326,
+    "valid": 10000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2024-r15-R",
+    "frame_index": 200,
+    "n_runs": 100,
+    "wall_clock_s": 0.081,
+    "runs_per_s": 1231.5,
+    "output_bytes": 19681,
+    "valid": 100,
+    "invalid": 0
+   },
+   {
+    "race_id": "2024-r15-R",
+    "frame_index": 200,
+    "n_runs": 1000,
+    "wall_clock_s": 0.561,
+    "runs_per_s": 1783.2,
+    "output_bytes": 19943,
+    "valid": 1000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2024-r15-R",
+    "frame_index": 200,
+    "n_runs": 10000,
+    "wall_clock_s": 5.26,
+    "runs_per_s": 1901.1,
+    "output_bytes": 20407,
+    "valid": 10000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2024-r15-R",
+    "frame_index": 700,
+    "n_runs": 100,
+    "wall_clock_s": 0.052,
+    "runs_per_s": 1918.7,
+    "output_bytes": 19618,
+    "valid": 100,
+    "invalid": 0
+   },
+   {
+    "race_id": "2024-r15-R",
+    "frame_index": 700,
+    "n_runs": 1000,
+    "wall_clock_s": 0.313,
+    "runs_per_s": 3199.4,
+    "output_bytes": 19916,
+    "valid": 1000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2024-r15-R",
+    "frame_index": 700,
+    "n_runs": 10000,
+    "wall_clock_s": 3.1,
+    "runs_per_s": 3226.0,
+    "output_bytes": 20389,
+    "valid": 10000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2024-r15-R",
+    "frame_index": 1187,
+    "n_runs": 100,
+    "wall_clock_s": 0.019,
+    "runs_per_s": 5207.2,
+    "output_bytes": 19552,
+    "valid": 100,
+    "invalid": 0
+   },
+   {
+    "race_id": "2024-r15-R",
+    "frame_index": 1187,
+    "n_runs": 1000,
+    "wall_clock_s": 0.107,
+    "runs_per_s": 9376.2,
+    "output_bytes": 19833,
+    "valid": 1000,
+    "invalid": 0
+   },
+   {
+    "race_id": "2024-r15-R",
+    "frame_index": 1187,
+    "n_runs": 10000,
+    "wall_clock_s": 1.024,
+    "runs_per_s": 9768.5,
+    "output_bytes": 20117,
+    "valid": 10000,
+    "invalid": 0
+   }
+  ],
+  "skipped": [],
+  "note": "9 capable states (3 races x early/mid/late), seed 20240101, pits off; 0 invalid runs"
+ },
+ "precompute_estimate": {
+  "eligible_states": 2274,
+  "stage_mix": {
+   "EARLY": 1198,
+   "MID": 737,
+   "LATE": 339
+  },
+  "measured_10k_s": {
+   "EARLY": 4.93,
+   "MID": 2.9,
+   "LATE": 0.94
+  },
+  "measured_1k_s": {
+   "EARLY": 0.493,
+   "MID": 0.313,
+   "LATE": 0.099
+  },
+  "extrapolated_5k_s": {
+   "EARLY": 2.47,
+   "MID": 1.45,
+   "LATE": 0.47
+  },
+  "serial_total": {
+   "runs_1000": "MEASURED ~855s (~14min)",
+   "runs_5000": "EXTRAPOLATED ~4187s (~1.2h)",
+   "runs_10000": "MEASURED ~8362s (~2.3h)"
+  },
+  "parallel_8_workers": {
+   "runs_1000": "~2min",
+   "runs_5000": "~9min",
+   "runs_10000": "~18min + overhead"
+  },
+  "storage_per_corpus": "EXTRAPOLATED ~46MB payload (~20KB x 2274) plus envelope, ~50-100MB total"
+ },
+ "cache_payload": {
+  "minimum": [
+   "race_id",
+   "frame_index/checkpoint identity",
+   "leader_lap",
+   "simulation_version block",
+   "input_state_identity (SimulationState hash)",
+   "parameter identity (phase6-r3-empirical hash)",
+   "seed policy + n_runs",
+   "winner frequencies + driver identities (canonical driver_id order)",
+   "valid/invalid counts",
+   "content hash of payload"
+  ],
+  "supported_today_extra": [
+   "podium frequencies",
+   "expected finish",
+   "full position distributions",
+   "sample_orders (bounded)"
+  ],
+  "excluded": [
+   "timestamps",
+   "hostnames",
+   "absolute paths",
+   "wall-clock runtime in identity"
+  ]
+ },
+ "demo_architecture": {
+  "flow": "replay state -> cache key (race_id|frame_index|sim_version|param_hash|seed|n_runs) -> precomputed result -> frontend; unavailable states return explicit reason; no hidden live fallback",
+  "lookup": "static JSON keyed by (race_id, frame_index)",
+  "generator": "same frozen simulator code as local/Docker"
+ },
+ "local_docker_architecture": {
+  "flow": "Docker/local user -> race/checkpoint -> real simulator -> same schema as cached demo",
+  "current_api": "POST /v2/simulations/race (exact anchor, 1000 default / 10000 ceiling)",
+  "frontend_helpers": "simulatorMachine.ts (no science; anchor mapping + display only)",
+  "gap": "no precompute/export endpoint yet; cache corpus does not exist; V3.2F work"
+ },
+ "cache_identity": {
+  "required": [
+   "simulation schema/version",
+   "simulation code identity (contract+engine+MC versions)",
+   "input RaceState/checkpoint identity",
+   "empirical parameter identity (scientific hash)",
+   "seed + n_runs",
+   "output content hash"
+  ],
+  "request_identity_precedent": "simulation_request_identity (contract+state+config+assumptions+params, no timestamps)"
+ },
+ "cache_invalidation": {
+  "invalidates": [
+   "simulation code change",
+   "parameter artifact change",
+   "RaceState contract change",
+   "checkpoint identity change",
+   "seed policy change",
+   "output schema change"
+  ],
+  "does_not_invalidate": [
+   "frontend styling/copy changes"
+  ]
+ },
+ "v3_1_dynamics_audit": {
+  "core_count": 26,
+  "core": [
+   "dyn_position_change_l3",
+   "dyn_position_change_l10",
+   "dyn_gap_leader_slope_l3",
+   "dyn_gap_leader_slope_l10",
+   "dyn_gap_leader_slope_diff_l3_l10",
+   "dyn_gap_leader_vol_l5",
+   "dyn_gap_ahead_slope_l3",
+   "dyn_gap_ahead_slope_l10",
+   "dyn_follower_gap_last_seconds",
+   "dyn_follower_gap_last_age_s",
+   "dyn_follower_lap_diff",
+   "dyn_follower_gap_slope_l5",
+   "dyn_pace_slope_l3",
+   "dyn_pace_slope_l10",
+   "dyn_pace_vol_l5",
+   "dyn_relpace_field_change_l5",
+   "dyn_relpace_ahead_change_l5",
+   "dyn_field_spread_lap",
+   "dyn_field_spread_change_l5",
+   "dyn_traffic_frac_l5",
+   "dyn_traffic_n_l5",
+   "dyn_pit_inout_flag",
+   "dyn_recent_stop_l3",
+   "dyn_hist_laps_available",
+   "dyn_gap_n_l10_leader",
+   "dyn_gap_n_l10_ahead"
+  ],
+  "variant_count": 3,
+  "variant": [
+   "dyn_stint_pace_resid",
+   "dyn_gap_leader_slope_gated_clean",
+   "dyn_gap_accel_l5"
+  ],
+  "classification": {
+   "USEFUL_CANDIDATE": [
+    "dyn_pace_slope_l3",
+    "dyn_pace_slope_l10",
+    "dyn_gap_leader_slope_l3",
+    "dyn_gap_leader_slope_l10",
+    "dyn_gap_leader_slope_diff_l3_l10",
+    "dyn_gap_ahead_slope_l3",
+    "dyn_gap_ahead_slope_l10",
+    "dyn_follower_gap_slope_l5",
+    "dyn_field_spread_change_l5",
+    "dyn_traffic_frac_l5",
+    "dyn_traffic_n_l5",
+    "dyn_pace_vol_l5",
+    "dyn_gap_leader_vol_l5"
+   ],
+   "REDUNDANT_FOR_SIMULATION": [
+    "dyn_position_change_l3",
+    "dyn_position_change_l10",
+    "dyn_gap_n_l10_leader",
+    "dyn_gap_n_l10_ahead",
+    "dyn_hist_laps_available"
+   ],
+   "MODEL_ONLY": [
+    "dyn_pit_inout_flag",
+    "dyn_recent_stop_l3",
+    "dyn_relpace_field_change_l5",
+    "dyn_relpace_ahead_change_l5",
+    "dyn_field_spread_lap",
+    "dyn_follower_gap_last_seconds",
+    "dyn_follower_gap_last_age_s",
+    "dyn_follower_lap_diff"
+   ],
+   "NOT_JUSTIFIED": [
+    "dyn_stint_pace_resid",
+    "dyn_gap_leader_slope_gated_clean",
+    "dyn_gap_accel_l5"
+   ],
+   "UNSAFE": []
+  },
+  "note": "classification is audit judgement, not implementation; no dynamic enters the simulator in V3.2A"
+ },
+ "mc2_candidate_inputs": {
+  "gap_slopes": "overtake-pressure / variance modulation by closing rate; needs a traffic-interaction mechanism that does not exist today",
+  "pace_slopes": "driver-specific pace anchor (replaces constructor-shared anchor); strongest structural gap (R4-I option C limitation)",
+  "field_compression": "context-conditioned residual variance (spread-dependent sigma)",
+  "traffic_persistence": "interaction probability / free-air violation probability; new model family",
+  "follower_gap": "follower-pressure variance or mistake probability; new model family",
+  "rule": "no dynamic admitted without a named mechanism; classifier lift alone is insufficient"
+ },
+ "ml_simulation_firewall": {
+  "current_coupling": "none: simulator imports no prediction, model_lab, feature engine, labels, or replay cache (AST-pinned)",
+  "default": "simulation evolves state from empirical mechanics, never queries winner probability",
+  "v3_1_model_role": "must not become a hidden oracle without explicit experimental justification"
+ },
+ "empirical_parameters": {
+  "families": 13,
+  "estimation_seasons": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "eligible_laps": 124040,
+  "rows_total": 162728,
+  "races_total": 149,
+  "residual": {
+   "n": 124040,
+   "std_s": 1.506,
+   "lag1_autocorr": 0.2644,
+   "assumption": "independent draws (documented approximation)"
+  },
+  "deferred": [
+   "compound_offset_s (zero fallback, confounding)"
+  ],
+  "global_only": [
+   "pit_in/out_lap_penalty_s"
+  ],
+  "sparse_regimes": [
+   "wet (excluded)",
+   "red-flag restarts",
+   "neutralised evolution",
+   "reliability (absent)"
+  ]
+ },
+ "temporal_safety": {
+  "verdict": "no same-race future leakage in simulator inputs",
+  "state_T": "RaceState is past-only synchronized observations <= T",
+  "adapter": "FACTUAL_AT_T only; no bypass to full D9 frame",
+  "retirement": "never inferred; stale states refused, not relabelled",
+  "parameters": "historical past races only (through_season window); backtest policy enforces through < target",
+  "distinction": "training-history evidence is not same-race future"
+ },
+ "simulated_events": {
+  "pace_variation": "SUPPORTED (residual draws)",
+  "position_changes": "SUPPORTED (free-air cumulative time)",
+  "pit_effects": "SUPPORTED when enabled (timing/loss/compounds)",
+  "retirement": "NOT_SUPPORTED (V3.2: no; later phase needs hazard family; out of scope if unevidenced)",
+  "safety_car": "NOT_SUPPORTED (anchor refusal only)",
+  "tyre_degradation": "SUPPORTED (era-pooled deterministic slope)",
+  "traffic": "NOT_SUPPORTED (later phase; needs new family)",
+  "weather": "NOT_SUPPORTED (out of scope)"
+ },
+ "outcome_distribution_boundary": {
+  "v3_5_owner": "richer Outcome Distribution",
+  "already_recorded": "full per-driver position distributions + expected finish + bounded sample_orders in every MonteCarloResult",
+  "v3_5_may": "aggregate/validate/calibrate later; no V3.2 implementation"
+ },
+ "strategy_boundary": {
+  "phase7_contract": "paired.py run_baseline/run_intervention_arm over engine.run(collect_index_outcomes=True); same (seed,index) streams; reusable baseline arm",
+  "preserve": [
+   "MonteCarloEngine.run signature",
+   "collect_index_outcomes schema",
+   "per-(seed,index) stream identities",
+   "intervention=None byte-equivalence",
+   "MonteCarloResult identity"
+  ]
+ },
+ "counterfactual_boundary": {
+  "v3_7_owner": "general counterfactual lab",
+  "v3_2_provides": "clean interface only: SimulationState is cloneable, Assumptions seam exists, intervention seam exists (strategy-owned)",
+  "not_now": "arbitrary user counterfactuals"
+ },
+ "uncertainty_boundary": {
+  "v3_9_owner": "unified uncertainty",
+  "v3_2_may_report": "Monte Carlo sampling uncertainty only (MC standard error over frequencies)",
+  "not_collapsed": [
+   "model",
+   "simulation",
+   "data",
+   "calibration",
+   "scenario"
+  ]
+ },
+ "demo_ux": {
+  "states": [
+   "AVAILABLE_CACHED",
+   "UNAVAILABLE_WITH_REASON",
+   "LOCAL_ONLY_OPTION"
+  ],
+  "primary_term": "Race Simulation",
+  "primary_display": "N simulated race futures",
+  "technical_term": "Monte Carlo (details only)",
+  "reason_source": "audit taxonomy tokens, user-worded"
+ },
+ "demo_disclosure": "Historical simulation results are precomputed for fast, reproducible demo playback. Clone the repository or run the Docker environment to execute simulations locally.",
+ "hosting_implications": {
+  "cached_architecture": "removes public heavy-Python need for playback; static JSON + Next.js frontend",
+  "cache_size": "~50-100MB per run-count corpus",
+  "vercel_plausible": true,
+  "not_performed": "provider deployment",
+  "api_needs": "none for playback; Docker/local retains live API"
+ },
+ "scientific_gaps": [
+  {
+   "gap": "driver-specific pace anchor",
+   "rank": 1,
+   "evidence": "R4-I option C; two same-constructor drivers share anchor; V3.1 pace slopes directly target this"
+  },
+  {
+   "gap": "context-conditioned variance",
+   "rank": 2,
+   "evidence": "residual std 1.5s global; spread/traffic persistence observables exist in V3.1"
+  },
+  {
+   "gap": "traffic interaction",
+   "rank": 3,
+   "evidence": "free-air ordering only; follower-pressure signals exist but no mechanism"
+  },
+  {
+   "gap": "pit-cycle handling",
+   "rank": 4,
+   "evidence": "systematic over-pitting 0.3-0.4 stops/driver; behaviour not strategy"
+  },
+  {
+   "gap": "state-dependent stochasticity (AR(1) residuals)",
+   "rank": 5,
+   "evidence": "lag-1 autocorr 0.264 unmodelled; 6-22% width mismatch"
+  },
+  {
+   "gap": "neutralisation handling",
+   "rank": 6,
+   "evidence": "1138 checkpoints refused; SC/VSC evolution absent"
+  },
+  {
+   "gap": "circuit conditioning depth",
+   "rank": 7,
+   "evidence": "degradation era-pooled; compound offsets deferred"
+  }
+ ],
+ "non_goals": [
+  "new classifier",
+  "new target task",
+  "ensemble",
+  "full outcome-distribution research (V3.5)",
+  "strategy recommendation engine (V3.6/Phase-7)",
+  "counterfactual UI (V3.7)",
+  "ML/MC fusion",
+  "pre-race simulation",
+  "spatial physics simulator"
+ ],
+ "experimental_ladder": [
+  {
+   "stage": "V3.2A",
+   "purpose": "coverage/architecture audit (this)"
+  },
+  {
+   "stage": "V3.2B",
+   "purpose": "simulation contract freeze"
+  },
+  {
+   "stage": "V3.2C",
+   "purpose": "state/dynamics integration (driver pace anchor)"
+  },
+  {
+   "stage": "V3.2D",
+   "purpose": "empirical parameter upgrade (conditioned variance)"
+  },
+  {
+   "stage": "V3.2E",
+   "purpose": "validation/backtesting"
+  },
+  {
+   "stage": "V3.2F",
+   "purpose": "precompute/export contract + corpus generation"
+  },
+  {
+   "stage": "V3.2G",
+   "purpose": "freeze"
+  }
+ ],
+ "validation_strategy": {
+  "evidence": [
+   "historical outcome calibration (winner log-loss, Brier, top-k)",
+   "finishing-order metrics (RPS, expected-finish MAE, Spearman)",
+   "race-level aggregation + bootstrap",
+   "seed stability + scalar/batch parity",
+   "simulation convergence (TV vs n_runs)",
+   "coverage + computational cost"
+  ],
+  "avoid": "comparing single simulated runs as deterministic truth",
+  "precedent": "R7 protocol r7-validation-v1 (evaluation only, frozen before scoring)"
+ },
+ "convergence": {
+  "rows": [
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 160,
+    "n_runs": 100,
+    "top_driver": "perez",
+    "top_win_probability": 0.75,
+    "total_variation_vs_prev": null
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 160,
+    "n_runs": 500,
+    "top_driver": "perez",
+    "top_win_probability": 0.696,
+    "total_variation_vs_prev": 0.054
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 160,
+    "n_runs": 1000,
+    "top_driver": "perez",
+    "top_win_probability": 0.677,
+    "total_variation_vs_prev": 0.021
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 160,
+    "n_runs": 5000,
+    "top_driver": "perez",
+    "top_win_probability": 0.6856,
+    "total_variation_vs_prev": 0.011
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 160,
+    "n_runs": 10000,
+    "top_driver": "perez",
+    "top_win_probability": 0.6852,
+    "total_variation_vs_prev": 0.0011
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 540,
+    "n_runs": 100,
+    "top_driver": "max_verstappen",
+    "top_win_probability": 0.94,
+    "total_variation_vs_prev": null
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 540,
+    "n_runs": 500,
+    "top_driver": "max_verstappen",
+    "top_win_probability": 0.936,
+    "total_variation_vs_prev": 0.004
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 540,
+    "n_runs": 1000,
+    "top_driver": "max_verstappen",
+    "top_win_probability": 0.947,
+    "total_variation_vs_prev": 0.011
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 540,
+    "n_runs": 5000,
+    "top_driver": "max_verstappen",
+    "top_win_probability": 0.9482,
+    "total_variation_vs_prev": 0.0016
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 540,
+    "n_runs": 10000,
+    "top_driver": "max_verstappen",
+    "top_win_probability": 0.9481,
+    "total_variation_vs_prev": 0.0005
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 939,
+    "n_runs": 100,
+    "top_driver": "max_verstappen",
+    "top_win_probability": 0.67,
+    "total_variation_vs_prev": null
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 939,
+    "n_runs": 500,
+    "top_driver": "max_verstappen",
+    "top_win_probability": 0.718,
+    "total_variation_vs_prev": 0.048
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 939,
+    "n_runs": 1000,
+    "top_driver": "max_verstappen",
+    "top_win_probability": 0.712,
+    "total_variation_vs_prev": 0.006
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 939,
+    "n_runs": 5000,
+    "top_driver": "max_verstappen",
+    "top_win_probability": 0.7054,
+    "total_variation_vs_prev": 0.0066
+   },
+   {
+    "race_id": "2023-r05-R",
+    "frame_index": 939,
+    "n_runs": 10000,
+    "top_driver": "max_verstappen",
+    "top_win_probability": 0.7042,
+    "total_variation_vs_prev": 0.0013
+   }
+  ],
+  "skipped": [],
+  "finding": "top driver stable from n=100; total-variation 5k->10k <= 0.0016; 1k->5k up to 0.011"
+ },
+ "demo_run_count_recommendation": {
+  "recommended": 5000,
+  "basis": "TV <= 0.0016 marginal gain to 10k vs ~2x cost; 100 shows up to 0.054 instability",
+  "status": "recommendation, not frozen implementation",
+  "alternative": 10000,
+  "alternative_when": "if storage/compute budget allows and V3.2E confirms calibration gain"
+ },
+ "security_trust_boundaries": {
+  "cached_artifact_ingestion": "verify content hash + parameter identity before serving",
+  "identifiers": "race_id/frame_index validated against manifest; unknown -> explicit unavailable",
+  "query_parameters": "bounded counts (1..10000), explicit seeds",
+  "static_asset_boundary": "precomputed JSON is data, never code",
+  "local_execution": "Docker image pins exact deps; offline serving",
+  "provenance": "every payload carries version/identity block",
+  "final_release": "full repository security audit incl. Cloudflare security-audit skill input plus deployment/container/dependency checks"
+ },
+ "scientific_identities": {
+  "v3_1_tag": "v3.1-race-dynamics -> 64c5af094bd1304e23a5c7d3d5b782b0eef11aca",
+  "v2_serving_artifact": "1116b34fc716035c2425e605b9a5cc15541a2d2335e26113f2e2eaf3fcaa59f4",
+  "phase2_content": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+  "phase2_parquet": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3",
+  "explainability": "bae84b614a6e9e176d5bb9c33b99dcaf4cba3f376333b0f075c828f73982939f",
+  "replay": "78a3c059888637fe83cc534d0eb7869b6d18e746724bb1ce0f03ee3b8ba96298",
+  "simulation": "r3-v1 through 2024 phase6-r3-empirical",
+  "parameter_scientific_hash": "4c2f85f08f1ce66cc6477982b2d5c97e9547f70927224b8e949ebe123ff3f140",
+  "v3_1_model_artifact": {
+   "path": "data/v3/v3_1d/final_model_arm_b.joblib",
+   "sha256": "9a1aac515d12c4e86ac369977392f74394cf7f6853b8e89d948bcdec28f58960",
+   "serving_decision": "ELIGIBLE_FOR_FUTURE_SERVING_PROMOTION; no promotion occurred"
+  }
+ },
+ "known_limitations": [
+  "23.6% checkpoint coverage; 48 zero-coverage races; 0 fully covered races; median race coverage 9.1%",
+  "post-retirement checkpoints refused by design (no ghost evolution, no DNF hazard)",
+  "dry green anchors only; SC/VSC/red/wet refused",
+  "constructor-shared pace anchor; no driver-specific term",
+  "independent per-lap residuals (lag-1 0.264 unmodelled)",
+  "free-air ordering; no traffic/overtaking",
+  "pit behaviour over-pits 0.3-0.4 stops/driver",
+  "numpy-version-sensitive result identities (documented R7 finding; state identities reproduce, MC hash differs across numpy builds)",
+  "no DNF/points/trajectory/event outputs"
+ ],
+ "v3_2b_entry_gate": {
+  "ready": true,
+  "conditions": [
+   "simulator source untouched",
+   "no frozen artifact regenerated",
+   "no model trained",
+   "no strategy modification",
+   "no demo frontend implementation",
+   "coverage measured honestly (no silent unavailable)"
+  ]
+ }
+}

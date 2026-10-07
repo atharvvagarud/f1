@@ -1,0 +1,62 @@
+{
+  "by_season": {
+    "2018": {
+      "clearings": 2,
+      "drivers_with_retired_true": 420,
+      "fp": 4,
+      "missed_dnf": 55,
+      "official_dnf_count": 80,
+      "tp": 25
+    },
+    "2019": {
+      "clearings": 1,
+      "drivers_with_retired_true": 420,
+      "fp": 3,
+      "missed_dnf": 29,
+      "official_dnf_count": 50,
+      "tp": 21
+    },
+    "2020": {
+      "clearings": 12,
+      "drivers_with_retired_true": 340,
+      "fp": 11,
+      "missed_dnf": 27,
+      "official_dnf_count": 53,
+      "tp": 26
+    },
+    "2021": {
+      "clearings": 0,
+      "drivers_with_retired_true": 439,
+      "fp": 7,
+      "missed_dnf": 29,
+      "official_dnf_count": 52,
+      "tp": 23
+    },
+    "2022": {
+      "clearings": 3,
+      "drivers_with_retired_true": 438,
+      "fp": 6,
+      "missed_dnf": 37,
+      "official_dnf_count": 64,
+      "tp": 27
+    },
+    "2023": {
+      "clearings": 1,
+      "drivers_with_retired_true": 438,
+      "fp": 6,
+      "missed_dnf": 24,
+      "official_dnf_count": 50,
+      "tp": 26
+    },
+    "2024": {
+      "clearings": 0,
+      "drivers_with_retired_true": 478,
+      "fp": 3,
+      "missed_dnf": 24,
+      "official_dnf_count": 47,
+      "tp": 23
+    }
+  },
+  "note": "final-label diagnostic join; 'recall-like' only, never a runtime input",
+  "schema_version": "v3.2j-signal-coverage-v1"
+}

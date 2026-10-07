@@ -1,0 +1,11 @@
+{
+  "finding": "66.3% of terminal absences carry no at-T signal of any kind; agreement of two weak signals still admits classified finishers",
+  "patterns": {
+    "both": 43,
+    "neither_any_signal": 340,
+    "stopped_only": 10,
+    "trailing_generated_only": 120
+  },
+  "schema_version": "v3.2g-source-agreement-v1",
+  "terminal_absence_episodes": 513
+}

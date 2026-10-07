@@ -1,0 +1,29 @@
+{
+  "checkpoint_token_count": 208,
+  "ending_lap_pace_delta_s": {
+    "mean": 18.156,
+    "n": 237,
+    "p10": 8.725,
+    "p50": 17.635,
+    "p90": 26.694,
+    "sd": 7.008
+  },
+  "episode_durations_laps": {
+    "mean": 1.291,
+    "n": 55,
+    "p10": 1,
+    "p50": 1,
+    "p90": 2,
+    "sd": 0.528
+  },
+  "finding": "VSC pace process is measurable (median +19.6s, n=892) but runtime simulation from mid-VSC needs a stochastic duration model (55 lap-level episodes, p50 1 lap), a restart transition, and regime-conditioned anchor history; none exists in accepted MC2 E.",
+  "pace_delta_s": {
+    "mean": 18.581,
+    "n": 892,
+    "p10": 3.943,
+    "p50": 19.623,
+    "p90": 33.096,
+    "sd": 12.919
+  },
+  "schema_version": "v3.2f-vsc-audit-v1"
+}

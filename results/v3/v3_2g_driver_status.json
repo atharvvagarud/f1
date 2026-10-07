@@ -1,0 +1,263 @@
+{
+  "accepted_mc2": {
+    "arm": "E_AR1_RESIDUAL",
+    "rho": 0.264,
+    "untouched": true
+  },
+  "admission_decision": "NO_AUTHORITATIVE_STATUS_ADMITTED",
+  "api_behavior": "unchanged 422 refusals; no hidden removal",
+  "baseline": {
+    "commit": "64c5af0",
+    "head_matches_tag": true,
+    "staged_changes": 0,
+    "tag": "v3.1-race-dynamics"
+  },
+  "candidate_evaluation": "false-terminal primary metric; all fail bar",
+  "candidate_signals": {
+    "C1_explicit_RETIRED_RC": {
+      "basis": "none (family absent)",
+      "support": 0,
+      "verdict": "DEAD"
+    },
+    "C2_timing_terminal_status": {
+      "basis": "none (no vocabulary)",
+      "support": 0,
+      "verdict": "DEAD"
+    },
+    "C3_position_terminal_lifecycle": {
+      "basis": "FastF1Generated trailing rows",
+      "support": 261,
+      "verdict": "UNSAFE (3 winners/7 podiums/9 top-5 false-terminal)"
+    },
+    "C4_STOPPED_plus_trailing": {
+      "basis": "message + synthesis agreement",
+      "support": 50,
+      "verdict": "REJECTED (3 classified + 6 later-rows + season-dead)"
+    },
+    "C5_STOPPED_alone": {
+      "basis": "CarEvent stopped text",
+      "support": 62,
+      "verdict": "REJECTED (1 winner + 14/62 bad + recall 0.10 + 2023 zero)"
+    }
+  },
+  "coverage_after": {
+    "coverage": 0.239,
+    "eligible": 2305,
+    "total": 9644
+  },
+  "coverage_before": {
+    "eligible": 2305,
+    "fraction": 0.239,
+    "total": 9644
+  },
+  "dry_green_parity": {
+    "corpus_hash": "7ae97c3c8575679a...",
+    "members": 50,
+    "status": "PARITY_OK_BIT_EXACT"
+  },
+  "external_source_decision": {
+    "corpus_adequate": false,
+    "note": "current FastF1-derived corpus exposes no authoritative causal terminal vocabulary",
+    "provider": "NOT integrated in V3.2G (specification only, no fabrication)",
+    "required_information_class": "timestamped official retirement/driver-status events (on-track retirement time per driver, causally timestamped at or before T)",
+    "schema_version": "v3.2g-external-source-decision-v1"
+  },
+  "false_admission_audit": {
+    "admission_occurred": false,
+    "requirement": "ZERO unexplained transient exclusions (vacuously held; admission would have violated it)",
+    "schema_version": "v3.2g-false-admission-audit-v1",
+    "unexplained_transient_exclusions": 0,
+    "would_be_excluded": {
+      "C3_rule": {
+        "podiums": 7,
+        "top5": 9,
+        "winners": 3
+      },
+      "C5_rule": {
+        "podiums": 1,
+        "top5": 1,
+        "winners": 1
+      }
+    }
+  },
+  "known_limitations": [
+    "coverage unchanged at 23.90%",
+    "66.3% of terminal absences carry no at-T signal",
+    "position Status sampled in one race only",
+    "STOPPED recall 0.10 caps any future message-keyed rule",
+    "external retirement-event feed would be needed for authoritative status"
+  ],
+  "latency": {
+    "rule": "never backdate retirement; pre-signal checkpoints stay ACTIVE/UNKNOWN (and usually refused); latency further caps recoverable coverage",
+    "schema_version": "v3.2g-latency-v1",
+    "stopped_msg_minus_last_timed_s": {
+      "max": 417.4,
+      "p10": 49.7,
+      "p50": 97.5,
+      "p90": 159.9
+    }
+  },
+  "new_state_validation": "N/A (no newly supported states)",
+  "observation_lifecycle": "contiguous lap sequences; transience at checkpoint grain",
+  "offline_label_firewall": "frozen tables first (1465c11b), labels joined after; static import test green",
+  "performance": "status-resolution overhead N/A (no resolver); MC2 untouched",
+  "pit_garage": "no garage concept; duration not evidence",
+  "position_null": {
+    "all_trailing": true,
+    "decision": "UNSAFE_FOR_RUNTIME",
+    "podiums": 7,
+    "provenance": "FastF1Generated verbatim; 294/294 overlap",
+    "top5": 9,
+    "winners": 3
+  },
+  "projected_coverage": "0 for all candidates (no admissible rule)",
+  "projected_intersections": "N/A; V3.2F handoff cited",
+  "race_control": {
+    "messages": 14992,
+    "precision_vs_dnf": [
+      57,
+      62
+    ],
+    "retired_family_rows": 0,
+    "seasons_zero": [
+      "2023"
+    ],
+    "stopped_rows": 63
+  },
+  "race_coverage": "unchanged (103 >=1, 46 zero, median 9.38%)",
+  "recovery_accounting": {
+    "newly_supported": 0,
+    "unexplained_growth": 0
+  },
+  "remaining_blockers": {
+    "all_blocker_sets": {
+      "MISSING_DRIVER_OBSERVATION": 354,
+      "MISSING_TYRE_STATE": 342,
+      "STALE_ROSTER_OBSERVATION": 6407,
+      "TERMINAL_STATE": 154,
+      "UNSUPPORTED_TRACK_STATE": 1317,
+      "WET_CONDITIONS": 1157
+    },
+    "primary": {
+      "MISSING_DRIVER_OBSERVATION": 354,
+      "MISSING_TYRE_STATE": 198,
+      "SIMULATION_CAPABLE": 2305,
+      "STALE_ROSTER_OBSERVATION": 4667,
+      "TERMINAL_STATE": 154,
+      "UNSUPPORTED_TRACK_STATE": 1165,
+      "WET_CONDITIONS": 801
+    },
+    "schema_version": "v3.2g-remaining-blockers-v1"
+  },
+  "runtime_implementation": false,
+  "schema_version": "v3.2g-driver-status-v1",
+  "scientific_identities": {
+    "causal_tables": "1465c11b50e898ca",
+    "field_contract": "mc2-field-v1",
+    "mc2_research": "mc2-r1-research",
+    "parity_corpus": "7ae97c3c8575679a",
+    "presence_adapter": "v3.2c-presence-v1",
+    "regime_support": "v3.2f-regime-support-v1",
+    "status_contract": "none created"
+  },
+  "season_coverage": "unchanged (2018-2024 per V3.2F)",
+  "season_stability": "STOPPED season-unstable (2023 silent)",
+  "source_agreement": {
+    "both": 43,
+    "neither_any_signal": 340,
+    "stopped_only": 10,
+    "trailing_generated_only": 120
+  },
+  "source_inventory": "source_inventory.json (8 families)",
+  "source_semantics": [
+    {
+      "confidence": "high (code-proven)",
+      "documented": true,
+      "evidence": "installed fastf1 3.7.0 core.py + 294/294 overlap with position nulls",
+      "field": "driver_laps.fastf1_generated",
+      "semantics": "verbatim FastF1 FastF1Generated: row synthesized by FastF1 (no-timing-data drivers; retired-on-track last-lap synthesis per _fix_missing_laps_retired_on_track; missing final laps of finishers)",
+      "stable": true
+    },
+    {
+      "confidence": "high (code-proven)",
+      "documented": true,
+      "evidence": "fastf1 core.py position-numbering block + corpus overlap",
+      "field": "driver_laps.position",
+      "semantics": "per-lap running order from lap timing; NaN exactly on generated rows (dnf_and_generated exclusion)",
+      "stable": true
+    },
+    {
+      "confidence": "medium (form census, no upstream doc)",
+      "documented": false,
+      "evidence": "message form census (63 rows) + 9 later-row cases + zero RETIRED family",
+      "field": "race_control STOPPED (CAR N (XXX) STOPPED AT TURN T)",
+      "semantics": "CarEvent: car observed stopped on track; says nothing about retirement, restart, or future observations",
+      "stable": false
+    },
+    {
+      "confidence": "high",
+      "documented": "n/a",
+      "evidence": "full-corpus text search over 14992 messages",
+      "field": "race_control RETIRED family",
+      "semantics": "DOES NOT EXIST in corpus (0 rows match RETIRE*)",
+      "stable": true
+    },
+    {
+      "confidence": "high",
+      "documented": "n/a",
+      "evidence": "direct blob inspection (22/22 2023 blobs)",
+      "field": "timing-app columns",
+      "semantics": "no driver-status vocabulary (LapNumber/Driver/LapTime/Stint/TotalLaps/Compound/New/TyresNotChanged/Time/LapFlags/LapCountTime/StartLaps/Outlap)",
+      "stable": true
+    },
+    {
+      "confidence": "high",
+      "documented": true,
+      "evidence": "direct blob inspection",
+      "field": "session-status",
+      "semantics": "SESSION-level only (Inactive/Started/Finished/Finalised/Ends); not driver status",
+      "stable": true
+    },
+    {
+      "confidence": "low (single race sampled)",
+      "documented": false,
+      "evidence": "20/20 drivers Bahrain 2023",
+      "field": "position-data Status",
+      "semantics": "uniformly OnTrack where sampled; no terminal vocabulary observed",
+      "stable": "unresolved"
+    },
+    {
+      "confidence": "high",
+      "documented": "n/a",
+      "evidence": "369 stops >120s corpus-wide; duration distribution",
+      "field": "pit_stops.duration_s",
+      "semantics": "stop length; long stays include red-flag suspensions (max 7610s) and repairs-then-return; NOT retirement",
+      "stable": true
+    }
+  ],
+  "stage_coverage": "unchanged (LATE 10.14%)",
+  "status_contract": {
+    "created": false
+  },
+  "temporal_poison": "no resolver (vacuous); label firewall tested; pipeline inherited green",
+  "timing_status": "no status vocabulary in any timing field",
+  "transient_protection": "corpus recorded (9 stopped-returns, 407 V3.2C records, winner nulls)",
+  "v3_2f_parent": "V3.2F COMPLETE - NO REGIME ADMITTED",
+  "v3_2h_handoff": {
+    "priority": [
+      "VSC",
+      "wet feasibility",
+      "Safety Car",
+      "yellow (needs spatial semantics)",
+      "red deferred"
+    ],
+    "track_only": 292,
+    "track_x_stale": 811,
+    "wet_only": 176,
+    "wet_x_stale": 799
+  },
+  "winner_safety": {
+    "null_winners": 3,
+    "stopped_winners": 1
+  }
+}

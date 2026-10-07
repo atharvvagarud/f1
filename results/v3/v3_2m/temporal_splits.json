@@ -1,0 +1,1 @@
+{"schema_version": "v3.2m-temporal-splits-v1", "preregistration_sha256": "3161cf5275e8a2cfe3ef71032315c0084f3a6ca09fd297940576c1a74123bea6", "folds": [["<=2020", 2021], ["<=2021", 2022], ["<=2022", 2023], ["<=2023", 2024]], "rule": "season-forward only; no random split; 2025 forbidden"}

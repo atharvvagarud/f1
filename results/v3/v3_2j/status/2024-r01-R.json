@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "a98659051831a7407b9e99bc4dbd9f975215b00fb12ecaf0abd8827df73248c9",
+  "diagnostics": {
+    "n_inpit_updates": 204,
+    "n_malformed_rows": 0,
+    "n_messages": 70208,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 106,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 20
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2024-r01-R",
+  "raw_sha256": "672977da93fc020839412fb1f048cd514e9344e610877a83cc4a2c1568e5b0de",
+  "round": 1,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2024,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2024/2024-03-02_Bahrain_Grand_Prix/2024-03-02_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "sargeant": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        5.309,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        5.309,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

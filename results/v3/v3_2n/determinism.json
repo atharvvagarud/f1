@@ -1,0 +1,26 @@
+{
+ "schema_version": "v3.2n-determinism-v1",
+ "rows": [
+  {
+   "race_id": "2018-r03-R",
+   "frame_index": 740,
+   "identical": true
+  },
+  {
+   "race_id": "2018-r16-R",
+   "frame_index": 134,
+   "identical": true
+  },
+  {
+   "race_id": "2018-r16-R",
+   "frame_index": 314,
+   "identical": true
+  },
+  {
+   "race_id": "2019-r01-R",
+   "frame_index": 20,
+   "identical": true
+  }
+ ],
+ "rerun_identical": true
+}

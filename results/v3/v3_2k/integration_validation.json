@@ -1,0 +1,5 @@
+{
+ "schema_version": "v3.2k-integration-validation-v1",
+ "verdict": "NOT_APPLICABLE",
+ "reason": "no runtime component created (no driver_state.py); presence/state integration unchanged; canonical-state and J-Retired precedence untested-by-change and intact"
+}

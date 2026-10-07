@@ -1,0 +1,11 @@
+{
+ "schema_version": "v3.2l-lifecycle-contract-v1",
+ "state": "STOPPED_UNRESOLVED_AT_T",
+ "means": "at T the driver is causally known stopped/non-progressing (latest Stopped True, D9-stale corroborated), not J-Retired, with last known race state sufficient to initialize a lifecycle process",
+ "not_means": [
+  "retired",
+  "DNF",
+  "will not return"
+ ],
+ "stopped_semantics": "Stopped=False clearing unreliable (73/85 returns lack clearing); Stopped=True may persist stale after resume; age-conditioned modelling required, never sticky-forever assumption"
+}

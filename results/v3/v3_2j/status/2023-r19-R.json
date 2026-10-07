@@ -1,0 +1,163 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "b9c75c39eba68ebfc01fba998dad0e1bd4296bac3e67e9932399eb6cf3a278e1",
+  "diagnostics": {
+    "n_inpit_updates": 206,
+    "n_malformed_rows": 0,
+    "n_messages": 61037,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 96,
+    "n_retired_updates": 24,
+    "n_stopped_updates": 25
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 24,
+  "race_id": "2023-r19-R",
+  "raw_sha256": "503ace2e34710006572598cf4ad34a07362cd3a53bdf1a063d3183825c6df222",
+  "round": 19,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2023,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2023/2023-10-29_Mexico_City_Grand_Prix/2023-10-29_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        5.76,
+        false
+      ],
+      [
+        9280.8,
+        true
+      ]
+    ],
+    "bottas": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        5.76,
+        false
+      ],
+      [
+        3965.925,
+        true
+      ]
+    ],
+    "piastri": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "sargeant": [
+      [
+        5.76,
+        false
+      ],
+      [
+        11290.78,
+        true
+      ]
+    ],
+    "stroll": [
+      [
+        5.76,
+        false
+      ],
+      [
+        10885.787,
+        true
+      ]
+    ],
+    "tsunoda": [
+      [
+        5.76,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        5.76,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

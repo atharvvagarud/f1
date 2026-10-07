@@ -1,0 +1,7 @@
+{
+  "admitted_regimes": [],
+  "corpora": {},
+  "note": "no admitted regime -> no new regression corpus; the permanent gates remain the V3.2F 50-checkpoint dry-green parity corpus (7ae97c3c...)",
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "schema_version": "v3.2h-regression-corpora-v1"
+}

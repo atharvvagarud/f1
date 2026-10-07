@@ -1,0 +1,159 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "c7390701c356d09d4a484830a4704d2672d2ddd8ac946007d59cdb20476262c2",
+  "diagnostics": {
+    "n_inpit_updates": 201,
+    "n_malformed_rows": 0,
+    "n_messages": 49040,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 92,
+    "n_retired_updates": 23,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 23,
+  "race_id": "2023-r18-R",
+  "raw_sha256": "ae0608507a451bfc18ee11341a4e930506b553b65a78d225cb5ad94fdc6bcc92",
+  "round": 18,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2023,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2023/2023-10-22_United_States_Grand_Prix/2023-10-22_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        3.612,
+        false
+      ],
+      [
+        8961.186,
+        true
+      ]
+    ],
+    "bottas": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        3.612,
+        false
+      ],
+      [
+        4531.281,
+        true
+      ]
+    ],
+    "perez": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        3.612,
+        false
+      ],
+      [
+        4941.258,
+        true
+      ]
+    ],
+    "ricciardo": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "sargeant": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        3.612,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        3.612,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

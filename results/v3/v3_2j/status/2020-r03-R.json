@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "b77887638af8bd946470c507a0b60358b2d8aef2bac57d7d3d4c6b84b1a78af8",
+  "diagnostics": {
+    "n_inpit_updates": 208,
+    "n_malformed_rows": 0,
+    "n_messages": 60062,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 110,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 21
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2020-r03-R",
+  "raw_sha256": "d2dd771a816ea3d7dd6d3844bf96e63aaf30c1b4a62b05c6e7a0b07f7e5c9700",
+  "round": 3,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2020,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2020/2020-07-19_Hungarian_Grand_Prix/2020-07-19_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        4.885,
+        false
+      ],
+      [
+        3470.242,
+        true
+      ]
+    ],
+    "giovinazzi": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        4.885,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        4.885,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

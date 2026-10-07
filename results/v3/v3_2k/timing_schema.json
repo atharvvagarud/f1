@@ -1,0 +1,15 @@
+{
+ "schema_version": "v3.2k-tyre-schema-v1",
+ "source": "sqlite TimingAppData sample (2018 race)",
+ "stint_record_keys": {
+  "LapFlags": 118,
+  "Compound": 40,
+  "New": 40,
+  "TyresNotChanged": 40,
+  "TotalLaps": 932,
+  "StartLaps": 40,
+  "LapTime": 375,
+  "LapNumber": 375
+ },
+ "n_stint_records": 1308
+}

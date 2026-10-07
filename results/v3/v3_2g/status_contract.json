@@ -1,0 +1,14 @@
+{
+  "contract_created": false,
+  "dns_preserved": true,
+  "levels_if_admitted": [
+    "ACTIVE",
+    "IN_PIT",
+    "TEMPORARILY_UNOBSERVED",
+    "RETIRED_KNOWN",
+    "DNS",
+    "UNKNOWN"
+  ],
+  "reason": "no source passed the RETIRED_KNOWN bar; UNKNOWN remains valid; refusals stand",
+  "schema_version": "v3.2g-status-contract-v1"
+}

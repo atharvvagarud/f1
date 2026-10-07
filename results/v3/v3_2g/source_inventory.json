@@ -1,0 +1,93 @@
+{
+  "schema_version": "v3.2g-source-inventory-v1",
+  "sources": [
+    {
+      "cadence": "per-lap sampled",
+      "driver": "driver_id (DriverNumber-joined)",
+      "future_derived": false,
+      "ingestion": "raceintel/data/tiera.py normalize laps",
+      "name": "driver_laps",
+      "origin": "FastF1 timing+results merge (Tier-A)",
+      "status_fields": "NONE (position/lap/sector times, compound/tyre/stint, pit in-out, track_status, deleted, is_accurate, fastf1_generated)",
+      "time": "session_time_end_s/lap_start_s",
+      "used_by_racestate": true
+    },
+    {
+      "cadence": "per-race",
+      "driver": "driver_id",
+      "future_derived": true,
+      "ingestion": "raceintel/data/tiera.py normalize results",
+      "name": "results",
+      "origin": "official classification via FastF1 session results",
+      "status_fields": "status_text/dnf_flag/classified (LABEL_ONLY)",
+      "time": "race-grain (no timestamp)",
+      "used_by_racestate": "identity+grid only"
+    },
+    {
+      "cadence": "event-driven",
+      "driver": "racing_number (when present)",
+      "future_derived": false,
+      "ingestion": "raceintel/data/tiera.py normalize_race_control",
+      "name": "race_control",
+      "origin": "FastF1 race-control feed (verbatim, no interpretation)",
+      "status_fields": "category/flag/status/scope/sector/text; driver-specific STOPPED family exists, NO retired family",
+      "time": "observed_at_s (absolute via session t0)",
+      "used_by_racestate": "last-message asof"
+    },
+    {
+      "cadence": "sampled",
+      "driver": "n/a (session)",
+      "future_derived": false,
+      "ingestion": "tiera normalize weather",
+      "name": "weather",
+      "origin": "FastF1 weather feed",
+      "status_fields": "rainfall et al (no driver status)",
+      "time": "observed_at_s",
+      "used_by_racestate": true
+    },
+    {
+      "cadence": "event-driven",
+      "driver": "driver_id",
+      "future_derived": false,
+      "ingestion": "tiera _ordered_stops",
+      "name": "pit_stops",
+      "origin": "FastF1 laps PitIn/Out pairing (FIFO)",
+      "status_fields": "NONE (stop_sequence/lap/in/out/duration; no garage concept)",
+      "time": "pit_in_s/pit_out_s",
+      "used_by_racestate": "counts/history"
+    },
+    {
+      "cadence": "per-stint",
+      "driver": "driver_id",
+      "future_derived": false,
+      "ingestion": "tiera stints",
+      "name": "stints",
+      "origin": "FastF1 laps grouped by source Stint number",
+      "status_fields": "NONE (compound/fresh/ages)",
+      "time": "start/end lap",
+      "used_by_racestate": "tyre context"
+    },
+    {
+      "cadence": "per-race",
+      "driver": "driver_id",
+      "future_derived": false,
+      "ingestion": "results entity",
+      "name": "grid_position",
+      "origin": "pre-race results column",
+      "status_fields": "DNS shape only",
+      "time": "pre-race",
+      "used_by_racestate": "DNS exclusion"
+    },
+    {
+      "cadence": "sampled/event",
+      "driver": "per-driver blobs",
+      "future_derived": false,
+      "ingestion": "NOT in reproducible processed pipeline (D8 spatial reads car/position for geometry only)",
+      "name": "raw blobs (car/position/timing-app/session-status)",
+      "origin": "FastF1 cache (data/raw/fastf1_cache, 171-173 races)",
+      "status_fields": "timing-app: none; session-status: session-level only; position Status uniformly OnTrack (20/20 sampled race)",
+      "time": "per-sample",
+      "used_by_racestate": false
+    }
+  ]
+}

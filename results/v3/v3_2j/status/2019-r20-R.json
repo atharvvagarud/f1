@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "ddb20b3c473399097211d1338057a6d1223df2b41fb11568c8e2ee405a1f7e01",
+  "diagnostics": {
+    "n_inpit_updates": 110,
+    "n_malformed_rows": 0,
+    "n_messages": 62556,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 110,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 24
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2019-r20-R",
+  "raw_sha256": "b5e5c18baa41f4df3fd91b4270e4114b3b71eca0d04ace9a566b21edd3f4944c",
+  "round": 20,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2019,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2019/2019-11-17_Brazilian_Grand_Prix/2019-11-17_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "kubica": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        2.014,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        2.014,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

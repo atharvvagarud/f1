@@ -1,0 +1,7 @@
+{
+ "schema_version": "v3.2k-winner-top5-firewall-v1",
+ "offender_rows_checked": 7977,
+ "winner_offender_rows": 6,
+ "rule": "diagnostics only; no reconstruction removes or retires any driver (J Retired precedence untouched)",
+ "verdict": "PASS (no driver removed/retired by K)"
+}

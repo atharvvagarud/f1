@@ -1,0 +1,10 @@
+{
+ "schema_version": "v3.2l-stopped-semantics-v1",
+ "clearing_outcome_300s": {
+  "cleared_no_crossing_300s": 21,
+  "cleared_then_crossed_300s": 19
+ },
+ "returned_episodes": 85,
+ "returned_without_clearing_before_return": 73,
+ "finding": "Stopped=False clearing precedes resumption only sometimes; resumption frequently occurs with Stopped left True-stale (feed does not reliably clear)"
+}

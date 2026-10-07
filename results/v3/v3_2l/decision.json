@@ -1,0 +1,20 @@
+{
+ "schema_version": "v3.2l-decision-v1",
+ "preregistration_sha256": "4c3eb5c8cdfe9ebf44555de540ee1378d0b12089d5c8cbc44dea7c0de6c48533",
+ "decision": "REJECT_LIFECYCLE_MODEL",
+ "gate_scores": {
+  "causal_definition": "PASS (STOPPED_UNRESOLVED_AT_T defined; clearing unreliability measured)",
+  "temporal_calibration": "FAIL (fold ECE [0.2319, 0.0834, 0.1532, 0.0735]; ROC-AUC [0.9167, 0.9573, 0.6211, 0.4211] on eval N<=42; unstable, sometimes below chance)",
+  "return_state": "FAIL (return-time tables from 30 returns; kernel hold/resume needs MC2-E dynamics change)",
+  "finish_classification": "DEFINABLE-BUT-UNIMPLEMENTED (terminal-flag contract extension required)",
+  "materiality": "PASS (3215 addressable checkpoints)",
+  "multi_driver": "UNSAFE (dependence unmodelled)"
+ },
+ "reasons": [
+  "temporal calibration poor and unstable (ECE up to 0.23, ROC-AUC 0.42-0.96 across folds, eval N<=42)",
+  "training population small (211 CLEAN episodes, 30 returns); 214 pit-context episodes excluded by regime hygiene",
+  "return branch needs kernel hold/resume = change to frozen MC2-E science; finish needs terminal-flag contract extension",
+  "concurrent-stop dependence unmodelled",
+  "opportunity preserved as measured evidence for a future phase; no gates weakened for coverage"
+ ]
+}

@@ -1,0 +1,13 @@
+{
+  "basis": "2305 / 9644",
+  "latency_note": "even admitted STOPPED-like rules recover only post-signal checkpoints (p50 +97.5s)",
+  "per_candidate": {
+    "C1": 0,
+    "C2": 0,
+    "C3": 0,
+    "C4": 0,
+    "C5": 0
+  },
+  "reason": "no admissible candidate; projection of rejected rules would be dishonest coverage",
+  "schema_version": "v3.2g-projected-coverage-v1"
+}

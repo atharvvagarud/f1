@@ -1,0 +1,8 @@
+{
+  "corpus_load_s": 0.069,
+  "note": "status overhead negligible vs MC2 (500-sim runs measured in run_s above)",
+  "presence_with_resolver_s": 0.0,
+  "presence_without_resolver_s": 0.0,
+  "schema_version": "v3.2j-performance-v1",
+  "status_lookup_s": 9.306252468377351e-08
+}

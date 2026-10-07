@@ -1,0 +1,39 @@
+{
+  "decisions": {
+    "RED": {
+      "decision": "DEFER_RED",
+      "gate_failed": "evidence (n=22, 0 usable laps)",
+      "reason": "RED_DEFERRED_DEFAULT_EXPECTATION_CONFIRMED"
+    },
+    "SAFETY_CAR": {
+      "decision": "DEFER_SC",
+      "gate_failed": "explicit simulation mechanism",
+      "reason": "SC_DEFERRED_COMPRESSION_RESTART_OUT_OF_SCOPE"
+    },
+    "VSC": {
+      "decision": "DEFER_VSC",
+      "gate_failed": "explicit simulation mechanism + parameter estimation",
+      "reason": "VSC_DEFERRED_DURATION_RESTART_ANCHOR_EVIDENCE_THIN"
+    },
+    "WET": {
+      "decision": "DEFER_WET",
+      "gate_failed": "weather evolution + compound transition boundaries",
+      "reason": "WET_DEFERRED_EVOLUTION_TRANSITION_NO_CAUSAL_MECHANISM"
+    },
+    "YELLOW": {
+      "decision": "DEFER_YELLOW",
+      "gate_failed": "causal initial state",
+      "reason": "YELLOW_DEFERRED_INSUFFICIENT_SPATIAL_SEMANTICS"
+    }
+  },
+  "deferred_regimes": [
+    "YELLOW",
+    "VSC",
+    "SAFETY_CAR",
+    "WET",
+    "RED"
+  ],
+  "implemented_regimes": [],
+  "ladder": "evidence audit -> contract -> estimator -> temporal tests -> offline validation -> admission -> implementation; a deferred regime remains explicitly unavailable",
+  "schema_version": "v3.2f-admission-decisions-v1"
+}

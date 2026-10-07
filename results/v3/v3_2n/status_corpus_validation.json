@@ -1,0 +1,17 @@
+{
+ "schema_version": "v3.2n-status-corpus-validation-v1",
+ "n_artifacts": 149,
+ "n_ok": 149,
+ "seasons": {
+  "2018": 21,
+  "2019": 21,
+  "2020": 17,
+  "2021": 22,
+  "2022": 22,
+  "2023": 22,
+  "2024": 24
+ },
+ "seasons_2018_2024_only": true,
+ "has_2025": false,
+ "problems": []
+}

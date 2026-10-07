@@ -1,0 +1,159 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "5661928ae7f7ccbbe62402d058f2f93cc7ad218504144f5538d95ac7de6a6c1b",
+  "diagnostics": {
+    "n_inpit_updates": 73,
+    "n_malformed_rows": 0,
+    "n_messages": 54487,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 70,
+    "n_retired_updates": 23,
+    "n_stopped_updates": 25
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 23,
+  "race_id": "2022-r12-R",
+  "raw_sha256": "f31dce3c52e88fc0f8e6fdafaa2c159d22ee45d0ffa93df5ae7f258d946e459c",
+  "round": 12,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2022,
+  "served_by": "fastf1_mirror",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2022/2022-07-24_French_Grand_Prix/2022-07-24_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        504.606,
+        false
+      ],
+      [
+        6630.854,
+        true
+      ]
+    ],
+    "latifi": [
+      [
+        504.606,
+        false
+      ],
+      [
+        6990.836,
+        true
+      ]
+    ],
+    "leclerc": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        504.606,
+        false
+      ],
+      [
+        4580.897,
+        true
+      ]
+    ],
+    "vettel": [
+      [
+        504.606,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        504.606,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

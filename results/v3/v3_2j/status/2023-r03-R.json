@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "be1c2bd9269405090db3ec1c1b8da4823fb3406de5d94127af9ccbfae16d7ff3",
+  "diagnostics": {
+    "n_inpit_updates": 260,
+    "n_malformed_rows": 0,
+    "n_messages": 49889,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 150,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 28
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2023-r03-R",
+  "raw_sha256": "8df0bf8052af85fb303193be63f8f5a511f336ad99277f898d0e83e620396d58",
+  "round": 3,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2023,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2023/2023-04-02_Australian_Grand_Prix/2023-04-02_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "de_vries": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "sargeant": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        6.078,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        6.078,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

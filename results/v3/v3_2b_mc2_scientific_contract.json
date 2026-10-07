@@ -1,0 +1,297 @@
+{
+ "schema_version": "v3.2b-contract-v1",
+ "baseline": {
+  "tag": "v3.1-race-dynamics",
+  "commit": "64c5af094bd1304e23a5c7d3d5b782b0eef11aca",
+  "head_matches_tag": true,
+  "serving": "frozen V2, no V3.1 promotion"
+ },
+ "v3_2a_parent": {
+  "verdict": "V3.2A COMPLETE \u2014 READY FOR V3.2B CONTRACT",
+  "capable": "2274/9644 (0.2358)",
+  "refusals": {
+   "STALE_ROSTER": 4590,
+   "TRACK_STATE": 1138,
+   "WET": 801,
+   "MISSING_DRIVER": 492,
+   "MISSING_TYRE": 198,
+   "TERMINAL": 151
+  }
+ },
+ "stale_roster_analysis": {
+  "offender_records": 9801,
+  "mean_offenders_per_state": 2.1,
+  "terminal_no_later_rows": 9394,
+  "transient_later_rows": 407,
+  "all_terminal_states": 4379,
+  "has_transient_states": 211,
+  "transient_top5_finishes": 55,
+  "transient_eventual_winners": 6,
+  "rc_stopped_recall": 0.125,
+  "rc_recall_by_season": {
+   "2018": 0.333,
+   "2019": 0.255,
+   "2020": 0.014,
+   "2021": 0.213,
+   "2022": 0.057,
+   "2023": 0.0,
+   "2024": 0.025
+  },
+  "garage_pit_in_sample_fraction": 0.423,
+  "age_overlap": "transient 247-4949s vs terminal 210-10333s"
+ },
+ "retirement_causality": {
+  "at_T_retirement_signal": "none exists by construction",
+  "racestate_forbids_dnf_names": true,
+  "d9_retirement_column": "none (source_unit_status uniformly complete)",
+  "rc_stopped_assessment": "positive but 12.5% recall, season-unstable feed",
+  "future_invisible": "proven by poisoning tests"
+ },
+ "active_field_contract": {
+  "version": "mc2-field-v1",
+  "identity": "713d6e4df22bf09664ca3c6a2a99fea1941c57492d5afe55fb836e7bdab32691",
+  "levels": [
+   "ACTIVE",
+   "EXCLUDE_DNS_PRE_RACE",
+   "EXCLUDE_SIGNALED_STALE",
+   "STALE_UNRESOLVED",
+   "UNOBSERVED_PRE_FIRST",
+   "UNOBSERVED_DATA_GAP"
+  ],
+  "frozen_exclusion": "EXCLUDE_DNS_PRE_RACE only",
+  "candidate_rule": "EXCLUDE_SIGNALED_STALE (stopped + bound + behind>=2)",
+  "candidate_state_precision": 0.901
+ },
+ "retirement_boundary": {
+  "t1": "2018-r05-R frame 17: ACTIVE despite later factual DNF",
+  "t2": "2018-r05-R frame 430: stale, never claims retired",
+  "poison_invariant": true
+ },
+ "projected_coverage": {
+  "current": "2274/9644 (0.2358)",
+  "dns_rule": "+138 -> 2412/9644 (0.2501)",
+  "tyre_backfill_bound": "<=+166 -> <=0.267",
+  "stale_frozen": "+0",
+  "hypothetical_ceiling": "6653/9644 (0.6899), future-informed, unreachable",
+  "signaled_stale_candidate": "364 states at 0.901 precision, deferred",
+  "label": "PROJECTED_ELIGIBILITY, not actual coverage"
+ },
+ "stale_roster_decision": "MIXED",
+ "stale_subcategories": {
+  "STALE_TERMINAL": "4379 states, in-principle excludable, identification unproven",
+  "STALE_TRANSIENT": "211 states, must stay refused (contains eventual winners)"
+ },
+ "track_state_policy": {
+  "tokens": {
+   "yellow": 508,
+   "safety_car": 363,
+   "vsc": 120,
+   "vsc_ending": 65,
+   "null": 64,
+   "red_flag": 18
+  },
+  "initial": "DRY_GREEN only",
+  "null": "INVALID",
+  "red": "DEFERRED",
+  "neutralised": "DEFERRED (no evolution model)"
+ },
+ "wet_state_policy": "DEFER_WET",
+ "wet_split": {
+  "rainfall_true": 347,
+  "rainfall_false": 454,
+  "rain_only_slicks": 164
+ },
+ "missing_driver_policy": {
+  "lap1_boundary": 155,
+  "dns_records": 196,
+  "data_gap_records": 202,
+  "mid_race_transient": 0,
+  "recoverable_states": 138
+ },
+ "missing_tyre_policy": {
+  "total": 198,
+  "single_or_double_null": 166,
+  "wholesale_null": 18,
+  "rule": "backfill candidate pending proof, default REMAIN_REFUSAL"
+ },
+ "terminal_policy": "REMAIN_REFUSAL (leader>=scheduled, nothing to simulate)",
+ "support_matrix": {
+  "DRY_GREEN": "SUPPORTED_INITIAL",
+  "DRY_YELLOW": "DEFERRED",
+  "DRY_VSC": "DEFERRED",
+  "DRY_SC": "DEFERRED",
+  "RED": "DEFERRED",
+  "WET_GREEN": "DEFERRED",
+  "WET_NEUTRALISED": "DEFERRED",
+  "TERMINAL": "INVALID",
+  "UNKNOWN_TRACK": "INVALID"
+ },
+ "initial_state_schema": {
+  "race_level": [
+   "race_id",
+   "season",
+   "round_no",
+   "circuit_id",
+   "scheduled_laps",
+   "leader_laps_done",
+   "simulation_time_s",
+   "track_state",
+   "rainfall",
+   "anchor_frame_index"
+  ],
+  "driver_level": [
+   "lap_number",
+   "race_time_s",
+   "position",
+   "compound",
+   "tyre_age",
+   "stint_number",
+   "pit_count",
+   "constructor_id",
+   "observation_age_s",
+   "presence_level",
+   "pace_anchor",
+   "variance_regime"
+  ],
+  "guards": "frozen R1 plain-type finite no-NaN rules"
+ },
+ "state_feature_policy": "raw RaceState/history or causal past-only dynamics calculations; never classifier coefficients",
+ "v3_1_dynamics_admission": {
+  "ADMIT_NOW": {
+   "mechanism": "PACE_ANCHOR",
+   "features": [
+    "dyn_pace_slope_l3",
+    "dyn_pace_slope_l10"
+   ]
+  },
+  "ADMIT_CONDITIONAL": {
+   "INTERACTION_REGIME": [
+    "dyn_gap_leader_slope_l3",
+    "dyn_gap_leader_slope_l10",
+    "dyn_gap_leader_slope_diff_l3_l10",
+    "dyn_gap_ahead_slope_l3",
+    "dyn_gap_ahead_slope_l10",
+    "dyn_follower_gap_slope_l5",
+    "dyn_traffic_frac_l5",
+    "dyn_traffic_n_l5"
+   ],
+   "VARIANCE_REGIME": [
+    "dyn_field_spread_change_l5",
+    "dyn_pace_vol_l5",
+    "dyn_gap_leader_vol_l5"
+   ]
+  },
+  "EXCLUDE": {
+   "REDUNDANT": 5,
+   "MODEL_ONLY": 8,
+   "VARIANT": 3
+  }
+ },
+ "ml_firewall": "winner classifier forbidden as pace/overtake/terminal/normalization input; source-tested",
+ "pace_contract": "mu = base(circuit|era) + constructor_offset + driver_anchor + progress + degradation + traffic_penalty.regime; coefficients in V3.2D",
+ "driver_anchor": "causal past-only per-driver offset vs base+offset expectation; estimator in V3.2D",
+ "variance_contract": "sigma(era -> traffic-regime -> phase), era/global fallback; no fitting now",
+ "autocorrelation_contract": "AR(1) admitted to V3.2D scope; |phi|<1; own-previous-residual only; new RNG domain; parity required",
+ "traffic_contract": "traffic-dependent pace penalty from factual traffic geometry; empirical family in V3.2D",
+ "overtake_boundary": "no explicit overtakes in V3.2; ordering stays pace-derived",
+ "pit_contract": "preserve R6 behaviour semantics exactly; V3.2D may recalibrate stint family vs 0.3-0.4 over-pitting; no strategy optimization",
+ "dnf_boundary": "DEFER future-DNF stochasticity; factual-at-T exclusion is separate allowed science",
+ "neutralisation_weather_boundary": "no future SC/weather simulation; current-condition support stays refused without evolution models",
+ "parameter_contract": "per-family training seasons, conditioning, min-N, fallback, hash, backtest policy; retrospective through-2024 for demo",
+ "temporal_backtest": "season Y evaluated on strictly pre-Y parameters; adversarial poisoning gates every stage",
+ "randomness_contract": "preserve seeds, per-(seed,index) streams, domain separation (+AR1 domain), chunk invariance, scalar/batch parity, CRN/Phase-7 compat",
+ "output_schema": [
+  "winner_frequency",
+  "podium_frequency",
+  "expected_finish",
+  "position_distribution",
+  "sample_orders",
+  "valid_invalid_counts",
+  "schema_state_parameter_run_identities",
+  "content_hash"
+ ],
+ "cache_contract": {
+  "key": [
+   "simulation_version",
+   "checkpoint_identity",
+   "parameter_identity",
+   "seed_policy",
+   "n_runs"
+  ],
+  "payload": "output schema, scientific formatting only"
+ },
+ "demo_run_count_policy": "5000 NOT frozen; V3.2E freezes on TV<=0.005, CI width, budget, <=100MB, visual stability",
+ "coverage_objective": "maximize legitimate states under causal/state-validity constraints; report overall/season/race/stage/reason",
+ "demo_behavior": {
+  "SUPPORTED": "cached simulation",
+  "UNSUPPORTED": "exact reason",
+  "LOCAL_ONLY": "deliberately uncached but runnable",
+  "forbidden": [
+   "silent fallback",
+   "fake simulation"
+  ]
+ },
+ "local_execution": "same request/result schema as precompute; (race_id, frame_index, seed, n_runs, param identity); Docker unchanged",
+ "r3_baseline": "frozen R3 (pits off) immutable comparator; arms A=R3, B=MC2.0, predeclared ablations only",
+ "validation_metrics": [
+  "winner log-loss/Brier/top-k/ECE",
+  "RPS/position-log/MAE/Spearman",
+  "coverage",
+  "invalid-rate",
+  "convergence TV",
+  "runtime"
+ ],
+ "statistical_unit": "race as paired unit; checkpoints non-independent; aggregate per race then pair",
+ "coverage_quality_policy": "separate axes reported jointly; neither alone decides",
+ "acceptance_policy": {
+  "adopt_iff": [
+   "non-inferior calibration on shared states",
+   "coverage non-decreasing",
+   "invalid-rate bounded",
+   "determinism/parity green",
+   "runtime in envelope",
+   "strategy compat intact"
+  ],
+  "null_result": "RETAIN R3 explicitly allowed"
+ },
+ "experimental_ladder": [
+  "V3.2B contract",
+  "V3.2C active-field",
+  "V3.2D science",
+  "V3.2E backtest",
+  "V3.2F precompute",
+  "V3.2G freeze"
+ ],
+ "v3_2c_handoff": "presence adapter, DNS exclusion, tyre-backfill proof, stale-signal measurement; NO stochastic changes",
+ "v3_2d_handoff": "anchor estimator, regime residuals, AR(1), traffic penalty, stint recalibration; versioned params",
+ "v3_2e_handoff": "R3-vs-MC2.0 backtest, run-count freeze, accept/null verdict; no cache before verdict",
+ "v3_2f_handoff": "post-acceptance precompute/export tooling + corpus",
+ "v3_2g_handoff": "docs, records, params, identities, tests, Docker path, schema, tag; no V3.3",
+ "security_trust": {
+  "bounds": "race_id in manifest; frame in checkpoints; 1<=n_runs<=10000; seed in [0,2^64-1]",
+  "forbidden": [
+   "filesystem paths",
+   "code-bearing payloads",
+   "unbounded counts"
+  ]
+ },
+ "scientific_identities": {
+  "v3_1_tag": "v3.1-race-dynamics -> 64c5af094bd1304e23a5c7d3d5b782b0eef11aca",
+  "v2_serving": "1116b34fc716035c2425e605b9a5cc15541a2d2335e26113f2e2eaf3fcaa59f4",
+  "phase2_content": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db",
+  "phase2_parquet": "b0f17b6662b355e9ead28fb5a442a1feb438d884d0313f3c2faf32d7ba1590b3",
+  "explainability": "bae84b614a6e9e176d5bb9c33b99dcaf4cba3f376333b0f075c828f73982939f",
+  "replay": "78a3c059888637fe83cc534d0eb7869b6d18e746724bb1ce0f03ee3b8ba96298",
+  "simulation": "r3-v1 through 2024 phase6-r3-empirical",
+  "v3_1_artifact": "9a1aac515d12c4e86ac369977392f74394cf7f6853b8e89d948bcdec28f58960 (unpromoted)",
+  "field_contract": "mc2-field-v1 -> 713d6e4df22bf09664ca3c6a2a99fea1941c57492d5afe55fb836e7bdab32691"
+ },
+ "known_limitations": [
+  "stale exclusion unproven at T (best rule 0.901 precision, season-unstable)",
+  "RC feed unsuitable as retirement evidence post-2021",
+  "legitimate headroom small (+1.4pp frozen, <=+3pp candidate)",
+  "6 winner-cases inside transient class",
+  "wet/neutralised need full new empirical programs",
+  "kernel untouched: all R3 limits persist"
+ ]
+}

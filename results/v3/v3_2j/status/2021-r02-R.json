@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "1b9f570503e387c2f129980185f2b4a4c4805c06e5da668d562ab69e67139d84",
+  "diagnostics": {
+    "n_inpit_updates": 137,
+    "n_malformed_rows": 0,
+    "n_messages": 53580,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 132,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 28
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2021-r02-R",
+  "raw_sha256": "7054f09300b7bea668f1d163be37711e552d290cb9b9ff5ca0b7a35b60fd44f9",
+  "round": 2,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2021,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2021/2021-04-18_Emilia_Romagna_Grand_Prix/2021-04-18_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "mazepin": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        3.846,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        3.846,
+        false
+      ],
+      [
+        9396.699,
+        true
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

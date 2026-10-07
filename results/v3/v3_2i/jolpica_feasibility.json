@@ -1,0 +1,6 @@
+{
+  "result_grain": "final classification only (positionText, status e.g. Finished/Collision, laps; verified live 2026-10-06 on 2024 round 24)",
+  "schema_version": "v3.2i-jolpica-v1",
+  "timestamp_or_lap_scoped": false,
+  "verdict": "EVALUATION_ONLY; REJECTED as runtime causal source (result-only labels are exactly the future-derived class V3.2G forbids)"
+}

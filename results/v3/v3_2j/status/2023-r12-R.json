@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "add03a88d9682ba3a93d41fcde6d0c93f24c0cb19872b36f0048925033ce3747",
+  "diagnostics": {
+    "n_inpit_updates": 193,
+    "n_malformed_rows": 0,
+    "n_messages": 49531,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 94,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 22
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2023-r12-R",
+  "raw_sha256": "875f132ce30905e2fe18eb8d43bd7fb47e2230fd0c859cbcd6db9731e9c24a6d",
+  "round": 12,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2023,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2023/2023-07-30_Belgian_Grand_Prix/2023-07-30_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.484,
+        false
+      ],
+      [
+        6583.52,
+        true
+      ]
+    ],
+    "sargeant": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        3.484,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        3.484,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

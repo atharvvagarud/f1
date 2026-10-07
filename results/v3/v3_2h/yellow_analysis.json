@@ -1,0 +1,8 @@
+{
+  "global_penalty_rejected": "median yellow-lap field impact small and local (V3.2F); global pace penalty forbidden by prereg",
+  "n_yellow_episodes": 270,
+  "phase12_coupling": "NOT_ESTABLISHED: offline geometry exists but no causal at-T wiring into frozen RaceState without future-info risk or subsystem coupling",
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "racestate_exposure": "NONE: SimulationEnvironment carries only the lap-level track_state token (state.py); no sector->driver field exists",
+  "schema_version": "v3.2h-yellow-analysis-v1"
+}

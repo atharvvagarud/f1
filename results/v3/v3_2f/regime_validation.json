@@ -1,0 +1,5 @@
+{
+  "rule": "Validation population/comparator/metrics apply to admitted regimes only. Deferred regimes must not be validated by running dry-green dynamics under a removed guard; that comparison is forbidden.",
+  "schema_version": "v3.2f-regime-validation-v1",
+  "status": "NOT_APPLICABLE_NO_ADMITTED_REGIME"
+}

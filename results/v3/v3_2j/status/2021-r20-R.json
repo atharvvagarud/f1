@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "868ee4513d38e9b224ffec4c502a0bcc9213640a55bcc5935dbb08244905035e",
+  "diagnostics": {
+    "n_inpit_updates": 171,
+    "n_malformed_rows": 0,
+    "n_messages": 58562,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 80,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 22
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2021-r20-R",
+  "raw_sha256": "fc08a6b7f418c13f01101d7807f860272a185160198db97cce64317fcb8de3a6",
+  "round": 20,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2021,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2021/2021-11-21_Qatar_Grand_Prix/2021-11-21_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        5.699,
+        false
+      ],
+      [
+        8343.232,
+        true
+      ]
+    ],
+    "gasly": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "mazepin": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        5.699,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        5.699,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

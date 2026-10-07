@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "72b7ddae46da05bd5635d1df9afd713341568d07ce83883d9a2b8b7ea293779c",
+  "diagnostics": {
+    "n_inpit_updates": 97,
+    "n_malformed_rows": 0,
+    "n_messages": 31179,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 94,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 22
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2019-r05-R",
+  "raw_sha256": "a76bcc2efa6d120a3390132b420ec65325c728aee3b5791dffedeee8fda5a0f0",
+  "round": 5,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2019,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2019/2019-05-12_Spanish_Grand_Prix/2019-05-12_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "kubica": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        6.01,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        6.01,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

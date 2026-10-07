@@ -1,0 +1,46 @@
+{
+ "arms": {
+  "A_R3_BASELINE": {
+   "checkpoints": 5,
+   "runs_per_sec": 2593.973163245059,
+   "seconds_total": 0.3855089999269694
+  },
+  "B_DRIVER_ANCHOR": {
+   "checkpoints": 5,
+   "runs_per_sec": 304.095855734032,
+   "seconds_total": 3.28843679104466
+  },
+  "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+   "checkpoints": 5,
+   "runs_per_sec": 251.78276606639605,
+   "seconds_total": 3.971677711000666
+  },
+  "D_CONDITIONED_VARIANCE": {
+   "checkpoints": 5,
+   "runs_per_sec": 249.5428115666667,
+   "seconds_total": 4.00732841680292
+  },
+  "E_AR1_RESIDUAL": {
+   "checkpoints": 5,
+   "runs_per_sec": 236.53760971295557,
+   "seconds_total": 4.22765750112012
+  }
+ },
+ "catalogue_estimate": {
+  "n1000": {
+   "parallel_8w_hours": 0.33835939375284296,
+   "serial_hours": 2.7068751500227437
+  },
+  "n10000": {
+   "parallel_8w_hours": 3.3835939375284294,
+   "serial_hours": 27.068751500227435
+  },
+  "n5000": {
+   "parallel_8w_hours": 1.6917969687642147,
+   "serial_hours": 13.534375750113718
+  }
+ },
+ "eligible_states": 2305,
+ "prereg_hash": "dc0ae2dbade08514ed3b7cbf5e4be965edccf40b60d7bcad86c99f245854ee16",
+ "schema_version": "v3.2d-performance-v1"
+}

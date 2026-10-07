@@ -1,0 +1,24 @@
+{
+ "schema_version": "v3.2k-raw-topic-inventory-v1",
+ "timingdata_local_files_2019_2023": 104,
+ "timingdata_local_bytes": 547033473,
+ "timingdata_sqlite_2018_2024": 45,
+ "timingappdata_sqlite_2018_2024": 45,
+ "sqlite_stream_kinds": {
+  "CarData.z.jsonStream": 80,
+  "Position.z.jsonStream": 86,
+  "SessionInfo.jsonStream": 69,
+  "DriverList.jsonStream": 69,
+  "SessionStatus.jsonStream": 69,
+  "LapCount.jsonStream": 69,
+  "TrackStatus.jsonStream": 69,
+  "TimingData.jsonStream": 69,
+  "TimingAppData.jsonStream": 69,
+  "WeatherData.jsonStream": 69,
+  "RaceControlMessages.jsonStream": 69
+ },
+ "position_z_sqlite": 86,
+ "cardata_z_sqlite": 80,
+ "bulk_download": "NOT_PERFORMED (per prereg: prove need first)",
+ "verdict": "TimingData available for all 149 races locally; TimingAppData/Position/CarData available in sqlite for 2018+2024 only"
+}

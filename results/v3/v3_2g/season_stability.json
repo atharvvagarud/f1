@@ -1,0 +1,13 @@
+{
+  "finding": "STOPPED feed emission is season-unstable (2023 silent); season-scoped semantics unjustifiable without source provenance; no season-specific hacks created",
+  "schema_version": "v3.2g-season-stability-v1",
+  "stopped_per_season": {
+    "2018": 25,
+    "2019": 15,
+    "2020": 3,
+    "2021": 7,
+    "2022": 9,
+    "2023": 0,
+    "2024": 3
+  }
+}

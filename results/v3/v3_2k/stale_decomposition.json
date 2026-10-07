@@ -1,0 +1,18 @@
+{
+ "schema_version": "v3.2k-stale-decomposition-v1",
+ "n": 3294,
+ "conservation": true,
+ "exclusive_primary": {
+  "DIRECT_RECONSTRUCTION_COMPLETE": 0,
+  "DIRECT_RECONSTRUCTION_PARTIAL": 0,
+  "LAPPED_REPRESENTATION_BLOCKED": 0,
+  "TYRE_STATE_BLOCKED": 0,
+  "PACE_HISTORY_BLOCKED": 0,
+  "PIT_STATE_BLOCKED": 0,
+  "RAW_SOURCE_STALE": 2866,
+  "RAW_SOURCE_MISSING": 0,
+  "LIFECYCLE_AMBIGUOUS": 147,
+  "MULTIPLE_OFFENDER_MIXED": 281,
+  "OTHER_EXPLAINED": 0
+ }
+}

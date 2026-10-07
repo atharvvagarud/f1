@@ -1,0 +1,10 @@
+{
+ "schema_version": "v3.2k-headroom-v1",
+ "direct_reconstruction_headroom": 0,
+ "lapped_representation_headroom": "non-blocking by construction; 4 lap-deficit offender rows need no seconds fabrication",
+ "tyre_headroom": "99 MISSING_TYRE checkpoints in 2018 (local TimingAppData) + causal TimingAppData experiment possible for a future phase",
+ "pace_history_headroom": 0,
+ "lifecycle_uncertain_headroom": "147 LIFECYCLE_AMBIGUOUS + 281 MIXED checkpoints; 5661 Stopped-evidence offender rows (see lifecycle_handoff)",
+ "genuinely_missing_source_headroom": 0,
+ "note": "headroom figures are upper-bound characterizations, not admitted recoveries"
+}

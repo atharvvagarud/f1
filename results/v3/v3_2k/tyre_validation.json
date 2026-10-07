@@ -1,0 +1,15 @@
+{
+ "schema_version": "v3.2k-tyre-validation-v1",
+ "timingappdata_local": "2018+2024 sqlite only; 2019-2023 would require bulk download (not performed per prereg)",
+ "stint_keys_observed": {
+  "LapFlags": 118,
+  "Compound": 40,
+  "New": 40,
+  "TyresNotChanged": 40,
+  "TotalLaps": 932,
+  "StartLaps": 40,
+  "LapTime": 375,
+  "LapNumber": 375
+ },
+ "verdict": "tyre compound/age NOT available in TimingData; causal TimingAppData exists only for 2018/2024 locally; direct reconstruction without tyre state is PARTIAL at best"
+}

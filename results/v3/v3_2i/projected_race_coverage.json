@@ -1,0 +1,211 @@
+{
+  "note": "per-race STALE relief in cached races only; 2019-2023 races project zero (no local stream)",
+  "races": [
+    {
+      "race_id": "2018-r01-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 61
+    },
+    {
+      "race_id": "2018-r02-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 60
+    },
+    {
+      "race_id": "2018-r03-R",
+      "stale_resolved": 2,
+      "stale_unresolved": 0
+    },
+    {
+      "race_id": "2018-r04-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 56
+    },
+    {
+      "race_id": "2018-r05-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 71
+    },
+    {
+      "race_id": "2018-r06-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 27
+    },
+    {
+      "race_id": "2018-r07-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 68
+    },
+    {
+      "race_id": "2018-r08-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 55
+    },
+    {
+      "race_id": "2018-r09-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 66
+    },
+    {
+      "race_id": "2018-r10-R",
+      "stale_resolved": 18,
+      "stale_unresolved": 36
+    },
+    {
+      "race_id": "2018-r11-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 47
+    },
+    {
+      "race_id": "2018-r12-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 71
+    },
+    {
+      "race_id": "2018-r13-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 43
+    },
+    {
+      "race_id": "2018-r14-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 53
+    },
+    {
+      "race_id": "2018-r15-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 59
+    },
+    {
+      "race_id": "2018-r16-R",
+      "stale_resolved": 46,
+      "stale_unresolved": 0
+    },
+    {
+      "race_id": "2018-r17-R",
+      "stale_resolved": 35,
+      "stale_unresolved": 11
+    },
+    {
+      "race_id": "2018-r18-R",
+      "stale_resolved": 13,
+      "stale_unresolved": 45
+    },
+    {
+      "race_id": "2018-r19-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 73
+    },
+    {
+      "race_id": "2018-r20-R",
+      "stale_resolved": 49,
+      "stale_unresolved": 0
+    },
+    {
+      "race_id": "2018-r21-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 55
+    },
+    {
+      "race_id": "2024-r02-R",
+      "stale_resolved": 4,
+      "stale_unresolved": 43
+    },
+    {
+      "race_id": "2024-r03-R",
+      "stale_resolved": 16,
+      "stale_unresolved": 41
+    },
+    {
+      "race_id": "2024-r04-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 56
+    },
+    {
+      "race_id": "2024-r05-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 35
+    },
+    {
+      "race_id": "2024-r06-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 28
+    },
+    {
+      "race_id": "2024-r07-R",
+      "stale_resolved": 7,
+      "stale_unresolved": 0
+    },
+    {
+      "race_id": "2024-r08-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 80
+    },
+    {
+      "race_id": "2024-r09-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 47
+    },
+    {
+      "race_id": "2024-r11-R",
+      "stale_resolved": 4,
+      "stale_unresolved": 0
+    },
+    {
+      "race_id": "2024-r12-R",
+      "stale_resolved": 48,
+      "stale_unresolved": 0
+    },
+    {
+      "race_id": "2024-r13-R",
+      "stale_resolved": 36,
+      "stale_unresolved": 0
+    },
+    {
+      "race_id": "2024-r14-R",
+      "stale_resolved": 35,
+      "stale_unresolved": 0
+    },
+    {
+      "race_id": "2024-r16-R",
+      "stale_resolved": 43,
+      "stale_unresolved": 0
+    },
+    {
+      "race_id": "2024-r17-R",
+      "stale_resolved": 38,
+      "stale_unresolved": 0
+    },
+    {
+      "race_id": "2024-r18-R",
+      "stale_resolved": 43,
+      "stale_unresolved": 0
+    },
+    {
+      "race_id": "2024-r19-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 54
+    },
+    {
+      "race_id": "2024-r20-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 69
+    },
+    {
+      "race_id": "2024-r22-R",
+      "stale_resolved": 32,
+      "stale_unresolved": 0
+    },
+    {
+      "race_id": "2024-r23-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 62
+    },
+    {
+      "race_id": "2024-r24-R",
+      "stale_resolved": 0,
+      "stale_unresolved": 63
+    }
+  ],
+  "schema_version": "v3.2i-projected-race-v1"
+}

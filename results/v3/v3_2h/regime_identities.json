@@ -1,0 +1,27 @@
+{
+  "accepted_mc2": {
+    "field": "mc2-field-v1",
+    "kernel": "mc2-kernel-v1",
+    "presence": "v3.2c-presence-v1",
+    "research": "mc2-r1-research",
+    "rng": "mc2-rng-v1"
+  },
+  "parameter_identities": {
+    "sc-compression-v1": "NOT_BUILT (rejected)",
+    "sc-duration-v1": "a6550d096dafa35ff60e79c082854068b04df88bd79a6e60deeaab1fd21adbae",
+    "sc-restart-v1": "NOT_BUILT (rejected)",
+    "vsc-duration-survival-v1": "6543440f628cd93abced3d0680358fae6c6e2027244029aae5ee8914941dc7d4",
+    "vsc-pace-v1": "folded into vsc_parameters.json",
+    "weather-transition-v1": "counts-only (no model)",
+    "wet-pace-v1": "f8fe1b1e4229568a68549e26fd83d4f2173f8cec9d0a33649a5ac1327cc3f475"
+  },
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "regime_support": "v3.2f-regime-support-v1 (unchanged; all non-green regimes deferred/refused)",
+  "rng_domains": [
+    "mc2-vsc-duration",
+    "mc2-sc-duration",
+    "mc2-weather-transition"
+  ],
+  "rng_status": "RESERVED_UNCONSUMED (no admitted stochastic regime; dry-green streams unperturbed)",
+  "schema_version": "v3.2h-regime-identities-v1"
+}

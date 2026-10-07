@@ -1,0 +1,164 @@
+{
+  "folds": {
+    "H1": {
+      "driver_offset_sd_s": 6.292981313761166,
+      "duration_fit": {
+        "dist": {
+          "mean": 1.3076923076923077,
+          "n": 26,
+          "p10": 1.0,
+          "p50": 1.0,
+          "p90": 2.0,
+          "sd": 0.5384615384615384
+        },
+        "median_predictor": 1.0,
+        "n": 26,
+        "p_continue_given_age": {
+          "1": {
+            "n_reached": 26,
+            "p_continue": 0.2692307692307692,
+            "residual_median": 0.0
+          },
+          "2": {
+            "n_reached": 7,
+            "p_continue": 0.14285714285714285,
+            "residual_median": 0.0
+          },
+          "3": {
+            "n_reached": 1,
+            "p_continue": 0.0,
+            "residual_median": 0.0
+          }
+        }
+      },
+      "duration_validation": {
+        "calibration_pairs": 31,
+        "calibration_slope": 2.307971014492753,
+        "mae_laps": 0.2916666666666667,
+        "median_rule": 1.0,
+        "n_eval": 24
+      },
+      "during_pace_mae_s": 10.530363768115942,
+      "during_pace_n": 345,
+      "eval_episodes": 24,
+      "n_drivers": 30,
+      "pace_offset_s": 20.698500000000003,
+      "pace_train": {
+        "mean": 18.548016304347826,
+        "n": 460,
+        "p10": -0.9613999999999941,
+        "p50": 20.698500000000003,
+        "p90": 33.728699999999996,
+        "sd": 12.68363470708954
+      },
+      "post_exit_pace_mae_s": 5.851991935483871,
+      "post_exit_pace_n": 744,
+      "spread_ratio_after_before": {
+        "mean": 1.9376681243222036,
+        "n": 22,
+        "p10": 1.1009362150770003,
+        "p50": 1.313820245650609,
+        "p90": 1.6468742687891937,
+        "sd": 2.725796053624518
+      },
+      "spread_ratio_during_before": {
+        "mean": 1.2106077668017592,
+        "n": 22,
+        "p10": 1.0501816657968568,
+        "p50": 1.160725892109121,
+        "p90": 1.4071315185692759,
+        "sd": 0.2214615558711988
+      },
+      "spread_ratio_nopit_during_before": {
+        "mean": 1.1949172994868293,
+        "n": 4,
+        "p10": 1.0824550331560405,
+        "p50": 1.1737335053865006,
+        "p90": 1.3243266010978814,
+        "sd": 0.12087342032818164
+      },
+      "train_episodes": 26
+    },
+    "H2": {
+      "driver_offset_sd_s": 5.697981146038678,
+      "duration_fit": {
+        "dist": {
+          "mean": 1.3,
+          "n": 50,
+          "p10": 1.0,
+          "p50": 1.0,
+          "p90": 2.0,
+          "sd": 0.5
+        },
+        "median_predictor": 1.0,
+        "n": 50,
+        "p_continue_given_age": {
+          "1": {
+            "n_reached": 50,
+            "p_continue": 0.28,
+            "residual_median": 0.0
+          },
+          "2": {
+            "n_reached": 14,
+            "p_continue": 0.07142857142857142,
+            "residual_median": 0.0
+          },
+          "3": {
+            "n_reached": 1,
+            "p_continue": 0.0,
+            "residual_median": 0.0
+          }
+        }
+      },
+      "duration_validation": {
+        "calibration_pairs": 9,
+        "calibration_slope": null,
+        "mae_laps": 0.5,
+        "median_rule": 1.0,
+        "n_eval": 6
+      },
+      "during_pace_mae_s": 11.473843137254901,
+      "during_pace_n": 102,
+      "eval_episodes": 6,
+      "n_drivers": 35,
+      "pace_offset_s": 19.399,
+      "pace_train": {
+        "mean": 17.948790643274855,
+        "n": 855,
+        "p10": -0.3890000000000041,
+        "p50": 19.399,
+        "p90": 33.0512,
+        "sd": 12.431386068811566
+      },
+      "post_exit_pace_mae_s": 3.159891089108912,
+      "post_exit_pace_n": 101,
+      "spread_ratio_after_before": {
+        "mean": 2.126069983539729,
+        "n": 3,
+        "p10": 1.1531594803103409,
+        "p50": 1.3011854098558389,
+        "p90": 3.4289343162426733,
+        "sd": 1.299597840326681
+      },
+      "spread_ratio_during_before": {
+        "mean": 1.1358851614325522,
+        "n": 5,
+        "p10": 1.0340188071024816,
+        "p50": 1.08796969125463,
+        "p90": 1.269143302609767,
+        "sd": 0.10750104152168793
+      },
+      "spread_ratio_nopit_during_before": {
+        "mean": 1.0232186787135984,
+        "n": 1,
+        "p10": 1.0232186787135984,
+        "p50": 1.0232186787135984,
+        "p90": 1.0232186787135984,
+        "sd": 0.0
+      },
+      "train_episodes": 50
+    }
+  },
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "schema_version": "v3.2h-vsc-parameters-v1"
+}

@@ -1,0 +1,6 @@
+{
+  "decision": "REJECT_YELLOW",
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "reason": "exact at-T affected-driver exposure cannot be established from frozen RaceState; no global shortcut taken",
+  "schema_version": "v3.2h-yellow-decision-v1"
+}

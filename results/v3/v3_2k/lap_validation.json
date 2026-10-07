@@ -1,0 +1,11 @@
+{
+ "schema_version": "v3.2k-lap-validation-v1",
+ "n": 8394,
+ "diff_dist": {
+  "-1": 432,
+  "0": 7962
+ },
+ "exact_agreement": 0.9485,
+ "gate_threshold": 0.99,
+ "gate": "FAIL"
+}

@@ -1,0 +1,37 @@
+{
+  "mandatory": [
+    {
+      "driver": "vettel",
+      "first_retired_s": null,
+      "race_id": "2018-r02-R",
+      "verdict": "PASS (never retired)"
+    },
+    {
+      "driver": "bottas",
+      "first_retired_s": null,
+      "race_id": "2020-r01-R",
+      "verdict": "PASS (never retired)"
+    },
+    {
+      "driver": "perez",
+      "first_retired_s": null,
+      "race_id": "2021-r06-R",
+      "verdict": "PASS (never retired)"
+    },
+    {
+      "driver": "verstappen",
+      "first_retired_s": null,
+      "race_id": "2022-r18-R",
+      "verdict": "PASS (never retired)"
+    }
+  ],
+  "schema_version": "v3.2j-winner-firewall-v1",
+  "verdict": "PASS",
+  "winner_retired_at_checkpoint_hits": [],
+  "winners_with_any_true_event": [
+    [
+      "2020-r09-R",
+      "hamilton"
+    ]
+  ]
+}

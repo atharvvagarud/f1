@@ -1,0 +1,38 @@
+{
+  "contracts": {
+    "RED": {
+      "detection_at_T": "frozen track_state token",
+      "fallback": "explicit refusal UNSUPPORTED_TRACK_STATE",
+      "initial_state": "NOT IN SCOPE (suspension semantics)",
+      "mechanism": "none"
+    },
+    "SAFETY_CAR": {
+      "detection_at_T": "frozen track_state token",
+      "fallback": "explicit refusal UNSUPPORTED_TRACK_STATE",
+      "initial_state": "NOT CONSTRUCTIBLE honestly (gaps compressed, restart pending)",
+      "mechanism": "none in scope (needs bunching + restart + VSC-aware pits)"
+    },
+    "VSC": {
+      "detection_at_T": "frozen track_state token",
+      "fallback": "explicit refusal UNSUPPORTED_TRACK_STATE",
+      "initial_state": "constructible only at VSC onset with green history",
+      "mechanism": "boundary A (stochastic duration) sketched; duration/restart/anchor-conditioning unestimated"
+    },
+    "WET": {
+      "detection_at_T": "rainfall flag + compound (factual)",
+      "fallback": "explicit refusal WET_CONDITIONS",
+      "initial_state": "constructible (compounds factual)",
+      "mechanism": "wet pace partially estimable (INTER) but weather-evolution + compound-transition mechanisms missing"
+    },
+    "YELLOW": {
+      "detection_at_T": "frozen track_state token (no sector)",
+      "fallback": "explicit refusal UNSUPPORTED_TRACK_STATE",
+      "initial_state": "NOT CONSTRUCTIBLE (local exposure unknown)",
+      "mechanism": "none admitted (global penalty rejected)"
+    }
+  },
+  "parameter_identity_rule": "Every family: schema version, regime, training seasons, conditioning, minimum N, fallback hierarchy, estimator, content identity. No timestamps/usernames/paths. Pattern exists (mc2-params-v1 through-2019/2021/2023).",
+  "parameter_temporal_policy": "Evaluation season Y -> training seasons strictly before Y (through-season artifacts; no 2025). Fold pattern inherited from V3.2D (D1/D2/D3).",
+  "rng_domain_rule": "Any future stochastic regime evolution gets an explicit deterministic domain (mc2-vsc-duration, mc2-sc-duration, mc2-weather-transition reserved, unconsumed). Same-seed equality, chunk invariance, parallel determinism, Phase-7 CRN compatibility required. No unrelated residual RNG reuse.",
+  "schema_version": "v3.2f-regime-contracts-v1"
+}

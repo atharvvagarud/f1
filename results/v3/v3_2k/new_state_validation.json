@@ -1,0 +1,5 @@
+{
+ "schema_version": "v3.2k-new-state-validation-v1",
+ "verdict": "NOT_APPLICABLE",
+ "reason": "zero newly recovered states (decision REJECT); no simulations run on target population per prereg (500-run protocol triggers only on admission)"
+}

@@ -1,0 +1,141 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "aa76f23e743107f993da5c9719c8a560aa0d8ad85f47e993851f8e64b3a338a7",
+  "diagnostics": {
+    "n_inpit_updates": 156,
+    "n_malformed_rows": 0,
+    "n_messages": 58057,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 69,
+    "n_retired_updates": 19,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 19,
+  "n_transitions": 19,
+  "race_id": "2023-r15-R",
+  "raw_sha256": "981c0fedb1c93bd1cb686d4f67e666161fc319aabd90a1e972d6a0b61ef1869d",
+  "round": 15,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2023,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2023/2023-09-17_Singapore_Grand_Prix/2023-09-17_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "lawson": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "sargeant": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        3.627,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        3.627,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

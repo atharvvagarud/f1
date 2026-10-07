@@ -1,0 +1,145 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "b60c69e17c3261c0eb5203cbe440ae7ec9520f31ed28c627d147710e656867bb",
+  "diagnostics": {
+    "n_inpit_updates": 193,
+    "n_malformed_rows": 0,
+    "n_messages": 49989,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 91,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 22
+  },
+  "n_drivers_with_updates": 19,
+  "n_transitions": 20,
+  "race_id": "2024-r03-R",
+  "raw_sha256": "26cb3b7bb083b37f8e8222e142e66ac5083008b5748602c2278e4dde0e2d3666",
+  "round": 3,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2024,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2024/2024-03-24_Australian_Grand_Prix/2024-03-24_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        4.2,
+        false
+      ],
+      [
+        3989.18,
+        true
+      ]
+    ],
+    "norris": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        4.2,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        4.2,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

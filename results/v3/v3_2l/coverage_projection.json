@@ -1,0 +1,20 @@
+{
+ "schema_version": "v3.2l-coverage-projection-v1",
+ "current": {
+  "eligible": 3678,
+  "total": 9644
+ },
+ "lifecycle_fully_addressable": 1874,
+ "j_plus_lifecycle": 1341,
+ "partially_addressable_unrecoverable": 37,
+ "projected_full_only": {
+  "eligible": 5552,
+  "total": 9644
+ },
+ "projected_full_plus_jl": {
+  "eligible": 6893,
+  "total": 9644
+ },
+ "other_blocker_argument": "STALE-primary checkpoints pass every earlier gate by construction (adapter, terminal, pace params, track, weather, status, tyre, compound run BEFORE the contemporaneous check; temporal never fails under RETROSPECTIVE_PRODUCT). Projection assumes admitted J+L relief.",
+ "verdict": "material opportunity (up to +3215, 71.5%) IF the mechanism were admitted; it is not (see decision)"
+}

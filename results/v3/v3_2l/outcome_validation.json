@@ -1,0 +1,5 @@
+{
+ "schema_version": "v3.2l-outcome-validation-v1",
+ "verdict": "NOT_RUN",
+ "reason": "no B-arm to compare; model-level validation in terminal_model/return_time artifacts; V3.2E-style backtest requires admitted integration"
+}

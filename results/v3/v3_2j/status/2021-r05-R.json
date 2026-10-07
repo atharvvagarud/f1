@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "78855686b1c88d9dabf94ffecc4b1a232329cbdeef5a272bb410baa1ceb32556",
+  "diagnostics": {
+    "n_inpit_updates": 61,
+    "n_malformed_rows": 0,
+    "n_messages": 66425,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 58,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 22
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2021-r05-R",
+  "raw_sha256": "138f8670d81f18b2a9532253fd40ffaa459e5f75474585471f840a02750e4f7e",
+  "round": 5,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2021,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2021/2021-05-23_Monaco_Grand_Prix/2021-05-23_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        4.827,
+        false
+      ],
+      [
+        4393.659,
+        true
+      ]
+    ],
+    "gasly": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        4.827,
+        false
+      ],
+      [
+        2098.715,
+        true
+      ]
+    ],
+    "max_verstappen": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "mazepin": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        4.827,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        4.827,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

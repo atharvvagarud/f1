@@ -80,8 +80,44 @@ CORPUS_MANIFEST = Path(__file__).resolve().parent / "ci_corpus_dependent.txt"
 # no removals = 3485; V3.1D adds 11 holdout-governance tests (source-safe
 # in tests/test_v3_1d_holdout.py; preregistration, firewall, acceptance
 # policy, verdict serialization, serving non-overwrite) with no removals
-# = 3496.
-EXPECTED_COLLECTED = 3496
+# = 3496; V3.2A adds 6 audit tests (5 source-safe, 1 corpus-dependent
+# pinned in ci_corpus_dependent.txt) with no removals = 3502; V3.2B adds
+# 12 contract tests (9 source-safe, 3 corpus-dependent pinned in
+# ci_corpus_dependent.txt) with no removals = 3514; V3.2C adds 102 adapter
+# and parity tests (5 source-safe presence tests + 77 corpus-dependent
+# parity/API nodes + 20 corpus-dependent presence nodes, pinned in
+# ci_corpus_dependent.txt) with no removals = 3616; V3.2D adds 18 MC2
+# dynamics tests (16 source-safe in tests/test_v3_2d_mc2_dynamics.py plus
+# 2 corpus-dependent pinned in ci_corpus_dependent.txt) with no removals
+# = 3634; V3.2E adds 15 backtest tests (10 source-safe in
+# tests/test_v3_2e_backtest.py plus 5 corpus-dependent pinned in
+# ci_corpus_dependent.txt) with no removals = 3649; V3.2F adds 23
+# regime-support tests (9 source-safe in
+# tests/test_v3_2f_regime_decisions.py plus 14 corpus-dependent in
+# tests/test_v3_2f_regime_corpus.py, pinned in ci_corpus_dependent.txt)
+# with no removals = 3672; V3.2G adds 19 driver-status tests (9
+# source-safe in tests/test_v3_2g_driver_status.py plus 10
+# corpus-dependent in tests/test_v3_2g_status_corpus.py, pinned in
+# ci_corpus_dependent.txt) with no removals = 3691; V3.2H adds 15
+# regime-model tests (7 source-safe in
+# tests/test_v3_2h_regime_models.py plus 8 corpus-dependent in
+# tests/test_v3_2h_regime_corpus.py, pinned in ci_corpus_dependent.txt)
+# with no removals = 3706; V3.2I adds 13 status-source tests (6
+# source-safe in tests/test_v3_2i_status_models.py plus 7
+# corpus-dependent in tests/test_v3_2i_status_corpus.py, pinned in
+# ci_corpus_dependent.txt) with no removals = 3719; V3.2J adds 29
+# driver-status tests (18 source-safe in
+# tests/test_v3_2j_status_models.py plus 11 corpus-dependent in
+# tests/test_v3_2j_status_corpus.py, pinned in ci_corpus_dependent.txt)
+# with no removals = 3748; V3.2K adds 12 reconstruction-freeze tests
+# (source-safe in tests/test_v3_2k_reconstruction.py) with no removals
+# = 3760; V3.2L adds 27 lifecycle-freeze tests (source-safe in
+# tests/test_v3_2l_lifecycle.py) with no removals = 3787; V3.2M adds 20
+# pit-lifecycle tests plus V3.2N adds 24 freeze-validation tests (all
+# corpus-dependent in tests/test_v3_2m_pit_lifecycle.py and
+# tests/test_v3_2n_final_validation.py, pinned in ci_corpus_dependent.txt)
+# with no removals = 3831.
+EXPECTED_COLLECTED = 3831
 
 # (pytest node id, reason it cannot pass at the frozen baseline)
 # P11-1: the 12 pre-existing stale historical pins were genuinely corrected

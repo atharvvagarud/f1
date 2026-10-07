@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "d5a1a549e460ad8b6f6d052ccb1ed24d099bd49de8211c734683f8ad9b48e6ea",
+  "diagnostics": {
+    "n_inpit_updates": 169,
+    "n_malformed_rows": 0,
+    "n_messages": 65240,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 66,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 22
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2022-r20-R",
+  "raw_sha256": "3fd553ca84f07768ccdb945f84ebf4275ef82f2002a6c0f5b02240edba180534",
+  "round": 20,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2022,
+  "served_by": "fastf1_mirror",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2022/2022-10-30_Mexico_City_Grand_Prix/2022-10-30_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        3.804,
+        false
+      ],
+      [
+        8131.287,
+        true
+      ]
+    ],
+    "vettel": [
+      [
+        3.804,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        3.804,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

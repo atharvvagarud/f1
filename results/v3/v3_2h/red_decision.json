@@ -1,0 +1,8 @@
+{
+  "checkpoints": 22,
+  "decision": "REJECT_RED",
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "reason": "default REJECT_RED held: 22 checkpoints, 0 usable lap rows, suspension semantics qualitatively different; nothing discovered overturns V3.2F",
+  "schema_version": "v3.2h-red-decision-v1",
+  "usable_laps": 0
+}

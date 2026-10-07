@@ -1,0 +1,1 @@
+{"schema_version": "v3.2m-rng-contract-v1", "preregistration_sha256": "3161cf5275e8a2cfe3ef71032315c0084f3a6ca09fd297940576c1a74123bea6", "status": "RESERVED_ONLY_NOT_IMPLEMENTED", "domain": "mc2-initial-pit-delay", "rule": "project RNG conventions; existing MC2-E streams untouched; old-state sims consume zero new draws"}

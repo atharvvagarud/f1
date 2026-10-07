@@ -1,0 +1,401 @@
+{
+  "clock_note": "feed session clock and D9 state_time_s share the live-timing session origin; gaps cluster within one lap duration after the last timed lap (negative only via clock rounding)",
+  "gap_final_retired_minus_last_lap_s": {
+    "max": 2574.0670000000005,
+    "min": 121.35399999999981,
+    "n": 55,
+    "negative": 0,
+    "p50": 235.7479999999996,
+    "p90": 291.2330000000002
+  },
+  "n_timelines": 55,
+  "rule": "T1<T_ret: NOT retired; T2>=T_ret: retired; final result never consulted (labels joined only for evaluation)",
+  "schema_version": "v3.2i-causal-timeline-v1",
+  "timelines": [
+    {
+      "driver": "ericsson",
+      "final_retired_s": 1133.898,
+      "gap_s": 230.63599999999997,
+      "last_lap_start_s": 903.262,
+      "race_id": "2018-r01-R"
+    },
+    {
+      "driver": "gasly",
+      "final_retired_s": 1878.787,
+      "gap_s": 239.17000000000007,
+      "last_lap_start_s": 1639.617,
+      "race_id": "2018-r01-R"
+    },
+    {
+      "driver": "raikkonen",
+      "final_retired_s": 4014.718,
+      "gap_s": 317.933,
+      "last_lap_start_s": 3696.785,
+      "race_id": "2018-r02-R"
+    },
+    {
+      "driver": "brendon_hartley",
+      "final_retired_s": 5907.539,
+      "gap_s": 231.8189999999995,
+      "last_lap_start_s": 5675.72,
+      "race_id": "2018-r03-R"
+    },
+    {
+      "driver": "raikkonen",
+      "final_retired_s": 2955.737,
+      "gap_s": 251.9079999999999,
+      "last_lap_start_s": 2703.829,
+      "race_id": "2018-r05-R"
+    },
+    {
+      "driver": "vandoorne",
+      "final_retired_s": 4969.195,
+      "gap_s": 369.33100000000013,
+      "last_lap_start_s": 4599.864,
+      "race_id": "2018-r05-R"
+    },
+    {
+      "driver": "brendon_hartley",
+      "final_retired_s": 6201.307,
+      "gap_s": 219.21199999999953,
+      "last_lap_start_s": 5982.095,
+      "race_id": "2018-r06-R"
+    },
+    {
+      "driver": "alonso",
+      "final_retired_s": 3924.792,
+      "gap_s": 222.9739999999997,
+      "last_lap_start_s": 3701.818,
+      "race_id": "2018-r07-R"
+    },
+    {
+      "driver": "alonso",
+      "final_retired_s": 5957.889,
+      "gap_s": 247.1900000000005,
+      "last_lap_start_s": 5710.699,
+      "race_id": "2018-r08-R"
+    },
+    {
+      "driver": "perez",
+      "final_retired_s": 3590.822,
+      "gap_s": 221.0050000000001,
+      "last_lap_start_s": 3369.817,
+      "race_id": "2018-r08-R"
+    },
+    {
+      "driver": "vandoorne",
+      "final_retired_s": 5256.085,
+      "gap_s": 208.22299999999996,
+      "last_lap_start_s": 5047.862,
+      "race_id": "2018-r09-R"
+    },
+    {
+      "driver": "brendon_hartley",
+      "final_retired_s": 733.327,
+      "gap_s": 295.783,
+      "last_lap_start_s": 437.544,
+      "race_id": "2018-r10-R"
+    },
+    {
+      "driver": "alonso",
+      "final_retired_s": 6028.952,
+      "gap_s": 181.90599999999995,
+      "last_lap_start_s": 5847.046,
+      "race_id": "2018-r11-R"
+    },
+    {
+      "driver": "stroll",
+      "final_retired_s": 4996.261,
+      "gap_s": 238.42500000000018,
+      "last_lap_start_s": 4757.836,
+      "race_id": "2018-r11-R"
+    },
+    {
+      "driver": "raikkonen",
+      "final_retired_s": 2427.942,
+      "gap_s": 273.29800000000023,
+      "last_lap_start_s": 2154.644,
+      "race_id": "2018-r13-R"
+    },
+    {
+      "driver": "ricciardo",
+      "final_retired_s": 4812.864,
+      "gap_s": 237.78699999999935,
+      "last_lap_start_s": 4575.077,
+      "race_id": "2018-r13-R"
+    },
+    {
+      "driver": "alonso",
+      "final_retired_s": 2157.457,
+      "gap_s": 229.6869999999999,
+      "last_lap_start_s": 1927.77,
+      "race_id": "2018-r14-R"
+    },
+    {
+      "driver": "brendon_hartley",
+      "final_retired_s": 1736.311,
+      "gap_s": 293.11400000000003,
+      "last_lap_start_s": 1443.197,
+      "race_id": "2018-r16-R"
+    },
+    {
+      "driver": "gasly",
+      "final_retired_s": 1696.308,
+      "gap_s": 256.8219999999999,
+      "last_lap_start_s": 1439.486,
+      "race_id": "2018-r16-R"
+    },
+    {
+      "driver": "hulkenberg",
+      "final_retired_s": 5062.68,
+      "gap_s": 231.38600000000042,
+      "last_lap_start_s": 4831.294,
+      "race_id": "2018-r17-R"
+    },
+    {
+      "driver": "kevin_magnussen",
+      "final_retired_s": 2247.858,
+      "gap_s": 231.75900000000024,
+      "last_lap_start_s": 2016.099,
+      "race_id": "2018-r17-R"
+    },
+    {
+      "driver": "alonso",
+      "final_retired_s": 2275.209,
+      "gap_s": 257.20299999999975,
+      "last_lap_start_s": 2018.006,
+      "race_id": "2018-r18-R"
+    },
+    {
+      "driver": "grosjean",
+      "final_retired_s": 2420.204,
+      "gap_s": 272.1470000000004,
+      "last_lap_start_s": 2148.057,
+      "race_id": "2018-r18-R"
+    },
+    {
+      "driver": "leclerc",
+      "final_retired_s": 5435.769,
+      "gap_s": 234.51200000000063,
+      "last_lap_start_s": 5201.257,
+      "race_id": "2018-r18-R"
+    },
+    {
+      "driver": "perez",
+      "final_retired_s": 5432.067,
+      "gap_s": 226.9390000000003,
+      "last_lap_start_s": 5205.128,
+      "race_id": "2018-r19-R"
+    },
+    {
+      "driver": "ericsson",
+      "final_retired_s": 3710.414,
+      "gap_s": 226.10000000000036,
+      "last_lap_start_s": 3484.314,
+      "race_id": "2018-r20-R"
+    },
+    {
+      "driver": "hulkenberg",
+      "final_retired_s": 4560.455,
+      "gap_s": 209.04699999999957,
+      "last_lap_start_s": 4351.408,
+      "race_id": "2018-r20-R"
+    },
+    {
+      "driver": "ocon",
+      "final_retired_s": 7242.041,
+      "gap_s": 281.634,
+      "last_lap_start_s": 6960.407,
+      "race_id": "2018-r21-R"
+    },
+    {
+      "driver": "raikkonen",
+      "final_retired_s": 3152.621,
+      "gap_s": 291.2330000000002,
+      "last_lap_start_s": 2861.388,
+      "race_id": "2018-r21-R"
+    },
+    {
+      "driver": "gasly",
+      "final_retired_s": 3825.91,
+      "gap_s": 242.07400000000007,
+      "last_lap_start_s": 3583.836,
+      "race_id": "2024-r02-R"
+    },
+    {
+      "driver": "max_verstappen",
+      "final_retired_s": 3989.18,
+      "gap_s": 225.02199999999993,
+      "last_lap_start_s": 3764.158,
+      "race_id": "2024-r03-R"
+    },
+    {
+      "driver": "zhou",
+      "final_retired_s": 6854.585,
+      "gap_s": 253.09500000000025,
+      "last_lap_start_s": 6601.49,
+      "race_id": "2024-r04-R"
+    },
+    {
+      "driver": "ricciardo",
+      "final_retired_s": 7240.319,
+      "gap_s": 240.23100000000068,
+      "last_lap_start_s": 7000.088,
+      "race_id": "2024-r05-R"
+    },
+    {
+      "driver": "albon",
+      "final_retired_s": 7847.822,
+      "gap_s": 213.09500000000025,
+      "last_lap_start_s": 7634.727,
+      "race_id": "2024-r07-R"
+    },
+    {
+      "driver": "ocon",
+      "final_retired_s": 5879.747,
+      "gap_s": 2574.0670000000005,
+      "last_lap_start_s": 3305.68,
+      "race_id": "2024-r08-R"
+    },
+    {
+      "driver": "leclerc",
+      "final_retired_s": 4294.992,
+      "gap_s": 205.81100000000015,
+      "last_lap_start_s": 4089.181,
+      "race_id": "2024-r09-R"
+    },
+    {
+      "driver": "perez",
+      "final_retired_s": 5185.088,
+      "gap_s": 228.44700000000012,
+      "last_lap_start_s": 4956.641,
+      "race_id": "2024-r09-R"
+    },
+    {
+      "driver": "sainz",
+      "final_retired_s": 5270.093,
+      "gap_s": 235.7479999999996,
+      "last_lap_start_s": 5034.345,
+      "race_id": "2024-r09-R"
+    },
+    {
+      "driver": "norris",
+      "final_retired_s": 8042.94,
+      "gap_s": 240.85599999999977,
+      "last_lap_start_s": 7802.084,
+      "race_id": "2024-r11-R"
+    },
+    {
+      "driver": "gasly",
+      "final_retired_s": 3616.866,
+      "gap_s": 121.35399999999981,
+      "last_lap_start_s": 3495.512,
+      "race_id": "2024-r12-R"
+    },
+    {
+      "driver": "russell",
+      "final_retired_s": 6791.745,
+      "gap_s": 230.54500000000007,
+      "last_lap_start_s": 6561.2,
+      "race_id": "2024-r12-R"
+    },
+    {
+      "driver": "gasly",
+      "final_retired_s": 6285.557,
+      "gap_s": 208.2510000000002,
+      "last_lap_start_s": 6077.306,
+      "race_id": "2024-r13-R"
+    },
+    {
+      "driver": "zhou",
+      "final_retired_s": 4097.449,
+      "gap_s": 255.64799999999968,
+      "last_lap_start_s": 3841.801,
+      "race_id": "2024-r14-R"
+    },
+    {
+      "driver": "tsunoda",
+      "final_retired_s": 4111.55,
+      "gap_s": 224.44800000000032,
+      "last_lap_start_s": 3887.102,
+      "race_id": "2024-r16-R"
+    },
+    {
+      "driver": "stroll",
+      "final_retired_s": 8500.123,
+      "gap_s": 245.8680000000004,
+      "last_lap_start_s": 8254.255,
+      "race_id": "2024-r17-R"
+    },
+    {
+      "driver": "tsunoda",
+      "final_retired_s": 5120.096,
+      "gap_s": 248.0049999999992,
+      "last_lap_start_s": 4872.091,
+      "race_id": "2024-r17-R"
+    },
+    {
+      "driver": "albon",
+      "final_retired_s": 5104.185,
+      "gap_s": 255.50900000000001,
+      "last_lap_start_s": 4848.676,
+      "race_id": "2024-r18-R"
+    },
+    {
+      "driver": "kevin_magnussen",
+      "final_retired_s": 9354.209,
+      "gap_s": 229.35300000000097,
+      "last_lap_start_s": 9124.856,
+      "race_id": "2024-r18-R"
+    },
+    {
+      "driver": "alonso",
+      "final_retired_s": 5012.899,
+      "gap_s": 213.3100000000004,
+      "last_lap_start_s": 4799.589,
+      "race_id": "2024-r20-R"
+    },
+    {
+      "driver": "hulkenberg",
+      "final_retired_s": 8760.14,
+      "gap_s": 1661.7959999999994,
+      "last_lap_start_s": 7098.344,
+      "race_id": "2024-r21-R"
+    },
+    {
+      "driver": "albon",
+      "final_retired_s": 6040.38,
+      "gap_s": 230.6859999999997,
+      "last_lap_start_s": 5809.694,
+      "race_id": "2024-r22-R"
+    },
+    {
+      "driver": "gasly",
+      "final_retired_s": 5045.32,
+      "gap_s": 232.79099999999926,
+      "last_lap_start_s": 4812.529,
+      "race_id": "2024-r22-R"
+    },
+    {
+      "driver": "stroll",
+      "final_retired_s": 4382.047,
+      "gap_s": 261.1879999999992,
+      "last_lap_start_s": 4120.859,
+      "race_id": "2024-r23-R"
+    },
+    {
+      "driver": "bottas",
+      "final_retired_s": 6377.973,
+      "gap_s": 266.15999999999985,
+      "last_lap_start_s": 6111.813,
+      "race_id": "2024-r24-R"
+    },
+    {
+      "driver": "colapinto",
+      "final_retired_s": 6002.878,
+      "gap_s": 224.875,
+      "last_lap_start_s": 5778.003,
+      "race_id": "2024-r24-R"
+    }
+  ]
+}

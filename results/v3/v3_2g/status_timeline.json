@@ -1,0 +1,5 @@
+{
+  "counterexample": "Perez 2021-r06 STOPPED after final row: T1 ACTIVE correct; T2 rule-would-say-RETIRED for the winner (race ended, TERMINAL anyway) \u2014 archetype of why text rules fail",
+  "schema_version": "v3.2g-status-timeline-v1",
+  "t1_t2": "NOT_APPLICABLE (no signal admitted)"
+}

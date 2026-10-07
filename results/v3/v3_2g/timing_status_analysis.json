@@ -1,0 +1,11 @@
+{
+  "fields": [
+    "deleted (track-limits lap deletion)",
+    "deleted_reason",
+    "is_accurate (timing accuracy)",
+    "fastf1_generated (synthesis flag)",
+    "source_unit_status (uniformly complete)"
+  ],
+  "finding": "no timing-feed field carries a stopped/retired/out/pit/garage vocabulary; nothing to promote",
+  "schema_version": "v3.2g-timing-status-analysis-v1"
+}

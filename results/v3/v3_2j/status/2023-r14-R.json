@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "9c05b320a5de5e5567591cf2b93d2ca1c6f98374cef94fbf65d44d93a7a08006",
+  "diagnostics": {
+    "n_inpit_updates": 184,
+    "n_malformed_rows": 0,
+    "n_messages": 53664,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 70,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 24
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2023-r14-R",
+  "raw_sha256": "a0a726e0d26d9fb2874e69004cd7f178f2c417d03d6c0d23a3333710fb5fd309",
+  "round": 14,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2023,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2023/2023-09-03_Italian_Grand_Prix/2023-09-03_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "lawson": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        6.515,
+        false
+      ],
+      [
+        8539.014,
+        true
+      ]
+    ],
+    "perez": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "sargeant": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        6.515,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        6.515,
+        false
+      ],
+      [
+        5064.099,
+        true
+      ]
+    ],
+    "zhou": [
+      [
+        6.515,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

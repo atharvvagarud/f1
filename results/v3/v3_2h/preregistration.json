@@ -1,0 +1,178 @@
+{
+  "accepted_mc2": {
+    "arm": "E_AR1_RESIDUAL",
+    "field": "mc2-field-v1",
+    "kernel": "mc2-kernel-v1",
+    "n_runs_production": 5000,
+    "presence": "v3.2c-presence-v1",
+    "research": "mc2-r1-research",
+    "rho": 0.264,
+    "rng": "mc2-rng-v1"
+  },
+  "admission_gates": {
+    "RED": [
+      "admit only if V3.2F conclusion overturned by new evidence; default REJECT_RED"
+    ],
+    "SAFETY_CAR": [
+      "compression mechanism explicit, interpretable, evidence-backed",
+      "restart transition explicit with no factual future",
+      "pit-validity boundary explicit (green-flag R6 valid under SC or REJECT)"
+    ],
+    "VSC": [
+      "duration calibration slope in [0.5, 1.5] on held-future episodes AND duration MAE <= 1.5 laps",
+      "during-VSC pace MAE <= 10.0 s (past-only median rule)",
+      "post-exit pace MAE <= 6.0 s",
+      "field-spread ratio during/before in [0.5, 1.5] (no bunching/dispersion pathology)"
+    ],
+    "WET": [
+      "runnable candidate exists (weather evolution + compound transition both causal)",
+      "wet pace MAE <= 6.0 s on held-future wet laps",
+      "compound-transition policy explicit and separable from Strategy 2.0"
+    ],
+    "YELLOW": [
+      "exact at-T affected-driver exposure established causally; else REJECT_YELLOW (no global penalty)"
+    ],
+    "common": [
+      "causal start state (factual-at-T only)",
+      "past-only parameters (strictly races before Y)",
+      "future-end/weather firewall (poison-tested)",
+      "determinism (same seed equality; domain-separated RNG; no perturbation of DRY_GREEN streams)",
+      "dry-green parity bit-exact (50-checkpoint corpus)",
+      "invalid rate 0 or unacceptably low",
+      "no material outcome pathology"
+    ]
+  },
+  "baseline": {
+    "commit": "64c5af0",
+    "tag": "v3.1-race-dynamics"
+  },
+  "candidate_order": [
+    "VSC",
+    "VSC_ENDING",
+    "WET",
+    "SAFETY_CAR",
+    "YELLOW",
+    "RED"
+  ],
+  "comparison_policy": {
+    "comparator": "accepted DRY_GREEN MC2 E (arm E_AR1_RESIDUAL, rho=0.264) for green segments only",
+    "no_retune": "dry parameters never retuned on regime outcomes",
+    "unit": "race/episode is the high-level statistical unit"
+  },
+  "dry_green_parity": {
+    "corpus": "results/v3/v3_2f/dry_green_parity_corpus.json",
+    "hash_prefix": "7ae97c3c",
+    "members": 50,
+    "requirement": "PARITY_OK_BIT_EXACT before and after H"
+  },
+  "fallback_policy": {
+    "minimum_cell_n": 30,
+    "no_fallback_data": "REJECT the mechanism (no fabrication)",
+    "sparse_cells": "back off to coarser conditioning (era -> global); report N and fallback"
+  },
+  "forbidden": [
+    "2025 data for training or evaluation",
+    "future TrackStatus / race-control / weather / rainfall / compounds / pits / lap timing at or after T",
+    "future regime end / restart observations",
+    "position_null or STOPPED for retirement",
+    "external retirement source; future-DNF inference",
+    "altering DRY_GREEN MC2-E behavior or retuning dry params on regime outcomes",
+    "ML classifiers/predictors; winner-model probabilities; Strategy 2.0; Counterfactual Lab; frontend; demo cache"
+  ],
+  "mechanisms": {
+    "RED": {
+      "mechanism": "none by default (REJECT_RED); audit only"
+    },
+    "SAFETY_CAR": {
+      "compression": "mandatory interpretable field-bunching model from historical evidence; no overtaking",
+      "duration": "past-only episode distribution/survival; rng mc2-sc-duration; never factual end",
+      "pits": "audit R6 green-flag pit validity under SC; REJECT_SC if SC-aware pits needed but inseparable from Strategy 2.0",
+      "restart": "SC->DRY_GREEN transition, no factual future"
+    },
+    "VSC": {
+      "duration": "empirical residual-duration distribution conditional on elapsed VSC age (past-only laps); P(continue|age=a) from historical survival; no factual end read",
+      "exit": "transition back to accepted DRY_GREEN MC2 E with explicit anchor/AR/gap state; no factual restart observations",
+      "gaps": "evidence audit only (preserve/compress/expand); no overtaking mechanism",
+      "pace": "VSC-specific central offset + driver variation + variance estimated past-only; minimal supported choice among {freeze, carry-shrunk, reset}",
+      "rng": "mc2-vsc-duration (reserved, dedicated)"
+    },
+    "VSC_ENDING": {
+      "mechanism": "token-semantics audit only; ending transition iff token proven factual-at-T; no inferred green timestamp"
+    },
+    "WET": {
+      "driver_state": "evaluate dry-anchor transfer; choose among {carry-shrunk, reset, wet-anchor} on causal evidence BEFORE outcome scoring",
+      "pace": "temporal hierarchy INTERMEDIATE/WET by era (x circuit/rain-state/phase only if N supports); past-only",
+      "residual": "estimate variance/autocorr where supported; else simpler justified process (no auto rho=0.264 reuse)",
+      "tyre_transition": "audit R6 dry-filtered boundary; minimal empirical rule only if separable from Strategy 2.0, else REJECT_WET",
+      "weather_evolution": "historical transition/survival over {WET, INTERMEDIATE, DRY} if supported; no ML; rng mc2-weather-transition"
+    },
+    "YELLOW": {
+      "mechanism": "investigation only: causal sector->driver exposure from Phase12 artifacts without future info or subsystem coupling; no global pace penalty ever"
+    }
+  },
+  "metrics": [
+    "duration calibration slope + MAE (laps)",
+    "during-regime pace MAE (s)",
+    "post-exit pace MAE (s)",
+    "field-spread ratio (during/before, after/before)",
+    "winner log-loss / Brier, expected-finish MAE, RPS (only if an integrated simulator exists; else NOT_MEASURABLE_OFFLINE)",
+    "invalid rate (must be 0/unacceptably-low for admission)"
+  ],
+  "parameter_families": [
+    "vsc-duration-survival-v1",
+    "vsc-pace-v1",
+    "vsc-exit-v1",
+    "wet-pace-v1",
+    "weather-transition-v1",
+    "sc-duration-v1",
+    "sc-compression-v1",
+    "sc-restart-v1"
+  ],
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "schema_version": "v3.2h-preregistration-v1",
+  "seed_policy": {
+    "parity_runs": 500,
+    "parity_seed": 20240101,
+    "regime_rng_domains": [
+      "mc2-vsc-duration",
+      "mc2-sc-duration",
+      "mc2-weather-transition"
+    ],
+    "rule": "deterministic seeds only; same-seed equality required; DRY_GREEN streams unperturbed"
+  },
+  "simulation_counts": {
+    "offline_validation": "episode/lap-level (no MC integration unless admitted)",
+    "parity_corpus_runs": 500,
+    "production": 5000
+  },
+  "temporal_folds": [
+    {
+      "evaluate": [
+        2022,
+        2023
+      ],
+      "fold": "H1",
+      "train_through": 2021
+    },
+    {
+      "evaluate": [
+        2024
+      ],
+      "fold": "H2",
+      "train_through": 2023
+    }
+  ],
+  "verdicts_allowed": [
+    "ADMIT_VSC",
+    "REJECT_VSC",
+    "ADMIT_WET",
+    "REJECT_WET",
+    "ADMIT_INTERMEDIATE_STABLE_ONLY",
+    "ADMIT_SC",
+    "REJECT_SC",
+    "ADMIT_YELLOW",
+    "REJECT_YELLOW",
+    "ADMIT_RED",
+    "REJECT_RED"
+  ]
+}

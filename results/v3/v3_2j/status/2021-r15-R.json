@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "bd17ef15c448ec1615eb10c9548a865389b314debffd685772130a27c72ad19b",
+  "diagnostics": {
+    "n_inpit_updates": 168,
+    "n_malformed_rows": 0,
+    "n_messages": 60403,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 98,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 22
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2021-r15-R",
+  "raw_sha256": "26b34f17d86c2bed0d401e5bdaca89c50fb2eef878ab6522931fad8b6eda2aec",
+  "round": 15,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2021,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2021/2021-09-26_Russian_Grand_Prix/2021-09-26_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        3.403,
+        false
+      ],
+      [
+        8745.093,
+        true
+      ]
+    ],
+    "leclerc": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "mazepin": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        3.403,
+        false
+      ],
+      [
+        7225.125,
+        true
+      ]
+    ],
+    "norris": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        3.403,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        3.403,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

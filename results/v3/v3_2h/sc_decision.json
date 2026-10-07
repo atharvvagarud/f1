@@ -1,0 +1,11 @@
+{
+  "decision": "REJECT_SC",
+  "gates": {
+    "compression_mechanism": "FAIL (observed, not modelled)",
+    "pit_boundary": "FAIL (SC pit-rate shift unaudited for R6 validity at this stage)",
+    "restart": "FAIL (no causal restart model implemented)"
+  },
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "reason": "bunching/restarts observed but no explicit causal compression/restart/pit mechanism is implemented and validated; modelling SC as pace+N-seconds explicitly rejected by V3.2F evidence; explicit 422 retained",
+  "schema_version": "v3.2h-sc-decision-v1"
+}

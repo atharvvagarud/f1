@@ -1,0 +1,18 @@
+{
+  "episodes_by_token": {
+    "red_flag": 21,
+    "safety_car": 119,
+    "vsc": 82,
+    "vsc_ending": 62,
+    "yellow": 418
+  },
+  "offline_rule": "Run-length episodes over checkpoint-frame modal track_state; entry/exit laps per race in coverage_opportunity_raw.episodes. Runtime T may use only regime state known at or before T; future duration/exit is forbidden.",
+  "races_with_episode": {
+    "red_flag": 17,
+    "safety_car": 85,
+    "vsc": 65,
+    "vsc_ending": 46,
+    "yellow": 122
+  },
+  "schema_version": "v3.2f-transition-audit-v1"
+}

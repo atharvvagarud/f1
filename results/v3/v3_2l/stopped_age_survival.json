@@ -1,0 +1,161 @@
+{
+ "schema_version": "v3.2l-stopped-age-survival-v1",
+ "population": "CLEAN episodes",
+ "curve": [
+  {
+   "age_s": 0,
+   "at_risk": 211,
+   "p_return_eventual": 0.14218009478672985
+  },
+  {
+   "age_s": 60,
+   "at_risk": 208,
+   "p_return_eventual": 0.12980769230769232
+  },
+  {
+   "age_s": 120,
+   "at_risk": 200,
+   "p_return_eventual": 0.095
+  },
+  {
+   "age_s": 180,
+   "at_risk": 195,
+   "p_return_eventual": 0.07179487179487179
+  },
+  {
+   "age_s": 240,
+   "at_risk": 191,
+   "p_return_eventual": 0.05235602094240838
+  },
+  {
+   "age_s": 300,
+   "at_risk": 190,
+   "p_return_eventual": 0.04736842105263158
+  },
+  {
+   "age_s": 360,
+   "at_risk": 190,
+   "p_return_eventual": 0.04736842105263158
+  },
+  {
+   "age_s": 420,
+   "at_risk": 189,
+   "p_return_eventual": 0.042328042328042326
+  },
+  {
+   "age_s": 480,
+   "at_risk": 188,
+   "p_return_eventual": 0.03723404255319149
+  },
+  {
+   "age_s": 540,
+   "at_risk": 188,
+   "p_return_eventual": 0.03723404255319149
+  },
+  {
+   "age_s": 600,
+   "at_risk": 188,
+   "p_return_eventual": 0.03723404255319149
+  },
+  {
+   "age_s": 660,
+   "at_risk": 188,
+   "p_return_eventual": 0.03723404255319149
+  },
+  {
+   "age_s": 720,
+   "at_risk": 188,
+   "p_return_eventual": 0.03723404255319149
+  },
+  {
+   "age_s": 780,
+   "at_risk": 188,
+   "p_return_eventual": 0.03723404255319149
+  },
+  {
+   "age_s": 840,
+   "at_risk": 188,
+   "p_return_eventual": 0.03723404255319149
+  },
+  {
+   "age_s": 900,
+   "at_risk": 188,
+   "p_return_eventual": 0.03723404255319149
+  },
+  {
+   "age_s": 960,
+   "at_risk": 187,
+   "p_return_eventual": 0.03208556149732621
+  },
+  {
+   "age_s": 1020,
+   "at_risk": 187,
+   "p_return_eventual": 0.03208556149732621
+  },
+  {
+   "age_s": 1080,
+   "at_risk": 187,
+   "p_return_eventual": 0.03208556149732621
+  },
+  {
+   "age_s": 1140,
+   "at_risk": 186,
+   "p_return_eventual": 0.026881720430107527
+  },
+  {
+   "age_s": 1200,
+   "at_risk": 186,
+   "p_return_eventual": 0.026881720430107527
+  },
+  {
+   "age_s": 1260,
+   "at_risk": 186,
+   "p_return_eventual": 0.026881720430107527
+  },
+  {
+   "age_s": 1320,
+   "at_risk": 186,
+   "p_return_eventual": 0.026881720430107527
+  },
+  {
+   "age_s": 1380,
+   "at_risk": 186,
+   "p_return_eventual": 0.026881720430107527
+  },
+  {
+   "age_s": 1440,
+   "at_risk": 186,
+   "p_return_eventual": 0.026881720430107527
+  },
+  {
+   "age_s": 1500,
+   "at_risk": 186,
+   "p_return_eventual": 0.026881720430107527
+  },
+  {
+   "age_s": 1560,
+   "at_risk": 186,
+   "p_return_eventual": 0.026881720430107527
+  },
+  {
+   "age_s": 1620,
+   "at_risk": 186,
+   "p_return_eventual": 0.026881720430107527
+  },
+  {
+   "age_s": 1680,
+   "at_risk": 186,
+   "p_return_eventual": 0.026881720430107527
+  },
+  {
+   "age_s": 1740,
+   "at_risk": 186,
+   "p_return_eventual": 0.026881720430107527
+  },
+  {
+   "age_s": 1800,
+   "at_risk": 186,
+   "p_return_eventual": 0.026881720430107527
+  }
+ ]
+}

@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "f2ff3b1c0e9ff9436c73c059b3fc2b27b39beb887819cc0d7be338e034a45965",
+  "diagnostics": {
+    "n_inpit_updates": 87,
+    "n_malformed_rows": 0,
+    "n_messages": 30413,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 86,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2018-r02-R",
+  "raw_sha256": "d7bb999180744bc90a6ba1668a77eb296324587aa2509a01bdc5fd543a220a41",
+  "round": 2,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2018,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2018/2018-04-08_Bahrain_Grand_Prix/2018-04-08_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "brendon_hartley": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "ericsson": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        9.059,
+        false
+      ],
+      [
+        4014.718,
+        true
+      ]
+    ],
+    "ricciardo": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "sirotkin": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "vandoorne": [
+      [
+        9.059,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        9.059,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

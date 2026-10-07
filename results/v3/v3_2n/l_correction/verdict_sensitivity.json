@@ -1,0 +1,12 @@
+{
+ "schema_version": "v3.2n-l-verdict-sensitivity-v1",
+ "original_decision": "REJECT_LIFECYCLE_MODEL",
+ "corrected_clean_n": 171,
+ "corrected_return_time_n": 26,
+ "gates": {
+  "temporal_calibration_stable": true,
+  "eval_sample_adequate": false,
+  "return_time_n_adequate": false
+ },
+ "sensitivity": "VERDICT_UNCHANGED"
+}

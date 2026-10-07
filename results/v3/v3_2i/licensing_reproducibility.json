@@ -1,0 +1,8 @@
+{
+  "f1_static_feed": "public static hosting, no auth observed; underlying data is F1 proprietary (terms undocumented here; no legal claims made)",
+  "jolpica": "open API; evaluation-only use",
+  "openf1": "CC BY-NC-SA 4.0, free no-key tier, rate limits documented; validation-only use",
+  "raw_commit": "full jsonStream blobs are GB-scale: NOT committed; derived per-driver Retired transition tables (race, driver, t, value + source content hash) are KB-scale and committable",
+  "rebuild": "reproducible: URL pattern + adapter version + content hash pinned in provenance plan; uncertainty flagged where vendor terms are silent",
+  "schema_version": "v3.2i-licensing-v1"
+}

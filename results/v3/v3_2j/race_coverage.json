@@ -1,0 +1,1213 @@
+{
+  "before": {
+    "full": 0,
+    "ge50": 30,
+    "ge75": 15,
+    "ge95": 7,
+    "median_race_coverage": 0.0938,
+    "races_with_ge1_supported": 103,
+    "zero_support_races": 46
+  },
+  "full": 0,
+  "ge50": 56,
+  "ge75": 40,
+  "ge95": 17,
+  "median_race_coverage": 0.2069,
+  "races": [
+    {
+      "after": 4,
+      "after_cov": 0.0556,
+      "before": 4,
+      "race_id": "2018-r01-R",
+      "season": 2018,
+      "total": 72
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2018-r02-R",
+      "season": 2018,
+      "total": 65
+    },
+    {
+      "after": 22,
+      "after_cov": 0.3793,
+      "before": 21,
+      "race_id": "2018-r03-R",
+      "season": 2018,
+      "total": 58
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2018-r04-R",
+      "season": 2018,
+      "total": 58
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2018-r05-R",
+      "season": 2018,
+      "total": 73
+    },
+    {
+      "after": 43,
+      "after_cov": 0.5,
+      "before": 43,
+      "race_id": "2018-r06-R",
+      "season": 2018,
+      "total": 86
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2018-r07-R",
+      "season": 2018,
+      "total": 70
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2018-r08-R",
+      "season": 2018,
+      "total": 57
+    },
+    {
+      "after": 10,
+      "after_cov": 0.1235,
+      "before": 10,
+      "race_id": "2018-r09-R",
+      "season": 2018,
+      "total": 81
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2018-r10-R",
+      "season": 2018,
+      "total": 59
+    },
+    {
+      "after": 3,
+      "after_cov": 0.0375,
+      "before": 3,
+      "race_id": "2018-r11-R",
+      "season": 2018,
+      "total": 80
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2018-r12-R",
+      "season": 2018,
+      "total": 75
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2018-r13-R",
+      "season": 2018,
+      "total": 45
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2018-r14-R",
+      "season": 2018,
+      "total": 57
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2018-r15-R",
+      "season": 2018,
+      "total": 61
+    },
+    {
+      "after": 50,
+      "after_cov": 0.9091,
+      "before": 5,
+      "race_id": "2018-r16-R",
+      "season": 2018,
+      "total": 55
+    },
+    {
+      "after": 35,
+      "after_cov": 0.614,
+      "before": 5,
+      "race_id": "2018-r17-R",
+      "season": 2018,
+      "total": 57
+    },
+    {
+      "after": 10,
+      "after_cov": 0.1587,
+      "before": 2,
+      "race_id": "2018-r18-R",
+      "season": 2018,
+      "total": 63
+    },
+    {
+      "after": 5,
+      "after_cov": 0.061,
+      "before": 5,
+      "race_id": "2018-r19-R",
+      "season": 2018,
+      "total": 82
+    },
+    {
+      "after": 69,
+      "after_cov": 0.92,
+      "before": 23,
+      "race_id": "2018-r20-R",
+      "season": 2018,
+      "total": 75
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2018-r21-R",
+      "season": 2018,
+      "total": 57
+    },
+    {
+      "after": 12,
+      "after_cov": 0.2,
+      "before": 12,
+      "race_id": "2019-r01-R",
+      "season": 2019,
+      "total": 60
+    },
+    {
+      "after": 52,
+      "after_cov": 0.7222,
+      "before": 18,
+      "race_id": "2019-r02-R",
+      "season": 2019,
+      "total": 72
+    },
+    {
+      "after": 54,
+      "after_cov": 0.9474,
+      "before": 18,
+      "race_id": "2019-r03-R",
+      "season": 2019,
+      "total": 57
+    },
+    {
+      "after": 39,
+      "after_cov": 0.6842,
+      "before": 34,
+      "race_id": "2019-r04-R",
+      "season": 2019,
+      "total": 57
+    },
+    {
+      "after": 44,
+      "after_cov": 0.6471,
+      "before": 44,
+      "race_id": "2019-r05-R",
+      "season": 2019,
+      "total": 68
+    },
+    {
+      "after": 12,
+      "after_cov": 0.1379,
+      "before": 3,
+      "race_id": "2019-r06-R",
+      "season": 2019,
+      "total": 87
+    },
+    {
+      "after": 9,
+      "after_cov": 0.1216,
+      "before": 9,
+      "race_id": "2019-r07-R",
+      "season": 2019,
+      "total": 74
+    },
+    {
+      "after": 51,
+      "after_cov": 0.8095,
+      "before": 48,
+      "race_id": "2019-r08-R",
+      "season": 2019,
+      "total": 63
+    },
+    {
+      "after": 69,
+      "after_cov": 0.9718,
+      "before": 69,
+      "race_id": "2019-r09-R",
+      "season": 2019,
+      "total": 71
+    },
+    {
+      "after": 18,
+      "after_cov": 0.3158,
+      "before": 9,
+      "race_id": "2019-r10-R",
+      "season": 2019,
+      "total": 57
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2019-r11-R",
+      "season": 2019,
+      "total": 84
+    },
+    {
+      "after": 67,
+      "after_cov": 0.9571,
+      "before": 52,
+      "race_id": "2019-r12-R",
+      "season": 2019,
+      "total": 70
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2019-r13-R",
+      "season": 2019,
+      "total": 45
+    },
+    {
+      "after": 27,
+      "after_cov": 0.4426,
+      "before": 27,
+      "race_id": "2019-r14-R",
+      "season": 2019,
+      "total": 61
+    },
+    {
+      "after": 33,
+      "after_cov": 0.5156,
+      "before": 33,
+      "race_id": "2019-r15-R",
+      "season": 2019,
+      "total": 64
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2019-r16-R",
+      "season": 2019,
+      "total": 58
+    },
+    {
+      "after": 50,
+      "after_cov": 0.9259,
+      "before": 15,
+      "race_id": "2019-r17-R",
+      "season": 2019,
+      "total": 54
+    },
+    {
+      "after": 67,
+      "after_cov": 0.9178,
+      "before": 50,
+      "race_id": "2019-r18-R",
+      "season": 2019,
+      "total": 73
+    },
+    {
+      "after": 8,
+      "after_cov": 0.1404,
+      "before": 8,
+      "race_id": "2019-r19-R",
+      "season": 2019,
+      "total": 57
+    },
+    {
+      "after": 50,
+      "after_cov": 0.6757,
+      "before": 50,
+      "race_id": "2019-r20-R",
+      "season": 2019,
+      "total": 74
+    },
+    {
+      "after": 53,
+      "after_cov": 0.9636,
+      "before": 48,
+      "race_id": "2019-r21-R",
+      "season": 2019,
+      "total": 55
+    },
+    {
+      "after": 11,
+      "after_cov": 0.1447,
+      "before": 10,
+      "race_id": "2020-r01-R",
+      "season": 2020,
+      "total": 76
+    },
+    {
+      "after": 67,
+      "after_cov": 0.9437,
+      "before": 0,
+      "race_id": "2020-r02-R",
+      "season": 2020,
+      "total": 71
+    },
+    {
+      "after": 32,
+      "after_cov": 0.4051,
+      "before": 14,
+      "race_id": "2020-r03-R",
+      "season": 2020,
+      "total": 79
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2020-r04-R",
+      "season": 2020,
+      "total": 58
+    },
+    {
+      "after": 50,
+      "after_cov": 0.9259,
+      "before": 46,
+      "race_id": "2020-r05-R",
+      "season": 2020,
+      "total": 54
+    },
+    {
+      "after": 64,
+      "after_cov": 0.9412,
+      "before": 41,
+      "race_id": "2020-r06-R",
+      "season": 2020,
+      "total": 68
+    },
+    {
+      "after": 9,
+      "after_cov": 0.1915,
+      "before": 3,
+      "race_id": "2020-r07-R",
+      "season": 2020,
+      "total": 47
+    },
+    {
+      "after": 18,
+      "after_cov": 0.3158,
+      "before": 7,
+      "race_id": "2020-r08-R",
+      "season": 2020,
+      "total": 57
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2020-r09-R",
+      "season": 2020,
+      "total": 64
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2020-r10-R",
+      "season": 2020,
+      "total": 56
+    },
+    {
+      "after": 14,
+      "after_cov": 0.2,
+      "before": 14,
+      "race_id": "2020-r11-R",
+      "season": 2020,
+      "total": 70
+    },
+    {
+      "after": 64,
+      "after_cov": 0.9697,
+      "before": 55,
+      "race_id": "2020-r12-R",
+      "season": 2020,
+      "total": 66
+    },
+    {
+      "after": 29,
+      "after_cov": 0.4203,
+      "before": 10,
+      "race_id": "2020-r13-R",
+      "season": 2020,
+      "total": 69
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2020-r14-R",
+      "season": 2020,
+      "total": 81
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2020-r15-R",
+      "season": 2020,
+      "total": 60
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2020-r16-R",
+      "season": 2020,
+      "total": 94
+    },
+    {
+      "after": 8,
+      "after_cov": 0.1404,
+      "before": 8,
+      "race_id": "2020-r17-R",
+      "season": 2020,
+      "total": 57
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2021-r01-R",
+      "season": 2021,
+      "total": 57
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2021-r02-R",
+      "season": 2021,
+      "total": 74
+    },
+    {
+      "after": 1,
+      "after_cov": 0.0149,
+      "before": 1,
+      "race_id": "2021-r03-R",
+      "season": 2021,
+      "total": 67
+    },
+    {
+      "after": 6,
+      "after_cov": 0.0896,
+      "before": 6,
+      "race_id": "2021-r04-R",
+      "season": 2021,
+      "total": 67
+    },
+    {
+      "after": 76,
+      "after_cov": 0.9744,
+      "before": 3,
+      "race_id": "2021-r05-R",
+      "season": 2021,
+      "total": 78
+    },
+    {
+      "after": 27,
+      "after_cov": 0.4576,
+      "before": 4,
+      "race_id": "2021-r06-R",
+      "season": 2021,
+      "total": 59
+    },
+    {
+      "after": 51,
+      "after_cov": 0.9623,
+      "before": 51,
+      "race_id": "2021-r07-R",
+      "season": 2021,
+      "total": 53
+    },
+    {
+      "after": 69,
+      "after_cov": 0.9718,
+      "before": 3,
+      "race_id": "2021-r08-R",
+      "season": 2021,
+      "total": 71
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2021-r09-R",
+      "season": 2021,
+      "total": 74
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2021-r10-R",
+      "season": 2021,
+      "total": 56
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2021-r11-R",
+      "season": 2021,
+      "total": 71
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2021-r12-R",
+      "season": 2021,
+      "total": 3
+    },
+    {
+      "after": 70,
+      "after_cov": 0.9459,
+      "before": 44,
+      "race_id": "2021-r13-R",
+      "season": 2021,
+      "total": 74
+    },
+    {
+      "after": 25,
+      "after_cov": 0.4237,
+      "before": 2,
+      "race_id": "2021-r14-R",
+      "season": 2021,
+      "total": 59
+    },
+    {
+      "after": 45,
+      "after_cov": 0.6716,
+      "before": 33,
+      "race_id": "2021-r15-R",
+      "season": 2021,
+      "total": 67
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2021-r16-R",
+      "season": 2021,
+      "total": 64
+    },
+    {
+      "after": 54,
+      "after_cov": 0.8852,
+      "before": 16,
+      "race_id": "2021-r17-R",
+      "season": 2021,
+      "total": 61
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2021-r18-R",
+      "season": 2021,
+      "total": 71
+    },
+    {
+      "after": 65,
+      "after_cov": 0.8333,
+      "before": 46,
+      "race_id": "2021-r19-R",
+      "season": 2021,
+      "total": 78
+    },
+    {
+      "after": 54,
+      "after_cov": 0.7941,
+      "before": 53,
+      "race_id": "2021-r20-R",
+      "season": 2021,
+      "total": 68
+    },
+    {
+      "after": 8,
+      "after_cov": 0.127,
+      "before": 8,
+      "race_id": "2021-r21-R",
+      "season": 2021,
+      "total": 63
+    },
+    {
+      "after": 36,
+      "after_cov": 0.5455,
+      "before": 29,
+      "race_id": "2021-r22-R",
+      "season": 2021,
+      "total": 66
+    },
+    {
+      "after": 45,
+      "after_cov": 0.7143,
+      "before": 45,
+      "race_id": "2022-r01-R",
+      "season": 2022,
+      "total": 63
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2022-r02-R",
+      "season": 2022,
+      "total": 56
+    },
+    {
+      "after": 1,
+      "after_cov": 0.0161,
+      "before": 1,
+      "race_id": "2022-r03-R",
+      "season": 2022,
+      "total": 62
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2022-r04-R",
+      "season": 2022,
+      "total": 65
+    },
+    {
+      "after": 39,
+      "after_cov": 0.619,
+      "before": 8,
+      "race_id": "2022-r05-R",
+      "season": 2022,
+      "total": 63
+    },
+    {
+      "after": 64,
+      "after_cov": 0.9143,
+      "before": 28,
+      "race_id": "2022-r06-R",
+      "season": 2022,
+      "total": 70
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2022-r07-R",
+      "season": 2022,
+      "total": 89
+    },
+    {
+      "after": 9,
+      "after_cov": 0.1525,
+      "before": 9,
+      "race_id": "2022-r08-R",
+      "season": 2022,
+      "total": 59
+    },
+    {
+      "after": 8,
+      "after_cov": 0.1053,
+      "before": 8,
+      "race_id": "2022-r09-R",
+      "season": 2022,
+      "total": 76
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2022-r10-R",
+      "season": 2022,
+      "total": 56
+    },
+    {
+      "after": 36,
+      "after_cov": 0.4737,
+      "before": 27,
+      "race_id": "2022-r11-R",
+      "season": 2022,
+      "total": 76
+    },
+    {
+      "after": 17,
+      "after_cov": 0.2787,
+      "before": 17,
+      "race_id": "2022-r12-R",
+      "season": 2022,
+      "total": 61
+    },
+    {
+      "after": 49,
+      "after_cov": 0.5976,
+      "before": 49,
+      "race_id": "2022-r13-R",
+      "season": 2022,
+      "total": 82
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2022-r14-R",
+      "season": 2022,
+      "total": 46
+    },
+    {
+      "after": 44,
+      "after_cov": 0.5432,
+      "before": 44,
+      "race_id": "2022-r15-R",
+      "season": 2022,
+      "total": 81
+    },
+    {
+      "after": 12,
+      "after_cov": 0.2069,
+      "before": 12,
+      "race_id": "2022-r16-R",
+      "season": 2022,
+      "total": 58
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2022-r17-R",
+      "season": 2022,
+      "total": 75
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2022-r18-R",
+      "season": 2022,
+      "total": 29
+    },
+    {
+      "after": 16,
+      "after_cov": 0.2759,
+      "before": 3,
+      "race_id": "2022-r19-R",
+      "season": 2022,
+      "total": 58
+    },
+    {
+      "after": 66,
+      "after_cov": 0.88,
+      "before": 53,
+      "race_id": "2022-r20-R",
+      "season": 2022,
+      "total": 75
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2022-r21-R",
+      "season": 2022,
+      "total": 73
+    },
+    {
+      "after": 57,
+      "after_cov": 0.9194,
+      "before": 29,
+      "race_id": "2022-r22-R",
+      "season": 2022,
+      "total": 62
+    },
+    {
+      "after": 41,
+      "after_cov": 0.6721,
+      "before": 15,
+      "race_id": "2023-r01-R",
+      "season": 2023,
+      "total": 61
+    },
+    {
+      "after": 15,
+      "after_cov": 0.2941,
+      "before": 15,
+      "race_id": "2023-r02-R",
+      "season": 2023,
+      "total": 51
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2023-r03-R",
+      "season": 2023,
+      "total": 62
+    },
+    {
+      "after": 8,
+      "after_cov": 0.1481,
+      "before": 8,
+      "race_id": "2023-r04-R",
+      "season": 2023,
+      "total": 54
+    },
+    {
+      "after": 55,
+      "after_cov": 0.9649,
+      "before": 55,
+      "race_id": "2023-r05-R",
+      "season": 2023,
+      "total": 57
+    },
+    {
+      "after": 51,
+      "after_cov": 0.5368,
+      "before": 51,
+      "race_id": "2023-r06-R",
+      "season": 2023,
+      "total": 95
+    },
+    {
+      "after": 64,
+      "after_cov": 0.9697,
+      "before": 64,
+      "race_id": "2023-r07-R",
+      "season": 2023,
+      "total": 66
+    },
+    {
+      "after": 7,
+      "after_cov": 0.0909,
+      "before": 7,
+      "race_id": "2023-r08-R",
+      "season": 2023,
+      "total": 77
+    },
+    {
+      "after": 11,
+      "after_cov": 0.1507,
+      "before": 11,
+      "race_id": "2023-r09-R",
+      "season": 2023,
+      "total": 73
+    },
+    {
+      "after": 31,
+      "after_cov": 0.5849,
+      "before": 11,
+      "race_id": "2023-r10-R",
+      "season": 2023,
+      "total": 53
+    },
+    {
+      "after": 68,
+      "after_cov": 0.9444,
+      "before": 3,
+      "race_id": "2023-r11-R",
+      "season": 2023,
+      "total": 72
+    },
+    {
+      "after": 1,
+      "after_cov": 0.0222,
+      "before": 1,
+      "race_id": "2023-r12-R",
+      "season": 2023,
+      "total": 45
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2023-r13-R",
+      "season": 2023,
+      "total": 78
+    },
+    {
+      "after": 49,
+      "after_cov": 0.9608,
+      "before": 3,
+      "race_id": "2023-r14-R",
+      "season": 2023,
+      "total": 51
+    },
+    {
+      "after": 2,
+      "after_cov": 0.027,
+      "before": 2,
+      "race_id": "2023-r15-R",
+      "season": 2023,
+      "total": 74
+    },
+    {
+      "after": 27,
+      "after_cov": 0.45,
+      "before": 8,
+      "race_id": "2023-r16-R",
+      "season": 2023,
+      "total": 60
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2023-r17-R",
+      "season": 2023,
+      "total": 61
+    },
+    {
+      "after": 54,
+      "after_cov": 0.9474,
+      "before": 8,
+      "race_id": "2023-r18-R",
+      "season": 2023,
+      "total": 57
+    },
+    {
+      "after": 30,
+      "after_cov": 0.3797,
+      "before": 3,
+      "race_id": "2023-r19-R",
+      "season": 2023,
+      "total": 79
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2023-r20-R",
+      "season": 2023,
+      "total": 71
+    },
+    {
+      "after": 2,
+      "after_cov": 0.0351,
+      "before": 2,
+      "race_id": "2023-r21-R",
+      "season": 2023,
+      "total": 57
+    },
+    {
+      "after": 56,
+      "after_cov": 0.9655,
+      "before": 56,
+      "race_id": "2023-r22-R",
+      "season": 2023,
+      "total": 58
+    },
+    {
+      "after": 55,
+      "after_cov": 0.9167,
+      "before": 55,
+      "race_id": "2024-r01-R",
+      "season": 2024,
+      "total": 60
+    },
+    {
+      "after": 5,
+      "after_cov": 0.098,
+      "before": 3,
+      "race_id": "2024-r02-R",
+      "season": 2024,
+      "total": 51
+    },
+    {
+      "after": 18,
+      "after_cov": 0.2812,
+      "before": 6,
+      "race_id": "2024-r03-R",
+      "season": 2024,
+      "total": 64
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2024-r04-R",
+      "season": 2024,
+      "total": 57
+    },
+    {
+      "after": 19,
+      "after_cov": 0.322,
+      "before": 19,
+      "race_id": "2024-r05-R",
+      "season": 2024,
+      "total": 59
+    },
+    {
+      "after": 27,
+      "after_cov": 0.4426,
+      "before": 27,
+      "race_id": "2024-r06-R",
+      "season": 2024,
+      "total": 61
+    },
+    {
+      "after": 61,
+      "after_cov": 0.9683,
+      "before": 55,
+      "race_id": "2024-r07-R",
+      "season": 2024,
+      "total": 63
+    },
+    {
+      "after": 1,
+      "after_cov": 0.012,
+      "before": 1,
+      "race_id": "2024-r08-R",
+      "season": 2024,
+      "total": 83
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2024-r09-R",
+      "season": 2024,
+      "total": 75
+    },
+    {
+      "after": 63,
+      "after_cov": 0.9545,
+      "before": 63,
+      "race_id": "2024-r10-R",
+      "season": 2024,
+      "total": 66
+    },
+    {
+      "after": 70,
+      "after_cov": 0.8974,
+      "before": 67,
+      "race_id": "2024-r11-R",
+      "season": 2024,
+      "total": 78
+    },
+    {
+      "after": 16,
+      "after_cov": 0.3077,
+      "before": 3,
+      "race_id": "2024-r12-R",
+      "season": 2024,
+      "total": 52
+    },
+    {
+      "after": 68,
+      "after_cov": 0.9444,
+      "before": 35,
+      "race_id": "2024-r13-R",
+      "season": 2024,
+      "total": 72
+    },
+    {
+      "after": 41,
+      "after_cov": 0.9318,
+      "before": 8,
+      "race_id": "2024-r14-R",
+      "season": 2024,
+      "total": 44
+    },
+    {
+      "after": 70,
+      "after_cov": 0.9722,
+      "before": 70,
+      "race_id": "2024-r15-R",
+      "season": 2024,
+      "total": 72
+    },
+    {
+      "after": 51,
+      "after_cov": 0.9623,
+      "before": 9,
+      "race_id": "2024-r16-R",
+      "season": 2024,
+      "total": 53
+    },
+    {
+      "after": 49,
+      "after_cov": 0.8909,
+      "before": 16,
+      "race_id": "2024-r17-R",
+      "season": 2024,
+      "total": 55
+    },
+    {
+      "after": 60,
+      "after_cov": 0.9677,
+      "before": 18,
+      "race_id": "2024-r18-R",
+      "season": 2024,
+      "total": 62
+    },
+    {
+      "after": 1,
+      "after_cov": 0.0169,
+      "before": 1,
+      "race_id": "2024-r19-R",
+      "season": 2024,
+      "total": 59
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2024-r20-R",
+      "season": 2024,
+      "total": 71
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2024-r21-R",
+      "season": 2024,
+      "total": 85
+    },
+    {
+      "after": 48,
+      "after_cov": 0.96,
+      "before": 17,
+      "race_id": "2024-r22-R",
+      "season": 2024,
+      "total": 50
+    },
+    {
+      "after": 0,
+      "after_cov": 0.0,
+      "before": 0,
+      "race_id": "2024-r23-R",
+      "season": 2024,
+      "total": 64
+    },
+    {
+      "after": 1,
+      "after_cov": 0.0152,
+      "before": 1,
+      "race_id": "2024-r24-R",
+      "season": 2024,
+      "total": 66
+    }
+  ],
+  "races_with_ge1_supported": 104,
+  "schema_version": "v3.2j-race-coverage-v1",
+  "zero_support_races": 45
+}

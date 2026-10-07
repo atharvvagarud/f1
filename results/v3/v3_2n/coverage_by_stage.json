@@ -1,0 +1,17 @@
+{
+ "schema_version": "v3.2n-coverage-by-stage-v1",
+ "by_stage": {
+  "EARLY": {
+   "eligible": 1492,
+   "total": 3080
+  },
+  "LATE": {
+   "eligible": 920,
+   "total": 3342
+  },
+  "MID": {
+   "eligible": 1266,
+   "total": 3222
+  }
+ }
+}

@@ -1,0 +1,63 @@
+{
+  "n_checks": 8,
+  "rows": [
+    {
+      "T": 6095.751,
+      "driver": "brendon_hartley",
+      "frame_index": 1077,
+      "full_eq_truncated": true,
+      "race_id": "2018-r03-R"
+    },
+    {
+      "T": 1913.498,
+      "driver": "gasly",
+      "frame_index": 134,
+      "full_eq_truncated": true,
+      "race_id": "2018-r16-R"
+    },
+    {
+      "T": 2013.914,
+      "driver": "brendon_hartley",
+      "frame_index": 152,
+      "full_eq_truncated": true,
+      "race_id": "2018-r16-R"
+    },
+    {
+      "T": 2013.914,
+      "driver": "gasly",
+      "frame_index": 152,
+      "full_eq_truncated": true,
+      "race_id": "2018-r16-R"
+    },
+    {
+      "T": 2113.999,
+      "driver": "brendon_hartley",
+      "frame_index": 170,
+      "full_eq_truncated": true,
+      "race_id": "2018-r16-R"
+    },
+    {
+      "T": 2113.999,
+      "driver": "gasly",
+      "frame_index": 170,
+      "full_eq_truncated": true,
+      "race_id": "2018-r16-R"
+    },
+    {
+      "T": 2214.266,
+      "driver": "brendon_hartley",
+      "frame_index": 188,
+      "full_eq_truncated": true,
+      "race_id": "2018-r16-R"
+    },
+    {
+      "T": 2214.266,
+      "driver": "gasly",
+      "frame_index": 188,
+      "full_eq_truncated": true,
+      "race_id": "2018-r16-R"
+    }
+  ],
+  "rule": "removing all raw rows after T leaves status(T) unchanged (prefix-closed reconstruction)",
+  "schema_version": "v3.2j-temporal-poison-v1"
+}

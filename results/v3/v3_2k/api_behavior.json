@@ -1,0 +1,7 @@
+{
+ "schema_version": "v3.2k-api-behavior-v1",
+ "verdict": "UNCHANGED",
+ "success_states": 3678,
+ "unsupported_states": 5966,
+ "note": "no new legitimate states; 422 simulation_unsupported behavior frozen; no request-time network or raw parsing"
+}

@@ -1,0 +1,15 @@
+{
+  "by_regime": {
+    "RED": 0,
+    "SC": 0,
+    "VSC": 0,
+    "VSC_ENDING": 0,
+    "WET": 0,
+    "YELLOW": 0
+  },
+  "newly_supported": 0,
+  "note": "no regime admitted; every recovered-checkpoint count is 0 by gate-scored decision, verified by recount",
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "schema_version": "v3.2h-coverage-attribution-v1",
+  "unexplained_growth": 0
+}

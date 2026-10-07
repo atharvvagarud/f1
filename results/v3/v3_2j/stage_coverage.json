@@ -1,0 +1,26 @@
+{
+  "by_stage": {
+    "EARLY": {
+      "after": 1492,
+      "after_cov": 0.4844,
+      "before": 1218,
+      "before_cov": 0.3955,
+      "total": 3080
+    },
+    "LATE": {
+      "after": 920,
+      "after_cov": 0.2753,
+      "before": 339,
+      "before_cov": 0.1014,
+      "total": 3342
+    },
+    "MID": {
+      "after": 1266,
+      "after_cov": 0.3929,
+      "before": 748,
+      "before_cov": 0.2322,
+      "total": 3222
+    }
+  },
+  "schema_version": "v3.2j-stage-coverage-v1"
+}

@@ -1,0 +1,167 @@
+{
+  "compression_observed_bunching": false,
+  "folds": {
+    "H1": {
+      "duration_fit": {
+        "dist": {
+          "mean": 3.621212121212121,
+          "n": 66,
+          "p10": 1.0,
+          "p50": 4.0,
+          "p90": 6.0,
+          "sd": 1.649289576308461
+        },
+        "median_predictor": 4.0,
+        "n": 66,
+        "p_continue_given_age": {
+          "1": {
+            "n_reached": 66,
+            "p_continue": 0.8787878787878788,
+            "residual_median": 3.0
+          },
+          "2": {
+            "n_reached": 58,
+            "p_continue": 0.8448275862068966,
+            "residual_median": 2.0
+          },
+          "3": {
+            "n_reached": 49,
+            "p_continue": 0.6938775510204082,
+            "residual_median": 1.0
+          },
+          "4": {
+            "n_reached": 34,
+            "p_continue": 0.5588235294117647,
+            "residual_median": 1.0
+          },
+          "5": {
+            "n_reached": 19,
+            "p_continue": 0.47368421052631576,
+            "residual_median": 0.0
+          },
+          "6": {
+            "n_reached": 9,
+            "p_continue": 0.4444444444444444,
+            "residual_median": 0.0
+          },
+          "7": {
+            "n_reached": 4,
+            "p_continue": 0.0,
+            "residual_median": 0.0
+          }
+        }
+      },
+      "duration_validation": {
+        "calibration_pairs": 117,
+        "calibration_slope": 0.927101647720705,
+        "mae_laps": 1.6153846153846154,
+        "median_rule": 4.0,
+        "n_eval": 39
+      },
+      "eval_episodes": 39,
+      "pit_rate_green": 0.04586648129553822,
+      "pit_rate_sc": 0.20209488601355516,
+      "restart_n": 1185,
+      "restart_pace_mae_s": 13.600229535864978,
+      "spread_ratio_during_before": {
+        "mean": 1.3558186934680778,
+        "n": 29,
+        "p10": 0.7702320217567291,
+        "p50": 1.2151764225863557,
+        "p90": 1.9833923810736864,
+        "sd": 0.9228016022327014
+      },
+      "spread_ratio_nopit_during_before": {
+        "mean": 1.2939977245882313,
+        "n": 9,
+        "p10": 1.0576003259347468,
+        "p50": 1.245679258447131,
+        "p90": 1.5654615896190023,
+        "sd": 0.40113198176630094
+      },
+      "train_episodes": 66
+    },
+    "H2": {
+      "duration_fit": {
+        "dist": {
+          "mean": 3.3904761904761904,
+          "n": 105,
+          "p10": 1.0,
+          "p50": 3.0,
+          "p90": 5.6000000000000085,
+          "sd": 1.6416904069556628
+        },
+        "median_predictor": 3.0,
+        "n": 105,
+        "p_continue_given_age": {
+          "1": {
+            "n_reached": 105,
+            "p_continue": 0.8476190476190476,
+            "residual_median": 2.0
+          },
+          "2": {
+            "n_reached": 89,
+            "p_continue": 0.8202247191011236,
+            "residual_median": 2.0
+          },
+          "3": {
+            "n_reached": 73,
+            "p_continue": 0.6164383561643836,
+            "residual_median": 1.0
+          },
+          "4": {
+            "n_reached": 45,
+            "p_continue": 0.6222222222222222,
+            "residual_median": 1.0
+          },
+          "5": {
+            "n_reached": 28,
+            "p_continue": 0.39285714285714285,
+            "residual_median": 0.0
+          },
+          "6": {
+            "n_reached": 11,
+            "p_continue": 0.45454545454545453,
+            "residual_median": 0.0
+          },
+          "7": {
+            "n_reached": 5,
+            "p_continue": 0.0,
+            "residual_median": 0.0
+          }
+        }
+      },
+      "duration_validation": {
+        "calibration_pairs": 44,
+        "calibration_slope": 1.5820535890442151,
+        "mae_laps": 1.0,
+        "median_rule": 3.0,
+        "n_eval": 14
+      },
+      "eval_episodes": 14,
+      "pit_rate_green": 0.049396122251050674,
+      "pit_rate_sc": 0.2090853782194281,
+      "restart_n": 427,
+      "restart_pace_mae_s": 15.297218969555036,
+      "spread_ratio_during_before": {
+        "mean": 1.416868526639661,
+        "n": 11,
+        "p10": 1.1407835776262583,
+        "p50": 1.43750241729002,
+        "p90": 1.5658947003209276,
+        "sd": 0.6485826886320913
+      },
+      "spread_ratio_nopit_during_before": {
+        "mean": 1.452397131590131,
+        "n": 2,
+        "p10": 1.4404813601500421,
+        "p50": 1.452397131590131,
+        "p90": 1.4643129030302198,
+        "sd": 0.014894714300111023
+      },
+      "train_episodes": 105
+    }
+  },
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "schema_version": "v3.2h-sc-parameters-v1"
+}

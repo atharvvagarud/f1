@@ -1,0 +1,138 @@
+{
+ "consumers": {
+  "compound": "engine._validate_start_state (wet-compound refusal); kernel anchor",
+  "constructor_id": "engine.select_pace_parameters (constructor offset); kernel anchor",
+  "driver_id": "state.SimulationState roster identity (canonical order)",
+  "lap_number": "adapter._driver_state (<= leader_laps_done); kernel evolution anchor; state identity",
+  "observation_age_s": "engine.contemporaneous_roster_offenders (stale bound = 3.0 x base pace); keep stale drivers out unless freshly observed",
+  "pit_count": "adapter._driver_state (required, no null); kernel bookkeeping",
+  "position": "adapter._driver_state (nullable, multi-holder allowed); classification only",
+  "race_time_s": "adapter._driver_state (own last-lap clock); kernel evolution anchor",
+  "status": "engine._validate_start_state (must be ACTIVE); never inferred from staleness",
+  "stint_number": "adapter passthrough (nullable); tyre bookkeeping",
+  "tyre_age": "engine._validate_start_state (required non-null); kernel degradation anchor"
+ },
+ "fields": [
+  {
+   "field": "driver_id",
+   "consumer": "state.SimulationState roster identity (canonical driver_id order)",
+   "required": true,
+   "current_source": "canonical RaceState.roster_driver_ids",
+   "units": "canonical driver identity string",
+   "causal": "pre-race entrant roster membership",
+   "nullable": false,
+   "derivable_from_raw_timingdata": "MAPPED (stream racing number -> D9 driver_id via driver_number; mapping only, not state)"
+  },
+  {
+   "causal": "latest D9 crossing with observed_time_s <= T",
+   "consumer": "adapter._driver_state",
+   "current_source": "canonical RaceState.DriverRaceState.observed_lap_number (D9)",
+   "derivable_from_raw_timingdata": "YES (NumberOfLaps, delta-persistent, t <= T)",
+   "field": "lap_number",
+   "nullable": false,
+   "required": true,
+   "units": "completed laps (int)"
+  },
+  {
+   "causal": "driver's own last-completed-lap session clock <= T",
+   "consumer": "adapter._driver_state; mc2 kernel",
+   "current_source": "canonical RaceState.observed_time_s (D9 LAP_END clock)",
+   "derivable_from_raw_timingdata": "PARTIAL (session-clock timestamp of latest NumberOfLaps change <= T is a candidate crossing clock; needs boundary validation)",
+   "field": "race_time_s",
+   "nullable": false,
+   "required": true,
+   "units": "seconds (float, session clock)"
+  },
+  {
+   "causal": "latest classified order at or before T",
+   "consumer": "adapter._driver_state",
+   "current_source": "canonical RaceState.position (D9)",
+   "derivable_from_raw_timingdata": "YES (Position key, t <= T)",
+   "field": "position",
+   "nullable": true,
+   "required": false,
+   "units": "1-based order (int)"
+  },
+  {
+   "causal": "fitted compound at T from stint history <= T",
+   "consumer": "engine._validate_start_state",
+   "current_source": "canonical RaceState.compound (D9/stints)",
+   "derivable_from_raw_timingdata": "NO (absent from TimingData; lives in TimingAppData Stints)",
+   "field": "compound",
+   "nullable": true,
+   "required": true,
+   "units": "compound token (str)"
+  },
+  {
+   "causal": "laps on current tyre at T",
+   "consumer": "engine._validate_start_state; kernel degradation",
+   "current_source": "canonical RaceState.tyre_life (D9/stints)",
+   "derivable_from_raw_timingdata": "NO (absent from TimingData)",
+   "field": "tyre_age",
+   "nullable": false,
+   "required": true,
+   "units": "laps (int, null refuses)"
+  },
+  {
+   "causal": "current stint index at T",
+   "consumer": "adapter passthrough",
+   "current_source": "canonical RaceState.stint_number",
+   "derivable_from_raw_timingdata": "NO (TimingAppData only)",
+   "field": "stint_number",
+   "nullable": true,
+   "required": false,
+   "units": "stint index (int)"
+  },
+  {
+   "causal": "completed pit stops at T",
+   "consumer": "adapter._driver_state",
+   "current_source": "canonical RaceState.pit_stops_completed_so_far (derived past-only)",
+   "derivable_from_raw_timingdata": "PARTIAL (NumberOfPitStops present in 2018/2019/2021/2024 seasons; absent 2020/2022/2023 per J schema census)",
+   "field": "pit_count",
+   "nullable": false,
+   "required": true,
+   "units": "count (int, null refuses)"
+  },
+  {
+   "causal": "pre-race entrant identity",
+   "consumer": "engine.select_pace_parameters; kernel",
+   "current_source": "canonical RaceState.constructor_id (results)",
+   "derivable_from_raw_timingdata": "NO (not in timing feeds; pre-race fact, reusable)",
+   "field": "constructor_id",
+   "nullable": true,
+   "required": true,
+   "units": "constructor token (str)"
+  },
+  {
+   "causal": "n/a (always ACTIVE at input; retirement simulated in R6)",
+   "consumer": "engine._validate_start_state",
+   "current_source": "adapter constant DriverStatus.ACTIVE",
+   "derivable_from_raw_timingdata": "N/A (J Retired-True is exclusion-only, never an ACTIVE input)",
+   "field": "status",
+   "nullable": false,
+   "required": true,
+   "units": "ACTIVE token"
+  },
+  {
+   "causal": "T minus observed_time_s",
+   "consumer": "engine.contemporaneous_roster_offenders",
+   "current_source": "canonical RaceState.observation_age_s (T - observed_time_s)",
+   "derivable_from_raw_timingdata": "PARTIAL (T - t requires a fresh raw-implied observed_time_s t <= T within bound)",
+   "field": "observation_age_s",
+   "nullable": false,
+   "required": true,
+   "units": "seconds (float)"
+  }
+ ],
+ "not_mc2_inputs": [
+  "GapToLeader/IntervalToPositionAhead seconds gaps (kernel derives spacings from race_time_s + pace; lapped drivers first-class via own lap_number)",
+  "LastLapTime (no per-driver recent-form input: pace is constructor/circuit-level)",
+  "BestLapTime/Sectors/Speeds"
+ ],
+ "schema_version": "v3.2k-minimum-state-contract-v1",
+ "sources": [
+  "raceintel/simulation/adapter.py (from_race_state, _driver_state)",
+  "raceintel/simulation/state.py (DriverSimState, SimulationState)",
+  "raceintel/simulation/engine.py (select_pace_parameters, _validate_start_state, contemporaneous_roster_offenders, CONTEMPORANEITY_MAX_OBSERVATION_LAP_TIMES=3.0)"
+ ]
+}

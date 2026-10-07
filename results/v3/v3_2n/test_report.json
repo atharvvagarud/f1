@@ -1,0 +1,25 @@
+{
+ "schema_version": "v3.2n-test-report-v1",
+ "n_focused_tests": 24,
+ "n_focused_passed": 24,
+ "jklm_contract_suites": {
+  "j_status": 29,
+  "k": 12,
+  "l": 27,
+  "m": 20,
+  "n_adjacent": "185+90 focused gates (J/MC2/presence/parity/API/phase6)",
+  "all": "pass"
+ },
+ "full_tier1": {
+  "result": "PASS",
+  "passed": 2888,
+  "failed": 0,
+  "deselected_corpus": 934,
+  "xfailed": 4,
+  "wall_s": "3523",
+  "log": "/tmp/v3_2n_tier1.log",
+  "runner": "scripts/run_ci_tests.py (EXPECTED_COLLECTED=3831; 44 new M+N nodes classified corpus-dependent)"
+ },
+ "corpus_tier3": "relevant suites run once where corpus present (J/K/L/M/N focused + dry-green parity bit-exact + phase6 freeze)",
+ "freeze_gate": "GREEN"
+}

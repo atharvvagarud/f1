@@ -1,0 +1,7 @@
+{
+ "schema_version": "v3.2k-future-poison-v1",
+ "n_probes": 40,
+ "unchanged": 40,
+ "mechanism": "causal lookup is latest t <= T (bisect_right); rows after T unreachable",
+ "verdict": "PASS"
+}

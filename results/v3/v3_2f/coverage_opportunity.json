@@ -1,0 +1,14 @@
+{
+  "coverage_before": 0.239,
+  "eligible_before": 2305,
+  "fully_supported_races": 0,
+  "median_race_coverage": 0.0938,
+  "n_races": 149,
+  "races_ge50": 30,
+  "races_ge75": 15,
+  "races_ge95": 7,
+  "races_with_ge1_supported": 103,
+  "schema_version": "v3.2f-coverage-opportunity-v1",
+  "total_checkpoints": 9644,
+  "zero_support_races": 46
+}

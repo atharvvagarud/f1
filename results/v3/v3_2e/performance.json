@@ -1,0 +1,52 @@
+{
+ "arms": {
+  "A_R3_BASELINE": {
+   "checkpoints": 1636,
+   "runs_per_sec": 1313.8610829496633,
+   "seconds_total": 1245.184914319194
+  },
+  "B_DRIVER_ANCHOR": {
+   "checkpoints": 1636,
+   "runs_per_sec": 124.55313771068022,
+   "seconds_total": 13134.956132540014
+  },
+  "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+   "checkpoints": 1636,
+   "runs_per_sec": 102.58829170735308,
+   "seconds_total": 15947.238937040791
+  },
+  "D_CONDITIONED_VARIANCE": {
+   "checkpoints": 1636,
+   "runs_per_sec": 102.00194964673042,
+   "seconds_total": 16038.909115620423
+  },
+  "E_AR1_RESIDUAL": {
+   "checkpoints": 1636,
+   "runs_per_sec": 96.85415105294672,
+   "seconds_total": 16891.37721217191
+  }
+ },
+ "catalogue_estimate": {
+  "n1000": {
+   "basis": "MEASURED runs/sec, EXTRAPOLATED to 2305 states at 0.7 parallel efficiency",
+   "parallel_4w_hours": 2.360979188136488,
+   "parallel_8w_hours": 1.180489594068244,
+   "serial_hours": 6.610741726782166
+  },
+  "n10000": {
+   "basis": "MEASURED runs/sec, EXTRAPOLATED to 2305 states at 0.7 parallel efficiency",
+   "parallel_4w_hours": 23.60979188136488,
+   "parallel_8w_hours": 11.80489594068244,
+   "serial_hours": 66.10741726782166
+  },
+  "n5000": {
+   "basis": "MEASURED runs/sec, EXTRAPOLATED to 2305 states at 0.7 parallel efficiency",
+   "parallel_4w_hours": 11.80489594068244,
+   "parallel_8w_hours": 5.90244797034122,
+   "serial_hours": 33.05370863391083
+  }
+ },
+ "population_hash": "5d038db83111a1a9dc9e885ed107358d8e018ad1c3a4570f14d1f78697b8383d",
+ "schema_version": "v3.2e-performance-v1",
+ "verdict_arm": "E_AR1_RESIDUAL"
+}

@@ -1,0 +1,16 @@
+{
+ "schema_version": "v3.2k-missing-tyre-opportunity-v1",
+ "n_primary_missing_tyre": 198,
+ "by_season": {
+  "2018": 99,
+  "2020": 33,
+  "2022": 33,
+  "2023": 33
+ },
+ "local_timingappdata_seasons": [
+  2018,
+  2024
+ ],
+ "opportunity_in_local_seasons": 99,
+ "verdict": "REPORTED_ONLY; no MISSING_TYRE integration in K"
+}

@@ -1,0 +1,26 @@
+{
+ "conditioning_hierarchy": [
+  "own-driver previous residual only"
+ ],
+ "content_hash": "bbeacb5cf59a0cf6e4861507a0ec7590538b335c9ee3b805da31747211af53df",
+ "estimator_config": {
+  "bound": 0.8,
+  "estimator": "causal trailing-median lag-1 pearson"
+ },
+ "fallback_rules": {
+  "reference": 0.264,
+  "unstable": "rho=0 (independent draws)"
+ },
+ "minimum_n": {
+  "lag1_pairs": 500
+ },
+ "parameter_family": "residual_ar1",
+ "schema_version": "mc2-params-v1",
+ "training_seasons": {
+  "min": 2018,
+  "through": 2021
+ },
+ "values": {
+  "rho_reference": 0.264
+ }
+}

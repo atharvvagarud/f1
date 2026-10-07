@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "41203f892b565c35e610de8f2655017962da98dfe5f47792df7afc7112a08a0a",
+  "diagnostics": {
+    "n_inpit_updates": 67,
+    "n_malformed_rows": 0,
+    "n_messages": 30499,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 66,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 21
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2019-r08-R",
+  "raw_sha256": "433066afcb816b6684462764f3bc0535a2b9d84f6ef7afe42cc58f024767ed76",
+  "round": 8,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2019,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2019/2019-06-23_French_Grand_Prix/2019-06-23_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        7.397,
+        false
+      ],
+      [
+        6559.333,
+        true
+      ]
+    ],
+    "hamilton": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "kubica": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        7.397,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        7.397,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

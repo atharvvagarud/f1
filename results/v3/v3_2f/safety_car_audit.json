@@ -1,0 +1,32 @@
+{
+  "checkpoint_token_count": 417,
+  "episode_durations_laps": {
+    "mean": 3.096,
+    "n": 104,
+    "p10": 1,
+    "p50": 3,
+    "p90": 5,
+    "sd": 1.59
+  },
+  "finding": "SC reshapes pace (+33.2s median, sd 18.7s), gaps (bunching), pit incentives, and restarts (restart lap sd 21.2s). No SC pace/compression/duration/restart model exists; R6 pit transitions are dry-filtered. Modelling SC as pace+N-seconds is explicitly rejected by this evidence.",
+  "pace_delta_s": {
+    "mean": 29.388,
+    "n": 3611,
+    "p10": 1.92,
+    "p50": 33.245,
+    "p90": 51.008,
+    "sd": 18.692
+  },
+  "restart_lap_delta_s": {
+    "delta": {
+      "mean": 18.189,
+      "n": 1840,
+      "p10": -0.567,
+      "p50": 5.12,
+      "p90": 47.869,
+      "sd": 21.248
+    },
+    "n_laps_rows": 1840
+  },
+  "schema_version": "v3.2f-safety-car-audit-v1"
+}

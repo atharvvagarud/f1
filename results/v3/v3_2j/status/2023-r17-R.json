@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "b28e9f555532733831c71d6d4600838f310080323f1854891d1d9d736b0dc7be",
+  "diagnostics": {
+    "n_inpit_updates": 230,
+    "n_malformed_rows": 0,
+    "n_messages": 52806,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 128,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 19,
+  "n_transitions": 20,
+  "race_id": "2023-r17-R",
+  "raw_sha256": "3e42a497eed1f69522f7409ad9bd18f240d49923da6d43f5a0f3af6f28d26dc3",
+  "round": 17,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2023,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2023/2023-10-08_Qatar_Grand_Prix/2023-10-08_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "lawson": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "sargeant": [
+      [
+        6.125,
+        false
+      ],
+      [
+        7743.929,
+        true
+      ]
+    ],
+    "stroll": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        6.125,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        6.125,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": [
+    "55"
+  ]
+}

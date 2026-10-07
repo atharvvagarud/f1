@@ -1,0 +1,73 @@
+{
+  "feed_vs_official_accounting": {
+    "feed_retired_drivers": 55,
+    "missed_fn": 79,
+    "note": "race-level fp overstates hazard: 6/7 are post-race or >90%-classified genuine retirements (causally safe: first-true after all race checkpoints); 1 genuine transient (RIC BEL 2018, 4.5-min window, 0 checkpoints impacted)",
+    "official_dnfs": 127,
+    "race_level_fp": 7,
+    "recall_tp": 48
+  },
+  "schema_version": "v3.2i-scorecard-v1",
+  "sources": [
+    {
+      "causal_at_T": "YES with state-at-T rule (1 known transient window in 45 races; 0 checkpoint impact)",
+      "coverage_2018_2024": "PARTIAL (2/7 seasons local)",
+      "explicit_retirement": true,
+      "licensing_access": "local cache of official public static feed (F1 terms apply; derived timestamps committable, raw blobs too large)",
+      "per_driver": true,
+      "reproducible": true,
+      "source": "LOCAL TimingData.Retired jsonStream (2018+2024, 45 races)",
+      "stopped_distinct": true,
+      "timestamped": true,
+      "verdict": "PARTIALLY_VIABLE"
+    },
+    {
+      "causal_at_T": "EXPECTED",
+      "coverage_2018_2024": "FULL (pattern probe-verified)",
+      "explicit_retirement": "EXPECTED (2021 schema identical; per-race validation required in V3.2J)",
+      "licensing_access": "same public static host, no auth",
+      "per_driver": true,
+      "reproducible": true,
+      "source": "F1 static jsonStream fetch for 2019-2023",
+      "stopped_distinct": "EXPECTED",
+      "timestamped": true,
+      "verdict": "VIABLE (completion path; fetch deferred to V3.2J)"
+    },
+    {
+      "causal_at_T": false,
+      "coverage_2018_2024": "2023+ only",
+      "explicit_retirement": false,
+      "licensing_access": "CC BY-NC-SA 4.0, free no-key",
+      "per_driver": true,
+      "reproducible": true,
+      "source": "OpenF1",
+      "stopped_distinct": false,
+      "timestamped": "positions yes, retirement no",
+      "verdict": "VALIDATION_ONLY"
+    },
+    {
+      "causal_at_T": false,
+      "coverage_2018_2024": "FULL (result grain)",
+      "explicit_retirement": "result-only",
+      "licensing_access": "open API",
+      "per_driver": true,
+      "reproducible": true,
+      "source": "Jolpica/Ergast",
+      "stopped_distinct": false,
+      "timestamped": false,
+      "verdict": "EVALUATION_ONLY (NOT_VIABLE runtime)"
+    },
+    {
+      "causal_at_T": false,
+      "coverage_2018_2024": "n/a",
+      "explicit_retirement": false,
+      "licensing_access": "n/a",
+      "per_driver": false,
+      "reproducible": false,
+      "source": "position Null / STOPPED / pit-duration / final DNF heuristics",
+      "stopped_distinct": false,
+      "timestamped": false,
+      "verdict": "NOT_VIABLE (V3.2G rejections stand)"
+    }
+  ]
+}

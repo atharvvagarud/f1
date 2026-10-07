@@ -1,0 +1,196 @@
+{
+  "episode_durations_laps": {
+    "safety_car": {
+      "mean": 3.096,
+      "n": 104,
+      "p10": 1,
+      "p50": 3,
+      "p90": 5,
+      "sd": 1.59
+    },
+    "vsc": {
+      "mean": 1.291,
+      "n": 55,
+      "p10": 1,
+      "p50": 1,
+      "p90": 2,
+      "sd": 0.528
+    },
+    "vsc_ending": {
+      "mean": 1.0,
+      "n": 17,
+      "p10": 1,
+      "p50": 1,
+      "p90": 1,
+      "sd": 0.0
+    },
+    "yellow": {
+      "mean": 1.134,
+      "n": 261,
+      "p10": 1,
+      "p50": 1,
+      "p90": 2,
+      "sd": 0.393
+    }
+  },
+  "green_reference_cells": 124,
+  "n_frame_rows": 162728,
+  "n_usable_lap_rows": 148049,
+  "regime_delta_s": {
+    "all_clear": {
+      "mean": 0.324,
+      "n": 130398,
+      "p10": -2.238,
+      "p50": 0.001,
+      "p90": 2.62,
+      "sd": 6.028
+    },
+    "safety_car": {
+      "mean": 29.388,
+      "n": 3611,
+      "p10": 1.92,
+      "p50": 33.245,
+      "p90": 51.008,
+      "sd": 18.692
+    },
+    "vsc": {
+      "mean": 18.581,
+      "n": 892,
+      "p10": 3.943,
+      "p50": 19.623,
+      "p90": 33.096,
+      "sd": 12.919
+    },
+    "vsc_ending": {
+      "mean": 18.156,
+      "n": 237,
+      "p10": 8.725,
+      "p50": 17.635,
+      "p90": 26.694,
+      "sd": 7.008
+    },
+    "yellow": {
+      "mean": 1.283,
+      "n": 3982,
+      "p10": -1.925,
+      "p50": 0.463,
+      "p90": 4.055,
+      "sd": 6.153
+    }
+  },
+  "sc_restart": {
+    "delta": {
+      "mean": 18.189,
+      "n": 1840,
+      "p10": -0.567,
+      "p50": 5.12,
+      "p90": 47.869,
+      "sd": 21.248
+    },
+    "n_laps_rows": 1840
+  },
+  "schema_version": "v3.2f-pace-evidence-raw-v1",
+  "seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "slicks_under_rain_counts": {
+    "2018|HYPERSOFT": 127,
+    "2018|MEDIUM": 459,
+    "2018|SOFT": 385,
+    "2018|SUPERSOFT": 124,
+    "2018|ULTRASOFT": 263,
+    "2019|HARD": 414,
+    "2019|MEDIUM": 489,
+    "2019|SOFT": 520,
+    "2020|HARD": 2,
+    "2020|MEDIUM": 16,
+    "2020|SOFT": 5,
+    "2021|HARD": 13,
+    "2021|MEDIUM": 53,
+    "2021|SOFT": 15,
+    "2022|HARD": 216,
+    "2022|MEDIUM": 142,
+    "2022|SOFT": 163,
+    "2023|HARD": 7,
+    "2023|MEDIUM": 83,
+    "2023|SOFT": 137,
+    "2024|HARD": 4,
+    "2024|MEDIUM": 147,
+    "2024|SOFT": 34
+  },
+  "wet_counts_era_compound_rain": {
+    "2018-2021|HARD|rain=True": 429,
+    "2018-2021|HYPERSOFT|rain=True": 127,
+    "2018-2021|INTERMEDIATE|rain=False": 2156,
+    "2018-2021|INTERMEDIATE|rain=True": 895,
+    "2018-2021|MEDIUM|rain=True": 1017,
+    "2018-2021|SOFT|rain=True": 925,
+    "2018-2021|SUPERSOFT|rain=True": 124,
+    "2018-2021|ULTRASOFT|rain=True": 263,
+    "2018-2021|WET|rain=False": 124,
+    "2018-2021|WET|rain=True": 61,
+    "2022-2024|HARD|rain=True": 227,
+    "2022-2024|INTERMEDIATE|rain=False": 1882,
+    "2022-2024|INTERMEDIATE|rain=True": 1920,
+    "2022-2024|MEDIUM|rain=True": 372,
+    "2022-2024|SOFT|rain=True": 334,
+    "2022-2024|WET|rain=False": 98,
+    "2022-2024|WET|rain=True": 233
+  },
+  "yellow_affected": {
+    "drivers_per_lap": {
+      "mean": 11.375,
+      "n": 315,
+      "p10": 5,
+      "p50": 11,
+      "p90": 18,
+      "sd": 4.49
+    },
+    "frac_slowed": {
+      "mean": 0.149,
+      "n": 315,
+      "p10": 0.0,
+      "p50": 0.059,
+      "p90": 0.4,
+      "sd": 0.232
+    },
+    "n_yellow_laps": 315
+  },
+  "yellow_rc": {
+    "n_texts": 5803,
+    "n_yellow_rows": 5877,
+    "rc_age_s": {
+      "mean": 25.34,
+      "n": 5803,
+      "p10": 2.057,
+      "p50": 16.903,
+      "p90": 63.628,
+      "sd": 24.867
+    },
+    "rc_category": {
+      "CarEvent": 617,
+      "Drs": 178,
+      "Flag": 3675,
+      "None": 74,
+      "Other": 1313,
+      "SafetyCar": 20
+    },
+    "rc_flag": {
+      "BLACK AND WHITE": 1,
+      "BLUE": 607,
+      "CHEQUERED": 102,
+      "CLEAR": 1720,
+      "DOUBLE YELLOW": 471,
+      "None": 2202,
+      "RED": 3,
+      "YELLOW": 771
+    },
+    "sector_mention_rows": 3155
+  }
+}

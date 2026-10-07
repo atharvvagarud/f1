@@ -1,0 +1,39 @@
+{
+  "categories": {
+    "CarEvent": 246,
+    "Drs": 524,
+    "Flag": 8873,
+    "Other": 4906,
+    "SafetyCar": 443
+  },
+  "driver_families": {
+    "RETIRED": {
+      "note": "family absent corpus-wide",
+      "rows": 0
+    },
+    "STOPPED": {
+      "form": "CAR N (XXX) STOPPED AT TURN T",
+      "rows": 63,
+      "scope": null,
+      "seasons": {
+        "2018": 25,
+        "2019": 15,
+        "2020": 3,
+        "2021": 7,
+        "2022": 9,
+        "2023": 0,
+        "2024": 4
+      }
+    }
+  },
+  "n_messages": 14992,
+  "n_races": 173,
+  "schema_version": "v3.2g-race-control-taxonomy-v1",
+  "scope_values": {
+    "Driver": 5512,
+    "Sector": 2660,
+    "Track": 701,
+    "null": 6119
+  },
+  "status_values": "mostly null; ENABLED/DEPLOYED/DISABLED (DRS/SC), never driver status"
+}

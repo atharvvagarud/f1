@@ -1,0 +1,70 @@
+{
+  "baseline": {"commit": "64c5af0", "tag": "v3.1-race-dynamics"},
+  "v3_2h_parent": "V3.2H COMPLETE - NO REGIME ADMITTED",
+  "current_coverage": {"eligible": 2305, "total": 9644, "fraction": 0.239},
+  "local_raw": {
+    "sqlite_responses": 1141,
+    "timingdata_streams": {"2018": 21, "2019": 0, "2020": 0, "2021": 0, "2022": 0, "2023": 0, "2024": 24},
+    "topics": ["DriverList", "LapCount", "RaceControlMessages", "SessionInfo", "SessionStatus", "TimingAppData", "TimingData", "TrackStatus", "WeatherData"]
+  },
+  "raw_timing": {
+    "framing": "12-char session-clock prefix + JSON delta",
+    "keys": ["Retired", "Stopped", "InPit", "PitOut"],
+    "schema_2018_vs_2024": "status namespace identical"
+  },
+  "status_semantics": {
+    "field": "TimingData.Lines[driver].Retired",
+    "monotone": False,
+    "true_to_false_flips": 2,
+    "rule": "state-at-T (last value <= T); first-true-alone UNSAFE",
+    "transient_checkpoint_impact": 0,
+    "winners_with_true_event": 0
+  },
+  "source_availability": {
+    "2018": {"races": 21, "retirement_events": 24},
+    "2024": {"races": 24, "retirement_events": 32},
+    "2019_2023": "no local streams; static-host fetch probe-verified"
+  },
+  "openf1": {
+    "historical_since": "2023",
+    "retirement_transition_endpoint": "NONE",
+    "verdict": "VALIDATION_ONLY"
+  },
+  "jolpica": {
+    "grain": "final-result-only",
+    "verdict": "EVALUATION_ONLY"
+  },
+  "external_sources": {
+    "f1_static_jsonstream": "VIABLE completion path (HEAD 200 + one 5MB schema probe, 2021 identical)",
+    "other": "none needed"
+  },
+  "source_scorecard": "source_scorecard.json (local PARTIALLY_VIABLE; fetch VIABLE; openf1 VALIDATION_ONLY; jolpica EVALUATION_ONLY; heuristics NOT_VIABLE)",
+  "sample_verification": "55 timelines + 2 crash-absence cases; gap p50 ~236s, zero negatives",
+  "winner_firewall": {
+    "flagged": [],
+    "vettel_2018_r02": "PASS",
+    "untestable_locally": ["bottas_2020_r01", "verstappen_2022_r18", "perez_2021_r06"]
+  },
+  "causal_timeline": "T1/T2 rule, labels evaluation-only, shared session clock",
+  "projected_coverage": {"eligible": 2685, "total": 9644, "fraction": 0.2784, "clean_gain": 380, "resolved": 469},
+  "projected_blockers": {"stale_all_sets_after": 5938, "track": 1317, "wet": 1157},
+  "projected_stage_coverage": {"EARLY_relief": 83, "MID_relief": 182, "LATE_relief": 204},
+  "projected_race_coverage": {"median": 0.127, "ge_50": 39, "ge_75": 23, "ge_95": 11, "full": 0, "zero_support": 46},
+  "source_completeness": "explicit signal, ~39% recall vs official DNF (intrinsic miss classes); unknown is default",
+  "licensing_reproducibility": "static host public no-auth observed, F1 proprietary underlying (no legal claims); derived KB tables committable, GB blobs not; rebuild pinned by URL+sha256+adapter",
+  "architecture_plan": "DESIGN ONLY: stream -> adapter -> state-at-T reconstruction -> timeline artifact -> presence exclusion-only -> eligibility -> MC2-E",
+  "provenance_plan": "DESIGN ONLY: source + race/session + content hash + adapter + contract + rules hash",
+  "runtime_unchanged": true,
+  "decision": "LOCAL_RAW_STATUS_SOURCE_PARTIALLY_VIABLE",
+  "next_stage": "V3.2J DECISION: fetch 2019-2023, validate per-race incl. all firewall cases, exclusion-only integration, parity, coverage recompute",
+  "known_limitations": [
+    "2019-2023 streams unfetched; 3 firewall cases untestable until V3.2J",
+    "~39% feed recall: garage/non-flag retirements stay refused (unknown, correctly)",
+    "one genuine transient bounds hazard class; guard specified, integration unfunded",
+    "official labels vs feed disagree both ways (>90% rule); evaluate timelines, not labels",
+    "static-host redistribution posture flagged, not resolved"
+  ],
+  "tier1_status": "GREEN_FULL (2831 passed / 0 failed / 4 xfailed pre-existing; collected=3719 as expected; 44m19s)",
+  "tests": {"added": 13, "source_safe": 6, "corpus_dependent": 7, "expected_collected": 3719},
+  "schema_version": "v3.2i-external-status-feasibility-v1"
+}

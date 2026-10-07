@@ -1,0 +1,149 @@
+{
+  "baseline": {"commit": "64c5af0", "tag": "v3.1-race-dynamics"},
+  "v3_2g_parent": "NO_AUTHORITATIVE_STATUS_ADMITTED",
+  "accepted_mc2": {
+    "arm": "E_AR1_RESIDUAL",
+    "rho": 0.264,
+    "n_runs_production": 5000,
+    "research": "mc2-r1-research",
+    "kernel": "mc2-kernel-v1",
+    "rng": "mc2-rng-v1",
+    "field": "mc2-field-v1",
+    "presence": "v3.2c-presence-v1"
+  },
+  "ci_debt": "CLEARED_IN_H: V3.2G full Tier-1 never completed (memory pressure), not claimed green. H: +15 tests (7 source-safe, 8 corpus-dependent, zero removals, EXPECTED_COLLECTED 3691->3706); focused suites green (49 passed); full Tier-1 completed in H: 2825 passed, 0 failed, 0 errors, 4 xfailed (pre-existing), 877 deselected corpus-dependent, 42m43s.",
+  "tier1_status": "GREEN_FULL (2825 passed / 0 failed / 4 xfailed pre-existing; collected=3706 as expected)",
+  "preregistration": {
+    "file": "results/v3/v3_2h/preregistration.json",
+    "hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+    "frozen_before_scoring": true
+  },
+  "opportunity": {
+    "track_only": 292,
+    "track_only_by_token": {
+      "yellow": 123,
+      "safety_car": 66,
+      "null": 59,
+      "vsc": 29,
+      "vsc_ending": 12,
+      "red_flag": 3
+    },
+    "wet_only": 176,
+    "wet_only_by_state": {
+      "rain_slicks": 44,
+      "rain_wet": 28,
+      "dry_wet_compound": 104
+    },
+    "track_x_stale": 811,
+    "wet_x_stale": 799
+  },
+  "vsc": {
+    "episodes": 56,
+    "duration": "median 1 lap; H1 slope 2.61 (FAIL), H2 unmeasurable (FAIL)",
+    "during_pace_mae_s": {"H1": 10.38, "H2": 11.58, "gate": 10.0},
+    "post_exit_mae_s": {"H1": 5.85, "H2": 3.16},
+    "decision": "REJECT_VSC"
+  },
+  "vsc_ending": {
+    "driver_laps": 314,
+    "resolve_green_next": 288,
+    "decision": "REJECT_VSC_ENDING"
+  },
+  "wet": {
+    "pace_mae_s": {"H1": 14.43, "H2": 12.99, "gate": 6.0},
+    "compound_boundary_flips": 1320,
+    "decision": "REJECT_WET"
+  },
+  "safety_car": {
+    "episodes": 119,
+    "restart_mae_s": {"H1": 13.6, "H2": 15.3},
+    "pit_rate_sc_vs_green": [0.2, 0.046],
+    "decision": "REJECT_SC"
+  },
+  "yellow": {
+    "episodes": 270,
+    "racestate_exposure": "NONE",
+    "decision": "REJECT_YELLOW"
+  },
+  "red": {
+    "checkpoints": 22,
+    "usable_laps": 0,
+    "decision": "REJECT_RED"
+  },
+  "rng_domains": ["mc2-vsc-duration", "mc2-sc-duration", "mc2-weather-transition"],
+  "oracle_firewall": "VACUOUSLY_GREEN (no runtime reads added; offline past-only only)",
+  "implemented_regimes": [],
+  "rejected_regimes": ["VSC", "VSC_ENDING", "WET", "SAFETY_CAR", "YELLOW", "RED"],
+  "result_provenance": "regime_identities.json (MC2+presence identity, parameter content hashes, NOT_BUILT markers, seed policy)",
+  "dry_green_parity": {
+    "corpus_hash_prefix": "7ae97c3c",
+    "members": 50,
+    "entry": "PARITY_OK_BIT_EXACT",
+    "final": "PARITY_OK_BIT_EXACT"
+  },
+  "regression_corpora": "none (no admitted regime; V3.2F parity corpus remains the gate)",
+  "coverage_before": {"eligible": 2305, "total": 9644, "fraction": 0.239},
+  "coverage_after": {"eligible": 2305, "total": 9644, "fraction": 0.239},
+  "coverage_attribution": {
+    "VSC": 0,
+    "VSC_ENDING": 0,
+    "WET": 0,
+    "SC": 0,
+    "YELLOW": 0,
+    "RED": 0,
+    "unexplained_growth": 0
+  },
+  "season_coverage": "unchanged (2018 8.73 / 2019 40.19 / 2020 18.46 / 2021 21.34 / 2022 23.21 / 2023 22.88 / 2024 31.14 %)",
+  "stage_coverage": "unchanged (EARLY 39.55 / MID 23.22 / LATE 10.14 %)",
+  "race_coverage": "unchanged (103 >=1, 46 zero, median 9.38%)",
+  "remaining_blockers": {
+    "primary": {
+      "STALE_ROSTER_OBSERVATION": 4667,
+      "UNSUPPORTED_TRACK_STATE": 1165,
+      "WET_CONDITIONS": 801,
+      "MISSING_DRIVER_OBSERVATION": 354,
+      "MISSING_TYRE_STATE": 198,
+      "TERMINAL_STATE": 154
+    },
+    "all_blocker_sets": {
+      "STALE_ROSTER_OBSERVATION": 6407,
+      "UNSUPPORTED_TRACK_STATE": 1317,
+      "WET_CONDITIONS": 1157,
+      "MISSING_TYRE_STATE": 342
+    }
+  },
+  "performance": {
+    "dry_green_runs_per_s": 140.7,
+    "latency_5000_s": 35.5,
+    "regime_cost": "N/A_NO_ADMITTED_REGIME"
+  },
+  "precompute_cost": {
+    "serial_h": 95.2,
+    "x4_h": 23.8,
+    "x8_h": 11.9,
+    "eligible_only_serial_h": 22.8,
+    "scaling": "linear extrapolation, no perfect-scaling claim"
+  },
+  "external_status_limitation": "V3.2G preserved: no authoritative retirement/status source in corpus; STALE_ROSTER frozen; absence != retirement",
+  "tests": {
+    "added": 15,
+    "source_safe": 7,
+    "corpus_dependent": 8,
+    "expected_collected": 3706,
+    "focused_status": "49 passed (H source-safe + V3.2F/V3.2G regime/status suites)"
+  },
+  "scientific_identities": {
+    "preregistration": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+    "parity_corpus": "7ae97c3c8575679a...",
+    "regime_support": "v3.2f-regime-support-v1 (unchanged)"
+  },
+  "known_limitations": [
+    "~55 VSC / ~119 SC episodes bind calibration, not modelling cleverness",
+    "lap-grain spread cannot measure SC bunching under 4.4x pit-rate shift",
+    "cross-era fallback contaminates H1 eval (documented via counts)",
+    "outcome-level metrics unmeasurable without integrated simulator (by prereg design)",
+    "46 zero-support races and LATE 10.14% persist; STALE dominates headroom"
+  ],
+  "v3_2i_handoff": "no runtime integration occurred; V3.2I inherits V3.2G runtime exactly; H artefacts are reusable priors only; binding retry constraint is episode sample size; STALE_ROSTER needs external status source; DO NOT START V3.2I here",
+  "schema_version": "v3.2h-regime-models-v1"
+}

@@ -1,0 +1,29 @@
+{
+  "distinct_bad": 14,
+  "freeze_hash": "1465c11b50e898ca094ed35dd87bd075b446c26bdb55d73fe878bb14e0d7b0a8",
+  "latency_s": {
+    "max": 417.4,
+    "p10": 49.7,
+    "p50": 97.5,
+    "p90": 159.9
+  },
+  "later_rows": 9,
+  "n_stopped": 62,
+  "non_terminal": 5,
+  "precision_vs_dnf": [
+    57,
+    62
+  ],
+  "recall_vs_terminal_absence": 0.1033,
+  "schema_version": "v3.2g-rc-status-analysis-v1",
+  "seasons_zero": [
+    "2023"
+  ],
+  "stopped_vs_retired": "STOPPED is observed-stationary-car; RETIRED family absent; concepts never collapsed (nothing to collapse)",
+  "winners_hit": [
+    [
+      "2021-r06-R",
+      "perez"
+    ]
+  ]
+}

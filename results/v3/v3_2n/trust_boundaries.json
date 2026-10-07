@@ -1,0 +1,11 @@
+{
+ "schema_version": "v3.2n-trust-boundaries-v1",
+ "boundaries": {
+  "raw historical data": "pinned cache blobs; SHA-verified on fetch",
+  "derived status artifacts": "local JSON; contract-version gated",
+  "api inputs": "anchor triplets; validated, never trusted blindly",
+  "simulation parameters": "frozen through-2023 artifacts",
+  "precomputed outputs": "content-hashed; poison-tested lineage"
+ },
+ "requirement": "Portfolio Release security audit later; no full security audit in N"
+}

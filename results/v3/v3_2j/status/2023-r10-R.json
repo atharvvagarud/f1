@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "a687a2a3b5ff6af6b530ac792cb3b296f94ba0eecf22897e788f964f4210ecc7",
+  "diagnostics": {
+    "n_inpit_updates": 168,
+    "n_malformed_rows": 0,
+    "n_messages": 54668,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 68,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2023-r10-R",
+  "raw_sha256": "b2bd7bb088d3fc10e937f99b3fdfeab60c71ca7bc2c4249b5db486d8ca8b0ea5",
+  "round": 10,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2023,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2023/2023-07-09_British_Grand_Prix/2023-07-09_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "de_vries": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        1.703,
+        false
+      ],
+      [
+        8509.509,
+        true
+      ]
+    ],
+    "hamilton": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        1.703,
+        false
+      ],
+      [
+        4709.541,
+        true
+      ]
+    ],
+    "perez": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "sargeant": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        1.703,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        1.703,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

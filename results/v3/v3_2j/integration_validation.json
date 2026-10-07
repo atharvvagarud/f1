@@ -1,0 +1,244 @@
+{
+  "api_still_unsupported": {
+    "error": "SimulationUnsupportedError",
+    "reason": "non_contemporaneous_roster_member",
+    "refused": true
+  },
+  "checkpoints": [
+    {
+      "field_size": 19,
+      "frame_index": 134,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2018-r16-R",
+      "run_s": 1.03,
+      "season": 2018,
+      "stage": "EARLY",
+      "status_excluded": [
+        "gasly"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    },
+    {
+      "field_size": 19,
+      "frame_index": 1077,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2018-r03-R",
+      "run_s": 0.07,
+      "season": 2018,
+      "stage": "LATE",
+      "status_excluded": [
+        "brendon_hartley"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    },
+    {
+      "field_size": 18,
+      "frame_index": 314,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2018-r16-R",
+      "run_s": 0.62,
+      "season": 2018,
+      "stage": "MID",
+      "status_excluded": [
+        "brendon_hartley",
+        "gasly"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    },
+    {
+      "field_size": 19,
+      "frame_index": 195,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2019-r10-R",
+      "run_s": 0.84,
+      "season": 2019,
+      "stage": "EARLY",
+      "status_excluded": [
+        "kevin_magnussen"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    },
+    {
+      "field_size": 19,
+      "frame_index": 724,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2019-r02-R",
+      "run_s": 0.39,
+      "season": 2019,
+      "stage": "LATE",
+      "status_excluded": [
+        "grosjean"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    },
+    {
+      "field_size": 19,
+      "frame_index": 377,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2019-r02-R",
+      "run_s": 0.75,
+      "season": 2019,
+      "stage": "MID",
+      "status_excluded": [
+        "grosjean"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    },
+    {
+      "field_size": 19,
+      "frame_index": 264,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2020-r01-R",
+      "run_s": 1.08,
+      "season": 2020,
+      "stage": "EARLY",
+      "status_excluded": [
+        "max_verstappen"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    },
+    {
+      "field_size": 17,
+      "frame_index": 821,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2020-r02-R",
+      "run_s": 0.38,
+      "season": 2020,
+      "stage": "LATE",
+      "status_excluded": [
+        "leclerc",
+        "ocon",
+        "vettel"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    },
+    {
+      "field_size": 18,
+      "frame_index": 419,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2020-r02-R",
+      "run_s": 0.85,
+      "season": 2020,
+      "stage": "MID",
+      "status_excluded": [
+        "leclerc",
+        "vettel"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    },
+    {
+      "field_size": 19,
+      "frame_index": 76,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2021-r05-R",
+      "run_s": 1.52,
+      "season": 2021,
+      "stage": "EARLY",
+      "status_excluded": [
+        "leclerc"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    },
+    {
+      "field_size": 18,
+      "frame_index": 938,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2021-r05-R",
+      "run_s": 0.4,
+      "season": 2021,
+      "stage": "LATE",
+      "status_excluded": [
+        "bottas",
+        "leclerc"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    },
+    {
+      "field_size": 19,
+      "frame_index": 473,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2021-r05-R",
+      "run_s": 1.01,
+      "season": 2021,
+      "stage": "MID",
+      "status_excluded": [
+        "leclerc"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    },
+    {
+      "field_size": 19,
+      "frame_index": 177,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2022-r05-R",
+      "run_s": 0.9,
+      "season": 2022,
+      "stage": "EARLY",
+      "status_excluded": [
+        "zhou"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    },
+    {
+      "field_size": 19,
+      "frame_index": 708,
+      "invalid": 0,
+      "ok": true,
+      "position_distributions_valid": true,
+      "race_id": "2022-r05-R",
+      "run_s": 0.37,
+      "season": 2022,
+      "stage": "LATE",
+      "status_excluded": [
+        "zhou"
+      ],
+      "valid": 500,
+      "winner_mass": 1.0
+    }
+  ],
+  "master_seed": 20240101,
+  "n_ok": 14,
+  "n_sampled": 14,
+  "no_runtime_network": true,
+  "schema_version": "v3.2j-integration-validation-v1",
+  "simulation_count": 500
+}

@@ -1,0 +1,79 @@
+{
+ "schema_version": "v3.2n-status-semantics-regression-v1",
+ "unit_cases": [
+  {
+   "name": "latest<=T",
+   "passed": true
+  },
+  {
+   "name": "missing preserves",
+   "passed": true
+  },
+  {
+   "name": "true",
+   "passed": true
+  },
+  {
+   "name": "false clearing",
+   "passed": true
+  },
+  {
+   "name": "true-false-true",
+   "passed": true
+  },
+  {
+   "name": "unknown stays unknown",
+   "passed": true
+  },
+  {
+   "name": "exact-T counts",
+   "passed": true
+  },
+  {
+   "name": "repeats carry no state",
+   "passed": true
+  }
+ ],
+ "all_unit_passed": true,
+ "firewall_probes": [
+  {
+   "case": "vettel-2018-r02",
+   "race": "2018-r02-R",
+   "driver": "vettel",
+   "T": 5000.0,
+   "resolved": false,
+   "documented_expectation": null,
+   "note": "informational resolver probe; binding firewall verdicts live in J artifacts"
+  },
+  {
+   "case": "bottas-2020-r01",
+   "race": "2020-r01-R",
+   "driver": "bottas",
+   "T": 5000.0,
+   "resolved": false,
+   "documented_expectation": null,
+   "note": "informational resolver probe; binding firewall verdicts live in J artifacts"
+  },
+  {
+   "case": "verstappen-2022-r18",
+   "race": "2022-r18-R",
+   "driver": "verstappen",
+   "T": 5000.0,
+   "resolved": null,
+   "documented_expectation": null,
+   "note": "informational resolver probe; binding firewall verdicts live in J artifacts"
+  },
+  {
+   "case": "perez-2021-r06",
+   "race": "2021-r06-R",
+   "driver": "perez",
+   "T": 5000.0,
+   "resolved": false,
+   "documented_expectation": null,
+   "note": "informational resolver probe; binding firewall verdicts live in J artifacts"
+  }
+ ],
+ "j_firewall_artifact": "REVIEW",
+ "unreliable_windows_loaded": true,
+ "n_windowed_pairs": 13
+}

@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "319bda7152aa51f540ba45fdf89c5a6fcdd57ec8090a170d9c1179581483a32b",
+  "diagnostics": {
+    "n_inpit_updates": 186,
+    "n_malformed_rows": 0,
+    "n_messages": 51541,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 84,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2022-r09-R",
+  "raw_sha256": "71f5cc69d6caeedf9705e419d64dd4a35ede760257a73f6a4ce6b5e4c0d4f39d",
+  "round": 9,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2022,
+  "served_by": "fastf1_mirror",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2022/2022-06-19_Canadian_Grand_Prix/2022-06-19_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        6.323,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        6.323,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

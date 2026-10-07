@@ -1,0 +1,211 @@
+{
+ "schema_version": "v3.2l-machine-summary-v1",
+ "baseline": {
+  "tag": "v3.1-race-dynamics",
+  "commit": "64c5af094bd1304e23a5c7d3d5b782b0eef11aca"
+ },
+ "v3_2k_parent": {
+  "decision": "REJECT_DIRECT_RAW_STATE_RECONSTRUCTION",
+  "k_prereg": "567260af8072d2e1700a4d1e9ad24265fc458c838010dc8a0d27b745c6a2f22b",
+  "residual": {
+   "raw_source_stale": 2866,
+   "lifecycle_ambiguous": 147,
+   "mixed": 281
+  }
+ },
+ "accepted_mc2": "unchanged MC2-E",
+ "accepted_status_contract": "v3.2j-driver-status-v1",
+ "preregistration": "4c3eb5c8cdfe9ebf44555de540ee1378d0b12089d5c8cbc44dea7c0de6c48533",
+ "opportunity": {
+  "LIFECYCLE_FULLY_ADDRESSABLE": 1874,
+  "LIFECYCLE_PARTIALLY_ADDRESSABLE": 37,
+  "NO_CAUSAL_STOP_SIGNAL": 3,
+  "LAST_STATE_INSUFFICIENT": 0,
+  "MULTIPLE_OFFENDER_MIXED": 17,
+  "J_RETIRED_PLUS_LIFECYCLE": 1341,
+  "OTHER_EXPLAINED": 22
+ },
+ "lifecycle_contract": {
+  "schema_version": "v3.2l-lifecycle-contract-v1",
+  "state": "STOPPED_UNRESOLVED_AT_T",
+  "means": "at T the driver is causally known stopped/non-progressing (latest Stopped True, D9-stale corroborated), not J-Retired, with last known race state sufficient to initialize a lifecycle process",
+  "not_means": [
+   "retired",
+   "DNF",
+   "will not return"
+  ],
+  "stopped_semantics": "Stopped=False clearing unreliable (73/85 returns lack clearing); Stopped=True may persist stale after resume; age-conditioned modelling required, never sticky-forever assumption"
+ },
+ "episode_corpus": {
+  "n_episodes": 476,
+  "classes": {
+   "CLEAN": 211,
+   "PIT_CONTEXT": 214,
+   "INITIAL_UNKNOWN": 41,
+   "LATE_SESSION": 10
+  }
+ },
+ "causal_features": [
+  "elapsed stopped duration at T",
+  "race stage/fraction",
+  "laps remaining from scheduled distance",
+  "last known position/lap/lap deficit",
+  "last known pit state/pit-stop count",
+  "last known tyre state if causal",
+  "track status at T",
+  "race-control messages issued <= T",
+  "stop context if causally available",
+  "recent pre-stop pace descriptors"
+ ],
+ "temporal_splits": {
+  "2020->2021": {
+   "n_train": 101,
+   "n_eval": 24
+  },
+  "2021->2022": {
+   "n_train": 125,
+   "n_eval": 42
+  },
+  "2022->2023": {
+   "n_train": 167,
+   "n_eval": 24
+  },
+  "2023->2024": {
+   "n_train": 191,
+   "n_eval": 20
+  }
+ },
+ "baselines": {
+  "schema_version": "v3.2l-baselines-v1",
+  "n_clean": 211,
+  "global_terminal_freq": 0.8578199052132701,
+  "by_x_stage": {
+   "MID": {
+    "terminal": 40,
+    "n": 49,
+    "freq": 0.8163265306122449
+   },
+   "EARLY": {
+    "terminal": 68,
+    "n": 83,
+    "freq": 0.8192771084337349
+   },
+   "LATE": {
+    "terminal": 73,
+    "n": 79,
+    "freq": 0.9240506329113924
+   }
+  }
+ },
+ "terminal_model": {
+  "2020->2021": {
+   "n_train": 101,
+   "n_eval": 24,
+   "log_loss": 0.4823,
+   "brier": 0.1379,
+   "roc_auc": 0.9167,
+   "ece": 0.2319
+  },
+  "2021->2022": {
+   "n_train": 125,
+   "n_eval": 42,
+   "log_loss": 0.1533,
+   "brier": 0.0357,
+   "roc_auc": 0.9573,
+   "ece": 0.0834
+  },
+  "2022->2023": {
+   "n_train": 167,
+   "n_eval": 24,
+   "log_loss": 0.4446,
+   "brier": 0.1248,
+   "roc_auc": 0.6211,
+   "ece": 0.1532
+  },
+  "2023->2024": {
+   "n_train": 191,
+   "n_eval": 20,
+   "log_loss": 0.2177,
+   "brier": 0.0514,
+   "roc_auc": 0.4211,
+   "ece": 0.0735
+  }
+ },
+ "terminal_calibration": {
+  "2020->2021": 0.2319,
+  "2021->2022": 0.0834,
+  "2022->2023": 0.1532,
+  "2023->2024": 0.0735
+ },
+ "return_time_model": {
+  "n_returned": 30,
+  "conditional_tables": [
+   "0",
+   "60",
+   "180",
+   "300",
+   "600"
+  ]
+ },
+ "stopped_age_survival": {
+  "p0": 0.142,
+  "tail": 0.027
+ },
+ "last_state_sufficiency": "anchors exist for every addressable offender; staleness is age, not missing fields. Return-branch in",
+ "return_mechanism": "design-only; kernel hold required (NOT IMPLEMENTED)",
+ "terminal_mechanism": "design-only; simulated-future non-progression",
+ "finish_classification": "definable-but-unimplemented (terminal-flag extension required)",
+ "concurrent_stops": "dependence unmodelled -> full multi-driver integration unsafe without joint mode",
+ "rng_contract": [
+  "mc2-lifecycle-terminal",
+  "mc2-lifecycle-return-time"
+ ],
+ "research_simulator": "NOT_RUN",
+ "outcome_validation": "NOT_RUN",
+ "sanity_firewall": "mechanism permits historical continuation (probabilistic, never deterministic te",
+ "future_poison": "PASS by construction: every feature provably <= stop start (",
+ "decision": "REJECT_LIFECYCLE_MODEL",
+ "coverage_before": {
+  "eligible": 3678,
+  "total": 9644
+ },
+ "coverage_after": {
+  "total": 9644,
+  "eligible": 3678,
+  "fraction": 0.3814,
+  "method": "identity (decision REJECT; no integration)",
+  "gain_vs_before": 0,
+  "schema_version": "v3.2l-coverage-after-v1"
+ },
+ "coverage_projection": {
+  "lifecycle_fully_addressable": 1874,
+  "j_plus_lifecycle": 1341,
+  "projected_full_only": {
+   "eligible": 5552,
+   "total": 9644
+  },
+  "projected_full_plus_jl": {
+   "eligible": 6893,
+   "total": 9644
+  }
+ },
+ "remaining_stale": 3294,
+ "complexity_value": "no complexity admitted; value preserved as evidence",
+ "tests": {
+  "l_tests": 27,
+  "tier1_ledger": 3787
+ },
+ "scientific_identities": {
+  "l_prereg": "4c3eb5c8cdfe9ebf44555de540ee1378d0b12089d5c8cbc44dea7c0de6c48533",
+  "j_corpus": "8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30",
+  "dry_green": "7ae97c3c8575679a"
+ },
+ "known_limitations": [
+  "small-N folds (eval<=42)",
+  "pit-context excluded from training",
+  "return-time N=30",
+  "RED/NEUTRALISED stop regimes unobserved",
+  "D9-crossing = competitive return assumption"
+ ],
+ "v3_2m_recommendation": "kernel hold/resume science proposal or pit-context-only restricted scope; else FINAL V3.2 validation/freeze at 3678/9644"
+}

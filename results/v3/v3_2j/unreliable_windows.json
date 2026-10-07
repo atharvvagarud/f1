@@ -1,0 +1,85 @@
+{
+  "n_windows": 13,
+  "rule": "build-time source-reliability pinning (stream + lap continuation only; no result labels): a True that the same source retracts while the driver demonstrably continues cannot exclude. Post-race clears (no laps after) stay reliable.",
+  "schema_version": "v3.2j-unreliable-windows-v1",
+  "windows": {
+    "2018-r13-R|ricciardo": [
+      [
+        1402.925,
+        1671.251
+      ]
+    ],
+    "2020-r09-R|albon": [
+      [
+        9122.116,
+        9135.786
+      ]
+    ],
+    "2020-r09-R|bottas": [
+      [
+        9122.116,
+        9130.096
+      ]
+    ],
+    "2020-r09-R|hamilton": [
+      [
+        9120.576,
+        9127.341
+      ]
+    ],
+    "2020-r09-R|kvyat": [
+      [
+        9122.116,
+        9145.224
+      ]
+    ],
+    "2020-r09-R|leclerc": [
+      [
+        9122.116,
+        9149.388
+      ]
+    ],
+    "2020-r09-R|norris": [
+      [
+        9122.116,
+        9142.625
+      ]
+    ],
+    "2020-r09-R|perez": [
+      [
+        9122.116,
+        9137.37
+      ]
+    ],
+    "2020-r09-R|ricciardo": [
+      [
+        9122.116,
+        9130.865
+      ]
+    ],
+    "2020-r09-R|russell": [
+      [
+        9122.116,
+        9153.527
+      ]
+    ],
+    "2020-r09-R|vettel": [
+      [
+        9122.116,
+        9156.204
+      ]
+    ],
+    "2020-r14-R|kevin_magnussen": [
+      [
+        5918.257,
+        5947.993
+      ]
+    ],
+    "2023-r16-R|perez": [
+      [
+        5571.141,
+        7935.286
+      ]
+    ]
+  }
+}

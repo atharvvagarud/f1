@@ -1,0 +1,37 @@
+{
+ "conditioning_hierarchy": [
+  "driver|circuit",
+  "constructor|season",
+  "circuit|era",
+  "global"
+ ],
+ "content_hash": "6416a46ca3ab03ab503515d927c08411f554c49087f6c369e92cd52b8879dbbd",
+ "estimator_config": {
+  "clip_s": 3.0,
+  "median": true,
+  "primary": 5,
+  "windows": [
+   3,
+   5,
+   8
+  ]
+ },
+ "fallback_rules": {
+  "none": "offset 0.0 (R3 expectation)",
+  "thin": "shrink toward 0"
+ },
+ "minimum_n": {
+  "driver_window": 1,
+  "shrinkage_k": 4
+ },
+ "parameter_family": "driver_anchor",
+ "schema_version": "mc2-params-v1",
+ "training_seasons": {
+  "min": 2018,
+  "through": 2023
+ },
+ "values": {
+  "primary_window": 5,
+  "shrinkage_k": 4
+ }
+}

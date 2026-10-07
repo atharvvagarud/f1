@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "db4697ac0f2585d0676badd6b4ad8c6342f3b9f66317ef88c2fb0a8a7c0ccab3",
+  "diagnostics": {
+    "n_inpit_updates": 274,
+    "n_malformed_rows": 0,
+    "n_messages": 62594,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 178,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 22
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2021-r19-R",
+  "raw_sha256": "845f1927092e8d60f26302e812a8e7751788dd6bd2f88cd65d6e13fdb39ce42f",
+  "round": 19,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2021,
+  "served_by": "official",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2021/2021-11-14_S%C3%A3o_Paulo_Grand_Prix/2021-11-14_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "mazepin": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        3.32,
+        false
+      ],
+      [
+        7823.207,
+        true
+      ]
+    ],
+    "russell": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        3.32,
+        false
+      ],
+      [
+        7698.206,
+        true
+      ]
+    ],
+    "tsunoda": [
+      [
+        3.32,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        3.32,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

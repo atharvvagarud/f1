@@ -1,0 +1,6 @@
+{
+ "schema_version": "v3.2l-finish-classification-v1",
+ "current": "FinishOrder ranks full roster by (-laps, race_time) with retired=False hardcoded; terminal/DNF unrepresentable (R6 deferred)",
+ "definable_rule": "rank terminal drivers by simulated distance with explicit terminal flag; complete mutually exclusive positions producible WITHOUT final-result labels",
+ "blocker": "requires results-contract extension (terminal flag) + revalidation; NOT IMPLEMENTED in L"
+}

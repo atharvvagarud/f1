@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "1fbefd3f6da1303389ae7290072446cbf0d103ce7351c06123758298badb0eab",
+  "diagnostics": {
+    "n_inpit_updates": 78,
+    "n_malformed_rows": 0,
+    "n_messages": 33214,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 78,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2019-r15-R",
+  "raw_sha256": "b6169d9ab4f092faef159aa04ea213084a34d34c72ea775b4fa7d24659f7ff56",
+  "round": 15,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2019,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2019/2019-09-22_Singapore_Grand_Prix/2019-09-22_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "kubica": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        6.115,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        6.115,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

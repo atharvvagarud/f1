@@ -1,0 +1,179 @@
+{
+ "schema_version": "v3.2n-final-validation-corpus-v1",
+ "corpus_hash": "a9e72961d5b40726a596b2bfc421240e6193929a808cad1e9d7912ad703c3948",
+ "size": 21,
+ "n_runs_frozen": 5000,
+ "master_seed": 20240101,
+ "rule": "per (season, stage) first of relief-alternating sorted list; covers 2018-2024 x EARLY/MID/LATE; relieved and pre-J mixed; frozen BEFORE scoring",
+ "relieved_count": 11,
+ "members": [
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 740,
+   "stage": "LATE",
+   "relieved": false,
+   "roster": null
+  },
+  {
+   "race_id": "2018-r16-R",
+   "season": 2018,
+   "frame_index": 134,
+   "stage": "EARLY",
+   "relieved": true,
+   "roster": null
+  },
+  {
+   "race_id": "2018-r16-R",
+   "season": 2018,
+   "frame_index": 314,
+   "stage": "MID",
+   "relieved": true,
+   "roster": null
+  },
+  {
+   "race_id": "2019-r01-R",
+   "season": 2019,
+   "frame_index": 20,
+   "stage": "EARLY",
+   "relieved": false,
+   "roster": null
+  },
+  {
+   "race_id": "2019-r02-R",
+   "season": 2019,
+   "frame_index": 358,
+   "stage": "MID",
+   "relieved": false,
+   "roster": null
+  },
+  {
+   "race_id": "2019-r02-R",
+   "season": 2019,
+   "frame_index": 724,
+   "stage": "LATE",
+   "relieved": true,
+   "roster": null
+  },
+  {
+   "race_id": "2020-r01-R",
+   "season": 2020,
+   "frame_index": 264,
+   "stage": "EARLY",
+   "relieved": true,
+   "roster": null
+  },
+  {
+   "race_id": "2020-r02-R",
+   "season": 2020,
+   "frame_index": 419,
+   "stage": "MID",
+   "relieved": true,
+   "roster": null
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 679,
+   "stage": "LATE",
+   "relieved": false,
+   "roster": null
+  },
+  {
+   "race_id": "2021-r03-R",
+   "season": 2021,
+   "frame_index": 20,
+   "stage": "EARLY",
+   "relieved": false,
+   "roster": null
+  },
+  {
+   "race_id": "2021-r05-R",
+   "season": 2021,
+   "frame_index": 938,
+   "stage": "LATE",
+   "relieved": true,
+   "roster": null
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 340,
+   "stage": "MID",
+   "relieved": false,
+   "roster": null
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 734,
+   "stage": "LATE",
+   "relieved": false,
+   "roster": null
+  },
+  {
+   "race_id": "2022-r05-R",
+   "season": 2022,
+   "frame_index": 177,
+   "stage": "EARLY",
+   "relieved": true,
+   "roster": null
+  },
+  {
+   "race_id": "2022-r05-R",
+   "season": 2022,
+   "frame_index": 348,
+   "stage": "MID",
+   "relieved": true,
+   "roster": null
+  },
+  {
+   "race_id": "2023-r01-R",
+   "season": 2023,
+   "frame_index": 21,
+   "stage": "EARLY",
+   "relieved": false,
+   "roster": null
+  },
+  {
+   "race_id": "2023-r01-R",
+   "season": 2023,
+   "frame_index": 714,
+   "stage": "LATE",
+   "relieved": true,
+   "roster": null
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 360,
+   "stage": "MID",
+   "relieved": false,
+   "roster": null
+  },
+  {
+   "race_id": "2024-r01-R",
+   "season": 2024,
+   "frame_index": 738,
+   "stage": "LATE",
+   "relieved": false,
+   "roster": null
+  },
+  {
+   "race_id": "2024-r02-R",
+   "season": 2024,
+   "frame_index": 77,
+   "stage": "EARLY",
+   "relieved": true,
+   "roster": null
+  },
+  {
+   "race_id": "2024-r13-R",
+   "season": 2024,
+   "frame_index": 713,
+   "stage": "MID",
+   "relieved": true,
+   "roster": null
+  }
+ ]
+}

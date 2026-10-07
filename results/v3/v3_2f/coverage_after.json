@@ -1,0 +1,17 @@
+{
+  "absolute_checkpoint_gain": 0,
+  "after": {
+    "coverage": 0.239,
+    "eligible": 2305,
+    "total": 9644
+  },
+  "before": {
+    "coverage": 0.239,
+    "eligible": 2305,
+    "total": 9644
+  },
+  "method": "Full 9644-checkpoint eligibility recomputation through the frozen V3.2C presence path with admitted-regime set = {} (empty). Primary verdicts reproduce the V3.2C audit bit-exact (0 mismatches).",
+  "parity_corpus": "7ae97c3c8575679ae8039a60b494767c19ccf08cf1c0706ac31461e0ea175de1",
+  "percentage_point_gain": 0.0,
+  "schema_version": "v3.2f-coverage-after-v1"
+}

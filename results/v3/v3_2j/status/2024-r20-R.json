@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "e5eacd1fe45597cc8e48a37e4318239b59adeb3b48784b81a76d91dba7f3a796",
+  "diagnostics": {
+    "n_inpit_updates": 179,
+    "n_malformed_rows": 0,
+    "n_messages": 58091,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 62,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2024-r20-R",
+  "raw_sha256": "11ae52bc2dd0af112f0bbf4b44c78036ef3f0531f87732b8e9174e588f9428c6",
+  "round": 20,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2024,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2024/2024-10-27_Mexico_City_Grand_Prix/2024-10-27_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        10.872,
+        false
+      ],
+      [
+        5012.899,
+        true
+      ]
+    ],
+    "bottas": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "colapinto": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "lawson": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        10.872,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        10.872,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

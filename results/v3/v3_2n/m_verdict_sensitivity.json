@@ -1,0 +1,14 @@
+{
+ "schema_version": "v3.2n-m-verdict-sensitivity-v1",
+ "original_m_decision": "REJECT_PIT_LIFECYCLE",
+ "original_pit_n": 214,
+ "original_returned": 14,
+ "corrected_pit_n": 181,
+ "corrected_returned": 2,
+ "corrected_p_return": 0.011049723756906077,
+ "dropped_regime_episodes": 33,
+ "dropped_returned": 12,
+ "pit_fully_addressable_checkpoints": 0,
+ "note": "checkpoint opportunity uses offender InPit at T (independent of episode classes); 0 is structural, recomputed verbatim from v3_2m/stale_pit_opportunity.json",
+ "sensitivity": "VERDICT_UNCHANGED"
+}

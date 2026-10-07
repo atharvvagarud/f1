@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "67c0766e700c5c064c2419c066476bc92577fdd6becf931f9462fbe725098219",
+  "diagnostics": {
+    "n_inpit_updates": 251,
+    "n_malformed_rows": 0,
+    "n_messages": 49660,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 140,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 25
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2024-r23-R",
+  "raw_sha256": "be9ecf979cf48ba6bdd50d3c988436e250285faae6865deb971e4843f3a86ca8",
+  "round": 23,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2024,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2024/2024-12-01_Qatar_Grand_Prix/2024-12-01_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "colapinto": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "lawson": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        6.029,
+        false
+      ],
+      [
+        4382.047,
+        true
+      ]
+    ],
+    "tsunoda": [
+      [
+        6.029,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        6.029,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

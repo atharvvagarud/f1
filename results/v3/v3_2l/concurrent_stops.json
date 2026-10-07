@@ -1,0 +1,7 @@
+{
+ "schema_version": "v3.2l-concurrent-stops-v1",
+ "n_multi_offender_checkpoints": 2306,
+ "n_multi_with_addressable": 2271,
+ "dependence": "concurrent stops unmodelled; crash-cluster dependence plausible (same incident). Preregistered scope would start single-driver-only; joint distribution NOT estimated.",
+ "verdict": "dependence unmodelled -> full multi-driver integration unsafe without joint model"
+}

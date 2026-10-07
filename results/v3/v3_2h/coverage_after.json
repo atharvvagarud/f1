@@ -1,0 +1,12 @@
+{
+  "before": {
+    "eligible": 2305,
+    "total": 9644
+  },
+  "change": 0,
+  "coverage": 0.239,
+  "eligible": 2305,
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "schema_version": "v3.2h-coverage-after-v1",
+  "total": 9644
+}

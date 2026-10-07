@@ -1,0 +1,33 @@
+{
+ "schema_version": "v3.2n-freeze-readiness-v1",
+ "gates": {
+  "baseline_safety": true,
+  "ledger_complete": true,
+  "hashes_verified": true,
+  "l_defect_corrected": true,
+  "l_verdict_unchanged": true,
+  "m_verdict_unchanged": true,
+  "eligibility_deterministic": true,
+  "coverage_conserved": true,
+  "status_corpus_verified": true,
+  "temporal_poison_green": true,
+  "firewalls_green": true,
+  "parity_recorded": true,
+  "j_relieve_valid": true,
+  "validation_5000_green": true,
+  "rerun_deterministic": true,
+  "convergence_confirmed": true,
+  "parameters_unchanged": true,
+  "science_reproduced": true,
+  "api_green": true,
+  "replay_sync": true,
+  "unsupported_explicit": true,
+  "tier1_pending": true,
+  "graphify_clean": true,
+  "no_2025_leakage": true,
+  "nothing_staged": true,
+  "full_tier1_green": true
+ },
+ "all_non_tier1_pass": true,
+ "freeze_recommendation": "FREEZE_CANDIDATE_VALIDATED"
+}

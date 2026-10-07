@@ -1,0 +1,13 @@
+{
+ "schema_version": "v3.2l-last-state-sufficiency-v1",
+ "n_addressable": 5661,
+ "anchor_completeness": {
+  "canon_lap": 5661,
+  "canon_age": 5661,
+  "canon_compound": 5661,
+  "canon_tyre_life": 5661
+ },
+ "anchor_sufficiency_rule": "lap+time+pit+constructor+compound+tyre all non-null in last canonical crossing",
+ "n_insufficient": 0,
+ "verdict": "anchors exist for every addressable offender; staleness is age, not missing fields. Return-branch initialization still requires hold/resume kernel support (see return_mechanism)."
+}

@@ -1,0 +1,64 @@
+{
+  "lap_jump_interruptions": 0,
+  "returned_after_stopped": [
+    [
+      "2018-r18-R",
+      "ricciardo"
+    ],
+    [
+      "2018-r19-R",
+      "sainz"
+    ],
+    [
+      "2018-r21-R",
+      "raikkonen"
+    ],
+    [
+      "2019-r13-R",
+      "max_verstappen"
+    ],
+    [
+      "2019-r19-R",
+      "vettel"
+    ],
+    [
+      "2021-r09-R",
+      "ocon"
+    ],
+    [
+      "2021-r10-R",
+      "max_verstappen"
+    ],
+    [
+      "2021-r18-R",
+      "tsunoda"
+    ],
+    [
+      "2021-r22-R",
+      "raikkonen"
+    ]
+  ],
+  "rule": "every candidate must preserve eventual winners/top-5, gap-return drivers, and stopped-then-observed drivers until a legitimate terminal signal; all candidates either violate it or are dead",
+  "schema_version": "v3.2g-transient-protection-v1",
+  "status": "CORPUS_RECORDED_NO_ADMISSION",
+  "v32c_transient_records": {
+    "n": 407,
+    "note": "frozen V3.2C decomposition: 95.8% terminal absence / 4.2% transient; cited, not recomputed",
+    "top5": 55,
+    "winners": 6
+  },
+  "winner_null_cases": [
+    [
+      "2018-r02-R",
+      "vettel"
+    ],
+    [
+      "2020-r01-R",
+      "bottas"
+    ],
+    [
+      "2022-r18-R",
+      "max_verstappen"
+    ]
+  ]
+}

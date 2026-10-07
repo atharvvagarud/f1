@@ -1,0 +1,159 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "5e2e8410dbdeb95b5b403c42d55d247d015ce46cadae4d964d36cddaff1bb24c",
+  "diagnostics": {
+    "n_inpit_updates": 201,
+    "n_malformed_rows": 0,
+    "n_messages": 56977,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 92,
+    "n_retired_updates": 23,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 23,
+  "race_id": "2023-r11-R",
+  "raw_sha256": "47299992eaf9168fa2a470cc5da9c52831c66e0f45fea212b356d79be2c98dfe",
+  "round": 11,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2023,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2023/2023-07-23_Hungarian_Grand_Prix/2023-07-23_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        2.313,
+        false
+      ],
+      [
+        3970.304,
+        true
+      ]
+    ],
+    "hamilton": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        2.313,
+        false
+      ],
+      [
+        4055.303,
+        true
+      ]
+    ],
+    "perez": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "sargeant": [
+      [
+        2.313,
+        false
+      ],
+      [
+        9635.194,
+        true
+      ]
+    ],
+    "stroll": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        2.313,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        2.313,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "8fbec352285471c2a0b5f223ff6ff81362589cf464848fb87f2b896049046bc4",
+  "diagnostics": {
+    "n_inpit_updates": 154,
+    "n_malformed_rows": 0,
+    "n_messages": 52233,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 64,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2022-r03-R",
+  "raw_sha256": "b95ce9d80660811695223cab99dfae8ea4d91c05904af88484a68ecaa47837a3",
+  "round": 3,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2022,
+  "served_by": "fastf1_mirror",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2022/2022-04-10_Australian_Grand_Prix/2022-04-10_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        7.233,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        7.233,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

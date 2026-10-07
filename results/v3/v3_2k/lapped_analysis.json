@@ -1,0 +1,7 @@
+{
+ "schema_version": "v3.2k-lapped-analysis-v1",
+ "n_offender_rows": 7977,
+ "n_lap_deficit_offenders": 4,
+ "mc2_representation": "own lap_number is first-class; no seconds gap required; lapped status is NOT a representation blocker for MC2",
+ "verdict": "lapped representation is non-blocking"
+}

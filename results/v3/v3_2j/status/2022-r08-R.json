@@ -1,0 +1,167 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "7ad4d2c1871c13f41b878d928b05277f345b3d481a8e7c571cf71ddc6701c954",
+  "diagnostics": {
+    "n_inpit_updates": 167,
+    "n_malformed_rows": 0,
+    "n_messages": 50378,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 74,
+    "n_retired_updates": 25,
+    "n_stopped_updates": 27
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 25,
+  "race_id": "2022-r08-R",
+  "raw_sha256": "1454562ac091d1cc29c0596e15bf9a1b8980b7dd607085b8744ba1087d2cb9bc",
+  "round": 8,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2022,
+  "served_by": "fastf1_mirror",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2022/2022-06-12_Azerbaijan_Grand_Prix/2022-06-12_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        4.507,
+        false
+      ],
+      [
+        6163.257,
+        true
+      ],
+      [
+        6177.225,
+        false
+      ],
+      [
+        6298.267,
+        true
+      ]
+    ],
+    "max_verstappen": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        4.507,
+        false
+      ],
+      [
+        9158.201,
+        true
+      ]
+    ],
+    "tsunoda": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        4.507,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        4.507,
+        false
+      ],
+      [
+        6528.254,
+        true
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

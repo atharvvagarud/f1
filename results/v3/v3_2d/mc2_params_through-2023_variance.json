@@ -1,0 +1,54 @@
+{
+ "conditioning_hierarchy": [
+  "circuit|era",
+  "era",
+  "global"
+ ],
+ "content_hash": "10d7808ecc0204a1f493b4eaf49a49c5efc13f9590744b847daed89b2918de12",
+ "estimator_config": {
+  "ceiling_s": 4.0,
+  "floor_s": 0.3,
+  "source": "R3 residual family std"
+ },
+ "fallback_rules": {
+  "all_missing": "documented R3 1.5 s scale",
+  "circuit|era": "fall back to era (V3.2D: per-circuit support inadequate)"
+ },
+ "minimum_n": {
+  "circuit|era": 2000,
+  "era": 30,
+  "global": 1
+ },
+ "parameter_family": "residual_variance",
+ "schema_version": "mc2-params-v1",
+ "training_seasons": {
+  "min": 2018,
+  "through": 2023
+ },
+ "values": {
+  "2018-2021": {
+   "n": 66864,
+   "std_s": 1.4571233811490483,
+   "support": [
+    -5.55337347851478,
+    69.34651715679145
+   ]
+  },
+  "2022-2024": {
+   "n": 36216,
+   "std_s": 1.7928126890489202,
+   "support": [
+    -10.044834008572396,
+    64.09051271399484
+   ]
+  },
+  "global": {
+   "n": 103080,
+   "std_s": 1.5832077803131432,
+   "support": [
+    -10.0370927899318,
+    69.33135218268242
+   ]
+  }
+ }
+}

@@ -1,0 +1,16 @@
+{
+  "absolute_checkpoint_gain": 0,
+  "after": {
+    "coverage": 0.239,
+    "eligible": 2305,
+    "total": 9644
+  },
+  "before": {
+    "coverage": 0.239,
+    "eligible": 2305,
+    "total": 9644
+  },
+  "method": "no runtime status change; V3.2F eligibility recomputation stands",
+  "percentage_point_gain": 0.0,
+  "schema_version": "v3.2g-coverage-after-v1"
+}

@@ -1,0 +1,127 @@
+{
+ "arm": "E_AR1_RESIDUAL",
+ "checkpoint": {
+  "arms": [
+   {
+    "invalid": 0,
+    "n_runs": 100,
+    "pits_enabled": false,
+    "request_identity": "39fd5d79305843fa086d3d85b6bd9c05dca71ddb1ba910a7e828a2a5070cc034",
+    "result_identity": "3434b6f8f6e6df44201dc09f2654a0bf8fc6d0dc33c25de6719b0e93c4213a35",
+    "roster": [
+     "albon",
+     "bottas",
+     "gasly",
+     "giovinazzi",
+     "grosjean",
+     "hamilton",
+     "hulkenberg",
+     "kevin_magnussen",
+     "kvyat",
+     "latifi",
+     "leclerc",
+     "max_verstappen",
+     "norris",
+     "ocon",
+     "raikkonen",
+     "ricciardo",
+     "russell",
+     "sainz",
+     "stroll",
+     "vettel"
+    ],
+    "seed": 20240101,
+    "top_driver": "max_verstappen",
+    "top_win_probability": 0.41,
+    "valid": 100,
+    "winner_frequencies": {
+     "albon": 0.0,
+     "bottas": 0.37,
+     "gasly": 0.0,
+     "giovinazzi": 0.0,
+     "grosjean": 0.0,
+     "hamilton": 0.22,
+     "hulkenberg": 0.0,
+     "kevin_magnussen": 0.0,
+     "kvyat": 0.0,
+     "latifi": 0.0,
+     "leclerc": 0.0,
+     "max_verstappen": 0.41,
+     "norris": 0.0,
+     "ocon": 0.0,
+     "raikkonen": 0.0,
+     "ricciardo": 0.0,
+     "russell": 0.0,
+     "sainz": 0.0,
+     "stroll": 0.0,
+     "vettel": 0.0
+    }
+   }
+  ],
+  "fraction": 0.3462,
+  "frame_index": 340,
+  "monte_carlo_version": "r5-monte-carlo-v1",
+  "parameter_hash": "4c2f85f08f1ce66cc6477982b2d5c97e9547f70927224b8e949ebe123ff3f140",
+  "parameter_set_id": "phase6-r3-empirical",
+  "pit_dynamics_version": "r6-pit-dynamics-v1",
+  "race_id": "2020-r05-R",
+  "simulation_contract": "v1",
+  "stage": "MID"
+ },
+ "counts": [
+  {
+   "invalid": 0,
+   "n_runs": 100,
+   "seconds": 0.39641474990639836,
+   "valid": 100,
+   "winner_frequency": {
+    "bottas": 0.29,
+    "hamilton": 0.04,
+    "max_verstappen": 0.67
+   },
+   "winner_tv_vs_n1000": 0.02000000000000001
+  },
+  {
+   "invalid": 0,
+   "n_runs": 200,
+   "seconds": 0.7908318750560284,
+   "valid": 200,
+   "winner_frequency": {
+    "bottas": 0.295,
+    "hamilton": 0.025,
+    "max_verstappen": 0.68
+   },
+   "winner_tv_vs_n1000": 0.020000000000000014
+  },
+  {
+   "invalid": 0,
+   "n_runs": 500,
+   "seconds": 1.9786642920225859,
+   "valid": 500,
+   "winner_frequency": {
+    "bottas": 0.304,
+    "hamilton": 0.026,
+    "leclerc": 0.002,
+    "max_verstappen": 0.666,
+    "stroll": 0.002
+   },
+   "winner_tv_vs_n1000": 0.006000000000000004
+  },
+  {
+   "invalid": 0,
+   "n_runs": 1000,
+   "seconds": 3.9674575000535697,
+   "valid": 1000,
+   "winner_frequency": {
+    "bottas": 0.305,
+    "hamilton": 0.03,
+    "leclerc": 0.003,
+    "max_verstappen": 0.66,
+    "stroll": 0.002
+   },
+   "winner_tv_vs_n1000": 0.0
+  }
+ ],
+ "prereg_hash": "dc0ae2dbade08514ed3b7cbf5e4be965edccf40b60d7bcad86c99f245854ee16",
+ "schema_version": "v3.2d-convergence-v1"
+}

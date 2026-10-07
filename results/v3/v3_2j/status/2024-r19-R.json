@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "3df8cef08351a175668f7dc7fae07634b716c4a4ee324ebc4ec013a62189f111",
+  "diagnostics": {
+    "n_inpit_updates": 178,
+    "n_malformed_rows": 0,
+    "n_messages": 51422,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 66,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 21
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2024-r19-R",
+  "raw_sha256": "5f2e31528e24b297778626e91d017fa5335c1c4667203d5c7635d4ddc29a5bfe",
+  "round": 19,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2024,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2024/2024-10-20_United_States_Grand_Prix/2024-10-20_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "colapinto": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "lawson": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        11.06,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        11.06,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

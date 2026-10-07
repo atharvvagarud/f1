@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "93f05ea438e7b7fb71b17921bb36815c9c596737200e0f2b97ad49ba24381edb",
+  "diagnostics": {
+    "n_inpit_updates": 182,
+    "n_malformed_rows": 0,
+    "n_messages": 55419,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 76,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 24
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2024-r24-R",
+  "raw_sha256": "1f965b63406ac3ad5267e7fa8d2bbeb41a2ec54319150320d962a4a93e3b3570",
+  "round": 24,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2024,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2024/2024-12-08_Abu_Dhabi_Grand_Prix/2024-12-08_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        9.706,
+        false
+      ],
+      [
+        6377.973,
+        true
+      ]
+    ],
+    "colapinto": [
+      [
+        9.706,
+        false
+      ],
+      [
+        6002.878,
+        true
+      ]
+    ],
+    "doohan": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "lawson": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        9.706,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        9.706,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

@@ -1,0 +1,28 @@
+{
+  "both": 342,
+  "finding": "INTERMEDIATE pace data is plentiful (~6.9k laps) but WET-compound rain laps are thin (294 across eras); circuit x compound cells would be unstable. Weather evolution and wet/dry compound transitions have no causal mechanism in scope (R6 transitions are dry-filtered; Strategy 2.0 forbidden).",
+  "rain_falling": 553,
+  "schema_version": "v3.2f-wet-audit-v1",
+  "slicks_under_rain_laps": 3818,
+  "wet_blocked_checkpoints": 1157,
+  "wet_compound": 946,
+  "wet_lap_dataset": {
+    "2018-2021|HARD|rain=True": 429,
+    "2018-2021|HYPERSOFT|rain=True": 127,
+    "2018-2021|INTERMEDIATE|rain=False": 2156,
+    "2018-2021|INTERMEDIATE|rain=True": 895,
+    "2018-2021|MEDIUM|rain=True": 1017,
+    "2018-2021|SOFT|rain=True": 925,
+    "2018-2021|SUPERSOFT|rain=True": 124,
+    "2018-2021|ULTRASOFT|rain=True": 263,
+    "2018-2021|WET|rain=False": 124,
+    "2018-2021|WET|rain=True": 61,
+    "2022-2024|HARD|rain=True": 227,
+    "2022-2024|INTERMEDIATE|rain=False": 1882,
+    "2022-2024|INTERMEDIATE|rain=True": 1920,
+    "2022-2024|MEDIUM|rain=True": 372,
+    "2022-2024|SOFT|rain=True": 334,
+    "2022-2024|WET|rain=False": 98,
+    "2022-2024|WET|rain=True": 233
+  }
+}

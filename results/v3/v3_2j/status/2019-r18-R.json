@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "b154e6c16355f9d5d293053ce7cb366e9227420b8203b6471804c0d17b9defff",
+  "diagnostics": {
+    "n_inpit_updates": 76,
+    "n_malformed_rows": 0,
+    "n_messages": 34846,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 74,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 22
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2019-r18-R",
+  "raw_sha256": "99a40d5f4942e280cb79ab03e9987c8c3d50ede590cefcd735328b9e0b712a65",
+  "round": 18,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2019,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2019/2019-10-27_Mexican_Grand_Prix/2019-10-27_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "kubica": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        3.143,
+        false
+      ],
+      [
+        6270.451,
+        true
+      ]
+    ],
+    "perez": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        3.143,
+        false
+      ],
+      [
+        6999.979,
+        true
+      ]
+    ],
+    "ricciardo": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        3.143,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        3.143,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

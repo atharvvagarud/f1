@@ -1,0 +1,24 @@
+{
+ "schema_version": "v3.2n-replay-integration-v1",
+ "rows": [
+  {
+   "race_id": "2018-r01-R",
+   "frame_index": 90,
+   "replay_anchor_time": 895.024,
+   "request_anchor_time": 895.024,
+   "race_state_time": 895.024,
+   "catalogue_match": true,
+   "in_sync": true
+  },
+  {
+   "race_id": "2018-r03-R",
+   "frame_index": 1077,
+   "replay_anchor_time": 6095.751,
+   "request_anchor_time": 6095.751,
+   "race_state_time": 6095.751,
+   "catalogue_match": true,
+   "in_sync": true
+  }
+ ],
+ "in_sync": true
+}

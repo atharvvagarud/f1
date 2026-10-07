@@ -1,0 +1,30 @@
+{
+ "schema_version": "v3.2n-api-contract-v1",
+ "rows": [
+  {
+   "case": "eligible-pre-J",
+   "race_id": "2018-r01-R",
+   "frame_index": 90,
+   "http": 200,
+   "ok": true,
+   "valid": 10,
+   "requested": 10,
+   "state_time_match": true
+  },
+  {
+   "case": "eligible-J-relieved",
+   "race_id": "2018-r03-R",
+   "frame_index": 1077,
+   "http": 200,
+   "ok": true,
+   "valid": 10,
+   "requested": 10,
+   "state_time_match": true
+  }
+ ],
+ "all_ok": true,
+ "notes": [
+  "eligible + J-relieved return success",
+  "no request-time network/raw-parse/future access (service loads pinned artifacts at startup)"
+ ]
+}

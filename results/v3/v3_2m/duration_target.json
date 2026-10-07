@@ -1,0 +1,1 @@
+{"schema_version": "v3.2m-duration-target-v1", "preregistration_sha256": "3161cf5275e8a2cfe3ef71032315c0084f3a6ca09fd297940576c1a74123bea6", "definition": "remaining_duration(T) = first D9 crossing after stop start minus start (mechanism target TBD vs PitOut; both reported, choice by semantics not error)"}

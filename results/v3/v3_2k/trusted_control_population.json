@@ -1,0 +1,2527 @@
+{
+ "schema_version": "v3.2k-trusted-control-v1",
+ "n": 420,
+ "rule": "deterministic stride within (season, stage) strata over pure-capable checkpoints",
+ "checkpoints": [
+  {
+   "race_id": "2018-r01-R",
+   "season": 2018,
+   "frame_index": 90,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r01-R",
+   "season": 2018,
+   "frame_index": 137,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 575,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 580,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 680,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 700,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 720,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 740,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 760,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 780,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 800,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 820,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 860,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 880,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 900,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 920,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 940,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 960,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 980,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 1000,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 1020,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 1039,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r03-R",
+   "season": 2018,
+   "frame_index": 1058,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 279,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 339,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 398,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 458,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 498,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 518,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 538,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 558,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 578,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 598,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 618,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 638,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 658,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 678,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 697,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 717,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 737,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 757,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 777,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 1017,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 1050,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 1057,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "frame_index": 1076,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2018-r09-R",
+   "season": 2018,
+   "frame_index": 60,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r09-R",
+   "season": 2018,
+   "frame_index": 119,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r09-R",
+   "season": 2018,
+   "frame_index": 179,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r16-R",
+   "season": 2018,
+   "frame_index": 40,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r16-R",
+   "season": 2018,
+   "frame_index": 98,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r17-R",
+   "season": 2018,
+   "frame_index": 120,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r17-R",
+   "season": 2018,
+   "frame_index": 198,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r19-R",
+   "season": 2018,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r19-R",
+   "season": 2018,
+   "frame_index": 95,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r20-R",
+   "season": 2018,
+   "frame_index": 40,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r20-R",
+   "season": 2018,
+   "frame_index": 100,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r20-R",
+   "season": 2018,
+   "frame_index": 160,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r20-R",
+   "season": 2018,
+   "frame_index": 220,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2018-r20-R",
+   "season": 2018,
+   "frame_index": 280,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r01-R",
+   "season": 2019,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r02-R",
+   "season": 2019,
+   "frame_index": 40,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r02-R",
+   "season": 2019,
+   "frame_index": 300,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r02-R",
+   "season": 2019,
+   "frame_index": 358,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r03-R",
+   "season": 2019,
+   "frame_index": 220,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r04-R",
+   "season": 2019,
+   "frame_index": 140,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r04-R",
+   "season": 2019,
+   "frame_index": 479,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r04-R",
+   "season": 2019,
+   "frame_index": 655,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r05-R",
+   "season": 2019,
+   "frame_index": 100,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r05-R",
+   "season": 2019,
+   "frame_index": 358,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r05-R",
+   "season": 2019,
+   "frame_index": 437,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r05-R",
+   "season": 2019,
+   "frame_index": 636,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r05-R",
+   "season": 2019,
+   "frame_index": 828,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r05-R",
+   "season": 2019,
+   "frame_index": 867,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r07-R",
+   "season": 2019,
+   "frame_index": 154,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r08-R",
+   "season": 2019,
+   "frame_index": 240,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r08-R",
+   "season": 2019,
+   "frame_index": 498,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r08-R",
+   "season": 2019,
+   "frame_index": 733,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r08-R",
+   "season": 2019,
+   "frame_index": 790,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r08-R",
+   "season": 2019,
+   "frame_index": 849,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r08-R",
+   "season": 2019,
+   "frame_index": 906,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "frame_index": 180,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "frame_index": 438,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "frame_index": 458,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "frame_index": 656,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "frame_index": 854,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "frame_index": 952,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "frame_index": 1011,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "frame_index": 1069,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "frame_index": 1127,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "frame_index": 1187,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "frame_index": 1244,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "frame_index": 1303,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r09-R",
+   "season": 2019,
+   "frame_index": 1362,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r12-R",
+   "season": 2019,
+   "frame_index": 100,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r12-R",
+   "season": 2019,
+   "frame_index": 356,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r12-R",
+   "season": 2019,
+   "frame_index": 572,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r12-R",
+   "season": 2019,
+   "frame_index": 769,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r12-R",
+   "season": 2019,
+   "frame_index": 945,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r12-R",
+   "season": 2019,
+   "frame_index": 1000,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r14-R",
+   "season": 2019,
+   "frame_index": 220,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r14-R",
+   "season": 2019,
+   "frame_index": 398,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r15-R",
+   "season": 2019,
+   "frame_index": 159,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r15-R",
+   "season": 2019,
+   "frame_index": 399,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r15-R",
+   "season": 2019,
+   "frame_index": 599,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r17-R",
+   "season": 2019,
+   "frame_index": 40,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r17-R",
+   "season": 2019,
+   "frame_index": 318,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r18-R",
+   "season": 2019,
+   "frame_index": 299,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r18-R",
+   "season": 2019,
+   "frame_index": 573,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r18-R",
+   "season": 2019,
+   "frame_index": 771,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r18-R",
+   "season": 2019,
+   "frame_index": 931,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r18-R",
+   "season": 2019,
+   "frame_index": 990,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r19-R",
+   "season": 2019,
+   "frame_index": 120,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r20-R",
+   "season": 2019,
+   "frame_index": 240,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2019-r20-R",
+   "season": 2019,
+   "frame_index": 498,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r20-R",
+   "season": 2019,
+   "frame_index": 695,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r20-R",
+   "season": 2019,
+   "frame_index": 893,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2019-r20-R",
+   "season": 2019,
+   "frame_index": 930,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r20-R",
+   "season": 2019,
+   "frame_index": 986,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2019-r21-R",
+   "season": 2019,
+   "frame_index": 517,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r01-R",
+   "season": 2020,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r01-R",
+   "season": 2020,
+   "frame_index": 140,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r03-R",
+   "season": 2020,
+   "frame_index": 119,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r03-R",
+   "season": 2020,
+   "frame_index": 238,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 140,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 260,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 340,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 400,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 459,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 520,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 580,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 639,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 679,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 698,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 718,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 738,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 758,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 777,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 796,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 816,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 836,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 856,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 875,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 893,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r05-R",
+   "season": 2020,
+   "frame_index": 912,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r06-R",
+   "season": 2020,
+   "frame_index": 60,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r06-R",
+   "season": 2020,
+   "frame_index": 180,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r06-R",
+   "season": 2020,
+   "frame_index": 300,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r06-R",
+   "season": 2020,
+   "frame_index": 439,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r06-R",
+   "season": 2020,
+   "frame_index": 500,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r06-R",
+   "season": 2020,
+   "frame_index": 560,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r06-R",
+   "season": 2020,
+   "frame_index": 619,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r06-R",
+   "season": 2020,
+   "frame_index": 678,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r06-R",
+   "season": 2020,
+   "frame_index": 731,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r06-R",
+   "season": 2020,
+   "frame_index": 789,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r07-R",
+   "season": 2020,
+   "frame_index": 19,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r08-R",
+   "season": 2020,
+   "frame_index": 80,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r11-R",
+   "season": 2020,
+   "frame_index": 60,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r11-R",
+   "season": 2020,
+   "frame_index": 180,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 140,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 260,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 380,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 439,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 498,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 555,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 612,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 669,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 726,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 790,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 852,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 872,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 892,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 912,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 931,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 951,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r12-R",
+   "season": 2020,
+   "frame_index": 971,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2020-r13-R",
+   "season": 2020,
+   "frame_index": 100,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2020-r17-R",
+   "season": 2020,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r03-R",
+   "season": 2021,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r05-R",
+   "season": 2021,
+   "frame_index": 19,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 160,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 300,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 340,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 440,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 540,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 638,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 697,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 717,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 737,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 756,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 775,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 795,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 815,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 835,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 855,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 874,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 893,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 913,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 932,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 951,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 971,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 991,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r07-R",
+   "season": 2021,
+   "frame_index": 1011,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r13-R",
+   "season": 2021,
+   "frame_index": 60,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r13-R",
+   "season": 2021,
+   "frame_index": 199,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r13-R",
+   "season": 2021,
+   "frame_index": 339,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r13-R",
+   "season": 2021,
+   "frame_index": 496,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r13-R",
+   "season": 2021,
+   "frame_index": 592,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r13-R",
+   "season": 2021,
+   "frame_index": 687,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r13-R",
+   "season": 2021,
+   "frame_index": 789,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r14-R",
+   "season": 2021,
+   "frame_index": 38,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r15-R",
+   "season": 2021,
+   "frame_index": 160,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r15-R",
+   "season": 2021,
+   "frame_index": 300,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r15-R",
+   "season": 2021,
+   "frame_index": 340,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r15-R",
+   "season": 2021,
+   "frame_index": 440,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r15-R",
+   "season": 2021,
+   "frame_index": 540,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r15-R",
+   "season": 2021,
+   "frame_index": 640,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r17-R",
+   "season": 2021,
+   "frame_index": 120,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r17-R",
+   "season": 2021,
+   "frame_index": 260,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "frame_index": 80,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "frame_index": 300,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "frame_index": 440,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "frame_index": 499,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "frame_index": 599,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "frame_index": 698,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "frame_index": 796,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "frame_index": 894,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "frame_index": 934,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "frame_index": 953,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "frame_index": 972,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2021-r20-R",
+   "season": 2021,
+   "frame_index": 140,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r20-R",
+   "season": 2021,
+   "frame_index": 280,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r20-R",
+   "season": 2021,
+   "frame_index": 420,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r20-R",
+   "season": 2021,
+   "frame_index": 518,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r20-R",
+   "season": 2021,
+   "frame_index": 612,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2021-r21-R",
+   "season": 2021,
+   "frame_index": 80,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2021-r22-R",
+   "season": 2021,
+   "frame_index": 57,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 200,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 360,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 460,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 558,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 659,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 734,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 754,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 773,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 793,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 813,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 833,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 852,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "frame_index": 871,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r03-R",
+   "season": 2022,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r06-R",
+   "season": 2022,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r06-R",
+   "season": 2022,
+   "frame_index": 200,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r06-R",
+   "season": 2022,
+   "frame_index": 379,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r06-R",
+   "season": 2022,
+   "frame_index": 440,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r06-R",
+   "season": 2022,
+   "frame_index": 538,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r08-R",
+   "season": 2022,
+   "frame_index": 180,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r09-R",
+   "season": 2022,
+   "frame_index": 179,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r11-R",
+   "season": 2022,
+   "frame_index": 179,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r11-R",
+   "season": 2022,
+   "frame_index": 359,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r11-R",
+   "season": 2022,
+   "frame_index": 518,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r12-R",
+   "season": 2022,
+   "frame_index": 100,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r12-R",
+   "season": 2022,
+   "frame_index": 280,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 200,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 380,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 500,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 600,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 697,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 796,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 895,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 915,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 950,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 970,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 1011,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 1031,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 1051,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "frame_index": 1071,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r15-R",
+   "season": 2022,
+   "frame_index": 160,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r15-R",
+   "season": 2022,
+   "frame_index": 340,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r15-R",
+   "season": 2022,
+   "frame_index": 539,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r15-R",
+   "season": 2022,
+   "frame_index": 638,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r15-R",
+   "season": 2022,
+   "frame_index": 733,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r15-R",
+   "season": 2022,
+   "frame_index": 831,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r16-R",
+   "season": 2022,
+   "frame_index": 80,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r19-R",
+   "season": 2022,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "frame_index": 140,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "frame_index": 320,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "frame_index": 460,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "frame_index": 558,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "frame_index": 658,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "frame_index": 756,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "frame_index": 929,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "frame_index": 948,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "frame_index": 967,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "frame_index": 987,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "frame_index": 1007,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r01-R",
+   "season": 2023,
+   "frame_index": 21,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r01-R",
+   "season": 2023,
+   "frame_index": 180,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r02-R",
+   "season": 2023,
+   "frame_index": 40,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r02-R",
+   "season": 2023,
+   "frame_index": 200,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r04-R",
+   "season": 2023,
+   "frame_index": 60,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 60,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 220,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 360,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 440,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 520,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 600,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 679,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 739,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 798,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 858,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 919,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 978,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 1038,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r05-R",
+   "season": 2023,
+   "frame_index": 1098,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r06-R",
+   "season": 2023,
+   "frame_index": 40,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r06-R",
+   "season": 2023,
+   "frame_index": 200,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r06-R",
+   "season": 2023,
+   "frame_index": 379,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r06-R",
+   "season": 2023,
+   "frame_index": 518,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r06-R",
+   "season": 2023,
+   "frame_index": 595,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r06-R",
+   "season": 2023,
+   "frame_index": 672,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r06-R",
+   "season": 2023,
+   "frame_index": 751,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r06-R",
+   "season": 2023,
+   "frame_index": 831,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r06-R",
+   "season": 2023,
+   "frame_index": 911,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r06-R",
+   "season": 2023,
+   "frame_index": 989,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 60,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 220,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 380,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 479,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 560,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 640,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 720,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 794,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 853,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 912,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 971,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 1035,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 1094,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 1154,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 1214,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r07-R",
+   "season": 2023,
+   "frame_index": 1272,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r08-R",
+   "season": 2023,
+   "frame_index": 159,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r09-R",
+   "season": 2023,
+   "frame_index": 180,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r10-R",
+   "season": 2023,
+   "frame_index": 100,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r11-R",
+   "season": 2023,
+   "frame_index": 39,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r16-R",
+   "season": 2023,
+   "frame_index": 60,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r18-R",
+   "season": 2023,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r19-R",
+   "season": 2023,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2023-r22-R",
+   "season": 2023,
+   "frame_index": 400,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r22-R",
+   "season": 2023,
+   "frame_index": 480,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r22-R",
+   "season": 2023,
+   "frame_index": 560,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2023-r22-R",
+   "season": 2023,
+   "frame_index": 800,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r22-R",
+   "season": 2023,
+   "frame_index": 860,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r22-R",
+   "season": 2023,
+   "frame_index": 920,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r22-R",
+   "season": 2023,
+   "frame_index": 980,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2023-r22-R",
+   "season": 2023,
+   "frame_index": 1039,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r01-R",
+   "season": 2024,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r01-R",
+   "season": 2024,
+   "frame_index": 239,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r01-R",
+   "season": 2024,
+   "frame_index": 359,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r01-R",
+   "season": 2024,
+   "frame_index": 479,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r01-R",
+   "season": 2024,
+   "frame_index": 599,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r01-R",
+   "season": 2024,
+   "frame_index": 715,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r01-R",
+   "season": 2024,
+   "frame_index": 738,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r01-R",
+   "season": 2024,
+   "frame_index": 836,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r01-R",
+   "season": 2024,
+   "frame_index": 934,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r01-R",
+   "season": 2024,
+   "frame_index": 1031,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r03-R",
+   "season": 2024,
+   "frame_index": 57,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r05-R",
+   "season": 2024,
+   "frame_index": 160,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r06-R",
+   "season": 2024,
+   "frame_index": 40,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r06-R",
+   "season": 2024,
+   "frame_index": 260,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r06-R",
+   "season": 2024,
+   "frame_index": 420,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r06-R",
+   "season": 2024,
+   "frame_index": 540,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r07-R",
+   "season": 2024,
+   "frame_index": 140,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r07-R",
+   "season": 2024,
+   "frame_index": 359,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r07-R",
+   "season": 2024,
+   "frame_index": 498,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r07-R",
+   "season": 2024,
+   "frame_index": 618,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r07-R",
+   "season": 2024,
+   "frame_index": 735,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r07-R",
+   "season": 2024,
+   "frame_index": 833,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r07-R",
+   "season": 2024,
+   "frame_index": 931,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r07-R",
+   "season": 2024,
+   "frame_index": 1029,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r10-R",
+   "season": 2024,
+   "frame_index": 200,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r10-R",
+   "season": 2024,
+   "frame_index": 460,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r10-R",
+   "season": 2024,
+   "frame_index": 580,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r10-R",
+   "season": 2024,
+   "frame_index": 698,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r10-R",
+   "season": 2024,
+   "frame_index": 815,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r10-R",
+   "season": 2024,
+   "frame_index": 872,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r10-R",
+   "season": 2024,
+   "frame_index": 974,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r10-R",
+   "season": 2024,
+   "frame_index": 1073,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r10-R",
+   "season": 2024,
+   "frame_index": 1171,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r10-R",
+   "season": 2024,
+   "frame_index": 1271,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r11-R",
+   "season": 2024,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r11-R",
+   "season": 2024,
+   "frame_index": 240,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r11-R",
+   "season": 2024,
+   "frame_index": 539,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r11-R",
+   "season": 2024,
+   "frame_index": 658,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r11-R",
+   "season": 2024,
+   "frame_index": 774,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r11-R",
+   "season": 2024,
+   "frame_index": 887,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r11-R",
+   "season": 2024,
+   "frame_index": 1016,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r11-R",
+   "season": 2024,
+   "frame_index": 1112,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r11-R",
+   "season": 2024,
+   "frame_index": 1210,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r11-R",
+   "season": 2024,
+   "frame_index": 1299,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r12-R",
+   "season": 2024,
+   "frame_index": 19,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r13-R",
+   "season": 2024,
+   "frame_index": 180,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r13-R",
+   "season": 2024,
+   "frame_index": 400,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r13-R",
+   "season": 2024,
+   "frame_index": 540,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r13-R",
+   "season": 2024,
+   "frame_index": 659,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r15-R",
+   "season": 2024,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r15-R",
+   "season": 2024,
+   "frame_index": 240,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r15-R",
+   "season": 2024,
+   "frame_index": 520,
+   "stage": "MID"
+  },
+  {
+   "race_id": "2024-r15-R",
+   "season": 2024,
+   "frame_index": 992,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r15-R",
+   "season": 2024,
+   "frame_index": 1090,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r15-R",
+   "season": 2024,
+   "frame_index": 1187,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r15-R",
+   "season": 2024,
+   "frame_index": 1287,
+   "stage": "LATE"
+  },
+  {
+   "race_id": "2024-r16-R",
+   "season": 2024,
+   "frame_index": 20,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r17-R",
+   "season": 2024,
+   "frame_index": 60,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r17-R",
+   "season": 2024,
+   "frame_index": 279,
+   "stage": "EARLY"
+  },
+  {
+   "race_id": "2024-r18-R",
+   "season": 2024,
+   "frame_index": 200,
+   "stage": "EARLY"
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+{
+  "invariants": [
+    "no external logic inside stochastic kernel",
+    "absence never implies active",
+    "transient guard: state-at-T, not first-true",
+    "post-race events excluded by T comparison",
+    "parity corpus must stay bit-exact"
+  ],
+  "pipeline": [
+    "official static jsonStream (pinned URL + content hash)",
+    "immutable source adapter (v3.2j-status-adapter-v1)",
+    "chronological reconstruction (state-at-T, flips respected)",
+    "causal driver-status timeline artifact",
+    "V3.2C presence (exclusion input only; never inclusion)",
+    "eligibility (unchanged taxonomy)",
+    "unchanged MC2-E"
+  ],
+  "schema_version": "v3.2i-architecture-v1",
+  "status": "DESIGN ONLY (no implementation in V3.2I)"
+}

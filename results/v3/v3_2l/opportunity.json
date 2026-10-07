@@ -1,0 +1,21 @@
+{
+ "schema_version": "v3.2l-opportunity-v1",
+ "preregistration_sha256": "4c3eb5c8cdfe9ebf44555de540ee1378d0b12089d5c8cbc44dea7c0de6c48533",
+ "n": 3294,
+ "conservation": true,
+ "checkpoint_categories": {
+  "LIFECYCLE_FULLY_ADDRESSABLE": 1874,
+  "LIFECYCLE_PARTIALLY_ADDRESSABLE": 37,
+  "NO_CAUSAL_STOP_SIGNAL": 3,
+  "LAST_STATE_INSUFFICIENT": 0,
+  "MULTIPLE_OFFENDER_MIXED": 17,
+  "J_RETIRED_PLUS_LIFECYCLE": 1341,
+  "OTHER_EXPLAINED": 22
+ },
+ "offender_class_dist": {
+  "ADDRESSABLE": 5661,
+  "J_RETIRED": 2067,
+  "STOPPED_CLEARED": 249
+ },
+ "boundary_rule": "no hard stopped-age boundary: survival P(return|age) stays nonzero at all ages (stage-1); age is a model feature; staleness itself (no D9 crossing > bound) corroborates non-progression; STOPPED_TOO_OLD empty by evidence, not by tuning"
+}

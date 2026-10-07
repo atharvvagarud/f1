@@ -1,0 +1,63 @@
+{
+  "note": "post-finish/post-race True is causally safe; timestamp causality decides",
+  "schema_version": "v3.2j-top5-firewall-v1",
+  "top5_retired_at_checkpoint_hits": [
+    {
+      "T": 9130.799,
+      "dnf": false,
+      "driver": "albon",
+      "frame_index": 603,
+      "position": 3,
+      "race_id": "2020-r09-R"
+    },
+    {
+      "T": 9130.799,
+      "dnf": false,
+      "driver": "ricciardo",
+      "frame_index": 603,
+      "position": 4,
+      "race_id": "2020-r09-R"
+    },
+    {
+      "T": 9130.799,
+      "dnf": false,
+      "driver": "perez",
+      "frame_index": 603,
+      "position": 5,
+      "race_id": "2020-r09-R"
+    }
+  ],
+  "top5_with_any_true_event": [
+    [
+      "2020-r09-R",
+      "albon",
+      3,
+      false
+    ],
+    [
+      "2020-r09-R",
+      "bottas",
+      2,
+      false
+    ],
+    [
+      "2020-r09-R",
+      "hamilton",
+      1,
+      false
+    ],
+    [
+      "2020-r09-R",
+      "perez",
+      5,
+      false
+    ],
+    [
+      "2020-r09-R",
+      "ricciardo",
+      4,
+      false
+    ]
+  ],
+  "verdict": "REVIEW"
+}

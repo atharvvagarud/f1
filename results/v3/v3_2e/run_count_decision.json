@@ -1,0 +1,23 @@
+{
+ "criterion": "TV<=0.005 max over convergence checkpoints",
+ "decision": "5000",
+ "evidence": {
+  "1000": {
+   "max_tv": 0.036199999999999996,
+   "mean_tv": 0.014677777777777765,
+   "n_checkpoints": 9
+  },
+  "10000": {
+   "max_tv": 0.0,
+   "mean_tv": 0.0,
+   "n_checkpoints": 3
+  },
+  "5000": {
+   "max_tv": 0.004600000000000031,
+   "mean_tv": 0.0011000000000000077,
+   "n_checkpoints": 9
+  }
+ },
+ "population_hash": "5d038db83111a1a9dc9e885ed107358d8e018ad1c3a4570f14d1f78697b8383d",
+ "schema_version": "v3.2e-runcount-v1"
+}

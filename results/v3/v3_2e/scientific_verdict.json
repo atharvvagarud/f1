@@ -1,0 +1,20 @@
+{
+ "keep_e_inputs": {
+  "brier_ci_low": 0.003009241512081779,
+  "fold_ci_ok": true,
+  "folds_neutral_or_better": 3,
+  "invalid_a": 0.0,
+  "invalid_e": 0.0,
+  "mae_ci_low": 0.11790432912925729,
+  "podium_brier_ci_low": -0.0005790493048183395,
+  "primary_ci": [
+   0.236256989592972,
+   1.2100138547366812
+  ]
+ },
+ "note": "operator reviews before final; no tuning permitted",
+ "population_hash": "5d038db83111a1a9dc9e885ed107358d8e018ad1c3a4570f14d1f78697b8383d",
+ "proposed": "KEEP_MC2_E",
+ "schema_version": "v3.2e-verdict-v1",
+ "simpler": null
+}

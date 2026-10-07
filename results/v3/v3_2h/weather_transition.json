@@ -1,0 +1,11 @@
+{
+  "lap_transition_counts": {
+    "False->False": 8303,
+    "False->True": 32,
+    "True->False": 35,
+    "True->True": 407
+  },
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "schema_version": "v3.2h-weather-transition-v1",
+  "status": "COUNTS_ONLY_NO_ADMITTED_MODEL"
+}

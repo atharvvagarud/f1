@@ -1,0 +1,20 @@
+{
+ "schema_version": "v3.2n-l-correction-identity-v1",
+ "defect": "L stage-1 compared raw D9 track_status code against token 'red_flag'; canonical token is D9 track_state (last-code-char mapping). Original results/v3/v3_2l/ files UNTOUCHED.",
+ "correction_rule": "regime (red/neutralised canonical token) takes precedence over PIT_CONTEXT/CLEAN; otherwise L rules verbatim",
+ "n_episodes": 476,
+ "original_classes": {
+  "CLEAN": 211,
+  "INITIAL_UNKNOWN": 41,
+  "LATE_SESSION": 10,
+  "PIT_CONTEXT": 214
+ },
+ "corrected_classes": {
+  "CLEAN": 171,
+  "INITIAL_UNKNOWN": 41,
+  "LATE_SESSION": 9,
+  "NEUTRALISED_REGIME": 63,
+  "PIT_CONTEXT": 181,
+  "RED_REGIME": 11
+ }
+}

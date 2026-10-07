@@ -1,0 +1,52 @@
+{
+ "design": "race-level paired A-minus-E, B=2000, seed=42",
+ "metrics": {
+  "exp_mae": {
+   "ci95_high": 0.2803869288424236,
+   "ci95_low": 0.11790432912925729,
+   "degraded": 21,
+   "improved": 54,
+   "mean": 0.1988923214562142,
+   "n_races": 75,
+   "ties": 0
+  },
+  "podium_brier": {
+   "ci95_high": 0.012125521458819542,
+   "ci95_low": -0.0005790493048183395,
+   "degraded": 30,
+   "improved": 45,
+   "mean": 0.005750756797810111,
+   "n_races": 75,
+   "ties": 0
+  },
+  "rps": {
+   "ci95_high": 0.02331666008727708,
+   "ci95_low": 0.0006956865342335061,
+   "degraded": 27,
+   "improved": 48,
+   "mean": 0.012392142138697769,
+   "n_races": 75,
+   "ties": 0
+  },
+  "winner_brier": {
+   "ci95_high": 0.010655272324956408,
+   "ci95_low": 0.003009241512081779,
+   "degraded": 23,
+   "improved": 52,
+   "mean": 0.0067885152884732125,
+   "n_races": 75,
+   "ties": 0
+  },
+  "winner_logloss": {
+   "ci95_high": 1.2100138547366812,
+   "ci95_low": 0.236256989592972,
+   "degraded": 22,
+   "improved": 49,
+   "mean": 0.6962522133866464,
+   "n_races": 75,
+   "ties": 4
+  }
+ },
+ "population_hash": "5d038db83111a1a9dc9e885ed107358d8e018ad1c3a4570f14d1f78697b8383d",
+ "schema_version": "v3.2e-bootstrap-v1"
+}

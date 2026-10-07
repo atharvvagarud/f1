@@ -1,0 +1,11 @@
+{
+ "schema_version": "v3.2k-gap-validation-v1",
+ "n_numeric": 6688,
+ "n_lap_deficit": 499,
+ "note": "gaps are NOT MC2 inputs (kernel anchors on lap_number/race_time_s); validation is representation-safety only",
+ "mae": 1.667,
+ "median_abs_err": 0.585,
+ "p90": 2.746,
+ "p95": 6.79,
+ "mean_bias": 0.406
+}

@@ -1,0 +1,10 @@
+{
+ "schema_version": "v3.2l-terminal-calibration-v1",
+ "per_fold_ece": {
+  "2020->2021": 0.2319,
+  "2021->2022": 0.0834,
+  "2022->2023": 0.1532,
+  "2023->2024": 0.0735
+ },
+ "gate": "reliability adequate across folds; high terminal probability never deterministic"
+}

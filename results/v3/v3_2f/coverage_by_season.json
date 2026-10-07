@@ -1,0 +1,77 @@
+{
+  "after": {
+    "2018": {
+      "coverage": 0.0873,
+      "n": 1386,
+      "supported": 121
+    },
+    "2019": {
+      "coverage": 0.4019,
+      "n": 1361,
+      "supported": 547
+    },
+    "2020": {
+      "coverage": 0.1846,
+      "n": 1127,
+      "supported": 208
+    },
+    "2021": {
+      "coverage": 0.2134,
+      "n": 1401,
+      "supported": 299
+    },
+    "2022": {
+      "coverage": 0.2321,
+      "n": 1435,
+      "supported": 333
+    },
+    "2023": {
+      "coverage": 0.2288,
+      "n": 1412,
+      "supported": 323
+    },
+    "2024": {
+      "coverage": 0.3114,
+      "n": 1522,
+      "supported": 474
+    }
+  },
+  "before": {
+    "2018": {
+      "coverage": 0.0873,
+      "n": 1386,
+      "supported": 121
+    },
+    "2019": {
+      "coverage": 0.4019,
+      "n": 1361,
+      "supported": 547
+    },
+    "2020": {
+      "coverage": 0.1846,
+      "n": 1127,
+      "supported": 208
+    },
+    "2021": {
+      "coverage": 0.2134,
+      "n": 1401,
+      "supported": 299
+    },
+    "2022": {
+      "coverage": 0.2321,
+      "n": 1435,
+      "supported": 333
+    },
+    "2023": {
+      "coverage": 0.2288,
+      "n": 1412,
+      "supported": 323
+    },
+    "2024": {
+      "coverage": 0.3114,
+      "n": 1522,
+      "supported": 474
+    }
+  },
+  "schema_version": "v3.2f-season-coverage-v1"
+}

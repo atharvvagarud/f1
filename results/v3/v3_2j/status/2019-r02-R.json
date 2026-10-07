@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "5ca9c0c687a751fd7cde601c2bcd57495f1fd7a49efcc8500802842db91a0ea6",
+  "diagnostics": {
+    "n_inpit_updates": 102,
+    "n_malformed_rows": 0,
+    "n_messages": 34131,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 100,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 24
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2019-r02-R",
+  "raw_sha256": "b48b0338eaa84b571e22ba00abbd424de82e6e2ccb96e3641278516606ab2ea1",
+  "round": 2,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2019,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2019/2019-03-31_Bahrain_Grand_Prix/2019-03-31_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        7.776,
+        false
+      ],
+      [
+        3782.798,
+        true
+      ]
+    ],
+    "hamilton": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "kubica": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        7.776,
+        false
+      ],
+      [
+        7454.824,
+        true
+      ]
+    ],
+    "stroll": [
+      [
+        7.776,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        7.776,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

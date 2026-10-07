@@ -1,0 +1,11 @@
+{
+ "schema_version": "v3.2k-decision-v1",
+ "preregistration_sha256": "567260af8072d2e1700a4d1e9ad24265fc458c838010dc8a0d27b745c6a2f22b",
+ "decision": "REJECT_DIRECT_RAW_STATE_RECONSTRUCTION",
+ "reasons": [
+  "tyre compound/age unavailable in TimingData (required MC2 field, validation gate FAIL)",
+  "2019-2023 TimingAppData not local; bulk download not justified before proven need (per prereg)",
+  "zero FULL direct-recovery candidates under the frozen required-state definition",
+  "no MC2/runtime change warranted; J semantics preserved"
+ ]
+}

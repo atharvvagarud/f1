@@ -1,0 +1,1 @@
+{"schema_version": "v3.2m-test-report-v1", "m_tests": 20, "m_tests_passed": 20, "jkI_contract_tests": 68, "contract_passed": 68, "full_tier1": "NOT_REQUIRED_RESEARCH_ONLY", "rationale": "M REJECTED/research-only: no runtime or MC2 change; focused + J/K/L contract suites pass; final V3.2 validation/freeze runs full suite"}

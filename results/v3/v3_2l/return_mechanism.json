@@ -1,0 +1,6 @@
+{
+ "schema_version": "v3.2l-return-mechanism-v1",
+ "design_only": true,
+ "mechanism": "hold driver (no competitive progress) for sampled additional downtime conditional on age/context; resume from last-known anchor with clock advanced by downtime; never teleport; never fabricate gaps",
+ "blocker": "MC2 kernel reschedules every active driver each event and ends the race at the first finisher; hold/resume requires kernel dynamics support = change to accepted MC2-E science (frozen). NOT IMPLEMENTED."
+}

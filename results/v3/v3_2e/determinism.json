@@ -1,0 +1,25 @@
+{
+ "all_match": true,
+ "checks": [
+  {
+   "frame_index": 20,
+   "match": true,
+   "race_id": "2020-r01-R"
+  },
+  {
+   "frame_index": 20,
+   "match": true,
+   "race_id": "2022-r01-R"
+  },
+  {
+   "frame_index": 20,
+   "match": true,
+   "race_id": "2024-r01-R"
+  }
+ ],
+ "comparison_note": "rerun normalized through JSON round-trip (int position keys serialize as strings); floats round-trip exactly",
+ "master_seed": 20240101,
+ "n_runs": 1000,
+ "population_hash": "5d038db83111a1a9dc9e885ed107358d8e018ad1c3a4570f14d1f78697b8383d",
+ "schema_version": "v3.2e-determinism-v1"
+}

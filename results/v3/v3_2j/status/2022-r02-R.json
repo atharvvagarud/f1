@@ -1,0 +1,145 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "7132462ee1a8b024af4d02f8e988ef2a0f9068cc7d6851acc8b758f010a951e0",
+  "diagnostics": {
+    "n_inpit_updates": 130,
+    "n_malformed_rows": 0,
+    "n_messages": 44451,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 57,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 27
+  },
+  "n_drivers_with_updates": 18,
+  "n_transitions": 20,
+  "race_id": "2022-r02-R",
+  "raw_sha256": "aa716ab4cd9812e9c763c3d894bdc385e966f86bf2c864003b5fe3e0f63e635a",
+  "round": 2,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2022,
+  "served_by": "fastf1_mirror",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2022/2022-03-27_Saudi_Arabian_Grand_Prix/2022-03-27_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        5.128,
+        false
+      ],
+      [
+        7628.146,
+        true
+      ]
+    ],
+    "gasly": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        5.128,
+        false
+      ],
+      [
+        7823.581,
+        true
+      ]
+    ],
+    "russell": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        5.128,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        5.128,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": [
+    "22"
+  ]
+}

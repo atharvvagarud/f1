@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "5992875872142d806a2b7aba7df1b837aa2c175f59b93ee1fec81b5435a89ef7",
+  "diagnostics": {
+    "n_inpit_updates": 264,
+    "n_malformed_rows": 0,
+    "n_messages": 71469,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 164,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 21
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2022-r15-R",
+  "raw_sha256": "d918f9cb26a96a070e553bcc88785781abbc1aed54ac20be140b92b42ba82038",
+  "round": 15,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2022,
+  "served_by": "fastf1_mirror",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2022/2022-09-04_Dutch_Grand_Prix/2022-09-04_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        4.097,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        4.097,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

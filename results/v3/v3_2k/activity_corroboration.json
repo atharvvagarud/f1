@@ -1,0 +1,14 @@
+{
+ "schema_version": "v3.2k-activity-corroboration-v1",
+ "n": 7977,
+ "dist": {
+  "Stopped": 5661,
+  "Retired": 2067,
+  "fresh_adjacent": 6,
+  "stale_only": 23,
+  "fresh_TimingData": 172,
+  "InPit_fresh": 7,
+  "InPit_stale": 41
+ },
+ "rule": "activity supports observability only; lack of activity NEVER implies retirement"
+}

@@ -1,0 +1,24 @@
+{
+ "schema_version": "v3.2n-graphify-final-v1",
+ "accepted_direction": [
+  "historical replay state",
+  "presence/field eligibility",
+  "J status resolver",
+  "simulation adapter",
+  "MC2-E",
+  "simulation distributions"
+ ],
+ "forbidden_absent": [
+  "runtime->results/",
+  "MC2->network",
+  "MC2->raw web source",
+  "simulation->future labels",
+  "simulation->model-lab",
+  "frontend->research artifacts"
+ ],
+ "note": "counts from graphify-out/GRAPH_REPORT.md after final update; forbidden edges absent by construction (N adds no runtime imports; scripts import raceintel + api locally only)",
+ "nodes": 14711,
+ "edges": 34431,
+ "communities": 397,
+ "verified_no_forbidden": true
+}

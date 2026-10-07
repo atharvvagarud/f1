@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "686c50dbd1fe3af286b4e567c892ed63540b1fc99d811cd5b8b7dabbd493a8f2",
+  "diagnostics": {
+    "n_inpit_updates": 71,
+    "n_malformed_rows": 0,
+    "n_messages": 23785,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 68,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 24
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2019-r13-R",
+  "raw_sha256": "8f4629b733e1ad95f8db519eba3c290086f9e87ceb7afac1363f43fcaa3c520a",
+  "round": 13,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2019,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2019/2019-09-01_Belgian_Grand_Prix/2019-09-01_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "kubica": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        7.751,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        7.751,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

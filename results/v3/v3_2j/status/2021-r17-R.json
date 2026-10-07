@@ -1,0 +1,159 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "d62ae35ce537cc65c9f29e4de3366087521b925ff8c572d601c9a604cc6e4cf6",
+  "diagnostics": {
+    "n_inpit_updates": 183,
+    "n_malformed_rows": 0,
+    "n_messages": 50905,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 102,
+    "n_retired_updates": 23,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 23,
+  "race_id": "2021-r17-R",
+  "raw_sha256": "f59939f547992bdb27fab3bcbcfe690f5bc18085758df78b954300a1ea2ef08a",
+  "round": 17,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2021,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2021/2021-10-24_United_States_Grand_Prix/2021-10-24_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        2.765,
+        false
+      ],
+      [
+        8991.532,
+        true
+      ]
+    ],
+    "bottas": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        2.765,
+        false
+      ],
+      [
+        5406.705,
+        true
+      ]
+    ],
+    "giovinazzi": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "mazepin": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        2.765,
+        false
+      ],
+      [
+        8127.318,
+        true
+      ]
+    ],
+    "perez": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        2.765,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        2.765,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

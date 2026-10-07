@@ -1,0 +1,151 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "8ad5439c9167558d609f62ceddcdc17611f9af02190a8a70d35776bfa2a06338",
+  "diagnostics": {
+    "n_inpit_updates": 71,
+    "n_malformed_rows": 0,
+    "n_messages": 68547,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 70,
+    "n_retired_updates": 21,
+    "n_stopped_updates": 21
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 21,
+  "race_id": "2020-r12-R",
+  "raw_sha256": "e8d4ae57c0996a2e06faadcc7bc426417cde5a7bea4d48435f0223e3579a08bd",
+  "round": 12,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2020,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2020/2020-10-25_Portuguese_Grand_Prix/2020-10-25_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        6.189,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        6.189,
+        false
+      ],
+      [
+        6468.469,
+        true
+      ]
+    ],
+    "vettel": [
+      [
+        6.189,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

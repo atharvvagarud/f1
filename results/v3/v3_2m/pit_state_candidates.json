@@ -1,0 +1,1 @@
+{"schema_version": "v3.2m-pit-state-candidates-v1", "preregistration_sha256": "3161cf5275e8a2cfe3ef71032315c0084f3a6ca09fd297940576c1a74123bea6", "rule": "causal-only: PitOut latest True -> EXIT; InPit True + entry<=120s -> SERVICE_ACTIVE; InPit True (entry old/unknown) -> LANE_STOPPED; else AMBIGUOUS", "counts": {"PIT_LANE_STOPPED": 203, "PIT_SERVICE_ACTIVE": 11}}

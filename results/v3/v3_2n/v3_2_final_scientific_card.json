@@ -1,0 +1,82 @@
+{
+ "schema_version": "v3.2-final-scientific-card-v1",
+ "accepted_simulator": "MC2-E (arm E_AR1_RESIDUAL; R3 baseline + anchor + bounded dynamics + conditioned variance + AR1 rho=0.264; traffic gated off)",
+ "accepted_field_contracts": [
+  "mc2-field-v1",
+  "v3.2c-presence-v1",
+  "v3.2j-presence-v2"
+ ],
+ "accepted_status_contract": "v3.2j-driver-status-v1 (exclusion-only; Retired-True-at-T outside 13 windows)",
+ "training_calibration_eras": "through-2019/2021/2023 params; folds <=2020->2021 ... <=2023->2024",
+ "evaluation_eras": "2021-2024 (+2018-2019 population)",
+ "policy_2025": "forbidden in all V3.2 science",
+ "run_count": 5000,
+ "rng_contract": "master_seed streams; mc2_stream per simulation; chunk invariant",
+ "scientific_metrics": {
+  "winner_logloss_A_minus_E": 0.696,
+  "bootstrap_ci95": [
+   0.236,
+   1.21
+  ],
+  "podium_brier_delta": 0.0058,
+  "top1": [
+   0.567,
+   0.624
+  ],
+  "ece": [
+   0.202,
+   0.113
+  ],
+  "stage_deltas": {
+   "EARLY": 1.141,
+   "MID": 1.059,
+   "LATE": 0.46
+  }
+ },
+ "coverage": {
+  "eligible": 3678,
+  "total": 9644,
+  "fraction": 0.3814,
+  "gain_vs_pre_J": "+1373 (+14.24pp)"
+ },
+ "coverage_limitations": [
+  "LATE 27.53%",
+  "45 zero-support races",
+  "0 full-coverage races"
+ ],
+ "supported_regimes": [
+  "DRY_GREEN (+J-relieved stale)"
+ ],
+ "unsupported_regimes": [
+  "SC/VSC/YELLOW/RED/WET (rejected/deferred)",
+  "general/pit lifecycle (rejected)"
+ ],
+ "status_semantics": "Retired CURRENT STATE at T (never sticky); unknown stays unknown; 13 windows suppressed",
+ "rejected_experiments": [
+  "F/H regimes",
+  "G processed retirement",
+  "K raw reconstruction",
+  "L lifecycle",
+  "M pit lifecycle"
+ ],
+ "known_limitations": [
+  "L track-code/token defect (corrected supplementarily; verdicts unchanged)",
+  "48 stopped-cleared InPit-True rows ambiguous (M)",
+  "duration evidence small-N (L/M)",
+  "no DNF/weather/SC simulation"
+ ],
+ "performance": {
+  "n_checkpoints": 21,
+  "wall_clock_s": 221.0,
+  "runs_per_sec_8_workers": 475.1,
+  "sec_per_5000_checkpoint": 10.52
+ },
+ "reproducibility": {
+  "corpus_hash": "368ec94f90ac265f5dd231078b123ffc61796655b15665da618ada4942b334c0"
+ },
+ "artifact_hashes": {
+  "j_corpus": "8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30",
+  "dry_green": "7ae97c3c8575679a",
+  "final_eligibility": "368ec94f90ac265f5dd231078b123ffc61796655b15665da618ada4942b334c0"
+ }
+}

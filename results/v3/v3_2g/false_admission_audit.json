@@ -1,0 +1,18 @@
+{
+  "admission_occurred": false,
+  "requirement": "ZERO unexplained transient exclusions (vacuously held; admission would have violated it)",
+  "schema_version": "v3.2g-false-admission-audit-v1",
+  "unexplained_transient_exclusions": 0,
+  "would_be_excluded": {
+    "C3_rule": {
+      "podiums": 7,
+      "top5": 9,
+      "winners": 3
+    },
+    "C5_rule": {
+      "podiums": 1,
+      "top5": 1,
+      "winners": 1
+    }
+  }
+}

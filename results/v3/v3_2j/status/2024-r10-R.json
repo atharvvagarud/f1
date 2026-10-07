@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "1c0115200c1fb49f7a66455e7e341a2f796bdbb5debc5eb07436437faed4552a",
+  "diagnostics": {
+    "n_inpit_updates": 214,
+    "n_malformed_rows": 0,
+    "n_messages": 62541,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 104,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 20
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2024-r10-R",
+  "raw_sha256": "478b38ad4083ce71224de3d0f9606a638d7e7e2dea6027c4a3a7495a3a9ceefb",
+  "round": 10,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2024,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2024/2024-06-23_Spanish_Grand_Prix/2024-06-23_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "alonso": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "piastri": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "sargeant": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        8.72,
+        false
+      ]
+    ],
+    "zhou": [
+      [
+        8.72,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

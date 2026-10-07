@@ -1,0 +1,14 @@
+{
+ "ar1_admitted": true,
+ "justification": "most complete stable mechanism chain; final verdict deferred to the V3.2E controlled backtest",
+ "mean_winner_tv_vs_A": {
+  "B_DRIVER_ANCHOR": 0.177,
+  "C_DRIVER_ANCHOR_PLUS_DYNAMICS": 0.17400000000000002,
+  "D_CONDITIONED_VARIANCE": 0.17400000000000002,
+  "E_AR1_RESIDUAL": 0.16699999999999998
+ },
+ "prereg_hash": "dc0ae2dbade08514ed3b7cbf5e4be965edccf40b60d7bcad86c99f245854ee16",
+ "schema_version": "v3.2d-selection-v1",
+ "selected": "ADVANCE_E",
+ "traffic": "NOT_RUN"
+}

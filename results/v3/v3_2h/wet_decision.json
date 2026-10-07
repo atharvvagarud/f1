@@ -1,0 +1,6 @@
+{
+  "decision": "REJECT_WET",
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "reason": "compound-transition boundary inseparable from Strategy 2.0 and/or pace gates fail; explicit 422 retained",
+  "schema_version": "v3.2h-wet-decision-v1"
+}

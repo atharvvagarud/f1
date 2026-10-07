@@ -1,0 +1,210 @@
+{
+ "baseline": {
+  "commit": "64c5af094bd1304e23a5c7d3d5b782b0eef11aca",
+  "tag": "v3.1-race-dynamics"
+ },
+ "schema_version": "v3.2n-stage-ledger-v1",
+ "stages": [
+  {
+   "artifacts": [
+    "results/v3/v3_2a_simulation_coverage_architecture_audit.json"
+   ],
+   "coverage_effect": "baseline measurement only",
+   "disposition": "accepted-foundation",
+   "limitations": [
+    "audit only; no simulator change"
+   ],
+   "purpose": "simulation coverage architecture audit",
+   "runtime_effect": "none (audit)",
+   "scientific_effect": "eligibility taxonomy + 5000-run recommendation",
+   "stage": "V3.2A",
+   "verdict": "V3.2A COMPLETE \u2014 READY FOR V3.2B CONTRACT"
+  },
+  {
+   "artifacts": [
+    "results/v3/v3_2b_mc2_scientific_contract.json",
+    "raceintel/simulation/field_contract.py"
+   ],
+   "coverage_effect": "none",
+   "disposition": "accepted-foundation",
+   "limitations": [
+    "contract only; stale handling mixed-decision"
+   ],
+   "purpose": "Monte Carlo 2.0 scientific contract",
+   "runtime_effect": "none (declarative mc2-field-v1 + support matrix)",
+   "scientific_effect": "presence levels + condition support matrix frozen",
+   "stage": "V3.2B",
+   "verdict": "V3.2B COMPLETE \u2014 READY FOR V3.2C"
+  },
+  {
+   "artifacts": [
+    "results/v3/v3_2c_causal_initial_state_coverage.json",
+    "raceintel/simulation/presence.py"
+   ],
+   "coverage_effect": "DNS repair (part of 2305 baseline chain)",
+   "disposition": "accepted",
+   "limitations": [
+    "STALE_UNRESOLVED still refused"
+   ],
+   "purpose": "causal initial-state coverage repair",
+   "runtime_effect": "presence adapter (DNS exclusion only)",
+   "scientific_effect": "FACTUAL_AT_T binding; no retirement inference; no tyre backfill",
+   "stage": "V3.2C",
+   "verdict": "V3.2C COMPLETE \u2014 READY FOR V3.2D"
+  },
+  {
+   "artifacts": [
+    "results/v3/v3_2d_mc2_dynamics.json",
+    "results/v3/v3_2d/mc2_params_through-2023_anchor.json",
+    "raceintel/simulation/mc2/"
+   ],
+   "coverage_effect": "none",
+   "disposition": "accepted",
+   "limitations": [
+    "traffic context gated off; dry-green only"
+   ],
+   "purpose": "Monte Carlo 2.0 dynamics (arms A\u2013F)",
+   "runtime_effect": "MC2 kernel arms; traffic gated off",
+   "scientific_effect": "anchor+dynamics+variance+AR1 selected; params per era",
+   "stage": "V3.2D",
+   "verdict": "V3.2D COMPLETE \u2014 READY FOR V3.2E (candidate ADVANCE_E)"
+  },
+  {
+   "artifacts": [
+    "results/v3/v3_2e_controlled_backtest.json",
+    "results/v3/v3_2e/preregistration.json"
+   ],
+   "coverage_effect": "none",
+   "disposition": "accepted",
+   "limitations": [
+    "dry-green population; no DNF/weather/SC modelling"
+   ],
+   "purpose": "controlled temporal backtest",
+   "runtime_effect": "MC2-E accepted; 5000 runs frozen",
+   "scientific_effect": "winner log-loss A-E +0.696 [0.236,1.210]; top1 0.567->0.624; ECE 0.202->0.113",
+   "stage": "V3.2E",
+   "verdict": "V3.2E COMPLETE \u2014 KEEP_MC2_E"
+  },
+  {
+   "artifacts": [
+    "results/v3/v3_2f_regime_coverage.json"
+   ],
+   "coverage_effect": "none admitted",
+   "disposition": "rejected/deferred",
+   "limitations": [
+    "regime checkpoints remain unsupported by design"
+   ],
+   "purpose": "regime support coverage expansion",
+   "runtime_effect": "none (dry-green parity corpus 7ae97c3c frozen)",
+   "scientific_effect": "RED/SC/VSC/YELLOW/WET support rejected/deferred with evidence",
+   "stage": "V3.2F",
+   "verdict": "V3.2F COMPLETE \u2014 NO REGIME ADMITTED"
+  },
+  {
+   "artifacts": [
+    "results/v3/v3_2g_driver_status.json"
+   ],
+   "coverage_effect": "none",
+   "disposition": "rejected",
+   "limitations": [
+    "motivated raw-source investigation (V3.2I/J)"
+   ],
+   "purpose": "causal driver status (processed sources)",
+   "runtime_effect": "none",
+   "scientific_effect": "processed sources carry no authoritative terminal vocabulary",
+   "stage": "V3.2G",
+   "verdict": "V3.2G COMPLETE \u2014 NO AUTHORITATIVE STATUS ADMITTED"
+  },
+  {
+   "artifacts": [
+    "results/v3/v3_2h_regime_models.json"
+   ],
+   "coverage_effect": "none admitted",
+   "disposition": "rejected/deferred",
+   "limitations": [
+    "neutralisation science out of scope"
+   ],
+   "purpose": "causal regime models",
+   "runtime_effect": "none",
+   "scientific_effect": "no regime evolution model admitted",
+   "stage": "V3.2H",
+   "verdict": "V3.2H COMPLETE \u2014 NO REGIME ADMITTED"
+  },
+  {
+   "artifacts": [
+    "results/v3/v3_2i_external_status_feasibility.json"
+   ],
+   "coverage_effect": "projected 2685/9644 (27.84%)",
+   "disposition": "accepted-feasibility",
+   "limitations": [
+    "projection only; integration deferred to J"
+   ],
+   "purpose": "external status feasibility (raw TimingData)",
+   "runtime_effect": "none (feasibility only)",
+   "scientific_effect": "TimingData.Retired viable as exclusion-only signal",
+   "stage": "V3.2I",
+   "verdict": "V3.2I COMPLETE \u2014 LOCAL RAW STATUS SOURCE PARTIALLY VIABLE"
+  },
+  {
+   "artifacts": [
+    "results/v3/v3_2j_raw_timing_status.json",
+    "raceintel/simulation/driver_status.py"
+   ],
+   "coverage_effect": "+1373 (+14.24pp) to 3678/9644 (38.14%)",
+   "disposition": "accepted",
+   "limitations": [
+    "exclusion-only; False/unknown prove nothing"
+   ],
+   "purpose": "raw TimingData Retired integration",
+   "runtime_effect": "v3.2j-presence-v2: J-relieved exclusion; 422 otherwise",
+   "scientific_effect": "v3.2j-driver-status-v1 exclusion-only; 13 unreliable windows; firewalls pass",
+   "stage": "V3.2J",
+   "verdict": "V3.2J COMPLETE \u2014 STATUS INTEGRATED \u2014 COVERAGE EXPANDED"
+  },
+  {
+   "artifacts": [
+    "results/v3/v3_2k_raw_timing_state_reconstruction.json"
+   ],
+   "coverage_effect": "none (2866 raw-source-stale remain)",
+   "disposition": "rejected",
+   "limitations": [
+    "hands 3294 STALE + lifecycle framing to L"
+   ],
+   "purpose": "raw timing state reconstruction",
+   "runtime_effect": "none",
+   "scientific_effect": "tyre/compound absent from TimingData; 2019-2023 only",
+   "stage": "V3.2K",
+   "verdict": "V3.2K COMPLETE \u2014 DIRECT STATE RECONSTRUCTION REJECTED"
+  },
+  {
+   "artifacts": [
+    "results/v3/v3_2l_causal_driver_lifecycle.json"
+   ],
+   "coverage_effect": "none admitted (5552 projection NOT admitted)",
+   "disposition": "rejected",
+   "limitations": [
+    "track-code/token defect in stage-1 (corrected in N); 214 PIT_CONTEXT handed to M"
+   ],
+   "purpose": "causal driver lifecycle model",
+   "runtime_effect": "none",
+   "scientific_effect": "unstable calibration, small-N, N=30 return-time, concurrent-stop dependence, no hold/resume",
+   "stage": "V3.2L",
+   "verdict": "V3.2L COMPLETE \u2014 LIFECYCLE MODEL REJECTED"
+  },
+  {
+   "artifacts": [
+    "results/v3/v3_2m_causal_pit_lifecycle.json"
+   ],
+   "coverage_effect": "none (+0)",
+   "disposition": "rejected",
+   "limitations": [
+    "TimingAppData stream audit deferred; red-flag cluster explained"
+   ],
+   "purpose": "causal pit lifecycle feasibility",
+   "runtime_effect": "none",
+   "scientific_effect": "P(return|PIT_CONTEXT)=6.5%; recent-entry 0/11; duration N=14; stale pit opportunity structurally 0",
+   "stage": "V3.2M",
+   "verdict": "V3.2M COMPLETE \u2014 PIT LIFECYCLE REJECTED"
+  }
+ ]
+}

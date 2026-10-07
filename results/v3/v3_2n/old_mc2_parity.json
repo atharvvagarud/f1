@@ -1,0 +1,6 @@
+{
+ "schema_version": "v3.2n-old-mc2-parity-v1",
+ "dry_green_corpus": "7ae97c3c8575679a",
+ "gate": "tests/test_v3_2f_regime_corpus.py::test_dry_green_parity_corpus_bit_exact",
+ "note": "live result recorded in test_report.json; bit-exact required for freeze"
+}

@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "90eafcc191ea3e1f059502f376f35719edd021d7635b303b0219ed8f0ef0f487",
+  "diagnostics": {
+    "n_inpit_updates": 146,
+    "n_malformed_rows": 0,
+    "n_messages": 53369,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 60,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 20
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2021-r16-R",
+  "raw_sha256": "89bf1022300e2cb50eacdb8d118b53b7a0c55b54fa60585ca9acc09df446d136",
+  "round": 16,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2021,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2021/2021-10-10_Turkish_Grand_Prix/2021-10-10_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "mazepin": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "mick_schumacher": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "tsunoda": [
+      [
+        5.75,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        5.75,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

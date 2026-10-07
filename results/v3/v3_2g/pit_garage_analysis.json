@@ -1,0 +1,11 @@
+{
+  "duration_s": {
+    "gt120s": 369,
+    "gt60s": 389,
+    "max": 7610.1,
+    "p50": 23.8
+  },
+  "finding": "no garage-entry concept in source; long stays include red-flag suspension and repair-then-return; duration alone is not retirement evidence",
+  "pit_rows": 6336,
+  "schema_version": "v3.2g-pit-garage-analysis-v1"
+}

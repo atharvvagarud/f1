@@ -1,0 +1,147 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "cdc3652150efb382aa1301772fcd7c022c99c895b7bf51eaec1b819e24f484e4",
+  "diagnostics": {
+    "n_inpit_updates": 63,
+    "n_malformed_rows": 0,
+    "n_messages": 28937,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 60,
+    "n_retired_updates": 20,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 20,
+  "race_id": "2018-r12-R",
+  "raw_sha256": "00bd4e10e28b95ec8e9cb42816c36af6d7927ab7a717f0363ad352083d1016e5",
+  "round": 12,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2018,
+  "served_by": "official_cache",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2018/2018-07-29_Hungarian_Grand_Prix/2018-07-29_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "alonso": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "brendon_hartley": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "ericsson": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "hamilton": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "sirotkin": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "vandoorne": [
+      [
+        0.908,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        0.908,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

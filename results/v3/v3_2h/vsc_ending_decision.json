@@ -1,0 +1,14 @@
+{
+  "decision": "REJECT_VSC_ENDING",
+  "n_vsc_ending_laps": 314,
+  "next_token_counts": {
+    "None": 3,
+    "all_clear": 288,
+    "safety_car": 5,
+    "vsc": 2,
+    "yellow": 16
+  },
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "reason": "ending transition admitted only if >=95% of vsc_ending laps resolve to green next lap; no inferred timestamp either way",
+  "schema_version": "v3.2h-vsc-ending-v1"
+}

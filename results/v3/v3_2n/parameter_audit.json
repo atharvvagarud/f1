@@ -1,0 +1,73 @@
+{
+ "schema_version": "v3.2n-parameter-audit-v1",
+ "era": "through-2023 (frozen; no 2025 regeneration)",
+ "files": [
+  {
+   "name": "mc2_params_through-2019_anchor.json",
+   "sha256": "ffcddcab3b47eb9c91862ab063b8e037d99816c88a30d8057df38bd6376b6b29"
+  },
+  {
+   "name": "mc2_params_through-2019_ar1.json",
+   "sha256": "0739677fcabc38a32b0027af6724eccf175d2bb9fe48e385fd0363b798081fda"
+  },
+  {
+   "name": "mc2_params_through-2019_dynamics.json",
+   "sha256": "edfd8e1711e0dca6fa5ab966ae98f9b5863e96d52bdd524d8f5e7cb03e7e8457"
+  },
+  {
+   "name": "mc2_params_through-2019_variance.json",
+   "sha256": "5aacf0338bff4264d5e4bed3f5e7ac76d4ee7b3a332867dbb7320ec9ac6a5b2c"
+  },
+  {
+   "name": "mc2_params_through-2021_anchor.json",
+   "sha256": "562197a1355749a615626256ef4b32b32ea4cf49fb85f333bc45503864389f1d"
+  },
+  {
+   "name": "mc2_params_through-2021_ar1.json",
+   "sha256": "b697286a22e6732bcbda097853e4a35f731c1921ae3f92d3d789be16c90f3c19"
+  },
+  {
+   "name": "mc2_params_through-2021_dynamics.json",
+   "sha256": "a356222c265b0ab5f48a151eed0aa1e66f711bfb3fdb3580003d0d18beaa4046"
+  },
+  {
+   "name": "mc2_params_through-2021_variance.json",
+   "sha256": "65f9b5c11d18e9ce7ebcbc4485ad84b7e6ca186ca2bc7593e6d947e281126318"
+  },
+  {
+   "name": "mc2_params_through-2023_anchor.json",
+   "sha256": "a99aae55b679697ad306c9802aaa3a033cda6401cf732fe15460a5a56ad67754"
+  },
+  {
+   "name": "mc2_params_through-2023_ar1.json",
+   "sha256": "c2a4d1d9476020c13eeb9e8f339b3e179f779c857f3ab05b91970c7b58f545f3"
+  },
+  {
+   "name": "mc2_params_through-2023_dynamics.json",
+   "sha256": "41aa3c29805aa2990b517f69f3370c5ec0cb8212ed26de6d8b144b53f60c4f17"
+  },
+  {
+   "name": "mc2_params_through-2023_variance.json",
+   "sha256": "2acab9ef11cf50f5d2dc03649fb33c3a863cdb6c39a107f1a38d1210df8dd28e"
+  }
+ ],
+ "unchanged": true,
+ "selected_candidate": {
+  "ar1_admitted": true,
+  "justification": "most complete stable mechanism chain; final verdict deferred to the V3.2E controlled backtest",
+  "mean_winner_tv_vs_A": {
+   "B_DRIVER_ANCHOR": 0.177,
+   "C_DRIVER_ANCHOR_PLUS_DYNAMICS": 0.17400000000000002,
+   "D_CONDITIONED_VARIANCE": 0.17400000000000002,
+   "E_AR1_RESIDUAL": 0.16699999999999998
+  },
+  "prereg_hash": "dc0ae2dbade08514ed3b7cbf5e4be965edccf40b60d7bcad86c99f245854ee16",
+  "schema_version": "v3.2d-selection-v1",
+  "selected": "ADVANCE_E",
+  "traffic": "NOT_RUN"
+ },
+ "kernel_identity": "mc2-r1-research+mc2-kernel-v1+mc2-rng-v1+state:mc2-field-v1+presence:v3.2c-presence-v1",
+ "mc2_research_version": "mc2-r1-research",
+ "e_seed_policy": "see-E-prereg",
+ "no_retuning": true
+}

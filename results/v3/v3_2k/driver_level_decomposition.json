@@ -1,0 +1,68 @@
+{
+ "schema_version": "v3.2k-driver-decomposition-v1",
+ "n_offender_rows": 7977,
+ "n_distinct_offenders": 35,
+ "top_offenders": [
+  [
+   "ocon",
+   518
+  ],
+  [
+   "kevin_magnussen",
+   505
+  ],
+  [
+   "leclerc",
+   445
+  ],
+  [
+   "sainz",
+   418
+  ],
+  [
+   "max_verstappen",
+   414
+  ],
+  [
+   "stroll",
+   406
+  ],
+  [
+   "perez",
+   403
+  ],
+  [
+   "hulkenberg",
+   378
+  ],
+  [
+   "tsunoda",
+   365
+  ],
+  [
+   "albon",
+   345
+  ],
+  [
+   "alonso",
+   336
+  ],
+  [
+   "ricciardo",
+   331
+  ],
+  [
+   "bottas",
+   328
+  ],
+  [
+   "gasly",
+   288
+  ],
+  [
+   "russell",
+   269
+  ]
+ ],
+ "note": "counts are runtime-state occurrences, never future labels"
+}

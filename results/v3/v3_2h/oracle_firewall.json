@@ -1,0 +1,18 @@
+{
+  "poisoned_channels": [
+    "TrackStatus@>T",
+    "race-control@>T",
+    "weather@>T",
+    "rainfall@>T",
+    "compounds@>T",
+    "pits@>T",
+    "lap-timing@>T",
+    "regime-end@>T",
+    "restart@>T"
+  ],
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "runtime_reads_added": [],
+  "schema_version": "v3.2h-oracle-firewall-v1",
+  "static_check": "tests/test_v3_2h_regime_models.py::test_no_runtime_regime_reads",
+  "status": "VACUOUSLY_GREEN: no runtime regime path exists; all estimation is offline past-only; dry-green simulation path byte-unchanged (parity bit-exact)"
+}

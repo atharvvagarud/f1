@@ -1,0 +1,51 @@
+{
+ "schema_version": "v3.2n-scientific-reproduction-v1",
+ "source": "frozen v3_2e_controlled_backtest.json (no new model selection)",
+ "checks": {
+  "a_minus_e_logloss_delta": {
+   "expected": 0.696,
+   "actual": 0.696
+  },
+  "bootstrap_ci": {
+   "expected": [
+    0.236,
+    1.21
+   ],
+   "actual": [
+    0.236,
+    1.21
+   ]
+  },
+  "top1": {
+   "expected": [
+    0.567,
+    0.624
+   ],
+   "actual": [
+    0.567,
+    0.624
+   ]
+  },
+  "ece": {
+   "expected": [
+    0.202,
+    0.113
+   ],
+   "actual": [
+    0.202,
+    0.113
+   ]
+  },
+  "podium_brier_delta": {
+   "expected_positive": true,
+   "actual": 0.0058
+  },
+  "stage_direction": {
+   "EARLY": 1.141,
+   "MID": 1.059,
+   "LATE": 0.46
+  },
+  "scientific_verdict": "KEEP_MC2_E"
+ },
+ "reproduced": true
+}

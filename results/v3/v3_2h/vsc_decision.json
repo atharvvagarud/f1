@@ -1,0 +1,20 @@
+{
+  "decision": "REJECT_VSC",
+  "gates": {
+    "H1": {
+      "duration": "FAIL",
+      "during_pace": "FAIL",
+      "gap": "PASS",
+      "post_exit": "PASS"
+    },
+    "H2": {
+      "duration": "FAIL",
+      "during_pace": "FAIL",
+      "gap": "PASS",
+      "post_exit": "PASS"
+    }
+  },
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "reason": "one or more prereg gates FAIL; explicit 422 retained; DRY_GREEN MC2 E unchanged",
+  "schema_version": "v3.2h-vsc-decision-v1"
+}

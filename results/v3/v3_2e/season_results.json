@@ -1,0 +1,336 @@
+{
+ "folds": {
+  "D1": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.4107907843777903,
+     "podium_brier": 0.05224147202325339,
+     "rps": 0.10542973248916993,
+     "winner_brier": 0.03551186211979655,
+     "winner_logloss": 2.046278115345797
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.212708199053843,
+     "podium_brier": 0.05117215728225885,
+     "rps": 0.13647360058722927,
+     "winner_brier": 0.03218617900965431,
+     "winner_logloss": 1.7162564541425291
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.213884440009821,
+     "podium_brier": 0.05120675156233778,
+     "rps": 0.13878581735231263,
+     "winner_brier": 0.032240173642686595,
+     "winner_logloss": 1.7115401309760423
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.213884440009821,
+     "podium_brier": 0.05120675156233778,
+     "rps": 0.13878581735231263,
+     "winner_brier": 0.032240173642686595,
+     "winner_logloss": 1.7115401309760423
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.208719401575269,
+     "podium_brier": 0.049708588186442394,
+     "rps": 0.11730888964566487,
+     "winner_brier": 0.030969740548115854,
+     "winner_logloss": 1.4759310040604003
+    }
+   },
+   "n_checkpoints": 507,
+   "n_races": 24
+  },
+  "D2": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.428689421710428,
+     "podium_brier": 0.06168247887505032,
+     "rps": 0.09204267585723884,
+     "winner_brier": 0.025612913772599433,
+     "winner_logloss": 1.260617707066248
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.3826202286071783,
+     "podium_brier": 0.06373802035355561,
+     "rps": 0.08189416867880275,
+     "winner_brier": 0.022875397774206507,
+     "winner_logloss": 1.2206921929576227
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.3815169937660325,
+     "podium_brier": 0.06369201027721982,
+     "rps": 0.09113244314434038,
+     "winner_brier": 0.022916309835275213,
+     "winner_logloss": 1.226471287382238
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.3815169937660325,
+     "podium_brier": 0.06369201027721982,
+     "rps": 0.09113244314434038,
+     "winner_brier": 0.022916309835275213,
+     "winner_logloss": 1.226471287382238
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.3922240299408886,
+     "podium_brier": 0.06321030280433908,
+     "rps": 0.08214696579800848,
+     "winner_brier": 0.0228997802169546,
+     "winner_logloss": 1.1419950505250638
+    }
+   },
+   "n_checkpoints": 655,
+   "n_races": 32
+  },
+  "D3": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.396899563916357,
+     "podium_brier": 0.1017699975127692,
+     "rps": 0.09801792154033967,
+     "winner_brier": 0.04537539740173216,
+     "winner_logloss": 4.770658433006047
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.945829804404179,
+     "podium_brier": 0.07324173137908058,
+     "rps": 0.10902787767092825,
+     "winner_brier": 0.03311100980457474,
+     "winner_logloss": 2.236775356911148
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.946684199658469,
+     "podium_brier": 0.07333775511880969,
+     "rps": 0.10536812289429492,
+     "winner_brier": 0.03310536061514547,
+     "winner_logloss": 2.3160317121897678
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.946684199658469,
+     "podium_brier": 0.07333775511880969,
+     "rps": 0.10536812289429492,
+     "winner_brier": 0.03310536061514547,
+     "winner_logloss": 2.3160317121897678
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.9426648422656478,
+     "podium_brier": 0.07126162115256493,
+     "rps": 0.075314182140384,
+     "winner_brier": 0.03211114028425495,
+     "winner_logloss": 2.0511471050802133
+    }
+   },
+   "n_checkpoints": 474,
+   "n_races": 19
+  }
+ },
+ "population_hash": "5d038db83111a1a9dc9e885ed107358d8e018ad1c3a4570f14d1f78697b8383d",
+ "schema_version": "v3.2e-season-v1",
+ "seasons": {
+  "2020": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.6020402971308054,
+     "podium_brier": 0.040088639423076916,
+     "rps": 0.112758894940343,
+     "winner_brier": 0.02859650625000003,
+     "winner_logloss": 1.4716893343518875
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.4791213490477344,
+     "podium_brier": 0.04250245961538457,
+     "rps": 0.12601732231072982,
+     "winner_brier": 0.024612680769230767,
+     "winner_logloss": 1.4098640003816383
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.4797665829604565,
+     "podium_brier": 0.04256835336538456,
+     "rps": 0.12797054911536976,
+     "winner_brier": 0.0246054625,
+     "winner_logloss": 1.4147630875045403
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.4797665829604565,
+     "podium_brier": 0.04256835336538456,
+     "rps": 0.12797054911536976,
+     "winner_brier": 0.0246054625,
+     "winner_logloss": 1.4147630875045403
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.4687233204372534,
+     "podium_brier": 0.04181626586538463,
+     "rps": 0.10423256342495335,
+     "winner_brier": 0.023589280769230767,
+     "winner_logloss": 1.3257333450113626
+    }
+   },
+   "n_checkpoints": 208,
+   "n_races": 10
+  },
+  "2021": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.2777476450713494,
+     "podium_brier": 0.06069561644076744,
+     "rps": 0.10033118469704969,
+     "winner_brier": 0.040322544464002824,
+     "winner_logloss": 2.4459920499502568
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.0273773121015695,
+     "podium_brier": 0.05720325131138881,
+     "rps": 0.1436556907165422,
+     "winner_brier": 0.03745469952473157,
+     "winner_logloss": 1.9293990306718476
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.028922949261556,
+     "podium_brier": 0.05721607204717478,
+     "rps": 0.1462509014889229,
+     "winner_brier": 0.03755127704629466,
+     "winner_logloss": 1.917993726434479
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.028922949261556,
+     "podium_brier": 0.05721607204717478,
+     "rps": 0.1462509014889229,
+     "winner_brier": 0.03755127704629466,
+     "winner_logloss": 1.917993726434479
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.0278471101930187,
+     "podium_brier": 0.05519889936630877,
+     "rps": 0.12635150167625878,
+     "winner_brier": 0.036103973437775015,
+     "winner_logloss": 1.5804163320945108
+    }
+   },
+   "n_checkpoints": 299,
+   "n_races": 14
+  },
+  "2022": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.633841816377781,
+     "podium_brier": 0.06940860990991,
+     "rps": 0.10235810893245374,
+     "winner_brier": 0.03256840420420417,
+     "winner_logloss": 1.591715338628255
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.4762303662666794,
+     "podium_brier": 0.06940548138138136,
+     "rps": 0.08493896420173144,
+     "winner_brier": 0.027850389789789813,
+     "winner_logloss": 1.3462756726656713
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.4757142390842852,
+     "podium_brier": 0.06941805765765768,
+     "rps": 0.09925085122379658,
+     "winner_brier": 0.027907856756756763,
+     "winner_logloss": 1.3556512724465348
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.4757142390842852,
+     "podium_brier": 0.06941805765765768,
+     "rps": 0.09925085122379658,
+     "winner_brier": 0.027907856756756763,
+     "winner_logloss": 1.3556512724465348
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.472524757097137,
+     "podium_brier": 0.06820904744744752,
+     "rps": 0.07671014920613099,
+     "winner_brier": 0.027983144144144132,
+     "winner_logloss": 1.2548066960656954
+    }
+   },
+   "n_checkpoints": 333,
+   "n_races": 14
+  },
+  "2023": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.216528715424001,
+     "podium_brier": 0.053692411686825744,
+     "rps": 0.08137485221113157,
+     "winner_brier": 0.018419813419418108,
+     "winner_logloss": 0.9182092868483908
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 2.2858122291021683,
+     "podium_brier": 0.05787695040863029,
+     "rps": 0.07860793562542137,
+     "winner_brier": 0.01773045261523372,
+     "winner_logloss": 1.09081859437756
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 2.2841018301294578,
+     "podium_brier": 0.057770352582543275,
+     "rps": 0.08231607237931998,
+     "winner_brier": 0.017754244230140555,
+     "winner_logloss": 1.0928783214617117
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 2.2841018301294578,
+     "podium_brier": 0.057770352582543275,
+     "rps": 0.08231607237931998,
+     "winner_brier": 0.017754244230140555,
+     "winner_logloss": 1.0928783214617117
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 2.309180110242036,
+     "podium_brier": 0.05804079359267736,
+     "rps": 0.08776576788250122,
+     "winner_brier": 0.017642761000326912,
+     "winner_logloss": 1.0253295910063343
+    }
+   },
+   "n_checkpoints": 322,
+   "n_races": 18
+  },
+  "2024": {
+   "arms": {
+    "A_R3_BASELINE": {
+     "exp_mae": 2.396899563916357,
+     "podium_brier": 0.1017699975127692,
+     "rps": 0.09801792154033967,
+     "winner_brier": 0.04537539740173216,
+     "winner_logloss": 4.770658433006047
+    },
+    "B_DRIVER_ANCHOR": {
+     "exp_mae": 1.945829804404179,
+     "podium_brier": 0.07324173137908058,
+     "rps": 0.10902787767092825,
+     "winner_brier": 0.03311100980457474,
+     "winner_logloss": 2.236775356911148
+    },
+    "C_DRIVER_ANCHOR_PLUS_DYNAMICS": {
+     "exp_mae": 1.946684199658469,
+     "podium_brier": 0.07333775511880969,
+     "rps": 0.10536812289429492,
+     "winner_brier": 0.03310536061514547,
+     "winner_logloss": 2.3160317121897678
+    },
+    "D_CONDITIONED_VARIANCE": {
+     "exp_mae": 1.946684199658469,
+     "podium_brier": 0.07333775511880969,
+     "rps": 0.10536812289429492,
+     "winner_brier": 0.03310536061514547,
+     "winner_logloss": 2.3160317121897678
+    },
+    "E_AR1_RESIDUAL": {
+     "exp_mae": 1.9426648422656478,
+     "podium_brier": 0.07126162115256493,
+     "rps": 0.075314182140384,
+     "winner_brier": 0.03211114028425495,
+     "winner_logloss": 2.0511471050802133
+    }
+   },
+   "n_checkpoints": 474,
+   "n_races": 19
+  }
+ }
+}

@@ -1,0 +1,1 @@
+{"schema_version": "v3.2m-duration-baselines-v1", "preregistration_sha256": "3161cf5275e8a2cfe3ef71032315c0084f3a6ca09fd297940576c1a74123bea6", "baselines": {"global_median": 29.30749999999989, "global_p90": 400.80200000000013, "global_max": 2468.228, "global_n": 14, "note": "circuit/season/elapsed-conditional tables only if returned N supports them (N expected small)"}}

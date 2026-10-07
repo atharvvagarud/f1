@@ -1,0 +1,31 @@
+{
+  "candidates": {
+    "C1_explicit_RETIRED_RC": {
+      "basis": "none (family absent)",
+      "support": 0,
+      "verdict": "DEAD"
+    },
+    "C2_timing_terminal_status": {
+      "basis": "none (no vocabulary)",
+      "support": 0,
+      "verdict": "DEAD"
+    },
+    "C3_position_terminal_lifecycle": {
+      "basis": "FastF1Generated trailing rows",
+      "support": 261,
+      "verdict": "UNSAFE (3 winners/7 podiums/9 top-5 false-terminal)"
+    },
+    "C4_STOPPED_plus_trailing": {
+      "basis": "message + synthesis agreement",
+      "support": 50,
+      "verdict": "REJECTED (3 classified + 6 later-rows + season-dead)"
+    },
+    "C5_STOPPED_alone": {
+      "basis": "CarEvent stopped text",
+      "support": 62,
+      "verdict": "REJECTED (1 winner + 14/62 bad + recall 0.10 + 2023 zero)"
+    }
+  },
+  "method": "small interpretable set; no ML; no brute-force combinations",
+  "schema_version": "v3.2g-candidate-signals-v1"
+}

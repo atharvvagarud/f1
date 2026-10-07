@@ -1,0 +1,47 @@
+{
+  "sqlite_topics": [
+    "DriverList",
+    "LapCount",
+    "RaceControlMessages",
+    "SessionInfo",
+    "SessionStatus",
+    "TimingAppData",
+    "TimingData",
+    "TrackStatus",
+    "WeatherData"
+  ],
+  "sqlite_years": [
+    "2018",
+    "2024",
+    "2025"
+  ],
+  "streams_per_topic_year": {
+    "2018/DriverList": 21,
+    "2018/LapCount": 21,
+    "2018/RaceControlMessages": 21,
+    "2018/SessionInfo": 21,
+    "2018/SessionStatus": 21,
+    "2018/TimingAppData": 21,
+    "2018/TimingData": 21,
+    "2018/TrackStatus": 21,
+    "2018/WeatherData": 21,
+    "2024/DriverList": 24,
+    "2024/LapCount": 24,
+    "2024/RaceControlMessages": 24,
+    "2024/SessionInfo": 24,
+    "2024/SessionStatus": 24,
+    "2024/TimingAppData": 24,
+    "2024/TimingData": 24,
+    "2024/TrackStatus": 24,
+    "2024/WeatherData": 24,
+    "2025/DriverList": 24,
+    "2025/LapCount": 24,
+    "2025/RaceControlMessages": 24,
+    "2025/SessionInfo": 24,
+    "2025/SessionStatus": 24,
+    "2025/TimingAppData": 24,
+    "2025/TimingData": 24,
+    "2025/TrackStatus": 24,
+    "2025/WeatherData": 24
+  }
+}

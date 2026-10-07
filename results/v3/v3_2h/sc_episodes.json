@@ -1,0 +1,13 @@
+{
+  "durations": {
+    "mean": 3.361344537815126,
+    "n": 119,
+    "p10": 1.0,
+    "p50": 3.0,
+    "p90": 5.0,
+    "sd": 1.5969040027186154
+  },
+  "n": 119,
+  "prereg_hash": "a31aec4e7297dd81be17a850295e014c569fbcbd57ee90b56ecb6e93122f6054",
+  "schema_version": "v3.2h-sc-episodes-v1"
+}

@@ -1,0 +1,251 @@
+{
+ "schema_version": "v3.2k-machine-summary-v1",
+ "baseline": {
+  "tag": "v3.1-race-dynamics",
+  "commit": "64c5af094bd1304e23a5c7d3d5b782b0eef11aca"
+ },
+ "v3_2j_parent": {
+  "adapter": "v3.2j-raw-adapter-v1",
+  "coverage_after": "3678 / 9644",
+  "presence": "v3.2j-presence-v2",
+  "primary_stale": 3294,
+  "status_contract": "v3.2j-driver-status-v1"
+ },
+ "accepted_mc2": "unchanged MC2-E",
+ "preregistration": "567260af8072d2e1700a4d1e9ad24265fc458c838010dc8a0d27b745c6a2f22b",
+ "target_population": {
+  "n": 3294,
+  "offender_dist": {
+   "1": 988,
+   "2": 1028,
+   "3": 751,
+   "4": 285,
+   "5": 149,
+   "6": 25,
+   "7": 42,
+   "8": 12,
+   "9": 1,
+   "18": 1,
+   "19": 12
+  },
+  "max_offenders": 19
+ },
+ "minimum_state_contract": "v3.2k-minimum-state-contract-v1 (11 fields)",
+ "raw_topics": {
+  "schema_version": "v3.2k-raw-topic-inventory-v1",
+  "timingdata_local_files_2019_2023": 104,
+  "timingdata_local_bytes": 547033473,
+  "timingdata_sqlite_2018_2024": 45,
+  "timingappdata_sqlite_2018_2024": 45,
+  "sqlite_stream_kinds": {
+   "CarData.z.jsonStream": 80,
+   "Position.z.jsonStream": 86,
+   "SessionInfo.jsonStream": 69,
+   "DriverList.jsonStream": 69,
+   "SessionStatus.jsonStream": 69,
+   "LapCount.jsonStream": 69,
+   "TrackStatus.jsonStream": 69,
+   "TimingData.jsonStream": 69,
+   "TimingAppData.jsonStream": 69,
+   "WeatherData.jsonStream": 69,
+   "RaceControlMessages.jsonStream": 69
+  },
+  "position_z_sqlite": 86,
+  "cardata_z_sqlite": 80,
+  "bulk_download": "NOT_PERFORMED (per prereg: prove need first)",
+  "verdict": "TimingData available for all 149 races locally; TimingAppData/Position/CarData available in sqlite for 2018+2024 only"
+ },
+ "timing_reconstruction": "delta-persistent per-driver causal reconstructor (research-only, no runtime module)",
+ "trusted_control": {
+  "n": 420
+ },
+ "position_validation": {
+  "schema_version": "v3.2k-position-validation-v1",
+  "n": 8381,
+  "exact_agreement": 0.8551,
+  "gate_threshold": 0.99,
+  "gate": "FAIL"
+ },
+ "lap_validation": {
+  "schema_version": "v3.2k-lap-validation-v1",
+  "n": 8394,
+  "diff_dist": {
+   "-1": 432,
+   "0": 7962
+  },
+  "exact_agreement": 0.9485,
+  "gate_threshold": 0.99,
+  "gate": "FAIL"
+ },
+ "gap_validation": {
+  "n_numeric": 6688,
+  "n_lap_deficit": 499,
+  "mae": 1.667,
+  "median_abs_err": 0.585,
+  "p90": 2.746,
+  "p95": 6.79,
+  "mean_bias": 0.406
+ },
+ "lapped_analysis": "lapped representation is non-blocking",
+ "spatial_feasibility": "NOT_NEEDED",
+ "pit_validation": {
+  "schema_version": "v3.2k-pit-validation-v1",
+  "n": 5563,
+  "agreement": 0.9412,
+  "gate_threshold": 0.95,
+  "gate": "FAIL",
+  "note": "NumberOfPitStops vs canonical pit_stops_completed_so_far; InPit/PitOut transition timestamps audited via freshness census only"
+ },
+ "pace_validation": "NO_DRIVER_HISTORY_NEED",
+ "tyre_validation": "tyre compound/age NOT available in TimingData; causal TimingAppData exists only for 2018/2024 locally; direct reconstruc",
+ "activity_corroboration": {
+  "Stopped": 5661,
+  "Retired": 2067,
+  "fresh_adjacent": 6,
+  "stale_only": 23,
+  "fresh_TimingData": 172,
+  "InPit_fresh": 7,
+  "InPit_stale": 41
+ },
+ "stale_decomposition": {
+  "DIRECT_RECONSTRUCTION_COMPLETE": 0,
+  "DIRECT_RECONSTRUCTION_PARTIAL": 0,
+  "LAPPED_REPRESENTATION_BLOCKED": 0,
+  "TYRE_STATE_BLOCKED": 0,
+  "PACE_HISTORY_BLOCKED": 0,
+  "PIT_STATE_BLOCKED": 0,
+  "RAW_SOURCE_STALE": 2866,
+  "RAW_SOURCE_MISSING": 0,
+  "LIFECYCLE_AMBIGUOUS": 147,
+  "MULTIPLE_OFFENDER_MIXED": 281,
+  "OTHER_EXPLAINED": 0
+ },
+ "driver_level_decomposition": {
+  "n_distinct": 35,
+  "top": [
+   [
+    "ocon",
+    518
+   ],
+   [
+    "kevin_magnussen",
+    505
+   ],
+   [
+    "leclerc",
+    445
+   ],
+   [
+    "sainz",
+    418
+   ],
+   [
+    "max_verstappen",
+    414
+   ]
+  ]
+ },
+ "direct_recovery": {
+  "schema_version": "v3.2k-direct-candidates-v1",
+  "rule": "every stale offender complete validated causal state + all other gates pass; PARTIAL tyre state does not satisfy the required-state definition",
+  "n_direct_recovery_candidates": 0,
+  "n_partial_only_checkpoints": 0,
+  "verdict": "zero FULL candidates (tyre state unavailable from TimingData); partials are not admitted"
+ },
+ "admission_gates": {
+  "position_agreement": "FAIL",
+  "trusted_lap_agreement": "FAIL",
+  "pit_boundary": "FAIL",
+  "tyre_state_safety": "FAIL (TimingData carries no compound/age; 2019-2023 TimingAppData not local)",
+  "season_consistency": "see timing_schema census",
+  "lapped_state_safety": "PASS (non-blocking by construction)",
+  "pace_state_safety": "PASS (no driver-history need)"
+ },
+ "winner_top5_firewall": "PASS (no driver removed/retired by K)",
+ "future_poison": "PASS",
+ "decision": "REJECT_DIRECT_RAW_STATE_RECONSTRUCTION",
+ "runtime_integration": "NOT_APPLICABLE (no runtime component)",
+ "mc2_boundary": "no MC2 change",
+ "old_state_parity": "PASS by construction (no eligibility-path edit in K)",
+ "new_state_validation": "NOT_APPLICABLE",
+ "coverage_before": {
+  "eligible": 3678,
+  "total": 9644
+ },
+ "coverage_after": {
+  "schema_version": "v3.2k-coverage-after-v1",
+  "method": "identity recount: K adds no runtime eligibility change (decision REJECT); aggregates re-derived from frozen J coverage_after.json corpus_hash 8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30",
+  "total": 9644,
+  "eligible": 3678,
+  "fraction": 0.3814,
+  "gain_vs_j": 0,
+  "pp_gain": 0.0
+ },
+ "coverage_attribution": "zero new eligible states; conservation holds trivially",
+ "season_coverage": "IDENTICAL",
+ "stage_coverage": "IDENTICAL",
+ "race_coverage": "IDENTICAL",
+ "remaining_blockers": {
+  "MISSING_DRIVER_OBSERVATION": 354,
+  "UNSUPPORTED_TRACK_STATE": 1165,
+  "SIMULATION_CAPABLE": 3678,
+  "STALE_ROSTER_OBSERVATION": 3294,
+  "TERMINAL_STATE": 154,
+  "MISSING_TYRE_STATE": 198,
+  "WET_CONDITIONS": 801
+ },
+ "headroom": {
+  "schema_version": "v3.2k-headroom-v1",
+  "direct_reconstruction_headroom": 0,
+  "lapped_representation_headroom": "non-blocking by construction; 4 lap-deficit offender rows need no seconds fabrication",
+  "tyre_headroom": "99 MISSING_TYRE checkpoints in 2018 (local TimingAppData) + causal TimingAppData experiment possible for a future phase",
+  "pace_history_headroom": 0,
+  "lifecycle_uncertain_headroom": "147 LIFECYCLE_AMBIGUOUS + 281 MIXED checkpoints; 5661 Stopped-evidence offender rows (see lifecycle_handoff)",
+  "genuinely_missing_source_headroom": 0,
+  "note": "headroom figures are upper-bound characterizations, not admitted recoveries"
+ },
+ "lifecycle_handoff": {
+  "design_only": true,
+  "trigger": "material LIFECYCLE_AMBIGUOUS + stopped-not-retired residual after K rejection"
+ },
+ "api_behavior": {
+  "schema_version": "v3.2k-api-behavior-v1",
+  "verdict": "UNCHANGED",
+  "success_states": 3678,
+  "unsupported_states": 5966,
+  "note": "no new legitimate states; 422 simulation_unsupported behavior frozen; no request-time network or raw parsing"
+ },
+ "provenance": {
+  "prereg": "567260af8072d2e1700a4d1e9ad24265fc458c838010dc8a0d27b745c6a2f22b",
+  "j_corpus": "8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30"
+ },
+ "reproducibility": {
+  "schema_version": "v3.2k-reproducibility-v1",
+  "preregistration_sha256": "567260af8072d2e1700a4d1e9ad24265fc458c838010dc8a0d27b745c6a2f22b",
+  "seeds": "deterministic (no RNG consumed)",
+  "frozen_inputs": [
+   "8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30"
+  ]
+ },
+ "performance": {
+  "schema_version": "v3.2k-performance-v1",
+  "wall_clock_s": 182.9,
+  "note": "research-only; no runtime component added, no MC2 overhead introduced"
+ },
+ "tests": {
+  "k_tests": 12,
+  "tier1_ledger": 3760
+ },
+ "scientific_identities": {
+  "k_prereg": "567260af8072d2e1700a4d1e9ad24265fc458c838010dc8a0d27b745c6a2f22b",
+  "j_corpus": "8229a8606d5331338607dfd4a117a58369534325e0444a3052815299137c6f30",
+  "dry_green": "7ae97c3c8575679a"
+ },
+ "known_limitations": [
+  "reason-string offender parsing (format-pinned)",
+  "TimingAppData 2018-sample only",
+  "Position/CarData corroboration unexercised",
+  "2025 never read"
+ ],
+ "v3_2l_recommendation": "preregister CAUSAL DRIVER LIFECYCLE MODEL on stopped-not-retired residual"
+}

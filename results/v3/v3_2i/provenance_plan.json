@@ -1,0 +1,12 @@
+{
+  "artifact_identity": [
+    "source identity (f1-static-timingdata)",
+    "race/session identity",
+    "source content hash (sha256 of stream bytes)",
+    "adapter version",
+    "status-contract version",
+    "generation configuration (rules hash)"
+  ],
+  "schema_version": "v3.2i-provenance-v1",
+  "status": "DESIGN ONLY"
+}

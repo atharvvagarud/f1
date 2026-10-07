@@ -1,0 +1,33 @@
+{
+ "schema_version": "v3.2n-coverage-by-season-v1",
+ "by_season": {
+  "2018": {
+   "eligible": 251,
+   "total": 1386
+  },
+  "2019": {
+   "eligible": 715,
+   "total": 1361
+  },
+  "2020": {
+   "eligible": 366,
+   "total": 1127
+  },
+  "2021": {
+   "eligible": 587,
+   "total": 1401
+  },
+  "2022": {
+   "eligible": 463,
+   "total": 1435
+  },
+  "2023": {
+   "eligible": 572,
+   "total": 1412
+  },
+  "2024": {
+   "eligible": 724,
+   "total": 1522
+  }
+ }
+}

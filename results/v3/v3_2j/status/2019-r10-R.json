@@ -1,0 +1,155 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "9ba77dbd0816195e6448e69d43ddd4ef0a9b63782ac92c36c5ec86217b5eb543",
+  "diagnostics": {
+    "n_inpit_updates": 80,
+    "n_malformed_rows": 0,
+    "n_messages": 25909,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 78,
+    "n_retired_updates": 22,
+    "n_stopped_updates": 23
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 22,
+  "race_id": "2019-r10-R",
+  "raw_sha256": "53569accaab1b8a09954b87ab6c8ae9e0b956875d9ea585049abef62c52e452b",
+  "round": 10,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2019,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2019/2019-07-14_British_Grand_Prix/2019-07-14_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        4.751,
+        false
+      ],
+      [
+        3038.318,
+        true
+      ]
+    ],
+    "hamilton": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "hulkenberg": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        4.751,
+        false
+      ],
+      [
+        2788.314,
+        true
+      ]
+    ],
+    "kubica": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "kvyat": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "leclerc": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        4.751,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        4.751,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

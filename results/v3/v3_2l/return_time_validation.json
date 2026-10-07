@@ -1,0 +1,5 @@
+{
+ "schema_version": "v3.2l-return-time-validation-v1",
+ "method": "fold-held empirical tables (same folds); median-AE reported per fold in PROSE_PLACEHOLDER",
+ "verdict": "tables are descriptive; predictive validation requires admitted integration scope"
+}

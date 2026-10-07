@@ -1,0 +1,167 @@
+{
+  "adapter_version": "v3.2j-raw-adapter-v1",
+  "content_hash": "b1e96724c5df048e8c1e41a6b113228e87049cac062298ceaafc9cd69296fe2c",
+  "diagnostics": {
+    "n_inpit_updates": 105,
+    "n_malformed_rows": 0,
+    "n_messages": 48928,
+    "n_non_dict_deltas": 0,
+    "n_pitout_updates": 96,
+    "n_retired_updates": 25,
+    "n_stopped_updates": 26
+  },
+  "n_drivers_with_updates": 20,
+  "n_transitions": 25,
+  "race_id": "2020-r14-R",
+  "raw_sha256": "4f0f475ed45cb996b222a1d32aa2ef7f1515e5f950c2d1fe4978d60f1e1740b0",
+  "round": 14,
+  "schema_version": "v3.2j-derived-status-v1",
+  "season": 2020,
+  "served_by": "official_prior_run",
+  "session": "Race",
+  "source_locator": "https://livetiming.formula1.com/static/2020/2020-11-15_Turkish_Grand_Prix/2020-11-15_Race/TimingData.jsonStream",
+  "status_contract_version": "v3.2j-driver-status-v1",
+  "transitions": {
+    "albon": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "bottas": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "gasly": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "giovinazzi": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "grosjean": [
+      [
+        3.552,
+        false
+      ],
+      [
+        7608.249,
+        true
+      ]
+    ],
+    "hamilton": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "kevin_magnussen": [
+      [
+        3.552,
+        false
+      ],
+      [
+        5918.257,
+        true
+      ],
+      [
+        5947.993,
+        false
+      ],
+      [
+        8233.203,
+        true
+      ]
+    ],
+    "kvyat": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "latifi": [
+      [
+        3.552,
+        false
+      ],
+      [
+        6668.235,
+        true
+      ]
+    ],
+    "leclerc": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "max_verstappen": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "norris": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "ocon": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "perez": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "raikkonen": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "ricciardo": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "russell": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "sainz": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "stroll": [
+      [
+        3.552,
+        false
+      ]
+    ],
+    "vettel": [
+      [
+        3.552,
+        false
+      ]
+    ]
+  },
+  "unmapped_stream_numbers": []
+}

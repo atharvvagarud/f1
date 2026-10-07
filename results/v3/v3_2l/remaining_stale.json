@@ -1,0 +1,14 @@
+{
+ "primary_stale": 3294,
+ "decomposition": {
+  "LIFECYCLE_FULLY_ADDRESSABLE": 1874,
+  "LIFECYCLE_PARTIALLY_ADDRESSABLE": 37,
+  "NO_CAUSAL_STOP_SIGNAL": 3,
+  "LAST_STATE_INSUFFICIENT": 0,
+  "MULTIPLE_OFFENDER_MIXED": 17,
+  "J_RETIRED_PLUS_LIFECYCLE": 1341,
+  "OTHER_EXPLAINED": 22
+ },
+ "note": "unchanged count; character completely renewed by L",
+ "schema_version": "v3.2l-remaining-stale-v1"
+}

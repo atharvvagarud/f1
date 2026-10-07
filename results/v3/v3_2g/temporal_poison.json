@@ -1,0 +1,6 @@
+{
+  "label_firewall": "static test forbids dnf_flag/winner_flag/classified_position/results imports in raceintel/simulation, raceintel/race_state, raceintel/pipeline",
+  "pipeline_poison": "inherited green (V3.2C/V3.2F poison suites)",
+  "resolver_poison": "NOT_APPLICABLE (no resolver admitted; nothing consumes future data)",
+  "schema_version": "v3.2g-temporal-poison-v1"
+}
