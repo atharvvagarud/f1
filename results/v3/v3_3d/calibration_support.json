@@ -1,0 +1,110 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "d_prereg_sha": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "support": {
+  "extra_trees": {
+   "D1": {
+    "isotonic": {
+     "method": "isotonic",
+     "n_positives": 697,
+     "n_rows": 12649,
+     "n_unique_predictions": 8634,
+     "status": "OK"
+    },
+    "sigmoid": {
+     "method": "sigmoid",
+     "n_positives": 697,
+     "n_rows": 12649,
+     "n_unique_predictions": 8634,
+     "status": "OK"
+    }
+   },
+   "D2": {
+    "isotonic": {
+     "method": "isotonic",
+     "n_positives": 1299,
+     "n_rows": 23758,
+     "n_unique_predictions": 23073,
+     "status": "OK"
+    },
+    "sigmoid": {
+     "method": "sigmoid",
+     "n_positives": 1299,
+     "n_rows": 23758,
+     "n_unique_predictions": 23073,
+     "status": "OK"
+    }
+   },
+   "D3": {
+    "isotonic": {
+     "method": "isotonic",
+     "n_positives": 1958,
+     "n_rows": 35640,
+     "n_unique_predictions": 24393,
+     "status": "OK"
+    },
+    "sigmoid": {
+     "method": "sigmoid",
+     "n_positives": 1958,
+     "n_rows": 35640,
+     "n_unique_predictions": 24393,
+     "status": "OK"
+    }
+   }
+  },
+  "xgboost": {
+   "D1": {
+    "isotonic": {
+     "method": "isotonic",
+     "n_positives": 697,
+     "n_rows": 12649,
+     "n_unique_predictions": 11962,
+     "status": "OK"
+    },
+    "sigmoid": {
+     "method": "sigmoid",
+     "n_positives": 697,
+     "n_rows": 12649,
+     "n_unique_predictions": 11962,
+     "status": "OK"
+    }
+   },
+   "D2": {
+    "isotonic": {
+     "method": "isotonic",
+     "n_positives": 1299,
+     "n_rows": 23758,
+     "n_unique_predictions": 21067,
+     "status": "OK"
+    },
+    "sigmoid": {
+     "method": "sigmoid",
+     "n_positives": 1299,
+     "n_rows": 23758,
+     "n_unique_predictions": 21067,
+     "status": "OK"
+    }
+   },
+   "D3": {
+    "isotonic": {
+     "method": "isotonic",
+     "n_positives": 1958,
+     "n_rows": 35640,
+     "n_unique_predictions": 32241,
+     "status": "OK"
+    },
+    "sigmoid": {
+     "method": "sigmoid",
+     "n_positives": 1958,
+     "n_rows": 35640,
+     "n_unique_predictions": 32241,
+     "status": "OK"
+    }
+   }
+  }
+ }
+}

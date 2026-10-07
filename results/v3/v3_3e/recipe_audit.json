@@ -1,0 +1,23 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "checks": "family/seasons/hyperparameters/preprocessing/calibration/seed/threads/semantics/features/libraries all exact",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "estimator_spec": {
+  "colsample_bytree": 0.8,
+  "eval_metric": "logloss",
+  "learning_rate": 0.03,
+  "max_depth": 3,
+  "min_child_weight": 5,
+  "n_estimators": 300,
+  "n_jobs": 4,
+  "objective": "binary:logistic",
+  "random_state": 42,
+  "reg_alpha": 0.0,
+  "reg_lambda": 1.0,
+  "subsample": 0.8,
+  "tree_method": "hist"
+ },
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "recipe_sha": "ca0cd5d5f7c95e5446ae66111eff85232441023ad7be15d04a8f35e05fea332d"
+}

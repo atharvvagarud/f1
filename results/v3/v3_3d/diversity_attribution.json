@@ -1,0 +1,84 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "attribution": {
+  "extra_trees": {
+   "n_improved": 14,
+   "races_improved_vs_baseline": [
+    "2022-r03-R",
+    "2022-r09-R",
+    "2022-r10-R",
+    "2022-r11-R",
+    "2022-r19-R",
+    "2022-r21-R",
+    "2023-r04-R",
+    "2023-r15-R",
+    "2024-r02-R",
+    "2024-r03-R",
+    "2024-r11-R",
+    "2024-r16-R",
+    "2024-r20-R",
+    "2024-r21-R"
+   ],
+   "representation": "D_REFINED_RAW",
+   "stage_advantage": {
+    "EARLY": 0.004862891614222084,
+    "LATE": 0.006633470900631905,
+    "MID": 0.009337076042289727
+   }
+  },
+  "xgboost": {
+   "n_improved": 38,
+   "races_improved_vs_baseline": [
+    "2022-r07-R",
+    "2022-r09-R",
+    "2022-r10-R",
+    "2022-r12-R",
+    "2022-r17-R",
+    "2022-r18-R",
+    "2022-r20-R",
+    "2022-r21-R",
+    "2023-r01-R",
+    "2023-r02-R",
+    "2023-r03-R",
+    "2023-r04-R",
+    "2023-r05-R",
+    "2023-r06-R",
+    "2023-r07-R",
+    "2023-r08-R",
+    "2023-r09-R",
+    "2023-r15-R",
+    "2023-r17-R",
+    "2023-r18-R",
+    "2023-r19-R",
+    "2023-r20-R",
+    "2024-r01-R",
+    "2024-r02-R",
+    "2024-r03-R",
+    "2024-r04-R",
+    "2024-r05-R",
+    "2024-r07-R",
+    "2024-r09-R",
+    "2024-r10-R",
+    "2024-r11-R",
+    "2024-r13-R",
+    "2024-r16-R",
+    "2024-r19-R",
+    "2024-r20-R",
+    "2024-r22-R",
+    "2024-r23-R",
+    "2024-r24-R"
+   ],
+   "representation": "D_REFINED_RAW",
+   "stage_advantage": {
+    "EARLY": 0.005009506047108425,
+    "LATE": 0.0013344851395845,
+    "MID": 0.004488504507939486
+   }
+  }
+ },
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "d_prereg_sha": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

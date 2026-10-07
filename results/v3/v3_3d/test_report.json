@@ -1,0 +1,1 @@
+{"expected":"FULL_TIER1 = NOT_REQUIRED_RESEARCH_EXECUTION_ONLY","label":"D_SCIENTIFIC_EVIDENCE","suites":{"a_b_c_contracts":"14 + 20 + 17 passed","d_refinement":"20 passed","m0_m1_m1_1_guards_plus_m6":"138 passed after stage-allowlist entries for v3_3d_refinement.py per V3.1C precedent"}}

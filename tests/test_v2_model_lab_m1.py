@@ -567,6 +567,15 @@ M3_OWNED_MODULES = frozenset({
     # LogReg only); tests/test_v3_1c_experiment.py owns the stricter
     # successor guard forbidding every other family.
     "v3_dynamics_experiment.py",
+    # V3.3B stage-owned module (controlled screening harness: exactly the
+    # four A-admitted families); tests/test_v3_3b_harness.py owns the
+    # stricter successor guard (registry exact set + unknown family
+    # rejection).
+    "v3_3b_harness.py",
+    # V3.3D stage-owned module (controlled refinement + temporal
+    # calibration: ET + XGB only); tests/test_v3_3d_refinement.py owns
+    # the stricter successor guard (candidate set + HGB refusal).
+    "v3_3d_refinement.py",
 })
 
 

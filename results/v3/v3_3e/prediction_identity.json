@@ -1,0 +1,10 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "n_rows": 26692,
+ "note": "immutable V3.3 XGB holdout result; persisted before metric analysis",
+ "path": "data/v3/v3_3e/pred_xgb_final_2025.parquet",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "sha256": "71b9bb807a8a845ec787109a5671d7014cc49b6873a674a50a6b434053b3e5d3"
+}

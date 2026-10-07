@@ -1,0 +1,37 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "families": {
+  "extra_trees": {
+   "mean_abs_probability_gap": 0.030808959801744914,
+   "n_states": 23577,
+   "note": "alignment inputs only; no ensemble optimization in B",
+   "prediction_correlation": 0.8766548730177639,
+   "residual_correlation": 0.9021319153678494
+  },
+  "hist_gradient_boosting": {
+   "mean_abs_probability_gap": 0.03861821833171102,
+   "n_states": 23577,
+   "note": "alignment inputs only; no ensemble optimization in B",
+   "prediction_correlation": 0.6622671015748981,
+   "residual_correlation": 0.8029697897469993
+  },
+  "logistic_regression": {
+   "mean_abs_probability_gap": 0.0,
+   "n_states": 23577,
+   "note": "alignment inputs only; no ensemble optimization in B",
+   "prediction_correlation": 1.0,
+   "residual_correlation": 1.0
+  },
+  "xgboost": {
+   "mean_abs_probability_gap": 0.03159220365264787,
+   "n_states": 23577,
+   "note": "alignment inputs only; no ensemble optimization in B",
+   "prediction_correlation": 0.7868784647285554,
+   "residual_correlation": 0.8538544644859869
+  }
+ },
+ "label": "HARNESS_SMOKE_ONLY",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

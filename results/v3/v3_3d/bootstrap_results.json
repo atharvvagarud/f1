@@ -1,0 +1,75 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "bootstraps": {
+  "extra_trees_C_RAW_vs_baseline": {
+   "ci_hi": 0.015031989726761048,
+   "ci_level": 0.95,
+   "ci_lo": 0.0008494837157261492,
+   "mean_delta": 0.007877456042473821,
+   "replicates": 2000,
+   "seed": 42
+  },
+  "extra_trees_D_CALIBRATED_vs_baseline": {
+   "ci_hi": 0.10900644641829796,
+   "ci_level": 0.95,
+   "ci_lo": 0.0029600946403002884,
+   "mean_delta": 0.04606965084738551,
+   "replicates": 2000,
+   "seed": 42
+  },
+  "extra_trees_D_CAL_vs_C_RAW": {
+   "ci_hi": 0.10182100405882195,
+   "ci_level": 0.95,
+   "ci_lo": -0.003976210515034927,
+   "mean_delta": 0.03819219480491169,
+   "replicates": 2000,
+   "seed": 42
+  },
+  "extra_trees_D_REFINED_RAW_vs_baseline": {
+   "ci_hi": 0.011973820401548096,
+   "ci_level": 0.95,
+   "ci_lo": 0.0011516194545385632,
+   "mean_delta": 0.007000776811892669,
+   "replicates": 2000,
+   "seed": 42
+  },
+  "xgboost_C_RAW_vs_baseline": {
+   "ci_hi": 0.015935961246137977,
+   "ci_level": 0.95,
+   "ci_lo": -0.0006893012805084782,
+   "mean_delta": 0.007330078211409922,
+   "replicates": 2000,
+   "seed": 42
+  },
+  "xgboost_D_CALIBRATED_vs_baseline": {
+   "ci_hi": 0.011190940125102066,
+   "ci_level": 0.95,
+   "ci_lo": -0.00381027518961857,
+   "mean_delta": 0.0035388620645008056,
+   "replicates": 2000,
+   "seed": 42
+  },
+  "xgboost_D_CAL_vs_C_RAW": {
+   "ci_hi": -0.0008389998184614066,
+   "ci_level": 0.95,
+   "ci_lo": -0.006843122241405753,
+   "mean_delta": -0.0037912161469091134,
+   "replicates": 2000,
+   "seed": 42
+  },
+  "xgboost_D_REFINED_RAW_vs_baseline": {
+   "ci_hi": 0.011190940125102066,
+   "ci_level": 0.95,
+   "ci_lo": -0.00381027518961857,
+   "mean_delta": 0.0035388620645008056,
+   "replicates": 2000,
+   "seed": 42
+  }
+ },
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "d_prereg_sha": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "method": "paired race bootstrap B=2000 seed=42 95% CI",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

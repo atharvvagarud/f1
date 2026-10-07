@@ -1,0 +1,402 @@
+{
+  "advancement_policy": {
+    "evidence": "pre-2025 ONLY (D1/D2/D3 + inner tuning)",
+    "max_non_baseline_finalists": 3,
+    "plus_baseline": true,
+    "rule": "do not send every tested model to the holdout"
+  },
+  "aggregation": {
+    "fold_summary": "per-fold values + mean/std/min/max/range (aggregation.aggregate_folds)",
+    "headline": "race_macro (equal-per-race mean)",
+    "implementation": "raceintel.model_lab.aggregation"
+  },
+  "artifact_contract": {
+    "metadata": [
+      "model family",
+      "implementation/version",
+      "task",
+      "feature contract/hash",
+      "training seasons",
+      "fold policy",
+      "hyperparameters",
+      "preprocessing",
+      "calibration",
+      "random seed",
+      "code version",
+      "dataset identity",
+      "artifact SHA256"
+    ],
+    "note": "no final trained candidate artifacts in V3.3A"
+  },
+  "baseline": {
+    "artifact": "data/v3/v3_1d/final_model_arm_b.joblib",
+    "artifact_sha256": "9a1aac515d12c4e86ac369977392f74394cf7f6853b8e89d948bcdec28f58960",
+    "calibration": "RAW",
+    "estimator": "LogisticRegression",
+    "feature_count": 110,
+    "feature_set": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+    "hyperparameters": {
+      "C": 0.01,
+      "class_weight": null,
+      "max_iter": 1000,
+      "penalty": "l2",
+      "random_state": 42,
+      "solver": "lbfgs"
+    },
+    "reproduction": "load local artifact OR re-run frozen spec (deterministic rerun proven max-abs-diff 0.0)",
+    "stage": "V3.1B"
+  },
+  "calibration_policy": {
+    "allowed": [
+      "none (RAW)",
+      "sigmoid/Platt",
+      "isotonic"
+    ],
+    "fit_data": "inner-train or dedicated calibration split inside the outer-train history ONLY; never outer-validation; never 2025",
+    "primary": "RAW candidate probabilities",
+    "rule": "no calibration to rescue an otherwise weak model",
+    "selection": "calibrated variant must beat RAW on mean inner race-macro LL beyond 1e-4 tie tolerance AND not worsen mean Brier (M-calibration precedent: RAW won)"
+  },
+  "candidate_dispositions": [
+    "KEEP_PRIMARY_CANDIDATE",
+    "KEEP_DIVERSITY_CANDIDATE",
+    "HOLD_FOR_CALIBRATION",
+    "REJECT_NO_IMPROVEMENT",
+    "REJECT_TEMPORAL_INSTABILITY",
+    "REJECT_PROBABILITY_QUALITY",
+    "REJECT_COMPLEXITY_WITHOUT_VALUE",
+    "REJECT_CONTRACT_INCOMPATIBLE"
+  ],
+  "candidate_families": [
+    {
+      "family": "logistic_regression",
+      "implementation": "sklearn.linear_model.LogisticRegression",
+      "new_dependency": false,
+      "role": "linear control (V3.1B is a member)"
+    },
+    {
+      "family": "hist_gradient_boosting",
+      "implementation": "sklearn.ensemble.HistGradientBoostingClassifier",
+      "new_dependency": false,
+      "role": "stagewise additive trees; early_stopping forbidden (M4 precedent: no validation-driven training)"
+    },
+    {
+      "family": "extra_trees",
+      "implementation": "sklearn.ensemble.ExtraTreesClassifier",
+      "new_dependency": false,
+      "role": "fully-randomized bagging; diversity hypothesis"
+    },
+    {
+      "family": "xgboost",
+      "implementation": "xgboost.XGBClassifier==3.2.0",
+      "new_dependency": false,
+      "role": "regularized boosting, distinct loss behavior vs HGB (M4: materially better raw LL); tests whether regularized boosting closes the gap on the 110-col arm"
+    }
+  ],
+  "compute_budget": {
+    "hardware": "M4 MacBook Air 16GB, CPU only, n_jobs<=4",
+    "matrix_states": 189420,
+    "max_fits_per_family": 100,
+    "max_total_wall_s": 7200,
+    "max_wall_per_family_s": 3600,
+    "reference_fit_s_per_fold": {
+      "extra_trees": 14,
+      "hist_gradient_boosting": 3,
+      "logistic_regression": 1,
+      "xgboost": 2
+    },
+    "rule": "no cloud compute for family screening"
+  },
+  "contract_hash": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+  "diversity_contract": {
+    "analyses": [
+      "prediction correlation",
+      "residual/error correlation",
+      "per-race delta correlation",
+      "top-1 disagreement",
+      "high-confidence disagreement",
+      "per-race/per-stage improvement attribution",
+      "probability spread differences"
+    ],
+    "inputs": "aligned out-of-fold predictions (D1/D2/D3 validation seasons)",
+    "purpose": "prepare V3.4 ensemble; a non-winning model may still be a diversity candidate",
+    "rule": "no ensembling in V3.3"
+  },
+  "excluded_families": [
+    {
+      "family": "lightgbm",
+      "reason": "new dependency; redundant third boosting family; unjustified"
+    },
+    {
+      "family": "catboost",
+      "reason": "new dependency; redundant boosting family; unjustified"
+    },
+    {
+      "family": "random_forest",
+      "reason": "redundant with extra_trees (M5: ET >= RF on LL all folds but D2; M6 tuned-ET lineage exists)"
+    },
+    {
+      "family": "neural_networks",
+      "reason": "no scientific question requires them; dependency/compute cost unjustified; portfolio-driven admission forbidden"
+    },
+    {
+      "family": "ranking_listwise",
+      "reason": "contract-incompatible without a preregistered calibration bridge to INDEPENDENT_BINARY; deferred research, not admitted to B/C screening"
+    }
+  ],
+  "explainability_compatibility": {
+    "extra_trees": "impurity/permutation importance; adapter cost low",
+    "hist_gradient_boosting": "permutation/native importance; adapter cost low",
+    "logistic_regression": "coefficients native; Phase-8 compatible",
+    "rule": "no rejection solely for explanation cost; cost recorded",
+    "xgboost": "gain/cover importance + SHAP-optional (shap NOT a dependency; no SHAP requirement)"
+  },
+  "feature_arms": {
+    "diagnostic_control": "ALL_84",
+    "diagnostic_count": 84,
+    "primary": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+    "primary_count": 110,
+    "rule": "no model-specific feature sets except preprocessing mathematically required by the family, inside pipelines"
+  },
+  "firewall_2025": {
+    "enforcement": "ProtectedHoldoutError + development-only resolvers + output season scans in harnesses",
+    "season": 2025,
+    "status": "FINAL HOLDOUT, sealed during V3.3A-D"
+  },
+  "holdout_policy": {
+    "forbidden_before_holdout": [
+      "training",
+      "tuning",
+      "selection",
+      "calibration fitting",
+      "elimination",
+      "feature decisions",
+      "exploratory candidate 2025 metrics"
+    ],
+    "mechanism": "ProtectedHoldoutError; HOLDOUT/2025 resolvers raise without allow_protected_holdout=True; assert_no_holdout_request in experiment harnesses",
+    "season": 2025
+  },
+  "hyperparameter_policy": {
+    "max_configurations_per_family": 12,
+    "objective": "mean inner race-macro log loss (simple mean over inner folds)",
+    "seeds": [
+      42
+    ],
+    "selection_scope": "one configuration per outer fold (procedure estimate, not a global vector)",
+    "style": "small preregistered grids; no Optuna/unrestricted search",
+    "tie_break": "simpler/more regularized wins (LogReg: smaller C; trees: larger min_samples_leaf, bounded depth, smaller max_features)",
+    "tie_tolerance": 1e-06
+  },
+  "known_limitations": [
+    "single 24-race 2025 holdout at the end (CIs honest, not overstated)",
+    "thin/medium history-bin descriptives persist from V3.1",
+    "uncalibrated boosting raw LL historically weak (M4) \u2014 calibration policy is the remedy path, not feature changes",
+    "listwise/ranking deferred (contract bridge required)"
+  ],
+  "metrics": {
+    "diagnostic_scopes": [
+      "state_pooled",
+      "EARLY_MID_LATE"
+    ],
+    "primary": "race_macro_log_loss",
+    "primary_rule": "simple mean of per-race log loss; lower is better; race is the statistical unit",
+    "secondary": [
+      "brier",
+      "roc_auc",
+      "pr_auc",
+      "ece",
+      "top_1",
+      "top_3"
+    ],
+    "selection_rule": "never on ROC AUC or accuracy alone; probability quality required"
+  },
+  "oof_prediction_contract": {
+    "convention": "existing Model Lab identity columns + synchronized top-k adapter; never normalized",
+    "identity_columns": [
+      "state_id",
+      "race_id",
+      "season",
+      "round_no",
+      "driver_id",
+      "fold",
+      "stage",
+      "target",
+      "baseline_probability",
+      "candidate_probability"
+    ],
+    "types": "PredictionResult BINARY_PROBABILITY / INDEPENDENT_BINARY; state_id-keyed frames (to_frame/from_frame); parquet persistence under ignored data/v3/v3_3*/"
+  },
+  "parent": {
+    "commit": "197979d40af0c9dbf90667781d9c83e41613b047",
+    "tag": "v3.2-monte-carlo-2"
+  },
+  "preprocessing_policy": {
+    "family_adjustments": "inside deterministic pipelines only (e.g. tree families may skip scaling; scaling must not change selection)",
+    "forbidden": "fitting on validation/holdout; zero-fill; global imputation",
+    "frozen": "median/mode imputation, StandardScaler numerics, most-frequent booleans unscaled, MISSING-sentinel + train-vocabulary one-hot categoricals; fit TRAIN only"
+  },
+  "reproducibility": {
+    "caveat": "exact binary reproducibility may differ across library versions/platforms; rerun-identity asserted within the frozen environment",
+    "ordering": "stable input + feature ordering (canonical registry order + contract order)",
+    "random_state": 42,
+    "threads": "n_jobs<=4 where applicable; thread policy recorded",
+    "versions": "sklearn==1.8.0, xgboost==3.2.0 captured per artifact"
+  },
+  "schema_version": "v3.3a-experiment-contract-v1",
+  "serving_compatibility": {
+    "implications": "joblib artifacts via FrozenWinnerPredictor pattern; tree ensembles larger memory/latency than LogReg; no new serving dependencies admitted in A (sklearn + xgboost already in footprint)",
+    "status": "research-first; no promotion in V3.3"
+  },
+  "statistical_comparison": {
+    "delta": "per-race race-macro LL (candidate minus V3.1B)",
+    "forbidden": "driver-state observations as independent bootstrap units",
+    "method": "paired race-level bootstrap, seed 42, B=2000, 95% percentile CI on mean delta",
+    "report": [
+      "mean delta",
+      "95% CI",
+      "races improved",
+      "races worsened",
+      "ties"
+    ],
+    "unit": "race"
+  },
+  "task": {
+    "eligibility_mask": "eligible_is_winner",
+    "kind": "BINARY",
+    "label_column": "is_winner",
+    "name": "winner",
+    "probability_semantics": "INDEPENDENT_BINARY",
+    "rule": "binary per-driver P(is_winner | causal state at T); never normalized across the field; no field softmax"
+  },
+  "temporal_consistency": {
+    "classes": [
+      "CONSISTENT_IMPROVEMENT",
+      "MIXED",
+      "CONSISTENT_REGRESSION"
+    ],
+    "report": "fold-wise D1/D2/D3 deltas vs baseline for every candidate",
+    "rule": "no every-fold-must-improve veto; instability is material evidence"
+  },
+  "temporal_folds": {
+    "D1": {
+      "train": [
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "train_eligible": 88123,
+      "val_eligible": 23577,
+      "validate": [
+        2022
+      ]
+    },
+    "D2": {
+      "train": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "train_eligible": 111700,
+      "val_eligible": 24422,
+      "validate": [
+        2023
+      ]
+    },
+    "D3": {
+      "train": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "train_eligible": 136122,
+      "val_eligible": 26606,
+      "validate": [
+        2024
+      ]
+    },
+    "FINAL_FIT": {
+      "train": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    "inner": {
+      "D1-I1": [
+        [
+          2018,
+          2019,
+          2020
+        ],
+        [
+          2021
+        ]
+      ],
+      "D2-I1": [
+        [
+          2018,
+          2019,
+          2020
+        ],
+        [
+          2021
+        ]
+      ],
+      "D2-I2": [
+        [
+          2018,
+          2019,
+          2020,
+          2021
+        ],
+        [
+          2022
+        ]
+      ],
+      "D3-I1": [
+        [
+          2018,
+          2019,
+          2020
+        ],
+        [
+          2021
+        ]
+      ],
+      "D3-I2": [
+        [
+          2018,
+          2019,
+          2020,
+          2021
+        ],
+        [
+          2022
+        ]
+      ],
+      "D3-I3": [
+        [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022
+        ],
+        [
+          2023
+        ]
+      ]
+    },
+    "resolver": "raceintel.model_lab.splits.get_split; M0 count audits enforced on materialize"
+  }
+}

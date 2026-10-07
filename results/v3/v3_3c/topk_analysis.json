@@ -1,0 +1,87 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "families": {
+  "extra_trees": {
+   "D1": {
+    "top1": 0.6690742235629009,
+    "top3": 0.9664783107447849
+   },
+   "D2": {
+    "top1": 0.8992454687115559,
+    "top3": 0.9976215861559912
+   },
+   "D3": {
+    "top1": 0.7069406805179163,
+    "top3": 0.8964920204757603
+   },
+   "disagreements_baseline_correct": 3,
+   "disagreements_candidate_correct": 9,
+   "n_races": 68,
+   "top1_agreement_with_baseline": 55
+  },
+  "hist_gradient_boosting": {
+   "D1": {
+    "top1": 0.5846964353995836,
+    "top3": 0.9469346135871182
+   },
+   "D2": {
+    "top1": 0.857254162224227,
+    "top3": 0.9985647502665463
+   },
+   "D3": {
+    "top1": 0.6274841915085817,
+    "top3": 0.9471168322794339
+   },
+   "disagreements_baseline_correct": 7,
+   "disagreements_candidate_correct": 3,
+   "n_races": 68,
+   "top1_agreement_with_baseline": 53
+  },
+  "logistic_regression": {
+   "D1": {
+    "top1": 0.6666100182691083,
+    "top3": 0.9750180566767218
+   },
+   "D2": {
+    "top1": 0.9049044533748872,
+    "top3": 0.9970474862626096
+   },
+   "D3": {
+    "top1": 0.7546296296296297,
+    "top3": 0.8876844323998796
+   },
+   "disagreements_baseline_correct": 0,
+   "disagreements_candidate_correct": 1,
+   "n_races": 68,
+   "top1_agreement_with_baseline": 67
+  },
+  "v3_1b_baseline": {
+   "disagreements_baseline_correct": 0,
+   "disagreements_candidate_correct": 0,
+   "n_races": 68,
+   "top1_agreement_with_baseline": 68
+  },
+  "xgboost": {
+   "D1": {
+    "top1": 0.607256659727238,
+    "top3": 0.9464247780090921
+   },
+   "D2": {
+    "top1": 0.8980972689247929,
+    "top3": 0.9997949643237923
+   },
+   "D3": {
+    "top1": 0.714769647696477,
+    "top3": 0.9383845227341162
+   },
+   "disagreements_baseline_correct": 10,
+   "disagreements_candidate_correct": 6,
+   "n_races": 68,
+   "top1_agreement_with_baseline": 48
+  }
+ },
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

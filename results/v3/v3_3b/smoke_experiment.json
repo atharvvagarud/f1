@@ -1,0 +1,41 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "configs": {
+  "extra_trees": {
+   "max_depth": null,
+   "max_features": "sqrt",
+   "min_samples_leaf": 1
+  },
+  "hist_gradient_boosting": {
+   "learning_rate": 0.1,
+   "max_leaf_nodes": 31,
+   "min_samples_leaf": 20
+  },
+  "logistic_regression": {
+   "C": 0.01
+  },
+  "xgboost": {
+   "learning_rate": 0.1,
+   "max_depth": 3,
+   "min_child_weight": 1
+  }
+ },
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "fold": "D1",
+ "inner_tune_d1_logistic": {
+  "selected_key": "C=0.003",
+  "selected_mean": 0.09527767418604988
+ },
+ "label": "HARNESS_SMOKE_ONLY",
+ "no_elimination": true,
+ "no_ranking": true,
+ "parity_gate": "PASS",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "race_macro_ll": {
+  "extra_trees": 0.09353854771750503,
+  "hist_gradient_boosting": 0.2546261792146049,
+  "logistic_regression": 0.08067523650595465,
+  "xgboost": 0.12424733863022917
+ }
+}

@@ -1,0 +1,255 @@
+{
+ "a_contract_identity": {
+  "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+  "schema_version": "v3.3a-experiment-contract-v1"
+ },
+ "advancement": [
+  "extra_trees",
+  "xgboost"
+ ],
+ "b_prereg_identity": {
+  "preregistration_identity": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+ },
+ "baseline": {
+  "per_fold": {
+   "D1": 0.08067523650595465,
+   "D2": 0.03943563529462307,
+   "D3": 0.08003562121445756
+  },
+  "pooled_race_macro_ll": 0.06710726601117191
+ },
+ "c_prereg_identity": {
+  "preregistration_identity": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+  "schema_version": "v3.3c-preregistration-v1"
+ },
+ "calibration": {
+  "extra_trees": 0.01708127871018397,
+  "hist_gradient_boosting": 0.01755792226991692,
+  "logistic_regression": 0.010135017975757306,
+  "v3_1b_baseline": 0.008414307379146328,
+  "xgboost": 0.012069120248336177
+ },
+ "candidate_results": {
+  "extra_trees": {
+   "bootstrap_ci": [
+    0.0008494837157261492,
+    0.015031989726761048
+   ],
+   "mean_delta": 0.007877456042473821,
+   "per_fold": {
+    "D1": 0.09353854771750503,
+    "D2": 0.04351415377476209,
+    "D3": 0.08682506945075147
+   },
+   "pooled_ll": 0.07498472205364577
+  },
+  "hist_gradient_boosting": {
+   "bootstrap_ci": [
+    0.010695138691423998,
+    0.034684705519227844
+   ],
+   "mean_delta": 0.022277372803542604,
+   "per_fold": {
+    "D1": 0.11565914144610105,
+    "D2": 0.04159913836062281,
+    "D3": 0.10910305348552762
+   },
+   "pooled_ll": 0.08938463881471453
+  },
+  "logistic_regression": {
+   "bootstrap_ci": [
+    -0.0001747978411370111,
+    0.0015081061590878108
+   ],
+   "mean_delta": 0.0007342607616351423,
+   "per_fold": {
+    "D1": 0.08096520822101988,
+    "D2": 0.041415196842793746,
+    "D3": 0.08003562121445756
+   },
+   "pooled_ll": 0.06784152677280707
+  },
+  "xgboost": {
+   "bootstrap_ci": [
+    -0.0006893012805084782,
+    0.015935961246137977
+   ],
+   "mean_delta": 0.007330078211409922,
+   "per_fold": {
+    "D1": 0.09257433650962309,
+    "D2": 0.04113484317613215,
+    "D3": 0.08833906058537296
+   },
+   "pooled_ll": 0.07443734422258186
+  }
+ },
+ "compute": {
+  "extra_trees": {
+   "estimator_fits": 51,
+   "oof_kb": 872.5,
+   "tuning_plus_outer_wall_s": 1266.9
+  },
+  "hist_gradient_boosting": {
+   "estimator_fits": 51,
+   "oof_kb": 1235.5,
+   "tuning_plus_outer_wall_s": 239.2
+  },
+  "logistic_regression": {
+   "estimator_fits": 27,
+   "oof_kb": 1308.0,
+   "tuning_plus_outer_wall_s": 41.8
+  },
+  "xgboost": {
+   "estimator_fits": 51,
+   "oof_kb": 1155.0,
+   "tuning_plus_outer_wall_s": 154.2
+  }
+ },
+ "dispositions": {
+  "extra_trees": "KEEP_DIVERSITY_CANDIDATE",
+  "hist_gradient_boosting": "REJECT_NO_IMPROVEMENT",
+  "logistic_regression": "BASELINE_CONTROL",
+  "xgboost": "KEEP_DIVERSITY_CANDIDATE"
+ },
+ "diversity": "pairs in diversity_matrix.json; attribution in diversity_attribution.json",
+ "feature_identity": {
+  "diagnostic_arm": "ALL_84",
+  "diagnostic_count": 84,
+  "feature_hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "primary_arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "primary_count": 110
+ },
+ "firewall": {
+  "2025_CONTACT": "NONE",
+  "oof_seasons": [
+   2022,
+   2023,
+   2024
+  ]
+ },
+ "known_limitations": [
+  "pre-2025 only; single 2025 holdout sealed",
+  "small preregistered grids, not exhaustive search",
+  "RAW probabilities; no calibration fitted in C",
+  "ET diversity evidence thin (13 disagreement races); HGB rejected on all cells"
+ ],
+ "parent": {
+  "commit": "197979d40af0c9dbf90667781d9c83e41613b047",
+  "tag": "v3.2-monte-carlo-2"
+ },
+ "primary_comparison": {
+  "extra_trees": 0.007877456042473821,
+  "hist_gradient_boosting": 0.022277372803542604,
+  "logistic_regression": 0.0007342607616351423,
+  "xgboost": 0.007330078211409922
+ },
+ "schema_version": "v3.3c-candidate-screening-v1",
+ "selected_configs": {
+  "extra_trees": {
+   "D1": {
+    "selected_config": {
+     "max_depth": null,
+     "max_features": "sqrt",
+     "min_samples_leaf": 1
+    },
+    "selected_key": "max_features=sqrt;min_samples_leaf=1;max_depth=None"
+   },
+   "D2": {
+    "selected_config": {
+     "max_depth": 20,
+     "max_features": "sqrt",
+     "min_samples_leaf": 5
+    },
+    "selected_key": "max_features=sqrt;min_samples_leaf=5;max_depth=20"
+   },
+   "D3": {
+    "selected_config": {
+     "max_depth": null,
+     "max_features": "sqrt",
+     "min_samples_leaf": 5
+    },
+    "selected_key": "max_features=sqrt;min_samples_leaf=5;max_depth=None"
+   }
+  },
+  "hist_gradient_boosting": {
+   "D1": {
+    "selected_config": {
+     "learning_rate": 0.05,
+     "max_leaf_nodes": 15,
+     "min_samples_leaf": 20
+    },
+    "selected_key": "lr=0.05;leaves=15;min_leaf=20"
+   },
+   "D2": {
+    "selected_config": {
+     "learning_rate": 0.05,
+     "max_leaf_nodes": 15,
+     "min_samples_leaf": 20
+    },
+    "selected_key": "lr=0.05;leaves=15;min_leaf=20"
+   },
+   "D3": {
+    "selected_config": {
+     "learning_rate": 0.05,
+     "max_leaf_nodes": 15,
+     "min_samples_leaf": 20
+    },
+    "selected_key": "lr=0.05;leaves=15;min_leaf=20"
+   }
+  },
+  "logistic_regression": {
+   "D1": {
+    "selected_config": {
+     "C": 0.003
+    },
+    "selected_key": "C=0.003"
+   },
+   "D2": {
+    "selected_config": {
+     "C": 0.003
+    },
+    "selected_key": "C=0.003"
+   },
+   "D3": {
+    "selected_config": {
+     "C": 0.01
+    },
+    "selected_key": "C=0.01"
+   }
+  },
+  "xgboost": {
+   "D1": {
+    "selected_config": {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 5
+    },
+    "selected_key": "lr=0.05;max_depth=3;min_child_weight=5"
+   },
+   "D2": {
+    "selected_config": {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 5
+    },
+    "selected_key": "lr=0.05;max_depth=3;min_child_weight=5"
+   },
+   "D3": {
+    "selected_config": {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 5
+    },
+    "selected_key": "lr=0.05;max_depth=3;min_child_weight=5"
+   }
+  }
+ },
+ "temporal_consistency": {
+  "extra_trees": "CONSISTENT_REGRESSION",
+  "hist_gradient_boosting": "CONSISTENT_REGRESSION",
+  "logistic_regression": "MIXED",
+  "xgboost": "CONSISTENT_REGRESSION"
+ },
+ "tests": "C 17 + A 14 + B 20 passed; guards green; FULL_TIER1 NOT_REQUIRED",
+ "v3_3d_recommendation": "advance extra_trees + xgboost for controlled refinement/calibration; HGB rejected; baseline retained as control"
+}

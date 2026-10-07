@@ -1,0 +1,356 @@
+{
+ "bootstrap": "bootstrap_results.json (race unit, B=2000, seed 42)",
+ "c_references": "c_reference_identities.json (read-only)",
+ "calibration_results": {
+  "extra_trees": {
+   "D1": {
+    "outcome": {
+     "RAW": {
+      "brier": 0.02925163184436572,
+      "ll": 0.09147400400556395,
+      "status": "REFERENCE"
+     },
+     "isotonic": {
+      "brier": 0.028635434112404302,
+      "brier_gap_vs_raw": -0.0006161977319614174,
+      "ll": 0.08328820455934668,
+      "ll_gain_vs_raw": 0.008185799446217265,
+      "status": "EVALUATED"
+     },
+     "sigmoid": {
+      "brier": 0.03322099504232659,
+      "brier_gap_vs_raw": 0.00396936319796087,
+      "ll": 0.11239173560115481,
+      "ll_gain_vs_raw": -0.020917731595590863,
+      "status": "EVALUATED"
+     }
+    },
+    "reason": "LL gain 0.008186 > 1e-4, no Brier harm (-6.162e-04) on selection races",
+    "selected_method": "isotonic"
+   },
+   "D2": {
+    "outcome": {
+     "RAW": {
+      "brier": 0.024644162929962878,
+      "ll": 0.08620566793050442,
+      "status": "REFERENCE"
+     },
+     "isotonic": {
+      "brier": 0.024513101470947093,
+      "brier_gap_vs_raw": -0.00013106145901578548,
+      "ll": 0.08052414002770515,
+      "ll_gain_vs_raw": 0.0056815279027992716,
+      "status": "EVALUATED"
+     },
+     "sigmoid": {
+      "brier": 0.02429250995940571,
+      "brier_gap_vs_raw": -0.0003516529705571668,
+      "ll": 0.09200305662838318,
+      "ll_gain_vs_raw": -0.005797388697878755,
+      "status": "EVALUATED"
+     }
+    },
+    "reason": "LL gain 0.005682 > 1e-4, no Brier harm (-1.311e-04) on selection races",
+    "selected_method": "isotonic"
+   },
+   "D3": {
+    "outcome": {
+     "RAW": {
+      "brier": 0.014334100152080228,
+      "ll": 0.05465635546601883,
+      "status": "REFERENCE"
+     },
+     "isotonic": {
+      "brier": 0.01410856968172209,
+      "brier_gap_vs_raw": -0.00022553047035813768,
+      "ll": 0.04767963826396655,
+      "ll_gain_vs_raw": 0.006976717202052278,
+      "status": "EVALUATED"
+     },
+     "sigmoid": {
+      "brier": 0.0125922985545752,
+      "brier_gap_vs_raw": -0.0017418015975050275,
+      "ll": 0.05166804202907686,
+      "ll_gain_vs_raw": 0.002988313436941968,
+      "status": "EVALUATED"
+     }
+    },
+    "reason": "LL gain 0.006977 > 1e-4, no Brier harm (-2.255e-04) on selection races",
+    "selected_method": "isotonic"
+   }
+  },
+  "xgboost": {
+   "D1": {
+    "outcome": {
+     "RAW": {
+      "brier": 0.03361851213289917,
+      "ll": 0.09696023750964025,
+      "status": "REFERENCE"
+     },
+     "isotonic": {
+      "brier": 0.03633042312754535,
+      "brier_gap_vs_raw": 0.002711910994646183,
+      "ll": 0.21390093338251187,
+      "ll_gain_vs_raw": -0.11694069587287162,
+      "status": "EVALUATED"
+     },
+     "sigmoid": {
+      "brier": 0.04071412526913278,
+      "brier_gap_vs_raw": 0.007095613136233615,
+      "ll": 0.13664440975819792,
+      "ll_gain_vs_raw": -0.039684172248557664,
+      "status": "EVALUATED"
+     }
+    },
+    "reason": "no calibrated variant beat RAW beyond 1e-4 without Brier harm on train-history selection races",
+    "selected_method": "RAW"
+   },
+   "D2": {
+    "outcome": {
+     "RAW": {
+      "brier": 0.024965425490843792,
+      "ll": 0.08472348710796199,
+      "status": "REFERENCE"
+     },
+     "isotonic": {
+      "brier": 0.026532573800624935,
+      "brier_gap_vs_raw": 0.0015671483097811426,
+      "ll": 0.08802609949411491,
+      "ll_gain_vs_raw": -0.0033026123861529255,
+      "status": "EVALUATED"
+     },
+     "sigmoid": {
+      "brier": 0.030463461613164176,
+      "brier_gap_vs_raw": 0.005498036122320384,
+      "ll": 0.11634939225059036,
+      "ll_gain_vs_raw": -0.03162590514262838,
+      "status": "EVALUATED"
+     }
+    },
+    "reason": "no calibrated variant beat RAW beyond 1e-4 without Brier harm on train-history selection races",
+    "selected_method": "RAW"
+   },
+   "D3": {
+    "outcome": {
+     "RAW": {
+      "brier": 0.012195827768849948,
+      "ll": 0.044898486765007684,
+      "status": "REFERENCE"
+     },
+     "isotonic": {
+      "brier": 0.015081226531712974,
+      "brier_gap_vs_raw": 0.0028853987628630253,
+      "ll": 0.052785506523680484,
+      "ll_gain_vs_raw": -0.0078870197586728,
+      "status": "EVALUATED"
+     },
+     "sigmoid": {
+      "brier": 0.013932974629713159,
+      "brier_gap_vs_raw": 0.0017371468608632108,
+      "ll": 0.06162308892145067,
+      "ll_gain_vs_raw": -0.01672460215644299,
+      "status": "EVALUATED"
+     }
+    },
+    "reason": "no calibrated variant beat RAW beyond 1e-4 without Brier harm on train-history selection races",
+    "selected_method": "RAW"
+   }
+  }
+ },
+ "contract_identities": {
+  "a": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+  "b": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+  "c": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8"
+ },
+ "d_prereg_identity": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "dispositions": {
+  "extra_trees": "REJECT_NO_IMPROVEMENT",
+  "xgboost": "KEEP_DIVERSITY_CANDIDATE"
+ },
+ "diversity": "diversity_matrix.json + diversity_attribution.json + diversity_admissibility.json",
+ "finalist_recipe_identity": "ca0cd5d5f7c95e5446ae66111eff85232441023ad7be15d04a8f35e05fea332d",
+ "finalists": [
+  "xgboost"
+ ],
+ "firewall": {
+  "2025_CONTACT": "NONE"
+ },
+ "known_limitations": [
+  "pre-2025 only; 2025 sealed",
+  "narrow D grids (6+6); no second round",
+  "ET isotonic hurt out-of-time (D3 blowup): negative calibration result",
+  "single finalist; ET rejected after refinement"
+ ],
+ "next_recommendation": "one-shot 2025 holdout for V3.1B baseline + frozen XGB recipe (V3.3E); then V3.3 finalization",
+ "parent": {
+  "commit": "197979d40af0c9dbf90667781d9c83e41613b047",
+  "tag": "v3.2-monte-carlo-2"
+ },
+ "primary_results": {
+  "extra_trees_C_RAW": {
+   "per_fold": {
+    "D1": 0.09353854771750503,
+    "D2": 0.04351415377476209,
+    "D3": 0.08682506945075147
+   },
+   "pooled": 0.07498472205364577
+  },
+  "extra_trees_D_CALIBRATED": {
+   "per_fold": {
+    "D1": 0.08529437959872756,
+    "D2": 0.04283368998029153,
+    "D3": 0.20321720065181195
+   },
+   "pooled": 0.11317691685855746
+  },
+  "extra_trees_D_REFINED_RAW": {
+   "per_fold": {
+    "D1": 0.08975652816732847,
+    "D2": 0.05121902431417131,
+    "D3": 0.08074519822397491
+   },
+   "pooled": 0.0741080428230646
+  },
+  "xgboost_C_RAW": {
+   "per_fold": {
+    "D1": 0.09257433650962309,
+    "D2": 0.04113484317613215,
+    "D3": 0.08833906058537296
+   },
+   "pooled": 0.07443734422258186
+  },
+  "xgboost_D_CALIBRATED": {
+   "per_fold": {
+    "D1": 0.09378650529454774,
+    "D2": 0.03520555673176539,
+    "D3": 0.08192130602361906
+   },
+   "pooled": 0.07064612807567275
+  },
+  "xgboost_D_REFINED_RAW": {
+   "per_fold": {
+    "D1": 0.09378650529454774,
+    "D2": 0.03520555673176539,
+    "D3": 0.08192130602361906
+   },
+   "pooled": 0.07064612807567275
+  }
+ },
+ "probability_quality": "probability_quality.json",
+ "refinement_results": {
+  "extra_trees": {
+   "D1": {
+    "calibration_method": "isotonic",
+    "selected_config": {
+     "max_depth": 20,
+     "max_features": "sqrt",
+     "min_samples_leaf": 10
+    },
+    "selected_key": "max_features=sqrt;min_samples_leaf=10;max_depth=20"
+   },
+   "D2": {
+    "calibration_method": "isotonic",
+    "selected_config": {
+     "max_depth": 10,
+     "max_features": "sqrt",
+     "min_samples_leaf": 3
+    },
+    "selected_key": "max_features=sqrt;min_samples_leaf=3;max_depth=10"
+   },
+   "D3": {
+    "calibration_method": "isotonic",
+    "selected_config": {
+     "max_depth": 20,
+     "max_features": "sqrt",
+     "min_samples_leaf": 10
+    },
+    "selected_key": "max_features=sqrt;min_samples_leaf=10;max_depth=20"
+   }
+  },
+  "xgboost": {
+   "D1": {
+    "calibration_method": "RAW",
+    "selected_config": {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 10
+    },
+    "selected_key": "lr=0.05;max_depth=3;min_child_weight=10"
+   },
+   "D2": {
+    "calibration_method": "RAW",
+    "selected_config": {
+     "learning_rate": 0.03,
+     "max_depth": 3,
+     "min_child_weight": 5
+    },
+    "selected_key": "lr=0.03;max_depth=3;min_child_weight=5"
+   },
+   "D3": {
+    "calibration_method": "RAW",
+    "selected_config": {
+     "learning_rate": 0.03,
+     "max_depth": 3,
+     "min_child_weight": 5
+    },
+    "selected_key": "lr=0.03;max_depth=3;min_child_weight=5"
+   }
+  }
+ },
+ "schema_version": "v3.3d-refinement-calibration-v1",
+ "temporal_consistency": {
+  "extra_trees_D_CALIBRATED": {
+   "classification": "CONSISTENT_REGRESSION",
+   "fold_deltas_vs_baseline": {
+    "D1": 0.004619143092772907,
+    "D2": 0.003398054685668457,
+    "D3": 0.12318157943735439
+   },
+   "fold_deltas_vs_c_raw": {
+    "D1": -0.00824416811877747,
+    "D2": -0.000680463794470558,
+    "D3": 0.11639213120106048
+   }
+  },
+  "extra_trees_D_REFINED_RAW": {
+   "classification": "CONSISTENT_REGRESSION",
+   "fold_deltas_vs_baseline": {
+    "D1": 0.009081291661373822,
+    "D2": 0.011783389019548236,
+    "D3": 0.0007095770095173481
+   },
+   "fold_deltas_vs_c_raw": {
+    "D1": -0.0037820195501765547,
+    "D2": 0.007704870539409221,
+    "D3": -0.0060798712267765564
+   }
+  },
+  "xgboost_D_CALIBRATED": {
+   "classification": "MIXED",
+   "fold_deltas_vs_baseline": {
+    "D1": 0.013111268788593089,
+    "D2": -0.004230078562857682,
+    "D3": 0.0018856848091615003
+   },
+   "fold_deltas_vs_c_raw": {
+    "D1": 0.0012121687849246526,
+    "D2": -0.0059292864443667576,
+    "D3": -0.006417754561753891
+   }
+  },
+  "xgboost_D_REFINED_RAW": {
+   "classification": "MIXED",
+   "fold_deltas_vs_baseline": {
+    "D1": 0.013111268788593089,
+    "D2": -0.004230078562857682,
+    "D3": 0.0018856848091615003
+   },
+   "fold_deltas_vs_c_raw": {
+    "D1": 0.0012121687849246526,
+    "D2": -0.0059292864443667576,
+    "D3": -0.006417754561753891
+   }
+  }
+ },
+ "tests": "D 20 + A/B/C 51 + guards/M6 138 passed; FULL_TIER1 NOT_REQUIRED"
+}

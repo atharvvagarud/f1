@@ -1,0 +1,239 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "envelopes": {
+  "extra_trees": {
+   "a_contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+   "b_prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+   "calibration": "RAW",
+   "code_version": "197979d40af0c9dbf90667781d9c83e41613b047",
+   "dataset_identity": {
+    "dynamics_content_sha": "40ef05809e2932d725785a0e991bcecede8d884f2388affec3f56147611696a1",
+    "matrix_content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db"
+   },
+   "feature_identity": {
+    "feature_arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+    "feature_count": 110,
+    "feature_hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e"
+   },
+   "fold_identity": {
+    "fold": "D1",
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021
+    ],
+    "validation_seasons": [
+     2022
+    ]
+   },
+   "hyperparameters": {
+    "bootstrap": false,
+    "class_weight": null,
+    "criterion": "gini",
+    "estimator": "ExtraTreesClassifier",
+    "max_depth": null,
+    "max_features": "sqrt",
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "n_estimators": 300,
+    "n_jobs": 4,
+    "random_state": 42
+   },
+   "library_versions": {
+    "numpy": "2.4.2",
+    "pandas": "2.3.3",
+    "sklearn": "1.8.0",
+    "xgboost": "3.2.0"
+   },
+   "model_config_id": "max_features=sqrt;min_samples_leaf=1;max_depth=None",
+   "model_family": "extra_trees",
+   "seed": 42,
+   "task_identity": {
+    "label": "is_winner",
+    "semantics": "INDEPENDENT_BINARY",
+    "task": "winner"
+   },
+   "thread_policy": {
+    "n_jobs": 4,
+    "note": "CPU only, M4, n_jobs<=4"
+   }
+  },
+  "hist_gradient_boosting": {
+   "a_contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+   "b_prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+   "calibration": "RAW",
+   "code_version": "197979d40af0c9dbf90667781d9c83e41613b047",
+   "dataset_identity": {
+    "dynamics_content_sha": "40ef05809e2932d725785a0e991bcecede8d884f2388affec3f56147611696a1",
+    "matrix_content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db"
+   },
+   "feature_identity": {
+    "feature_arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+    "feature_count": 110,
+    "feature_hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e"
+   },
+   "fold_identity": {
+    "fold": "D1",
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021
+    ],
+    "validation_seasons": [
+     2022
+    ]
+   },
+   "hyperparameters": {
+    "early_stopping": false,
+    "estimator": "HistGradientBoostingClassifier",
+    "l2_regularization": 0.0,
+    "learning_rate": 0.1,
+    "loss": "log_loss",
+    "max_depth": null,
+    "max_iter": 200,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "random_state": 42
+   },
+   "library_versions": {
+    "numpy": "2.4.2",
+    "pandas": "2.3.3",
+    "sklearn": "1.8.0",
+    "xgboost": "3.2.0"
+   },
+   "model_config_id": "lr=0.1;leaves=31;min_leaf=20",
+   "model_family": "hist_gradient_boosting",
+   "seed": 42,
+   "task_identity": {
+    "label": "is_winner",
+    "semantics": "INDEPENDENT_BINARY",
+    "task": "winner"
+   },
+   "thread_policy": {
+    "n_jobs": 4,
+    "note": "CPU only, M4, n_jobs<=4"
+   }
+  },
+  "logistic_regression": {
+   "a_contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+   "b_prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+   "calibration": "RAW",
+   "code_version": "197979d40af0c9dbf90667781d9c83e41613b047",
+   "dataset_identity": {
+    "dynamics_content_sha": "40ef05809e2932d725785a0e991bcecede8d884f2388affec3f56147611696a1",
+    "matrix_content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db"
+   },
+   "feature_identity": {
+    "feature_arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+    "feature_count": 110,
+    "feature_hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e"
+   },
+   "fold_identity": {
+    "fold": "D1",
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021
+    ],
+    "validation_seasons": [
+     2022
+    ]
+   },
+   "hyperparameters": {
+    "C": 0.01,
+    "class_weight": null,
+    "estimator": "LogisticRegression",
+    "max_iter": 1000,
+    "penalty": "l2 (sklearn default, not passed explicitly)",
+    "random_state": 42,
+    "solver": "lbfgs"
+   },
+   "library_versions": {
+    "numpy": "2.4.2",
+    "pandas": "2.3.3",
+    "sklearn": "1.8.0",
+    "xgboost": "3.2.0"
+   },
+   "model_config_id": "C=0.01",
+   "model_family": "logistic_regression",
+   "seed": 42,
+   "task_identity": {
+    "label": "is_winner",
+    "semantics": "INDEPENDENT_BINARY",
+    "task": "winner"
+   },
+   "thread_policy": {
+    "n_jobs": 4,
+    "note": "CPU only, M4, n_jobs<=4"
+   }
+  },
+  "xgboost": {
+   "a_contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+   "b_prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+   "calibration": "RAW",
+   "code_version": "197979d40af0c9dbf90667781d9c83e41613b047",
+   "dataset_identity": {
+    "dynamics_content_sha": "40ef05809e2932d725785a0e991bcecede8d884f2388affec3f56147611696a1",
+    "matrix_content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db"
+   },
+   "feature_identity": {
+    "feature_arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+    "feature_count": 110,
+    "feature_hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e"
+   },
+   "fold_identity": {
+    "fold": "D1",
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021
+    ],
+    "validation_seasons": [
+     2022
+    ]
+   },
+   "hyperparameters": {
+    "colsample_bytree": 0.8,
+    "estimator": "XGBClassifier",
+    "eval_metric": "logloss",
+    "learning_rate": 0.1,
+    "max_depth": 3,
+    "min_child_weight": 1,
+    "n_estimators": 300,
+    "n_jobs": 4,
+    "objective": "binary:logistic",
+    "random_state": 42,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 0.8,
+    "tree_method": "hist"
+   },
+   "library_versions": {
+    "numpy": "2.4.2",
+    "pandas": "2.3.3",
+    "sklearn": "1.8.0",
+    "xgboost": "3.2.0"
+   },
+   "model_config_id": "lr=0.1;max_depth=3;min_child_weight=1",
+   "model_family": "xgboost",
+   "seed": 42,
+   "task_identity": {
+    "label": "is_winner",
+    "semantics": "INDEPENDENT_BINARY",
+    "task": "winner"
+   },
+   "thread_policy": {
+    "n_jobs": 4,
+    "note": "CPU only, M4, n_jobs<=4"
+   }
+  }
+ },
+ "label": "HARNESS_SMOKE_ONLY",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

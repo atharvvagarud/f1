@@ -1,0 +1,32 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "baseline_ll": 0.06341666779729628,
+ "bootstrap": {
+  "ci_hi": 0.011783488242452967,
+  "ci_level": 0.95,
+  "ci_lo": -0.0037246989843185145,
+  "mean_delta": 0.0037969791458192285,
+  "replicates": 2000,
+  "seed": 42
+ },
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "execution_manifest_identity": "34188a8598db8c308ba288d2fc9ed8f8ec7db00c555869962affb1b77cb51c50",
+ "final_disposition": "KEEP_DIVERSITY_CANDIDATE",
+ "finalist_recipe_identity": "ca0cd5d5f7c95e5446ae66111eff85232441023ad7be15d04a8f35e05fea332d",
+ "manifest_identity": "34188a8598db8c308ba288d2fc9ed8f8ec7db00c555869962affb1b77cb51c50",
+ "next_recommendation": "V3.3 final validation/freeze",
+ "parent": {
+  "commit": "197979d40af0c9dbf90667781d9c83e41613b047",
+  "tag": "v3.2-monte-carlo-2"
+ },
+ "prediction_identity": "71b9bb807a8a845ec787109a5671d7014cc49b6873a674a50a6b434053b3e5d3",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "primary_comparison": 0.0037969791458192376,
+ "recipe_sha": "ca0cd5d5f7c95e5446ae66111eff85232441023ad7be15d04a8f35e05fea332d",
+ "schema_version": "v3.3e-final-holdout-v1",
+ "standalone_decision": "NO",
+ "tests": "see test_report.json",
+ "v3_4_eligibility": "YES",
+ "xgboost_ll": 0.06721364694311552
+}

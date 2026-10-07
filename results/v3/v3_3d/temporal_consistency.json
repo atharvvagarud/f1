@@ -1,0 +1,62 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "d_prereg_sha": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "temporal": {
+  "extra_trees_D_CALIBRATED": {
+   "classification": "CONSISTENT_REGRESSION",
+   "fold_deltas_vs_baseline": {
+    "D1": 0.004619143092772907,
+    "D2": 0.003398054685668457,
+    "D3": 0.12318157943735439
+   },
+   "fold_deltas_vs_c_raw": {
+    "D1": -0.00824416811877747,
+    "D2": -0.000680463794470558,
+    "D3": 0.11639213120106048
+   }
+  },
+  "extra_trees_D_REFINED_RAW": {
+   "classification": "CONSISTENT_REGRESSION",
+   "fold_deltas_vs_baseline": {
+    "D1": 0.009081291661373822,
+    "D2": 0.011783389019548236,
+    "D3": 0.0007095770095173481
+   },
+   "fold_deltas_vs_c_raw": {
+    "D1": -0.0037820195501765547,
+    "D2": 0.007704870539409221,
+    "D3": -0.0060798712267765564
+   }
+  },
+  "xgboost_D_CALIBRATED": {
+   "classification": "MIXED",
+   "fold_deltas_vs_baseline": {
+    "D1": 0.013111268788593089,
+    "D2": -0.004230078562857682,
+    "D3": 0.0018856848091615003
+   },
+   "fold_deltas_vs_c_raw": {
+    "D1": 0.0012121687849246526,
+    "D2": -0.0059292864443667576,
+    "D3": -0.006417754561753891
+   }
+  },
+  "xgboost_D_REFINED_RAW": {
+   "classification": "MIXED",
+   "fold_deltas_vs_baseline": {
+    "D1": 0.013111268788593089,
+    "D2": -0.004230078562857682,
+    "D3": 0.0018856848091615003
+   },
+   "fold_deltas_vs_c_raw": {
+    "D1": 0.0012121687849246526,
+    "D2": -0.0059292864443667576,
+    "D3": -0.006417754561753891
+   }
+  }
+ }
+}

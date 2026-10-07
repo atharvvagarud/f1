@@ -1,0 +1,585 @@
+{
+ "a_contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "advancement_policy": {
+  "max_challengers": 2,
+  "plus_baseline": true,
+  "rule": "credible standalone OR credible useful diversity; zero is valid"
+ },
+ "artifact_layout": "results/v3/v3_3d/*.json + results/v3/v3_3d_refinement_calibration.json; OOF under ignored data/v3/v3_3d/",
+ "b_prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "bootstrap_policy": "paired race-level, B=2000, seed=42, 95% CI",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "c_raw_references": {
+  "oof_identities": {
+   "extra_trees": {
+    "n_races": 68,
+    "n_rows": 74605,
+    "per_fold_ll": {
+     "D1": 0.09353854771750503,
+     "D2": 0.04351415377476209,
+     "D3": 0.08682506945075147
+    },
+    "pooled_race_macro_ll": 0.07498472205364577,
+    "prob_hash": "c01da12ccb8fd933d7aa297e9b73b6fcf0d32beae91453bf3598717d8595f67f",
+    "seasons": [
+     2022,
+     2023,
+     2024
+    ]
+   },
+   "hist_gradient_boosting": {
+    "n_races": 68,
+    "n_rows": 74605,
+    "per_fold_ll": {
+     "D1": 0.11565914144610105,
+     "D2": 0.04159913836062281,
+     "D3": 0.10910305348552762
+    },
+    "pooled_race_macro_ll": 0.08938463881471453,
+    "prob_hash": "9a3c195bbb61bd1857d1ed13f07408c9bf12983528638b016fd5a5f045b44364",
+    "seasons": [
+     2022,
+     2023,
+     2024
+    ]
+   },
+   "logistic_regression": {
+    "n_races": 68,
+    "n_rows": 74605,
+    "per_fold_ll": {
+     "D1": 0.08096520822101988,
+     "D2": 0.041415196842793746,
+     "D3": 0.08003562121445756
+    },
+    "pooled_race_macro_ll": 0.06784152677280707,
+    "prob_hash": "9f7af7e50a4401a337a2668a02918ba476dfda0e6953df148236370da17b543b",
+    "seasons": [
+     2022,
+     2023,
+     2024
+    ]
+   },
+   "v3_1b_baseline": {
+    "n_races": 68,
+    "n_rows": 74605,
+    "per_fold_ll": {
+     "D1": 0.08067523650595465,
+     "D2": 0.03943563529462307,
+     "D3": 0.08003562121445756
+    },
+    "pooled_race_macro_ll": 0.06710726601117191,
+    "prob_hash": "71649b6a757a80eb5045bbe76dba2f80f93c95ab6051729c42492c30df0e4240",
+    "seasons": [
+     2022,
+     2023,
+     2024
+    ]
+   },
+   "xgboost": {
+    "n_races": 68,
+    "n_rows": 74605,
+    "per_fold_ll": {
+     "D1": 0.09257433650962309,
+     "D2": 0.04113484317613215,
+     "D3": 0.08833906058537296
+    },
+    "pooled_race_macro_ll": 0.07443734422258186,
+    "prob_hash": "b4cebaf04c75281b3bd6618f5cbbbce52a09b96627629f49175a5b9850dd6b8b",
+    "seasons": [
+     2022,
+     2023,
+     2024
+    ]
+   }
+  },
+  "rule": "read-only; never overwritten; D labels distinguish C_RAW / D_REFINED_RAW / D_CALIBRATED",
+  "selected_configs": {
+   "extra_trees": {
+    "D1": {
+     "selected_config": {
+      "max_depth": null,
+      "max_features": "sqrt",
+      "min_samples_leaf": 1
+     },
+     "selected_key": "max_features=sqrt;min_samples_leaf=1;max_depth=None"
+    },
+    "D2": {
+     "selected_config": {
+      "max_depth": 20,
+      "max_features": "sqrt",
+      "min_samples_leaf": 5
+     },
+     "selected_key": "max_features=sqrt;min_samples_leaf=5;max_depth=20"
+    },
+    "D3": {
+     "selected_config": {
+      "max_depth": null,
+      "max_features": "sqrt",
+      "min_samples_leaf": 5
+     },
+     "selected_key": "max_features=sqrt;min_samples_leaf=5;max_depth=None"
+    }
+   },
+   "hist_gradient_boosting": {
+    "D1": {
+     "selected_config": {
+      "learning_rate": 0.05,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20
+     },
+     "selected_key": "lr=0.05;leaves=15;min_leaf=20"
+    },
+    "D2": {
+     "selected_config": {
+      "learning_rate": 0.05,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20
+     },
+     "selected_key": "lr=0.05;leaves=15;min_leaf=20"
+    },
+    "D3": {
+     "selected_config": {
+      "learning_rate": 0.05,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20
+     },
+     "selected_key": "lr=0.05;leaves=15;min_leaf=20"
+    }
+   },
+   "logistic_regression": {
+    "D1": {
+     "selected_config": {
+      "C": 0.003
+     },
+     "selected_key": "C=0.003"
+    },
+    "D2": {
+     "selected_config": {
+      "C": 0.003
+     },
+     "selected_key": "C=0.003"
+    },
+    "D3": {
+     "selected_config": {
+      "C": 0.01
+     },
+     "selected_key": "C=0.01"
+    }
+   },
+   "xgboost": {
+    "D1": {
+     "selected_config": {
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_child_weight": 5
+     },
+     "selected_key": "lr=0.05;max_depth=3;min_child_weight=5"
+    },
+    "D2": {
+     "selected_config": {
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_child_weight": 5
+     },
+     "selected_key": "lr=0.05;max_depth=3;min_child_weight=5"
+    },
+    "D3": {
+     "selected_config": {
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_child_weight": 5
+     },
+     "selected_key": "lr=0.05;max_depth=3;min_child_weight=5"
+    }
+   }
+  }
+ },
+ "calibration_data": "cross-fitted inner-val predictions inside outer TRAIN history only; earlier inner-val races fit, later inner-val races select; winners refit on full calibration set; outer validation never fits/selects",
+ "calibration_methods": [
+  "RAW",
+  "sigmoid",
+  "isotonic"
+ ],
+ "calibration_selection_rule": "calibrated wins iff LL gain > 1e-4 AND no Brier harm on train-history selection races; ties prefer RAW > SIGMOID > ISOTONIC; deterministic",
+ "calibration_support_gates": {
+  "inadequate": "NOT_RUN_INSUFFICIENT_SUPPORT",
+  "isotonic": {
+   "min_positives": 500,
+   "min_rows": 10000,
+   "min_unique": 50
+  },
+  "sigmoid": {
+   "min_positives": 50,
+   "min_rows": 1000,
+   "min_unique": 10
+  }
+ },
+ "candidate_set": [
+  "extra_trees",
+  "xgboost"
+ ],
+ "closed": {
+  "hist_gradient_boosting": "C REJECT_NO_IMPROVEMENT",
+  "logistic_regression": "control, not refined in D"
+ },
+ "diversity_policy": "best admissible PRE-2025 representation per family vs V3.1B + ET vs XGB; useful disagreement required (Part S gate)",
+ "feature_identity": {
+  "feature_hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "primary_arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "primary_count": 110
+ },
+ "final_fit_recipe_policy": {
+  "rule": "family + hyperparameters + preprocessing + features + seed/threads + calibration method + exact calibration-training procedure frozen BEFORE 2025",
+  "training_years": "2018-2024"
+ },
+ "firewall_2025": {
+  "requirement": "2025_CONTACT = NONE",
+  "season": 2025,
+  "status": "SEALED"
+ },
+ "inner_folds": {
+  "D1": [
+   {
+    "inner_fold_id": "D1-I1",
+    "outer_fold": "D1",
+    "train_seasons": [
+     2018,
+     2019,
+     2020
+    ],
+    "validation_seasons": [
+     2021
+    ]
+   }
+  ],
+  "D2": [
+   {
+    "inner_fold_id": "D2-I1",
+    "outer_fold": "D2",
+    "train_seasons": [
+     2018,
+     2019,
+     2020
+    ],
+    "validation_seasons": [
+     2021
+    ]
+   },
+   {
+    "inner_fold_id": "D2-I2",
+    "outer_fold": "D2",
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021
+    ],
+    "validation_seasons": [
+     2022
+    ]
+   }
+  ],
+  "D3": [
+   {
+    "inner_fold_id": "D3-I1",
+    "outer_fold": "D3",
+    "train_seasons": [
+     2018,
+     2019,
+     2020
+    ],
+    "validation_seasons": [
+     2021
+    ]
+   },
+   {
+    "inner_fold_id": "D3-I2",
+    "outer_fold": "D3",
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021
+    ],
+    "validation_seasons": [
+     2022
+    ]
+   },
+   {
+    "inner_fold_id": "D3-I3",
+    "outer_fold": "D3",
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021,
+     2022
+    ],
+    "validation_seasons": [
+     2023
+    ]
+   }
+  ]
+ },
+ "library_versions": {
+  "numpy": "2.4.2",
+  "pandas": "2.3.3",
+  "sklearn": "1.8.0",
+  "xgboost": "3.2.0"
+ },
+ "outer_folds": {
+  "D1": {
+   "train": [
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "validate": [
+    2022
+   ]
+  },
+  "D2": {
+   "train": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+   ],
+   "validate": [
+    2023
+   ]
+  },
+  "D3": {
+   "train": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+   ],
+   "validate": [
+    2024
+   ]
+  }
+ },
+ "preregistration_identity": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "primary_metric": "race_macro_log_loss",
+ "random_seed": 42,
+ "refinement_bound": "\u22646 NEW configs/family; C configs are references; no second round",
+ "refinement_grids": {
+  "extra_trees": [
+   {
+    "complexity_rank": [
+     -3,
+     1,
+     0,
+     300
+    ],
+    "hyperparameters": {
+     "max_depth": null,
+     "max_features": "sqrt",
+     "min_samples_leaf": 3
+    },
+    "id": "max_features=sqrt;min_samples_leaf=3;max_depth=None",
+    "rationale": "msl neighbor between C-selected 1 and 5"
+   },
+   {
+    "complexity_rank": [
+     -3,
+     0,
+     0,
+     300
+    ],
+    "hyperparameters": {
+     "max_depth": 20,
+     "max_features": "sqrt",
+     "min_samples_leaf": 3
+    },
+    "id": "max_features=sqrt;min_samples_leaf=3;max_depth=20",
+    "rationale": "msl neighbor with bounded depth"
+   },
+   {
+    "complexity_rank": [
+     -10,
+     1,
+     0,
+     300
+    ],
+    "hyperparameters": {
+     "max_depth": null,
+     "max_features": "sqrt",
+     "min_samples_leaf": 10
+    },
+    "id": "max_features=sqrt;min_samples_leaf=10;max_depth=None",
+    "rationale": "stronger regularization than C-selected"
+   },
+   {
+    "complexity_rank": [
+     -10,
+     0,
+     0,
+     300
+    ],
+    "hyperparameters": {
+     "max_depth": 20,
+     "max_features": "sqrt",
+     "min_samples_leaf": 10
+    },
+    "id": "max_features=sqrt;min_samples_leaf=10;max_depth=20",
+    "rationale": "stronger regularization with bounded depth"
+   },
+   {
+    "complexity_rank": [
+     -5,
+     0,
+     0,
+     300
+    ],
+    "hyperparameters": {
+     "max_depth": 10,
+     "max_features": "sqrt",
+     "min_samples_leaf": 5
+    },
+    "id": "max_features=sqrt;min_samples_leaf=5;max_depth=10",
+    "rationale": "intermediate depth between selected None and 20"
+   },
+   {
+    "complexity_rank": [
+     -3,
+     0,
+     0,
+     300
+    ],
+    "hyperparameters": {
+     "max_depth": 10,
+     "max_features": "sqrt",
+     "min_samples_leaf": 3
+    },
+    "id": "max_features=sqrt;min_samples_leaf=3;max_depth=10",
+    "rationale": "middle of both axes (msl neighbor, mid depth); tests the unresolved interior"
+   }
+  ],
+  "xgboost": [
+   {
+    "complexity_rank": [
+     -5,
+     3,
+     0.03,
+     300,
+     300
+    ],
+    "hyperparameters": {
+     "learning_rate": 0.03,
+     "max_depth": 3,
+     "min_child_weight": 5
+    },
+    "id": "lr=0.03;max_depth=3;min_child_weight=5",
+    "rationale": "gentler learning, same structure as selection"
+   },
+   {
+    "complexity_rank": [
+     -3,
+     3,
+     0.05,
+     300,
+     300
+    ],
+    "hyperparameters": {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 3
+    },
+    "id": "lr=0.05;max_depth=3;min_child_weight=3",
+    "rationale": "mcw neighbor bracketed by tested 1 and 5"
+   },
+   {
+    "complexity_rank": [
+     -10,
+     3,
+     0.05,
+     300,
+     300
+    ],
+    "hyperparameters": {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 10
+    },
+    "id": "lr=0.05;max_depth=3;min_child_weight=10",
+    "rationale": "heavier regularization than selection"
+   },
+   {
+    "complexity_rank": [
+     -5,
+     4,
+     0.05,
+     300,
+     300
+    ],
+    "hyperparameters": {
+     "learning_rate": 0.05,
+     "max_depth": 4,
+     "min_child_weight": 5
+    },
+    "id": "lr=0.05;max_depth=4;min_child_weight=5",
+    "rationale": "one step deeper; depth 5 was clearly worse"
+   },
+   {
+    "complexity_rank": [
+     -5,
+     3,
+     0.05,
+     300,
+     500
+    ],
+    "hyperparameters": {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 5,
+     "n_estimators": 500
+    },
+    "id": "lr=0.05;max_depth=3;min_child_weight=5+n_estimators=500",
+    "rationale": "estimator-count variance-stability probe"
+   },
+   {
+    "complexity_rank": [
+     -5,
+     2,
+     0.1,
+     300,
+     300
+    ],
+    "hyperparameters": {
+     "learning_rate": 0.1,
+     "max_depth": 2,
+     "min_child_weight": 5
+    },
+    "id": "lr=0.1;max_depth=2;min_child_weight=5",
+    "rationale": "shallow+fast corner; depth 2 unseen in C"
+   }
+  ]
+ },
+ "schema_version": "v3.3d-preregistration-v1",
+ "secondary_metrics": [
+  "brier",
+  "ece",
+  "roc_auc",
+  "pr_auc",
+  "top_1",
+  "top_3"
+ ],
+ "task_identity": {
+  "label": "is_winner",
+  "probabilities": "RAW, never field-normalized",
+  "semantics": "INDEPENDENT_BINARY",
+  "task": "winner"
+ },
+ "test_policy": "tests/test_v3_3d_refinement.py + A/B/C tests + calibration/tuning/metric tests; FULL_TIER1 = NOT_REQUIRED_RESEARCH_EXECUTION_ONLY",
+ "thread_policy": {
+  "n_jobs": 4,
+  "note": "CPU only, M4, n_jobs<=4"
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "commands": [
+  "uv run python scripts/freeze_v3_3e_manifest.py  # pre-reveal only",
+  "uv run python scripts/run_v3_3e_holdout.py  # ONE-SHOT; refuses rerun",
+  "uv run python scripts/analyze_v3_3e.py  # rebuild from frozen predictions",
+  "uv run pytest tests/test_v3_3e_holdout.py -q"
+ ],
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "manifest_identity": "34188a8598db8c308ba288d2fc9ed8f8ec7db00c555869962affb1b77cb51c50",
+ "note": "routine analysis uses the frozen prediction artifact; retraining is NOT the reproducibility path",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "recipe_sha": "ca0cd5d5f7c95e5446ae66111eff85232441023ad7be15d04a8f35e05fea332d"
+}

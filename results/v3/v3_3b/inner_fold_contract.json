@@ -1,0 +1,93 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "label": "HARNESS_SMOKE_ONLY",
+ "layout": {
+  "D1": [
+   {
+    "inner_fold_id": "D1-I1",
+    "outer_fold": "D1",
+    "train_seasons": [
+     2018,
+     2019,
+     2020
+    ],
+    "validation_seasons": [
+     2021
+    ]
+   }
+  ],
+  "D2": [
+   {
+    "inner_fold_id": "D2-I1",
+    "outer_fold": "D2",
+    "train_seasons": [
+     2018,
+     2019,
+     2020
+    ],
+    "validation_seasons": [
+     2021
+    ]
+   },
+   {
+    "inner_fold_id": "D2-I2",
+    "outer_fold": "D2",
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021
+    ],
+    "validation_seasons": [
+     2022
+    ]
+   }
+  ],
+  "D3": [
+   {
+    "inner_fold_id": "D3-I1",
+    "outer_fold": "D3",
+    "train_seasons": [
+     2018,
+     2019,
+     2020
+    ],
+    "validation_seasons": [
+     2021
+    ]
+   },
+   {
+    "inner_fold_id": "D3-I2",
+    "outer_fold": "D3",
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021
+    ],
+    "validation_seasons": [
+     2022
+    ]
+   },
+   {
+    "inner_fold_id": "D3-I3",
+    "outer_fold": "D3",
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021,
+     2022
+    ],
+    "validation_seasons": [
+     2023
+    ]
+   }
+  ]
+ },
+ "objective": "mean inner race-macro log loss",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "tie_tolerance": 1e-06
+}

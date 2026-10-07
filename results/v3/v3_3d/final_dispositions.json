@@ -1,0 +1,42 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "d_prereg_sha": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "dispositions": {
+  "extra_trees": {
+   "disposition": "REJECT_NO_IMPROVEMENT",
+   "evidence": {
+    "ci": [
+     0.0011516194545385632,
+     0.011973820401548096
+    ],
+    "ece_gap": 0.00944907536754883,
+    "mean_delta": 0.007000776811892669,
+    "n_improved": 14,
+    "residual_correlation": 0.9255980378679591,
+    "temporal": "CONSISTENT_REGRESSION"
+   },
+   "rationale": "worse overall with no useful-disagreement evidence",
+   "representation": "D_REFINED_RAW"
+  },
+  "xgboost": {
+   "disposition": "KEEP_DIVERSITY_CANDIDATE",
+   "evidence": {
+    "ci": [
+     -0.00381027518961857,
+     0.011190940125102066
+    ],
+    "ece_gap": 0.0008887075364064998,
+    "mean_delta": 0.0035388620645008056,
+    "n_improved": 38,
+    "residual_correlation": 0.9036358736238017,
+    "temporal": "MIXED"
+   },
+   "rationale": "statistical tie with distinct errors",
+   "representation": "D_REFINED_RAW"
+  }
+ },
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

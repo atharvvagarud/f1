@@ -1,0 +1,118 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "families": [
+  "extra_trees",
+  "hist_gradient_boosting",
+  "logistic_regression",
+  "xgboost"
+ ],
+ "label": "HARNESS_SMOKE_ONLY",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "registry": {
+  "extra_trees": {
+   "family_id": "extra_trees",
+   "fixed_parameters": {
+    "bootstrap": false,
+    "class_weight": null,
+    "criterion": "gini",
+    "min_samples_split": 2,
+    "n_estimators": 300,
+    "n_jobs": 4,
+    "random_state": 42
+   },
+   "implementation": "sklearn.ensemble.ExtraTreesClassifier",
+   "implementation_version": "1.8.0",
+   "missing_value_policy": "frozen TRAIN-only median/mode imputation",
+   "parameter_namespace": [
+    "max_features",
+    "min_samples_leaf",
+    "max_depth"
+   ],
+   "pipeline_factory": "v3_3b_harness.build_estimator:extra_trees",
+   "probability_interface": "predict_proba positive-class column; RAW INDEPENDENT_BINARY, never normalized",
+   "scaling_policy": "frozen TRAIN-only StandardScaler (neutral for trees; identical pipeline)",
+   "seed_policy": "random_state=42",
+   "serialization_type": "joblib (estimator, preprocessor, config)",
+   "thread_policy": "n_jobs=4"
+  },
+  "hist_gradient_boosting": {
+   "early_stopping_policy": "disabled (early_stopping=False); validation-driven training is leakage",
+   "family_id": "hist_gradient_boosting",
+   "fixed_parameters": {
+    "early_stopping": false,
+    "l2_regularization": 0.0,
+    "loss": "log_loss",
+    "max_depth": null,
+    "max_iter": 200,
+    "random_state": 42
+   },
+   "implementation": "sklearn.ensemble.HistGradientBoostingClassifier",
+   "implementation_version": "1.8.0",
+   "missing_value_policy": "frozen TRAIN-only median/mode imputation (native NaN support unused: identical pipeline keeps arms comparable)",
+   "parameter_namespace": [
+    "learning_rate",
+    "max_leaf_nodes",
+    "min_samples_leaf"
+   ],
+   "pipeline_factory": "v3_3b_harness.build_estimator:hist_gradient_boosting",
+   "probability_interface": "predict_proba positive-class column; RAW INDEPENDENT_BINARY, never normalized",
+   "scaling_policy": "frozen TRAIN-only StandardScaler (neutral for trees; identical pipeline)",
+   "seed_policy": "random_state=42",
+   "serialization_type": "joblib (estimator, preprocessor, config)",
+   "thread_policy": "OpenMP default; pipeline n_jobs<=4"
+  },
+  "logistic_regression": {
+   "family_id": "logistic_regression",
+   "fixed_parameters": {
+    "class_weight": null,
+    "max_iter": 1000,
+    "random_state": 42,
+    "solver": "lbfgs"
+   },
+   "implementation": "sklearn.linear_model.LogisticRegression",
+   "implementation_version": "1.8.0",
+   "missing_value_policy": "frozen TRAIN-only median/mode imputation",
+   "parameter_namespace": [
+    "C"
+   ],
+   "pipeline_factory": "v3_3b_harness.build_estimator:logistic_regression",
+   "probability_interface": "predict_proba positive-class column; RAW INDEPENDENT_BINARY, never normalized",
+   "scaling_policy": "frozen TRAIN-only StandardScaler (numerics)",
+   "seed_policy": "random_state=42",
+   "serialization_type": "joblib (estimator, preprocessor, config)",
+   "thread_policy": "single-threaded lbfgs (n/a); pipeline n_jobs<=4"
+  },
+  "xgboost": {
+   "early_stopping_policy": "no early stopping; no external validation/2025 for stopping",
+   "family_id": "xgboost",
+   "fixed_parameters": {
+    "colsample_bytree": 0.8,
+    "eval_metric": "logloss",
+    "n_estimators": 300,
+    "n_jobs": 4,
+    "objective": "binary:logistic",
+    "random_state": 42,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 0.8,
+    "tree_method": "hist"
+   },
+   "implementation": "xgboost.XGBClassifier",
+   "implementation_version": "3.2.0",
+   "missing_value_policy": "frozen TRAIN-only median/mode imputation (native missing support unused: identical pipeline keeps arms comparable)",
+   "parameter_namespace": [
+    "learning_rate",
+    "max_depth",
+    "min_child_weight"
+   ],
+   "pipeline_factory": "v3_3b_harness.build_estimator:xgboost",
+   "probability_interface": "predict_proba positive-class column; RAW INDEPENDENT_BINARY, never normalized",
+   "scaling_policy": "frozen TRAIN-only StandardScaler (neutral for trees; identical pipeline)",
+   "seed_policy": "random_state=42",
+   "serialization_type": "joblib (estimator, preprocessor, config)",
+   "thread_policy": "n_jobs=4, tree_method=hist (CPU, M4)"
+  }
+ }
+}

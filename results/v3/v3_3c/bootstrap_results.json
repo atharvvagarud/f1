@@ -1,0 +1,42 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "bootstraps": {
+  "extra_trees": {
+   "ci_hi": 0.015031989726761048,
+   "ci_level": 0.95,
+   "ci_lo": 0.0008494837157261492,
+   "mean_delta": 0.007877456042473821,
+   "replicates": 2000,
+   "seed": 42
+  },
+  "hist_gradient_boosting": {
+   "ci_hi": 0.034684705519227844,
+   "ci_level": 0.95,
+   "ci_lo": 0.010695138691423998,
+   "mean_delta": 0.022277372803542604,
+   "replicates": 2000,
+   "seed": 42
+  },
+  "logistic_regression": {
+   "ci_hi": 0.0015081061590878108,
+   "ci_level": 0.95,
+   "ci_lo": -0.0001747978411370111,
+   "mean_delta": 0.0007342607616351423,
+   "replicates": 2000,
+   "seed": 42
+  },
+  "xgboost": {
+   "ci_hi": 0.015935961246137977,
+   "ci_level": 0.95,
+   "ci_lo": -0.0006893012805084782,
+   "mean_delta": 0.007330078211409922,
+   "replicates": 2000,
+   "seed": 42
+  }
+ },
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "method": "paired race bootstrap B=2000 seed=42 95% CI",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

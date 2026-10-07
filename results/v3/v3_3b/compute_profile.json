@@ -1,0 +1,54 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "artifact_kb": {
+  "extra_trees": 436.4,
+  "hist_gradient_boosting": 635.8,
+  "logistic_regression": 415.4,
+  "xgboost": 598.1
+ },
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "budget_gate": "PASS",
+ "budget_per_family_s": 3600,
+ "budget_total_s": 7200,
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "label": "HARNESS_SMOKE_ONLY",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "projected_total_seconds": 2406.9,
+ "screening_projection": {
+  "extra_trees": {
+   "grid": 8,
+   "inner_fits": 48,
+   "outer_refits": 3,
+   "projected_seconds": 735.9,
+   "seconds_per_fit": 14.429
+  },
+  "hist_gradient_boosting": {
+   "grid": 8,
+   "inner_fits": 48,
+   "outer_refits": 3,
+   "projected_seconds": 823.2,
+   "seconds_per_fit": 16.142
+  },
+  "logistic_regression": {
+   "grid": 4,
+   "inner_fits": 24,
+   "outer_refits": 3,
+   "projected_seconds": 280.9,
+   "seconds_per_fit": 10.402
+  },
+  "xgboost": {
+   "grid": 8,
+   "inner_fits": 48,
+   "outer_refits": 3,
+   "projected_seconds": 566.9,
+   "seconds_per_fit": 11.115
+  }
+ },
+ "smoke_fit_seconds": {
+  "extra_trees": 14.429,
+  "hist_gradient_boosting": 16.142,
+  "logistic_regression": 10.402,
+  "xgboost": 11.115
+ },
+ "smoke_wall_seconds": 88.5
+}

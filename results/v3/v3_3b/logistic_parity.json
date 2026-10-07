@@ -1,0 +1,19 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "brier_baseline": 0.023979666410074676,
+ "brier_difference": 0.0,
+ "brier_harness": 0.023979666410074676,
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "fold": "D1",
+ "gate": "PASS",
+ "label": "HARNESS_SMOKE_ONLY",
+ "prediction_max_abs_difference": 0.0,
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "race_macro_ll_baseline": 0.08067523650595465,
+ "race_macro_ll_difference": 0.0,
+ "race_macro_ll_harness": 0.08067523650595465,
+ "tolerance_ll": 1e-09,
+ "tolerance_prob": 1e-09,
+ "top1_harness": 0.6720482644347198
+}

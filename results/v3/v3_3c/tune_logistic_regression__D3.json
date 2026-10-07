@@ -1,0 +1,184 @@
+{
+ "audit": {
+  "config_aggregates": {
+   "C=0.003": {
+    "config": {
+     "C": 0.003
+    },
+    "max": 0.09527767418604988,
+    "mean": 0.07255269308328784,
+    "min": 0.041415196842793746,
+    "std": 0.0278992728327303
+   },
+   "C=0.01": {
+    "config": {
+     "C": 0.01
+    },
+    "max": 0.09742842219028844,
+    "mean": 0.07251309799695539,
+    "min": 0.03943563529462307,
+    "std": 0.02984553922718738
+   },
+   "C=0.03": {
+    "config": {
+     "C": 0.03
+    },
+    "max": 0.09896648643580352,
+    "mean": 0.07282062315363443,
+    "min": 0.03859675279395448,
+    "std": 0.030984945275975343
+   },
+   "C=0.1": {
+    "config": {
+     "C": 0.1
+    },
+    "max": 0.09968709405657744,
+    "mean": 0.0725553298917236,
+    "min": 0.03730715570739896,
+    "std": 0.031972195120369064
+   }
+  },
+  "estimator_fits": 12,
+  "failures": [],
+  "inner_folds": [
+   {
+    "configs": {
+     "C=0.003": {
+      "hyperparameters": {
+       "C": 0.003
+      },
+      "race_macro_log_loss": 0.09527767418604988
+     },
+     "C=0.01": {
+      "hyperparameters": {
+       "C": 0.01
+      },
+      "race_macro_log_loss": 0.09742842219028844
+     },
+     "C=0.03": {
+      "hyperparameters": {
+       "C": 0.03
+      },
+      "race_macro_log_loss": 0.09896648643580352
+     },
+     "C=0.1": {
+      "hyperparameters": {
+       "C": 0.1
+      },
+      "race_macro_log_loss": 0.09968709405657744
+     }
+    },
+    "inner_fold_id": "D3-I1",
+    "train_seasons": [
+     2018,
+     2019,
+     2020
+    ],
+    "validation_seasons": [
+     2021
+    ]
+   },
+   {
+    "configs": {
+     "C=0.003": {
+      "hyperparameters": {
+       "C": 0.003
+      },
+      "race_macro_log_loss": 0.08096520822101988
+     },
+     "C=0.01": {
+      "hyperparameters": {
+       "C": 0.01
+      },
+      "race_macro_log_loss": 0.08067523650595465
+     },
+     "C=0.03": {
+      "hyperparameters": {
+       "C": 0.03
+      },
+      "race_macro_log_loss": 0.08089863023114527
+     },
+     "C=0.1": {
+      "hyperparameters": {
+       "C": 0.1
+      },
+      "race_macro_log_loss": 0.0806717399111944
+     }
+    },
+    "inner_fold_id": "D3-I2",
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021
+    ],
+    "validation_seasons": [
+     2022
+    ]
+   },
+   {
+    "configs": {
+     "C=0.003": {
+      "hyperparameters": {
+       "C": 0.003
+      },
+      "race_macro_log_loss": 0.041415196842793746
+     },
+     "C=0.01": {
+      "hyperparameters": {
+       "C": 0.01
+      },
+      "race_macro_log_loss": 0.03943563529462307
+     },
+     "C=0.03": {
+      "hyperparameters": {
+       "C": 0.03
+      },
+      "race_macro_log_loss": 0.03859675279395448
+     },
+     "C=0.1": {
+      "hyperparameters": {
+       "C": 0.1
+      },
+      "race_macro_log_loss": 0.03730715570739896
+     }
+    },
+    "inner_fold_id": "D3-I3",
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021,
+     2022
+    ],
+    "validation_seasons": [
+     2023
+    ]
+   }
+  ],
+  "selection": {
+   "best_mean": 0.07251309799695539,
+   "objective": "mean inner-fold race-macro log loss",
+   "selected_config": {
+    "C": 0.01
+   },
+   "selected_key": "C=0.01",
+   "selected_mean": 0.07251309799695539,
+   "tie_break_applied": false,
+   "tie_rule": "difference <= 1e-6 -> simpler preregistered config",
+   "tie_tolerance": 1e-06,
+   "within_tolerance": [
+    "C=0.01"
+   ]
+  },
+  "wall_seconds": 17.4
+ },
+ "selection": {
+  "selected_config": {
+   "C": 0.01
+  },
+  "selected_key": "C=0.01",
+  "selected_mean": 0.07251309799695539,
+  "tie_break_applied": false
+ }
+}

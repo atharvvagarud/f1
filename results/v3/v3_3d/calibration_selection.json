@@ -1,0 +1,164 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "d_prereg_sha": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "selection": {
+  "extra_trees": {
+   "D1": {
+    "outcome": {
+     "RAW": {
+      "brier": 0.02925163184436572,
+      "ll": 0.09147400400556395,
+      "status": "REFERENCE"
+     },
+     "isotonic": {
+      "brier": 0.028635434112404302,
+      "brier_gap_vs_raw": -0.0006161977319614174,
+      "ll": 0.08328820455934668,
+      "ll_gain_vs_raw": 0.008185799446217265,
+      "status": "EVALUATED"
+     },
+     "sigmoid": {
+      "brier": 0.03322099504232659,
+      "brier_gap_vs_raw": 0.00396936319796087,
+      "ll": 0.11239173560115481,
+      "ll_gain_vs_raw": -0.020917731595590863,
+      "status": "EVALUATED"
+     }
+    },
+    "reason": "LL gain 0.008186 > 1e-4, no Brier harm (-6.162e-04) on selection races",
+    "selected_method": "isotonic"
+   },
+   "D2": {
+    "outcome": {
+     "RAW": {
+      "brier": 0.024644162929962878,
+      "ll": 0.08620566793050442,
+      "status": "REFERENCE"
+     },
+     "isotonic": {
+      "brier": 0.024513101470947093,
+      "brier_gap_vs_raw": -0.00013106145901578548,
+      "ll": 0.08052414002770515,
+      "ll_gain_vs_raw": 0.0056815279027992716,
+      "status": "EVALUATED"
+     },
+     "sigmoid": {
+      "brier": 0.02429250995940571,
+      "brier_gap_vs_raw": -0.0003516529705571668,
+      "ll": 0.09200305662838318,
+      "ll_gain_vs_raw": -0.005797388697878755,
+      "status": "EVALUATED"
+     }
+    },
+    "reason": "LL gain 0.005682 > 1e-4, no Brier harm (-1.311e-04) on selection races",
+    "selected_method": "isotonic"
+   },
+   "D3": {
+    "outcome": {
+     "RAW": {
+      "brier": 0.014334100152080228,
+      "ll": 0.05465635546601883,
+      "status": "REFERENCE"
+     },
+     "isotonic": {
+      "brier": 0.01410856968172209,
+      "brier_gap_vs_raw": -0.00022553047035813768,
+      "ll": 0.04767963826396655,
+      "ll_gain_vs_raw": 0.006976717202052278,
+      "status": "EVALUATED"
+     },
+     "sigmoid": {
+      "brier": 0.0125922985545752,
+      "brier_gap_vs_raw": -0.0017418015975050275,
+      "ll": 0.05166804202907686,
+      "ll_gain_vs_raw": 0.002988313436941968,
+      "status": "EVALUATED"
+     }
+    },
+    "reason": "LL gain 0.006977 > 1e-4, no Brier harm (-2.255e-04) on selection races",
+    "selected_method": "isotonic"
+   }
+  },
+  "xgboost": {
+   "D1": {
+    "outcome": {
+     "RAW": {
+      "brier": 0.03361851213289917,
+      "ll": 0.09696023750964025,
+      "status": "REFERENCE"
+     },
+     "isotonic": {
+      "brier": 0.03633042312754535,
+      "brier_gap_vs_raw": 0.002711910994646183,
+      "ll": 0.21390093338251187,
+      "ll_gain_vs_raw": -0.11694069587287162,
+      "status": "EVALUATED"
+     },
+     "sigmoid": {
+      "brier": 0.04071412526913278,
+      "brier_gap_vs_raw": 0.007095613136233615,
+      "ll": 0.13664440975819792,
+      "ll_gain_vs_raw": -0.039684172248557664,
+      "status": "EVALUATED"
+     }
+    },
+    "reason": "no calibrated variant beat RAW beyond 1e-4 without Brier harm on train-history selection races",
+    "selected_method": "RAW"
+   },
+   "D2": {
+    "outcome": {
+     "RAW": {
+      "brier": 0.024965425490843792,
+      "ll": 0.08472348710796199,
+      "status": "REFERENCE"
+     },
+     "isotonic": {
+      "brier": 0.026532573800624935,
+      "brier_gap_vs_raw": 0.0015671483097811426,
+      "ll": 0.08802609949411491,
+      "ll_gain_vs_raw": -0.0033026123861529255,
+      "status": "EVALUATED"
+     },
+     "sigmoid": {
+      "brier": 0.030463461613164176,
+      "brier_gap_vs_raw": 0.005498036122320384,
+      "ll": 0.11634939225059036,
+      "ll_gain_vs_raw": -0.03162590514262838,
+      "status": "EVALUATED"
+     }
+    },
+    "reason": "no calibrated variant beat RAW beyond 1e-4 without Brier harm on train-history selection races",
+    "selected_method": "RAW"
+   },
+   "D3": {
+    "outcome": {
+     "RAW": {
+      "brier": 0.012195827768849948,
+      "ll": 0.044898486765007684,
+      "status": "REFERENCE"
+     },
+     "isotonic": {
+      "brier": 0.015081226531712974,
+      "brier_gap_vs_raw": 0.0028853987628630253,
+      "ll": 0.052785506523680484,
+      "ll_gain_vs_raw": -0.0078870197586728,
+      "status": "EVALUATED"
+     },
+     "sigmoid": {
+      "brier": 0.013932974629713159,
+      "brier_gap_vs_raw": 0.0017371468608632108,
+      "ll": 0.06162308892145067,
+      "ll_gain_vs_raw": -0.01672460215644299,
+      "status": "EVALUATED"
+     }
+    },
+    "reason": "no calibrated variant beat RAW beyond 1e-4 without Brier harm on train-history selection races",
+    "selected_method": "RAW"
+   }
+  }
+ }
+}

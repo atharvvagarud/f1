@@ -1,0 +1,37 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "label": "HARNESS_SMOKE_ONLY",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "roundtrips": {
+  "extra_trees": {
+   "config_id": "max_features=sqrt;min_samples_leaf=1;max_depth=None",
+   "equivalent": true,
+   "family": "extra_trees",
+   "max_abs_probability_difference": 0.0,
+   "tolerance": 1e-12
+  },
+  "hist_gradient_boosting": {
+   "config_id": "lr=0.1;leaves=31;min_leaf=20",
+   "equivalent": true,
+   "family": "hist_gradient_boosting",
+   "max_abs_probability_difference": 0.0,
+   "tolerance": 1e-12
+  },
+  "logistic_regression": {
+   "config_id": "C=0.01",
+   "equivalent": true,
+   "family": "logistic_regression",
+   "max_abs_probability_difference": 0.0,
+   "tolerance": 1e-12
+  },
+  "xgboost": {
+   "config_id": "lr=0.1;max_depth=3;min_child_weight=1",
+   "equivalent": true,
+   "family": "xgboost",
+   "max_abs_probability_difference": 0.0,
+   "tolerance": 1e-12
+  }
+ }
+}

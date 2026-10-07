@@ -1,0 +1,116 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "deltas_vs_baseline": {
+  "extra_trees": {
+   "EARLY": 0.00848889551294961,
+   "LATE": 0.006133805319741156,
+   "MID": 0.008876087098189683
+  },
+  "hist_gradient_boosting": {
+   "EARLY": 0.024966684500360714,
+   "LATE": 0.01841034478244591,
+   "MID": 0.023871490754121746
+  },
+  "logistic_regression": {
+   "EARLY": 0.000145208162335847,
+   "LATE": 0.0011037606509550976,
+   "MID": 0.0010395746875358491
+  },
+  "xgboost": {
+   "EARLY": 0.00977898679708522,
+   "LATE": 0.004247999758570625,
+   "MID": 0.008399091862738822
+  }
+ },
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "stages": {
+  "extra_trees": {
+   "EARLY": {
+    "n_races": 68,
+    "n_states": 25276,
+    "race_macro_ll": 0.09655988811187642
+   },
+   "LATE": {
+    "n_races": 67,
+    "n_states": 24308,
+    "race_macro_ll": 0.05569446846975504
+   },
+   "MID": {
+    "n_races": 68,
+    "n_states": 25021,
+    "race_macro_ll": 0.07213894798568271
+   }
+  },
+  "hist_gradient_boosting": {
+   "EARLY": {
+    "n_races": 68,
+    "n_states": 25276,
+    "race_macro_ll": 0.11303767709928753
+   },
+   "LATE": {
+    "n_races": 67,
+    "n_states": 24308,
+    "race_macro_ll": 0.06797100793245979
+   },
+   "MID": {
+    "n_races": 68,
+    "n_states": 25021,
+    "race_macro_ll": 0.08713435164161477
+   }
+  },
+  "logistic_regression": {
+   "EARLY": {
+    "n_races": 68,
+    "n_states": 25276,
+    "race_macro_ll": 0.08821620076126266
+   },
+   "LATE": {
+    "n_races": 67,
+    "n_states": 24308,
+    "race_macro_ll": 0.05066442380096898
+   },
+   "MID": {
+    "n_races": 68,
+    "n_states": 25021,
+    "race_macro_ll": 0.06430243557502888
+   }
+  },
+  "v3_1b_baseline": {
+   "EARLY": {
+    "n_races": 68,
+    "n_states": 25276,
+    "race_macro_ll": 0.08807099259892681
+   },
+   "LATE": {
+    "n_races": 67,
+    "n_states": 24308,
+    "race_macro_ll": 0.04956066315001388
+   },
+   "MID": {
+    "n_races": 68,
+    "n_states": 25021,
+    "race_macro_ll": 0.06326286088749303
+   }
+  },
+  "xgboost": {
+   "EARLY": {
+    "n_races": 68,
+    "n_states": 25276,
+    "race_macro_ll": 0.09784997939601203
+   },
+   "LATE": {
+    "n_races": 67,
+    "n_states": 24308,
+    "race_macro_ll": 0.053808662908584506
+   },
+   "MID": {
+    "n_races": 68,
+    "n_states": 25021,
+    "race_macro_ll": 0.07166195275023185
+   }
+  }
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "estimator_fit_seconds": 1.721,
+ "feature_hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+ "hyperparameters": {
+  "colsample_bytree": 0.8,
+  "eval_metric": "logloss",
+  "learning_rate": 0.03,
+  "max_depth": 3,
+  "min_child_weight": 5,
+  "n_estimators": 300,
+  "n_jobs": 4,
+  "objective": "binary:logistic",
+  "random_state": 42,
+  "reg_alpha": 0.0,
+  "reg_lambda": 1.0,
+  "subsample": 0.8,
+  "tree_method": "hist"
+ },
+ "library_versions": {
+  "numpy": "2.4.2",
+  "pandas": "2.3.3",
+  "sklearn": "1.8.0",
+  "xgboost": "3.2.0"
+ },
+ "model_artifact": "data/v3/v3_3e/final_xgb_arm_b.joblib",
+ "model_artifact_sha256": "842ad90696b6a0b1d6930b8a9cdbb2e47396aeee00e5412424dd3b45ff91db4f",
+ "no_2025_in_train": true,
+ "preprocessing_fit_seconds": 1.431,
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "seed": 42,
+ "thread_policy": {
+  "n_jobs": 4,
+  "note": "CPU only, M4, n_jobs<=4"
+ },
+ "training_races": 149,
+ "training_rows": 162728,
+ "training_seasons": [
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "transformed_dim": 132
+}

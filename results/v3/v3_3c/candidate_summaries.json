@@ -1,0 +1,373 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "summaries": {
+  "extra_trees": {
+   "baseline_ece": {
+    "D1": 0.007887998650100824,
+    "D2": 0.01145583215431165,
+    "D3": 0.01277771675858395
+   },
+   "bootstrap_ci": [
+    0.0008494837157261492,
+    0.015031989726761048
+   ],
+   "brier": {
+    "D1": 0.027886761120634172,
+    "D2": 0.010327043479162688,
+    "D3": 0.023090926485700488
+   },
+   "calibration": {
+    "ece": 0.01708127871018397,
+    "extreme_probability_frequency": 0.668976610146773,
+    "max_probability": 0.9909679139087033,
+    "mean_probability": 0.055152624431375856,
+    "n_bins": 10
+   },
+   "compute": {
+    "estimator_fits": 51,
+    "oof_kb": 872.5,
+    "tuning_plus_outer_wall_s": 1266.9
+   },
+   "delta_vs_baseline": 0.007877456042473821,
+   "ece": {
+    "D1": 0.026065233066123763,
+    "D2": 0.023269725439360366,
+    "D3": 0.012151052233667095
+   },
+   "family": "extra_trees",
+   "fold_deltas": {
+    "D1": 0.012863311211550377,
+    "D2": 0.004078518480139015,
+    "D3": 0.006789448236293905
+   },
+   "limitations": [
+    "pre-2025 only",
+    "single tuning objective (LL)",
+    "RAW probabilities, no calibration fitted"
+   ],
+   "pr": {
+    "D1": 0.7338075178592285,
+    "D2": 0.9546404813091441,
+    "D3": 0.7411509095737161
+   },
+   "primary_per_fold": {
+    "D1": 0.09353854771750503,
+    "D2": 0.04351415377476209,
+    "D3": 0.08682506945075147
+   },
+   "primary_pooled_ll": 0.07498472205364577,
+   "roc": {
+    "D1": 0.9732672738866562,
+    "D2": 0.9972325052820872,
+    "D3": 0.9642283561475699
+   },
+   "selected_configs": [
+    "max_features=sqrt;min_samples_leaf=1;max_depth=None",
+    "max_features=sqrt;min_samples_leaf=5;max_depth=20",
+    "max_features=sqrt;min_samples_leaf=5;max_depth=None"
+   ],
+   "stability": "major instability",
+   "stage_deltas": {
+    "EARLY": 0.00848889551294961,
+    "LATE": 0.006133805319741156,
+    "MID": 0.008876087098189683
+   },
+   "temporal": "CONSISTENT_REGRESSION",
+   "topk": {
+    "D1": {
+     "top1": 0.6690742235629009,
+     "top3": 0.9664783107447849
+    },
+    "D2": {
+     "top1": 0.8992454687115559,
+     "top3": 0.9976215861559912
+    },
+    "D3": {
+     "top1": 0.7069406805179163,
+     "top3": 0.8964920204757603
+    },
+    "disagreements_baseline_correct": 3,
+    "disagreements_candidate_correct": 9,
+    "n_races": 68,
+    "top1_agreement_with_baseline": 55
+   }
+  },
+  "hist_gradient_boosting": {
+   "baseline_ece": {
+    "D1": 0.007887998650100824,
+    "D2": 0.01145583215431165,
+    "D3": 0.01277771675858395
+   },
+   "bootstrap_ci": [
+    0.010695138691423998,
+    0.034684705519227844
+   ],
+   "brier": {
+    "D1": 0.032079603663018846,
+    "D2": 0.012761734394617774,
+    "D3": 0.02828586934756395
+   },
+   "calibration": {
+    "ece": 0.01755792226991692,
+    "extreme_probability_frequency": 0.9126466054553984,
+    "max_probability": 0.9889865174273025,
+    "mean_probability": 0.03860326594835098,
+    "n_bins": 10
+   },
+   "compute": {
+    "estimator_fits": 51,
+    "oof_kb": 1235.5,
+    "tuning_plus_outer_wall_s": 239.2
+   },
+   "delta_vs_baseline": 0.022277372803542604,
+   "ece": {
+    "D1": 0.022969799843987858,
+    "D2": 0.009144345338729145,
+    "D3": 0.02348787083852172
+   },
+   "family": "hist_gradient_boosting",
+   "fold_deltas": {
+    "D1": 0.0349839049401464,
+    "D2": 0.0021635030659997376,
+    "D3": 0.02906743227107006
+   },
+   "limitations": [
+    "pre-2025 only",
+    "single tuning objective (LL)",
+    "RAW probabilities, no calibration fitted"
+   ],
+   "pr": {
+    "D1": 0.6717782942587569,
+    "D2": 0.8866264211087355,
+    "D3": 0.6873219347187559
+   },
+   "primary_per_fold": {
+    "D1": 0.11565914144610105,
+    "D2": 0.04159913836062281,
+    "D3": 0.10910305348552762
+   },
+   "primary_pooled_ll": 0.08938463881471453,
+   "roc": {
+    "D1": 0.9655475041688958,
+    "D2": 0.9923810780905332,
+    "D3": 0.9657300201967742
+   },
+   "selected_configs": [
+    "lr=0.05;leaves=15;min_leaf=20",
+    "lr=0.05;leaves=15;min_leaf=20",
+    "lr=0.05;leaves=15;min_leaf=20"
+   ],
+   "stability": "stable",
+   "stage_deltas": {
+    "EARLY": 0.024966684500360714,
+    "LATE": 0.01841034478244591,
+    "MID": 0.023871490754121746
+   },
+   "temporal": "CONSISTENT_REGRESSION",
+   "topk": {
+    "D1": {
+     "top1": 0.5846964353995836,
+     "top3": 0.9469346135871182
+    },
+    "D2": {
+     "top1": 0.857254162224227,
+     "top3": 0.9985647502665463
+    },
+    "D3": {
+     "top1": 0.6274841915085817,
+     "top3": 0.9471168322794339
+    },
+    "disagreements_baseline_correct": 7,
+    "disagreements_candidate_correct": 3,
+    "n_races": 68,
+    "top1_agreement_with_baseline": 53
+   }
+  },
+  "logistic_regression": {
+   "baseline_ece": {
+    "D1": 0.007887998650100824,
+    "D2": 0.01145583215431165,
+    "D3": 0.01277771675858395
+   },
+   "bootstrap_ci": [
+    -0.0001747978411370111,
+    0.0015081061590878108
+   ],
+   "brier": {
+    "D1": 0.02411983368790492,
+    "D2": 0.01039670854322952,
+    "D3": 0.022852227753393888
+   },
+   "calibration": {
+    "ece": 0.010135017975757306,
+    "extreme_probability_frequency": 0.7626968701829636,
+    "max_probability": 0.9894094049690946,
+    "mean_probability": 0.051164511722460435,
+    "n_bins": 10
+   },
+   "compute": {
+    "estimator_fits": 27,
+    "oof_kb": 1308.0,
+    "tuning_plus_outer_wall_s": 41.8
+   },
+   "delta_vs_baseline": 0.0007342607616351423,
+   "ece": {
+    "D1": 0.010636453745348272,
+    "D2": 0.014023560583190727,
+    "D3": 0.01277771675858395
+   },
+   "family": "logistic_regression",
+   "fold_deltas": {
+    "D1": 0.00028997171506522923,
+    "D2": 0.0019795615481706733,
+    "D3": 0.0
+   },
+   "limitations": [
+    "pre-2025 only",
+    "single tuning objective (LL)",
+    "RAW probabilities, no calibration fitted"
+   ],
+   "pr": {
+    "D1": 0.7357737586608625,
+    "D2": 0.9294533551511113,
+    "D3": 0.7758640218941313
+   },
+   "primary_per_fold": {
+    "D1": 0.08096520822101988,
+    "D2": 0.041415196842793746,
+    "D3": 0.08003562121445756
+   },
+   "primary_pooled_ll": 0.06784152677280707,
+   "roc": {
+    "D1": 0.9760530097040832,
+    "D2": 0.995523640122837,
+    "D3": 0.972330261203787
+   },
+   "selected_configs": [
+    "C=0.003",
+    "C=0.003",
+    "C=0.01"
+   ],
+   "stability": "minor variation",
+   "stage_deltas": {
+    "EARLY": 0.000145208162335847,
+    "LATE": 0.0011037606509550976,
+    "MID": 0.0010395746875358491
+   },
+   "temporal": "MIXED",
+   "topk": {
+    "D1": {
+     "top1": 0.6666100182691083,
+     "top3": 0.9750180566767218
+    },
+    "D2": {
+     "top1": 0.9049044533748872,
+     "top3": 0.9970474862626096
+    },
+    "D3": {
+     "top1": 0.7546296296296297,
+     "top3": 0.8876844323998796
+    },
+    "disagreements_baseline_correct": 0,
+    "disagreements_candidate_correct": 1,
+    "n_races": 68,
+    "top1_agreement_with_baseline": 67
+   }
+  },
+  "xgboost": {
+   "baseline_ece": {
+    "D1": 0.007887998650100824,
+    "D2": 0.01145583215431165,
+    "D3": 0.01277771675858395
+   },
+   "bootstrap_ci": [
+    -0.0006893012805084782,
+    0.015935961246137977
+   ],
+   "brier": {
+    "D1": 0.027597352896314018,
+    "D2": 0.012553654392515386,
+    "D3": 0.02435681957585817
+   },
+   "calibration": {
+    "ece": 0.012069120248336177,
+    "extreme_probability_frequency": 0.8637624824073453,
+    "max_probability": 0.9804726243019104,
+    "mean_probability": 0.04359949284998041,
+    "n_bins": 10
+   },
+   "compute": {
+    "estimator_fits": 51,
+    "oof_kb": 1155.0,
+    "tuning_plus_outer_wall_s": 154.2
+   },
+   "delta_vs_baseline": 0.007330078211409922,
+   "ece": {
+    "D1": 0.016921277965654565,
+    "D2": 0.013922296610277954,
+    "D3": 0.014283142162728692
+   },
+   "family": "xgboost",
+   "fold_deltas": {
+    "D1": 0.011899100003668436,
+    "D2": 0.0016992078815090753,
+    "D3": 0.008303439370915391
+   },
+   "limitations": [
+    "pre-2025 only",
+    "single tuning objective (LL)",
+    "RAW probabilities, no calibration fitted"
+   ],
+   "pr": {
+    "D1": 0.6721478926946278,
+    "D2": 0.9030732063708041,
+    "D3": 0.7387244822631541
+   },
+   "primary_per_fold": {
+    "D1": 0.09257433650962309,
+    "D2": 0.04113484317613215,
+    "D3": 0.08833906058537296
+   },
+   "primary_pooled_ll": 0.07443734422258186,
+   "roc": {
+    "D1": 0.9702151284137006,
+    "D2": 0.9950044396074511,
+    "D3": 0.9701173512379949
+   },
+   "selected_configs": [
+    "lr=0.05;max_depth=3;min_child_weight=5",
+    "lr=0.05;max_depth=3;min_child_weight=5",
+    "lr=0.05;max_depth=3;min_child_weight=5"
+   ],
+   "stability": "stable",
+   "stage_deltas": {
+    "EARLY": 0.00977898679708522,
+    "LATE": 0.004247999758570625,
+    "MID": 0.008399091862738822
+   },
+   "temporal": "CONSISTENT_REGRESSION",
+   "topk": {
+    "D1": {
+     "top1": 0.607256659727238,
+     "top3": 0.9464247780090921
+    },
+    "D2": {
+     "top1": 0.8980972689247929,
+     "top3": 0.9997949643237923
+    },
+    "D3": {
+     "top1": 0.714769647696477,
+     "top3": 0.9383845227341162
+    },
+    "disagreements_baseline_correct": 10,
+    "disagreements_candidate_correct": 6,
+    "n_races": 68,
+    "top1_agreement_with_baseline": 48
+   }
+  }
+ }
+}

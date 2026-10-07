@@ -1,0 +1,89 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "oof": {
+  "extra_trees": {
+   "n_races": 68,
+   "n_rows": 74605,
+   "per_fold_ll": {
+    "D1": 0.09353854771750503,
+    "D2": 0.04351415377476209,
+    "D3": 0.08682506945075147
+   },
+   "pooled_race_macro_ll": 0.07498472205364577,
+   "prob_hash": "c01da12ccb8fd933d7aa297e9b73b6fcf0d32beae91453bf3598717d8595f67f",
+   "seasons": [
+    2022,
+    2023,
+    2024
+   ]
+  },
+  "hist_gradient_boosting": {
+   "n_races": 68,
+   "n_rows": 74605,
+   "per_fold_ll": {
+    "D1": 0.11565914144610105,
+    "D2": 0.04159913836062281,
+    "D3": 0.10910305348552762
+   },
+   "pooled_race_macro_ll": 0.08938463881471453,
+   "prob_hash": "9a3c195bbb61bd1857d1ed13f07408c9bf12983528638b016fd5a5f045b44364",
+   "seasons": [
+    2022,
+    2023,
+    2024
+   ]
+  },
+  "logistic_regression": {
+   "n_races": 68,
+   "n_rows": 74605,
+   "per_fold_ll": {
+    "D1": 0.08096520822101988,
+    "D2": 0.041415196842793746,
+    "D3": 0.08003562121445756
+   },
+   "pooled_race_macro_ll": 0.06784152677280707,
+   "prob_hash": "9f7af7e50a4401a337a2668a02918ba476dfda0e6953df148236370da17b543b",
+   "seasons": [
+    2022,
+    2023,
+    2024
+   ]
+  },
+  "v3_1b_baseline": {
+   "n_races": 68,
+   "n_rows": 74605,
+   "per_fold_ll": {
+    "D1": 0.08067523650595465,
+    "D2": 0.03943563529462307,
+    "D3": 0.08003562121445756
+   },
+   "pooled_race_macro_ll": 0.06710726601117191,
+   "prob_hash": "71649b6a757a80eb5045bbe76dba2f80f93c95ab6051729c42492c30df0e4240",
+   "seasons": [
+    2022,
+    2023,
+    2024
+   ]
+  },
+  "xgboost": {
+   "n_races": 68,
+   "n_rows": 74605,
+   "per_fold_ll": {
+    "D1": 0.09257433650962309,
+    "D2": 0.04113484317613215,
+    "D3": 0.08833906058537296
+   },
+   "pooled_race_macro_ll": 0.07443734422258186,
+   "prob_hash": "b4cebaf04c75281b3bd6618f5cbbbce52a09b96627629f49175a5b9850dd6b8b",
+   "seasons": [
+    2022,
+    2023,
+    2024
+   ]
+  }
+ },
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

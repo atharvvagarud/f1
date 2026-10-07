@@ -1,0 +1,41 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "temporal": {
+  "extra_trees": {
+   "classification": "CONSISTENT_REGRESSION",
+   "fold_deltas": {
+    "D1": 0.012863311211550377,
+    "D2": 0.004078518480139015,
+    "D3": 0.006789448236293905
+   }
+  },
+  "hist_gradient_boosting": {
+   "classification": "CONSISTENT_REGRESSION",
+   "fold_deltas": {
+    "D1": 0.0349839049401464,
+    "D2": 0.0021635030659997376,
+    "D3": 0.02906743227107006
+   }
+  },
+  "logistic_regression": {
+   "classification": "MIXED",
+   "fold_deltas": {
+    "D1": 0.00028997171506522923,
+    "D2": 0.0019795615481706733,
+    "D3": 0.0
+   }
+  },
+  "xgboost": {
+   "classification": "CONSISTENT_REGRESSION",
+   "fold_deltas": {
+    "D1": 0.011899100003668436,
+    "D2": 0.0016992078815090753,
+    "D3": 0.008303439370915391
+   }
+  }
+ }
+}

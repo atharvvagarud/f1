@@ -1,0 +1,40 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "d_prereg_sha": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "pairs": {
+  "baseline__vs__extra_trees": {
+   "high_confidence_disagreement_states": 911,
+   "mean_abs_probability_gap": 0.02127457599254858,
+   "per_race_ll_correlation": 0.9202889654396156,
+   "prediction_correlation": 0.9466274124586906,
+   "residual_correlation": 0.9255980378679591,
+   "top1_disagreement_races": 12,
+   "top1_disagreements_a_correct": 2,
+   "top1_disagreements_b_correct": 8
+  },
+  "baseline__vs__xgboost": {
+   "high_confidence_disagreement_states": 928,
+   "mean_abs_probability_gap": 0.019186462273308138,
+   "per_race_ll_correlation": 0.8695011704033536,
+   "prediction_correlation": 0.929374152435516,
+   "residual_correlation": 0.9036358736238017,
+   "top1_disagreement_races": 16,
+   "top1_disagreements_a_correct": 7,
+   "top1_disagreements_b_correct": 5
+  },
+  "extra_trees__vs__xgboost": {
+   "high_confidence_disagreement_states": 715,
+   "mean_abs_probability_gap": 0.02101264833856194,
+   "per_race_ll_correlation": 0.8828947066709282,
+   "prediction_correlation": 0.9432407466521265,
+   "residual_correlation": 0.9311043178562232,
+   "top1_disagreement_races": 13,
+   "top1_disagreements_a_correct": 10,
+   "top1_disagreements_b_correct": 2
+  }
+ },
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

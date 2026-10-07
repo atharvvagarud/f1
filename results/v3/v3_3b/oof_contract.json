@@ -1,0 +1,50 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "columns": [
+  "state_id",
+  "season",
+  "race_id",
+  "driver_id",
+  "target",
+  "fold",
+  "stage",
+  "feature_arm",
+  "model_family",
+  "model_config_id",
+  "probability"
+ ],
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "frames": {
+  "extra_trees": {
+   "n_races": 22,
+   "n_rows": 23577,
+   "sorted_rows": 23577,
+   "stable_sorted": false
+  },
+  "hist_gradient_boosting": {
+   "n_races": 22,
+   "n_rows": 23577,
+   "sorted_rows": 23577,
+   "stable_sorted": false
+  },
+  "logistic_regression": {
+   "n_races": 22,
+   "n_rows": 23577,
+   "sorted_rows": 23577,
+   "stable_sorted": false
+  },
+  "xgboost": {
+   "n_races": 22,
+   "n_rows": 23577,
+   "sorted_rows": 23577,
+   "stable_sorted": false
+  }
+ },
+ "label": "HARNESS_SMOKE_ONLY",
+ "optional": [
+  "baseline_probability"
+ ],
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "storage": "data/v3/v3_3b/*.parquet (ignored)"
+}

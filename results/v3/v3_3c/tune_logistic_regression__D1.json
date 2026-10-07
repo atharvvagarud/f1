@@ -1,0 +1,107 @@
+{
+ "audit": {
+  "config_aggregates": {
+   "C=0.003": {
+    "config": {
+     "C": 0.003
+    },
+    "max": 0.09527767418604988,
+    "mean": 0.09527767418604988,
+    "min": 0.09527767418604988,
+    "std": 0.0
+   },
+   "C=0.01": {
+    "config": {
+     "C": 0.01
+    },
+    "max": 0.09742842219028844,
+    "mean": 0.09742842219028844,
+    "min": 0.09742842219028844,
+    "std": 0.0
+   },
+   "C=0.03": {
+    "config": {
+     "C": 0.03
+    },
+    "max": 0.09896648643580352,
+    "mean": 0.09896648643580352,
+    "min": 0.09896648643580352,
+    "std": 0.0
+   },
+   "C=0.1": {
+    "config": {
+     "C": 0.1
+    },
+    "max": 0.09968709405657744,
+    "mean": 0.09968709405657744,
+    "min": 0.09968709405657744,
+    "std": 0.0
+   }
+  },
+  "estimator_fits": 4,
+  "failures": [],
+  "inner_folds": [
+   {
+    "configs": {
+     "C=0.003": {
+      "hyperparameters": {
+       "C": 0.003
+      },
+      "race_macro_log_loss": 0.09527767418604988
+     },
+     "C=0.01": {
+      "hyperparameters": {
+       "C": 0.01
+      },
+      "race_macro_log_loss": 0.09742842219028844
+     },
+     "C=0.03": {
+      "hyperparameters": {
+       "C": 0.03
+      },
+      "race_macro_log_loss": 0.09896648643580352
+     },
+     "C=0.1": {
+      "hyperparameters": {
+       "C": 0.1
+      },
+      "race_macro_log_loss": 0.09968709405657744
+     }
+    },
+    "inner_fold_id": "D1-I1",
+    "train_seasons": [
+     2018,
+     2019,
+     2020
+    ],
+    "validation_seasons": [
+     2021
+    ]
+   }
+  ],
+  "selection": {
+   "best_mean": 0.09527767418604988,
+   "objective": "mean inner-fold race-macro log loss",
+   "selected_config": {
+    "C": 0.003
+   },
+   "selected_key": "C=0.003",
+   "selected_mean": 0.09527767418604988,
+   "tie_break_applied": false,
+   "tie_rule": "difference <= 1e-6 -> simpler preregistered config",
+   "tie_tolerance": 1e-06,
+   "within_tolerance": [
+    "C=0.003"
+   ]
+  },
+  "wall_seconds": 11.0
+ },
+ "selection": {
+  "selected_config": {
+   "C": 0.003
+  },
+  "selected_key": "C=0.003",
+  "selected_mean": 0.09527767418604988,
+  "tie_break_applied": false
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "a_contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "commands": [
+  "uv run python scripts/freeze_v3_3b_prereg.py",
+  "uv run python scripts/run_v3_3b_smoke.py",
+  "uv run pytest tests/test_v3_3b_harness.py tests/test_v3_3a_contract.py -q"
+ ],
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "label": "HARNESS_SMOKE_ONLY",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

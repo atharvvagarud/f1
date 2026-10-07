@@ -1,0 +1,691 @@
+{
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "calibration": {
+  "binning": "equal_width",
+  "bins": [
+   {
+    "bin": 0,
+    "count": 22754,
+    "hi": 0.1,
+    "lo": 0.0,
+    "mean_predicted": 0.002171079836114133,
+    "observed_frequency": 0.0032082271249011165,
+    "weight": 0.9317009253951355
+   },
+   {
+    "bin": 1,
+    "count": 254,
+    "hi": 0.2,
+    "lo": 0.1,
+    "mean_predicted": 0.14521745471080003,
+    "observed_frequency": 0.421259842519685,
+    "weight": 0.010400458602899025
+   },
+   {
+    "bin": 2,
+    "count": 100,
+    "hi": 0.30000000000000004,
+    "lo": 0.2,
+    "mean_predicted": 0.24602930830245473,
+    "observed_frequency": 0.21,
+    "weight": 0.004094668741298829
+   },
+   {
+    "bin": 3,
+    "count": 100,
+    "hi": 0.4,
+    "lo": 0.30000000000000004,
+    "mean_predicted": 0.3454387358123306,
+    "observed_frequency": 0.43,
+    "weight": 0.004094668741298829
+   },
+   {
+    "bin": 4,
+    "count": 104,
+    "hi": 0.5,
+    "lo": 0.4,
+    "mean_predicted": 0.44881595600482893,
+    "observed_frequency": 0.5288461538461539,
+    "weight": 0.004258455490950782
+   },
+   {
+    "bin": 5,
+    "count": 84,
+    "hi": 0.6000000000000001,
+    "lo": 0.5,
+    "mean_predicted": 0.5580393098649655,
+    "observed_frequency": 0.7976190476190477,
+    "weight": 0.0034395217426910164
+   },
+   {
+    "bin": 6,
+    "count": 146,
+    "hi": 0.7000000000000001,
+    "lo": 0.6000000000000001,
+    "mean_predicted": 0.6431574053670951,
+    "observed_frequency": 0.9178082191780822,
+    "weight": 0.00597821636229629
+   },
+   {
+    "bin": 7,
+    "count": 136,
+    "hi": 0.8,
+    "lo": 0.7000000000000001,
+    "mean_predicted": 0.7590086043673236,
+    "observed_frequency": 0.9117647058823529,
+    "weight": 0.005568749488166407
+   },
+   {
+    "bin": 8,
+    "count": 363,
+    "hi": 0.9,
+    "lo": 0.8,
+    "mean_predicted": 0.8545071988686059,
+    "observed_frequency": 0.9035812672176309,
+    "weight": 0.014863647530914749
+   },
+   {
+    "bin": 9,
+    "count": 381,
+    "hi": 1.0,
+    "lo": 0.9,
+    "mean_predicted": 0.9516678353781362,
+    "observed_frequency": 0.979002624671916,
+    "weight": 0.015600687904348539
+   }
+  ],
+  "brier": 0.012669115221464602,
+  "expected_calibration_error": 0.009144345338729145,
+  "n": 24422,
+  "n_bins": 10,
+  "status": "OK"
+ },
+ "config_dict": {
+  "learning_rate": 0.05,
+  "max_leaf_nodes": 15,
+  "min_samples_leaf": 20
+ },
+ "convergence_warnings": [],
+ "family": "hist_gradient_boosting",
+ "fold": "D2",
+ "metrics": {
+  "brier": {
+   "race_macro": 0.012761734394617774,
+   "state_pooled": 0.012669115221464602
+  },
+  "log_loss": {
+   "race_macro": 0.04159913836062281,
+   "state_pooled": 0.04118408321020485
+  },
+  "pr_auc": {
+   "race_macro": 0.8866264211087355,
+   "state_pooled": 0.9281301222456524
+  },
+  "roc_auc": {
+   "race_macro": 0.9923810780905332,
+   "state_pooled": 0.996084241929647
+  }
+ },
+ "model_config_id": "lr=0.05;leaves=15;min_leaf=20",
+ "per_race_log_loss": {
+  "2023-r01-R": 0.014470767258200463,
+  "2023-r02-R": 0.02934780420395443,
+  "2023-r03-R": 0.005679711220612408,
+  "2023-r04-R": 0.12708885021959973,
+  "2023-r05-R": 0.05530494387818051,
+  "2023-r06-R": 0.001901858456431619,
+  "2023-r07-R": 0.04412062595973197,
+  "2023-r08-R": 0.00471603106213156,
+  "2023-r09-R": 0.04900809634773823,
+  "2023-r10-R": 0.025317316326859678,
+  "2023-r11-R": 0.011099499057676581,
+  "2023-r12-R": 0.07163872710488171,
+  "2023-r13-R": 0.14178534752259297,
+  "2023-r14-R": 0.033139620498057305,
+  "2023-r15-R": 0.14993833630170025,
+  "2023-r16-R": 0.003759318647686528,
+  "2023-r17-R": 0.0031569657428853187,
+  "2023-r18-R": 0.028569798895043103,
+  "2023-r19-R": 0.018432393400616916,
+  "2023-r20-R": 0.014088913732297773,
+  "2023-r21-R": 0.06596291323986707,
+  "2023-r22-R": 0.01665320485695591
+ },
+ "provenance": {
+  "a_contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+  "b_prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+  "calibration": "RAW",
+  "code_version": "197979d40af0c9dbf90667781d9c83e41613b047",
+  "dataset_identity": {
+   "dynamics_content_sha": "40ef05809e2932d725785a0e991bcecede8d884f2388affec3f56147611696a1",
+   "matrix_content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db"
+  },
+  "feature_identity": {
+   "feature_arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+   "feature_count": 110,
+   "feature_hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e"
+  },
+  "fold_identity": {
+   "fold": "D2",
+   "train_seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+   ],
+   "validation_seasons": [
+    2023
+   ]
+  },
+  "hyperparameters": {
+   "early_stopping": false,
+   "estimator": "HistGradientBoostingClassifier",
+   "l2_regularization": 0.0,
+   "learning_rate": 0.05,
+   "loss": "log_loss",
+   "max_depth": null,
+   "max_iter": 200,
+   "max_leaf_nodes": 15,
+   "min_samples_leaf": 20,
+   "random_state": 42
+  },
+  "library_versions": {
+   "numpy": "2.4.2",
+   "pandas": "2.3.3",
+   "sklearn": "1.8.0",
+   "xgboost": "3.2.0"
+  },
+  "model_config_id": "lr=0.05;leaves=15;min_leaf=20",
+  "model_family": "hist_gradient_boosting",
+  "seed": 42,
+  "task_identity": {
+   "label": "is_winner",
+   "semantics": "INDEPENDENT_BINARY",
+   "task": "winner"
+  },
+  "thread_policy": {
+   "n_jobs": 4,
+   "note": "CPU only, M4, n_jobs<=4"
+  }
+ },
+ "stages": {
+  "EARLY": {
+   "brier": 0.01832959222133321,
+   "log_loss": 0.058482815804785426,
+   "pr_auc": 0.834584723553884,
+   "roc_auc": 0.985405298932135
+  },
+  "LATE": {
+   "brier": 0.00783264238208372,
+   "log_loss": 0.02709145327268792,
+   "pr_auc": 0.9665846296252276,
+   "roc_auc": 0.9974408990696724
+  },
+  "MID": {
+   "brier": 0.01231452867569487,
+   "log_loss": 0.03969794965312496,
+   "pr_auc": 0.8726858592443267,
+   "roc_auc": 0.99069975149872
+  }
+ },
+ "timings": {
+  "align_seconds": 0.00488662498537451,
+  "calibration_seconds": 0.0008614589460194111,
+  "estimator_fit_seconds": 2.9331748749827966,
+  "fit_seconds": 4.140778374974616,
+  "metric_seconds": 0.07030408398713917,
+  "preprocessing_fit_seconds": 0.9329826660687104,
+  "stage_seconds": 0.04773912497330457,
+  "topk_seconds": 8.469473207951523,
+  "total_seconds": 12.913764583994634,
+  "transform_predict_seconds": 0.17240325000602752,
+  "transform_train_seconds": 0.27431725000496954
+ },
+ "topk": {
+  "winner_top_k": {
+   "accuracy": {
+    "top1": 0.857254162224227,
+    "top3": 0.9985647502665463
+   },
+   "hits": {
+    "top1": 20905,
+    "top3": 24351
+   },
+   "max_k": 3,
+   "mean_observable_field_size": 19.77081112113508,
+   "min_observable_field_size": 2,
+   "n_evaluation_states": 24386,
+   "n_races": 22,
+   "n_skipped_degenerate": 11,
+   "n_skipped_no_predictions": 0,
+   "n_skipped_winner_unobservable": 25,
+   "per_race": {
+    "2023-r01-R": {
+     "accuracy": {
+      "top1": 1.0,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 1055,
+      "top3": 1055
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 1055,
+     "n_skipped_degenerate": 1,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r02-R": {
+     "accuracy": {
+      "top1": 0.9787685774946921,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 922,
+      "top3": 942
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 942,
+     "n_skipped_degenerate": 0,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 1,
+     "roster_size": 20,
+     "winner": [
+      "perez"
+     ]
+    },
+    "2023-r03-R": {
+     "accuracy": {
+      "top1": 1.0,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 1000,
+      "top3": 1000
+     },
+     "min_observable_field_size": 4,
+     "n_evaluation_states": 1000,
+     "n_skipped_degenerate": 0,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 3,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r04-R": {
+     "accuracy": {
+      "top1": 0.3770833333333333,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 362,
+      "top3": 960
+     },
+     "min_observable_field_size": 3,
+     "n_evaluation_states": 960,
+     "n_skipped_degenerate": 0,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 2,
+     "roster_size": 20,
+     "winner": [
+      "perez"
+     ]
+    },
+    "2023-r05-R": {
+     "accuracy": {
+      "top1": 0.6513274336283186,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 736,
+      "top3": 1130
+     },
+     "min_observable_field_size": 9,
+     "n_evaluation_states": 1130,
+     "n_skipped_degenerate": 0,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 8,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r06-R": {
+     "accuracy": {
+      "top1": 1.0,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 1514,
+      "top3": 1514
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 1514,
+     "n_skipped_degenerate": 1,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r07-R": {
+     "accuracy": {
+      "top1": 1.0,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 1311,
+      "top3": 1311
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 1311,
+     "n_skipped_degenerate": 1,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r08-R": {
+     "accuracy": {
+      "top1": 1.0,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 1316,
+      "top3": 1316
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 1316,
+     "n_skipped_degenerate": 1,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r09-R": {
+     "accuracy": {
+      "top1": 0.8603104212860311,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 1164,
+      "top3": 1353
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 1353,
+     "n_skipped_degenerate": 1,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r10-R": {
+     "accuracy": {
+      "top1": 1.0,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 970,
+      "top3": 970
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 970,
+     "n_skipped_degenerate": 0,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 1,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r11-R": {
+     "accuracy": {
+      "top1": 1.0,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 1251,
+      "top3": 1251
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 1251,
+     "n_skipped_degenerate": 1,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r12-R": {
+     "accuracy": {
+      "top1": 0.6736453201970444,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 547,
+      "top3": 812
+     },
+     "min_observable_field_size": 5,
+     "n_evaluation_states": 812,
+     "n_skipped_degenerate": 0,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 4,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r13-R": {
+     "accuracy": {
+      "top1": 0.05365126676602087,
+      "top3": 0.973919523099851
+     },
+     "hits": {
+      "top1": 72,
+      "top3": 1307
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 1342,
+     "n_skipped_degenerate": 1,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r14-R": {
+     "accuracy": {
+      "top1": 1.0,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 956,
+      "top3": 956
+     },
+     "min_observable_field_size": 3,
+     "n_evaluation_states": 956,
+     "n_skipped_degenerate": 0,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 2,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r15-R": {
+     "accuracy": {
+      "top1": 0.5018382352941176,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 546,
+      "top3": 1088
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 1088,
+     "n_skipped_degenerate": 0,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 19,
+     "winner": [
+      "sainz"
+     ]
+    },
+    "2023-r16-R": {
+     "accuracy": {
+      "top1": 1.0,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 879,
+      "top3": 879
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 879,
+     "n_skipped_degenerate": 1,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r17-R": {
+     "accuracy": {
+      "top1": 1.0,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 1006,
+      "top3": 1006
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 1006,
+     "n_skipped_degenerate": 0,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 19,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r18-R": {
+     "accuracy": {
+      "top1": 0.9841584158415841,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 994,
+      "top3": 1010
+     },
+     "min_observable_field_size": 5,
+     "n_evaluation_states": 1010,
+     "n_skipped_degenerate": 0,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 4,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r19-R": {
+     "accuracy": {
+      "top1": 1.0,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 1281,
+      "top3": 1281
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 1281,
+     "n_skipped_degenerate": 1,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r20-R": {
+     "accuracy": {
+      "top1": 1.0,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 1109,
+      "top3": 1109
+     },
+     "min_observable_field_size": 4,
+     "n_evaluation_states": 1109,
+     "n_skipped_degenerate": 0,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r21-R": {
+     "accuracy": {
+      "top1": 0.8201058201058201,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 775,
+      "top3": 945
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 945,
+     "n_skipped_degenerate": 1,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    },
+    "2023-r22-R": {
+     "accuracy": {
+      "top1": 0.9852941176470589,
+      "top3": 1.0
+     },
+     "hits": {
+      "top1": 1139,
+      "top3": 1156
+     },
+     "min_observable_field_size": 2,
+     "n_evaluation_states": 1156,
+     "n_skipped_degenerate": 1,
+     "n_skipped_no_predictions": 0,
+     "n_skipped_winner_unobservable": 0,
+     "roster_size": 20,
+     "winner": [
+      "max_verstappen"
+     ]
+    }
+   },
+   "status": "OK",
+   "top_k": [
+    1,
+    3
+   ]
+  }
+ },
+ "transformed_dim": 132
+}

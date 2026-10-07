@@ -1,0 +1,35 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "implementation": "raceintel.model_lab.metrics + aggregation (reused, no candidate exceptions)",
+ "label": "HARNESS_SMOKE_ONLY",
+ "metrics": {
+  "extra_trees": {
+   "brier": 0.027886761120634172,
+   "log_loss": 0.09353854771750503,
+   "pr_auc": 0.7338075178592285,
+   "roc_auc": 0.9732672738866562
+  },
+  "hist_gradient_boosting": {
+   "brier": 0.03930272877858957,
+   "log_loss": 0.2546261792146049,
+   "pr_auc": 0.6118255070454911,
+   "roc_auc": 0.9519372239568263
+  },
+  "logistic_regression": {
+   "brier": 0.023979666410074676,
+   "log_loss": 0.08067523650595465,
+   "pr_auc": 0.7311105918164992,
+   "roc_auc": 0.9747795397137071
+  },
+  "xgboost": {
+   "brier": 0.033109180066514386,
+   "log_loss": 0.12424733863022917,
+   "pr_auc": 0.6096069040517368,
+   "roc_auc": 0.9548583243055441
+  }
+ },
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "primary": "race_macro_log_loss"
+}

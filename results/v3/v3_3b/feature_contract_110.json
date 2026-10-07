@@ -1,0 +1,14 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "feature_hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+ "join": "state_id one_to_one; row-position join forbidden",
+ "label": "HARNESS_SMOKE_ONLY",
+ "n_110": 110,
+ "n_84": 84,
+ "n_core": 26,
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "sidecar_logical": 29,
+ "sidecar_non_core_excluded": 3
+}

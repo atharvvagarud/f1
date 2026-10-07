@@ -1,0 +1,89 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "pairs": {
+  "extra_trees__vs__xgboost": {
+   "high_confidence_disagreement_states": 1044,
+   "mean_abs_probability_gap": 0.02338820836153888,
+   "per_race_ll_correlation": 0.819823489717718,
+   "prediction_correlation": 0.9276773558572393,
+   "residual_correlation": 0.9173689302542264,
+   "top1_disagreement_races": 18
+  },
+  "hist_gradient_boosting__vs__extra_trees": {
+   "high_confidence_disagreement_states": 1192,
+   "mean_abs_probability_gap": 0.027892734714054786,
+   "per_race_ll_correlation": 0.8448466042728304,
+   "prediction_correlation": 0.8926844895313618,
+   "residual_correlation": 0.8886767035176901,
+   "top1_disagreement_races": 15
+  },
+  "hist_gradient_boosting__vs__xgboost": {
+   "high_confidence_disagreement_states": 743,
+   "mean_abs_probability_gap": 0.012027033540718166,
+   "per_race_ll_correlation": 0.9452544281637089,
+   "prediction_correlation": 0.9583654329716135,
+   "residual_correlation": 0.9568041636401146,
+   "top1_disagreement_races": 8
+  },
+  "logistic_regression__vs__extra_trees": {
+   "high_confidence_disagreement_states": 709,
+   "mean_abs_probability_gap": 0.020152240316194413,
+   "per_race_ll_correlation": 0.8777107702977018,
+   "prediction_correlation": 0.9467831015506968,
+   "residual_correlation": 0.931689269675951,
+   "top1_disagreement_races": 12
+  },
+  "logistic_regression__vs__hist_gradient_boosting": {
+   "high_confidence_disagreement_states": 1383,
+   "mean_abs_probability_gap": 0.024107492905233733,
+   "per_race_ll_correlation": 0.8788405206531076,
+   "prediction_correlation": 0.8883331334065744,
+   "residual_correlation": 0.8748047872755658,
+   "top1_disagreement_races": 14
+  },
+  "logistic_regression__vs__xgboost": {
+   "high_confidence_disagreement_states": 1144,
+   "mean_abs_probability_gap": 0.02023625070902335,
+   "per_race_ll_correlation": 0.8574625120945356,
+   "prediction_correlation": 0.9196509993831009,
+   "residual_correlation": 0.9006275354527357,
+   "top1_disagreement_races": 19
+  },
+  "v3_1b_baseline__vs__extra_trees": {
+   "high_confidence_disagreement_states": 906,
+   "mean_abs_probability_gap": 0.021858786157732017,
+   "per_race_ll_correlation": 0.8673089352157639,
+   "prediction_correlation": 0.9406912654034244,
+   "residual_correlation": 0.9194675738789748,
+   "top1_disagreement_races": 13
+  },
+  "v3_1b_baseline__vs__hist_gradient_boosting": {
+   "high_confidence_disagreement_states": 1461,
+   "mean_abs_probability_gap": 0.024215088290539397,
+   "per_race_ll_correlation": 0.8830329428039461,
+   "prediction_correlation": 0.8854631422536524,
+   "residual_correlation": 0.8665250226340893,
+   "top1_disagreement_races": 15
+  },
+  "v3_1b_baseline__vs__logistic_regression": {
+   "high_confidence_disagreement_states": 4,
+   "mean_abs_probability_gap": 0.0030270614566003033,
+   "per_race_ll_correlation": 0.9982218462241297,
+   "prediction_correlation": 0.9983052594953736,
+   "residual_correlation": 0.9971972673547024,
+   "top1_disagreement_races": 1
+  },
+  "v3_1b_baseline__vs__xgboost": {
+   "high_confidence_disagreement_states": 1200,
+   "mean_abs_probability_gap": 0.020554510489825716,
+   "per_race_ll_correlation": 0.8567586990651833,
+   "prediction_correlation": 0.9164664894911538,
+   "residual_correlation": 0.8924661396442829,
+   "top1_disagreement_races": 20
+  }
+ },
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

@@ -1,0 +1,52 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "folds": {
+  "D1": {
+   "fold_id": "D1",
+   "kind": "development",
+   "train_seasons": [
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "validation_seasons": [
+    2022
+   ]
+  },
+  "D2": {
+   "fold_id": "D2",
+   "kind": "development",
+   "train_seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+   ],
+   "validation_seasons": [
+    2023
+   ]
+  },
+  "D3": {
+   "fold_id": "D3",
+   "kind": "development",
+   "train_seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+   ],
+   "validation_seasons": [
+    2024
+   ]
+  }
+ },
+ "holdout_2025_reachable": false,
+ "label": "HARNESS_SMOKE_ONLY",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

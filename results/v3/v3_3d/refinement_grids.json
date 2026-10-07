@@ -1,0 +1,201 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "d_prereg_sha": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "grids": {
+  "extra_trees": [
+   {
+    "complexity_rank": [
+     -3,
+     1,
+     0,
+     300
+    ],
+    "hyperparameters": {
+     "max_depth": null,
+     "max_features": "sqrt",
+     "min_samples_leaf": 3
+    },
+    "id": "max_features=sqrt;min_samples_leaf=3;max_depth=None",
+    "rationale": "msl neighbor between C-selected 1 and 5"
+   },
+   {
+    "complexity_rank": [
+     -3,
+     0,
+     0,
+     300
+    ],
+    "hyperparameters": {
+     "max_depth": 20,
+     "max_features": "sqrt",
+     "min_samples_leaf": 3
+    },
+    "id": "max_features=sqrt;min_samples_leaf=3;max_depth=20",
+    "rationale": "msl neighbor with bounded depth"
+   },
+   {
+    "complexity_rank": [
+     -10,
+     1,
+     0,
+     300
+    ],
+    "hyperparameters": {
+     "max_depth": null,
+     "max_features": "sqrt",
+     "min_samples_leaf": 10
+    },
+    "id": "max_features=sqrt;min_samples_leaf=10;max_depth=None",
+    "rationale": "stronger regularization than C-selected"
+   },
+   {
+    "complexity_rank": [
+     -10,
+     0,
+     0,
+     300
+    ],
+    "hyperparameters": {
+     "max_depth": 20,
+     "max_features": "sqrt",
+     "min_samples_leaf": 10
+    },
+    "id": "max_features=sqrt;min_samples_leaf=10;max_depth=20",
+    "rationale": "stronger regularization with bounded depth"
+   },
+   {
+    "complexity_rank": [
+     -5,
+     0,
+     0,
+     300
+    ],
+    "hyperparameters": {
+     "max_depth": 10,
+     "max_features": "sqrt",
+     "min_samples_leaf": 5
+    },
+    "id": "max_features=sqrt;min_samples_leaf=5;max_depth=10",
+    "rationale": "intermediate depth between selected None and 20"
+   },
+   {
+    "complexity_rank": [
+     -3,
+     0,
+     0,
+     300
+    ],
+    "hyperparameters": {
+     "max_depth": 10,
+     "max_features": "sqrt",
+     "min_samples_leaf": 3
+    },
+    "id": "max_features=sqrt;min_samples_leaf=3;max_depth=10",
+    "rationale": "middle of both axes (msl neighbor, mid depth); tests the unresolved interior"
+   }
+  ],
+  "xgboost": [
+   {
+    "complexity_rank": [
+     -5,
+     3,
+     0.03,
+     300,
+     300
+    ],
+    "hyperparameters": {
+     "learning_rate": 0.03,
+     "max_depth": 3,
+     "min_child_weight": 5
+    },
+    "id": "lr=0.03;max_depth=3;min_child_weight=5",
+    "rationale": "gentler learning, same structure as selection"
+   },
+   {
+    "complexity_rank": [
+     -3,
+     3,
+     0.05,
+     300,
+     300
+    ],
+    "hyperparameters": {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 3
+    },
+    "id": "lr=0.05;max_depth=3;min_child_weight=3",
+    "rationale": "mcw neighbor bracketed by tested 1 and 5"
+   },
+   {
+    "complexity_rank": [
+     -10,
+     3,
+     0.05,
+     300,
+     300
+    ],
+    "hyperparameters": {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 10
+    },
+    "id": "lr=0.05;max_depth=3;min_child_weight=10",
+    "rationale": "heavier regularization than selection"
+   },
+   {
+    "complexity_rank": [
+     -5,
+     4,
+     0.05,
+     300,
+     300
+    ],
+    "hyperparameters": {
+     "learning_rate": 0.05,
+     "max_depth": 4,
+     "min_child_weight": 5
+    },
+    "id": "lr=0.05;max_depth=4;min_child_weight=5",
+    "rationale": "one step deeper; depth 5 was clearly worse"
+   },
+   {
+    "complexity_rank": [
+     -5,
+     3,
+     0.05,
+     300,
+     500
+    ],
+    "hyperparameters": {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 5,
+     "n_estimators": 500
+    },
+    "id": "lr=0.05;max_depth=3;min_child_weight=5+n_estimators=500",
+    "rationale": "estimator-count variance-stability probe"
+   },
+   {
+    "complexity_rank": [
+     -5,
+     2,
+     0.1,
+     300,
+     300
+    ],
+    "hyperparameters": {
+     "learning_rate": 0.1,
+     "max_depth": 2,
+     "min_child_weight": 5
+    },
+    "id": "lr=0.1;max_depth=2;min_child_weight=5",
+    "rationale": "shallow+fast corner; depth 2 unseen in C"
+   }
+  ]
+ },
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

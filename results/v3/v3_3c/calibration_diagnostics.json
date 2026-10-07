@@ -1,0 +1,44 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "diagnostics": {
+  "extra_trees": {
+   "ece": 0.01708127871018397,
+   "extreme_probability_frequency": 0.668976610146773,
+   "max_probability": 0.9909679139087033,
+   "mean_probability": 0.055152624431375856,
+   "n_bins": 10
+  },
+  "hist_gradient_boosting": {
+   "ece": 0.01755792226991692,
+   "extreme_probability_frequency": 0.9126466054553984,
+   "max_probability": 0.9889865174273025,
+   "mean_probability": 0.03860326594835098,
+   "n_bins": 10
+  },
+  "logistic_regression": {
+   "ece": 0.010135017975757306,
+   "extreme_probability_frequency": 0.7626968701829636,
+   "max_probability": 0.9894094049690946,
+   "mean_probability": 0.051164511722460435,
+   "n_bins": 10
+  },
+  "v3_1b_baseline": {
+   "ece": 0.008414307379146328,
+   "extreme_probability_frequency": 0.7815159841833658,
+   "max_probability": 0.9995306861792577,
+   "mean_probability": 0.05152339380776638,
+   "n_bins": 10
+  },
+  "xgboost": {
+   "ece": 0.012069120248336177,
+   "extreme_probability_frequency": 0.8637624824073453,
+   "max_probability": 0.9804726243019104,
+   "mean_probability": 0.04359949284998041,
+   "n_bins": 10
+  }
+ },
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

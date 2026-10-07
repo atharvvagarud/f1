@@ -1,0 +1,105 @@
+{
+ "a_contract_identity": {
+  "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+  "schema_version": "v3.3a-experiment-contract-v1"
+ },
+ "b_prereg_identity": {
+  "preregistration_identity": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+  "schema_version": "v3.3b-preregistration-v1"
+ },
+ "baseline_parity": {
+  "gate": "PASS",
+  "ll_diff": 0.0,
+  "max_abs_diff": 0.0
+ },
+ "candidate_grids": {
+  "extra_trees": 8,
+  "hist_gradient_boosting": 8,
+  "logistic_regression": 4,
+  "xgboost": 8
+ },
+ "candidate_registry": [
+  "extra_trees",
+  "hist_gradient_boosting",
+  "logistic_regression",
+  "xgboost"
+ ],
+ "comparison_contract": {
+  "decisions_in_B": "NONE",
+  "method": "paired race bootstrap B=2000 seed=42 95% CI"
+ },
+ "compute_profile": {
+  "budget_gate": "PASS",
+  "budget_total_s": 7200,
+  "projected_total_seconds": 2406.9
+ },
+ "determinism": {
+  "extra_trees": 0.0,
+  "hist_gradient_boosting": 0.0,
+  "logistic_regression": 0.0,
+  "xgboost": 0.0
+ },
+ "feature_contract": {
+  "feature_hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "n_110": 110,
+  "n_84": 84,
+  "n_core": 26
+ },
+ "firewall": {
+  "2025": "BLOCKED:ProtectedHoldoutError",
+  "FINAL_FIT": "BLOCKED:ProtectedHoldoutError",
+  "HOLDOUT": "BLOCKED:ProtectedHoldoutError",
+  "tune_holdout": "BLOCKED:ProtectedHoldoutError"
+ },
+ "fold_contract": {
+  "holdout_2025": "SEALED",
+  "inner": "M6 expanding-window",
+  "outer": [
+   "D1",
+   "D2",
+   "D3"
+  ]
+ },
+ "known_limitations": [
+  "smoke D1 only; D2/D3 share code path",
+  "tree inner tuning unfitted until C",
+  "tree CPU tolerance 1e-6 (observed 0.0)"
+ ],
+ "metric_contract": {
+  "implementation": "frozen model_lab metrics+aggregation",
+  "primary": "race_macro_log_loss"
+ },
+ "oof_contract": {
+  "columns": [
+   "state_id",
+   "season",
+   "race_id",
+   "driver_id",
+   "target",
+   "fold",
+   "stage",
+   "feature_arm",
+   "model_family",
+   "model_config_id",
+   "probability"
+  ],
+  "storage": "data/v3/v3_3b/*.parquet (ignored)"
+ },
+ "parent": {
+  "commit": "197979d40af0c9dbf90667781d9c83e41613b047",
+  "tag": "v3.2-monte-carlo-2"
+ },
+ "schema_version": "v3.3b-screening-harness-v1",
+ "serialization": "joblib round-trip diff 0.0 all families",
+ "smoke": {
+  "fold": "D1",
+  "label": "HARNESS_SMOKE_ONLY",
+  "parity_gate": "PASS"
+ },
+ "tests": {
+  "b_harness_plus_a_contract": "34 passed",
+  "full_tier1": "NOT_REQUIRED_RESEARCH_INFRA_ONLY",
+  "related_suites": "M0/M7/M8 114+30, M6 50, dynamics 23"
+ },
+ "v3_3c_recommendation": "PROCEED with frozen grids; no amendment needed"
+}

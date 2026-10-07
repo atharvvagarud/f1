@@ -1,0 +1,49 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "artifact_identities": {
+  "manifest": "34188a8598db8c308ba288d2fc9ed8f8ec7db00c555869962affb1b77cb51c50",
+  "prediction": "71b9bb807a8a845ec787109a5671d7014cc49b6873a674a50a6b434053b3e5d3",
+  "recipe": "ca0cd5d5f7c95e5446ae66111eff85232441023ad7be15d04a8f35e05fea332d",
+  "result": "393032233bd0d2d496d556c4858e64e7974fb80769a73244aeb8e73e94727fc2"
+ },
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "baseline": "V3.1B LogReg C=0.01, 110 features, RAW",
+ "candidate_landscape": [
+  "logistic_regression",
+  "hist_gradient_boosting",
+  "extra_trees",
+  "xgboost"
+ ],
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "development_evidence": {
+  "ci": [
+   -0.00381,
+   0.011191
+  ],
+  "d2_win": true,
+  "delta": 0.003539,
+  "n_improved": 38,
+  "temporal": "MIXED"
+ },
+ "final_standalone_decision": "NO",
+ "holdout_evidence": {
+  "ci": [
+   -0.0037246989843185145,
+   0.011783488242452967
+  ],
+  "delta": 0.0037969791458192376
+ },
+ "known_limitations": [
+  "single 24-race holdout; CIs honest",
+  "one-shot: no retry by design",
+  "RAW probabilities; no 2025 calibration"
+ ],
+ "manifest_identity": "34188a8598db8c308ba288d2fc9ed8f8ec7db00c555869962affb1b77cb51c50",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "recipe_sha": "ca0cd5d5f7c95e5446ae66111eff85232441023ad7be15d04a8f35e05fea332d",
+ "rejected_et": "C diversity; D refinement+calibration failed (REJECT_NO_IMPROVEMENT)",
+ "rejected_hgb": "C REJECT_NO_IMPROVEMENT; D closed",
+ "sole_finalist": "xgboost lr=0.03/d3/mcw5 RAW (D recipe ca0cd5d5f7c9)",
+ "v3_3_question": "can any of 4 model families beat V3.1B LogReg on race-macro winner LL with valid uncertainty",
+ "v3_4_eligibility": "YES"
+}

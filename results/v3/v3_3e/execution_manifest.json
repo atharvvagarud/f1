@@ -1,0 +1,84 @@
+{
+ "a_contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "analysis_plan": "rebuild from frozen prediction artifact; baseline vs XGB race-macro LL + secondaries + paired race bootstrap + stage/calibration/top-k/diversity transfer; final disposition + standalone + V3.4 eligibility",
+ "b_prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "bootstrap_policy": {
+  "ci": 0.95,
+  "replicates": 2000,
+  "seed": 42,
+  "unit": "race"
+ },
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "calibration_method": "RAW",
+ "d_finalist_recipe_sha": "ca0cd5d5f7c95e5446ae66111eff85232441023ad7be15d04a8f35e05fea332d",
+ "d_prereg_sha": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "dataset_identity": {
+  "dynamics_content_sha": "40ef05809e2932d725785a0e991bcecede8d884f2388affec3f56147611696a1",
+  "matrix_content_hash": "d2ee966c18d2ba5513ea4e22eb56cd836f50c4d5a6303c9695162a95d92799db"
+ },
+ "exact_hyperparameters": {
+  "learning_rate": 0.03,
+  "max_depth": 3,
+  "min_child_weight": 5
+ },
+ "feature_identity": {
+  "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "count": 110,
+  "hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e"
+ },
+ "frozen_at_utc": "2026-10-07T16:33:49.401189+00:00",
+ "holdout_expectation": {
+  "baseline_race_macro_ll": 0.06341666779729628,
+  "eligible": 26692,
+  "races": 24
+ },
+ "holdout_season": 2025,
+ "library_versions": {
+  "numpy": "2.4.2",
+  "pandas": "2.3.3",
+  "sklearn": "1.8.0",
+  "xgboost": "3.2.0"
+ },
+ "manifest_identity": "34188a8598db8c308ba288d2fc9ed8f8ec7db00c555869962affb1b77cb51c50",
+ "metric_contract": {
+  "primary": "race_macro_log_loss",
+  "secondary": [
+   "brier",
+   "roc_auc",
+   "pr_auc",
+   "ece",
+   "top_1",
+   "top_3",
+   "state_pooled_ll"
+  ]
+ },
+ "model_artifact_location": "data/v3/v3_3e/final_xgb_arm_b.joblib (ignored, research evidence only)",
+ "model_family": "xgboost",
+ "no_retry": "after HOLDOUT_REVEALED, no recipe change or regeneration from a different configuration",
+ "parent_commit": "197979d40af0c9dbf90667781d9c83e41613b047",
+ "prediction_artifact_location": "data/v3/v3_3e/pred_xgb_final_2025.parquet (ignored)",
+ "preprocessing_identity": "frozen TRAIN-only median/mode + StandardScaler (model_lab.preprocessing)",
+ "random_seed": 42,
+ "schema_version": "v3.3e-execution-manifest-v1",
+ "stage_contract": "race_progress_frac thirds EARLY/MID/LATE",
+ "task_identity": {
+  "label": "is_winner",
+  "probabilities": "RAW, never field-normalized",
+  "semantics": "INDEPENDENT_BINARY",
+  "task": "winner"
+ },
+ "test_policy": "tests/test_v3_3e_holdout.py + A/B/C/D tests; FULL_TIER1 = NOT_REQUIRED_HOLDOUT_EVALUATION_ONLY",
+ "thread_policy": {
+  "n_jobs": 4,
+  "note": "CPU only, M4, n_jobs<=4"
+ },
+ "training_seasons": [
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ]
+}

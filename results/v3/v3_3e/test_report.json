@@ -1,0 +1,1 @@
+{"expected":"FULL_TIER1 = NOT_REQUIRED_HOLDOUT_EVALUATION_ONLY","label":"E_HOLDOUT_EVIDENCE","suites":{"a_b_c_d_contracts":"14 + 20 + 17 + 20 passed","e_holdout":"20 passed","guards_m6_sampled":"via D stage (138 passed); E adds no model-lab sources (no new guard entries needed)"}}

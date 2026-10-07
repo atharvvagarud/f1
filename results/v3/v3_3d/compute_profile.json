@@ -1,0 +1,30 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "compute": {
+  "extra_trees": {
+   "calibration_methods": [
+    "isotonic",
+    "isotonic",
+    "isotonic"
+   ],
+   "inner_fits": 36,
+   "oof_kb": 1770.7,
+   "wall_s": 206.1
+  },
+  "xgboost": {
+   "calibration_methods": [
+    "RAW",
+    "RAW",
+    "RAW"
+   ],
+   "inner_fits": 36,
+   "oof_kb": 2285.7,
+   "wall_s": 84.5
+  }
+ },
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "d_prereg_sha": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

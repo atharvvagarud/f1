@@ -1,0 +1,59 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "baseline_pooled": 0.06710726601117191,
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "d_prereg_sha": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "representations": {
+  "extra_trees_C_RAW": {
+   "per_fold": {
+    "D1": 0.09353854771750503,
+    "D2": 0.04351415377476209,
+    "D3": 0.08682506945075147
+   },
+   "pooled": 0.07498472205364577
+  },
+  "extra_trees_D_CALIBRATED": {
+   "per_fold": {
+    "D1": 0.08529437959872756,
+    "D2": 0.04283368998029153,
+    "D3": 0.20321720065181195
+   },
+   "pooled": 0.11317691685855746
+  },
+  "extra_trees_D_REFINED_RAW": {
+   "per_fold": {
+    "D1": 0.08975652816732847,
+    "D2": 0.05121902431417131,
+    "D3": 0.08074519822397491
+   },
+   "pooled": 0.0741080428230646
+  },
+  "xgboost_C_RAW": {
+   "per_fold": {
+    "D1": 0.09257433650962309,
+    "D2": 0.04113484317613215,
+    "D3": 0.08833906058537296
+   },
+   "pooled": 0.07443734422258186
+  },
+  "xgboost_D_CALIBRATED": {
+   "per_fold": {
+    "D1": 0.09378650529454774,
+    "D2": 0.03520555673176539,
+    "D3": 0.08192130602361906
+   },
+   "pooled": 0.07064612807567275
+  },
+  "xgboost_D_REFINED_RAW": {
+   "per_fold": {
+    "D1": 0.09378650529454774,
+    "D2": 0.03520555673176539,
+    "D3": 0.08192130602361906
+   },
+   "pooled": 0.07064612807567275
+  }
+ }
+}

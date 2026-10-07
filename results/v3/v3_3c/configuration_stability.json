@@ -1,0 +1,122 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "stability": {
+  "extra_trees": {
+   "assessment": "major instability",
+   "configs": [
+    {
+     "max_depth": null,
+     "max_features": "sqrt",
+     "min_samples_leaf": 1
+    },
+    {
+     "max_depth": 20,
+     "max_features": "sqrt",
+     "min_samples_leaf": 5
+    },
+    {
+     "max_depth": null,
+     "max_features": "sqrt",
+     "min_samples_leaf": 5
+    }
+   ],
+   "distinct": [
+    "max_features=sqrt;min_samples_leaf=1;max_depth=None",
+    "max_features=sqrt;min_samples_leaf=5;max_depth=20",
+    "max_features=sqrt;min_samples_leaf=5;max_depth=None"
+   ],
+   "same_all_folds": false,
+   "selected_keys": [
+    "max_features=sqrt;min_samples_leaf=1;max_depth=None",
+    "max_features=sqrt;min_samples_leaf=5;max_depth=20",
+    "max_features=sqrt;min_samples_leaf=5;max_depth=None"
+   ]
+  },
+  "hist_gradient_boosting": {
+   "assessment": "stable",
+   "configs": [
+    {
+     "learning_rate": 0.05,
+     "max_leaf_nodes": 15,
+     "min_samples_leaf": 20
+    },
+    {
+     "learning_rate": 0.05,
+     "max_leaf_nodes": 15,
+     "min_samples_leaf": 20
+    },
+    {
+     "learning_rate": 0.05,
+     "max_leaf_nodes": 15,
+     "min_samples_leaf": 20
+    }
+   ],
+   "distinct": [
+    "lr=0.05;leaves=15;min_leaf=20"
+   ],
+   "same_all_folds": true,
+   "selected_keys": [
+    "lr=0.05;leaves=15;min_leaf=20",
+    "lr=0.05;leaves=15;min_leaf=20",
+    "lr=0.05;leaves=15;min_leaf=20"
+   ]
+  },
+  "logistic_regression": {
+   "assessment": "minor variation",
+   "configs": [
+    {
+     "C": 0.003
+    },
+    {
+     "C": 0.003
+    },
+    {
+     "C": 0.01
+    }
+   ],
+   "distinct": [
+    "C=0.003",
+    "C=0.01"
+   ],
+   "same_all_folds": false,
+   "selected_keys": [
+    "C=0.003",
+    "C=0.003",
+    "C=0.01"
+   ]
+  },
+  "xgboost": {
+   "assessment": "stable",
+   "configs": [
+    {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 5
+    },
+    {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 5
+    },
+    {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 5
+    }
+   ],
+   "distinct": [
+    "lr=0.05;max_depth=3;min_child_weight=5"
+   ],
+   "same_all_folds": true,
+   "selected_keys": [
+    "lr=0.05;max_depth=3;min_child_weight=5",
+    "lr=0.05;max_depth=3;min_child_weight=5",
+    "lr=0.05;max_depth=3;min_child_weight=5"
+   ]
+  }
+ }
+}

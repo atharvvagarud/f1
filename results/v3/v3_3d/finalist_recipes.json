@@ -1,0 +1,98 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "d_prereg_sha": "b74a9a7cb20b502bca2f05c2a071e9ed2f46312ac785194124b234d8ff94bca2",
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8",
+ "recipe_hash": "ca0cd5d5f7c95e5446ae66111eff85232441023ad7be15d04a8f35e05fea332d",
+ "recipes": {
+  "v3_1b_baseline": {
+   "calibration_method": "RAW",
+   "feature_identity": {
+    "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+    "count": 110
+   },
+   "hyperparameters": {
+    "C": 0.01,
+    "class_weight": null,
+    "max_iter": 1000,
+    "penalty": "l2",
+    "random_state": 42,
+    "solver": "lbfgs"
+   },
+   "model_family": "logistic_regression",
+   "prediction_semantics": "RAW INDEPENDENT_BINARY; never normalized",
+   "preprocessing": "frozen TRAIN-only (model_lab.preprocessing)",
+   "random_seed": 42,
+   "reference": "accepted V3.1 artifact/spec; no retraining vs 2025",
+   "thread_policy": {
+    "n_jobs": 4,
+    "note": "CPU only, M4, n_jobs<=4"
+   },
+   "training_years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ]
+  },
+  "xgboost": {
+   "calibration_method": "RAW",
+   "calibration_training_procedure": "NONE (RAW)",
+   "feature_identity": {
+    "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+    "count": 110,
+    "hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e"
+   },
+   "fold_selections": [
+    {
+     "learning_rate": 0.05,
+     "max_depth": 3,
+     "min_child_weight": 10
+    },
+    {
+     "learning_rate": 0.03,
+     "max_depth": 3,
+     "min_child_weight": 5
+    },
+    {
+     "learning_rate": 0.03,
+     "max_depth": 3,
+     "min_child_weight": 5
+    }
+   ],
+   "hyperparameters": {
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "min_child_weight": 5
+   },
+   "library_versions": {
+    "numpy": "2.4.2",
+    "pandas": "2.3.3",
+    "sklearn": "1.8.0",
+    "xgboost": "3.2.0"
+   },
+   "model_family": "xgboost",
+   "prediction_semantics": "RAW",
+   "preprocessing": "frozen TRAIN-only median/mode + StandardScaler (model_lab.preprocessing)",
+   "random_seed": 42,
+   "thread_policy": {
+    "n_jobs": 4,
+    "note": "CPU only, M4, n_jobs<=4"
+   },
+   "training_years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ]
+  }
+ }
+}

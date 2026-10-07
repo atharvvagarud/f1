@@ -1,0 +1,67 @@
+{
+ "a_schema_version": "v3.3a-experiment-contract-v1",
+ "b_schema_version": "v3.3b-preregistration-v1",
+ "c_prereg_sha": "a8a3d8be330013c38da2ba063ba47785467b0f96d67c004555f6fee9a4eb29a8",
+ "contract_sha": "d877e8b2f7821d2eb7ade05677a3a7920f538a0422d28c97956f43f4cce399d7",
+ "dispositions": {
+  "extra_trees": {
+   "disposition": "KEEP_DIVERSITY_CANDIDATE",
+   "evidence": {
+    "advantage_cells_of_24": 3,
+    "ci": [
+     0.0008494837157261492,
+     0.015031989726761048
+    ],
+    "mean_delta": 0.007877456042473821,
+    "mean_ece_gap": 0.0097881543920516,
+    "race_ll_correlation": 0.8673089352157639,
+    "residual_correlation": 0.9194675738789748,
+    "temporal": "CONSISTENT_REGRESSION",
+    "top1_disagreement_losses": 3,
+    "top1_disagreement_wins": 9
+   },
+   "rationale": "top-1 disagreements 9-3 in candidate favor or most-distinct race pattern (corr 0.867) with CI spanning zero"
+  },
+  "hist_gradient_boosting": {
+   "disposition": "REJECT_NO_IMPROVEMENT",
+   "evidence": {
+    "advantage_cells_of_24": 0,
+    "ci": [
+     0.010695138691423998,
+     0.034684705519227844
+    ],
+    "mean_delta": 0.022277372803542604,
+    "mean_ece_gap": 0.007826822819414098,
+    "race_ll_correlation": 0.8830329428039461,
+    "residual_correlation": 0.8665250226340893,
+    "temporal": "CONSISTENT_REGRESSION",
+    "top1_disagreement_losses": 7,
+    "top1_disagreement_wins": 3
+   },
+   "rationale": "no advantage in any of 24 fold/stage/secondary cells; top-1 disagreements lost 7-3; discrimination also worse, so calibration cannot rescue (M4 remedy path inapplicable)"
+  },
+  "logistic_regression": {
+   "disposition": "BASELINE_CONTROL",
+   "rationale": "V3.1B control; not a challenger; inner tuning selects C per fold as procedure estimate"
+  },
+  "xgboost": {
+   "disposition": "KEEP_DIVERSITY_CANDIDATE",
+   "evidence": {
+    "advantage_cells_of_24": 0,
+    "ci": [
+     -0.0006893012805084782,
+     0.015935961246137977
+    ],
+    "mean_delta": 0.007330078211409922,
+    "mean_ece_gap": 0.004335056391888263,
+    "race_ll_correlation": 0.8567586990651833,
+    "residual_correlation": 0.8924661396442829,
+    "temporal": "CONSISTENT_REGRESSION",
+    "top1_disagreement_losses": 10,
+    "top1_disagreement_wins": 6
+   },
+   "rationale": "top-1 disagreements 6-10 in candidate favor or most-distinct race pattern (corr 0.857) with CI spanning zero"
+  }
+ },
+ "prereg_sha": "da60e8d9824cd284c830b0bb9b580db2f7a713f06e8c2fa61e459795b8b712d8"
+}

@@ -1,0 +1,9 @@
+{
+ "HOLDOUT_REVEALED": true,
+ "attestation": "no recipe change or regeneration from a different configuration after this point; the prediction hash above is authoritative",
+ "manifest_identity": "34188a8598db8c308ba288d2fc9ed8f8ec7db00c555869962affb1b77cb51c50",
+ "model_sha256": "842ad90696b6a0b1d6930b8a9cdbb2e47396aeee00e5412424dd3b45ff91db4f",
+ "prediction_sha256": "71b9bb807a8a845ec787109a5671d7014cc49b6873a674a50a6b434053b3e5d3",
+ "recipe_sha": "ca0cd5d5f7c95e5446ae66111eff85232441023ad7be15d04a8f35e05fea332d",
+ "revealed_at_utc": "2026-10-07T16:38:18.416570+00:00"
+}
