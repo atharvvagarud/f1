@@ -1,0 +1,16 @@
+{
+ "boot_ci": [
+  -0.0026036150302248305,
+  0.0009676974083696928
+ ],
+ "boot_mean": -0.0007406095432127742,
+ "delta": -0.0007570478882973353,
+ "ensemble_ll": 0.06265961990899895,
+ "improved": 11,
+ "method": "identity merge + numpy (separate from E analysis path)",
+ "prediction_sha256": "4508c098d3696bd8f0732950696bc4b6cb566918ef9db25e51e10154b81476bf",
+ "stage_directions_match": true,
+ "ties": 0,
+ "tolerances": "LL/counts exact (1e-12); bootstrap Monte-Carlo tolerance 1e-3 (independent RNG draw path)",
+ "worsened": 13
+}

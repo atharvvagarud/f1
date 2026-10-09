@@ -1,0 +1,27 @@
+{
+ "a_contract_identity": "d6b12074db9895844c28c05c78baf56c113d63c33d685c5913c92ebb5036b352",
+ "join": "state_id only",
+ "mismatches": 0,
+ "n_races": 68,
+ "no_2025": true,
+ "per_fold_races": {
+  "D1": 22,
+  "D2": 22,
+  "D3": 24
+ },
+ "rows": {
+  "D1": 23577,
+  "D2": 24422,
+  "D3": 26606
+ },
+ "seasons": [
+  2022,
+  2023,
+  2024
+ ],
+ "total_rows": 74605,
+ "v3_3_prob_hash_match": {
+  "logistic": true,
+  "xgboost": true
+ }
+}

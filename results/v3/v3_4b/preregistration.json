@@ -1,0 +1,124 @@
+{
+ "a_contract_identity": "d6b12074db9895844c28c05c78baf56c113d63c33d685c5913c92ebb5036b352",
+ "aligned_identity": {
+  "join": "state_id only",
+  "races": 68,
+  "rows": {
+   "D1": 23577,
+   "D2": 24422,
+   "D3": 26606,
+   "total": 74605
+  }
+ },
+ "artifact_paths": {
+  "compact": "results/v3/v3_4b/*.json",
+  "predictions": "data/v3/v3_4b/*.parquet (ignored)",
+  "summary": "results/v3/v3_4b_development_ensembles.json"
+ },
+ "base_predictions": {
+  "logistic_oof": {
+   "paths": [
+    "data/v3/v3_3c/oof_baseline__D1.parquet",
+    "data/v3/v3_3c/oof_baseline__D2.parquet",
+    "data/v3/v3_3c/oof_baseline__D3.parquet"
+   ],
+   "v3_3_per_fold_ll": {
+    "D1": 0.08067523650595465,
+    "D2": 0.03943563529462307,
+    "D3": 0.08003562121445756
+   },
+   "v3_3_pooled_race_macro_ll": 0.06710726601117191,
+   "v3_3_prob_hash": "71649b6a757a80eb5045bbe76dba2f80f93c95ab6051729c42492c30df0e4240"
+  },
+  "xgboost_oof": {
+   "paths": [
+    "data/v3/v3_3d/oof_d_refined_xgboost__D1.parquet",
+    "data/v3/v3_3d/oof_d_refined_xgboost__D2.parquet",
+    "data/v3/v3_3d/oof_d_refined_xgboost__D3.parquet"
+   ],
+   "v3_3_per_fold_ll": {
+    "D1": 0.09378650529454774,
+    "D2": 0.03520555673176539,
+    "D3": 0.08192130602361906
+   },
+   "v3_3_pooled_race_macro_ll": 0.07064612807567275,
+   "v3_3_prob_hash": "ce459f4dd1cc6d09809e0c6d3b4daa7109d90a1611c6bbe48015bfa7b83c8996"
+  }
+ },
+ "blend_grid": [
+  0.0,
+  0.1,
+  0.2,
+  0.3,
+  0.4,
+  0.5,
+  0.6,
+  0.7,
+  0.8,
+  0.9,
+  1.0
+ ],
+ "bootstrap": {
+  "ci": 0.95,
+  "replicates": 2000,
+  "report": [
+   "mean_delta",
+   "median_delta",
+   "improved",
+   "worsened",
+   "ties"
+  ],
+  "seed": 42,
+  "unit": "race (states never bootstrap units)"
+ },
+ "compute_budget_s": 1800,
+ "firewall_2025": {
+  "contact_must_be_none": true,
+  "forbidden_paths": [
+   "data/v3/v3_1d/*2025*",
+   "data/v3/v3_3e/*"
+  ],
+  "status": "PREVIOUSLY REVEALED; FORBIDDEN in V3.4B"
+ },
+ "metrics": {
+  "diagnostics": [
+   "EARLY_MID_LATE"
+  ],
+  "primary": "race_macro_log_loss (lower better; frozen V3.1B baseline)",
+  "secondary": [
+   "brier",
+   "roc_auc",
+   "pr_auc",
+   "ece",
+   "top_1",
+   "top_3",
+   "state_pooled_ll"
+  ],
+  "selection_rule": "never on ROC/accuracy/top-1 alone"
+ },
+ "parent": {
+  "commit": "563fff21f94f169097079b003816181c31227aa9",
+  "tag": "v3.3-multi-model-lab"
+ },
+ "preregistration_identity": "64ca2d2911e63b1487334ca72fc024f47d59868f168b60d7d391d31df82b5b26",
+ "schema_version": "v3.4b-preregistration-v1",
+ "seed": 42,
+ "selection": "NONE IN B (V3.4C owns selection)",
+ "stacker": {
+  "C": 1.0,
+  "clip": [
+   1e-06,
+   0.999999
+  ],
+  "form": "logit(P(Y=1)) = b0 + b1 * logit_clip(p_logistic) + b2 * logit_clip(p_xgb)",
+  "seed": 42,
+  "solver": "lbfgs",
+  "temporal": {
+   "D1": "NOT_EVALUABLE/baseline-only",
+   "D2": "train on D1",
+   "D3": "train on D1+D2"
+  }
+ },
+ "stage_policy": "EARLY/MID/LATE thirds (model_lab.stages; no new definitions)",
+ "test_policy": "tests/test_v3_4b_development.py + A contract + relevant V3.3/M6 tests; FULL_TIER1 = NOT_REQUIRED_RESEARCH_EXECUTION_ONLY"
+}

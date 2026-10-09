@@ -1,0 +1,26 @@
+{
+ "EARLY": {
+  "delta_vs_logistic": -0.00019754642579646042,
+  "ensemble_brier": 0.02249380819609555,
+  "ensemble_ece": 0.00923803378515,
+  "ensemble_ll": 0.07473223770625219,
+  "logistic_brier": 0.022527298326773127,
+  "n_states": 8870
+ },
+ "LATE": {
+  "delta_vs_logistic": -0.0008500745183700198,
+  "ensemble_brier": 0.013934077312933035,
+  "ensemble_ece": 0.014675574016132615,
+  "ensemble_ll": 0.05044398275139556,
+  "logistic_brier": 0.014210530826554985,
+  "n_states": 8875
+ },
+ "MID": {
+  "delta_vs_logistic": -0.0012783783898147466,
+  "ensemble_brier": 0.01855107831818954,
+  "ensemble_ece": 0.008257439054290456,
+  "ensemble_ll": 0.06283870745126287,
+  "logistic_brier": 0.01903618447371104,
+  "n_states": 8947
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "2025_status": "PREVIOUSLY REVEALED OUT-OF-TIME ENSEMBLE EVALUATION (pending V3.4E)",
+ "A_identity": "d6b12074db9895844c28c05c78baf56c113d63c33d685c5913c92ebb5036b352",
+ "B_identity": "64ca2d2911e63b1487334ca72fc024f47d59868f168b60d7d391d31df82b5b26",
+ "C_identity": "d0af402c550879dac7c2f85761d4d4a1f433bb2a2e4dba1bfd000282b8a37891",
+ "E_disposition_policy": [
+  "ENSEMBLE_GENERALIZES",
+  "ENSEMBLE_MIXED_OUT_OF_TIME",
+  "ENSEMBLE_FAILS_TO_GENERALIZE"
+ ],
+ "E_manifest_identity": "9a6752b6cff97a6bf9d080dab5ac56bfaf1336e4503383ba4d14366000d368a1",
+ "V3_4E_recommendation": "execute manifest with recipe module; no discretion; report as revealed",
+ "alignment": "state_id identity join; row-position use forbidden",
+ "base_models": [
+  "v3_1b_logistic",
+  "v3_3_xgboost"
+ ],
+ "decision": "ENSEMBLE_SELECTED",
+ "development_parity": "BIT-EXACT: module predictions == B w=0.2 artifacts (maxabsdiff 0.0, all folds); LL parity exact",
+ "final_recipe_identity": "d715dcfb19db35f01cbf369bbcba52994ff99d366364f607779d3ec07539af68",
+ "known_limitations": [
+  "development-only evidence at freeze",
+  "68-race sample"
+ ],
+ "method": "FIXED_CONVEX_BLEND",
+ "parent": {
+  "commit": "563fff21f94f169097079b003816181c31227aa9",
+  "tag": "v3.3-multi-model-lab"
+ },
+ "probability_semantics": "RAW INDEPENDENT_BINARY",
+ "provenance_chain": "results/v3/v3_4d/provenance_chain.json",
+ "schema_version": "v3.4d-recipe-freeze-v1",
+ "selected_candidate_identity": "98b315970408000936aa9970224234436e9cd13c2573a823fec859650b41ed87",
+ "tests": "tests/test_v3_4d_recipe.py",
+ "weights": {
+  "logistic": 0.8,
+  "xgboost": 0.2
+ }
+}

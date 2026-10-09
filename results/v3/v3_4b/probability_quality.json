@@ -1,0 +1,138 @@
+{
+ "stacker": {
+  "bounded_01": true,
+  "field_normalized": false,
+  "finite": true,
+  "per_fold": {
+   "D1": {
+    "brier": 0.023979666410074676,
+    "ece": 0.007887998650100824,
+    "max_probability": 0.9377907726081771,
+    "worst_race_ll": 0.1888565115111531
+   },
+   "D2": {
+    "brier": 0.00822342912355378,
+    "ece": 0.00829895539439112,
+    "max_probability": 0.9953772736325728,
+    "worst_race_ll": 0.08500127451575024
+   },
+   "D3": {
+    "brier": 0.021139409915305944,
+    "ece": 0.012189560378690201,
+    "max_probability": 0.9967048290679723,
+    "worst_race_ll": 0.42527627454196576
+   }
+  },
+  "raw": true
+ },
+ "w_0.0": {
+  "bounded_01": true,
+  "brier_pooled": 0.019059726360424144,
+  "ece_pooled": 0.008414307379146328,
+  "field_normalized": false,
+  "finite": true,
+  "max_probability_pooled": 0.9995306861792577,
+  "raw": true,
+  "worst_race_ll_pooled": 0.3267123278144281
+ },
+ "w_0.1": {
+  "bounded_01": true,
+  "brier_pooled": 0.0188114077700549,
+  "ece_pooled": 0.008463700354572673,
+  "field_normalized": false,
+  "finite": true,
+  "max_probability_pooled": 0.9795569304755407,
+  "raw": true,
+  "worst_race_ll_pooled": 0.32362518644671373
+ },
+ "w_0.2": {
+  "bounded_01": true,
+  "brier_pooled": 0.01864038573582295,
+  "ece_pooled": 0.008511418653215346,
+  "field_normalized": false,
+  "finite": true,
+  "max_probability_pooled": 0.9738856170484345,
+  "raw": true,
+  "worst_race_ll_pooled": 0.3209560998186312
+ },
+ "w_0.3": {
+  "bounded_01": true,
+  "brier_pooled": 0.018546660257728272,
+  "ece_pooled": 0.008960835657785325,
+  "field_normalized": false,
+  "finite": true,
+  "max_probability_pooled": 0.9723869942522946,
+  "raw": true,
+  "worst_race_ll_pooled": 0.3186364111100581
+ },
+ "w_0.4": {
+  "bounded_01": true,
+  "brier_pooled": 0.01853023133577089,
+  "ece_pooled": 0.009268212535584049,
+  "field_normalized": false,
+  "finite": true,
+  "max_probability_pooled": 0.9708947354467343,
+  "raw": true,
+  "worst_race_ll_pooled": 0.31662777190067887
+ },
+ "w_0.5": {
+  "bounded_01": true,
+  "brier_pooled": 0.018591098969950787,
+  "ece_pooled": 0.009471452236196571,
+  "field_normalized": false,
+  "finite": true,
+  "max_probability_pooled": 0.9694024766411741,
+  "raw": true,
+  "worst_race_ll_pooled": 0.3149101813619388
+ },
+ "w_0.6": {
+  "bounded_01": true,
+  "brier_pooled": 0.018729263160267975,
+  "ece_pooled": 0.009363541604503289,
+  "field_normalized": false,
+  "finite": true,
+  "max_probability_pooled": 0.9681277030972518,
+  "raw": true,
+  "worst_race_ll_pooled": 0.31347816160005093
+ },
+ "w_0.7": {
+  "bounded_01": true,
+  "brier_pooled": 0.01894472390672245,
+  "ece_pooled": 0.008390793528467338,
+  "field_normalized": false,
+  "finite": true,
+  "max_probability_pooled": 0.9669276888868121,
+  "raw": true,
+  "worst_race_ll_pooled": 0.3123412610228158
+ },
+ "w_0.8": {
+  "bounded_01": true,
+  "brier_pooled": 0.01923748120931421,
+  "ece_pooled": 0.00853684087644112,
+  "field_normalized": false,
+  "finite": true,
+  "max_probability_pooled": 0.9657276746763725,
+  "raw": true,
+  "worst_race_ll_pooled": 0.3115293013538789
+ },
+ "w_0.9": {
+  "bounded_01": true,
+  "brier_pooled": 0.019607535068043257,
+  "ece_pooled": 0.00879302915896255,
+  "field_normalized": false,
+  "finite": true,
+  "max_probability_pooled": 0.9645276604659329,
+  "raw": true,
+  "worst_race_ll_pooled": 0.31110733925387934
+ },
+ "w_1.0": {
+  "bounded_01": true,
+  "brier_pooled": 0.020054885482909585,
+  "ece_pooled": 0.009303014915552828,
+  "field_normalized": false,
+  "finite": true,
+  "max_probability_pooled": 0.9633276462554932,
+  "raw": true,
+  "worst_race_ll_pooled": 0.31122100674789915
+ }
+}

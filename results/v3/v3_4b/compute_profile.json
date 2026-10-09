@@ -1,0 +1,24 @@
+{
+ "base_models_retrained": false,
+ "budget_s": 1800,
+ "timings_s": {
+  "alignment": 0.161,
+  "baseline": 0.187,
+  "blend_w_0.0": 53.181,
+  "blend_w_0.1": 105.569,
+  "blend_w_0.2": 157.811,
+  "blend_w_0.3": 210.11,
+  "blend_w_0.4": 262.321,
+  "blend_w_0.5": 314.437,
+  "blend_w_0.6": 366.771,
+  "blend_w_0.7": 419.311,
+  "blend_w_0.8": 471.54,
+  "blend_w_0.9": 523.716,
+  "blend_w_1.0": 575.848,
+  "canonical": 0.889,
+  "done": 627.882,
+  "stacker_D2": 618.653,
+  "stacker_D3": 627.88
+ },
+ "total_s": 627.882
+}

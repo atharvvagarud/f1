@@ -1,0 +1,51 @@
+{
+ "commit_subject": "feat(model): add temporally safe ensemble evaluation",
+ "final_disposition": "ENSEMBLE_MIXED_OUT_OF_TIME",
+ "focused_tests": {
+  "failed": 0,
+  "v3_3_integrity": 27,
+  "v3_4_ABCD": 124
+ },
+ "freeze_identity": "6c14c16e8f9e01c2e678edd794a5f2fd87082da4ea33c0cd78b72ecfcb393687",
+ "full_tier1": {
+  "deselected": 0,
+  "failed": 0,
+  "passed": 4044,
+  "skipped": 5,
+  "summary": "===== 4044 passed, 5 skipped, 4 xfailed, 66 warnings in 4232.55s (1:10:32) =====",
+  "wall_time": "4232.55s",
+  "xfailed": 4
+ },
+ "graphify": {
+  "communities": 429,
+  "coupling": "no API/frontend/simulation/serving path from v3.4 module",
+  "edges": 35929,
+  "nodes": 15539
+ },
+ "parent_commit": "563fff21f94f169097079b003816181c31227aa9",
+ "parent_tag": "v3.3-multi-model-lab",
+ "provenance_identities": {
+  "A": "d6b12074db9895844c28c05c78baf56c113d63c33d685c5913c92ebb5036b352",
+  "B": "64ca2d2911e63b1487334ca72fc024f47d59868f168b60d7d391d31df82b5b26",
+  "C_candidate": "98b315970408000936aa9970224234436e9cd13c2573a823fec859650b41ed87",
+  "C_protocol": "d0af402c550879dac7c2f85761d4d4a1f433bb2a2e4dba1bfd000282b8a37891",
+  "D_recipe": "d715dcfb19db35f01cbf369bbcba52994ff99d366364f607779d3ec07539af68",
+  "E_manifest": "9a6752b6cff97a6bf9d080dab5ac56bfaf1336e4503383ba4d14366000d368a1",
+  "E_prediction": "4508c098d3696bd8f0732950696bc4b6cb566918ef9db25e51e10154b81476bf",
+  "E_record": "74a59a50862bdaf996e410009c905fcfcd0d44b8ccc24bc1db33d7a695c72fc6"
+ },
+ "push_status": "NOT_PUSHED",
+ "recipe_identity": "d715dcfb19db35f01cbf369bbcba52994ff99d366364f607779d3ec07539af68",
+ "schema_version": "v3.4-freeze-v1",
+ "scientific_card_identity": "36e5df11e3308ebd5e23cc05dd10c94480474a9118b1710bef8fb955167fc576",
+ "serving_promotion": "NONE",
+ "stage_verdicts": {
+  "A": "COMPLETE",
+  "B": "COMPLETE",
+  "C": "COMPLETE",
+  "D": "COMPLETE",
+  "E": "COMPLETE"
+ },
+ "standalone_champion": "V3.1B Logistic",
+ "tag_name": "v3.4-ensemble"
+}

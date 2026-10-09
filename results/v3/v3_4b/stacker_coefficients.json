@@ -1,0 +1,46 @@
+{
+ "D1": {
+  "coef_logistic": null,
+  "coef_xgb": null,
+  "intercept": null,
+  "n_train_races": 0,
+  "n_train_rows": 0,
+  "status": "NOT_EVALUABLE/baseline-only fallback"
+ },
+ "D2": {
+  "coef_logistic": 0.8365339485714147,
+  "coef_xgb": 0.3813999394252093,
+  "intercept": 0.7261864811805918,
+  "n_train_races": 22,
+  "n_train_rows": 23577,
+  "p_range": [
+   4.5999913155624687e-07,
+   0.9953772736325728
+  ],
+  "train_folds": [
+   "D1"
+  ],
+  "train_seasons": [
+   2022
+  ]
+ },
+ "D3": {
+  "coef_logistic": 0.8240096412278195,
+  "coef_xgb": 0.5486615436071022,
+  "intercept": 0.8556935291523298,
+  "n_train_races": 44,
+  "n_train_rows": 47999,
+  "p_range": [
+   1.0195809410223671e-07,
+   0.9967048290679723
+  ],
+  "train_folds": [
+   "D1",
+   "D2"
+  ],
+  "train_seasons": [
+   2022,
+   2023
+  ]
+ }
+}

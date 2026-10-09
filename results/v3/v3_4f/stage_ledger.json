@@ -1,0 +1,40 @@
+{
+ "no_reselection_guarantee": "2025 was never used to select the ensemble recipe (w=0.2 chosen in C from development evidence only; E executed the frozen recipe with no weight search, no stacker, no calibration). Individual-model 2025 behavior was known before V3.4 (documented statically in A); the 2025 ENSEMBLE evaluation did not exist until E executed the frozen recipe.",
+ "schema_version": "v3.4f-stage-ledger-v1",
+ "stages": {
+  "A": {
+   "contact_2025": "NONE",
+   "identity": "d6b12074db9895844c28c05c78baf56c113d63c33d685c5913c92ebb5036b352",
+   "purpose": "Ensemble landscape + frozen experiment contract; no fitting",
+   "verdict": "COMPLETE"
+  },
+  "B": {
+   "contact_2025": "NONE",
+   "identity": "64ca2d2911e63b1487334ca72fc024f47d59868f168b60d7d391d31df82b5b26",
+   "purpose": "Development grid evaluation + expanding-window stacker on D1/D2/D3",
+   "verdict": "COMPLETE"
+  },
+  "C": {
+   "contact_2025": "NONE",
+   "identity": "98b315970408000936aa9970224234436e9cd13c2573a823fec859650b41ed87",
+   "protocol_identity": "d0af402c550879dac7c2f85761d4d4a1f433bb2a2e4dba1bfd000282b8a37891",
+   "purpose": "Controlled selection + robustness; exactly one recipe (w=0.2) or NO_ENSEMBLE",
+   "verdict": "COMPLETE"
+  },
+  "D": {
+   "contact_2025": "NONE",
+   "identity": "d715dcfb19db35f01cbf369bbcba52994ff99d366364f607779d3ec07539af68",
+   "manifest_identity": "9a6752b6cff97a6bf9d080dab5ac56bfaf1336e4503383ba4d14366000d368a1",
+   "purpose": "Final recipe freeze (machine-readable FIXED_CONVEX_BLEND w=0.2); immutable before E",
+   "verdict": "COMPLETE"
+  },
+  "E": {
+   "contact_2025": "EVALUATION_ONLY",
+   "disposition": "ENSEMBLE_MIXED_OUT_OF_TIME",
+   "prediction_identity": "4508c098d3696bd8f0732950696bc4b6cb566918ef9db25e51e10154b81476bf",
+   "purpose": "Previously revealed 2025 out-of-time evaluation of the frozen recipe only",
+   "record_identity": "74a59a50862bdaf996e410009c905fcfcd0d44b8ccc24bc1db33d7a695c72fc6",
+   "verdict": "COMPLETE"
+  }
+ }
+}

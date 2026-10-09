@@ -1,0 +1,10 @@
+{
+ "alternate_weights_evaluated": [],
+ "calibrated_ensemble_evaluated": false,
+ "ensemble_prediction_files": [
+  "ensemble_predictions_2025.parquet"
+ ],
+ "only_w02_exists": true,
+ "stacker_evaluated": false,
+ "verdict": "NO-RESELECTION CONFIRMED"
+}

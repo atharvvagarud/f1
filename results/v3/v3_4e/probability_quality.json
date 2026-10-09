@@ -1,0 +1,10 @@
+{
+ "bounded_01": true,
+ "ensemble_brier": 0.018319820847537797,
+ "ensemble_ece": 0.00898555068973439,
+ "field_normalized": false,
+ "finite": true,
+ "max_probability": 0.9431781475484784,
+ "raw": true,
+ "worst_race_ll": 0.20003506657142148
+}

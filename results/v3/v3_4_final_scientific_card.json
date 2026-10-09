@@ -1,0 +1,278 @@
+{
+ "base_models": {
+  "v3_1b_logistic": {
+   "calibration": "RAW",
+   "family": "logistic_regression",
+   "hyperparameters": {
+    "C": 0.01,
+    "class_weight": null,
+    "max_iter": 1000,
+    "penalty": "l2",
+    "random_state": 42,
+    "solver": "lbfgs"
+   },
+   "role": "frozen champion / ensemble baseline",
+   "training_years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ]
+  },
+  "v3_3_xgboost": {
+   "calibration": "RAW",
+   "family": "xgboost",
+   "hyperparameters": {
+    "colsample_bytree": 0.8,
+    "eval_metric": "logloss",
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "min_child_weight": 5,
+    "n_estimators": 300,
+    "n_jobs": 4,
+    "objective": "binary:logistic",
+    "random_state": 42,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "subsample": 0.8,
+    "tree_method": "hist"
+   },
+   "role": "frozen diversity candidate",
+   "training_years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ]
+  }
+ },
+ "bootstrap_2025": {
+  "ci_95": [
+   -0.00260361503022483,
+   0.0009676974083696928
+  ],
+  "mean_delta": -0.0007570478882973295,
+  "median_delta": 0.00029127061611628965,
+  "replicates": 2000,
+  "seed": 42,
+  "spans_zero": true,
+  "unit": "race"
+ },
+ "card_identity": "36e5df11e3308ebd5e23cc05dd10c94480474a9118b1710bef8fb955167fc576",
+ "development_evidence": {
+  "brier_delta": -0.00041934062460119437,
+  "ece_delta": 9.71112740690179e-05,
+  "fold_deltas": {
+   "D1": -0.0011144788851976534,
+   "D2": -0.001938157711798734,
+   "D3": -0.001420233533681814
+  },
+  "fold_stage_cells_negative": "9/9",
+  "folds_negative": "3/3",
+  "neighbor_robustness": "basin w=0.1..0.4 all pooled-negative with same fold pattern; not an isolated spike",
+  "pooled_delta_vs_logistic": -0.0014888766167982653,
+  "race_bootstrap": {
+   "ci_95": [
+    -0.0028159367270887007,
+    -0.000263670104901923
+   ],
+   "mean": -0.0014888766167982996,
+   "median": -0.0008641988358983983,
+   "support": "CLEAR_SUPPORT (excludes zero)"
+  },
+  "selection_basis": "robustness (3/3 folds + 9/9 stages + CLEAR bootstrap + Brier gain + negligible ECE + conservative weight), NOT pooled argmin",
+  "stacker": {
+   "D1": "NOT_EVALUABLE / baseline-only fallback",
+   "D2": "improvement (delta -0.008786, CI excludes zero)",
+   "D3": "regression (delta +0.000862, CI spans zero)",
+   "reconsidered_after_E": false,
+   "verdict": "REJECT_TEMPORAL_INSTABILITY"
+  }
+ },
+ "development_protocol": {
+  "adaptive_refinement": "FORBIDDEN",
+  "bootstrap": {
+   "ci": 0.95,
+   "replicates": 2000,
+   "seed": 42,
+   "unit": "race"
+  },
+  "contact_2025": "NONE",
+  "folds": {
+   "D1": "validate 2022 (stacker NOT_EVALUABLE; baseline fallback)",
+   "D2": "validate 2023 (stacker trained on D1)",
+   "D3": "validate 2024 (stacker trained on D1+D2)"
+  },
+  "grid": [
+   0.0,
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.7,
+   0.8,
+   0.9,
+   1.0
+  ],
+  "primary_metric": "race_macro_log_loss"
+ },
+ "development_to_2025": {
+  "development_pooled_delta": -0.0014888766167982653,
+  "out_of_time_delta": -0.0007570478882973353,
+  "qualitative": "ATTENUATED_OUT_OF_TIME_EFFECT: same improvement direction, smaller 2025 magnitude, probability quality intact, stage consistency transferred, race-level evidence uncertain",
+  "reinterpretation_as_confirmed_superiority": "FORBIDDEN"
+ },
+ "diversity_transfer_2025": {
+  "alternative_weight_derived": false,
+  "ensemble_wins_exactly_xgb_win_set": true,
+  "n_ensemble_wins": 11,
+  "n_xgb_wins": 11,
+  "xgb_pull_away_races": 0
+ },
+ "evaluation_2025_disclosure": "PREVIOUSLY REVEALED OUT-OF-TIME ENSEMBLE EVALUATION. 2025 is NOT an untouched/pristine/unseen holdout in the V3.4 context: individual-model 2025 results were observed in V3.3 and documented statically in V3.4A. The 2025 ENSEMBLE evaluation did not exist until V3.4E executed the frozen w=0.2 recipe. Development selection used zero 2025 ensemble information.",
+ "feature_identity": {
+  "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "count": 110,
+  "feature_hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e"
+ },
+ "final_conclusion": "The fixed 80/20 Logistic-XGBoost blend improved 2025 race-macro log loss relative to Logistic, with consistent stage-level direction and intact probability quality, but the race-level confidence interval spanned zero and more races worsened than improved. The result is therefore mixed out-of-time evidence rather than confirmed ensemble superiority. V3.1B Logistic remains the standalone and serving champion. The ensemble remains a research result and may inform later model/simulation consensus work.",
+ "final_disposition": "ENSEMBLE_MIXED_OUT_OF_TIME",
+ "limitations": [
+  "revealed-set evaluation, not pristine holdout",
+  "24-race 2025 sample; race-level CI spans zero",
+  "68-race development history; race-level sample still limited",
+  "single fixed transformation; no reselection by design",
+  "two-model linear opinion pool cannot capture interactions",
+  "V3.4 did NOT prove ensemble superiority"
+ ],
+ "no_reselection": "NO-RESELECTION CONFIRMED (only frozen w=0.2 ensemble exists in 2025 outputs)",
+ "parent": {
+  "commit": "563fff21f94f169097079b003816181c31227aa9",
+  "tag": "v3.3-multi-model-lab"
+ },
+ "phase": "V3.4 ENSEMBLE",
+ "prediction_2025_identity": {
+  "bounded_01": true,
+  "deterministic_reproduction": "bit-exact",
+  "finite": true,
+  "max_probability": 0.9431781475484784,
+  "n_races": 24,
+  "n_states": 26692,
+  "path": "data/v3/v3_4e/ensemble_predictions_2025.parquet",
+  "permutation_invariance": true,
+  "season": [
+   2025
+  ],
+  "sha256": "4508c098d3696bd8f0732950696bc4b6cb566918ef9db25e51e10154b81476bf"
+ },
+ "primary_2025_result": {
+  "ensemble_minus_logistic": -0.0007570478882973353,
+  "ensemble_minus_xgb": -0.004554027034116559,
+  "ensemble_race_macro_ll": 0.06265961990899895,
+  "logistic_race_macro_ll": 0.06341666779729628,
+  "xgboost_race_macro_ll": 0.0672136469431155
+ },
+ "probability_quality_2025": {
+  "bounded_01": true,
+  "calibration": "NONE",
+  "field_normalized": false,
+  "finite": true,
+  "intact": true,
+  "raw": true
+ },
+ "provenance": {
+  "A": "d6b12074db9895844c28c05c78baf56c113d63c33d685c5913c92ebb5036b352",
+  "B": "64ca2d2911e63b1487334ca72fc024f47d59868f168b60d7d391d31df82b5b26",
+  "C_candidate": "98b315970408000936aa9970224234436e9cd13c2573a823fec859650b41ed87",
+  "C_protocol": "d0af402c550879dac7c2f85761d4d4a1f433bb2a2e4dba1bfd000282b8a37891",
+  "D_recipe": "d715dcfb19db35f01cbf369bbcba52994ff99d366364f607779d3ec07539af68",
+  "E_manifest": "9a6752b6cff97a6bf9d080dab5ac56bfaf1336e4503383ba4d14366000d368a1",
+  "E_prediction": "4508c098d3696bd8f0732950696bc4b6cb566918ef9db25e51e10154b81476bf",
+  "E_record": "74a59a50862bdaf996e410009c905fcfcd0d44b8ccc24bc1db33d7a695c72fc6"
+ },
+ "race_directions_2025": {
+  "improved": 11,
+  "mean_improves_while_median_does_not": true,
+  "ties": 0,
+  "worsened": 13
+ },
+ "recipe_identity": "d715dcfb19db35f01cbf369bbcba52994ff99d366364f607779d3ec07539af68",
+ "schema_version": "v3.4-final-scientific-card-v1",
+ "secondary_2025_vs_logistic": {
+  "brier": {
+   "direction": "improvement",
+   "ensemble": 0.018319820847537797,
+   "logistic": 0.018581602752022593
+  },
+  "ece": {
+   "direction": "improvement",
+   "ensemble": 0.00898555068973439,
+   "logistic": 0.009392268865428577
+  },
+  "pr_auc": {
+   "direction": "regression",
+   "ensemble": 0.8211652036958189,
+   "logistic": 0.8253047498615741
+  },
+  "roc_auc": {
+   "direction": "improvement",
+   "ensemble": 0.986016769986616,
+   "logistic": 0.9858633052394934
+  },
+  "role": "diagnostic only; did not override primary uncertainty",
+  "state_pooled_ll": {
+   "direction": "improvement",
+   "ensemble": 0.06237518947898984,
+   "logistic": 0.06308419827323586
+  },
+  "top1": {
+   "direction": "regression",
+   "ensemble": 0.7920120007500469,
+   "logistic": 0.794149634352147
+  },
+  "top3": {
+   "direction": "improvement",
+   "ensemble": 0.985786611663229,
+   "logistic": 0.9848490530658166
+  },
+  "worst_race_ll": {
+   "direction": "improvement",
+   "ensemble": 0.20003506657142148,
+   "logistic": 0.21326793974522676
+  }
+ },
+ "selected_recipe": {
+  "calibration": "NONE",
+  "exactly_one_candidate": true,
+  "logistic_weight": 0.8,
+  "mc2_involvement": "NONE",
+  "method": "FIXED_CONVEX_BLEND",
+  "normalization": "FORBIDDEN",
+  "transformation": "p = 0.8 * p_logistic + 0.2 * p_xgb",
+  "xgboost_weight": 0.2,
+  "xgboost_weight_in_A_grid": true
+ },
+ "serving_promotion": "NONE",
+ "stages_2025": {
+  "EARLY_delta_vs_logistic": -0.00019754642579646042,
+  "LATE_delta_vs_logistic": -0.0008500745183700198,
+  "MID_delta_vs_logistic": -0.0012783783898147466,
+  "all_three_negative": true,
+  "partition": "frozen EARLY/MID/LATE",
+  "significance": "direction only; no significance claimed"
+ },
+ "standalone_champion": "V3.1B Logistic",
+ "task": {
+  "label_column": "is_winner",
+  "name": "winner",
+  "probability_semantics": "RAW INDEPENDENT_BINARY"
+ }
+}

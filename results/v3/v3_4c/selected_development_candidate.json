@@ -1,0 +1,52 @@
+{
+ "a_contract_identity": "d6b12074db9895844c28c05c78baf56c113d63c33d685c5913c92ebb5036b352",
+ "b_prereg_identity": "64ca2d2911e63b1487334ca72fc024f47d59868f168b60d7d391d31df82b5b26",
+ "base_model_identities": {
+  "logistic": "V3.1B C=0.01 RAW 110-col",
+  "xgboost": "V3.3 finalist RAW 110-col"
+ },
+ "bootstrap_evidence": {
+  "ci_95": [
+   -0.0028159367270887007,
+   -0.000263670104901923
+  ],
+  "mean": -0.0014888766167982996,
+  "median": -0.0008641988358983983,
+  "support": "CLEAR_SUPPORT"
+ },
+ "c_protocol_identity": "d0af402c550879dac7c2f85761d4d4a1f433bb2a2e4dba1bfd000282b8a37891",
+ "calibration": "RAW (none)",
+ "candidate_identity": "98b315970408000936aa9970224234436e9cd13c2573a823fec859650b41ed87",
+ "complexity_rationale": "one fixed scalar; no learned meta-model; stacker rejected on temporal instability",
+ "decision": "ENSEMBLE_SELECTED",
+ "development_prediction_identity": "74a2d75efa43426cd24f3beedd73ab7bbb523c70391942d9427b78020449b2f8",
+ "known_limitations": [
+  "development-only; 2025 untouched by selection",
+  "68-race sample; CIs honest"
+ ],
+ "method": "fixed_convex_blend",
+ "neighbor_evidence": "basin w0.1-w0.4; neighbors pooled-negative, same fold pattern",
+ "primary_evidence": {
+  "delta_pooled": -0.0014888766167982653,
+  "fold_deltas": {
+   "D1": -0.0011144788851976534,
+   "D2": -0.001938157711798734,
+   "D3": -0.001420233533681814
+  }
+ },
+ "probability_quality_evidence": {
+  "brier_delta": -0.00041934062460119437,
+  "ece_delta": 9.71112740690179e-05
+ },
+ "probability_semantics": "RAW INDEPENDENT_BINARY",
+ "schema_version": "v3.4c-selected-development-candidate-v1",
+ "selection_rationale": "CLEAR bootstrap + 3/3 folds + 9/9 stages + negligible ECE cost + conservative; not argmin",
+ "stage_evidence": {
+  "neg_cells": 9
+ },
+ "temporal_evidence": {
+  "classification": "CONSISTENT",
+  "neg_folds": 3
+ },
+ "weight": 0.2
+}

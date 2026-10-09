@@ -1,0 +1,8 @@
+{
+ "deterministic_recompute": true,
+ "permutation_invariant": true,
+ "races": 24,
+ "rows": 26692,
+ "sha256": "4508c098d3696bd8f0732950696bc4b6cb566918ef9db25e51e10154b81476bf",
+ "unique": true
+}

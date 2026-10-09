@@ -1,0 +1,131 @@
+{
+ "2025_status": "PREVIOUSLY REVEALED OUT-OF-TIME ENSEMBLE EVALUATION (pending V3.4E)",
+ "A_contract_identity": "d6b12074db9895844c28c05c78baf56c113d63c33d685c5913c92ebb5036b352",
+ "B_prereg_identity": "64ca2d2911e63b1487334ca72fc024f47d59868f168b60d7d391d31df82b5b26",
+ "C_protocol_identity": "d0af402c550879dac7c2f85761d4d4a1f433bb2a2e4dba1bfd000282b8a37891",
+ "C_selected_candidate_identity": "98b315970408000936aa9970224234436e9cd13c2573a823fec859650b41ed87",
+ "alignment_contract": {
+  "fail_closed": [
+   "duplicate",
+   "missing",
+   "extra",
+   "mismatched"
+  ],
+  "required": [
+   "state_id",
+   "race",
+   "driver",
+   "target/eligibility",
+   "season",
+   "checkpoint/lap identity where applicable"
+  ],
+  "rule": "state_id identity join; row-position use forbidden"
+ },
+ "arithmetic": {
+  "finite_required": true,
+  "input_bounds": [
+   0.0,
+   1.0
+  ],
+  "input_dtype": "float64 probabilities",
+  "order": "0.8*p_log first, then +0.2*p_xgb; float64 deterministic",
+  "output_bounds": [
+   0.0,
+   1.0
+  ]
+ },
+ "base_model_identities": {
+  "v3_1b_logistic": {
+   "calibration": "RAW",
+   "family": "logistic_regression",
+   "feature_arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+   "feature_count": 110,
+   "hyperparameters": {
+    "C": 0.01,
+    "class_weight": null,
+    "max_iter": 1000,
+    "penalty": "l2",
+    "random_state": 42,
+    "solver": "lbfgs"
+   },
+   "probability_semantics": "RAW INDEPENDENT_BINARY",
+   "role": "champion/baseline",
+   "training_years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ]
+  },
+  "v3_3_xgboost": {
+   "calibration": "RAW",
+   "family": "xgboost",
+   "feature_arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+   "feature_count": 110,
+   "feature_hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+   "finalist_recipe_identity": "ca0cd5d5f7c95e5446ae66111eff85232441023ad7be15d04a8f35e05fea332d",
+   "hyperparameters": {
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "min_child_weight": 5
+   },
+   "probability_semantics": "RAW INDEPENDENT_BINARY",
+   "role": "diversity candidate",
+   "training_years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ]
+  }
+ },
+ "base_models": [
+  "v3_1b_logistic",
+  "v3_3_xgboost"
+ ],
+ "calibration": "NONE",
+ "created_before_2025_ensemble_evaluation": true,
+ "decision": "ENSEMBLE_SELECTED",
+ "development_evidence_identity": "98b315970408000936aa9970224234436e9cd13c2573a823fec859650b41ed87",
+ "feature_identity": {
+  "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "count": 110
+ },
+ "input_validation": [
+  "canonical columns",
+  "unique state_id",
+  "finite",
+  "bounds [0,1]",
+  "cross-input identity equality"
+ ],
+ "known_limitations": [
+  "development-only evidence at freeze",
+  "68-race sample"
+ ],
+ "logistic_weight": 0.8,
+ "method": "FIXED_CONVEX_BLEND",
+ "normalization": "FORBIDDEN",
+ "output_validation": [
+  "finite",
+  "bounds [0,1]",
+  "RAW",
+  "not field-normalized"
+ ],
+ "probability_semantics": "INDEPENDENT_BINARY",
+ "recipe_identity": "d715dcfb19db35f01cbf369bbcba52994ff99d366364f607779d3ec07539af68",
+ "schema_version": "v3.4-final-ensemble-recipe-v1",
+ "seed_policy": {
+  "note": "blend is closed-form; seed governs bootstrap only",
+  "recipe_seed": 42
+ },
+ "selection_rationale": "CLEAR bootstrap + 3/3 folds + 9/9 stages + Brier gain + negligible ECE + conservative; not argmin",
+ "task": "winner",
+ "transformation": "p_ensemble = 0.8 * p_logistic + 0.2 * p_xgb",
+ "xgboost_weight": 0.2
+}

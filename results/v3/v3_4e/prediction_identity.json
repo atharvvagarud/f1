@@ -1,0 +1,8 @@
+{
+ "n_races": 24,
+ "n_rows": 26692,
+ "note": "immutable; analysis consumes this artifact",
+ "path": "data/v3/v3_4e/ensemble_predictions_2025.parquet",
+ "recipe_identity": "d715dcfb19db35f01cbf369bbcba52994ff99d366364f607779d3ec07539af68",
+ "sha256": "4508c098d3696bd8f0732950696bc4b6cb566918ef9db25e51e10154b81476bf"
+}

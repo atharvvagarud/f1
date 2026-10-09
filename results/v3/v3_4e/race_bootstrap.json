@@ -1,0 +1,14 @@
+{
+ "ci_hi": 0.0009676974083696928,
+ "ci_level": 0.95,
+ "ci_lo": -0.00260361503022483,
+ "frac_improved": 0.4583333333333333,
+ "frac_tied": 0.0,
+ "frac_worsened": 0.5416666666666666,
+ "mean_delta": -0.0007570478882973295,
+ "median_delta": 0.00029127061611628965,
+ "n_races": 24,
+ "procedure": "paired race resampling with replacement; statistic = mean(LL_B - LL_A); percentile CI",
+ "replicates": 2000,
+ "seed": 42
+}

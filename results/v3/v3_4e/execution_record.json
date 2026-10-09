@@ -1,0 +1,59 @@
+{
+ "a_identity": "d6b12074db9895844c28c05c78baf56c113d63c33d685c5913c92ebb5036b352",
+ "alignment": "state_id identity only; positional forbidden",
+ "allowed_inputs": {
+  "logistic_2025": {
+   "n_races": 24,
+   "n_states": 26692,
+   "path": "data/v3/v3_1d/pred_final_ALL_84_PLUS_V3_1_DYNAMICS_CORE_2025.parquet"
+  },
+  "xgboost_2025": {
+   "n_states": 26692,
+   "path": "data/v3/v3_3e/pred_xgb_final_2025.parquet",
+   "sha256": "71b9bb807a8a845ec787109a5671d7014cc49b6873a674a50a6b434053b3e5d3"
+  }
+ },
+ "b_identity": "64ca2d2911e63b1487334ca72fc024f47d59868f168b60d7d391d31df82b5b26",
+ "bootstrap": {
+  "ci": 0.95,
+  "replicates": 2000,
+  "seed": 42,
+  "unit": "race"
+ },
+ "c_candidate_identity": "98b315970408000936aa9970224234436e9cd13c2573a823fec859650b41ed87",
+ "c_protocol_identity": "d0af402c550879dac7c2f85761d4d4a1f433bb2a2e4dba1bfd000282b8a37891",
+ "d_recipe_identity": "d715dcfb19db35f01cbf369bbcba52994ff99d366364f607779d3ec07539af68",
+ "disposition_policy": [
+  "ENSEMBLE_GENERALIZES",
+  "ENSEMBLE_MIXED_OUT_OF_TIME",
+  "ENSEMBLE_FAILS_TO_GENERALIZE"
+ ],
+ "e_manifest_identity": "9a6752b6cff97a6bf9d080dab5ac56bfaf1336e4503383ba4d14366000d368a1",
+ "metrics": {
+  "primary": "race_macro_log_loss vs frozen Logistic",
+  "secondary": [
+   "brier",
+   "roc_auc",
+   "pr_auc",
+   "ece",
+   "top_1",
+   "top_3",
+   "state_pooled_ll",
+   "EARLY/MID/LATE"
+  ]
+ },
+ "no_reselection": true,
+ "outputs": {
+  "predictions": "data/v3/v3_4e/ (ignored)",
+  "results": "results/v3/v3_4e/"
+ },
+ "parent": {
+  "commit": "563fff21f94f169097079b003816181c31227aa9",
+  "tag": "v3.3-multi-model-lab"
+ },
+ "record_identity": "74a59a50862bdaf996e410009c905fcfcd0d44b8ccc24bc1db33d7a695c72fc6",
+ "schema_version": "v3.4e-execution-record-v1",
+ "stage_policy": "EARLY/MID/LATE frozen partition",
+ "terminology": "PREVIOUSLY REVEALED OUT-OF-TIME ENSEMBLE EVALUATION",
+ "transformation": "p = 0.8 * p_logistic + 0.2 * p_xgb"
+}

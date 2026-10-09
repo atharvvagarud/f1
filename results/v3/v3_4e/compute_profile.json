@@ -1,0 +1,14 @@
+{
+ "models_trained": 0,
+ "timings_s": {
+  "base_reproduced": 0.079,
+  "blended": 0.132,
+  "canonical": 0.942,
+  "done": 28.84,
+  "inputs_loaded": 0.063,
+  "metrics": 28.779,
+  "persisted": 0.139,
+  "record_verified": 0.0
+ },
+ "total_s": 28.84
+}

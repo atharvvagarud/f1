@@ -1,0 +1,11 @@
+{
+ "development": {
+  "delta_pooled": -0.0014888766167982653,
+  "source": "frozen C candidate (w=0.2)"
+ },
+ "out_of_time": {
+  "delta": -0.0007570478882973353,
+  "source": "this evaluation"
+ },
+ "recipe_unchanged": true
+}

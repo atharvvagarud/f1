@@ -1,0 +1,150 @@
+{
+ "2025_contact": "NONE",
+ "a_contract_identity": "d6b12074db9895844c28c05c78baf56c113d63c33d685c5913c92ebb5036b352",
+ "alignment": {
+  "join": "state_id only",
+  "mismatches": 0,
+  "races": 68,
+  "rows": 74605,
+  "v3_3_prob_hash_match": true
+ },
+ "b_prereg_identity": "64ca2d2911e63b1487334ca72fc024f47d59868f168b60d7d391d31df82b5b26",
+ "base_reproduction": {
+  "logistic_per_fold": {
+   "D1": 0.08067523650595465,
+   "D2": 0.03943563529462307,
+   "D3": 0.08003562121445756
+  },
+  "logistic_pooled": 0.06710726601117191,
+  "match": true,
+  "tolerance": 1e-09,
+  "xgboost_per_fold": {
+   "D1": 0.09378650529454774,
+   "D2": 0.03520555673176539,
+   "D3": 0.08192130602361906
+  },
+  "xgboost_pooled": 0.07064612807567275
+ },
+ "blend_grid": [
+  0.0,
+  0.1,
+  0.2,
+  0.3,
+  0.4,
+  0.5,
+  0.6,
+  0.7,
+  0.8,
+  0.9,
+  1.0
+ ],
+ "blend_results": "results/v3/v3_4b/blend_results.json",
+ "compute": {
+  "base_models_retrained": false,
+  "budget_s": 1800,
+  "timings_s": {
+   "alignment": 0.161,
+   "baseline": 0.187,
+   "blend_w_0.0": 53.181,
+   "blend_w_0.1": 105.569,
+   "blend_w_0.2": 157.811,
+   "blend_w_0.3": 210.11,
+   "blend_w_0.4": 262.321,
+   "blend_w_0.5": 314.437,
+   "blend_w_0.6": 366.771,
+   "blend_w_0.7": 419.311,
+   "blend_w_0.8": 471.54,
+   "blend_w_0.9": 523.716,
+   "blend_w_1.0": 575.848,
+   "canonical": 0.889,
+   "done": 627.882,
+   "stacker_D2": 618.653,
+   "stacker_D3": 627.88
+  },
+  "total_s": 627.882
+ },
+ "diversity_utilization": {
+  "disagreement_gain_correlation": -0.044,
+  "reading": "small XGB weight captures every pure-XGB race win while avoiding most XGB losses",
+  "w02_improved": 41,
+  "w04_improved": 40,
+  "w10_improved": 38,
+  "xgb_wins_retained_at_w02": "38/38",
+  "xgb_wins_retained_at_w04": "38/38"
+ },
+ "final_ensemble_recipe": "NONE EMITTED IN B (V3.4C owns selection)",
+ "known_limitations": [
+  "descriptive only; no selection in B",
+  "D1 learned params NOT_EVALUABLE",
+  "stacker D2/D3 instability to weigh in C",
+  "68-race development sample"
+ ],
+ "landscape_headline": {
+  "broad_useful_region": "w=0.1..0.7 all pooled-negative with D1/D2/D3 descriptive support",
+  "descriptive_best_pooled": "w_0.4 delta -0.001903 (DESCRIPTIVE_ONLY_NOT_SELECTED)",
+  "isolated_optimum": false,
+  "neighbor_smoothness": "smooth; adjacent weights behave similarly",
+  "status": "DESCRIPTIVE_ONLY_NOT_SELECTED"
+ },
+ "parent": {
+  "commit": "563fff21f94f169097079b003816181c31227aa9",
+  "tag": "v3.3-multi-model-lab"
+ },
+ "probability_quality": "results/v3/v3_4b/probability_quality.json (finite, bounded, RAW, not field-normalized)",
+ "race_statistics": "results/v3/v3_4b/blend_race_bootstrap.json (race unit, B=2000, seed 42)",
+ "schema_version": "v3.4b-development-ensembles-v1",
+ "stacker": {
+  "coefficients": {
+   "D1": {
+    "coef_logistic": null,
+    "coef_xgb": null,
+    "intercept": null,
+    "n_train_races": 0,
+    "n_train_rows": 0,
+    "status": "NOT_EVALUABLE/baseline-only fallback"
+   },
+   "D2": {
+    "coef_logistic": 0.8365339485714147,
+    "coef_xgb": 0.3813999394252093,
+    "intercept": 0.7261864811805918,
+    "n_train_races": 22,
+    "n_train_rows": 23577,
+    "p_range": [
+     4.5999913155624687e-07,
+     0.9953772736325728
+    ],
+    "train_folds": [
+     "D1"
+    ],
+    "train_seasons": [
+     2022
+    ]
+   },
+   "D3": {
+    "coef_logistic": 0.8240096412278195,
+    "coef_xgb": 0.5486615436071022,
+    "intercept": 0.8556935291523298,
+    "n_train_races": 44,
+    "n_train_rows": 47999,
+    "p_range": [
+     1.0195809410223671e-07,
+     0.9967048290679723
+    ],
+    "train_folds": [
+     "D1",
+     "D2"
+    ],
+    "train_seasons": [
+     2022,
+     2023
+    ]
+   }
+  },
+  "headline": "D2 delta -0.008786 CI excludes zero; D3 delta +0.000862 CI spans zero; D1 baseline fallback",
+  "results": "results/v3/v3_4b/stacker_results.json"
+ },
+ "stage_analysis": "results/v3/v3_4b/blend_stage_results.json (w=0.2/0.4 negative in all 9 fold-stage cells)",
+ "tests": "tests/test_v3_4b_development.py",
+ "v3_4c_recommendation": "weigh broad blend region vs stacker D2/D3 instability under advancement rules; robustness gate on neighbors; then freeze one recipe or NO_ENSEMBLE",
+ "weight_landscape": "results/v3/v3_4b/weight_landscape.json"
+}

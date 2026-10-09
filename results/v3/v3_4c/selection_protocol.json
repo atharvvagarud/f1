@@ -1,0 +1,81 @@
+{
+ "a_contract_identity": "d6b12074db9895844c28c05c78baf56c113d63c33d685c5913c92ebb5036b352",
+ "allowed_dispositions": [
+  "BASELINE_CONTROL",
+  "ROBUST_CANDIDATE",
+  "SELECTED_DEVELOPMENT_RECIPE",
+  "REJECT_NO_IMPROVEMENT",
+  "REJECT_TEMPORAL_INSTABILITY",
+  "REJECT_PROBABILITY_QUALITY",
+  "REJECT_COMPLEXITY_WITHOUT_VALUE"
+ ],
+ "b_prereg_identity": "64ca2d2911e63b1487334ca72fc024f47d59868f168b60d7d391d31df82b5b26",
+ "candidacy": "pooled delta < 0 (directional; NOT a numeric threshold)",
+ "candidate_set": {
+  "blends": [
+   0.0,
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.7,
+   0.8,
+   0.9,
+   1.0
+  ],
+  "closed": true,
+  "reference": "logistic w=0.0 (BASELINE_CONTROL, not selectable)",
+  "stacker": "temporal expanding-window (D1 fallback)"
+ },
+ "complexity_preference": {
+  "rule": "blend preferred; stacker advances only on materially stronger AND robust evidence",
+  "stacker_handicap": "D1 unevaluable + D2/D3 instability weigh against"
+ },
+ "firewall_2025": {
+  "contact": "NONE",
+  "forbidden": "labels/predictions/metrics/ensemble use"
+ },
+ "neighbor_robustness": {
+  "basin": "both neighbors pooled-negative with same fold-sign pattern; penalize isolated/edge/exact-precision optima",
+  "window": "+/-0.1 on frozen grid"
+ },
+ "no_numeric_threshold": true,
+ "primary_metric": "race_macro_log_loss, delta vs Logistic (lower better)",
+ "probability_quality_criteria": {
+  "brier_ece": "pooled deltas must not be materially positive",
+  "rule": "LL gain via worse Brier/ECE -> REJECT_PROBABILITY_QUALITY",
+  "worst_race": "descriptive guard against tail damage"
+ },
+ "protocol_identity": "d0af402c550879dac7c2f85761d4d4a1f433bb2a2e4dba1bfd000282b8a37891",
+ "race_bootstrap": {
+  "replicates": 2000,
+  "seed": 42,
+  "support_labels": [
+   "CLEAR_SUPPORT",
+   "BORDERLINE_SUPPORT",
+   "UNCERTAIN",
+   "REGRESSION"
+  ],
+  "unit": "race"
+ },
+ "schema_version": "v3.4c-selection-protocol-v1",
+ "selection_cap": "max ONE SELECTED_DEVELOPMENT_RECIPE; NO_ENSEMBLE valid",
+ "stacker_dispositions": [
+  "KEEP_ENSEMBLE_PRIMARY",
+  "KEEP_ENSEMBLE_TIE_BREAK",
+  "REJECT_NO_IMPROVEMENT",
+  "REJECT_TEMPORAL_INSTABILITY",
+  "REJECT_PROBABILITY_QUALITY",
+  "REJECT_COMPLEXITY_WITHOUT_VALUE"
+ ],
+ "stage_criteria": {
+  "cells": "9 fold x stage cells; report count negative; unanimity is strong supporting evidence"
+ },
+ "temporal_criteria": {
+  "fold_support": "count of D1/D2/D3 folds with delta < 0; >=2 required for ROBUST consideration",
+  "instability": "gain concentrated in one fold while others regress -> REJECT_TEMPORAL_INSTABILITY"
+ },
+ "tie_handling": "indistinguishable neighbors -> more conservative (smaller w; less departure from Logistic)"
+}

@@ -1,0 +1,16 @@
+{
+ "bounds_ok": true,
+ "driver_match": true,
+ "duplicates": 0,
+ "identity_sets_equal": true,
+ "join": "state_id only",
+ "logistic_sha256": "c7ca0673d01dbcd481430fce0793eb97b44c2c7774009826bb7b1bcc82a1c8ca",
+ "n_races": 24,
+ "n_states": 26692,
+ "race_match": true,
+ "season": [
+  2025
+ ],
+ "target_match": true,
+ "xgboost_sha256": "71b9bb807a8a845ec787109a5671d7014cc49b6873a674a50a6b434053b3e5d3"
+}

@@ -1,0 +1,13 @@
+{
+ "bootstrap_ci": [
+  -0.00260361503022483,
+  0.0009676974083696928
+ ],
+ "disposition": "ENSEMBLE_MIXED_OUT_OF_TIME",
+ "improved": 11,
+ "primary_delta": -0.0007570478882973353,
+ "quality_ok": true,
+ "serving_promotion": "NONE",
+ "stages_negative": 3,
+ "worsened": 13
+}

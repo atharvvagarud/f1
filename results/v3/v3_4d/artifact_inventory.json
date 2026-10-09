@@ -1,0 +1,25 @@
+{
+ "a": [
+  "results/v3/v3_4a/",
+  "results/v3/v3_4a_ensemble_landscape.json"
+ ],
+ "b": [
+  "results/v3/v3_4b/",
+  "results/v3/v3_4b_development_ensembles.json"
+ ],
+ "c": [
+  "results/v3/v3_4c/",
+  "results/v3/v3_4c_selection_robustness.json"
+ ],
+ "d": [
+  "results/v3/v3_4d/",
+  "results/v3/v3_4d_recipe_freeze.json"
+ ],
+ "future_e_outputs": [
+  "data/v3/v3_4e/ (ignored)",
+  "results/v3/v3_4e/"
+ ],
+ "ignored": "prediction parquets, model binaries, graphify, cache",
+ "ignored_b_predictions": "data/v3/v3_4b/*.parquet (36 files)",
+ "tracked": "compact JSON/docs/scripts/tests"
+}

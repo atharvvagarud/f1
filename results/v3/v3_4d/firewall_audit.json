@@ -1,0 +1,13 @@
+{
+ "2025_CONTACT": "NONE",
+ "2025_ensemble_calculations": 0,
+ "2025_labels_consumed": 0,
+ "2025_metrics_computed": 0,
+ "2025_prediction_contents_opened": 0,
+ "e_result_artifact_exists": false,
+ "metadata_only": [
+  "results/v3/v3_3e/baseline_holdout_identity.json",
+  "results/v3/v3_3e/prediction_identity.json"
+ ],
+ "note": "E source paths referenced from frozen V3.3 metadata; existence checked; contents never read"
+}

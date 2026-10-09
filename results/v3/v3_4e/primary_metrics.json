@@ -1,0 +1,7 @@
+{
+ "ensemble_ll": 0.06265961990899895,
+ "ensemble_minus_logistic": -0.0007570478882973353,
+ "ensemble_minus_xgb": -0.004554027034116559,
+ "logistic_ll": 0.06341666779729628,
+ "xgboost_ll": 0.0672136469431155
+}

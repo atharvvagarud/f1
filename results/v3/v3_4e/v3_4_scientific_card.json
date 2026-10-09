@@ -1,0 +1,178 @@
+{
+ "base_model_identities": {
+  "logistic": "V3.1B C=0.01",
+  "xgboost": "V3.3 finalist lr=0.03/d3/mcw5"
+ },
+ "bootstrap": {
+  "ci_95": [
+   -0.00260361503022483,
+   0.0009676974083696928
+  ],
+  "mean": -0.0007570478882973295,
+  "replicates": 2000,
+  "seed": 42,
+  "unit": "race"
+ },
+ "dataset_identity": {
+  "n_races": 24,
+  "n_states": 26692,
+  "season": 2025
+ },
+ "development_comparison": {
+  "development": {
+   "delta_pooled": -0.0014888766167982653,
+   "source": "frozen C candidate (w=0.2)"
+  },
+  "out_of_time": {
+   "delta": -0.0007570478882973353,
+   "source": "this evaluation"
+  },
+  "recipe_unchanged": true
+ },
+ "disposition": "ENSEMBLE_MIXED_OUT_OF_TIME",
+ "diversity_transfer": {
+  "ensemble_beats_logistic": [
+   "2025-r01-R",
+   "2025-r03-R",
+   "2025-r07-R",
+   "2025-r10-R",
+   "2025-r12-R",
+   "2025-r16-R",
+   "2025-r17-R",
+   "2025-r18-R",
+   "2025-r22-R",
+   "2025-r23-R",
+   "2025-r24-R"
+  ],
+  "n_ens_wins": 11,
+  "n_xgb_wins": 11,
+  "xgb_beats_logistic": [
+   "2025-r01-R",
+   "2025-r03-R",
+   "2025-r07-R",
+   "2025-r10-R",
+   "2025-r12-R",
+   "2025-r16-R",
+   "2025-r17-R",
+   "2025-r18-R",
+   "2025-r22-R",
+   "2025-r23-R",
+   "2025-r24-R"
+  ],
+  "xgb_pulls_away": [],
+  "xgb_wins_captured": [
+   "2025-r01-R",
+   "2025-r03-R",
+   "2025-r07-R",
+   "2025-r10-R",
+   "2025-r12-R",
+   "2025-r16-R",
+   "2025-r17-R",
+   "2025-r18-R",
+   "2025-r22-R",
+   "2025-r23-R",
+   "2025-r24-R"
+  ]
+ },
+ "evaluation_terminology": "PREVIOUSLY REVEALED OUT-OF-TIME ENSEMBLE EVALUATION",
+ "limitations": [
+  "reveled-set evaluation, not pristine holdout",
+  "24-race sample; CI spans zero",
+  "single frozen transformation; no reselection"
+ ],
+ "prediction_identity": "4508c098d3696bd8f0732950696bc4b6cb566918ef9db25e51e10154b81476bf",
+ "primary_result": {
+  "ensemble_ll": 0.06265961990899895,
+  "ensemble_minus_logistic": -0.0007570478882973353,
+  "ensemble_minus_xgb": -0.004554027034116559,
+  "logistic_ll": 0.06341666779729628,
+  "xgboost_ll": 0.0672136469431155
+ },
+ "probability_quality": {
+  "bounded_01": true,
+  "ensemble_brier": 0.018319820847537797,
+  "ensemble_ece": 0.00898555068973439,
+  "field_normalized": false,
+  "finite": true,
+  "max_probability": 0.9431781475484784,
+  "raw": true,
+  "worst_race_ll": 0.20003506657142148
+ },
+ "race_directions": {
+  "improved": 11,
+  "mean": -0.0007570478882973295,
+  "median": 0.00029127061611628965,
+  "ties": 0,
+  "worsened": 13
+ },
+ "recipe_identity": "d715dcfb19db35f01cbf369bbcba52994ff99d366364f607779d3ec07539af68",
+ "schema_version": "v3.4-ensemble-evaluation-card-v1",
+ "secondary_metrics": {
+  "ensemble": {
+   "brier": 0.018319820847537797,
+   "ece": 0.00898555068973439,
+   "max_probability": 0.9431781475484784,
+   "pr_auc": 0.8211652036958189,
+   "roc_auc": 0.986016769986616,
+   "state_pooled_ll": 0.06237518947898984,
+   "top1": 0.7920120007500469,
+   "top3": 0.985786611663229,
+   "worst_race_ll": 0.20003506657142148
+  },
+  "logistic": {
+   "brier": 0.018581602752022593,
+   "ece": 0.009392268865428577,
+   "max_probability": 0.9685724607036034,
+   "pr_auc": 0.8253047498615741,
+   "roc_auc": 0.9858633052394934,
+   "state_pooled_ll": 0.06308419827323586,
+   "top1": 0.794149634352147,
+   "top3": 0.9848490530658166,
+   "worst_race_ll": 0.21326793974522676
+  },
+  "xgboost": {
+   "brier": 0.019633785789939868,
+   "ece": 0.008883067047902834,
+   "max_probability": 0.9293515682220459,
+   "pr_auc": 0.8076958714871182,
+   "roc_auc": 0.9831056252827747,
+   "state_pooled_ll": 0.06684927914020419,
+   "top1": 0.8018751171948246,
+   "top3": 0.9597599849990625,
+   "worst_race_ll": 0.20419541228044671
+  }
+ },
+ "semantics": "RAW INDEPENDENT_BINARY",
+ "serving_promotion": "NONE",
+ "stages": {
+  "EARLY": {
+   "delta_vs_logistic": -0.00019754642579646042,
+   "ensemble_brier": 0.02249380819609555,
+   "ensemble_ece": 0.00923803378515,
+   "ensemble_ll": 0.07473223770625219,
+   "logistic_brier": 0.022527298326773127,
+   "n_states": 8870
+  },
+  "LATE": {
+   "delta_vs_logistic": -0.0008500745183700198,
+   "ensemble_brier": 0.013934077312933035,
+   "ensemble_ece": 0.014675574016132615,
+   "ensemble_ll": 0.05044398275139556,
+   "logistic_brier": 0.014210530826554985,
+   "n_states": 8875
+  },
+  "MID": {
+   "delta_vs_logistic": -0.0012783783898147466,
+   "ensemble_brier": 0.01855107831818954,
+   "ensemble_ece": 0.008257439054290456,
+   "ensemble_ll": 0.06283870745126287,
+   "logistic_brier": 0.01903618447371104,
+   "n_states": 8947
+  }
+ },
+ "task": "winner",
+ "weights": {
+  "logistic": 0.8,
+  "xgboost": 0.2
+ }
+}

@@ -1,0 +1,153 @@
+{
+ "improved": 11,
+ "mean_delta": -0.0007570478882973295,
+ "median_delta": 0.00029127061611628965,
+ "per_race": {
+  "2025-r01-R": {
+   "ensemble_ll": 0.07525613356090585,
+   "ensemble_minus_logistic": -0.001687341668053885,
+   "logistic_ll": 0.07694347522895974,
+   "xgboost_ll": 0.07584588775617954
+  },
+  "2025-r02-R": {
+   "ensemble_ll": 0.04533292814490194,
+   "ensemble_minus_logistic": 0.0006569371106716002,
+   "logistic_ll": 0.04467599103423034,
+   "xgboost_ll": 0.049057227254005215
+  },
+  "2025-r03-R": {
+   "ensemble_ll": 0.030664189101808997,
+   "ensemble_minus_logistic": -0.0014260016495784879,
+   "logistic_ll": 0.032090190751387485,
+   "xgboost_ll": 0.02649190171126265
+  },
+  "2025-r04-R": {
+   "ensemble_ll": 0.04051797923336363,
+   "ensemble_minus_logistic": 0.00619091274817174,
+   "logistic_ll": 0.03432706648519189,
+   "xgboost_ll": 0.07449851924148543
+  },
+  "2025-r05-R": {
+   "ensemble_ll": 0.13501027130804027,
+   "ensemble_minus_logistic": 0.005826009417898403,
+   "logistic_ll": 0.12918426189014187,
+   "xgboost_ll": 0.16668108681452085
+  },
+  "2025-r06-R": {
+   "ensemble_ll": 0.06536735109016943,
+   "ensemble_minus_logistic": 0.0026771164622837046,
+   "logistic_ll": 0.06269023462788573,
+   "xgboost_ll": 0.08267956543863858
+  },
+  "2025-r07-R": {
+   "ensemble_ll": 0.02165672298529754,
+   "ensemble_minus_logistic": -0.001731423081523742,
+   "logistic_ll": 0.023388146066821283,
+   "xgboost_ll": 0.015427107407335452
+  },
+  "2025-r08-R": {
+   "ensemble_ll": 0.10936482082717824,
+   "ensemble_minus_logistic": 0.0005074283056369366,
+   "logistic_ll": 0.10885739252154131,
+   "xgboost_ll": 0.11888654743656656
+  },
+  "2025-r09-R": {
+   "ensemble_ll": 0.04848719554461424,
+   "ensemble_minus_logistic": 0.0011948767095437685,
+   "logistic_ll": 0.04729231883507047,
+   "xgboost_ll": 0.05902159029056448
+  },
+  "2025-r10-R": {
+   "ensemble_ll": 0.11675709808037454,
+   "ensemble_minus_logistic": -0.011616718004067966,
+   "logistic_ll": 0.1283738160844425,
+   "xgboost_ll": 0.08873669453177896
+  },
+  "2025-r11-R": {
+   "ensemble_ll": 0.05700939564727323,
+   "ensemble_minus_logistic": 0.003469963173135915,
+   "logistic_ll": 0.05353943247413732,
+   "xgboost_ll": 0.0826871761018186
+  },
+  "2025-r12-R": {
+   "ensemble_ll": 0.20003506657142148,
+   "ensemble_minus_logistic": -0.013232873173805282,
+   "logistic_ll": 0.21326793974522676,
+   "xgboost_ll": 0.20419541228044671
+  },
+  "2025-r13-R": {
+   "ensemble_ll": 0.03484199274770746,
+   "ensemble_minus_logistic": 0.002262908275499749,
+   "logistic_ll": 0.03257908447220771,
+   "xgboost_ll": 0.04899222098796189
+  },
+  "2025-r14-R": {
+   "ensemble_ll": 0.11745271660825797,
+   "ensemble_minus_logistic": 0.00272092786699743,
+   "logistic_ll": 0.11473178874126054,
+   "xgboost_ll": 0.14894263393798796
+  },
+  "2025-r15-R": {
+   "ensemble_ll": 0.030876045258888707,
+   "ensemble_minus_logistic": 0.0024858979613520127,
+   "logistic_ll": 0.028390147297536694,
+   "xgboost_ll": 0.0439143207320688
+  },
+  "2025-r16-R": {
+   "ensemble_ll": 0.04182295528843789,
+   "ensemble_minus_logistic": -0.0016616706103350434,
+   "logistic_ll": 0.04348462589877293,
+   "xgboost_ll": 0.03636038430013101
+  },
+  "2025-r17-R": {
+   "ensemble_ll": 0.014016593538456405,
+   "ensemble_minus_logistic": -0.0008866055424905199,
+   "logistic_ll": 0.014903199080946925,
+   "xgboost_ll": 0.010689253160660878
+  },
+  "2025-r18-R": {
+   "ensemble_ll": 0.040814109038437525,
+   "ensemble_minus_logistic": -0.004230332578318001,
+   "logistic_ll": 0.045044441616755526,
+   "xgboost_ll": 0.025724239507446175
+  },
+  "2025-r19-R": {
+   "ensemble_ll": 0.017143876336541908,
+   "ensemble_minus_logistic": 7.511292659564267e-05,
+   "logistic_ll": 0.017068763409946265,
+   "xgboost_ll": 0.017605515342791096
+  },
+  "2025-r20-R": {
+   "ensemble_ll": 0.033313770033491,
+   "ensemble_minus_logistic": 0.0008941148376323191,
+   "logistic_ll": 0.03241965519585868,
+   "xgboost_ll": 0.03732924333338356
+  },
+  "2025-r21-R": {
+   "ensemble_ll": 0.0692662833090924,
+   "ensemble_minus_logistic": 0.0009583928524224822,
+   "logistic_ll": 0.06830789045666992,
+   "xgboost_ll": 0.07662068820484653
+  },
+  "2025-r22-R": {
+   "ensemble_ll": 0.02048579251012945,
+   "ensemble_minus_logistic": -0.0010102370062821733,
+   "logistic_ll": 0.02149602951641162,
+   "xgboost_ll": 0.016720563225409237
+  },
+  "2025-r23-R": {
+   "ensemble_ll": 0.09599952653686601,
+   "ensemble_minus_logistic": -0.005476184899660369,
+   "logistic_ll": 0.10147571143652638,
+   "xgboost_ll": 0.0782086324807837
+  },
+  "2025-r24-R": {
+   "ensemble_ll": 0.04233806451431883,
+   "ensemble_minus_logistic": -0.005130359752862142,
+   "logistic_ll": 0.047468424267180974,
+   "xgboost_ll": 0.027811115156698485
+  }
+ },
+ "ties": 0,
+ "worsened": 13
+}

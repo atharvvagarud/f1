@@ -1,0 +1,322 @@
+{
+ "2025_contact": "NONE",
+ "a_identity": "d6b12074db9895844c28c05c78baf56c113d63c33d685c5913c92ebb5036b352",
+ "b_identity": "64ca2d2911e63b1487334ca72fc024f47d59868f168b60d7d391d31df82b5b26",
+ "blend_dispositions": {
+  "w_0.0": "BASELINE_CONTROL",
+  "w_0.1": "ROBUST_CANDIDATE",
+  "w_0.2": "SELECTED_DEVELOPMENT_RECIPE",
+  "w_0.3": "ROBUST_CANDIDATE",
+  "w_0.4": "ROBUST_CANDIDATE",
+  "w_0.5": "REJECT_TEMPORAL_INSTABILITY",
+  "w_0.6": "REJECT_TEMPORAL_INSTABILITY",
+  "w_0.7": "REJECT_TEMPORAL_INSTABILITY",
+  "w_0.8": "REJECT_TEMPORAL_INSTABILITY",
+  "w_0.9": "REJECT_NO_IMPROVEMENT",
+  "w_1.0": "REJECT_NO_IMPROVEMENT"
+ },
+ "c_protocol_identity": "d0af402c550879dac7c2f85761d4d4a1f433bb2a2e4dba1bfd000282b8a37891",
+ "candidate_table": {
+  "w_0.0": {
+   "bootstrap": {
+    "ci_95": [
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "median": 0.0,
+    "support": "BORDERLINE_SUPPORT"
+   },
+   "brier_delta": 0.0,
+   "complexity": "one fixed scalar",
+   "delta": 0.0,
+   "ece_delta": 0.0,
+   "fold_deltas": {
+    "D1": 0.0,
+    "D2": 0.0,
+    "D3": 0.0
+   },
+   "improved": null,
+   "neg_folds": 0,
+   "neg_stage_cells": 0,
+   "pooled_ll": 0.06710726601117191,
+   "temporal": "REGRESSION",
+   "weight": 0.0
+  },
+  "w_0.1": {
+   "bootstrap": {
+    "ci_95": [
+     -0.0016416437791356266,
+     -0.0003013499734384612
+    ],
+    "mean": -0.0009511260324396966,
+    "median": -0.00043717000978114266,
+    "support": "CLEAR_SUPPORT"
+   },
+   "brier_delta": -0.0002483185903692439,
+   "complexity": "one fixed scalar",
+   "delta": -0.0009511260324396587,
+   "ece_delta": 4.9392975426344396e-05,
+   "fold_deltas": {
+    "D1": -0.0007873297613753966,
+    "D2": -0.0012509120096080364,
+    "D3": -0.0008264688018443239
+   },
+   "improved": null,
+   "neg_folds": 3,
+   "neg_stage_cells": 9,
+   "pooled_ll": 0.06615613997873225,
+   "temporal": "CONSISTENT",
+   "weight": 0.1
+  },
+  "w_0.2": {
+   "bootstrap": {
+    "ci_95": [
+     -0.0028159367270887007,
+     -0.000263670104901923
+    ],
+    "mean": -0.0014888766167982996,
+    "median": -0.0008641988358983983,
+    "support": "CLEAR_SUPPORT"
+   },
+   "brier_delta": -0.00041934062460119437,
+   "complexity": "one fixed scalar",
+   "delta": -0.0014888766167982653,
+   "ece_delta": 9.71112740690179e-05,
+   "fold_deltas": {
+    "D1": -0.0011144788851976534,
+    "D2": -0.001938157711798734,
+    "D3": -0.001420233533681814
+   },
+   "improved": null,
+   "neg_folds": 3,
+   "neg_stage_cells": 9,
+   "pooled_ll": 0.06561838939437364,
+   "temporal": "CONSISTENT",
+   "weight": 0.2
+  },
+  "w_0.3": {
+   "bootstrap": {
+    "ci_95": [
+     -0.003683789788456851,
+     3.244035790762962e-06
+    ],
+    "mean": -0.0017983521921304487,
+    "median": -0.001206699273508192,
+    "support": "BORDERLINE_SUPPORT"
+   },
+   "brier_delta": -0.0005130661026958722,
+   "complexity": "one fixed scalar",
+   "delta": -0.0017983521921304257,
+   "ece_delta": 0.0005465282786389965,
+   "fold_deltas": {
+    "D1": -0.0010844391835672929,
+    "D2": -0.002492075049208814,
+    "D3": -0.0018168598309915018
+   },
+   "improved": null,
+   "neg_folds": 3,
+   "neg_stage_cells": 9,
+   "pooled_ll": 0.06530891381904148,
+   "temporal": "CONSISTENT",
+   "weight": 0.3
+  },
+  "w_0.4": {
+   "bootstrap": {
+    "ci_95": [
+     -0.004379149827834438,
+     0.00048531969516395446
+    ],
+    "mean": -0.0019031776139425281,
+    "median": -0.0015326770212655376,
+    "support": "BORDERLINE_SUPPORT"
+   },
+   "brier_delta": -0.000529495024653253,
+   "complexity": "one fixed scalar",
+   "delta": -0.0019031776139425,
+   "ece_delta": 0.0008539051564377207,
+   "fold_deltas": {
+    "D1": -0.0007179529022018488,
+    "D2": -0.0029514672650997817,
+    "D3": -0.0020287014194773217
+   },
+   "improved": null,
+   "neg_folds": 3,
+   "neg_stage_cells": 9,
+   "pooled_ll": 0.06520408839722941,
+   "temporal": "CONSISTENT",
+   "weight": 0.4
+  },
+  "w_0.5": {
+   "bootstrap": {
+    "ci_95": [
+     -0.004871856620901411,
+     0.0011903745912058685
+    ],
+    "mean": -0.0018042114791669889,
+    "median": -0.0016096033079059484,
+    "support": "UNCERTAIN"
+   },
+   "brier_delta": -0.00046862739047335775,
+   "complexity": "one fixed scalar",
+   "delta": -0.00180421147916697,
+   "ece_delta": 0.0010571448570502427,
+   "fold_deltas": {
+    "D1": -2.398665474148687e-06,
+    "D2": -0.0033320905100801337,
+    "D3": -0.002055317446715013
+   },
+   "improved": null,
+   "neg_folds": 3,
+   "neg_stage_cells": 6,
+   "pooled_ll": 0.06530305453200494,
+   "temporal": "CONSISTENT",
+   "weight": 0.5
+  },
+  "w_0.6": {
+   "bootstrap": {
+    "ci_95": [
+     -0.005188482150077438,
+     0.002164208122902627
+    ],
+    "mean": -0.001486307278492092,
+    "median": -0.0016831695485706004,
+    "support": "UNCERTAIN"
+   },
+   "brier_delta": -0.000330463200156169,
+   "complexity": "one fixed scalar",
+   "delta": -0.0014863072784920828,
+   "ece_delta": 0.0009492342253569607,
+   "fold_deltas": {
+    "D1": 0.0011041700431994594,
+    "D2": -0.003642067460339231,
+    "D3": -0.0018847979900161183
+   },
+   "improved": null,
+   "neg_folds": 2,
+   "neg_stage_cells": 6,
+   "pooled_ll": 0.06562095873267983,
+   "temporal": "MIXED",
+   "weight": 0.6
+  },
+  "w_0.7": {
+   "bootstrap": {
+    "ci_95": [
+     -0.005346569556112941,
+     0.0033989367651476067
+    ],
+    "mean": -0.0009151052705785838,
+    "median": -0.00178474849079631,
+    "support": "UNCERTAIN"
+   },
+   "brier_delta": -0.00011500245370169374,
+   "complexity": "one fixed scalar",
+   "delta": -0.000915105270578559,
+   "ece_delta": -2.3513850678990103e-05,
+   "fold_deltas": {
+    "D1": 0.0026835639524119548,
+    "D2": -0.003885782926935033,
+    "D3": -0.0014907642066598198
+   },
+   "improved": null,
+   "neg_folds": 2,
+   "neg_stage_cells": 6,
+   "pooled_ll": 0.06619216074059335,
+   "temporal": "MIXED",
+   "weight": 0.7
+  },
+  "w_0.8": {
+   "bootstrap": {
+    "ci_95": [
+     -0.005191933384370849,
+     0.005125962052067468
+    ],
+    "mean": -2.3817621837096588e-05,
+    "median": -0.0018550421754440962,
+    "support": "UNCERTAIN"
+   },
+   "brier_delta": 0.0001777548488900646,
+   "complexity": "one fixed scalar",
+   "delta": -2.3817621837063374e-05,
+   "ece_delta": 0.00012253349729479147,
+   "fold_deltas": {
+    "D1": 0.004889603846942953,
+    "D2": -0.004065255132997499,
+    "D3": -0.0008231362496550904
+   },
+   "improved": null,
+   "neg_folds": 2,
+   "neg_stage_cells": 4,
+   "pooled_ll": 0.06708344838933485,
+   "temporal": "MIXED",
+   "weight": 0.8
+  },
+  "w_0.9": {
+   "bootstrap": {
+    "ci_95": [
+     -0.004800240989681541,
+     0.007513098736355427
+    ],
+    "mean": 0.001327240555546405,
+    "median": -0.001874299669243561,
+    "support": "REGRESSION"
+   },
+   "brier_delta": 0.0005478087076191129,
+   "complexity": "one fixed scalar",
+   "delta": 0.0013272405555464356,
+   "ece_delta": 0.0003787217798162223,
+   "fold_deltas": {
+    "D1": 0.008045213695257555,
+    "D2": -0.004180614607530726,
+    "D3": 0.00021796574363190657
+   },
+   "improved": null,
+   "neg_folds": 1,
+   "neg_stage_cells": 4,
+   "pooled_ll": 0.06843450656671834,
+   "temporal": "REGRESSION",
+   "weight": 0.9
+  },
+  "w_1.0": {
+   "bootstrap": {
+    "ci_95": [
+     -0.00381027518961857,
+     0.011190940125102066
+    ],
+    "mean": 0.0035388620645008056,
+    "median": -0.0018388629946493092,
+    "support": "REGRESSION"
+   },
+   "brier_delta": 0.0009951591224854409,
+   "complexity": "one fixed scalar",
+   "delta": 0.003538862064500839,
+   "ece_delta": 0.0008887075364064998,
+   "fold_deltas": {
+    "D1": 0.013111268788593089,
+    "D2": -0.004230078562857682,
+    "D3": 0.0018856848091615003
+   },
+   "improved": null,
+   "neg_folds": 1,
+   "neg_stage_cells": 4,
+   "pooled_ll": 0.07064612807567275,
+   "temporal": "REGRESSION",
+   "weight": 1.0
+  }
+ },
+ "compute_s": 0.044,
+ "d_recommendation": "freeze final recipe from selected development candidate in V3.4D; no 2025 influence",
+ "final_C_decision": "ENSEMBLE_SELECTED",
+ "known_limitations": [
+  "development-only; 2025 untouched by selection",
+  "68-race sample; CIs honest"
+ ],
+ "parent": {
+  "commit": "563fff21f94f169097079b003816181c31227aa9",
+  "tag": "v3.3-multi-model-lab"
+ },
+ "schema_version": "v3.4c-selection-robustness-v1",
+ "selected_candidate_identity": "98b315970408000936aa9970224234436e9cd13c2573a823fec859650b41ed87",
+ "stacker_disposition": "REJECT_TEMPORAL_INSTABILITY",
+ "tests": "tests/test_v3_4c_selection.py"
+}

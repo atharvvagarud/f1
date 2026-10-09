@@ -1,0 +1,21 @@
+{
+ "alternate_weight_mentions_in_E_outputs": [],
+ "calibrated_ensemble_exists": false,
+ "e_prediction_files": [
+  "ensemble_predictions_2025.parquet"
+ ],
+ "frozen_E_audit": {
+  "alternate_weights_evaluated": [],
+  "calibrated_ensemble_evaluated": false,
+  "ensemble_prediction_files": [
+   "ensemble_predictions_2025.parquet"
+  ],
+  "only_w02_exists": true,
+  "stacker_evaluated": false,
+  "verdict": "NO-RESELECTION CONFIRMED"
+ },
+ "only_frozen_w02_exists": true,
+ "schema_version": "v3.4f-no-reselection-audit-v1",
+ "stacker_2025_prediction_exists": false,
+ "verdict": "NO-RESELECTION CONFIRMED"
+}

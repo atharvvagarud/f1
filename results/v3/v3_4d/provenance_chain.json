@@ -1,0 +1,13 @@
+{
+ "schema_version": "v3.4d-provenance-chain-v1",
+ "v3_3_parent": {
+  "commit": "563fff21f94f169097079b003816181c31227aa9",
+  "tag": "v3.3-multi-model-lab"
+ },
+ "v3_4a_contract": "d6b12074db9895844c28c05c78baf56c113d63c33d685c5913c92ebb5036b352",
+ "v3_4b_evidence": "results/v3/v3_4b_development_ensembles.json",
+ "v3_4b_prereg": "64ca2d2911e63b1487334ca72fc024f47d59868f168b60d7d391d31df82b5b26",
+ "v3_4c_candidate": "98b315970408000936aa9970224234436e9cd13c2573a823fec859650b41ed87",
+ "v3_4c_protocol": "d0af402c550879dac7c2f85761d4d4a1f433bb2a2e4dba1bfd000282b8a37891",
+ "v3_4d_recipe": "d715dcfb19db35f01cbf369bbcba52994ff99d366364f607779d3ec07539af68"
+}
