@@ -1,0 +1,14 @@
+{
+ "logistic_predictions_2025.parquet": {
+  "logical_identity": "e6651d68fecba32fbbd05889db10413bee6bcfecc897ae299fa96a0dbfedb5b7",
+  "path": "data/v3/v3_5f/logistic_predictions_2025.parquet",
+  "rows": 26692,
+  "sha256": "96f46b3114effa2175dbbc6fa747ca8d880aba6fbeed4fef7708350b03f0219d"
+ },
+ "xgb_predictions_2025.parquet": {
+  "logical_identity": "1d21dca15421223c0da8fc40636415e36c407a2b82899eaa4920d4c18fb2bbc3",
+  "path": "data/v3/v3_5f/xgb_predictions_2025.parquet",
+  "rows": 26692,
+  "sha256": "c91e8a8ff4a85dd06f724e147bc5e74b4595902341fcc7e4244aea601923fb7c"
+ }
+}

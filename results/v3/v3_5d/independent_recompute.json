@@ -1,0 +1,11 @@
+{
+ "all_match": true,
+ "mean_adj_match": true,
+ "pooled_from_oof": "race_level_results + candidate_dispositions reconstructed from frozen OOF artifacts",
+ "primary_match": true,
+ "race_delta_mean_match": true,
+ "schema_version": "v3.5d-independent-recompute-v1",
+ "scope": "xgb/D3 projected primary + thresholds + projection + race deltas (pure numpy)",
+ "threshold_match": true,
+ "violation_count_match": true
+}

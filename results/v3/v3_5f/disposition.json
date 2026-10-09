@@ -1,0 +1,8 @@
+{
+ "brier_cells_worse": 2,
+ "champion_status": "LOGISTIC_CONTROL retains SCIENTIFIC CHAMPION; XGB is NONLINEAR RESEARCH CANDIDATE",
+ "ece_cells_worse": 1,
+ "final_disposition": "OUTCOME_XGB_MIXED_OUT_OF_TIME",
+ "no_reselection": "confirmed: no config/calibration/projection/feature/family change after 2025 contact",
+ "no_serving_promotion": true
+}

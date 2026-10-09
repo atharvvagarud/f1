@@ -1,0 +1,17 @@
+{
+ "2025_CONTACT": "EVALUATION_ONLY",
+ "evaluation_season": 2025,
+ "execution_record": "a94ee34d63e843be37b41737fba4b2d141cf57409e6960094bf158c42921a1b3",
+ "first_contact": "2025 D9 label read (target construction)",
+ "manifest": "eab0da304dbb46b6de58ccb00c676e6a64761cf6473cc1361659ff8658b3d8e1",
+ "recipe": "b1d8ce5e43059477a5e57fe5b4d301cbd7b9975864d1ad964d613d1124044c09",
+ "training_seasons": [
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ]
+}

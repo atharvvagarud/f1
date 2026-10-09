@@ -1,0 +1,33 @@
+{
+ "climatology": {
+  "coherence": "train rates are nested (label nesting), hence coherent; verified anyway",
+  "rule": "per-fold TRAIN-state empirical rate per threshold; constant over validation states"
+ },
+ "grid": {
+  "grid_column": "matrix state `grid_position` (pre-race, causal)",
+  "grid_zero": "pit-lane starters (0) score 1.0 on all thresholds: deterministic, causal, documented overconfidence",
+  "null_grid": "none in state population (verified 0)",
+  "rule": "p_topK = 1.0 if grid_position <= K else 0.0"
+ },
+ "l2_logistic_control": {
+  "C_rationale": "frozen V3.1B/V3.3 lineage value (FROZEN_LOGR_C); fixed before fitting; no tuning",
+  "config": {
+   "C": 0.01
+  },
+  "family": "logistic_regression (frozen Model Lab builder)",
+  "fixed_estimator": {
+   "class_weight": null,
+   "max_iter": 1000,
+   "penalty": "L2",
+   "random_state": 42,
+   "solver": "lbfgs"
+  },
+  "scope": "four independent binary models, one per threshold; control, not search"
+ },
+ "position_persistence": {
+  "grid_zero_note": "n/a (state position, not grid)",
+  "null_position_fallback": "per-fold train climatology rate for that threshold (261 null states corpus-wide; causal: train stats only)",
+  "position_column": "matrix state `position` (causal state at T)",
+  "rule": "p_topK = 1.0 if current position <= K else 0.0"
+ }
+}

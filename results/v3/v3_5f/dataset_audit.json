@@ -1,0 +1,25 @@
+{
+ "driver_race_outcomes": 479,
+ "evaluation_season": 2025,
+ "population_policy": "v3.5b-population-v1",
+ "races": 24,
+ "states": 26692,
+ "status_counts": {
+  "CLASSIFIED_POSITION": 424,
+  "UNCLASSIFIED_TAIL": 55
+ },
+ "status_policy": "v3.5b-status-v1",
+ "target_contract": "v3.5b-target-v1",
+ "threshold_prevalence_outcomes": {
+  "is_top1": 0.05010438413361169,
+  "is_top10": 0.5010438413361169,
+  "is_top3": 0.15031315240083507,
+  "is_top5": 0.25052192066805845
+ },
+ "threshold_prevalence_states": {
+  "is_top1": 0.05409860632399221,
+  "is_top10": 0.5404240971077476,
+  "is_top3": 0.16229581897197662,
+  "is_top5": 0.270493031619961
+ }
+}

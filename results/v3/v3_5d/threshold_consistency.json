@@ -1,0 +1,112 @@
+{
+ "hgb": {
+  "cells": {
+   "is_top10xD1": {
+    "delta": 0.005345867368018231,
+    "direction": "worsened"
+   },
+   "is_top10xD2": {
+    "delta": -0.003583328310188816,
+    "direction": "improved"
+   },
+   "is_top10xD3": {
+    "delta": -0.009690562356921617,
+    "direction": "improved"
+   },
+   "is_top1xD1": {
+    "delta": 0.020689688207090745,
+    "direction": "worsened"
+   },
+   "is_top1xD2": {
+    "delta": -0.00331738780673263,
+    "direction": "improved"
+   },
+   "is_top1xD3": {
+    "delta": 0.016197718660804786,
+    "direction": "worsened"
+   },
+   "is_top3xD1": {
+    "delta": -0.010384870359385817,
+    "direction": "improved"
+   },
+   "is_top3xD2": {
+    "delta": 0.016665597697800016,
+    "direction": "worsened"
+   },
+   "is_top3xD3": {
+    "delta": -0.0015591314691376645,
+    "direction": "improved"
+   },
+   "is_top5xD1": {
+    "delta": -0.0056187742056868495,
+    "direction": "improved"
+   },
+   "is_top5xD2": {
+    "delta": 0.007831134629197045,
+    "direction": "worsened"
+   },
+   "is_top5xD3": {
+    "delta": -0.008233397624911293,
+    "direction": "improved"
+   }
+  },
+  "improved": 7,
+  "total": 12,
+  "worsened": 5
+ },
+ "xgb": {
+  "cells": {
+   "is_top10xD1": {
+    "delta": -0.026376277278147064,
+    "direction": "improved"
+   },
+   "is_top10xD2": {
+    "delta": -0.004837813491820886,
+    "direction": "improved"
+   },
+   "is_top10xD3": {
+    "delta": -0.0004526774776177911,
+    "direction": "improved"
+   },
+   "is_top1xD1": {
+    "delta": 0.003114900593041453,
+    "direction": "worsened"
+   },
+   "is_top1xD2": {
+    "delta": -0.0038078924876274386,
+    "direction": "improved"
+   },
+   "is_top1xD3": {
+    "delta": 0.0022341577058588025,
+    "direction": "worsened"
+   },
+   "is_top3xD1": {
+    "delta": -0.003251685892660311,
+    "direction": "improved"
+   },
+   "is_top3xD2": {
+    "delta": 0.008383707946094887,
+    "direction": "worsened"
+   },
+   "is_top3xD3": {
+    "delta": -0.0013156889936158378,
+    "direction": "improved"
+   },
+   "is_top5xD1": {
+    "delta": -0.015872690789008603,
+    "direction": "improved"
+   },
+   "is_top5xD2": {
+    "delta": 0.0038297399342268057,
+    "direction": "worsened"
+   },
+   "is_top5xD3": {
+    "delta": -0.010438178181475632,
+    "direction": "improved"
+   }
+  },
+  "improved": 8,
+  "total": 12,
+  "worsened": 4
+ }
+}

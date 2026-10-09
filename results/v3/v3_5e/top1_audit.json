@@ -1,0 +1,51 @@
+{
+ "per_fold": {
+  "D1": {
+   "anchor_proj": 0.08369409241005434,
+   "control_proj": 0.08057919181701288,
+   "delta_vs_anchor_proj": 0.0,
+   "delta_vs_logistic_proj": 0.003114900593041453,
+   "delta_vs_logistic_raw": 0.0030125791557672615,
+   "race_counts_vs_logistic": {
+    "improved": 10,
+    "ties": 0,
+    "worsened": 12
+   },
+   "refined_proj": 0.08369409241005434,
+   "refined_raw": 0.08359177097278014
+  },
+  "D2": {
+   "anchor_proj": 0.035256956909615986,
+   "control_proj": 0.039064849397243424,
+   "delta_vs_anchor_proj": 0.00020431816477963632,
+   "delta_vs_logistic_proj": -0.0036035743228478023,
+   "delta_vs_logistic_raw": -0.0035818816643140433,
+   "race_counts_vs_logistic": {
+    "improved": 13,
+    "ties": 0,
+    "worsened": 9
+   },
+   "refined_proj": 0.03546127507439562,
+   "refined_raw": 0.03548296773292938
+  },
+  "D3": {
+   "anchor_proj": 0.0822182892935507,
+   "control_proj": 0.0799841315876919,
+   "delta_vs_anchor_proj": 0.0009000396173926561,
+   "delta_vs_logistic_proj": 0.0031341973232514586,
+   "delta_vs_logistic_raw": 0.003303960886230972,
+   "race_counts_vs_logistic": {
+    "improved": 16,
+    "ties": 0,
+    "worsened": 8
+   },
+   "refined_proj": 0.08311832891094335,
+   "refined_raw": 0.08328809247392287
+  }
+ },
+ "pooled_descriptive": {
+  "n_races": 68,
+  "note": "descriptive concat of outer validations; not a fold",
+  "race_macro_ll_proj": 0.06788614674294911
+ }
+}

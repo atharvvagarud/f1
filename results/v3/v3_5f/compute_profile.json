@@ -1,0 +1,8 @@
+{
+ "fits": {
+  "calibration_oos": 12,
+  "logistic": 4,
+  "xgb_final": 4
+ },
+ "total_seconds": 31.8
+}

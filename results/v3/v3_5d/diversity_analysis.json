@@ -1,0 +1,56 @@
+{
+ "hgb": {
+  "is_top1": {
+   "high_conf_disagreements": 374,
+   "mean_abs_disagreement": 0.02090350545330942,
+   "prob_correlation": 0.9153697790961198
+  },
+  "is_top10": {
+   "high_conf_disagreements": 3030,
+   "mean_abs_disagreement": 0.08486989777892719,
+   "prob_correlation": 0.9427317789711218
+  },
+  "is_top3": {
+   "high_conf_disagreements": 1003,
+   "mean_abs_disagreement": 0.04639673541567543,
+   "prob_correlation": 0.9483447540939176
+  },
+  "is_top5": {
+   "high_conf_disagreements": 1896,
+   "mean_abs_disagreement": 0.057690193933140115,
+   "prob_correlation": 0.9560998150860377
+  },
+  "race_overlap": {
+   "candidate_improved": 37,
+   "control_weak": 34,
+   "intersection": 17
+  }
+ },
+ "xgb": {
+  "is_top1": {
+   "high_conf_disagreements": 235,
+   "mean_abs_disagreement": 0.0180300463488139,
+   "prob_correlation": 0.9423167351086235
+  },
+  "is_top10": {
+   "high_conf_disagreements": 1430,
+   "mean_abs_disagreement": 0.07388626996148054,
+   "prob_correlation": 0.9562326237382335
+  },
+  "is_top3": {
+   "high_conf_disagreements": 1025,
+   "mean_abs_disagreement": 0.04213780520310338,
+   "prob_correlation": 0.9574685394078976
+  },
+  "is_top5": {
+   "high_conf_disagreements": 922,
+   "mean_abs_disagreement": 0.05089084119923676,
+   "prob_correlation": 0.9679142618832006
+  },
+  "race_overlap": {
+   "candidate_improved": 36,
+   "control_weak": 34,
+   "intersection": 15
+  }
+ }
+}

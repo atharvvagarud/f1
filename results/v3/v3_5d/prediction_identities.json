@@ -1,0 +1,32 @@
+{
+ "oof_hgb__D1.parquet": {
+  "path": "data/v3/v3_5d/oof_hgb__D1.parquet",
+  "rows": 23577,
+  "sha256": "98e43044629a8d1c72fb4202a4132ef122a7fdc9702b23c0ff9e24b2df144885"
+ },
+ "oof_hgb__D2.parquet": {
+  "path": "data/v3/v3_5d/oof_hgb__D2.parquet",
+  "rows": 24422,
+  "sha256": "2f8972cdea7bbc06d3b9d4ae8458d607f5c0604497495403612dba1d491dd059"
+ },
+ "oof_hgb__D3.parquet": {
+  "path": "data/v3/v3_5d/oof_hgb__D3.parquet",
+  "rows": 26606,
+  "sha256": "f866f009fd03ab6879142c5bba2acd47d6c263a6c5522a2ac83856cac619df0f"
+ },
+ "oof_xgb__D1.parquet": {
+  "path": "data/v3/v3_5d/oof_xgb__D1.parquet",
+  "rows": 23577,
+  "sha256": "d282cda3e1a4e3f46e7730c4a70a600d60d7742bdbb1f9513ff230bd8528126f"
+ },
+ "oof_xgb__D2.parquet": {
+  "path": "data/v3/v3_5d/oof_xgb__D2.parquet",
+  "rows": 24422,
+  "sha256": "f3d59ea41b68b087d080b6c66605faaafc01285e455a225a19bbd98959ae007f"
+ },
+ "oof_xgb__D3.parquet": {
+  "path": "data/v3/v3_5d/oof_xgb__D3.parquet",
+  "rows": 26606,
+  "sha256": "04b70e699926633dca2d3c4b35e067b82beadc426f962c42c4633793e5126ee1"
+ }
+}

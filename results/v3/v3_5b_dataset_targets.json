@@ -1,0 +1,284 @@
+{
+ "2025_status": "NONE (2025_CONTACT=NONE)",
+ "A_contract_identity": "15ca7c17146062edb5196a5de244fadd81d38562b2ca5714e58a21d4efb5efab",
+ "V3_5C_recommendation": "Validate baselines + metric/bootstrap harness on this dataset: climatology, position persistence, grid, L2-logistic control; report RAW and PROJECTED_COHERENT quality with violation diagnostics.",
+ "dataset_identity": "e9ac34e5792a5aabba9038094a231a4a94789b481178739e46ece72457cc5289",
+ "derived_band_semantics": "threshold-differenced diagnostic bands (P1, P2-P3, P4-P5, P6-P10, >P10); nonnegative, sum to 1; NOT an exact finish-position distribution.",
+ "feature_identity": {
+  "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "n": 110
+ },
+ "field_sizes": {
+  "distribution": {
+   "19": 1,
+   "20": 148
+  },
+  "fixed20_assumption": "none in B code",
+  "non20": {
+   "2024-r03-R": 19
+  }
+ },
+ "harness_readiness": {
+  "all_pass": true,
+  "checks": {
+   "features_110_recomputable": true,
+   "no_2025_rows": true,
+   "projection_utility_importable": true,
+   "race_driver_identity_present": true,
+   "season_present": true,
+   "state_identity_unique": true,
+   "targets_4_present": true,
+   "temporal_folds_D1_D2_D3_reusable": true,
+   "threshold_order_frozen": [
+    1,
+    3,
+    5,
+    10
+   ]
+  },
+  "dataset_identity": "e9ac34e5792a5aabba9038094a231a4a94789b481178739e46ece72457cc5289",
+  "schema_version": "v3.5b-harness-readiness-v1"
+ },
+ "known_limitations": [
+  "sidecar carries no features (matrix is the frozen feature source)",
+  "outcome metadata (points/status) excluded from state sidecar by design",
+  "top10/points equivalence empirical, not guaranteed",
+  "no model, no predictions, no calibration in B"
+ ],
+ "outcome_counts": {
+  "outcomes": 2979,
+  "races": 149,
+  "semantics": {
+   "CLASSIFIED_POSITION": 2583,
+   "UNCLASSIFIED_TAIL": 393,
+   "WITHDRAWN_NO_RESULT": 3
+  }
+ },
+ "outcome_semantics": "position_final is the canonical official ordering; unclassified rows are threshold negatives by policy (back-rank never earned); 3 null-final withdrawals excluded from states by construction.",
+ "parent": {
+  "commit": "3cbd28470ffa211bd754d4262eb10d66d149bf00",
+  "tag": "v3.4-ensemble"
+ },
+ "physical_identity": {
+  "path": "data/v3/v3_5b/outcome_targets_2018_2024.parquet",
+  "sha256": "5892742f10aece729985998f7a372ab0d2f59b57aee97e01a6397cb7426aa7a2"
+ },
+ "population_policy": "v3.5b-population-v1 (observable state at T; later retirements included)",
+ "prevalence": {
+  "by_season": {
+   "2018": {
+    "outcome_rates": {
+     "is_top1": 0.05,
+     "is_top10": 0.5,
+     "is_top3": 0.15,
+     "is_top5": 0.25
+    },
+    "outcomes": 420,
+    "races": 21,
+    "state_rates": {
+     "is_top1": 0.056677261942069214,
+     "is_top10": 0.5644446434167525,
+     "is_top3": 0.17003178582620765,
+     "is_top5": 0.28325200340242646
+    },
+    "states": 22337
+   },
+   "2019": {
+    "outcome_rates": {
+     "is_top1": 0.05,
+     "is_top10": 0.5,
+     "is_top3": 0.15,
+     "is_top5": 0.25
+    },
+    "outcomes": 420,
+    "races": 21,
+    "state_rates": {
+     "is_top1": 0.05334515965534719,
+     "is_top10": 0.5315509376583882,
+     "is_top3": 0.16003547896604156,
+     "is_top5": 0.26668356141240074
+    },
+    "states": 23676
+   },
+   "2020": {
+    "outcome_rates": {
+     "is_top1": 0.05,
+     "is_top10": 0.5,
+     "is_top3": 0.15,
+     "is_top5": 0.25
+    },
+    "outcomes": 340,
+    "races": 17,
+    "state_rates": {
+     "is_top1": 0.05634263295553618,
+     "is_top10": 0.5617916303400174,
+     "is_top3": 0.16891891891891891,
+     "is_top5": 0.28133173496076724
+    },
+    "states": 18352
+   },
+   "2021": {
+    "outcome_rates": {
+     "is_top1": 0.05,
+     "is_top10": 0.5,
+     "is_top3": 0.15,
+     "is_top5": 0.25
+    },
+    "outcomes": 440,
+    "races": 22,
+    "state_rates": {
+     "is_top1": 0.05467631955551814,
+     "is_top10": 0.5452900075763953,
+     "is_top3": 0.16402895866655443,
+     "is_top5": 0.2732553245222662
+    },
+    "states": 23758
+   },
+   "2022": {
+    "outcome_rates": {
+     "is_top1": 0.05,
+     "is_top10": 0.5,
+     "is_top3": 0.15,
+     "is_top5": 0.25
+    },
+    "outcomes": 440,
+    "races": 22,
+    "state_rates": {
+     "is_top1": 0.05492641133307885,
+     "is_top10": 0.5482461721168936,
+     "is_top3": 0.1646944055647453,
+     "is_top5": 0.27446239979641174
+    },
+    "states": 23577
+   },
+   "2023": {
+    "outcome_rates": {
+     "is_top1": 0.05,
+     "is_top10": 0.5,
+     "is_top3": 0.15,
+     "is_top5": 0.25
+    },
+    "outcomes": 440,
+    "races": 22,
+    "state_rates": {
+     "is_top1": 0.05425436082220948,
+     "is_top10": 0.5423798214724429,
+     "is_top3": 0.16276308246662846,
+     "is_top5": 0.2712718041110474
+    },
+    "states": 24422
+   },
+   "2024": {
+    "outcome_rates": {
+     "is_top1": 0.05010438413361169,
+     "is_top10": 0.5010438413361169,
+     "is_top3": 0.15031315240083507,
+     "is_top5": 0.25052192066805845
+    },
+    "outcomes": 479,
+    "races": 24,
+    "state_rates": {
+     "is_top1": 0.054273472149139294,
+     "is_top10": 0.5422461099000225,
+     "is_top3": 0.16282041644741788,
+     "is_top5": 0.27136736074569645
+    },
+    "states": 26606
+   }
+  },
+  "outcome_grain": {
+   "is_top1": {
+    "positives": 149,
+    "rate": 0.050016784155756965,
+    "total": 2979
+   },
+   "is_top10": {
+    "positives": 1490,
+    "rate": 0.5001678415575697,
+    "total": 2979
+   },
+   "is_top3": {
+    "positives": 447,
+    "rate": 0.1500503524672709,
+    "total": 2979
+   },
+   "is_top5": {
+    "positives": 745,
+    "rate": 0.25008392077878483,
+    "total": 2979
+   }
+  },
+  "state_grain": {
+   "is_top1": {
+    "positives": 8926,
+    "rate": 0.05485226881667568,
+    "total": 162728
+   },
+   "is_top10": {
+    "positives": 89057,
+    "rate": 0.5472752077085689,
+    "total": 162728
+   },
+   "is_top3": {
+    "positives": 26774,
+    "rate": 0.1645322255542992,
+    "total": 162728
+   },
+   "is_top5": {
+    "positives": 44612,
+    "rate": 0.2741507300526031,
+    "total": 162728
+   }
+  }
+ },
+ "projection_identity": "5dedacee0e3db243bebbf72009d6587fdb047c84ec48be8929398f94d542a55a",
+ "projection_policy": {
+  "deterministic": true,
+  "learned": false,
+  "spec": "least-squares isotonic (equal weights) onto 0<=q1<=q3<=q5<=q10<=1, input order [top1,top3,top5,top10]",
+  "verification": "7 analytical vectors exact; 2000-row cross-check vs sklearn IsotonicRegression max diff 1.1e-16 (dev only, not a dependency)",
+  "version": "v3.5b-projection-v1"
+ },
+ "schema_version": "v3.5b-dataset-targets-v1",
+ "state_counts": {
+  "seasons": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "states": 162728
+ },
+ "status_policy": "v3.5b-status-v1 (fail-closed; R/W/D/DNS/classified-retirement enumerated)",
+ "target_contract": {
+  "aliases": {
+   "is_top1": "p_win",
+   "is_top10": "p_top10",
+   "is_top3": "p_podium",
+   "is_top5": "p_top5"
+  },
+  "module": "raceintel/model_lab/outcomes.py",
+  "names": [
+   "is_top1",
+   "is_top3",
+   "is_top5",
+   "is_top10"
+  ],
+  "threshold_order": [
+   1,
+   3,
+   5,
+   10
+  ],
+  "version": "v3.5b-target-v1"
+ },
+ "tests": "tests/test_v3_5b_dataset.py (37 tests)",
+ "top10_points_audit": {
+  "observed_equivalence": true,
+  "status": "empirical equivalence, not semantic identity; points is not the label"
+ }
+}

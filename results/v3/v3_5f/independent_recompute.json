@@ -1,0 +1,17 @@
+{
+ "all_match": true,
+ "per_threshold": {
+  "is_top1": {
+   "match_1e9": true
+  },
+  "is_top10": {
+   "match_1e9": true
+  },
+  "is_top3": {
+   "match_1e9": true
+  },
+  "is_top5": {
+   "match_1e9": true
+  }
+ }
+}

@@ -1,0 +1,263 @@
+{
+  "2025_firewall": {
+    "contact_in_A": "NONE",
+    "disclosure": "2025 outcomes already used in earlier phases for OTHER tasks; never pristine globally. V3.5 threshold selection must not use 2025.",
+    "final_evaluation": "policy frozen in V3.5F; conservative previously-revealed posture inherited from V3.4",
+    "mechanism_BCD": [
+      "ProtectedHoldoutError reuse",
+      "explicit allowed seasons (2018-2024 development)",
+      "forbidden result/label paths",
+      "artifact scan",
+      "tests proving inaccessibility"
+    ],
+    "selection_use_of_2025": "FORBIDDEN for all V3.5 target/model selection"
+  },
+  "baselines": {
+    "ML_control": "L2-logistic per threshold (same arm/seed discipline as V3.1B)",
+    "all_T_safe": true,
+    "non_ML": [
+      "climatology",
+      "current-position persistence",
+      "grid-position thresholds"
+    ]
+  },
+  "calibration_policy": {
+    "diagnostics": "reliability/ECE per threshold via frozen calibration module",
+    "learned_calibration": "training-history only; never outer labels; never 2025; never post-hoc rescue",
+    "primary": "RAW"
+  },
+  "candidate_models": {
+    "members": [
+      "climatology (empirical threshold base rates)",
+      "current-position persistence (deterministic from state at T)",
+      "grid-position thresholds",
+      "L2-logistic per threshold on frozen 110 arm (V3.1B recipe lineage)"
+    ],
+    "policy": "closed set for screening; no additions without contract amendment"
+  },
+  "canonical_target_semantics": {
+    "finish_position": "Official classified position (FastF1 Position), verbatim via frozen v2/d9.py labels_from_results. Equals classified_position whenever both non-null (verified identical in 2018-2024 corpus). Null only for never-started withdrawals (3 rows, 0 laps).",
+    "points_equivalence": "P(top-10) and P(points) are the same event per-row in 2018-2024 (scored_points defined as points > 0). Contract admits P_top10 only; a separate P_points output would duplicate it, not extend it.",
+    "threshold_labels": {
+      "P_podium": "position_final in 1..3 (frozen is_podium; exactly 3/race)",
+      "P_top10": "position_final <= 10 (exactly 10/race; identical event to points>0 in 2018-2024)",
+      "P_top5": "position_final <= 5 (exactly 5/race; back-rank-proof: unclassified >= 13)",
+      "P_win": "position_final == 1 (frozen is_winner; exactly 1/race)"
+    },
+    "unclassified_back_rank": "Unclassified retirees/DNS/DSQ carry source tail orderings (observed range 13-20, never <=10 in 2018-2024). These are NOT earned slots and must never train ordinal/exact-position models as if they were."
+  },
+  "censoring_policy": {
+    "leakage_note": "future-retirement exclusion forbidden (would leak)",
+    "ordinal_supervision": "classified_flag true only (deferred with formulation B)",
+    "prediction_time": "eligibility from state existence at T only; labels never consulted",
+    "threshold_supervision": "all rows with non-null position_final included (unclassified are structural >10 negatives); 3 null-final rows excluded"
+  },
+  "coherence_policy": {
+    "alternatives": "formulation-disallowed incoherence OR rejection-on-violation; chosen: projection, documented mathematically in V3.5B dataset contract",
+    "field_coherence": "whole-field exclusivity (exactly one P1, etc.) is NOT claimed; per-driver marginals only",
+    "mechanism": "deterministic monotonic projection (non-decreasing rearrangement across the 4 thresholds) frozen as part of the method BEFORE any screening",
+    "post_hoc_repair": "FORBIDDEN (no invention after seeing results)",
+    "rule": "p_win <= p_podium <= p_top5 <= p_top10 for every predicted row"
+  },
+  "compute_budget": {
+    "gpu": "not required",
+    "grids": "small and predeclared; no unconstrained search",
+    "per_candidate_family": "minutes to low tens of minutes on M4 MacBook Air"
+  },
+  "contract_hash": "15ca7c17146062edb5196a5de244fadd81d38562b2ca5714e58a21d4efb5efab",
+  "dependencies": {
+    "added_in_A": "none",
+    "allowed": [
+      "numpy",
+      "pandas",
+      "scikit-learn",
+      "xgboost"
+    ],
+    "forbidden_new": [
+      "PyTorch",
+      "TensorFlow",
+      "specialized ranking packages",
+      "probabilistic programming frameworks"
+    ],
+    "new_metric_code": "RPS/CRPS-style diagnostics may be added as evaluation code in B (not dependencies)"
+  },
+  "feature_policy": {
+    "basis": "ALL_84_PLUS_V3_1_DYNAMICS_CORE (110 features, frozen)",
+    "compatible": true,
+    "contains_state_position": true,
+    "future_feature_need": "documented as explicit experiment, never silent addition",
+    "new_features_in_A": "FORBIDDEN",
+    "spatial_P12": "excluded unless separately justified later"
+  },
+  "field_size_policy": {
+    "corpus_fact": "20 drivers except 2024-r03-R (19); thresholds are field-size-free so no fixed-20 assumption is needed",
+    "fixed_20_multiclass": "NOT scientifically exact for this corpus (deferred with formulation C)"
+  },
+  "formulation_scorecard": {
+    "A_independent_cumulative_thresholds": {
+      "calibration": "STRONG (existing ECE machinery)",
+      "coherence": "ACCEPTABLE (projection predeclared)",
+      "complexity": "STRONG",
+      "compute": "STRONG",
+      "dnf_handling": "STRONG (status policy above)",
+      "infra_reuse": "STRONG (full V3.1B lineage)",
+      "interpretability": "STRONG",
+      "label_validity": "STRONG",
+      "portfolio": "STRONG",
+      "probability_semantics": "STRONG",
+      "strategy_use": "STRONG",
+      "temporal_safety": "STRONG",
+      "variable_field": "STRONG (thresholds field-size-free)",
+      "verdict": "SELECTED"
+    },
+    "B_ordinal": {
+      "coherence": "STRONG",
+      "complexity": "ACCEPTABLE",
+      "infra_reuse": "WEAK",
+      "label_validity": "ACCEPTABLE (needs classified conditioning)",
+      "reason": "no ordinal implementation in frozen deps; proportional-odds assumptions untested; threshold selection captures most value first",
+      "temporal_safety": "ACCEPTABLE",
+      "variable_field": "ACCEPTABLE",
+      "verdict": "DEFERRED"
+    },
+    "C_multiclass_exact_position": {
+      "coherence": "WEAK (no exclusivity)",
+      "complexity": "WEAK",
+      "infra_reuse": "ACCEPTABLE",
+      "reason": "20-class with tail back-rank contamination, per-driver race-exclusivity unenforceable, heavier; revisit only if thresholds prove insufficient",
+      "variable_field": "WEAK (19-driver race breaks fixed-20)",
+      "verdict": "DEFERRED"
+    },
+    "D_regression_distributional": {
+      "reason": "bounded discrete target vs continuous loss mismatch; uncertainty estimation ad-hoc; calibration path unclear",
+      "verdict": "REJECTED"
+    },
+    "E_pairwise_ranking": {
+      "reason": "190 pairs/state x 162k states compute; conversion to calibrated finish distributions nontrivial; head-to-head outputs deferred with it",
+      "verdict": "DEFERRED"
+    },
+    "F_survival_competing_risk": {
+      "reason": "retirement structure already handled by classification flags; competing-risk machinery disproportionate to the question",
+      "verdict": "REJECTED"
+    },
+    "G_discovered": {
+      "verdict": "NONE (no superior formulation found in audit)"
+    }
+  },
+  "known_limitations": [
+    "per-driver marginals only; no whole-field exclusivity",
+    "in-corpus top10/points equivalence is empirical, not a theorem",
+    "one 19-driver race; threshold formulation unaffected",
+    "p_win comparability with V3.1B is diagnostic, not identity",
+    "2025 globally non-pristine; V3.5F disclosure must stay conservative",
+    "no model performance exists at contract time by design"
+  ],
+  "output_contract": {
+    "admitted": [
+      "p_win",
+      "p_podium",
+      "p_top5",
+      "p_top10"
+    ],
+    "coherence": "p_win <= p_podium <= p_top5 <= p_top10 enforced by frozen projection; violations rejected, never silently shipped",
+    "deferred": [
+      "expected_finish",
+      "position_probabilities",
+      "quantiles",
+      "head-to-head (require exact-position or pairwise machinery; not admitted until a later contract)"
+    ],
+    "field_semantics": {
+      "p_podium": {
+        "meaning": "P(finish position <= 3 | state T), RAW independent-binary",
+        "range": "[0,1]"
+      },
+      "p_top10": {
+        "meaning": "P(finish position <= 10 | state T), RAW independent-binary; in-corpus identical event to scoring points",
+        "range": "[0,1]"
+      },
+      "p_top5": {
+        "meaning": "P(finish position <= 5 | state T), RAW independent-binary",
+        "range": "[0,1]"
+      },
+      "p_win": {
+        "meaning": "P(finish position == 1 | state T), RAW independent-binary, not field-normalized",
+        "range": "[0,1]"
+      }
+    },
+    "keys": [
+      "state_id",
+      "driver_id",
+      "race_id",
+      "season"
+    ],
+    "no_fake_intervals": true
+  },
+  "parent": {
+    "commit": "3cbd28470ffa211bd754d4262eb10d66d149bf00",
+    "tag": "v3.4-ensemble"
+  },
+  "prediction_population": "All starters with an observable state at time T (state existence at T only). DNS/never-started drivers are excluded by construction (no lap states exist), never by label filtering: no future leakage. Drivers who later retire are INCLUDED (excluding them would leak future information).",
+  "primary_metric": "mean_race_macro_log_loss_over_4_thresholds",
+  "primary_metric_definition": "Race-macro binary log loss (frozen eps 1e-15) per threshold, then unweighted mean over the 4 cumulative tasks. Proper scoring rule; matches V3.1B lineage; race-macro keeps large-state races from dominating.",
+  "primary_task_definition": "Four binary cumulative tasks on the same state rows: P(finish<=1), P(finish<=3), P(finish<=5), P(finish<=10). One shared frozen method with a deterministic monotonicity projection (see coherence_policy).",
+  "race_aggregation": {
+    "headline": "race-macro (equal per-race weight)",
+    "secondary": "state-pooled diagnostics permitted",
+    "unit": "race"
+  },
+  "relation_to_mc2": "V3.5 learns conditional per-driver outcome marginals; MC2 simulates mutually exclusive joint futures (FinishOrder: unique 1..K + explicit retirees). Do not fuse. V3.8 owns model x simulation consensus.",
+  "relation_to_v3_1b": "V3.5 does not replace V3.1B. V3.1B P(win) is RAW INDEPENDENT_BINARY and stays the standalone champion reference. V3.5 p_win must be compared against V3.1B on the same race-macro LL; agreement is not required (different feature/selection context may follow), but any large divergence must be explained, not reinterpreted. No serving change.",
+  "schema_version": "v3.5a-outcome-distribution-contract-v1",
+  "scientific_question": "Can the platform estimate useful probability distributions over driver race outcomes from a historical race state at time T while preserving strict temporal causality, coherent probability semantics, and honest uncertainty?",
+  "secondary_metrics": [
+    "brier_per_threshold",
+    "ece_per_threshold",
+    "topK_calibration",
+    "monotonic_violation_rate",
+    "state_pooled_ll_diagnostic"
+  ],
+  "secondary_tasks": [
+    "exact position distribution via threshold-differencing (diagnostic only; coherence caveats documented, not a promotion path)"
+  ],
+  "selected_primary_task": "ordered_cumulative_finish_thresholds",
+  "stage_plan": {
+    "V3.5A": "Outcome Landscape + Scientific Contract (this stage; no fitting)",
+    "V3.5B": "Dataset + Target Construction (threshold label frame + population + monotonic projection spec)",
+    "V3.5C": "Baseline + Harness Validation (climatology/persistence/grid/logistic + metric/bootstrap harness)",
+    "V3.5D": "Candidate Model Screening (closed-set screen on D1/D2/D3)",
+    "V3.5E": "Controlled Refinement / Calibration (if D warrants; RAW default)",
+    "V3.5F": "Final Out-of-Time Evaluation (conservative disclosure)",
+    "V3.5G": "Final Validation + Freeze"
+  },
+  "statistical_comparison": {
+    "ci": 0.95,
+    "estimand": "candidate minus baseline (direction explicit)",
+    "method": "paired race bootstrap",
+    "replicates": 2000,
+    "seed": 42,
+    "states_as_units": "FORBIDDEN",
+    "unit": "race"
+  },
+  "status_policy": {
+    "DNS_never_started": "no states, no supervised rows; excluded by construction",
+    "DSQ": "unclassified back-rank; threshold-negative only; excluded from ordinal supervision",
+    "classified_finishers": "full outcome labels; eligible for all tasks",
+    "classified_retirements": "classified (90% rule) incl. lapped classified; eligible for all tasks",
+    "eligibility_rule": "ordinal/exact-position supervision conditions on classified_flag (frozen F14 helper); never on non-null final_position alone",
+    "null_final_withdrawals": "3 rows, 0 laps; no states, no supervised rows",
+    "unclassified_retirements": "valid negatives for cumulative thresholds (position > 10 structurally); EXCLUDED from ordinal/exact-position supervision"
+  },
+  "stopping_rules": [
+    "threshold labels not exactly derivable -> STOP",
+    "monotonic projection not specifiable before screening -> STOP",
+    "primary metric not a proper scoring rule -> STOP",
+    "2025 consumed for selection -> STOP",
+    "predictive model fitted in A/B-contract scope -> STOP"
+  ],
+  "temporal_protocol": {
+    "development": "reuse frozen folds D1 (train 2018-2021, validate 2022), D2 (+2022, validate 2023), D3 (+2023, validate 2024)",
+    "final_fit": "2018-2024",
+    "inner_tuning": "training-history only; never outer labels",
+    "outer_selection": "nothing learned from outer validation (same discipline as V3.4)"
+  }
+}

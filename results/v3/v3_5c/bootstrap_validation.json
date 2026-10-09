@@ -1,0 +1,92 @@
+{
+ "D1": {
+  "l2_logistic_vs_climatology": {
+   "ci_hi": -0.2393852499708813,
+   "ci_level": 0.95,
+   "ci_lo": -0.2850742671228257,
+   "frac_improved": 1.0,
+   "frac_tied": 0.0,
+   "frac_worsened": 0.0,
+   "mean_delta": -0.2636935864604046,
+   "median_delta": -0.28167487094081495,
+   "n_races": 22,
+   "procedure": "paired race resampling with replacement; statistic = mean(LL_B - LL_A); percentile CI",
+   "replicates": 2000,
+   "seed": 42
+  },
+  "l2_logistic_vs_position_persistence": {
+   "ci_hi": -2.2577727100280374,
+   "ci_level": 0.95,
+   "ci_lo": -3.1295582655843748,
+   "frac_improved": 1.0,
+   "frac_tied": 0.0,
+   "frac_worsened": 0.0,
+   "mean_delta": -2.6756268153887373,
+   "median_delta": -2.7020195235545366,
+   "n_races": 22,
+   "procedure": "paired race resampling with replacement; statistic = mean(LL_B - LL_A); percentile CI",
+   "replicates": 2000,
+   "seed": 42
+  }
+ },
+ "D2": {
+  "l2_logistic_vs_climatology": {
+   "ci_hi": -0.2510079821897632,
+   "ci_level": 0.95,
+   "ci_lo": -0.3041565394460295,
+   "frac_improved": 1.0,
+   "frac_tied": 0.0,
+   "frac_worsened": 0.0,
+   "mean_delta": -0.28051306664180725,
+   "median_delta": -0.30137970689496096,
+   "n_races": 22,
+   "procedure": "paired race resampling with replacement; statistic = mean(LL_B - LL_A); percentile CI",
+   "replicates": 2000,
+   "seed": 42
+  },
+  "l2_logistic_vs_position_persistence": {
+   "ci_hi": -2.144552054219911,
+   "ci_level": 0.95,
+   "ci_lo": -3.234185603674191,
+   "frac_improved": 1.0,
+   "frac_tied": 0.0,
+   "frac_worsened": 0.0,
+   "mean_delta": -2.6545147320033338,
+   "median_delta": -2.0268089162204284,
+   "n_races": 22,
+   "procedure": "paired race resampling with replacement; statistic = mean(LL_B - LL_A); percentile CI",
+   "replicates": 2000,
+   "seed": 42
+  }
+ },
+ "D3": {
+  "l2_logistic_vs_climatology": {
+   "ci_hi": -0.2668404854130659,
+   "ci_level": 0.95,
+   "ci_lo": -0.3192845048099375,
+   "frac_improved": 1.0,
+   "frac_tied": 0.0,
+   "frac_worsened": 0.0,
+   "mean_delta": -0.294845526618448,
+   "median_delta": -0.314961328610589,
+   "n_races": 24,
+   "procedure": "paired race resampling with replacement; statistic = mean(LL_B - LL_A); percentile CI",
+   "replicates": 2000,
+   "seed": 42
+  },
+  "l2_logistic_vs_position_persistence": {
+   "ci_hi": -1.8584863664339732,
+   "ci_level": 0.95,
+   "ci_lo": -2.7353088635915084,
+   "frac_improved": 0.9583333333333334,
+   "frac_tied": 0.0,
+   "frac_worsened": 0.041666666666666664,
+   "mean_delta": -2.2841986643090544,
+   "median_delta": -2.1133601553646275,
+   "n_races": 24,
+   "procedure": "paired race resampling with replacement; statistic = mean(LL_B - LL_A); percentile CI",
+   "replicates": 2000,
+   "seed": 42
+  }
+ }
+}

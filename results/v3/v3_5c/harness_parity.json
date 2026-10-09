@@ -1,0 +1,10 @@
+{
+ "all_match": true,
+ "independent_logistic_D3_top1_max_abs_diff": 0.0,
+ "logistic_match": true,
+ "metric_match": true,
+ "metric_recompute_worst_abs_diff": 0.0,
+ "persistence_match": true,
+ "persistence_recompute_max_abs_diff": 0.0,
+ "schema_version": "v3.5c-harness-parity-v1"
+}

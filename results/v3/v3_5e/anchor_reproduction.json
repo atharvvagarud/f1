@@ -1,0 +1,23 @@
+{
+ "D1": {
+  "anchor_primary_proj": 0.2104274762242374,
+  "anchor_primary_raw": 0.21063112292713693,
+  "control_primary_proj": 0.22102391456593107,
+  "control_primary_raw": 0.22150868942993782,
+  "match_1e12": true
+ },
+ "D2": {
+  "anchor_primary_proj": 0.2029289438985904,
+  "anchor_primary_raw": 0.20323188049695062,
+  "control_primary_proj": 0.20203700842337208,
+  "control_primary_raw": 0.20222890273993052,
+  "match_1e12": true
+ },
+ "D3": {
+  "anchor_primary_proj": 0.18539172490000924,
+  "anchor_primary_raw": 0.18546030912027417,
+  "control_primary_proj": 0.18788482163672185,
+  "control_primary_raw": 0.1879331652108137,
+  "match_1e12": true
+ }
+}

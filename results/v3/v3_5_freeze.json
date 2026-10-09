@@ -1,0 +1,73 @@
+{
+ "a_f_identities": {
+  "A": "15ca7c17146062edb5196a5de244fadd81d38562b2ca5714e58a21d4efb5efab",
+  "B": "e9ac34e5792a5aabba9038094a231a4a94789b481178739e46ece72457cc5289",
+  "C": "9dfee182215d6a56e4f19e2418b051883e9c75876418a6f4c92a05d799c7603a",
+  "D": "8d82448ea5888beb6dd8f54c35ebb08ba40c58bd66b652bab6f0d39dfdf78ba4",
+  "E_protocol": "4adf3da33b86e734e7b663c6702c64f9377c08ac4318fb5439eebd439aec38e6",
+  "E_recipe": "b1d8ce5e43059477a5e57fe5b4d301cbd7b9975864d1ad964d613d1124044c09",
+  "F_manifest": "eab0da304dbb46b6de58ccb00c676e6a64761cf6473cc1361659ff8658b3d8e1",
+  "F_record": "a94ee34d63e843be37b41737fba4b2d141cf57409e6960094bf158c42921a1b3"
+ },
+ "canonicalization": "sha256(json.dumps(payload_minus_freeze_identity, sort_keys=True, separators=(',', ':'))); no commit SHA in hashed content per v3.4 precedent (unknowable pre-commit)",
+ "champion": "LOGISTIC_CONTROL",
+ "commit_message": "feat(model): add probabilistic race outcome distributions",
+ "evaluation_terminology": "PREVIOUSLY REVEALED OUT-OF-TIME OUTCOME EVALUATION",
+ "feature_identity": {
+  "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "n": 110
+ },
+ "final_disposition": "OUTCOME_XGB_MIXED_OUT_OF_TIME",
+ "focused_tests": {
+  "command": "pytest tests/test_v3_5a_contract.py tests/test_v3_5b_dataset.py tests/test_v3_5c_harness.py tests/test_v3_5d_screening.py tests/test_v3_5e_refinement.py tests/test_v3_5f_evaluation.py tests/test_v3_5g_final_validation.py -q",
+  "failed": 0,
+  "passed": 190,
+  "runtime": "2.21s",
+  "skipped": 0,
+  "xfailed": 0
+ },
+ "freeze_identity": "7c3925774da5ff8c92ab8ffdac8d1feca315deed4ab614e6eba3ade81e04efe7",
+ "full_tier1": {
+  "classification": {
+   "test_freeze_record_deterministic": "PRE_FREEZE_ARTIFACT_MISSING (freeze record written after Tier-1; passes post-freeze; Tier-1 not rerun per staged-bytes rule)",
+   "test_no_final_v34_freeze_tag_commit_yet": "EXPECTED_POST_FREEZE_SENTINEL (sole assertion: v3.4 tag must not exist; legitimate v3.4-ensemble tag exists; test unmodified)"
+  },
+  "command": "pytest tests/ -q -p no:cacheprovider",
+  "deselected": 0,
+  "failed": 2,
+  "passed": 4232,
+  "runtime_s": 4192.65,
+  "skipped": 5,
+  "summary": "2 failed, 4232 passed, 5 skipped, 4 xfailed, 66 warnings in 4192.65s (1:09:52)",
+  "xfailed": 4
+ },
+ "graphify_final": {
+  "communities": 475,
+  "coupling": "no serving/API/frontend/simulation path from V3.5 outcome module (import audit); counts grew only from new V3.5 source/test files",
+  "edges": 37044,
+  "nodes": 16272
+ },
+ "parent_commit": "3cbd28470ffa211bd754d4262eb10d66d149bf00",
+ "parent_tag": "v3.4-ensemble",
+ "phase": "V3.5",
+ "prediction_identities": {
+  "logistic": "e6651d68fecba32fbbd05889db10413bee6bcfecc897ae299fa96a0dbfedb5b7",
+  "xgb": "1d21dca15421223c0da8fc40636415e36c407a2b82899eaa4920d4c18fb2bbc3"
+ },
+ "projection_identity": "v3.5b-projection-v1",
+ "push_status": "NOT_PUSHED",
+ "research_candidate": "XGB_E",
+ "schema_version": "v3.5-freeze-v1",
+ "scientific_card_identity": "8d3a8d2ec6aef5d4bb50306036e100b0db6c83386c19ec8f7ce07ae25714446d",
+ "serving": "NONE",
+ "stage_2025_contact": {
+  "A": "NONE",
+  "B": "NONE",
+  "C": "NONE",
+  "D": "NONE",
+  "E": "NONE",
+  "F": "EVALUATION_ONLY"
+ },
+ "tag_name": "v3.5-outcome-distribution"
+}

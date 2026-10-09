@@ -1,0 +1,114 @@
+{
+ "fits": {
+  "inner": 192,
+  "outer": 24
+ },
+ "inner_selection": {
+  "hgb": {
+   "D1": {
+    "chosen": {
+     "learning_rate": 0.03,
+     "max_leaf_nodes": 15,
+     "min_samples_leaf": 20
+    },
+    "inner_folds": [
+     "D1-I1"
+    ],
+    "inner_scores": {
+     "{\"learning_rate\": 0.03, \"max_leaf_nodes\": 15, \"min_samples_leaf\": 20}": 0.2568548589277126,
+     "{\"learning_rate\": 0.03, \"max_leaf_nodes\": 31, \"min_samples_leaf\": 20}": 0.2755084598590595,
+     "{\"learning_rate\": 0.05, \"max_leaf_nodes\": 15, \"min_samples_leaf\": 20}": 0.28325856231306434,
+     "{\"learning_rate\": 0.05, \"max_leaf_nodes\": 31, \"min_samples_leaf\": 20}": 0.3254430397484269
+    }
+   },
+   "D2": {
+    "chosen": {
+     "learning_rate": 0.03,
+     "max_leaf_nodes": 15,
+     "min_samples_leaf": 20
+    },
+    "inner_folds": [
+     "D2-I1",
+     "D2-I2"
+    ],
+    "inner_scores": {
+     "{\"learning_rate\": 0.03, \"max_leaf_nodes\": 15, \"min_samples_leaf\": 20}": 0.24048858342552373,
+     "{\"learning_rate\": 0.03, \"max_leaf_nodes\": 31, \"min_samples_leaf\": 20}": 0.25455668220086375,
+     "{\"learning_rate\": 0.05, \"max_leaf_nodes\": 15, \"min_samples_leaf\": 20}": 0.26218377097264345,
+     "{\"learning_rate\": 0.05, \"max_leaf_nodes\": 31, \"min_samples_leaf\": 20}": 0.2962001698862689
+    }
+   },
+   "D3": {
+    "chosen": {
+     "learning_rate": 0.03,
+     "max_leaf_nodes": 15,
+     "min_samples_leaf": 20
+    },
+    "inner_folds": [
+     "D3-I1",
+     "D3-I2",
+     "D3-I3"
+    ],
+    "inner_scores": {
+     "{\"learning_rate\": 0.03, \"max_leaf_nodes\": 15, \"min_samples_leaf\": 20}": 0.22953966223977385,
+     "{\"learning_rate\": 0.03, \"max_leaf_nodes\": 31, \"min_samples_leaf\": 20}": 0.24086589652682275,
+     "{\"learning_rate\": 0.05, \"max_leaf_nodes\": 15, \"min_samples_leaf\": 20}": 0.24866324789840508,
+     "{\"learning_rate\": 0.05, \"max_leaf_nodes\": 31, \"min_samples_leaf\": 20}": 0.278760923996614
+    }
+   }
+  },
+  "xgb": {
+   "D1": {
+    "chosen": {
+     "learning_rate": 0.03,
+     "max_depth": 3,
+     "min_child_weight": 10
+    },
+    "inner_folds": [
+     "D1-I1"
+    ],
+    "inner_scores": {
+     "{\"learning_rate\": 0.03, \"max_depth\": 3, \"min_child_weight\": 10}": 0.23972373819284462,
+     "{\"learning_rate\": 0.03, \"max_depth\": 3, \"min_child_weight\": 5}": 0.2419982367068973,
+     "{\"learning_rate\": 0.05, \"max_depth\": 3, \"min_child_weight\": 10}": 0.25247618044405756,
+     "{\"learning_rate\": 0.05, \"max_depth\": 3, \"min_child_weight\": 5}": 0.2518523542263007
+    }
+   },
+   "D2": {
+    "chosen": {
+     "learning_rate": 0.03,
+     "max_depth": 3,
+     "min_child_weight": 10
+    },
+    "inner_folds": [
+     "D2-I1",
+     "D2-I2"
+    ],
+    "inner_scores": {
+     "{\"learning_rate\": 0.03, \"max_depth\": 3, \"min_child_weight\": 10}": 0.2251774305599908,
+     "{\"learning_rate\": 0.03, \"max_depth\": 3, \"min_child_weight\": 5}": 0.22617380142549687,
+     "{\"learning_rate\": 0.05, \"max_depth\": 3, \"min_child_weight\": 10}": 0.23535467924991635,
+     "{\"learning_rate\": 0.05, \"max_depth\": 3, \"min_child_weight\": 5}": 0.2369642212188562
+    }
+   },
+   "D3": {
+    "chosen": {
+     "learning_rate": 0.03,
+     "max_depth": 3,
+     "min_child_weight": 10
+    },
+    "inner_folds": [
+     "D3-I1",
+     "D3-I2",
+     "D3-I3"
+    ],
+    "inner_scores": {
+     "{\"learning_rate\": 0.03, \"max_depth\": 3, \"min_child_weight\": 10}": 0.21786224720564407,
+     "{\"learning_rate\": 0.03, \"max_depth\": 3, \"min_child_weight\": 5}": 0.21895163989933733,
+     "{\"learning_rate\": 0.05, \"max_depth\": 3, \"min_child_weight\": 10}": 0.2289227609354831,
+     "{\"learning_rate\": 0.05, \"max_depth\": 3, \"min_child_weight\": 5}": 0.23092707182674532
+    }
+   }
+  }
+ }
+}

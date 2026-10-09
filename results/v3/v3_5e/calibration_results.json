@@ -1,0 +1,221 @@
+{
+ "D1": {
+  "is_top1": {
+   "history_eval": null,
+   "method": "RAW",
+   "outer_cal_ll": 0.08359177097278014,
+   "outer_proj_ll": 0.08369409241005434,
+   "outer_raw_ll": 0.08359177097278014
+  },
+  "is_top10": {
+   "history_eval": null,
+   "method": "RAW",
+   "outer_cal_ll": 0.35834790830276686,
+   "outer_proj_ll": 0.3586944427574121,
+   "outer_raw_ll": 0.35834790830276686
+  },
+  "is_top3": {
+   "history_eval": null,
+   "method": "RAW",
+   "outer_cal_ll": 0.17105006244648469,
+   "outer_proj_ll": 0.170716720190873,
+   "outer_raw_ll": 0.17105006244648469
+  },
+  "is_top5": {
+   "history_eval": null,
+   "method": "RAW",
+   "outer_cal_ll": 0.22953474998651596,
+   "outer_proj_ll": 0.22860464953861023,
+   "outer_raw_ll": 0.22953474998651596
+  }
+ },
+ "D2": {
+  "is_top1": {
+   "history_eval": {
+    "candidates": {
+     "ISOTONIC": {
+      "dbr": 0.0017393496186989162,
+      "dll": 0.004593652320336122,
+      "pathological": false
+     },
+     "SIGMOID": {
+      "dbr": 0.001080932898599226,
+      "dll": 0.0030504065591084317,
+      "pathological": false
+     }
+    },
+    "later_fold": "D2-I2",
+    "raw_brier": 0.024102086655110624,
+    "raw_ll": 0.08163962021674756
+   },
+   "method": "RAW",
+   "outer_cal_ll": 0.03548296773292938,
+   "outer_proj_ll": 0.03546127507439562,
+   "outer_raw_ll": 0.03548296773292938
+  },
+  "is_top10": {
+   "history_eval": {
+    "candidates": {
+     "ISOTONIC": {
+      "dbr": 0.001199598732359669,
+      "dll": 0.012994597102125194,
+      "pathological": false
+     },
+     "SIGMOID": {
+      "dbr": 0.00017259065795308115,
+      "dll": 0.0008016620207649816,
+      "pathological": false
+     }
+    },
+    "later_fold": "D2-I2",
+    "raw_brier": 0.10721091191445664,
+    "raw_ll": 0.3610943267151954
+   },
+   "method": "RAW",
+   "outer_cal_ll": 0.3547780401418116,
+   "outer_proj_ll": 0.35519502440963047,
+   "outer_raw_ll": 0.3547780401418116
+  },
+  "is_top3": {
+   "history_eval": {
+    "candidates": {
+     "ISOTONIC": {
+      "dbr": 0.0007947452159849933,
+      "dll": 0.010522006927217387,
+      "pathological": false
+     },
+     "SIGMOID": {
+      "dbr": -7.937386560009918e-05,
+      "dll": 0.00265971816045224,
+      "pathological": false
+     }
+    },
+    "later_fold": "D2-I2",
+    "raw_brier": 0.05175740613619438,
+    "raw_ll": 0.1647922665007301
+   },
+   "method": "RAW",
+   "outer_cal_ll": 0.17849400346733318,
+   "outer_proj_ll": 0.1785016067333024,
+   "outer_raw_ll": 0.17849400346733318
+  },
+  "is_top5": {
+   "history_eval": {
+    "candidates": {
+     "ISOTONIC": {
+      "dbr": 0.0005724587809313592,
+      "dll": 0.2262760802310787,
+      "pathological": false
+     },
+     "SIGMOID": {
+      "dbr": -0.00010299776915054237,
+      "dll": -0.0004865011878227854,
+      "pathological": false
+     }
+    },
+    "later_fold": "D2-I2",
+    "raw_brier": 0.0666753024898141,
+    "raw_ll": 0.22755719449935558
+   },
+   "method": "SIGMOID",
+   "outer_cal_ll": 0.23895143764320934,
+   "outer_proj_ll": 0.23690198540860868,
+   "outer_raw_ll": 0.2396667277301516
+  }
+ },
+ "D3": {
+  "is_top1": {
+   "history_eval": {
+    "candidates": {
+     "ISOTONIC": {
+      "dbr": 0.0006632899488195586,
+      "dll": 0.001206654113394122,
+      "pathological": false
+     },
+     "SIGMOID": {
+      "dbr": -0.0005261564775840867,
+      "dll": -0.0010293417849195838,
+      "pathological": false
+     }
+    },
+    "later_fold": "D3-I3",
+    "raw_brier": 0.009066616562608532,
+    "raw_ll": 0.03548296773292938
+   },
+   "method": "SIGMOID",
+   "outer_cal_ll": 0.0838502508708463,
+   "outer_proj_ll": 0.08311832891094335,
+   "outer_raw_ll": 0.08328809247392287
+  },
+  "is_top10": {
+   "history_eval": {
+    "candidates": {
+     "ISOTONIC": {
+      "dbr": 0.0012929471214210148,
+      "dll": 0.01049274649629961,
+      "pathological": false
+     },
+     "SIGMOID": {
+      "dbr": -5.6424587389761194e-05,
+      "dll": -0.000168436429924812,
+      "pathological": false
+     }
+    },
+    "later_fold": "D3-I3",
+    "raw_brier": 0.10647880267643957,
+    "raw_ll": 0.3547780401418116
+   },
+   "method": "SIGMOID",
+   "outer_cal_ll": 0.2926290886317415,
+   "outer_proj_ll": 0.2928895325697556,
+   "outer_raw_ll": 0.29419209620964076
+  },
+  "is_top3": {
+   "history_eval": {
+    "candidates": {
+     "ISOTONIC": {
+      "dbr": 0.0027010511755046276,
+      "dll": 0.01665995948239868,
+      "pathological": false
+     },
+     "SIGMOID": {
+      "dbr": 0.0021488955659935416,
+      "dll": 0.006424012618518632,
+      "pathological": false
+     }
+    },
+    "later_fold": "D3-I3",
+    "raw_brier": 0.05560874640816642,
+    "raw_ll": 0.17849400346733318
+   },
+   "method": "RAW",
+   "outer_cal_ll": 0.17274132279229035,
+   "outer_proj_ll": 0.1725852849135354,
+   "outer_raw_ll": 0.17274132279229035
+  },
+  "is_top5": {
+   "history_eval": {
+    "candidates": {
+     "ISOTONIC": {
+      "dbr": -0.00023320573885921014,
+      "dll": 0.006066581627450052,
+      "pathological": false
+     },
+     "SIGMOID": {
+      "dbr": -0.00015817569481353655,
+      "dll": -0.0007152900869422663,
+      "pathological": false
+     }
+    },
+    "later_fold": "D3-I3",
+    "raw_brier": 0.07297712323805043,
+    "raw_ll": 0.2396667277301516
+   },
+   "method": "SIGMOID",
+   "outer_cal_ll": 0.18375067415496527,
+   "outer_proj_ll": 0.18355888696832712,
+   "outer_raw_ll": 0.18982984182901552
+  }
+ },
+ "stability": "MIXED"
+}

@@ -1,0 +1,120 @@
+{
+ "D1": {
+  "is_top1": {
+   "method": "RAW",
+   "reason": "single inner fold",
+   "status": "CALIBRATION_NOT_EVALUABLE"
+  },
+  "is_top10": {
+   "method": "RAW",
+   "reason": "single inner fold",
+   "status": "CALIBRATION_NOT_EVALUABLE"
+  },
+  "is_top3": {
+   "method": "RAW",
+   "reason": "single inner fold",
+   "status": "CALIBRATION_NOT_EVALUABLE"
+  },
+  "is_top5": {
+   "method": "RAW",
+   "reason": "single inner fold",
+   "status": "CALIBRATION_NOT_EVALUABLE"
+  }
+ },
+ "D2": {
+  "is_top1": {
+   "method": "RAW",
+   "n_negative": 22459,
+   "n_positive": 1299,
+   "n_races": 22,
+   "n_states": 23758,
+   "seasons": [
+    2021
+   ],
+   "status": "EVALUABLE"
+  },
+  "is_top10": {
+   "method": "RAW",
+   "n_negative": 10803,
+   "n_positive": 12955,
+   "n_races": 22,
+   "n_states": 23758,
+   "seasons": [
+    2021
+   ],
+   "status": "EVALUABLE"
+  },
+  "is_top3": {
+   "method": "RAW",
+   "n_negative": 19861,
+   "n_positive": 3897,
+   "n_races": 22,
+   "n_states": 23758,
+   "seasons": [
+    2021
+   ],
+   "status": "EVALUABLE"
+  },
+  "is_top5": {
+   "method": "SIGMOID",
+   "n_negative": 17266,
+   "n_positive": 6492,
+   "n_races": 22,
+   "n_states": 23758,
+   "seasons": [
+    2021
+   ],
+   "status": "EVALUABLE"
+  }
+ },
+ "D3": {
+  "is_top1": {
+   "method": "SIGMOID",
+   "n_negative": 44741,
+   "n_positive": 2594,
+   "n_races": 44,
+   "n_states": 47335,
+   "seasons": [
+    2021,
+    2022
+   ],
+   "status": "EVALUABLE"
+  },
+  "is_top10": {
+   "method": "SIGMOID",
+   "n_negative": 21454,
+   "n_positive": 25881,
+   "n_races": 44,
+   "n_states": 47335,
+   "seasons": [
+    2021,
+    2022
+   ],
+   "status": "EVALUABLE"
+  },
+  "is_top3": {
+   "method": "RAW",
+   "n_negative": 39555,
+   "n_positive": 7780,
+   "n_races": 44,
+   "n_states": 47335,
+   "seasons": [
+    2021,
+    2022
+   ],
+   "status": "EVALUABLE"
+  },
+  "is_top5": {
+   "method": "SIGMOID",
+   "n_negative": 34372,
+   "n_positive": 12963,
+   "n_races": 44,
+   "n_states": 47335,
+   "seasons": [
+    2021,
+    2022
+   ],
+   "status": "EVALUABLE"
+  }
+ }
+}

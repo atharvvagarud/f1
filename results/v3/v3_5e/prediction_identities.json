@@ -1,0 +1,17 @@
+{
+ "oof_xgb_e__D1.parquet": {
+  "path": "data/v3/v3_5e/oof_xgb_e__D1.parquet",
+  "rows": 23577,
+  "sha256": "3266a7d2a64f8fc7e5c25f421185e916eabb685919b914ace56ce55b47eeca9f"
+ },
+ "oof_xgb_e__D2.parquet": {
+  "path": "data/v3/v3_5e/oof_xgb_e__D2.parquet",
+  "rows": 24422,
+  "sha256": "a540e8245cbdc21589944df383f49afb282300a5c2f1a5458ced3c7f786088e9"
+ },
+ "oof_xgb_e__D3.parquet": {
+  "path": "data/v3/v3_5e/oof_xgb_e__D3.parquet",
+  "rows": 26606,
+  "sha256": "21f8db01115e6cd1504b8efc852bc20588a3d3574b1f5414c4f9ae7b8722cd9b"
+ }
+}

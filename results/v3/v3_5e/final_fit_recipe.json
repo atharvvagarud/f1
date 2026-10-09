@@ -1,0 +1,92 @@
+{
+ "calibration_fitting_protocol": "top5 SIGMOID (Platt logit eps 1e-6) refit on pooled D3-inner OOS (I1+I2+I3) X2 predictions from 2018-2023 history only; all other thresholds RAW; history-only, no outer-validation or 2025 evidence",
+ "calibration_method": {
+  "is_top1": "RAW",
+  "is_top10": "RAW",
+  "is_top3": "RAW",
+  "is_top5": "SIGMOID"
+ },
+ "disposition_policy_2025": "no-reselection: poor F keeps Logistic champion; no retune, blend, or recalibration",
+ "eval_metrics_2025": [
+  "primary race-macro LL over 4 thresholds",
+  "per-threshold LL",
+  "brier",
+  "ece",
+  "projection diagnostics",
+  "race bootstrap B2000 seed42",
+  "stage analysis",
+  "top1 audit"
+ ],
+ "eval_terminology_2025": "PREVIOUSLY REVEALED OUT-OF-TIME OUTCOME EVALUATION",
+ "feature_identity": {
+  "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "n": 110
+ },
+ "four_threshold_structure": "four independent binary models, one per threshold, order [top1, top3, top5, top10]",
+ "library_versions": {
+  "numpy": "2.4.2",
+  "pandas": "2.3.3",
+  "sklearn": "1.8.0",
+  "xgboost": "3.2.0"
+ },
+ "model_family": "xgboost",
+ "prediction_schema": [
+  "state_id",
+  "season",
+  "race_id",
+  "driver_id",
+  "raw_is_top1",
+  "raw_is_top3",
+  "raw_is_top5",
+  "raw_is_top10",
+  "cal_is_top1",
+  "cal_is_top3",
+  "cal_is_top5",
+  "cal_is_top10",
+  "proj_is_top1",
+  "proj_is_top3",
+  "proj_is_top5",
+  "proj_is_top10"
+ ],
+ "preprocessing": "frozen TRAIN-only median/mode imputation + StandardScaler (Model Lab PRE.fit_preprocessor)",
+ "projection_identity": "v3.5b-projection-v1",
+ "recipe_identity": "b1d8ce5e43059477a5e57fe5b4d301cbd7b9975864d1ad964d613d1124044c09",
+ "schema_version": "v3.5e-final-fit-recipe-v1",
+ "seed": 42,
+ "threading": {
+  "n_jobs": 4,
+  "tree_method": "hist"
+ },
+ "threshold_order": [
+  1,
+  3,
+  5,
+  10
+ ],
+ "training_seasons": [
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "transformation_order": "RAW model probabilities -> optional threshold calibration -> PAVA coherence projection -> PROJECTED_COHERENT output",
+ "xgb_hyperparameters": {
+  "colsample_bytree": 0.8,
+  "eval_metric": "logloss",
+  "learning_rate": 0.03,
+  "max_depth": 3,
+  "min_child_weight": 15,
+  "n_estimators": 300,
+  "n_jobs": 4,
+  "objective": "binary:logistic",
+  "random_state": 42,
+  "reg_alpha": 0.0,
+  "reg_lambda": 1.0,
+  "subsample": 0.8,
+  "tree_method": "hist"
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "ci_hi": 0.004273398949056213,
+ "ci_level": 0.95,
+ "ci_lo": -0.010514024585235588,
+ "estimand": "XGB FINAL PROJECTED minus LOGISTIC PROJECTED",
+ "mean_delta": -0.0033845591599138826,
+ "replicates": 2000,
+ "seed": 42,
+ "unit": "race"
+}

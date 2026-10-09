@@ -1,0 +1,35 @@
+{
+ "D1": {
+  "models": [
+   "climatology",
+   "grid",
+   "l2_logistic",
+   "position_persistence"
+  ],
+  "path": "data/v3/v3_5c/oof_D1.parquet",
+  "rows": 94308,
+  "sha256": "4fd658e59ce7aae189106983cec71b1b9d77ea53b87676bcb4b086bc60bea7c3"
+ },
+ "D2": {
+  "models": [
+   "climatology",
+   "grid",
+   "l2_logistic",
+   "position_persistence"
+  ],
+  "path": "data/v3/v3_5c/oof_D2.parquet",
+  "rows": 97688,
+  "sha256": "57a3ac204e53a9d2f8a90a6ab3dbb74327973ce3e2b334215ba2610017acfd4c"
+ },
+ "D3": {
+  "models": [
+   "climatology",
+   "grid",
+   "l2_logistic",
+   "position_persistence"
+  ],
+  "path": "data/v3/v3_5c/oof_D3.parquet",
+  "rows": 106424,
+  "sha256": "bab69779ca34d8150c0de93f9b713425607da5d68577aab86f921c402f5c279f"
+ }
+}

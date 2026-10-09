@@ -1,0 +1,26 @@
+{
+ "brier_change": 0.0001353562923504248,
+ "calibrator": {
+  "coefficient": 1.1102039713424903,
+  "epsilon": 1e-06,
+  "inner_oos_layout": "D3 I1+I2+I3 pooled (val 2021/2022/2023)",
+  "intercept": -0.10074359391824747,
+  "method": "SIGMOID",
+  "n_negative": 52169,
+  "n_positive": 19588,
+  "n_states": 71757,
+  "threshold": "is_top5",
+  "training_seasons": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023
+  ]
+ },
+ "delta": 0.0017366555361188196,
+ "ece_change": 0.004863084711114227,
+ "top5_cal_ll": 0.2205390949927879,
+ "top5_raw_ll": 0.21880243945666908
+}

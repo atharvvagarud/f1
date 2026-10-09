@@ -1,0 +1,79 @@
+{
+  "canonical_fields": {
+    "actual_championship_points": "DIRECT_CANONICAL (points column; scored_points is its binarization)",
+    "classified_flag": "DERIVABLE_FROM_CANONICAL (frozen flag)",
+    "classified_position": "DIRECT_CANONICAL (null iff unclassified)",
+    "dnf_flag": "DIRECT_CANONICAL",
+    "expected_finish": "NOT_AVAILABLE (no such label; deferred output needs new machinery)",
+    "grid_position": "DIRECT_CANONICAL (3 nulls = never-started rows)",
+    "is_podium": "DERIVABLE_FROM_CANONICAL (frozen flag)",
+    "is_winner": "DERIVABLE_FROM_CANONICAL (frozen flag, == (position==1))",
+    "laps_completed": "DIRECT_CANONICAL",
+    "points": "DIRECT_CANONICAL (championship points)",
+    "position_final": "DIRECT_CANONICAL (FastF1 official Position)",
+    "position_text": "DIRECT_CANONICAL (numeric/R/W/D)",
+    "scored_points": "DERIVABLE_FROM_CANONICAL (frozen flag, points>0)",
+    "status_text": "DIRECT_CANONICAL (Finished/lap-deficits/cause strings)",
+    "top5_flag": "DERIVABLE_FROM_CANONICAL (position_final<=5; new trivial derivation, back-rank-proof)"
+  },
+  "corpus": {
+    "driver_race_outcomes": 2979,
+    "lap_state_rows": 162728,
+    "note": "2025 excluded from all descriptive target statistics (firewall)",
+    "races": 149,
+    "seasons": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "states_per_outcome": 54.6
+  },
+  "field_sizes": {
+    "exception": "2024-r03-R (19 drivers)",
+    "fixed_20_formulation": "not exact; thresholds unaffected",
+    "mode": 20
+  },
+  "finish_position_meaning": "Official classified position. classified_position is identical where both non-null, so position_final IS the canonical ordering; unclassified tail numerics (13-20) are source back-rank, not earned.",
+  "formulation_assessment": "A selected; B/C/E deferred; D/F rejected (see contract scorecard)",
+  "infrastructure_reuse": [
+    "labels/builder+contracts (F13/F14)",
+    "model_lab metrics/aggregation/bootstrap",
+    "calibration module",
+    "protocol D1/D2/D3 + ProtectedHoldoutError",
+    "110-feature arm"
+  ],
+  "model_performance": "NONE (no fitting in A by design)",
+  "parent": {
+    "commit": "3cbd28470ffa211bd754d4262eb10d66d149bf00",
+    "tag": "v3.4-ensemble"
+  },
+  "risks": [
+    "top10/points equivalence is empirical",
+    "p_win vs V3.1B divergence needs explanation if large",
+    "threshold-differenced distributions are diagnostic only"
+  ],
+  "schema_version": "v3.5a-outcome-landscape-v1",
+  "selection_rationale": "Cumulative thresholds maximize label exactness, infrastructure reuse (full V3.1B binary lineage), causal safety, and evaluability at minimal complexity. Nothing was selected for novelty.",
+  "status_taxonomy": {
+    "Finished": 1665,
+    "cause_strings": "Collision/Engine/Accident/Brakes/... (cause of retirement, not a target)",
+    "classified_retirements": 59,
+    "did_not_start": "6 (within W/R rows, 0 laps)",
+    "disqualifications_D": "7 (all numeric back-rank, unclassified)",
+    "lap_deficit_classified": "+1Lap:536 +2Laps:101 +3Laps:12 +Lapped:208",
+    "unclassified_retirements_R": 374,
+    "withdrawals_W": "15 (3 null-final/0-lap; 12 numeric back-rank)"
+  },
+  "target_prevalence_driver_race": {
+    "classified": "2583/2979 (86.7%)",
+    "podium": "447/2979 (15.0%)",
+    "top10_points": "1490/2979 (50.0%)",
+    "top5": "745/2979 (25.0%)",
+    "unclassified": "396/2979 (13.3%)",
+    "winner": "149/2979 (5.0%)"
+  }
+}

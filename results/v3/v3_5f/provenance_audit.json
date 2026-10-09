@@ -1,0 +1,15 @@
+{
+ "execution_record": "a94ee34d63e843be37b41737fba4b2d141cf57409e6960094bf158c42921a1b3",
+ "feature_hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+ "logistic_config": {
+  "C": 0.01
+ },
+ "manifest": "eab0da304dbb46b6de58ccb00c676e6a64761cf6473cc1361659ff8658b3d8e1",
+ "recipe": "b1d8ce5e43059477a5e57fe5b4d301cbd7b9975864d1ad964d613d1124044c09",
+ "xgb_config": {
+  "learning_rate": 0.03,
+  "max_depth": 3,
+  "min_child_weight": 15,
+  "n_estimators": 300
+ }
+}

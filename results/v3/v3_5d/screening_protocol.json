@@ -1,0 +1,170 @@
+{
+ "a_identity": "15ca7c17146062edb5196a5de244fadd81d38562b2ca5714e58a21d4efb5efab",
+ "advancement_rule": "at most TWO nonlinear candidates; priority race-macro primary > temporal/threshold consistency > bootstrap > Brier/ECE > coherence > stages > complementarity; null result valid",
+ "b_identity": "e9ac34e5792a5aabba9038094a231a4a94789b481178739e46ece72457cc5289",
+ "bootstrap": {
+  "ci": 0.95,
+  "estimand": "candidate PROJECTED minus Logistic PROJECTED",
+  "replicates": 2000,
+  "seed": 42,
+  "unit": "race"
+ },
+ "c_identity": "9dfee182215d6a56e4f19e2418b051883e9c75876418a6f4c92a05d799c7603a",
+ "candidate_families": [
+  "LOGISTIC_CONTROL",
+  "HIST_GRADIENT_BOOSTING",
+  "XGBOOST"
+ ],
+ "coherence_diagnostics": [
+  "violation_count",
+  "violation_rate",
+  "mean_abs_adjustment",
+  "max_abs_adjustment",
+  "per_threshold_adjustment",
+  "projected_rate==0"
+ ],
+ "compute_budget": "challenger fits ~216 binary; HGB fast; XGB 300-tree hist CPU; stop before expanding on overrun",
+ "dispositions": [
+  "LOGISTIC_CONTROL",
+  "KEEP_PERFORMANCE_CANDIDATE",
+  "KEEP_DIVERSITY_CANDIDATE",
+  "REJECT_NO_IMPROVEMENT",
+  "REJECT_TEMPORAL_INSTABILITY",
+  "REJECT_PROBABILITY_QUALITY",
+  "REJECT_COHERENCE_DEPENDENCE"
+ ],
+ "diversity_policy": "diagnostics only (correlation, race-delta overlap, disagreement); no blending/stacking/weights, ever in D",
+ "feature_identity": {
+  "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "n": 110
+ },
+ "firewall_2025": "NONE (dev seasons only + tripwire + ProtectedHoldoutError + scans + tests)",
+ "fit_budget": {
+  "binary_fits_per_family": 108,
+  "configs_per_family": 4,
+  "inner_validations": 6,
+  "note": "4cfg x 4thr x (6 inner + 3 outer); within ~100/family spirit (108); no expansion permitted",
+  "outer_folds": 3,
+  "thresholds": 4,
+  "total_challenger_fits": 216
+ },
+ "forbidden_families": [
+  "ExtraTrees",
+  "ordinal",
+  "ranking",
+  "multiclass",
+  "neural",
+  "calibrated",
+  "stacked",
+  "blended"
+ ],
+ "hgb_fixed": {
+  "early_stopping": false,
+  "l2_regularization": 0.0,
+  "loss": "log_loss",
+  "max_depth": null,
+  "max_iter": 200,
+  "random_state": 42
+ },
+ "hgb_grid": [
+  {
+   "learning_rate": 0.03,
+   "max_leaf_nodes": 15,
+   "min_samples_leaf": 20
+  },
+  {
+   "learning_rate": 0.03,
+   "max_leaf_nodes": 31,
+   "min_samples_leaf": 20
+  },
+  {
+   "learning_rate": 0.05,
+   "max_leaf_nodes": 15,
+   "min_samples_leaf": 20
+  },
+  {
+   "learning_rate": 0.05,
+   "max_leaf_nodes": 31,
+   "min_samples_leaf": 20
+  }
+ ],
+ "hgb_grid_prior": "mission neighborhood around V3.3 tree experience; 4 explicit configs (no cartesian bloat)",
+ "immutability": "frozen before first challenger fit",
+ "inner_temporal_selection": {
+  "inner_layout": {
+   "D1": [
+    "D1-I1 (train 2018-2020 -> val 2021)"
+   ],
+   "D2": [
+    "D2-I1 (->2021)",
+    "D2-I2 (train 2018-2021 -> val 2022)"
+   ],
+   "D3": [
+    "D3-I1",
+    "D3-I2",
+    "D3-I3 (train 2018-2022 -> val 2023)"
+   ]
+  },
+  "mechanism": "frozen M6 expanding-window inner splits (inner_splits.resolve_inner_splits), outer TRAIN history only",
+  "score": "mean over inner folds of [mean over 4 thresholds of race-macro LL], per outer fold",
+  "shared_config": "ONE family configuration shared across all four thresholds (no per-threshold selection)"
+ },
+ "outer_evaluation": "select on TRAIN history only; refit 4 models on full outer TRAIN; predict outer VALIDATION once; RAW+PAVA; metrics",
+ "parent": {
+  "commit": "3cbd28470ffa211bd754d4262eb10d66d149bf00",
+  "tag": "v3.4-ensemble"
+ },
+ "primary_metric": "mean_race_macro_log_loss_over_4_thresholds (PROJECTED candidate minus PROJECTED control authoritative)",
+ "projection_identity": "v3.5b-projection-v1",
+ "protocol_identity": "8d82448ea5888beb6dd8f54c35ebb08ba40c58bd66b652bab6f0d39dfdf78ba4",
+ "schema_version": "v3.5d-screening-protocol-v1",
+ "screening_candidates": [
+  "HIST_GRADIENT_BOOSTING",
+  "XGBOOST"
+ ],
+ "secondary_metrics": [
+  "brier",
+  "ece",
+  "state_pooled_ll"
+ ],
+ "stage_partition": "frozen EARLY/MID/LATE via stages.stage_partition on race_progress_frac; descriptive only",
+ "structure": "four independent binary models per config, one per threshold; frozen order [top1,top3,top5,top10]; PAVA per state after",
+ "threshold_aggregation": "unweighted mean; per-threshold LLs persisted; 4x3 direction matrix",
+ "tie_break": "lowest inner score wins; ties within 1e-6 broken by preregistered simplicity order (HGB: lower lr, fewer leaves, higher min_leaf; XGB: lower lr, higher min_child); never outer validation",
+ "xgb_fixed": {
+  "colsample_bytree": 0.8,
+  "eval_metric": "logloss",
+  "n_estimators": 300,
+  "n_jobs": 4,
+  "objective": "binary:logistic",
+  "random_state": 42,
+  "reg_alpha": 0.0,
+  "reg_lambda": 1.0,
+  "subsample": 0.8,
+  "tree_method": "hist"
+ },
+ "xgb_grid": [
+  {
+   "learning_rate": 0.03,
+   "max_depth": 3,
+   "min_child_weight": 5
+  },
+  {
+   "learning_rate": 0.03,
+   "max_depth": 3,
+   "min_child_weight": 10
+  },
+  {
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "min_child_weight": 5
+  },
+  {
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "min_child_weight": 10
+  }
+ ],
+ "xgb_grid_prior": "V3.3D refined winner (lr 0.03, depth 3, min_child 5) neighborhood; no V3.5 validation evidence used"
+}

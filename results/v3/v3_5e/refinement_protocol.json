@@ -1,0 +1,210 @@
+{
+ "a_identity": "15ca7c17146062edb5196a5de244fadd81d38562b2ca5714e58a21d4efb5efab",
+ "b_identity": "e9ac34e5792a5aabba9038094a231a4a94789b481178739e46ece72457cc5289",
+ "bootstrap": {
+  "ci": 0.95,
+  "estimands": [
+   "refined-PROJECTED minus Logistic PROJECTED",
+   "refined-PROJECTED minus D anchor PROJECTED"
+  ],
+  "replicates": 2000,
+  "seed": 42,
+  "unit": "race"
+ },
+ "c_identity": "9dfee182215d6a56e4f19e2418b051883e9c75876418a6f4c92a05d799c7603a",
+ "calibration_admission_rule": {
+  "brier": "no worse than 1e-12 tolerance",
+  "ll_improvement": "> 1e-4 history-eval log-loss improvement",
+  "note": "calibration replaces RAW for a fold only if all gates pass on training history",
+  "outer_validation_reversal": "forbidden",
+  "pathology": "SIGMOID needs finite params and positive coefficient; ISOTONIC needs outer exact-0/1 fraction <= 0.5"
+ },
+ "calibration_candidates": [
+  "RAW",
+  "SIGMOID",
+  "ISOTONIC"
+ ],
+ "calibration_fit": "outer TRAIN history only: inner-OOS predictions of the selected config; earlier inner fold(s) fit calibrator, later inner fold evaluates; final calibrator refit on pooled inner-OOS; applied to outer validation once; in-sample predictions never used as OOS evidence",
+ "calibration_layout": {
+  "D1": "one inner fold only: no fit/select split possible, CALIBRATION_NOT_EVALUABLE, RAW",
+  "D2": "fit on D2-I1 OOS, select on D2-I2 OOS, refit pooled I1+I2",
+  "D3": "fit on pooled D3-I1+I2 OOS, select on D3-I3 OOS, refit pooled I1+I2+I3"
+ },
+ "calibration_scope": "per threshold; one common method preferred; never mixed on outer-validation evidence",
+ "calibration_support_gates": {
+  "else": "CALIBRATION_NOT_EVALUABLE, RAW",
+  "min_negatives": 20,
+  "min_positives": 20,
+  "min_races": 10,
+  "min_seasons": 1,
+  "min_states": 1000
+ },
+ "closed": {
+  "hist_gradient_boosting": "D REJECT_NO_IMPROVEMENT; closed",
+  "logistic_regression": "frozen control, not refined"
+ },
+ "compute_budget": "96 inner + 12 outer binary fits; calibration is transforms only; no search expansion",
+ "control": {
+  "C": 0.01,
+  "class_weight": null,
+  "family": "logistic_regression",
+  "max_iter": 1000,
+  "penalty": "L2",
+  "random_state": 42,
+  "scope": "four independent binary models, one per threshold; frozen, never tuned or retrained for selection",
+  "solver": "lbfgs"
+ },
+ "d_anchor": {
+  "disposition": "KEEP_DIVERSITY_CANDIDATE",
+  "family": "xgboost",
+  "fixed": {
+   "colsample_bytree": 0.8,
+   "eval_metric": "logloss",
+   "n_estimators": 300,
+   "n_jobs": 4,
+   "objective": "binary:logistic",
+   "random_state": 42,
+   "reg_alpha": 0.0,
+   "reg_lambda": 1.0,
+   "subsample": 0.8,
+   "tree_method": "hist"
+  },
+  "grid": {
+   "learning_rate": 0.03,
+   "max_depth": 3,
+   "min_child_weight": 10
+  },
+  "id": "X0",
+  "note": "D-selected on every outer fold; HGB closed, never reopened"
+ },
+ "d_protocol_identity": "8d82448ea5888beb6dd8f54c35ebb08ba40c58bd66b652bab6f0d39dfdf78ba4",
+ "dispositions": [
+  "LOGISTIC_CONTROL",
+  "KEEP_PERFORMANCE_CANDIDATE",
+  "KEEP_DIVERSITY_CANDIDATE",
+  "REJECT_NO_IMPROVEMENT",
+  "REJECT_TEMPORAL_INSTABILITY",
+  "REJECT_PROBABILITY_QUALITY",
+  "REJECT_TOP1_WEAKNESS",
+  "REJECT_CALIBRATION_INSTABILITY"
+ ],
+ "feature_identity": {
+  "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "n": 110
+ },
+ "final_calibration_rule": "RAW unless the same non-RAW method is admitted on every evaluable fold for a threshold; per-threshold methods recorded in the recipe; MIXED/UNSTABLE stability forces RAW",
+ "final_config_rule": "majority vote across D1/D2/D3 selected configs; ties broken by preregistered order X0<X2<X1<X3; an X0 win means refinement added nothing over the anchor",
+ "final_fit_recipe_schema": [
+  "model_family",
+  "four_threshold_structure",
+  "xgb_hyperparameters",
+  "feature_identity",
+  "preprocessing",
+  "training_seasons",
+  "threshold_order",
+  "calibration_method",
+  "calibration_fitting_protocol",
+  "projection_identity",
+  "transformation_order",
+  "seed",
+  "threading",
+  "library_versions",
+  "prediction_schema",
+  "eval_metrics_2025",
+  "disposition_policy"
+ ],
+ "finalist_rule": "at most ONE nonlinear final recipe; no ensemble; poor F never reselects (no-reselection rule)",
+ "firewall_2025": "NONE (dev seasons 2018-2024 only + tripwire + ProtectedHoldoutError; no 2025 targets, predictions, prevalence, metrics, calibration, or selection)",
+ "fit_budget": {
+  "configs": 4,
+  "inner": 96,
+  "note": "6 inner folds (1+2+3) x 4 cfg x 4 thr; 3 outer x 4 thr; calibration reuses inner OOS",
+  "outer": 12,
+  "thresholds": 4
+ },
+ "immutability": "frozen before first E fit",
+ "parent": {
+  "commit": "3cbd28470ffa211bd754d4262eb10d66d149bf00",
+  "tag": "v3.4-ensemble"
+ },
+ "primary_metric": "mean_race_macro_log_loss_over_4_thresholds; authoritative: candidate PROJECTED minus Logistic PROJECTED; lower better",
+ "projection_identity": "v3.5b-projection-v1",
+ "protocol_identity": "4adf3da33b86e734e7b663c6702c64f9377c08ac4318fb5439eebd439aec38e6",
+ "refinement_configurations": [
+  {
+   "id": "X0",
+   "learning_rate": 0.03,
+   "max_depth": 3,
+   "min_child_weight": 10,
+   "n_estimators": 300,
+   "role": "ANCHOR"
+  },
+  {
+   "id": "X1",
+   "learning_rate": 0.03,
+   "max_depth": 3,
+   "min_child_weight": 10,
+   "n_estimators": 500,
+   "role": "CAPACITY"
+  },
+  {
+   "id": "X2",
+   "learning_rate": 0.03,
+   "max_depth": 3,
+   "min_child_weight": 15,
+   "n_estimators": 300,
+   "role": "REGULARIZED"
+  },
+  {
+   "id": "X3",
+   "learning_rate": 0.02,
+   "max_depth": 3,
+   "min_child_weight": 10,
+   "n_estimators": 500,
+   "role": "SLOWER"
+  }
+ ],
+ "refinement_fixed": {
+  "colsample_bytree": 0.8,
+  "eval_metric": "logloss",
+  "n_jobs": 4,
+  "objective": "binary:logistic",
+  "random_state": 42,
+  "reg_alpha": 0.0,
+  "reg_lambda": 1.0,
+  "subsample": 0.8,
+  "tree_method": "hist"
+ },
+ "refinement_scope": "tree count / learning rate / regularization only; no max_depth search; no new families; no blending",
+ "schema_version": "v3.5e-refinement-protocol-v1",
+ "secondary_metrics": [
+  "brier",
+  "ece",
+  "state_pooled_ll"
+ ],
+ "stage_analysis": "frozen EARLY/MID/LATE via stages.stage_partition; descriptive only; no stage-based tuning",
+ "target_names": [
+  "is_top1",
+  "is_top3",
+  "is_top5",
+  "is_top10"
+ ],
+ "task": "ordered_cumulative_finish_thresholds",
+ "temporal_selection": {
+  "mechanism": "frozen M6 expanding-window inner splits (inner_splits.resolve_inner_splits), outer TRAIN history only",
+  "outer_validation_selects": "nothing",
+  "score": "mean over inner folds of [mean over 4 thresholds of race-macro LL], per outer fold",
+  "shared_config": "ONE XGB configuration shared across all four thresholds (no per-threshold selection)",
+  "tie_break": "differences <= 1e-6 prefer X0 anchor, then lower-complexity (300-tree before 500-tree), then preregistered order X0<X2<X1<X3",
+  "top1_outer_selection": "forbidden"
+ },
+ "threshold_order": [
+  1,
+  3,
+  5,
+  10
+ ],
+ "top1_guard": "top1 is a required safety/quality diagnostic reported per fold and pooled; broad/material top1 regression forbids KEEP_PERFORMANCE_CANDIDATE but may permit KEEP_DIVERSITY_CANDIDATE with explicit statement; top1 never overrides the primary metric",
+ "transformation_order": "RAW model probabilities -> optional threshold calibration -> PAVA coherence projection -> PROJECTED_COHERENT output"
+}

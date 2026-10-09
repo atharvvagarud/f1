@@ -1,0 +1,62 @@
+{
+ "bootstrap_uncertainty": "dev CI excluded zero; 2025 CI spans zero",
+ "brier": {
+  "is_top1": {
+   "logistic": 0.018356671520532383,
+   "xgb": 0.019240077116251232
+  },
+  "is_top10": {
+   "logistic": 0.1146402945289139,
+   "xgb": 0.11143704469125557
+  },
+  "is_top3": {
+   "logistic": 0.048138948731509264,
+   "xgb": 0.04935754579215019
+  },
+  "is_top5": {
+   "logistic": 0.06814694189699981,
+   "xgb": 0.06232279553667899
+  }
+ },
+ "calibration_transfer": "CALIBRATION_REGRESSES",
+ "coherence": {
+  "dev_xgb_raw_violation_rate": 0.11432506122446125,
+  "f_projected_violation_rate": 0.0,
+  "f_xgb_raw_violation_rate": 0.0769893601078975
+ },
+ "ece": {
+  "is_top1": {
+   "logistic": 0.0094211773156214,
+   "xgb": 0.007727264945185295
+  },
+  "is_top10": {
+   "logistic": 0.035725867341102155,
+   "xgb": 0.018440184836609596
+  },
+  "is_top3": {
+   "logistic": 0.01999684530881536,
+   "xgb": 0.011323219712030668
+  },
+  "is_top5": {
+   "logistic": 0.017248455501907792,
+   "xgb": 0.017560184666103425
+  }
+ },
+ "overall_transfer": "MIXED_TRANSFER",
+ "primary_direction": "same sign (improvement)",
+ "primary_magnitude": {
+  "dev_pooled": -0.005307793294040413,
+  "f_2025": -0.0033845591599139246
+ },
+ "stage_behavior": "LATE_ADVANTAGE_TRANSFERS",
+ "stage_transfer": "LATE_ADVANTAGE_TRANSFERS",
+ "threshold_consistency": {
+  "dev": "8/12 cells",
+  "f_2025": "2/4 thresholds"
+ },
+ "top10_behavior": "IMPROVES",
+ "top1_behavior": "WEAKNESS_PERSISTS",
+ "top1_transfer": "WEAKNESS_PERSISTS",
+ "top3_behavior": "REGRESSES",
+ "top5_behavior": "IMPROVES"
+}

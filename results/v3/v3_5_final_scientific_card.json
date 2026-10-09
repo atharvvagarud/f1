@@ -1,0 +1,196 @@
+{
+ "calibration": {
+  "2025_transfer": "CALIBRATION_REGRESSES",
+  "brier_change_top5": 0.0001353562923504248,
+  "ece_change_top5": 0.004863084711114227,
+  "frozen": "TOP5_SIGMOID_ONLY (is_top5 SIGMOID; is_top1/is_top3/is_top10 RAW)",
+  "frozen_before_2025": true,
+  "ll_delta_top5_cal_minus_raw": 0.0017366555361188196,
+  "official_result_uses": "calibrated Top5 (frozen recipe; RAW reported as attribution only)",
+  "protocol_status": "NOT_A_PROTOCOL_FAILURE (out-of-time scientific result)",
+  "top5_cal_ll": 0.2205390949927879,
+  "top5_raw_ll": 0.21880243945666908
+ },
+ "champion": "LOGISTIC_CONTROL",
+ "coherence": {
+  "final_violation_count": 0,
+  "final_violation_rate": 0.0,
+  "mean_abs_adjustment_to_final_xgb_raw": 0.0029106064063604904,
+  "method": "equal-weight L2 isotonic PAVA (v3.5b-projection-v1)",
+  "order": "p_win <= p_podium <= p_top5 <= p_top10",
+  "pre_pava_violation_rate_xgb_calibrated": 0.20376891952644988,
+  "projection_score_effect": -0.00019364209275510302,
+  "raw_violation_rate_xgb": 0.0769893601078975,
+  "verdict": "PAVA_IS_NOT_RESCUING_CATASTROPHIC_INCOHERENCE (small projection effect)"
+ },
+ "control_identity": {
+  "C": 0.01,
+  "family": "logistic_regression",
+  "harness": "9dfee182215d6a56e4f19e2418b051883e9c75876418a6f4c92a05d799c7603a"
+ },
+ "development_evidence": {
+  "anchor_pooled_delta_vs_refined": -0.001288184694870413,
+  "bootstrap_vs_logistic_ci": [
+   -0.010344791741921289,
+   -0.0007903294256715235
+  ],
+  "calibration_selection_history": "D1 NOT_EVALUABLE (RAW); D2 top5 SIGMOID admitted, others RAW; D3 top5 SIGMOID admitted, others RAW; final rule TOP5_SIGMOID_ONLY by X2 majority",
+  "late_race_behavior": "refined late-race advantage over control on all folds",
+  "pooled_races_improved_vs_logistic": 37,
+  "pooled_races_total": 68,
+  "pooled_refined_minus_logistic_delta": -0.005307793294040413,
+  "refined_vs_d_anchor": "X2 beats X0 anchor (pooled -0.00129, CI excludes zero)",
+  "threshold_tally_vs_logistic": "8/12 cells improve",
+  "top1_d1_d2_d3_vs_logistic": [
+   0.003114900593041453,
+   -0.0036035743228478023,
+   0.0031341973232514586
+  ],
+  "top1_note": "regresses on D1/D3 means; improves only on D2 (diversity rationale, no performance claim)"
+ },
+ "development_protocol": {
+  "folds": "D1/D2/D3 temporal",
+  "inner_fits": 96,
+  "outer_fits": 12,
+  "refinement": "E (X0->X2, min_child_weight 10->15)",
+  "screening": "D (XGB KEEP_DIVERSITY_CANDIDATE; HGB REJECT_NO_IMPROVEMENT)"
+ },
+ "evaluation_2025": {
+  "bootstrap": {
+   "ci_hi": 0.004273398949056213,
+   "ci_level": 0.95,
+   "ci_lo": -0.010514024585235588,
+   "replicates": 2000,
+   "seed": 42,
+   "spans_zero": true,
+   "unit": "race"
+  },
+  "calibration_transfer": "CALIBRATION_REGRESSES",
+  "coherence": {
+   "final_violations": 0
+  },
+  "counts": {
+   "outcome_count": 479,
+   "race_count": 24,
+   "state_count": 26692
+  },
+  "logistic_projected_primary": 0.2050270403404582,
+  "primary_delta_xgb_minus_logistic": -0.0033845591599139246,
+  "probability_quality": {
+   "brier_cells_xgb_worse": 2,
+   "ece_cells_xgb_worse": 1
+  },
+  "race_counts": {
+   "improved": 15,
+   "ties": 0,
+   "worsened": 9
+  },
+  "stage_results": {
+   "EARLY": 0.0015437215623918844,
+   "LATE": -0.01759687607055683,
+   "MID": 0.005586872796539275
+  },
+  "terminology": "PREVIOUSLY REVEALED OUT-OF-TIME OUTCOME EVALUATION",
+  "threshold_results": {
+   "is_top1": {
+    "delta": 0.0038032263712361736,
+    "logistic": 0.06339459538940127,
+    "verdict": "REGRESSES"
+   },
+   "is_top10": {
+    "delta": -0.010598500667751476,
+    "logistic": 0.36775932653362425,
+    "verdict": "IMPROVES"
+   },
+   "is_top3": {
+    "delta": 0.0015192383310356494,
+    "logistic": 0.16036073862591427,
+    "verdict": "REGRESSES"
+   },
+   "is_top5": {
+    "delta": -0.008262200674175907,
+    "logistic": 0.22859350081289295,
+    "verdict": "IMPROVES"
+   }
+  },
+  "top1_audit": {
+   "delta": 0.003803226371236167,
+   "improved": 10,
+   "tied": 0,
+   "verdict": "WEAKNESS_PERSISTS",
+   "worsened": 14
+  },
+  "xgb_calibrated_primary": 0.2018361232732994,
+  "xgb_projected_primary": 0.2016424811805443,
+  "xgb_raw_primary": 0.2014019593892697
+ },
+ "evaluation_season": 2025,
+ "feature_identity": {
+  "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "n": 110
+ },
+ "final_disposition": "OUTCOME_XGB_MIXED_OUT_OF_TIME",
+ "known_limitations": [
+  "top1 development weakness persists on 2025 (+0.0038, 10/14 races)",
+  "top3 slightly regresses (+0.0015)",
+  "improvement is NOT broad across thresholds (2/4)",
+  "frozen Top5 sigmoid calibration regresses on 2025 (LL +0.0017, Brier +0.00014, ECE +0.0049)",
+  "race-bootstrap CI spans zero (n=24 races)",
+  "EARLY/MID stage deltas slightly positive",
+  "fixed-20 formulation not exact (2024-r03-R has 19 drivers; thresholds unaffected)"
+ ],
+ "mc2_relationship": "SEPARATE: V3.5 outputs learned per-driver marginal probabilities; MC2 outputs stochastic mutually-exclusive joint future simulation frequencies; do not normalize, average, or fuse (V3.8 owns consensus/fusion)",
+ "parent": {
+  "commit": "3cbd28470ffa211bd754d4262eb10d66d149bf00",
+  "tag": "v3.4-ensemble"
+ },
+ "phase": "V3.5",
+ "probability_semantics": "PER_DRIVER_MARGINAL (NOT a joint finishing-order distribution; NOT field-normalized; NOT exact P1-P20 probabilities; NOT MC2 frequencies)",
+ "projection_identity": "v3.5b-projection-v1",
+ "research_candidate": {
+  "calibration": "TOP5_SIGMOID_ONLY",
+  "config": "X2 (max_depth 3, learning_rate 0.03, min_child_weight 15, n_estimators 300)",
+  "family": "xgboost",
+  "status": "NONLINEAR_RESEARCH_CANDIDATE"
+ },
+ "schema_version": "v3.5-final-scientific-card-v1",
+ "scientific_card_identity": "8d3a8d2ec6aef5d4bb50306036e100b0db6c83386c19ec8f7ce07ae25714446d",
+ "scientific_conclusion": "The frozen nonlinear XGBoost outcome model improved the 2025 point estimate for the aggregate four-threshold race-macro log-loss task, driven by Top-5, Top-10, and late-race states. The race-level bootstrap interval spans zero, Top-1 and Top-3 regress, and the frozen Top-5 sigmoid calibration does not transfer. Therefore the evidence is mixed rather than proof of superiority. Logistic remains the scientific champion; XGBoost remains a nonlinear research candidate and is not promoted to serving.",
+ "serving": "NONE",
+ "stage_identities": {
+  "A": "15ca7c17146062edb5196a5de244fadd81d38562b2ca5714e58a21d4efb5efab",
+  "B": "e9ac34e5792a5aabba9038094a231a4a94789b481178739e46ece72457cc5289",
+  "C": "9dfee182215d6a56e4f19e2418b051883e9c75876418a6f4c92a05d799c7603a",
+  "D": "8d82448ea5888beb6dd8f54c35ebb08ba40c58bd66b652bab6f0d39dfdf78ba4",
+  "E_protocol": "4adf3da33b86e734e7b663c6702c64f9377c08ac4318fb5439eebd439aec38e6",
+  "E_recipe": "b1d8ce5e43059477a5e57fe5b4d301cbd7b9975864d1ad964d613d1124044c09",
+  "F_manifest": "eab0da304dbb46b6de58ccb00c676e6a64761cf6473cc1361659ff8658b3d8e1",
+  "F_record": "a94ee34d63e843be37b41737fba4b2d141cf57409e6960094bf158c42921a1b3"
+ },
+ "task": "ordered_cumulative_finish_thresholds",
+ "threshold_aliases": {
+  "p_podium": "is_top3",
+  "p_top10": "is_top10",
+  "p_top5": "is_top5",
+  "p_win": "is_top1"
+ },
+ "thresholds": [
+  1,
+  3,
+  5,
+  10
+ ],
+ "training_seasons": [
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "transfer_classification": "MIXED_TRANSFER",
+ "transformation": "RAW -> CALIBRATION -> PAVA",
+ "v31b_relationship": "V3.1B remains the established winner-prediction lineage and is NOT replaced by V3.5; V3.5 Logistic Top1 was machine-precision aligned with V3.1B OOF in C but V3.5's scientific task is broader (Top1/Top3/Top5/Top10); the final V3.5 result supports keeping the strong Logistic winner lineage while recognizing nonlinear signal for broader outcomes; no runtime routing is introduced"
+}

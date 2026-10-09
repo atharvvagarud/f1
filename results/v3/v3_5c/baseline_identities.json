@@ -1,0 +1,35 @@
+{
+ "climatology": {
+  "provenance": "per-fold train only",
+  "rule": "train-state rates"
+ },
+ "grid": {
+  "rule": "1[grid<=K]"
+ },
+ "l2_logistic_control": {
+  "config": {
+   "C": 0.01
+  },
+  "estimator": {
+   "class_weight": null,
+   "max_iter": 1000,
+   "penalty": "L2",
+   "random_state": 42,
+   "solver": "lbfgs"
+  },
+  "family": "logistic_regression",
+  "features": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "preprocessing": "frozen train-only (harness fit_family)",
+  "seeds": 42,
+  "thresholds": [
+   "is_top1",
+   "is_top3",
+   "is_top5",
+   "is_top10"
+  ]
+ },
+ "position_persistence": {
+  "rule": "1[pos<=K]; null->train rate"
+ },
+ "schema_version": "v3.5c-baseline-identities-v1"
+}

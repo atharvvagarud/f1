@@ -1,0 +1,13 @@
+{
+ "2025_CONTACT": "NONE",
+ "forbidden": {
+  "2025": "BLOCKED:ProtectedHoldoutError",
+  "FINAL_FIT": "NOT_BLOCKED",
+  "HOLDOUT": "BLOCKED:ProtectedHoldoutError"
+ },
+ "seasons_touched": [
+  2022,
+  2023,
+  2024
+ ]
+}

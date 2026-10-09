@@ -1,0 +1,50 @@
+{
+ "D1": {
+  "train_races": 81,
+  "train_seasons": [
+   2018,
+   2019,
+   2020,
+   2021
+  ],
+  "train_states": 88123,
+  "validate_seasons": [
+   2022
+  ],
+  "validation_races": 22,
+  "validation_states": 23577
+ },
+ "D2": {
+  "train_races": 103,
+  "train_seasons": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022
+  ],
+  "train_states": 111700,
+  "validate_seasons": [
+   2023
+  ],
+  "validation_races": 22,
+  "validation_states": 24422
+ },
+ "D3": {
+  "train_races": 125,
+  "train_seasons": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023
+  ],
+  "train_states": 136122,
+  "validate_seasons": [
+   2024
+  ],
+  "validation_races": 24,
+  "validation_states": 26606
+ }
+}

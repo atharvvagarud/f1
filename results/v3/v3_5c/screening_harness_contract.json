@@ -1,0 +1,165 @@
+{
+ "a_identity": "15ca7c17146062edb5196a5de244fadd81d38562b2ca5714e58a21d4efb5efab",
+ "aggregation": {
+  "headline": "race-macro",
+  "secondary": "state-pooled",
+  "unit": "race"
+ },
+ "b_dataset_identity": "e9ac34e5792a5aabba9038094a231a4a94789b481178739e46ece72457cc5289",
+ "baselines": {
+  "climatology": {
+   "coherence": "train rates are nested (label nesting), hence coherent; verified anyway",
+   "rule": "per-fold TRAIN-state empirical rate per threshold; constant over validation states"
+  },
+  "grid": {
+   "grid_column": "matrix state `grid_position` (pre-race, causal)",
+   "grid_zero": "pit-lane starters (0) score 1.0 on all thresholds: deterministic, causal, documented overconfidence",
+   "null_grid": "none in state population (verified 0)",
+   "rule": "p_topK = 1.0 if grid_position <= K else 0.0"
+  },
+  "l2_logistic_control": {
+   "C_rationale": "frozen V3.1B/V3.3 lineage value (FROZEN_LOGR_C); fixed before fitting; no tuning",
+   "config": {
+    "C": 0.01
+   },
+   "family": "logistic_regression (frozen Model Lab builder)",
+   "fixed_estimator": {
+    "class_weight": null,
+    "max_iter": 1000,
+    "penalty": "L2",
+    "random_state": 42,
+    "solver": "lbfgs"
+   },
+   "scope": "four independent binary models, one per threshold; control, not search"
+  },
+  "position_persistence": {
+   "grid_zero_note": "n/a (state position, not grid)",
+   "null_position_fallback": "per-fold train climatology rate for that threshold (261 null states corpus-wide; causal: train stats only)",
+   "position_column": "matrix state `position` (causal state at T)",
+   "rule": "p_topK = 1.0 if current position <= K else 0.0"
+  }
+ },
+ "bootstrap": {
+  "ci": 0.95,
+  "pairs": [
+   [
+    "logistic",
+    "climatology"
+   ],
+   [
+    "logistic",
+    "position_persistence"
+   ]
+  ],
+  "replicates": 2000,
+  "role": "validation infrastructure, not a C significance gate",
+  "seed": 42,
+  "unit": "race"
+ },
+ "contract_hash": "9dfee182215d6a56e4f19e2418b051883e9c75876418a6f4c92a05d799c7603a",
+ "d_candidate_boundary": "Narrow: a small number of reasonable independent binary probabilistic families reusing this harness. Ordinal/ranking/survival/exact-position-multiclass stay closed per A unless a later contract amends with justification. No D models selected by performance in C.",
+ "d_interface": {
+  "fit": "fit(train_X: 110-col frame, train_targets: 4 binary cols) -> fitted bundle",
+  "inherits": [
+   "same 110 features",
+   "same D1/D2/D3",
+   "same train-only preprocessing safety",
+   "same target sidecar",
+   "same primary metric",
+   "same v3.5b-projection-v1",
+   "same paired race bootstrap",
+   "same OOF schema"
+  ],
+  "predict": "predict_proba(validation_X) -> 4 RAW probabilities in frozen threshold order [top1, top3, top5, top10]",
+  "redefinition": "FORBIDDEN (D must not redefine the harness)"
+ },
+ "feature_identity": {
+  "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "n": 110
+ },
+ "firewall_2025": {
+  "contact": "NONE",
+  "mechanism": "seasons 2018-2024 filter + 2025 tripwire + ProtectedHoldoutError + artifact scan + tests"
+ },
+ "immutability": "frozen before first learned fit; any change requires a new contract version",
+ "parent": {
+  "commit": "3cbd28470ffa211bd754d4262eb10d66d149bf00",
+  "tag": "v3.4-ensemble"
+ },
+ "preprocessing": {
+  "features": "110 exact order; no target/semantic/status columns",
+  "fit_on": "outer TRAIN only; applied unchanged to validation",
+  "module": "frozen Model Lab PRE.fit_preprocessor (harness fit_family path)"
+ },
+ "primary_metric": {
+  "definition": "per threshold: race-macro binary log loss (eps 1e-15) over sidecar states; primary = unweighted mean of the 4 values",
+  "direction": "lower better",
+  "evaluation_states": "all sidecar states (each a causal T-snapshot); race-macro gives equal race weight (no cross-driver synchronization needed for per-driver marginals)",
+  "name": "mean_race_macro_log_loss_over_4_thresholds"
+ },
+ "projection_diagnostics": [
+  "frac_violated_before",
+  "mean_abs_adjustment",
+  "max_abs_adjustment",
+  "per_threshold_mean_abs_adjustment"
+ ],
+ "projection_identity": "v3.5b-projection-v1",
+ "schema_version": "v3.5c-screening-harness-contract-v1",
+ "secondary_metrics": [
+  "brier_per_threshold",
+  "ece_per_threshold",
+  "state_pooled_ll_diagnostic",
+  "accuracy_at_0.5_descriptive"
+ ],
+ "target_names": [
+  "is_top1",
+  "is_top3",
+  "is_top5",
+  "is_top10"
+ ],
+ "temporal_folds": {
+  "D1": {
+   "train": [
+    2018,
+    2019,
+    2020,
+    2021
+   ],
+   "validate": [
+    2022
+   ]
+  },
+  "D2": {
+   "train": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+   ],
+   "validate": [
+    2023
+   ]
+  },
+  "D3": {
+   "train": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+   ],
+   "validate": [
+    2024
+   ]
+  }
+ },
+ "threshold_order": [
+  1,
+  3,
+  5,
+  10
+ ]
+}

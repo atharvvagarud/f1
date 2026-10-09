@@ -1,0 +1,126 @@
+{
+ "V3_5F_recommendation": "evaluate frozen X2 recipe once on PREVIOUSLY REVEALED OUT-OF-TIME OUTCOME EVALUATION per manifest; no-reselection rule applies",
+ "a_identity": "15ca7c17146062edb5196a5de244fadd81d38562b2ca5714e58a21d4efb5efab",
+ "anchor_ci_pooled": [
+  -0.002282683898404446,
+  -0.0003190318946835655
+ ],
+ "anchor_deltas_pooled": -0.001288184694870413,
+ "b_identity": "e9ac34e5792a5aabba9038094a231a4a94789b481178739e46ece72457cc5289",
+ "c_identity": "9dfee182215d6a56e4f19e2418b051883e9c75876418a6f4c92a05d799c7603a",
+ "calibration_final": {
+  "is_top1": "RAW",
+  "is_top10": "RAW",
+  "is_top3": "RAW",
+  "is_top5": "SIGMOID"
+ },
+ "calibration_stability": "MIXED",
+ "compute": {
+  "fits": {
+   "inner": 96,
+   "outer": 12
+  },
+  "total_seconds": 234.3
+ },
+ "config_stability": "NEAR_STABLE",
+ "control": {
+  "C": 0.01,
+  "class_weight": null,
+  "family": "logistic_regression",
+  "max_iter": 1000,
+  "penalty": "L2",
+  "random_state": 42,
+  "solver": "lbfgs"
+ },
+ "control_ci_pooled": [
+  -0.010344791741921289,
+  -0.0007903294256715235
+ ],
+ "control_deltas_pooled": -0.005307793294040413,
+ "d_anchor": {
+  "disposition": "KEEP_DIVERSITY_CANDIDATE",
+  "family": "xgboost",
+  "id": "X0",
+  "learning_rate": 0.03,
+  "max_depth": 3,
+  "min_child_weight": 10,
+  "n_estimators": 300
+ },
+ "d_protocol_identity": "8d82448ea5888beb6dd8f54c35ebb08ba40c58bd66b652bab6f0d39dfdf78ba4",
+ "disposition": {
+  "xgb_e": "KEEP_DIVERSITY_CANDIDATE"
+ },
+ "e_protocol_identity": "4adf3da33b86e734e7b663c6702c64f9377c08ac4318fb5439eebd439aec38e6",
+ "f_eligibility": true,
+ "f_manifest_identity": "eab0da304dbb46b6de58ccb00c676e6a64761cf6473cc1361659ff8658b3d8e1",
+ "feature_identity": {
+  "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "n": 110
+ },
+ "final_nonlinear_recipe": {
+  "calibration": {
+   "is_top1": "RAW",
+   "is_top10": "RAW",
+   "is_top3": "RAW",
+   "is_top5": "SIGMOID"
+  },
+  "config": "X2",
+  "hyperparameters": {
+   "learning_rate": 0.03,
+   "max_depth": 3,
+   "min_child_weight": 15,
+   "n_estimators": 300
+  }
+ },
+ "final_recipe_identity": "b1d8ce5e43059477a5e57fe5b4d301cbd7b9975864d1ad964d613d1124044c09",
+ "fit_counts": {
+  "inner": 96,
+  "outer": 12
+ },
+ "known_limitations": [
+  "top1 regresses vs Logistic on D1/D3 means (diversity only, no performance claim)",
+  "D2 Brier marginally worse than control",
+  "calibration stability MIXED; final recipe carries top5-SIGMOID only",
+  "D1 selected anchor (no refinement signal on earliest fold)"
+ ],
+ "parent": {
+  "commit": "3cbd28470ffa211bd754d4262eb10d66d149bf00",
+  "tag": "v3.4-ensemble"
+ },
+ "projected_results": {
+  "D1": 0.2104274762242374,
+  "D2": 0.2015149729064843,
+  "D3": 0.18303800834064038
+ },
+ "raw_results": {
+  "D1": 0.21063112292713693,
+  "D2": 0.20210543476805642,
+  "D3": 0.18501283832621737
+ },
+ "refinement_grid": [
+  "X0",
+  "X1",
+  "X2",
+  "X3"
+ ],
+ "schema_version": "v3.5e-refinement-v1",
+ "selected_configs": {
+  "D1": "X0",
+  "D2": "X2",
+  "D3": "X2"
+ },
+ "status_2025": "NONE",
+ "task": "ordered_cumulative_finish_thresholds",
+ "tests": "tests/test_v3_5e_refinement.py",
+ "threshold_tally_vs_anchor": {
+  "improved": 4,
+  "ties": 4,
+  "worsened": 4
+ },
+ "threshold_tally_vs_logistic": {
+  "improved": 8,
+  "ties": 0,
+  "worsened": 4
+ }
+}

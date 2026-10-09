@@ -1,0 +1,16 @@
+{
+ "forbidden_in_fit": [
+  2025
+ ],
+ "preprocessing": "frozen TRAIN-only median/mode imputation + StandardScaler (Model Lab PRE.fit_preprocessor)",
+ "training_seasons": [
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "training_states": 162728
+}

@@ -1,0 +1,21 @@
+{
+ "all_pass": true,
+ "checks": {
+  "features_110_recomputable": true,
+  "no_2025_rows": true,
+  "projection_utility_importable": true,
+  "race_driver_identity_present": true,
+  "season_present": true,
+  "state_identity_unique": true,
+  "targets_4_present": true,
+  "temporal_folds_D1_D2_D3_reusable": true,
+  "threshold_order_frozen": [
+   1,
+   3,
+   5,
+   10
+  ]
+ },
+ "dataset_identity": "e9ac34e5792a5aabba9038094a231a4a94789b481178739e46ece72457cc5289",
+ "schema_version": "v3.5b-harness-readiness-v1"
+}

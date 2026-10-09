@@ -1,0 +1,32 @@
+{
+ "D1": {
+  "bit_exact": false,
+  "configs_differ": "unknown (frozen OOF reused as-is; C harness C=0.01 same lineage)",
+  "correlation": 0.9999999999999994,
+  "ll_diff": 2.6777191575177994e-13,
+  "ll_v31b": 0.08067523650595465,
+  "ll_v35_pwin": 0.08067523650622242,
+  "max_abs_prob_diff": 3.137728965540987e-11,
+  "n_common_states": 23577
+ },
+ "D2": {
+  "bit_exact": false,
+  "configs_differ": "unknown (frozen OOF reused as-is; C harness C=0.01 same lineage)",
+  "correlation": 0.9999999999999994,
+  "ll_diff": 1.3105710960914507e-11,
+  "ll_v31b": 0.03943563529462307,
+  "ll_v35_pwin": 0.039435635307728784,
+  "max_abs_prob_diff": 2.8743943447651077e-08,
+  "n_common_states": 24422
+ },
+ "D3": {
+  "bit_exact": false,
+  "configs_differ": "unknown (frozen OOF reused as-is; C harness C=0.01 same lineage)",
+  "correlation": 1.0,
+  "ll_diff": 2.3314683517128287e-14,
+  "ll_v31b": 0.08003562121445758,
+  "ll_v35_pwin": 0.08003562121448089,
+  "max_abs_prob_diff": 3.984379493005008e-11,
+  "n_common_states": 26606
+ }
+}

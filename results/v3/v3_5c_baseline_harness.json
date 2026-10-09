@@ -1,0 +1,489 @@
+[
+ {
+  "2025_status": "NONE",
+  "V3_5D_recommendation": "Screen a small number of independent binary probabilistic families through this frozen harness (same features/folds/metric/projection/ bootstrap/OOF schema). Do not redefine the harness.",
+  "a_identity": "15ca7c17146062edb5196a5de244fadd81d38562b2ca5714e58a21d4efb5efab",
+  "b_dataset_identity": "e9ac34e5792a5aabba9038094a231a4a94789b481178739e46ece72457cc5289",
+  "baselines": [
+   "climatology",
+   "position_persistence",
+   "grid",
+   "l2_logistic"
+  ],
+  "bootstrap_validation": {
+   "D1": {
+    "l2_logistic_vs_climatology": {
+     "ci_hi": -0.2393852499708813,
+     "ci_level": 0.95,
+     "ci_lo": -0.2850742671228257,
+     "frac_improved": 1.0,
+     "frac_tied": 0.0,
+     "frac_worsened": 0.0,
+     "mean_delta": -0.2636935864604046,
+     "median_delta": -0.28167487094081495,
+     "n_races": 22,
+     "procedure": "paired race resampling with replacement; statistic = mean(LL_B - LL_A); percentile CI",
+     "replicates": 2000,
+     "seed": 42
+    },
+    "l2_logistic_vs_position_persistence": {
+     "ci_hi": -2.2577727100280374,
+     "ci_level": 0.95,
+     "ci_lo": -3.1295582655843748,
+     "frac_improved": 1.0,
+     "frac_tied": 0.0,
+     "frac_worsened": 0.0,
+     "mean_delta": -2.6756268153887373,
+     "median_delta": -2.7020195235545366,
+     "n_races": 22,
+     "procedure": "paired race resampling with replacement; statistic = mean(LL_B - LL_A); percentile CI",
+     "replicates": 2000,
+     "seed": 42
+    }
+   },
+   "D2": {
+    "l2_logistic_vs_climatology": {
+     "ci_hi": -0.2510079821897632,
+     "ci_level": 0.95,
+     "ci_lo": -0.3041565394460295,
+     "frac_improved": 1.0,
+     "frac_tied": 0.0,
+     "frac_worsened": 0.0,
+     "mean_delta": -0.28051306664180725,
+     "median_delta": -0.30137970689496096,
+     "n_races": 22,
+     "procedure": "paired race resampling with replacement; statistic = mean(LL_B - LL_A); percentile CI",
+     "replicates": 2000,
+     "seed": 42
+    },
+    "l2_logistic_vs_position_persistence": {
+     "ci_hi": -2.144552054219911,
+     "ci_level": 0.95,
+     "ci_lo": -3.234185603674191,
+     "frac_improved": 1.0,
+     "frac_tied": 0.0,
+     "frac_worsened": 0.0,
+     "mean_delta": -2.6545147320033338,
+     "median_delta": -2.0268089162204284,
+     "n_races": 22,
+     "procedure": "paired race resampling with replacement; statistic = mean(LL_B - LL_A); percentile CI",
+     "replicates": 2000,
+     "seed": 42
+    }
+   },
+   "D3": {
+    "l2_logistic_vs_climatology": {
+     "ci_hi": -0.2668404854130659,
+     "ci_level": 0.95,
+     "ci_lo": -0.3192845048099375,
+     "frac_improved": 1.0,
+     "frac_tied": 0.0,
+     "frac_worsened": 0.0,
+     "mean_delta": -0.294845526618448,
+     "median_delta": -0.314961328610589,
+     "n_races": 24,
+     "procedure": "paired race resampling with replacement; statistic = mean(LL_B - LL_A); percentile CI",
+     "replicates": 2000,
+     "seed": 42
+    },
+    "l2_logistic_vs_position_persistence": {
+     "ci_hi": -1.8584863664339732,
+     "ci_level": 0.95,
+     "ci_lo": -2.7353088635915084,
+     "frac_improved": 0.9583333333333334,
+     "frac_tied": 0.0,
+     "frac_worsened": 0.041666666666666664,
+     "mean_delta": -2.2841986643090544,
+     "median_delta": -2.1133601553646275,
+     "n_races": 24,
+     "procedure": "paired race resampling with replacement; statistic = mean(LL_B - LL_A); percentile CI",
+     "replicates": 2000,
+     "seed": 42
+    }
+   }
+  },
+  "c_contract_identity": "9dfee182215d6a56e4f19e2418b051883e9c75876418a6f4c92a05d799c7603a",
+  "compute": {
+   "note": "single learned family (logistic control); deterministic baselines trivial",
+   "total_seconds": 24.0
+  },
+  "d_interface": {
+   "fit": "fit(train_X: 110-col frame, train_targets: 4 binary cols) -> fitted bundle",
+   "inherits": [
+    "same 110 features",
+    "same D1/D2/D3",
+    "same train-only preprocessing safety",
+    "same target sidecar",
+    "same primary metric",
+    "same v3.5b-projection-v1",
+    "same paired race bootstrap",
+    "same OOF schema"
+   ],
+   "predict": "predict_proba(validation_X) -> 4 RAW probabilities in frozen threshold order [top1, top3, top5, top10]",
+   "redefinition": "FORBIDDEN (D must not redefine the harness)"
+  },
+  "feature_identity": {
+   "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+   "hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+   "n": 110
+  },
+  "folds": {
+   "D1": {
+    "train_races": 81,
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021
+    ],
+    "train_states": 88123,
+    "validate_seasons": [
+     2022
+    ],
+    "validation_races": 22,
+    "validation_states": 23577
+   },
+   "D2": {
+    "train_races": 103,
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021,
+     2022
+    ],
+    "train_states": 111700,
+    "validate_seasons": [
+     2023
+    ],
+    "validation_races": 22,
+    "validation_states": 24422
+   },
+   "D3": {
+    "train_races": 125,
+    "train_seasons": [
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023
+    ],
+    "train_states": 136122,
+    "validate_seasons": [
+     2024
+    ],
+    "validation_races": 24,
+    "validation_states": 26606
+   }
+  },
+  "harness_parity": {
+   "all_match": true,
+   "independent_logistic_D3_top1_max_abs_diff": 0.0,
+   "logistic_match": true,
+   "metric_match": true,
+   "metric_recompute_worst_abs_diff": 0.0,
+   "persistence_match": true,
+   "persistence_recompute_max_abs_diff": 0.0,
+   "schema_version": "v3.5c-harness-parity-v1"
+  },
+  "known_limitations": [
+   "deterministic 0/1 baselines have poor log loss by construction (expected; ranking info not scored)",
+   "v3.5 p_win machine-precision-equivalent to V3.1B OOF, not bit-exact (diagnostic only)",
+   "threshold-differenced bands diagnostic only",
+   "no screening, no tuning, no calibration in C"
+  ],
+  "parent": {
+   "commit": "3cbd28470ffa211bd754d4262eb10d66d149bf00",
+   "tag": "v3.4-ensemble"
+  },
+  "prediction_identities": {
+   "D1": {
+    "models": [
+     "climatology",
+     "grid",
+     "l2_logistic",
+     "position_persistence"
+    ],
+    "path": "data/v3/v3_5c/oof_D1.parquet",
+    "rows": 94308,
+    "sha256": "4fd658e59ce7aae189106983cec71b1b9d77ea53b87676bcb4b086bc60bea7c3"
+   },
+   "D2": {
+    "models": [
+     "climatology",
+     "grid",
+     "l2_logistic",
+     "position_persistence"
+    ],
+    "path": "data/v3/v3_5c/oof_D2.parquet",
+    "rows": 97688,
+    "sha256": "57a3ac204e53a9d2f8a90a6ab3dbb74327973ce3e2b334215ba2610017acfd4c"
+   },
+   "D3": {
+    "models": [
+     "climatology",
+     "grid",
+     "l2_logistic",
+     "position_persistence"
+    ],
+    "path": "data/v3/v3_5c/oof_D3.parquet",
+    "rows": 106424,
+    "sha256": "bab69779ca34d8150c0de93f9b713425607da5d68577aab86f921c402f5c279f"
+   }
+  },
+  "preprocessing": "frozen train-only",
+  "primary_metric": "mean_race_macro_log_loss_over_4_thresholds",
+  "projected_results": {
+   "D1": {
+    "climatology": 0.4852022758903425,
+    "grid": 5.590323882654673,
+    "l2_logistic": 0.22102391456593107,
+    "position_persistence": 2.897135504818675
+   },
+   "D2": {
+    "climatology": 0.4827419693817378,
+    "grid": 5.082477808633237,
+    "l2_logistic": 0.20203700842337208,
+    "position_persistence": 2.8567436347432644
+   },
+   "D3": {
+    "climatology": 0.4827786918292617,
+    "grid": 3.7100817600575935,
+    "l2_logistic": 0.18788482163672185,
+    "position_persistence": 2.4721318295198684
+   }
+  },
+  "projection_diagnostics": {
+   "D1": {
+    "climatology": {
+     "frac_violated_before": 0.0,
+     "max_abs_adjustment": 0.0,
+     "mean_abs_adjustment": 0.0,
+     "n_rows": 23577,
+     "n_violated_before": 0,
+     "per_threshold_mean_abs_adjustment": {
+      "is_top1": 0.0,
+      "is_top10": 0.0,
+      "is_top3": 0.0,
+      "is_top5": 0.0
+     }
+    },
+    "grid": {
+     "frac_violated_before": 0.0,
+     "max_abs_adjustment": 0.0,
+     "mean_abs_adjustment": 0.0,
+     "n_rows": 23577,
+     "n_violated_before": 0,
+     "per_threshold_mean_abs_adjustment": {
+      "is_top1": 0.0,
+      "is_top10": 0.0,
+      "is_top3": 0.0,
+      "is_top5": 0.0
+     }
+    },
+    "l2_logistic": {
+     "frac_violated_before": 0.06154302922339568,
+     "max_abs_adjustment": 0.5532161268918118,
+     "mean_abs_adjustment": 0.0002921055659770213,
+     "n_rows": 23577,
+     "n_violated_before": 1451,
+     "per_threshold_mean_abs_adjustment": {
+      "is_top1": 7.557161614340531e-05,
+      "is_top10": 0.0004463589475207216,
+      "is_top3": 0.00033634634921188994,
+      "is_top5": 0.00031014535103206833
+     }
+    },
+    "position_persistence": {
+     "frac_violated_before": 0.0,
+     "max_abs_adjustment": 0.0,
+     "mean_abs_adjustment": 0.0,
+     "n_rows": 23577,
+     "n_violated_before": 0,
+     "per_threshold_mean_abs_adjustment": {
+      "is_top1": 0.0,
+      "is_top10": 0.0,
+      "is_top3": 0.0,
+      "is_top5": 0.0
+     }
+    }
+   },
+   "D2": {
+    "climatology": {
+     "frac_violated_before": 0.0,
+     "max_abs_adjustment": 0.0,
+     "mean_abs_adjustment": 0.0,
+     "n_rows": 24422,
+     "n_violated_before": 0,
+     "per_threshold_mean_abs_adjustment": {
+      "is_top1": 0.0,
+      "is_top10": 0.0,
+      "is_top3": 0.0,
+      "is_top5": 0.0
+     }
+    },
+    "grid": {
+     "frac_violated_before": 0.0,
+     "max_abs_adjustment": 0.0,
+     "mean_abs_adjustment": 0.0,
+     "n_rows": 24422,
+     "n_violated_before": 0,
+     "per_threshold_mean_abs_adjustment": {
+      "is_top1": 0.0,
+      "is_top10": 0.0,
+      "is_top3": 0.0,
+      "is_top5": 0.0
+     }
+    },
+    "l2_logistic": {
+     "frac_violated_before": 0.0773073458357219,
+     "max_abs_adjustment": 0.6777455344075194,
+     "mean_abs_adjustment": 0.00030590914216153617,
+     "n_rows": 24422,
+     "n_violated_before": 1888,
+     "per_threshold_mean_abs_adjustment": {
+      "is_top1": 0.00026655644326121147,
+      "is_top10": 2.999325226698723e-05,
+      "is_top3": 0.00040954949833143107,
+      "is_top5": 0.0005175373747865149
+     }
+    },
+    "position_persistence": {
+     "frac_violated_before": 0.0,
+     "max_abs_adjustment": 0.0,
+     "mean_abs_adjustment": 0.0,
+     "n_rows": 24422,
+     "n_violated_before": 0,
+     "per_threshold_mean_abs_adjustment": {
+      "is_top1": 0.0,
+      "is_top10": 0.0,
+      "is_top3": 0.0,
+      "is_top5": 0.0
+     }
+    }
+   },
+   "D3": {
+    "climatology": {
+     "frac_violated_before": 0.0,
+     "max_abs_adjustment": 0.0,
+     "mean_abs_adjustment": 0.0,
+     "n_rows": 26606,
+     "n_violated_before": 0,
+     "per_threshold_mean_abs_adjustment": {
+      "is_top1": 0.0,
+      "is_top10": 0.0,
+      "is_top3": 0.0,
+      "is_top5": 0.0
+     }
+    },
+    "grid": {
+     "frac_violated_before": 0.0,
+     "max_abs_adjustment": 0.0,
+     "mean_abs_adjustment": 0.0,
+     "n_rows": 26606,
+     "n_violated_before": 0,
+     "per_threshold_mean_abs_adjustment": {
+      "is_top1": 0.0,
+      "is_top10": 0.0,
+      "is_top3": 0.0,
+      "is_top5": 0.0
+     }
+    },
+    "l2_logistic": {
+     "frac_violated_before": 0.04856047508080884,
+     "max_abs_adjustment": 0.06975672096761609,
+     "mean_abs_adjustment": 7.728551126116714e-05,
+     "n_rows": 26606,
+     "n_violated_before": 1292,
+     "per_threshold_mean_abs_adjustment": {
+      "is_top1": 3.577037109729212e-05,
+      "is_top10": 5.157778000353675e-07,
+      "is_top3": 0.00013650996769814285,
+      "is_top5": 0.00013634592844919826
+     }
+    },
+    "position_persistence": {
+     "frac_violated_before": 0.0,
+     "max_abs_adjustment": 0.0,
+     "mean_abs_adjustment": 0.0,
+     "n_rows": 26606,
+     "n_violated_before": 0,
+     "per_threshold_mean_abs_adjustment": {
+      "is_top1": 0.0,
+      "is_top10": 0.0,
+      "is_top3": 0.0,
+      "is_top5": 0.0
+     }
+    }
+   }
+  },
+  "raw_results": {
+   "D1": {
+    "climatology": 0.4852022758903425,
+    "grid": 5.590323882654673,
+    "l2_logistic": 0.22150868942993782,
+    "position_persistence": 2.897135504818675
+   },
+   "D2": {
+    "climatology": 0.4827419693817378,
+    "grid": 5.082477808633237,
+    "l2_logistic": 0.20222890273993052,
+    "position_persistence": 2.8567436347432644
+   },
+   "D3": {
+    "climatology": 0.4827786918292617,
+    "grid": 3.7100817600575935,
+    "l2_logistic": 0.1879331652108137,
+    "position_persistence": 2.4721318295198684
+   }
+  },
+  "schema_version": "v3.5c-baseline-harness-v1",
+  "secondary_metrics": [
+   "brier",
+   "ece",
+   "state_pooled_ll",
+   "acc_at_0.5"
+  ],
+  "task": "ordered_cumulative_finish_thresholds",
+  "tests": "tests/test_v3_5c_harness.py",
+  "threshold_order": [
+   1,
+   3,
+   5,
+   10
+  ],
+  "v31b_diagnostic": {
+   "D1": {
+    "bit_exact": false,
+    "configs_differ": "unknown (frozen OOF reused as-is; C harness C=0.01 same lineage)",
+    "correlation": 0.9999999999999994,
+    "ll_diff": 2.6777191575177994e-13,
+    "ll_v31b": 0.08067523650595465,
+    "ll_v35_pwin": 0.08067523650622242,
+    "max_abs_prob_diff": 3.137728965540987e-11,
+    "n_common_states": 23577
+   },
+   "D2": {
+    "bit_exact": false,
+    "configs_differ": "unknown (frozen OOF reused as-is; C harness C=0.01 same lineage)",
+    "correlation": 0.9999999999999994,
+    "ll_diff": 1.3105710960914507e-11,
+    "ll_v31b": 0.03943563529462307,
+    "ll_v35_pwin": 0.039435635307728784,
+    "max_abs_prob_diff": 2.8743943447651077e-08,
+    "n_common_states": 24422
+   },
+   "D3": {
+    "bit_exact": false,
+    "configs_differ": "unknown (frozen OOF reused as-is; C harness C=0.01 same lineage)",
+    "correlation": 1.0,
+    "ll_diff": 2.3314683517128287e-14,
+    "ll_v31b": 0.08003562121445758,
+    "ll_v35_pwin": 0.08003562121448089,
+    "max_abs_prob_diff": 3.984379493005008e-11,
+    "n_common_states": 26606
+   }
+  }
+ }
+]

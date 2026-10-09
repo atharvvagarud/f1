@@ -1,0 +1,14 @@
+{
+ "2025_CONTACT": "NONE",
+ "forbidden_name_hits": [],
+ "mechanism": [
+  "dev-season filter",
+  "2025 tripwire in run script",
+  "ProtectedHoldoutError reuse",
+  "artifact scan",
+  "tests"
+ ],
+ "row_hits": [],
+ "schema_version": "v3.5c-firewall-audit-v1",
+ "verdict": "PASS"
+}

@@ -1,0 +1,25 @@
+{
+ "LOGISTIC_CONTROL": {
+  "disposition": "LOGISTIC_CONTROL",
+  "role": "frozen control; V3.5 champion unless F overturns"
+ },
+ "xgb_anchor": {
+  "disposition": "SUPERSEDED_BY_REFINEMENT",
+  "note": "D anchor X0 retained as reference only; E refinement improves on it pooled (-0.001288, CI [-0.002283, -0.000319])"
+ },
+ "xgb_e": {
+  "calibration": {
+   "is_top1": "RAW",
+   "is_top10": "RAW",
+   "is_top3": "RAW",
+   "is_top5": "SIGMOID"
+  },
+  "disposition": "KEEP_DIVERSITY_CANDIDATE",
+  "f_eligibility": true,
+  "final_config": "X2",
+  "primary_evidence": "pooled PROJECTED delta vs Logistic -0.005308 CI [-0.010345, -0.000790]",
+  "top1_statement": "EXPLICIT WEAKNESS: top1 race-macro LL regresses vs Logistic on D1 (+0.0031) and D3 (+0.0031) while improving on D2 (-0.0036); top1 race majorities are mixed (10/12, 13/9, 16/8). Broad/material top1 regression forbids KEEP_PERFORMANCE_CANDIDATE; diversity advancement only.",
+  "why_advance": "pooled primary CI excludes zero vs Logistic and vs anchor; refinement never worsens any fold vs anchor; LATE-stage strength preserved; probability/coherence quality acceptable",
+  "why_not_performance": "top1 guard policy blocks KEEP_PERFORMANCE_CANDIDATE"
+ }
+}

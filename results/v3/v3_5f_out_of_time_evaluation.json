@@ -1,0 +1,88 @@
+{
+ "V3_5G_recommendation": "final validation/freeze with full Tier-1; Logistic scientific champion; XGB nonlinear research candidate; no reselection",
+ "a_identity": "15ca7c17146062edb5196a5de244fadd81d38562b2ca5714e58a21d4efb5efab",
+ "b_identity": "e9ac34e5792a5aabba9038094a231a4a94789b481178739e46ece72457cc5289",
+ "c_identity": "9dfee182215d6a56e4f19e2418b051883e9c75876418a6f4c92a05d799c7603a",
+ "champion_status": "LOGISTIC_CONTROL retains SCIENTIFIC CHAMPION; XGB is NONLINEAR RESEARCH CANDIDATE",
+ "compute": {
+  "fits": {
+   "calibration_oos": 12,
+   "logistic": 4,
+   "xgb_final": 4
+  },
+  "total_seconds": 31.8
+ },
+ "counts_2025": {
+  "outcomes": 479,
+  "races": 24,
+  "states": 26692
+ },
+ "d_protocol_identity": "8d82448ea5888beb6dd8f54c35ebb08ba40c58bd66b652bab6f0d39dfdf78ba4",
+ "determinism": {
+  "bit_exact": true,
+  "logical_identity_match": true
+ },
+ "e_protocol_identity": "4adf3da33b86e734e7b663c6702c64f9377c08ac4318fb5439eebd439aec38e6",
+ "e_recipe_identity": "b1d8ce5e43059477a5e57fe5b4d301cbd7b9975864d1ad964d613d1124044c09",
+ "evaluation_season": 2025,
+ "evaluation_terminology": "PREVIOUSLY REVEALED OUT-OF-TIME OUTCOME EVALUATION",
+ "f_execution_record_identity": "a94ee34d63e843be37b41737fba4b2d141cf57409e6960094bf158c42921a1b3",
+ "f_manifest_identity": "eab0da304dbb46b6de58ccb00c676e6a64761cf6473cc1361659ff8658b3d8e1",
+ "feature_identity": {
+  "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "n": 110
+ },
+ "final_disposition": "OUTCOME_XGB_MIXED_OUT_OF_TIME",
+ "independent_recomputation": true,
+ "known_limitations": [
+  "top1 weakness persists on 2025 (+0.0038, 10/14 races)",
+  "top3 slightly regresses (+0.0015)",
+  "top5 calibration regresses on 2025 (+0.0017; recipe frozen)",
+  "bootstrap CI spans zero (n=24 races)",
+  "EARLY/MID stage deltas slightly positive"
+ ],
+ "logistic_primary": 0.2050270403404582,
+ "no_reselection_confirmation": "confirmed: no config/calibration/projection/feature/family change after 2025 contact",
+ "parent": {
+  "commit": "3cbd28470ffa211bd754d4262eb10d66d149bf00",
+  "tag": "v3.4-ensemble"
+ },
+ "prediction_identities": {
+  "logistic_predictions_2025.parquet": {
+   "logical_identity": "e6651d68fecba32fbbd05889db10413bee6bcfecc897ae299fa96a0dbfedb5b7",
+   "rows": 26692,
+   "sha256": "96f46b3114effa2175dbbc6fa747ca8d880aba6fbeed4fef7708350b03f0219d"
+  },
+  "xgb_predictions_2025.parquet": {
+   "logical_identity": "1d21dca15421223c0da8fc40636415e36c407a2b82899eaa4920d4c18fb2bbc3",
+   "rows": 26692,
+   "sha256": "c91e8a8ff4a85dd06f724e147bc5e74b4595902341fcc7e4244aea601923fb7c"
+  }
+ },
+ "primary_delta": -0.0033845591599139246,
+ "schema_version": "v3.5f-out-of-time-evaluation-v1",
+ "status_2025": "EVALUATION_ONLY",
+ "task": "ordered_cumulative_finish_thresholds",
+ "tests": "tests/test_v3_5f_evaluation.py",
+ "threshold_results": "results/v3/v3_5f/threshold_results.json",
+ "top1_audit": "results/v3/v3_5f/top1_audit.json",
+ "training_seasons": [
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "transfer": {
+  "calibration_transfer": "CALIBRATION_REGRESSES",
+  "overall_transfer": "MIXED_TRANSFER",
+  "stage_transfer": "LATE_ADVANTAGE_TRANSFERS",
+  "top1_transfer": "WEAKNESS_PERSISTS"
+ },
+ "xgb_calibrated_primary": 0.2018361232732994,
+ "xgb_projected_primary": 0.2016424811805443,
+ "xgb_raw_primary": 0.2014019593892697
+}

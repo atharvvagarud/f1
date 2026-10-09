@@ -1,0 +1,29 @@
+{
+ "all_match": true,
+ "per_fold": {
+  "D1": {
+   "match_1e9": true,
+   "primary_proj": 0.2104274762242374
+  },
+  "D2": {
+   "match_1e9": true,
+   "primary_proj": 0.2015149729064843
+  },
+  "D3": {
+   "match_1e9": true,
+   "primary_proj": 0.18303800834064038
+  }
+ },
+ "vs_anchor": {
+  "ci_hi": -0.0003190318946835655,
+  "ci_lo": -0.002282683898404446,
+  "match_1e9": true,
+  "mean_delta": -0.001288184694870413
+ },
+ "vs_logistic": {
+  "ci_hi": -0.0007903294256715235,
+  "ci_lo": -0.01034479174192129,
+  "match_1e9": true,
+  "mean_delta": -0.005307793294040413
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "LOGISTIC_CONTROL": {
+  "disposition": "LOGISTIC_CONTROL",
+  "role": "frozen control; never advances, never replaced"
+ },
+ "advancing": [
+  "xgb"
+ ],
+ "hgb": {
+  "disposition": "REJECT_NO_IMPROVEMENT",
+  "evidence": {
+   "cells_improved": 7,
+   "cells_total": 12,
+   "ci_hi": 0.007300468665199722,
+   "ci_lo": -0.003107699090956458,
+   "fold_deltas": [
+    0.0025079777525090496,
+    0.004399004052518918,
+    -0.0008213431975414298
+   ],
+   "max_abs_adjustment": 0.2871828521588152,
+   "max_violation_rate": 0.13695550748610935,
+   "mean_abs_adjustment": 0.0019473230250499427,
+   "mean_brier_delta": 0.00024790513175150893,
+   "mean_ece_delta": -0.0006693443091261133,
+   "pooled": 0.001944725926023832,
+   "raw_fold_deltas": [
+    0.0026136184933970574,
+    0.00541291712834352,
+    -0.0007173087076005058
+   ],
+   "raw_pooled": 0.0025796373889194176
+  },
+  "rationale": "pooled primary does not improve on control; gains isolated to a minority of folds (unstable); Brier regresses vs control"
+ },
+ "xgb": {
+  "disposition": "KEEP_DIVERSITY_CANDIDATE",
+  "evidence": {
+   "cells_improved": 8,
+   "cells_total": 12,
+   "ci_hi": 0.0002873269193272811,
+   "ci_lo": -0.00887011691933179,
+   "fold_deltas": [
+    -0.01059643834169366,
+    0.0008919354752183195,
+    -0.002493096736712608
+   ],
+   "max_abs_adjustment": 0.1883404403924942,
+   "max_violation_rate": 0.13663909589714193,
+   "mean_abs_adjustment": 0.0007465217445622044,
+   "mean_brier_delta": -0.0018497192240532676,
+   "mean_ece_delta": -0.0022414555288352207,
+   "pooled": -0.004019608599169999,
+   "raw_fold_deltas": [
+    -0.01087756650280089,
+    0.0010029777570201015,
+    -0.0024728560905395436
+   ],
+   "raw_pooled": -0.0038315078063159767
+  },
+  "rationale": "uncertain primary superiority but material complementarity (15 control-weak races improved) with acceptable quality/coherence; win-threshold weakness documented, E must weigh it"
+ }
+}

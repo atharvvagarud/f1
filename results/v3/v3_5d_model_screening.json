@@ -1,0 +1,178 @@
+{
+ "2025_status": "NONE",
+ "V3_5E_recommendation": "Carry XGB (diversity) and the frozen control into controlled refinement: weigh win-threshold weakness explicitly; HGB stays out. E decides whether any refinement earns out-of-time evaluation.",
+ "a_identity": "15ca7c17146062edb5196a5de244fadd81d38562b2ca5714e58a21d4efb5efab",
+ "advancing_candidates": [
+  "xgb"
+ ],
+ "b_identity": "e9ac34e5792a5aabba9038094a231a4a94789b481178739e46ece72457cc5289",
+ "bootstrap": "results/v3/v3_5d/bootstrap_results.json",
+ "c_identity": "9dfee182215d6a56e4f19e2418b051883e9c75876418a6f4c92a05d799c7603a",
+ "candidate_families": [
+  "LOGISTIC_CONTROL",
+  "HIST_GRADIENT_BOOSTING",
+  "XGBOOST"
+ ],
+ "candidate_grids": {
+  "hgb": [
+   {
+    "learning_rate": 0.03,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 20
+   },
+   {
+    "learning_rate": 0.03,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20
+   },
+   {
+    "learning_rate": 0.05,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 20
+   },
+   {
+    "learning_rate": 0.05,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20
+   }
+  ],
+  "xgb": [
+   {
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "min_child_weight": 5
+   },
+   {
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "min_child_weight": 10
+   },
+   {
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "min_child_weight": 5
+   },
+   {
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "min_child_weight": 10
+   }
+  ]
+ },
+ "coherence_diagnostics": "results/v3/v3_5d/projection_diagnostics.json",
+ "compute": {
+  "fits": {
+   "inner": 192,
+   "outer": 24
+  },
+  "total_seconds": 745.7
+ },
+ "config_stability": {
+  "hgb": "STABLE",
+  "xgb": "STABLE"
+ },
+ "control_reproduction": "exact (RAW+PROJECTED primaries match C to <1e-12 all folds)",
+ "d_protocol_identity": "8d82448ea5888beb6dd8f54c35ebb08ba40c58bd66b652bab6f0d39dfdf78ba4",
+ "dispositions": {
+  "LOGISTIC_CONTROL": "LOGISTIC_CONTROL",
+  "hgb": "REJECT_NO_IMPROVEMENT",
+  "xgb": "KEEP_DIVERSITY_CANDIDATE"
+ },
+ "diversity": "results/v3/v3_5d/diversity_analysis.json (diagnostics only; no blending)",
+ "feature_identity": {
+  "arm": "ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+  "hash": "e054c6fb08c0832970165bcfc0e84f54b70787491af1d545b96a13977fc4c89e",
+  "n": 110
+ },
+ "fit_counts": {
+  "inner": 192,
+  "outer": 24
+ },
+ "known_limitations": [
+  "inner grids small by design (4 configs); wider search forbidden",
+  "xgb primary superiority uncertain (pooled bootstrap spans zero)",
+  "xgb win-threshold weaker than control in 2/3 folds (diversity, not performance)",
+  "hgb rejected: pooled worse, isolated gains, Brier regression",
+  "no calibration, no blending, no 2025 in D"
+ ],
+ "parent": {
+  "commit": "3cbd28470ffa211bd754d4262eb10d66d149bf00",
+  "tag": "v3.4-ensemble"
+ },
+ "projected_results": {
+  "hgb": {
+   "D1": 0.22353189231844012,
+   "D2": 0.206436012475891,
+   "D3": 0.18706347843918042
+  },
+  "xgb": {
+   "D1": 0.2104274762242374,
+   "D2": 0.2029289438985904,
+   "D3": 0.18539172490000924
+  }
+ },
+ "race_evidence": "results/v3/v3_5d/race_level_results.json",
+ "raw_results": {
+  "hgb": {
+   "D1": 0.22412230792333487,
+   "D2": 0.20764181986827404,
+   "D3": 0.1872158565032132
+  },
+  "xgb": {
+   "D1": 0.21063112292713693,
+   "D2": 0.20323188049695062,
+   "D3": 0.18546030912027417
+  }
+ },
+ "schema_version": "v3.5d-model-screening-v1",
+ "secondary_metrics": "per-threshold Brier/ECE/pooled-LL in outer_results.json",
+ "selected_configs": {
+  "hgb": {
+   "D1": {
+    "learning_rate": 0.03,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 20
+   },
+   "D2": {
+    "learning_rate": 0.03,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 20
+   },
+   "D3": {
+    "learning_rate": 0.03,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 20
+   }
+  },
+  "xgb": {
+   "D1": {
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "min_child_weight": 10
+   },
+   "D2": {
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "min_child_weight": 10
+   },
+   "D3": {
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "min_child_weight": 10
+   }
+  }
+ },
+ "stage_results": "results/v3/v3_5d/stage_results.json (both improve LATE 6/6 cells)",
+ "task": "ordered_cumulative_finish_thresholds",
+ "temporal_consistency": {
+  "hgb": "MIXED (1/3 folds improve)",
+  "xgb": "MIXED (2/3 folds improve, D2 parity)"
+ },
+ "temporal_protocol": "M6 expanding-window inner (train history only) + D1/D2/D3 outer; outer selects nothing",
+ "tests": "tests/test_v3_5d_screening.py",
+ "threshold_consistency": {
+  "hgb": "7/12",
+  "xgb": "8/12"
+ },
+ "threshold_results": "results/v3/v3_5d/threshold_results.json"
+}

@@ -1,0 +1,71 @@
+{
+ "chosen_per_fold": {
+  "D1": "X0",
+  "D2": "X2",
+  "D3": "X2"
+ },
+ "config_stability": "NEAR_STABLE",
+ "fits": {
+  "inner": 96,
+  "outer": 12
+ },
+ "inner_selection": {
+  "D1": {
+   "chosen": "X0",
+   "config": {
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "min_child_weight": 10,
+    "n_estimators": 300
+   },
+   "inner_folds": [
+    "D1-I1"
+   ],
+   "inner_scores": {
+    "X0": 0.23972373819284462,
+    "X1": 0.2521989226292347,
+    "X2": 0.24014663851004958,
+    "X3": 0.2404287163012811
+   }
+  },
+  "D2": {
+   "chosen": "X2",
+   "config": {
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "min_child_weight": 15,
+    "n_estimators": 300
+   },
+   "inner_folds": [
+    "D2-I1",
+    "D2-I2"
+   ],
+   "inner_scores": {
+    "X0": 0.2251774305599908,
+    "X1": 0.23626408544563052,
+    "X2": 0.22445874524652837,
+    "X3": 0.2265199067097132
+   }
+  },
+  "D3": {
+   "chosen": "X2",
+   "config": {
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "min_child_weight": 15,
+    "n_estimators": 300
+   },
+   "inner_folds": [
+    "D3-I1",
+    "D3-I2",
+    "D3-I3"
+   ],
+   "inner_scores": {
+    "X0": 0.21786224720564407,
+    "X1": 0.2295000739235384,
+    "X2": 0.21700764175370438,
+    "X3": 0.2192015715642747
+   }
+  }
+ }
+}
