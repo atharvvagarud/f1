@@ -1,0 +1,154 @@
+{
+ "protocol_hash": "0c2bf7fb6e46a948d811587a64aac89cb10cfe0bf67485ed9ff3b457d64088fc",
+ "population": {
+  "candidates": 298,
+  "eligible": 71,
+  "supported": 71
+ },
+ "coverage": {
+  "unsupported": {
+   "STALE_ROSTER_OBSERVATION": 165,
+   "MISSING_TYRE_STATE": 6,
+   "UNSUPPORTED_TRACK_STATE": 25,
+   "WET_CONDITIONS": 25,
+   "MISSING_DRIVER_OBSERVATION": 6
+  }
+ },
+ "reproducibility": {
+  "all_identical": true,
+  "n": 4
+ },
+ "seed_stability": {
+  "sign_consistent_rate": 0.3333333333333333
+ },
+ "count_stability": {
+  "delta_win_frequency": {
+   "median_absdiff_200_vs_5000": 0.0057,
+   "median_absdiff_1000_vs_5000": 0.0
+  },
+  "delta_podium_frequency": {
+   "median_absdiff_200_vs_5000": 0.0117,
+   "median_absdiff_1000_vs_5000": 0.0069
+  },
+  "delta_expected_finish": {
+   "median_absdiff_200_vs_5000": 0.1984,
+   "median_absdiff_1000_vs_5000": 0.04470000000000002
+  }
+ },
+ "crn": {
+  "ratio_definition": "paired_SE / independent_SE; >1 means CRN worse (paired wider). Gate label plain meaning.",
+  "n_informative": 3,
+  "n_degenerate_both_zero": 3,
+  "median_ratio_paired_over_indep": 0.9292571741700768,
+  "min": 0.8458502709779814,
+  "max": 0.9601784392600529,
+  "all_favor_paired": true
+ },
+ "effects": {
+  "delta_win_frequency": {
+   "median": 0.0,
+   "q25": 0.0,
+   "q75": 0.0
+  },
+  "delta_podium_frequency": {
+   "median": 0.0,
+   "q25": -0.04,
+   "q75": 0.0
+  },
+  "delta_top5_frequency": {
+   "median": 0.0,
+   "q25": -0.075,
+   "q75": 0.0
+  },
+  "delta_top10_frequency": {
+   "median": -0.03,
+   "q25": -0.1275,
+   "q75": 0.0
+  },
+  "delta_expected_finish": {
+   "median": -0.8,
+   "q25": -1.7325,
+   "q75": -0.1625
+  },
+  "delta_downside_probability": {
+   "median": 0.48,
+   "q25": 0.31,
+   "q75": 0.605
+  }
+ },
+ "objective_disagreement": {
+  "podium_up_downside_up": 0.03442879499217527,
+  "finish_up_win_down": 0.001564945226917058,
+  "top10_up_podium_down": 0.0297339593114241
+ },
+ "stage": {
+  "EARLY": {
+   "comparisons": 171,
+   "median_abs_win_pp": 0.0,
+   "median_abs_finish": 0.985
+  },
+  "MID": {
+   "comparisons": 306,
+   "median_abs_win_pp": 0.0,
+   "median_abs_finish": 0.7825
+  },
+  "LATE": {
+   "comparisons": 162,
+   "median_abs_win_pp": 0.0,
+   "median_abs_finish": 0.6925
+  }
+ },
+ "stay_out_vs_reference": {
+  "n": 71,
+  "suppression_rate": 1.0,
+  "inert_rate": 0.909718309859155,
+  "differs_rate": 0.9154929577464789
+ },
+ "v35_diagnostic": {
+  "matched_states": 34,
+  "mean_abs_diff": 0.026235731534989103,
+  "median_abs_diff": 0.00034667411359888653,
+  "correlation": 0.9064438024246364,
+  "by_stage": {
+   "EARLY": 0.00027469642838496243,
+   "MID": 0.000289717086030144,
+   "LATE": 0.0015625863108156943
+  }
+ },
+ "cases": {
+  "median_effect": {
+   "race": "2018-r06-R",
+   "alternative": "STAY_OUT:SAMPLED",
+   "plausibility": "PLAUSIBLE"
+  },
+  "high_uncertainty": {
+   "race": "2023-r06-R",
+   "alternative": "PIT_NEXT_LAP:HARD",
+   "plausibility": "PLAUSIBLE"
+  },
+  "objective_tradeoff": {
+   "race": "2018-r03-R",
+   "alternative": "PIT_NOW:HARD",
+   "plausibility": "PLAUSIBLE"
+  },
+  "inert_superseded": {
+   "race": "2021-r07-R",
+   "alternative": "STAY_OUT:SAMPLED",
+   "plausibility": "PLAUSIBLE"
+  },
+  "strong_supported": {
+   "race": "2020-r05-R",
+   "alternative": "PIT_NOW:SOFT",
+   "plausibility": "PLAUSIBLE"
+  }
+ },
+ "pathology_count": 0,
+ "refinement_decision": "REFINEMENT_NOT_WARRANTED",
+ "known_limitations": [
+  "simulator-conditional counterfactuals; no ground truth",
+  "no status-resolver relief (conservative eligibility)",
+  "single target per state (anchor driver)",
+  "Layer-1 n=200 (intervals mostly withheld); Layer-2 n=5000 on 8",
+  "V3.5 join limited to matched (race,driver,lap) OOF rows"
+ ]
+}

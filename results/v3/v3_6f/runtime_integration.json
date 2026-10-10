@@ -1,0 +1,34 @@
+{
+ "api_decision": "NEW_VERSIONED_ENDPOINT POST /v2/strategies/compare-v3 (+ GET /v2/strategies/v3/availability); Phase-7 POST /v2/strategies/compare byte-compatible",
+ "frozen_parent": "6df5d41d3ebead9a1c9b4f0f40ed20a21ce0bff1",
+ "lineage": {
+  "a": "2d29c19b47b24035f0d1c503fccc8cd4090595b4ebb2a980001d0a919b0ae59b",
+  "b": "df821fe13ed587d7a086e93b8ee53a1670130299ca92c5a668608add443e3644",
+  "c_engine": "v3.6c-engine-v1",
+  "d_protocol": "0c2bf7fb6e46a948d811587a64aac89cb10cfe0bf67485ed9ff3b457d64088fc",
+  "d_verdict": "REFINEMENT_NOT_WARRANTED",
+  "e": "SKIPPED"
+ },
+ "modes": [
+  "live_engine",
+  "cache"
+ ],
+ "parity": {
+  "api_live_vs_api_cached": true,
+  "cache_roundtrip_exact": true,
+  "direct_vs_api_live_5000": true
+ },
+ "performance": {
+  "cache_lookup_s": 0.04,
+  "d_full9_range_s": [
+   45,
+   180
+  ],
+  "fixture_gen_wall_s": 61.0,
+  "live_5000_1action_sim_s": 12.1
+ },
+ "phase7_regression": "PASS (frozen fixture identical)",
+ "production_count": 5000,
+ "tier1": "NOT_REQUIRED_TARGETED_RUNTIME_INTEGRATION (V3.6H owns full Tier-1)",
+ "verdict": "V3.6F COMPLETE \u2014 RUNTIME/API/CACHE INTEGRATED \u2014 READY FOR V3.6G"
+}

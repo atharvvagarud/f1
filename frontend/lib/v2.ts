@@ -907,3 +907,209 @@ export function isStrategyRequestInvalid(error: unknown): boolean {
     error.code === "strategy_request_invalid"
   );
 }
+
+// --- Strategy 2.0 comparison (V3.6F) ---
+//
+// Typed boundary over POST /v2/strategies/compare-v3 and
+// GET /v2/strategies/v3/availability. The server runs (live) or serves
+// (cached) the frozen V3.6C paired-MC2 engine: one simulated
+// no-intervention reference plus one arm per valid alternative, 5000
+// paired futures in production. Per-index outcomes never cross this
+// boundary. Values pass through verbatim: the frontend formats, sorts
+// and labels only — it never re-derives estimates, intervals, leaders
+// or execution rates.
+
+export type Strategy2Mode = "live" | "cached";
+
+export type Strategy2AlternativeSelection = {
+  action: StrategyAction;
+  requested_compound?: StrategyCompound | null;
+};
+
+export type Strategy2CompareRequest = SimulationAnchor & {
+  target_driver_id: string;
+  alternatives?: Strategy2AlternativeSelection[];
+  master_seed?: number;
+  mode: Strategy2Mode;
+};
+
+export type Strategy2ArmAggregate = {
+  valid_pairs: number;
+  win_frequency: number;
+  podium_frequency: number;
+  top5_frequency: number;
+  top10_frequency: number;
+  expected_finish: number;
+  median_finish: number;
+  finish_q25: number;
+  finish_q75: number;
+  finish_position_distribution: StrategyPositionFrequency[];
+  roster_size: number;
+};
+
+export type Strategy2Delta = {
+  metric: string;
+  point_estimate: number | null;
+  paired_se: number | null;
+  ci_low: number | null;
+  ci_high: number | null;
+  availability: string;
+  valid_pairs: number;
+  uncertainty_semantics: string;
+  interval_label: string;
+};
+
+export type Strategy2Execution = {
+  total: number;
+  applied: number;
+  suppressed: number;
+  superseded: number;
+  inert: number;
+  race_end_cancelled: number;
+  baseline_pit_suppressed: number;
+  applied_rate: number;
+  suppressed_rate: number;
+  superseded_rate: number;
+  inert_rate: number;
+  race_end_cancelled_rate: number;
+};
+
+export type Strategy2ComparisonKey = {
+  key_version: string;
+  race_id: string;
+  decision_lap: number;
+  state_identity: string;
+  target_driver_id: string;
+  reference_kind: string;
+  alternative_identity: string;
+  simulator_identity: string;
+  parameter_identity: string;
+  simulation_count: number;
+  master_seed: number;
+  outcome_schema_version: string;
+};
+
+export type Strategy2AlternativeResult = {
+  candidate_key: string;
+  candidate_identity: string;
+  action: string;
+  requested_compound: string | null;
+  evaluated: boolean;
+  reason: string | null;
+  reference_aggregate: Strategy2ArmAggregate | null;
+  alternative_aggregate: Strategy2ArmAggregate | null;
+  deltas: Strategy2Delta[];
+  execution: Strategy2Execution | null;
+  requested_pairs: number;
+  complete_pairs: number;
+  excluded_pairs: number;
+  comparison_key: Strategy2ComparisonKey | null;
+  comparison_identity: string | null;
+};
+
+export type Strategy2CompareResponse = {
+  engine_version: string;
+  execution_contract_version: string;
+  outcome_schema_version: string;
+  strategy_identity: string;
+  state_identity: string;
+  parameter_identity: string;
+  config_identity: string;
+  master_seed: number;
+  simulation_count: number;
+  race_id: string;
+  anchor_driver_id: string;
+  anchor_lap_number: number;
+  anchor_state_time_s: number;
+  target_driver_id: string;
+  supported: boolean;
+  unsupported_reason: string | null;
+  reference_kind: string;
+  alternatives: Strategy2AlternativeResult[];
+  leaders: Record<string, string | null>;
+  provenance: Record<string, unknown>;
+  execution_source: "live_engine" | "cache";
+  cache_key: string | null;
+  runtime: SimulationRuntime;
+};
+
+export type Strategy2AvailabilityEntry = {
+  race_id: string;
+  anchor_driver_id: string;
+  anchor_lap_number: number;
+  anchor_state_time_s: number;
+  target_driver_id: string;
+  master_seed: number;
+  simulation_count: number;
+  supported: boolean;
+  alternative_count: number;
+  comparison_identities: string[];
+  cache_key: string;
+};
+
+export type Strategy2Availability = {
+  engine_version: string;
+  execution_contract_version: string;
+  outcome_schema_version: string;
+  manifest_schema: string;
+  entry_count: number;
+  entries: Strategy2AvailabilityEntry[];
+};
+
+/**
+ * Run (live) or serve (cached) one Strategy 2.0 comparison. Callers must
+ * pass mode explicitly; the page default is "cached" — ordinary page
+ * interaction never triggers a multi-minute live simulation.
+ * No simulation count is ever sent: production is fixed at 5000 by contract.
+ */
+export async function postStrategyV3Compare(
+  request: Strategy2CompareRequest,
+  fetcher: FetchLike = fetch,
+  base?: string,
+  signal?: AbortSignal,
+): Promise<Strategy2CompareResponse> {
+  return readJson<Strategy2CompareResponse>(
+    fetcher,
+    `${baseOf(base)}/v2/strategies/compare-v3`,
+    {
+      method: "POST",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(request),
+      signal,
+    },
+  );
+}
+
+/** Deterministic catalogue of cached Strategy 2.0 comparisons. */
+export async function getStrategyV3Availability(
+  fetcher: FetchLike = fetch,
+  base?: string,
+  raceId?: string,
+  signal?: AbortSignal,
+): Promise<Strategy2Availability> {
+  const query = raceId ? `?race_id=${encodeURIComponent(raceId)}` : "";
+  return readJson<Strategy2Availability>(
+    fetcher,
+    `${baseOf(base)}/v2/strategies/v3/availability${query}`,
+    { cache: "no-store", signal },
+  );
+}
+
+/** True when a 422 is the stable Strategy 2.0 request-validation contract. */
+export function isStrategyV3RequestInvalid(error: unknown): boolean {
+  return (
+    error instanceof V2ApiError &&
+    error.status === 422 &&
+    error.code === "strategy_v3_request_invalid"
+  );
+}
+
+/** True when the response is the explicit cache-miss product state. */
+export function isStrategyV3CacheMiss(error: unknown): boolean {
+  return (
+    error instanceof V2ApiError &&
+    error.status === 404 &&
+    error.code === "cache_miss"
+  );
+}

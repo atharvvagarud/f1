@@ -1,0 +1,143 @@
+{
+  "a_identity": "2d29c19b47b24035f0d1c503fccc8cd4090595b4ebb2a980001d0a919b0ae59b",
+  "a_verdict": "V3.6A COMPLETE \u2014 STRATEGY CONTRACT FROZEN \u2014 READY FOR V3.6B",
+  "action_space": [
+    "STAY_OUT:SAMPLED",
+    "PIT_NOW:SAMPLED",
+    "PIT_NOW:SOFT",
+    "PIT_NOW:MEDIUM",
+    "PIT_NOW:HARD",
+    "PIT_NEXT_LAP:SAMPLED",
+    "PIT_NEXT_LAP:SOFT",
+    "PIT_NEXT_LAP:MEDIUM",
+    "PIT_NEXT_LAP:HARD"
+  ],
+  "b_identity": "df821fe13ed587d7a086e93b8ee53a1670130299ca92c5a668608add443e3644",
+  "c_engine_identity": "v3.6c-engine-v1",
+  "c_verdict": "V3.6C COMPLETE \u2014 PAIRED MC2 ENGINE VALIDATED \u2014 READY FOR V3.6D",
+  "claim_posture": "SIMULATOR-CONDITIONAL COUNTERFACTUAL ESTIMATES",
+  "crn_rule": "same factual state, same simulation config, same seed family, same simulation index; only the intervention differs",
+  "crn_semantics": "COMMON_RANDOM_NUMBERS",
+  "d_conclusion": "REFINEMENT_NOT_WARRANTED",
+  "d_protocol_identity": "0c2bf7fb6e46a948d811587a64aac89cb10cfe0bf67485ed9ff3b457d64088fc",
+  "d_verdict": "V3.6D COMPLETE \u2014 REFINEMENT NOT WARRANTED \u2014 READY FOR V3.6F",
+  "delta_orientation": {
+    "delta_expected_finish": "ref - alt",
+    "delta_podium_frequency": "alt - ref",
+    "delta_top10_frequency": "alt - ref",
+    "delta_top5_frequency": "alt - ref",
+    "delta_win_frequency": "alt - ref",
+    "rule": "POSITIVE = IMPROVEMENT"
+  },
+  "e_status": "SKIPPED_BY_V3.6D_GATE",
+  "eligibility_summary": {
+    "candidates": 298,
+    "comparisons": 639,
+    "eligibility_fraction": 0.2383,
+    "eligible": 71,
+    "supported": "71/71"
+  },
+  "f_runtime": {
+    "availability_route": "GET /v2/strategies/v3/availability",
+    "cache_key_version": "v3.6f-strategy-cache-key-v1",
+    "cache_schema_version": "v3.6f-strategy-cache-v1",
+    "compare_route": "POST /v2/strategies/compare-v3",
+    "phase7_route": "POST /v2/strategies/compare",
+    "production_simulation_count": 5000,
+    "verdict": "V3.6F COMPLETE \u2014 RUNTIME/API/CACHE INTEGRATED \u2014 READY FOR V3.6G"
+  },
+  "frontend_validation": {
+    "eslint": "0 errors",
+    "next_build": "PASS",
+    "responsive": "desktop/tablet/mobile PASS",
+    "strategy2_guards": "21 copy/contract guards",
+    "tsc": "PASS"
+  },
+  "g_frontend": {
+    "public_mode": "CACHE_FIRST",
+    "route": "/strategy",
+    "schema": "v3.6g-frontend-validation-v1"
+  },
+  "historical_evaluation_summary": {
+    "case_studies": "5/5 PLAUSIBLE, 0 PATHOLOGICAL",
+    "crn_paired_over_independent_ratios": {
+      "max": 0.96,
+      "median": 0.93,
+      "min": 0.85
+    },
+    "reproducibility": "4/4 exact",
+    "v35_diagnostic": {
+      "correlation": 0.91,
+      "matched_states": 34,
+      "mean_abs_diff": 0.026,
+      "median_abs_diff": 0.0003
+    }
+  },
+  "limitations": [
+    "dry-only",
+    "no explicit compound pace delta",
+    "no expected-points objective",
+    "no evolving weather/safety-car intervention model",
+    "single-driver",
+    "single-decision",
+    "CRN limitations disclosed",
+    "simulator-conditional (not real-world causal effects)",
+    "conservative eligibility",
+    "2025 unsupported",
+    "public cache catalogue not yet fully materialized"
+  ],
+  "mc2_identity": {
+    "commit": "197979d40af0c9dbf90667781d9c83e41613b047",
+    "simulator": "MC2-E (E_AR1_RESIDUAL)",
+    "tag": "v3.2-monte-carlo-2"
+  },
+  "next_phase": "V3.7",
+  "outcomes": [
+    "win_frequency",
+    "podium_frequency",
+    "top5_frequency",
+    "top10_frequency",
+    "expected_finish",
+    "median_finish",
+    "finish_q25",
+    "finish_q75",
+    "downside_probability",
+    "finish_position_distribution"
+  ],
+  "pair_policy": "COMPLETE_PAIRS",
+  "parent": {
+    "commit": "6df5d41d3ebead9a1c9b4f0f40ed20a21ce0bff1",
+    "tag": "v3.5-outcome-distribution"
+  },
+  "phase": "V3.6",
+  "production_simulation_count": 5000,
+  "public_cache_policy": "CACHE_FIRST",
+  "reference_semantics": "SIMULATED_NO_INTERVENTION_REFERENCE",
+  "runtime_modes": [
+    "live_engine",
+    "cache"
+  ],
+  "schema": "v3.6-final-scientific-card-v1",
+  "scientific_card_identity": "102079ab81101f442d380c109a32b71a3b6850f0106e021f0fc4b05a64c80aeb",
+  "scientific_question": "Given causal RaceState(T), how do plausible strategy actions change the simulated distribution of future race outcomes?",
+  "seed_semantics": {
+    "bootstrap_independent": true,
+    "default_master_seed": 20240101,
+    "stream_rule": "PCG64 SeedSequence[master_seed, simulation_index, domain_tag]"
+  },
+  "serving_status": "LIVE + SCIENTIFICALLY IDENTICAL CACHE",
+  "status_2025": "UNSUPPORTED",
+  "test_summary": {
+    "tier1": "see results/v3/v3_6_freeze.json (operational metadata)",
+    "v36_focused": "tests/test_v3_6a_contract.py + test_v3_6b_contracts.py + test_v3_6c_engine.py + test_v3_6d_evaluation.py + test_v3_6f_runtime.py + test_v3_6f_cache.py: 186 passed"
+  },
+  "uncertainty": {
+    "confidence_level": 0.95,
+    "method": "paired_percentile_bootstrap",
+    "min_valid_pairs_for_ci": 30,
+    "replicates": 2000
+  },
+  "uncertainty_semantics": "MONTE_CARLO_SAMPLING_UNCERTAINTY_ONLY",
+  "utility_policy": "NO_SINGLE_UNIVERSAL_PRIMARY_UTILITY",
+  "v35_role": "OFFLINE_DIAGNOSTIC_ONLY"
+}

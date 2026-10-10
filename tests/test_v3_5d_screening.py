@@ -288,5 +288,13 @@ def test_no_serving_api_frontend_changes():
                          text=True, cwd=ROOT).stdout
     for line in out.splitlines():
         pth = line[3:]
+        # V3.6F/G chartered Strategy 2.0 paths admitted.
+        if pth.startswith(("api/v2_strategy_v3_", "api/main.py",
+                           "frontend/app/strategy/page.tsx",
+                           "frontend/features/strategy/components/Strategy",
+                           "frontend/features/strategy/hooks/useStrategy",
+                           "frontend/features/strategy/lib/strategy",
+                           "frontend/lib/v2.ts")):
+            continue
         assert not pth.startswith(("api/", "frontend/")), line
         assert "serving" not in pth, line

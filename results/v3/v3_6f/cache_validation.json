@@ -1,0 +1,19 @@
+{
+ "artifact_count": 2,
+ "checks": [
+  "schema",
+  "cache_key",
+  "engine/contract/outcome/mc2/state/parameter/config/count/seed/target identities",
+  "result-identity tamper check"
+ ],
+ "failures": 0,
+ "negative": [
+  "miss->404 cache_miss",
+  "corrupt->503 cache_invalid",
+  "provenance-mismatch->rejected",
+  "stale-schema->rejected",
+  "traversal-impossible"
+ ],
+ "parity": "EXACT (live==cached, all subset shapes + request orders)",
+ "roundtrip": "EXACT (canonical-JSON equality)"
+}

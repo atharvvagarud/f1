@@ -116,8 +116,13 @@ CORPUS_MANIFEST = Path(__file__).resolve().parent / "ci_corpus_dependent.txt"
 # pit-lifecycle tests plus V3.2N adds 24 freeze-validation tests (all
 # corpus-dependent in tests/test_v3_2m_pit_lifecycle.py and
 # tests/test_v3_2n_final_validation.py, pinned in ci_corpus_dependent.txt)
-# with no removals = 3831.
-EXPECTED_COLLECTED = 3831
+# with no removals = 3831; V3.6H reclassifies the V3.3/V3.4/V3.5/V3.6
+# backlog (EXPECTED was last reclassified at V3.2N): 598 added tests
+# across 24 files, of which 109 are corpus-dependent (pinned in
+# ci_corpus_dependent.txt; clean-checkout simulation evidence in the
+# manifest header) and 489 source-safe, plus 20 source-safe V3.6H freeze
+# tests (tests/test_v3_6h_freeze.py), with no removals = 4449.
+EXPECTED_COLLECTED = 4449
 
 # (pytest node id, reason it cannot pass at the frozen baseline)
 # P11-1: the 12 pre-existing stale historical pins were genuinely corrected

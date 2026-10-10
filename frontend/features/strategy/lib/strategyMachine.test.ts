@@ -270,8 +270,10 @@ describe("strategy product copy", () => {
     const here = dirname(new URL(import.meta.url).pathname);
     const sources = [
       join(here, "strategyMachine.ts"),
-      join(here, "..", "components", "StrategyView.tsx"),
-      join(here, "..", "components", "StrategyResults.tsx"),
+      join(here, "strategy2Machine.ts"),
+      join(here, "..", "components", "Strategy2View.tsx"),
+      join(here, "..", "components", "Strategy2Results.tsx"),
+      join(here, "..", "hooks", "useStrategy2.ts"),
     ];
     for (const path of sources) {
       const raw = readFileSync(path, "utf8");
@@ -279,6 +281,7 @@ describe("strategy product copy", () => {
       // definition so the audit checks shipped copy, not the audit.
       const text = raw
         .replace(/export const FORBIDDEN_STRATEGY_COPY[\s\S]*?\];/, "")
+        .replace(/export const STRATEGY2_FORBIDDEN_COPY[\s\S]*?\];/, "")
         .toLowerCase();
       for (const phrase of FORBIDDEN_STRATEGY_COPY) {
         assert.ok(

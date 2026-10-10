@@ -322,4 +322,13 @@ def test_no_serving_api_frontend_change():
                          text=True, cwd=ROOT).stdout
     for line in out.splitlines():
         p = line[3:]
+        # V3.6F/G chartered Strategy 2.0 paths admitted; anything else
+        # under api//frontend//model_lab/serving still fails.
+        if p.startswith(("api/v2_strategy_v3_", "api/main.py",
+                         "frontend/app/strategy/page.tsx",
+                         "frontend/features/strategy/components/Strategy",
+                         "frontend/features/strategy/hooks/useStrategy",
+                         "frontend/features/strategy/lib/strategy",
+                         "frontend/lib/v2.ts")):
+            continue
         assert not p.startswith(("api/", "frontend/", "raceintel/model_lab/serving")), line

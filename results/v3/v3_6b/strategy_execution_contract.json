@@ -1,0 +1,409 @@
+{
+ "action_schema": {
+  "canonical_order": [
+   "STAY_OUT:SAMPLED",
+   "PIT_NOW:SAMPLED",
+   "PIT_NOW:SOFT",
+   "PIT_NOW:MEDIUM",
+   "PIT_NOW:HARD",
+   "PIT_NEXT_LAP:SAMPLED",
+   "PIT_NEXT_LAP:SOFT",
+   "PIT_NEXT_LAP:MEDIUM",
+   "PIT_NEXT_LAP:HARD"
+  ],
+  "compound_policy": "None=SAMPLED (simulator draw isolates timing); explicit SOFT/MEDIUM/HARD changes only stint sampling and future transitions; NO pace effect",
+  "compound_values": [
+   "SOFT",
+   "MEDIUM",
+   "HARD",
+   "SAMPLED"
+  ],
+  "deduplication": "first occurrence wins by candidate_key; output always in canonical order (caller order cannot affect identity)",
+  "display_labels": {
+   "PIT_NEXT_LAP": "PIT NEXT LAP",
+   "PIT_NOW": "PIT NOW",
+   "STAY_OUT": "STAY OUT"
+  },
+  "identity_rule": "candidate_identity = sha256(candidate_contract_version + action + requested_compound); state-dependent validity is NOT part of identity",
+  "key_format": "ACTION:COMPOUND with None rendered SAMPLED",
+  "module": "raceintel/strategy/v3_contracts.py re-exports candidate_key/candidate_identity (REUSE_VERBATIM)"
+ },
+ "action_set": {
+  "conceptual_count": 9,
+  "count": 9,
+  "register": "CANONICAL_CANDIDATE_SPECS (s4-candidates-v1)",
+  "verified": "9 == 1 STAY_OUT + 4 PIT_NOW + 4 PIT_NEXT_LAP"
+ },
+ "action_validity": {
+  "conditions": {
+   "already_in_pit_context": "DEFERRED (not represented in frozen state; no silent assumption)",
+   "current_compound_known": "REQUIRED for explicit-compound pit actions; STAY_OUT needs roster presence only",
+   "decision_lap_valid": "REQUIRED (target own lap at T; mismatch -> decision_lap_mismatch)",
+   "laps_remaining": "REQUIRED (decision beyond race end -> decision_beyond_race)",
+   "mc2_eligible": "REQUIRED (comparison-level gate)",
+   "pit_dynamics_available": "REQUIRED (else pit_dynamics_required)",
+   "planned_stop_executable_in_principle": "REQUIRED for PIT_NEXT_LAP admission; per-future execution is diagnostic",
+   "target_compound_known": "REQUIRED where the intervention samples or sets a stint",
+   "target_present_nonterminal": "REQUIRED (else target_driver_not_in_roster / terminal)",
+   "wet_dry": "DRY ONLY in Strategy 2.0 scope (MC2 defers wet); wet -> WET_CONDITIONS"
+  },
+  "source": "causal RaceState(T) + frozen static contracts ONLY; never post-T data",
+  "validator": "_resolve_intervention via build_candidate (REUSE_VERBATIM); v3_contracts adds no second validator"
+ },
+ "baseline_schema": {
+  "distinction": "reference_kind SIMULATED_NO_INTERVENTION_REFERENCE is a separate reference type, NOT an action identity; STAY_OUT is an intervention that suppresses once at L_T+1 and may be inert",
+  "explicitly_not": [
+   "STAY_OUT",
+   "historical observed future",
+   "actual team strategy",
+   "optimal continuation"
+  ],
+  "machine_form": "BaselineArm pattern (REUSE): reference arm executed with intervention=None under identical state/params/config; every alternative pairs against this ONE shared arm",
+  "semantics": "same factual causal RaceState(T); same MC2 stochastic mechanics; no forced strategy intervention"
+ },
+ "c_implementation_boundary": {
+  "allowed": [
+   "import v3_contracts + frozen Phase-7/MC2 substrates",
+   "construct StrategyComparisonKey per comparison",
+   "emit outcome vector / deltas / uncertainty per frozen schemas",
+   "report eligibility/unsupported per frozen taxonomy"
+  ],
+  "forbidden": [
+   "new action types or compounds",
+   "new delta signs or utility weights",
+   "new uncertainty semantics",
+   "new eligibility reason codes",
+   "V3.5 in any computation path",
+   "post-T inputs",
+   "API/frontend changes (V3.6F/G own them)"
+  ],
+  "implements": [
+   "paired engine over frozen MC2-E seam",
+   "per-arm outcome vector incl. median/quartiles/top5/top10",
+   "paired downside estimand",
+   "StrategyComparisonKey emission",
+   "provenance emission"
+  ]
+ },
+ "complete_pair_policy": {
+  "denominators": {
+   "both_invalid": "counted, never imputed",
+   "complete_pairs": "estimand membership (identical for ALL paired estimands in a comparison)",
+   "excluded_pairs": "baseline_only_valid + intervention_only_valid, counted",
+   "requested": "simulation_count (pairs_total)"
+  },
+  "membership": "identical valid-pair set for every paired estimand in a comparison; pair excluded if EITHER side invalid; never compare metrics from different memberships",
+  "precedent": "Phase-7 paired_differences + validity_sets_match flag (REUSE_VERBATIM)"
+ },
+ "compound_policy": {
+  "availability": "no FIA inventory implied; availability = membership in frozen dry-compound support",
+  "dry_only": "Strategy 2.0 scope is dry-only via MC2 eligibility; state explicitly",
+  "enum": [
+   "SOFT",
+   "MEDIUM",
+   "HARD",
+   "SAMPLED"
+  ],
+  "unknown_missing": "statically invalid (unsupported_compound); never simulated",
+  "wet_intermediate": "unsupported via MC2 WET_CONDITIONS / wet-compound rules"
+ },
+ "contract_hash": "df821fe13ed587d7a086e93b8ee53a1670130299ca92c5a668608add443e3644",
+ "crn_invariants": {
+  "only_intervention_differs": true,
+  "pair_identity": "(comparison key, simulation_index); index i in reference pairs with index i in alternative",
+  "requirement": [
+   "same causal state_identity",
+   "same simulator MC2-E",
+   "same simulation_count 5000",
+   "same root seed / seed family",
+   "same per-index stream identity where structurally valid"
+  ],
+  "stream_rule": "per-(master_seed, simulation_index[, domain]) PCG64; shares stream identities, NOT trajectories",
+  "valid_pair": "both sides valid; incomplete -> excluded per complete-pair policy; no silent unpaired substitution"
+ },
+ "delta_conventions": {
+  "delta_downside_probability": "paired-only harm quantity P(alt worse than ref); lower = less harm",
+  "delta_expected_finish": "ref - alt, positions, positive = improved (lowered) expected finish",
+  "delta_podium_frequency": "alt - ref, frequency, positive = improvement",
+  "delta_top10_frequency": "alt - ref, frequency, positive = improvement",
+  "delta_top5_frequency": "alt - ref, frequency, positive = improvement",
+  "delta_win_frequency": "alt - ref, frequency, positive = improvement",
+  "standard": "frozen Phase-7 standardized paired-effect orientation (positive = improvement); Part-Y raw-units preference explicitly overridden for OPTION-2 API/frontend compatibility via Part Y escape clause"
+ },
+ "downside_risk_decision": {
+  "definition": "DOWNSIDE_PROBABILITY = mean over complete valid pairs of I(finish_alt > finish_ref)",
+  "status": "IN_SCOPE (paired-only diagnostic estimand, no arbitrary N, no factual-position reference)"
+ },
+ "eligibility_hierarchy": {
+  "ACTION": {
+   "examples": "PIT_NOW_SOFT invalid (unsupported_compound) while PIT_NOW_HARD valid; invalid -> evaluated=false + reason, sibling unaffected",
+   "owns": "per-action static validity"
+  },
+  "COMPARISON": {
+   "examples": "target_driver_not_in_roster; engine-level unsupported",
+   "owns": "whole-comparison gate"
+  },
+  "STATE": {
+   "examples": "MC2 unsupported (wet/neutralized/red/terminal/stale); state un-simulatable",
+   "owns": "MC2 frozen eligibility (codes reused verbatim, never replaced)"
+  },
+  "rule": "STATE eligible does NOT imply all actions valid; one invalid action does NOT collapse the comparison"
+ },
+ "execution_rate_semantics": {
+  "denominator": "pairs_total (requested simulations) \u2014 frozen S4 doctrine reused verbatim",
+  "diagnostic_only": "execution failure is NOT strategy failure; inert/superseded/cancelled must not be read as equivalence or defeat",
+  "statuses": "APPLIED/SUPPRESSED (executed) vs SUPERSEDED/RACE_END_CANCELLED (non-executed); SUPPRESSED with null reason = INERT"
+ },
+ "historical_context_policy": {
+  "allowed_as": "POST_HOC_CONTEXT in V3.6D case studies only",
+  "forbidden_as": "any Strategy 2.0 input at T",
+  "separation": "SIMULATED_REFERENCE (causal, computed) vs HISTORICAL_OBSERVED_FUTURE (post-hoc, displayed)"
+ },
+ "intervention_mapping": {
+  "PIT_NEXT_LAP": {
+   "direct": [
+    "planned forced pit at L_T+2 (lap offset 2)",
+    "requested compound or sampled",
+    "tyre age reset 0 on execution",
+    "pit-count increment on execution"
+   ],
+   "notes": "L_T+1 runs baseline-normal mechanics; baseline pit at L_T+1 -> SUPERSEDED; retirement/terminal/race-end before L_T+2 -> execution status reflects non-execution"
+  },
+  "PIT_NOW": {
+   "direct": [
+    "forced pit at L_T+1 (lap offset 1), replacing baseline decision",
+    "requested compound or sampled",
+    "tyre age reset 0",
+    "pit-count increment"
+   ],
+   "notes": "reuses frozen draw order compound->loss->stint target"
+  },
+  "STAY_OUT": {
+   "direct": [
+    "suppression of target baseline pit decision once at L_T+1 (lap offset 1)",
+    "no compound field (contract error if set)",
+    "target_age untouched, no draw consumed"
+   ],
+   "notes": "forbids NOTHING in the future; frequently INERT when baseline would not pit"
+  },
+  "never_mutated": [
+   "future finishing position",
+   "future winner",
+   "future gaps beyond pit mechanics",
+   "future pace outcomes",
+   "future status",
+   "future weather",
+   "future safety car"
+  ],
+  "simulated_consequences": [
+   "rejoin position (pit loss + mechanics)",
+   "lap-time evolution",
+   "finish order/winner/positions",
+   "execution status per future"
+  ]
+ },
+ "minimum_pair_support": {
+  "comparison_level_minimum": "NOT SET in B; left for C/D validation evidence (no arbitrary threshold invented)",
+  "point_deltas": "reported for n>=1 with valid_pairs disclosed; n=0 -> NO_VALID_PAIRS, no metrics",
+  "uncertainty_interval": "requires n>=30 (MIN_VALID_PAIRS_FOR_CI reused verbatim)"
+ },
+ "parent": {
+  "commit": "6df5d41d3ebead9a1c9b4f0f40ed20a21ce0bff1",
+  "tag": "v3.5-outcome-distribution"
+ },
+ "pit_next_lap_semantics": {
+  "execution_failures": "retirement/terminal/race-end before L_T+2 -> non-executed status (SUPERSEDED/RACE_END_CANCELLED); counted in diagnostics, never imputed",
+  "future_data": "uses simulated continuation ONLY; no historical T+1 information",
+  "planned_not_known": "at T it is a plan; the simulator evolves L_T+1 with baseline mechanics first"
+ },
+ "pit_now_semantics": {
+  "applied_lap": "L_T+1",
+  "compound_reset": "requested or sampled; age reset 0; pit-count +1",
+  "pit_loss": "frozen R6 empirical quantile grids at execution; causal at T",
+  "rejoin": "emerges from pit loss + frozen mechanics (free-air; no battle model)"
+ },
+ "points_decision": {
+  "derivation_blockers": [
+   "no points table in frozen DriverSimulationSummary (points null)",
+   "field sizes vary (e.g. 19-driver races)",
+   "season-specific scoring + fastest-lap-era complications",
+   "DNF semantics unmodeled in frozen engine"
+  ],
+  "status": "DEFERRED (do not expand V3.6 for one metric)"
+ },
+ "position_distribution_schema": {
+  "denominator": "valid futures only; invalid futures excluded, counted separately",
+  "fields": [
+   "position (1-based int)",
+   "frequency ([0,1])",
+   "roster_size (field-size explicit)"
+  ],
+  "rule": "sums to 1 across mutually exclusive target positions; NOT V3.5 marginals"
+ },
+ "racestate_identity_policy": {
+  "authoritative": "SimulationState.identity() (canonical_sha256 of canonical dict; REUSE_VERBATIM)",
+  "no_second_hash": "no competing RaceState hash created",
+  "pair_proof": "both arms carry identical state_identity; key binds it; mismatch -> anchor_mismatch"
+ },
+ "reason_codes": {
+  "action_level": [
+   "malformed_intervention",
+   "unsupported_action",
+   "anchor_mismatch",
+   "decision_lap_mismatch",
+   "unsupported_compound",
+   "decision_beyond_race",
+   "pit_dynamics_required"
+  ],
+  "comparison_level": [
+   "target_driver_not_in_roster"
+  ],
+  "diagnostic_only": [
+   "APPLIED",
+   "SUPPRESSED",
+   "SUPERSEDED",
+   "RACE_END_CANCELLED",
+   "INERT(via SUPPRESSED+null reason)"
+  ],
+  "new_codes_introduced": 0,
+  "source": "monte_carlo.STRATEGY_INTERVENTION_REASONS + INTERVENTION_OUTCOME_STATUSES, re-exported (REUSE_VERBATIM)"
+ },
+ "result_provenance": [
+  "contract_version",
+  "comparison_identity",
+  "racestate_identity",
+  "mc2_identity",
+  "simulation_config_identity",
+  "reference_identity",
+  "action_identity",
+  "simulation_count",
+  "complete_pair_count",
+  "seed_family_identity",
+  "outcome_schema_identity",
+  "eligibility_status"
+ ],
+ "reuse_decisions": {
+  "action_identity": "REUSE_VERBATIM (StrategyAction + candidate_key/identity)",
+  "baseline": "WRAP (BaselineArm pattern; reference KIND newly named to avoid STAY_OUT conflation)",
+  "comparison_key": "NEW_REQUIRED (no prior key object; built on reused identities)",
+  "delta_signs": "REUSE_VERBATIM (S4/S5 standardized orientation)",
+  "eligibility_codes": "REUSE_VERBATIM (zero new codes)",
+  "intervention_object": "REUSE_VERBATIM (StrategyIntervention s1/v1)",
+  "outcome_vector": "WRAP (TargetAggregate extended with top5/top10/median/quartiles)",
+  "seed_identity": "REUSE_VERBATIM (config.identity + stream rule)",
+  "simulation_config": "WRAP (SimulationConfig; count frozen to 5000)",
+  "uncertainty": "REUSE_VERBATIM (S5 v1)"
+ },
+ "schema_version": "v3.6b-strategy-execution-contract-v1",
+ "seed_identity": {
+  "derivation": "master_seed + simulation_index [+ domain] -> PCG64 stream; bootstrap seeds derived per (substrate,subject,metric), never touching sim RNG",
+  "fields": [
+   "master_seed",
+   "simulation_count",
+   "stream_rule"
+  ],
+  "reproduction": "reference future i and alternative future i reproducible from (master_seed, i)"
+ },
+ "simulation_config": {
+  "assumptions": "Assumptions(USER_ASSUMPTION) reused",
+  "crn": "enabled (shared seed family across arms)",
+  "result_schema": "OUTCOME_SCHEMA_VERSION v3.6b-outcome-vector-v1",
+  "seed_family": "master_seed echoed; default root 20240101",
+  "simulation_count": 5000,
+  "simulator": "MC2-E (E_AR1_RESIDUAL)"
+ },
+ "stay_out_semantics": {
+  "forbids_future_stops": false,
+  "inertness": "SUPPRESSED + null reason counted as INERT; near-zero delta with high inert rate is NOT equivalence evidence",
+  "meaning": "suppress pit at current decision opportunity (L_T+1) ONLY"
+ },
+ "temporal_safety": {
+  "allowed": [
+   "causal RaceState(T)",
+   "static circuit information",
+   "pre-T history",
+   "frozen empirical params trained on allowed history only",
+   "simulator-generated future stochastic events"
+  ],
+  "forbidden": [
+   "future_pit_events",
+   "future_compounds",
+   "future_lap_times",
+   "future_result",
+   "future_finishing_position",
+   "future_status_not_known_at_T",
+   "future_safety_car",
+   "future_weather",
+   "historical_observed_action_after_T",
+   "v35_post_race_labels"
+  ]
+ },
+ "trade_off_vector": {
+  "fields": [
+   "delta_win_frequency",
+   "delta_podium_frequency",
+   "delta_top5_frequency",
+   "delta_top10_frequency",
+   "delta_expected_finish",
+   "delta_downside_probability"
+  ],
+  "leaders": {
+   "leader_for_expected_finish": "min point estimate (documented)",
+   "leader_for_podium": "max point estimate",
+   "leader_for_win": "max point estimate"
+  },
+  "leaders_mean": "largest/best point estimate per objective; NOT recommended/optimal/proven",
+  "no_scalar_ranking": true,
+  "no_synthetic_score": true
+ },
+ "uncertainty_schema": {
+  "availability": [
+   "AVAILABLE",
+   "INSUFFICIENT_PAIRS",
+   "NO_VALID_PAIRS"
+  ],
+  "bootstrap": "B=2000 paired percentile, 95%, linear quantile, pair as unit (REUSE_VERBATIM)",
+  "estimators": {
+   "binary_outcomes": "paired differences of I() indicators; paired SE = std(ddof=1)/sqrt(n); never independent-arm SE",
+   "expected_finish": "mean paired difference; paired SE; paired MC interval; bootstrap-compatible; No independent-arm SE"
+  },
+  "label": "MONTE_CARLO_SAMPLING_UNCERTAINTY_ONLY on every interval; never model/real-world language",
+  "paired_se": "std(d, ddof=1)/sqrt(n), n = complete pairs"
+ },
+ "unsupported_result": {
+  "forbidden": [
+   "fabricated metrics",
+   "zero-filled deltas",
+   "NaN as result",
+   "silent fallback to Phase 7 or another simulator"
+  ],
+  "schema": [
+   "supported=false",
+   "level",
+   "reason_code",
+   "human_reason",
+   "state_identity",
+   "action_identity?",
+   "provenance"
+  ],
+  "unit": "comparison-level (supported=false) or action-level (evaluated=false)"
+ },
+ "v35_role": {
+  "consistency_diagnostic": "V3.6D compares MC2 no-intervention win frequency vs frozen V3.5 p_win OFFLINE; must not modify strategy output; no averaging/normalization/fusion",
+  "excluded_from": [
+   "candidate_generation",
+   "intervention",
+   "simulation",
+   "strategy_scoring",
+   "action_ranking",
+   "eligibility",
+   "uncertainty"
+  ],
+  "primary": "C_VALIDATION_CONSISTENCY_SIGNAL",
+  "supporting": "D_UI_CONTEXT_ONLY"
+ },
+ "v36a_identity": {
+  "contract_hash": "2d29c19b47b24035f0d1c503fccc8cd4090595b4ebb2a980001d0a919b0ae59b",
+  "verdict": "V3.6A COMPLETE \u2014 STRATEGY CONTRACT FROZEN \u2014 READY FOR V3.6B"
+ }
+}

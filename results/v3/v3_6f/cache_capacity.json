@@ -1,0 +1,33 @@
+{
+ "d_style_catalogue": {
+  "artifact_mb": 395.8,
+  "comparisons": 5960,
+  "states": 298,
+  "wall_days": {
+   "at_100s": 6.9,
+   "at_180s": 12.4,
+   "at_45s": 3.1
+  }
+ },
+ "full_build": {
+  "artifact_gb": {
+   "at_68KB": 50.3
+  },
+  "comparisons": 775415,
+  "eligible_states": 38771,
+  "wall_days": {
+   "at_100s": 897,
+   "at_180s": 1615,
+   "at_45s": 404
+  }
+ },
+ "inputs": {
+  "anchor_rows": 162728,
+  "d_eligible": 71,
+  "d_sampled": 298,
+  "eligibility_fraction": 0.2383,
+  "roster_targets": 20,
+  "served_races": 149
+ },
+ "verdict": "FULL CATALOGUE MATERIALIZATION DEFERRED TO PORTFOLIO RELEASE \u2014 F VALIDATES ARCHITECTURE WITH 2-STATE FIXTURE"
+}

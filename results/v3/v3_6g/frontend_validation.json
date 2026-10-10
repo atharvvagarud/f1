@@ -1,0 +1,83 @@
+{
+ "accessibility": {
+  "aria_live": "run status live region; errors role=alert",
+  "chart_text_equivalent": "visible frequency table + svg aria-label",
+  "headings": "h1 + h2 panels",
+  "keyboard": "Tab reaches Run w/ 2px focus; checkboxes toggle via Space",
+  "reduced_motion": "global CSS media query",
+  "semantic_main": "AppShell landmark (nested main fixed)",
+  "status_not_colour_only": "sign+unit+labels",
+  "tables": "captions + th scope"
+ },
+ "api_contract": {
+  "availability": "GET /v2/strategies/v3/availability",
+  "compare": "POST /v2/strategies/compare-v3",
+  "phase7_intact": true
+ },
+ "backend_regression": {
+  "backend_tree_unchanged_by_g": true,
+  "f_cache_focused": "PASS"
+ },
+ "build_type_lint": {
+  "eslint": "0 errors",
+  "next_build": "PASS",
+  "node_--test": "253/253 PASS",
+  "tsc": "PASS"
+ },
+ "cached_default": {
+  "live_gated": "NEXT_PUBLIC_STRATEGY2_ALLOW_LIVE=1 + explicit button, never default",
+  "no_count_sent": true,
+  "no_silent_live_fallback": true,
+  "request_default": "mode=cached (only mode in normal path)"
+ },
+ "copy_audit": {
+  "forbidden_absent": true,
+  "g_guard_tests": 21,
+  "phase7_guard_extended": true
+ },
+ "known_limitations": [
+  "catalogue reflects 2-state validation cache",
+  "desktop 9-alt matrix scrolls horizontally w/ sticky labels",
+  "live mode dev-gated only",
+  "no URL deep-linking (not pre-existing)"
+ ],
+ "lineage": {
+  "a": "2d29c19b47b24035f0d1c503fccc8cd4090595b4ebb2a980001d0a919b0ae59b",
+  "b": "df821fe13ed587d7a086e93b8ee53a1670130299ca92c5a668608add443e3644",
+  "c_engine": "v3.6c-engine-v1",
+  "d_protocol": "0c2bf7fb6e46a948d811587a64aac89cb10cfe0bf67485ed9ff3b457d64088fc",
+  "d_verdict": "V3.6D COMPLETE \u2014 REFINEMENT NOT WARRANTED \u2014 READY FOR V3.6F",
+  "e": "SKIPPED",
+  "f_verdict": "V3.6F COMPLETE \u2014 RUNTIME/API/CACHE INTEGRATED \u2014 READY FOR V3.6G"
+ },
+ "removed_phase7_presentation": [
+  "features/strategy/components/StrategyView.tsx",
+  "features/strategy/components/StrategyResults.tsx",
+  "features/strategy/hooks/useStrategy.ts"
+ ],
+ "responsive": {
+  "1600": "PASS hierarchy+matrix",
+  "390": "PASS transformed matrix, no overflow (scrollW==clientW)",
+  "820": "PASS"
+ },
+ "retained": [
+  "features/strategy/lib/strategyMachine.ts + tests (formatters, 9-action catalogue)",
+  "lib/v2.ts Phase-7 client (backend compat)",
+  "RaceSelector, Panel, replay timeline/roster plumbing"
+ ],
+ "routes_components_changed": [
+  "app/strategy/page.tsx",
+  "features/strategy/components/Strategy2View.tsx",
+  "features/strategy/components/Strategy2Results.tsx",
+  "features/strategy/hooks/useStrategy2.ts",
+  "features/strategy/lib/strategy2Machine.ts",
+  "features/strategy/lib/strategy2Machine.test.ts",
+  "lib/v2.ts (append-only v3 client)",
+  "features/strategy/lib/strategyMachine.test.ts (guard surface update)"
+ ],
+ "schema": "v3.6g-frontend-validation-v1",
+ "visual": {
+  "observations": "reference/leaders/matrix/intervals/distribution/diagnostics/provenance/methodology render from live backend; unsupported + cache-miss honest; zero console errors",
+  "screenshots": "runtime_artifacts/v36g_visual/ (6, gitignored)"
+ }
+}

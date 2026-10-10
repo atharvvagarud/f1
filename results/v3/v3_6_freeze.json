@@ -1,0 +1,82 @@
+{
+  "expected_commit_message": "feat(strategy): add Strategy 2.0 paired race intelligence",
+  "expected_tag": "v3.6-strategy-2.0",
+  "file_inventory_summary": {
+    "added_note": "V3.6 A/B/C/D/F/G implementation + tests + docs + results + H freeze machinery (see H doc inventory)",
+    "deleted": [
+      "frontend/features/strategy/components/StrategyResults.tsx",
+      "frontend/features/strategy/components/StrategyView.tsx",
+      "frontend/features/strategy/hooks/useStrategy.ts"
+    ],
+    "tracked_modified": [
+      "api/main.py",
+      "frontend/app/strategy/page.tsx",
+      "frontend/features/strategy/lib/strategyMachine.test.ts",
+      "frontend/lib/v2.ts",
+      "scripts/run_ci_tests.py",
+      "scripts/ci_corpus_dependent.txt",
+      "tests/test_v3_5a_contract.py",
+      "tests/test_v3_5b_dataset.py",
+      "tests/test_v3_5c_harness.py",
+      "tests/test_v3_5d_screening.py",
+      "tests/test_v3_6a_contract.py",
+      "tests/test_v3_6b_contracts.py",
+      "tests/test_v3_6d_evaluation.py",
+      "tests/test_v3_6f_runtime.py",
+      "scripts/run_ci_frontend_tests.py"
+    ]
+  },
+  "frontend_summary": {
+    "eslint": "0 errors",
+    "next_build": "PASS (/strategy route present)",
+    "node_source_safe_suite": "236 passed, 0 failed (21 found, 20 selected, 1 corpus-deselected)",
+    "responsive": "desktop/tablet/mobile PASS per G method; no H frontend byte changes",
+    "tsc": "PASS"
+  },
+  "full_tier1_summary": {
+    "collected": 4449,
+    "deselected_corpus": 1043,
+    "failed": 1,
+    "failed_disposition": "EXPECTED_POST_FREEZE_SENTINEL",
+    "failed_node": "tests/test_v3_4e_evaluation.py::test_no_final_v34_freeze_tag_commit_yet",
+    "passed": 3396,
+    "runtime_s": 2417,
+    "selected": 3406,
+    "skipped": 0,
+    "status": "COMPLETE_EXCEPT_EXPECTED_SENTINEL",
+    "xfailed": 4
+  },
+  "graphify_summary": {
+    "communities": 498,
+    "edges": 38674,
+    "nodes": 16990
+  },
+  "known_expected_sentinel": {
+    "assertion": "assert \"v3.4\" not in tags",
+    "disposition": "EXPECTED_POST_FREEZE_SENTINEL",
+    "node": "tests/test_v3_4e_evaluation.py::test_no_final_v34_freeze_tag_commit_yet",
+    "reason": "pre-freeze-only guard; legitimate v3.4-ensemble tag now exists"
+  },
+  "parent_commit": "6df5d41d3ebead9a1c9b4f0f40ed20a21ce0bff1",
+  "parent_tag": "v3.5-outcome-distribution",
+  "push_status": "NOT_PUSHED",
+  "repository_cleanliness_expectation": "git status clean; one commit since v3.5-outcome-distribution; tag v3.6-strategy-2.0 on HEAD",
+  "schema": "v3.6-freeze-v1",
+  "scientific_card_identity": "102079ab81101f442d380c109a32b71a3b6850f0106e021f0fc4b05a64c80aeb",
+  "stage_identities": {
+    "a": "2d29c19b47b24035f0d1c503fccc8cd4090595b4ebb2a980001d0a919b0ae59b",
+    "b": "df821fe13ed587d7a086e93b8ee53a1670130299ca92c5a668608add443e3644",
+    "c_engine": "v3.6c-engine-v1",
+    "d_conclusion": "REFINEMENT_NOT_WARRANTED",
+    "d_protocol": "0c2bf7fb6e46a948d811587a64aac89cb10cfe0bf67485ed9ff3b457d64088fc",
+    "e": "SKIPPED_BY_V3.6D_GATE",
+    "f_verdict": "V3.6F COMPLETE \u2014 RUNTIME/API/CACHE INTEGRATED \u2014 READY FOR V3.6G",
+    "g_schema": "v3.6g-frontend-validation-v1"
+  },
+  "test_summary": {
+    "v36_focused": {
+      "failed": 0,
+      "passed": 186
+    }
+  }
+}

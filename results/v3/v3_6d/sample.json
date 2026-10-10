@@ -1,0 +1,4397 @@
+{
+ "fractions": [
+  0.3333333333333333,
+  0.6666666666666666
+ ],
+ "races_screened": 149,
+ "candidates": 298,
+ "eligible": 71,
+ "screen_runtime_s": 15.1,
+ "states": [
+  {
+   "race_id": "2018-r01-R",
+   "anchor": {
+    "driver_id": "brendon_hartley",
+    "lap_number": 17,
+    "state_time_s": 2019.539
+   },
+   "target_driver_id": "brendon_hartley",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r01-R",
+   "anchor": {
+    "driver_id": "vettel",
+    "lap_number": 38,
+    "state_time_s": 4061.175
+   },
+   "target_driver_id": "vettel",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r02-R",
+   "anchor": {
+    "driver_id": "vettel",
+    "lap_number": 19,
+    "state_time_s": 2360.518
+   },
+   "target_driver_id": "vettel",
+   "eligible": false,
+   "reason": "MISSING_TYRE_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r02-R",
+   "anchor": {
+    "driver_id": "sainz",
+    "lap_number": 37,
+    "state_time_s": 4169.886
+   },
+   "target_driver_id": "sainz",
+   "eligible": false,
+   "reason": "MISSING_TYRE_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r03-R",
+   "anchor": {
+    "driver_id": "sirotkin",
+    "lap_number": 19,
+    "state_time_s": 2394.994
+   },
+   "target_driver_id": "sirotkin",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r03-R",
+   "anchor": {
+    "driver_id": "hamilton",
+    "lap_number": 38,
+    "state_time_s": 4449.889
+   },
+   "target_driver_id": "hamilton",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 38,
+   "state_identity": "db8fdfb564b06ca859694d5d2a92bb5b37f60f632f9213a7e9c882af83398467",
+   "leader_laps_done": 38,
+   "scheduled_laps": 56,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2018-r04-R",
+   "anchor": {
+    "driver_id": "brendon_hartley",
+    "lap_number": 16,
+    "state_time_s": 2535.68
+   },
+   "target_driver_id": "brendon_hartley",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r04-R",
+   "anchor": {
+    "driver_id": "grosjean",
+    "lap_number": 33,
+    "state_time_s": 4355.032
+   },
+   "target_driver_id": "grosjean",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r05-R",
+   "anchor": {
+    "driver_id": "ericsson",
+    "lap_number": 20,
+    "state_time_s": 2417.167
+   },
+   "target_driver_id": "ericsson",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r05-R",
+   "anchor": {
+    "driver_id": "vettel",
+    "lap_number": 42,
+    "state_time_s": 4260.344
+   },
+   "target_driver_id": "vettel",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r06-R",
+   "anchor": {
+    "driver_id": "hulkenberg",
+    "lap_number": 26,
+    "state_time_s": 2490.844
+   },
+   "target_driver_id": "hulkenberg",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 26,
+   "state_identity": "0e8c09d30ffe0b03c20b9e75a855ce224b0fc2ade430ec24ecbf420d81159334",
+   "leader_laps_done": 26,
+   "scheduled_laps": 78,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2018-r06-R",
+   "anchor": {
+    "driver_id": "brendon_hartley",
+    "lap_number": 51,
+    "state_time_s": 4490.19
+   },
+   "target_driver_id": "brendon_hartley",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 51,
+   "state_identity": "4166d2d887ab28512b930524b3f5bdc0015aedf3accc3974771e283d1a4f558d",
+   "leader_laps_done": 51,
+   "scheduled_laps": 78,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2018-r07-R",
+   "anchor": {
+    "driver_id": "sainz",
+    "lap_number": 23,
+    "state_time_s": 2388.032
+   },
+   "target_driver_id": "sainz",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r07-R",
+   "anchor": {
+    "driver_id": "ericsson",
+    "lap_number": 45,
+    "state_time_s": 4124.517
+   },
+   "target_driver_id": "ericsson",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r08-R",
+   "anchor": {
+    "driver_id": "alonso",
+    "lap_number": 17,
+    "state_time_s": 2395.527
+   },
+   "target_driver_id": "alonso",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r08-R",
+   "anchor": {
+    "driver_id": "raikkonen",
+    "lap_number": 35,
+    "state_time_s": 4121.166
+   },
+   "target_driver_id": "raikkonen",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r09-R",
+   "anchor": {
+    "driver_id": "sirotkin",
+    "lap_number": 22,
+    "state_time_s": 2013.487
+   },
+   "target_driver_id": "sirotkin",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r09-R",
+   "anchor": {
+    "driver_id": "gasly",
+    "lap_number": 45,
+    "state_time_s": 3624.184
+   },
+   "target_driver_id": "gasly",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r10-R",
+   "anchor": {
+    "driver_id": "vandoorne",
+    "lap_number": 16,
+    "state_time_s": 1990.61
+   },
+   "target_driver_id": "vandoorne",
+   "eligible": false,
+   "reason": "MISSING_TYRE_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r10-R",
+   "anchor": {
+    "driver_id": "ricciardo",
+    "lap_number": 33,
+    "state_time_s": 3609.162
+   },
+   "target_driver_id": "ricciardo",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r11-R",
+   "anchor": {
+    "driver_id": "gasly",
+    "lap_number": 21,
+    "state_time_s": 2132.702
+   },
+   "target_driver_id": "gasly",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r11-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 43,
+    "state_time_s": 3873.335
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r12-R",
+   "anchor": {
+    "driver_id": "sainz",
+    "lap_number": 23,
+    "state_time_s": 2398.754
+   },
+   "target_driver_id": "sainz",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r12-R",
+   "anchor": {
+    "driver_id": "sirotkin",
+    "lap_number": 45,
+    "state_time_s": 4325.001
+   },
+   "target_driver_id": "sirotkin",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r13-R",
+   "anchor": {
+    "driver_id": "sainz",
+    "lap_number": 14,
+    "state_time_s": 2931.041
+   },
+   "target_driver_id": "sainz",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r13-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 29,
+    "state_time_s": 4572.014
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r14-R",
+   "anchor": {
+    "driver_id": "sirotkin",
+    "lap_number": 17,
+    "state_time_s": 2702.047
+   },
+   "target_driver_id": "sirotkin",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r14-R",
+   "anchor": {
+    "driver_id": "vettel",
+    "lap_number": 35,
+    "state_time_s": 4243.637
+   },
+   "target_driver_id": "vettel",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r15-R",
+   "anchor": {
+    "driver_id": "raikkonen",
+    "lap_number": 21,
+    "state_time_s": 3573.306
+   },
+   "target_driver_id": "raikkonen",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r15-R",
+   "anchor": {
+    "driver_id": "sirotkin",
+    "lap_number": 40,
+    "state_time_s": 5732.707
+   },
+   "target_driver_id": "sirotkin",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r16-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 18,
+    "state_time_s": 2930.431
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r16-R",
+   "anchor": {
+    "driver_id": "grosjean",
+    "lap_number": 35,
+    "state_time_s": 4699.084
+   },
+   "target_driver_id": "grosjean",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r17-R",
+   "anchor": {
+    "driver_id": "hulkenberg",
+    "lap_number": 17,
+    "state_time_s": 2960.56
+   },
+   "target_driver_id": "hulkenberg",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r17-R",
+   "anchor": {
+    "driver_id": "brendon_hartley",
+    "lap_number": 34,
+    "state_time_s": 4629.254
+   },
+   "target_driver_id": "brendon_hartley",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r18-R",
+   "anchor": {
+    "driver_id": "brendon_hartley",
+    "lap_number": 18,
+    "state_time_s": 3927.061
+   },
+   "target_driver_id": "brendon_hartley",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r18-R",
+   "anchor": {
+    "driver_id": "sirotkin",
+    "lap_number": 36,
+    "state_time_s": 5802.019
+   },
+   "target_driver_id": "sirotkin",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r19-R",
+   "anchor": {
+    "driver_id": "grosjean",
+    "lap_number": 22,
+    "state_time_s": 3883.63
+   },
+   "target_driver_id": "grosjean",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r19-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 46,
+    "state_time_s": 5848.087
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r20-R",
+   "anchor": {
+    "driver_id": "raikkonen",
+    "lap_number": 23,
+    "state_time_s": 3720.885
+   },
+   "target_driver_id": "raikkonen",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 23,
+   "state_identity": "33c98f175efd1c8c939649fca84a9937b52b88b74a9de8b40a29dd34f4f62507",
+   "leader_laps_done": 23,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2018-r20-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 47,
+    "state_time_s": 5507.1
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r21-R",
+   "anchor": {
+    "driver_id": "ricciardo",
+    "lap_number": 18,
+    "state_time_s": 4166.325
+   },
+   "target_driver_id": "ricciardo",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2018-r21-R",
+   "anchor": {
+    "driver_id": "hamilton",
+    "lap_number": 36,
+    "state_time_s": 6043.023
+   },
+   "target_driver_id": "hamilton",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r01-R",
+   "anchor": {
+    "driver_id": "grosjean",
+    "lap_number": 18,
+    "state_time_s": 3679.401
+   },
+   "target_driver_id": "grosjean",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r01-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 38,
+    "state_time_s": 5391.266
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r02-R",
+   "anchor": {
+    "driver_id": "vettel",
+    "lap_number": 19,
+    "state_time_s": 3877.384
+   },
+   "target_driver_id": "vettel",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 19,
+   "state_identity": "7f51168895a263eaa82173baece335fa8cba4e190fee769c80a75a9b1aba2589",
+   "leader_laps_done": 19,
+   "scheduled_laps": 57,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r02-R",
+   "anchor": {
+    "driver_id": "kubica",
+    "lap_number": 37,
+    "state_time_s": 5759.542
+   },
+   "target_driver_id": "kubica",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r03-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 18,
+    "state_time_s": 3855.245
+   },
+   "target_driver_id": "stroll",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 18,
+   "state_identity": "27d7c6cc80497b09056af27c675a01cb3b8aa6e6b7c5017c6c694d4511c6b21a",
+   "leader_laps_done": 18,
+   "scheduled_laps": 56,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r03-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 37,
+    "state_time_s": 5704.252
+   },
+   "target_driver_id": "leclerc",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r04-R",
+   "anchor": {
+    "driver_id": "hulkenberg",
+    "lap_number": 16,
+    "state_time_s": 3825.549
+   },
+   "target_driver_id": "hulkenberg",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 16,
+   "state_identity": "b21436f81ac751027e32aa71ffc22065e8d2bb1f2f6860880c65391464f89a9b",
+   "leader_laps_done": 16,
+   "scheduled_laps": 51,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r04-R",
+   "anchor": {
+    "driver_id": "giovinazzi",
+    "lap_number": 32,
+    "state_time_s": 5563.462
+   },
+   "target_driver_id": "giovinazzi",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r05-R",
+   "anchor": {
+    "driver_id": "grosjean",
+    "lap_number": 22,
+    "state_time_s": 3844.362
+   },
+   "target_driver_id": "grosjean",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 22,
+   "state_identity": "773ac4a3a71091b0a761624ae593888ca3cc6a39e91b9aaff5474fb20cf1d3f8",
+   "leader_laps_done": 22,
+   "scheduled_laps": 66,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r05-R",
+   "anchor": {
+    "driver_id": "giovinazzi",
+    "lap_number": 42,
+    "state_time_s": 5637.335
+   },
+   "target_driver_id": "giovinazzi",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 42,
+   "state_identity": "530628ca93886b25743c0293c84b66d951d10ee09a23b176092670d4bebfda92",
+   "leader_laps_done": 44,
+   "scheduled_laps": 66,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r06-R",
+   "anchor": {
+    "driver_id": "gasly",
+    "lap_number": 26,
+    "state_time_s": 4147.891
+   },
+   "target_driver_id": "gasly",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r06-R",
+   "anchor": {
+    "driver_id": "grosjean",
+    "lap_number": 52,
+    "state_time_s": 6195.328
+   },
+   "target_driver_id": "grosjean",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r07-R",
+   "anchor": {
+    "driver_id": "sainz",
+    "lap_number": 23,
+    "state_time_s": 3810.318
+   },
+   "target_driver_id": "sainz",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r07-R",
+   "anchor": {
+    "driver_id": "vettel",
+    "lap_number": 47,
+    "state_time_s": 5595.771
+   },
+   "target_driver_id": "vettel",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r08-R",
+   "anchor": {
+    "driver_id": "sainz",
+    "lap_number": 18,
+    "state_time_s": 3772.682
+   },
+   "target_driver_id": "sainz",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 18,
+   "state_identity": "e1d85fa5896cfb3b8d52ea7eb6546283d440f60b03a5a3d45258ac015446f4ad",
+   "leader_laps_done": 18,
+   "scheduled_laps": 53,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r08-R",
+   "anchor": {
+    "driver_id": "gasly",
+    "lap_number": 35,
+    "state_time_s": 5452.427
+   },
+   "target_driver_id": "gasly",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r09-R",
+   "anchor": {
+    "driver_id": "gasly",
+    "lap_number": 24,
+    "state_time_s": 3677.833
+   },
+   "target_driver_id": "gasly",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 24,
+   "state_identity": "0dae3ec0dd9e9da1964e395120f09a48b7616b8ed3b84af14941d58ed863dae7",
+   "leader_laps_done": 24,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r09-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 48,
+    "state_time_s": 5323.356
+   },
+   "target_driver_id": "bottas",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 48,
+   "state_identity": "6f623419a2b0907c43001b7f99eece56f5037cb779dd696722c9ba84788c39e5",
+   "leader_laps_done": 48,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r10-R",
+   "anchor": {
+    "driver_id": "vettel",
+    "lap_number": 17,
+    "state_time_s": 3555.242
+   },
+   "target_driver_id": "vettel",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r10-R",
+   "anchor": {
+    "driver_id": "kvyat",
+    "lap_number": 34,
+    "state_time_s": 5292.655
+   },
+   "target_driver_id": "kvyat",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r11-R",
+   "anchor": {
+    "driver_id": "norris",
+    "lap_number": 19,
+    "state_time_s": 4310.407
+   },
+   "target_driver_id": "norris",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r11-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 40,
+    "state_time_s": 6492.548
+   },
+   "target_driver_id": "stroll",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r12-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 23,
+    "state_time_s": 3929.217
+   },
+   "target_driver_id": "bottas",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 23,
+   "state_identity": "c6f82c3b4cd4f9b3bd9fcb90aad2f91a4b201c7f52c054dfc4dc84c6c6110e45",
+   "leader_laps_done": 23,
+   "scheduled_laps": 70,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r12-R",
+   "anchor": {
+    "driver_id": "sainz",
+    "lap_number": 46,
+    "state_time_s": 5817.812
+   },
+   "target_driver_id": "sainz",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 46,
+   "state_identity": "993e4a479f38229369e6fe35993c3b6258245e6a11198a9c5909cce53916ee06",
+   "leader_laps_done": 46,
+   "scheduled_laps": 70,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r13-R",
+   "anchor": {
+    "driver_id": "giovinazzi",
+    "lap_number": 15,
+    "state_time_s": 3919.354
+   },
+   "target_driver_id": "giovinazzi",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r13-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 30,
+    "state_time_s": 5522.193
+   },
+   "target_driver_id": "leclerc",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r14-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 17,
+    "state_time_s": 3486.215
+   },
+   "target_driver_id": "perez",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 17,
+   "state_identity": "89384c8d384843b0239a1c9c842266e53de664193a4a453d881b52021ac80eff",
+   "leader_laps_done": 17,
+   "scheduled_laps": 53,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r14-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 34,
+    "state_time_s": 5008.452
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r15-R",
+   "anchor": {
+    "driver_id": "vettel",
+    "lap_number": 20,
+    "state_time_s": 4232.574
+   },
+   "target_driver_id": "vettel",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 20,
+   "state_identity": "022ae17affee08990268e8371fe1ba393a80e274b04c2f7eac8ff785ac1f2076",
+   "leader_laps_done": 20,
+   "scheduled_laps": 61,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r15-R",
+   "anchor": {
+    "driver_id": "vettel",
+    "lap_number": 40,
+    "state_time_s": 6626.468
+   },
+   "target_driver_id": "vettel",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r16-R",
+   "anchor": {
+    "driver_id": "russell",
+    "lap_number": 16,
+    "state_time_s": 3805.632
+   },
+   "target_driver_id": "russell",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r16-R",
+   "anchor": {
+    "driver_id": "giovinazzi",
+    "lap_number": 33,
+    "state_time_s": 5703.356
+   },
+   "target_driver_id": "giovinazzi",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r17-R",
+   "anchor": {
+    "driver_id": "grosjean",
+    "lap_number": 17,
+    "state_time_s": 3699.742
+   },
+   "target_driver_id": "grosjean",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r17-R",
+   "anchor": {
+    "driver_id": "ricciardo",
+    "lap_number": 35,
+    "state_time_s": 5414.389
+   },
+   "target_driver_id": "ricciardo",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r18-R",
+   "anchor": {
+    "driver_id": "grosjean",
+    "lap_number": 23,
+    "state_time_s": 3983.167
+   },
+   "target_driver_id": "grosjean",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 23,
+   "state_identity": "1a99367268062aafe5968ec3af0cd45a0fd2e3c87715299729c899ac213715f2",
+   "leader_laps_done": 24,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r18-R",
+   "anchor": {
+    "driver_id": "raikkonen",
+    "lap_number": 46,
+    "state_time_s": 5869.046
+   },
+   "target_driver_id": "raikkonen",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 46,
+   "state_identity": "f3496fe2a056733f827062d4f2fb201931ec273e737fbbdf646a20e91390be32",
+   "leader_laps_done": 47,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r19-R",
+   "anchor": {
+    "driver_id": "kevin_magnussen",
+    "lap_number": 18,
+    "state_time_s": 3884.123
+   },
+   "target_driver_id": "kevin_magnussen",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r19-R",
+   "anchor": {
+    "driver_id": "grosjean",
+    "lap_number": 36,
+    "state_time_s": 5771.16
+   },
+   "target_driver_id": "grosjean",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2019-r20-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 24,
+    "state_time_s": 3766.792
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 24,
+   "state_identity": "44103132057554aec845a1d2adae7406431b74f14f8098013c62a96f98f404b5",
+   "leader_laps_done": 24,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r20-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 47,
+    "state_time_s": 5484.493
+   },
+   "target_driver_id": "bottas",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 47,
+   "state_identity": "7d446cda7fd8ef895ec3fa4de3a1e36bdb2a578f6d0c01016672a627021b0485",
+   "leader_laps_done": 47,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r21-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 18,
+    "state_time_s": 3951.33
+   },
+   "target_driver_id": "stroll",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 18,
+   "state_identity": "249ccb662c2cabf5bf625b961c06ed9af5f7b305fd89de22f40dbe1eadebded5",
+   "leader_laps_done": 18,
+   "scheduled_laps": 55,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2019-r21-R",
+   "anchor": {
+    "driver_id": "grosjean",
+    "lap_number": 36,
+    "state_time_s": 5847.513
+   },
+   "target_driver_id": "grosjean",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 36,
+   "state_identity": "2248ae77c7997a724a7f4364f5e860d7ecd696333a4f32b8cda1dacb5e23a178",
+   "leader_laps_done": 37,
+   "scheduled_laps": 55,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2020-r01-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 20,
+    "state_time_s": 3378.114
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r01-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 42,
+    "state_time_s": 5077.515
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r02-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 23,
+    "state_time_s": 3687.546
+   },
+   "target_driver_id": "stroll",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r02-R",
+   "anchor": {
+    "driver_id": "ricciardo",
+    "lap_number": 47,
+    "state_time_s": 5358.405
+   },
+   "target_driver_id": "ricciardo",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r03-R",
+   "anchor": {
+    "driver_id": "sainz",
+    "lap_number": 23,
+    "state_time_s": 4000.632
+   },
+   "target_driver_id": "sainz",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r03-R",
+   "anchor": {
+    "driver_id": "norris",
+    "lap_number": 46,
+    "state_time_s": 5927.551
+   },
+   "target_driver_id": "norris",
+   "eligible": false,
+   "reason": "MISSING_TYRE_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r04-R",
+   "anchor": {
+    "driver_id": "gasly",
+    "lap_number": 17,
+    "state_time_s": 4076.262
+   },
+   "target_driver_id": "gasly",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r04-R",
+   "anchor": {
+    "driver_id": "norris",
+    "lap_number": 35,
+    "state_time_s": 5770.123
+   },
+   "target_driver_id": "norris",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r05-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 18,
+    "state_time_s": 3671.194
+   },
+   "target_driver_id": "stroll",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 18,
+   "state_identity": "0d87c89c995af83b7668e7964baf2b29c9f5baad16eff497c3f97e4fc13265ff",
+   "leader_laps_done": 18,
+   "scheduled_laps": 52,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2020-r05-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 35,
+    "state_time_s": 5250.484
+   },
+   "target_driver_id": "bottas",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 35,
+   "state_identity": "0ed032c647ca68f66e03a5327c1526037043558057081af8a6a456c6658ad5fb",
+   "leader_laps_done": 35,
+   "scheduled_laps": 52,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2020-r06-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 22,
+    "state_time_s": 3876.731
+   },
+   "target_driver_id": "perez",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 22,
+   "state_identity": "922fe9562edd10ed82b4b37fd3118344624327b174cf10812a3787c5a5e9ff4b",
+   "leader_laps_done": 22,
+   "scheduled_laps": 66,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2020-r06-R",
+   "anchor": {
+    "driver_id": "gasly",
+    "lap_number": 43,
+    "state_time_s": 5705.888
+   },
+   "target_driver_id": "gasly",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r07-R",
+   "anchor": {
+    "driver_id": "grosjean",
+    "lap_number": 14,
+    "state_time_s": 3818.39
+   },
+   "target_driver_id": "grosjean",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r07-R",
+   "anchor": {
+    "driver_id": "latifi",
+    "lap_number": 29,
+    "state_time_s": 5492.337
+   },
+   "target_driver_id": "latifi",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r08-R",
+   "anchor": {
+    "driver_id": "latifi",
+    "lap_number": 16,
+    "state_time_s": 3416.936
+   },
+   "target_driver_id": "latifi",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r08-R",
+   "anchor": {
+    "driver_id": "latifi",
+    "lap_number": 34,
+    "state_time_s": 6842.631
+   },
+   "target_driver_id": "latifi",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r09-R",
+   "anchor": {
+    "driver_id": "albon",
+    "lap_number": 18,
+    "state_time_s": 5477.389
+   },
+   "target_driver_id": "albon",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r09-R",
+   "anchor": {
+    "driver_id": "kvyat",
+    "lap_number": 38,
+    "state_time_s": 7193.676
+   },
+   "target_driver_id": "kvyat",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r10-R",
+   "anchor": {
+    "driver_id": "kevin_magnussen",
+    "lap_number": 18,
+    "state_time_s": 4185.328
+   },
+   "target_driver_id": "kevin_magnussen",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r10-R",
+   "anchor": {
+    "driver_id": "russell",
+    "lap_number": 35,
+    "state_time_s": 5959.147
+   },
+   "target_driver_id": "russell",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r11-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 18,
+    "state_time_s": 1715.753
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r11-R",
+   "anchor": {
+    "driver_id": "gasly",
+    "lap_number": 38,
+    "state_time_s": 3622.426
+   },
+   "target_driver_id": "gasly",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r12-R",
+   "anchor": {
+    "driver_id": "giovinazzi",
+    "lap_number": 22,
+    "state_time_s": 3865.753
+   },
+   "target_driver_id": "giovinazzi",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 22,
+   "state_identity": "40b000653b7b17c88f699a1c66c1adeaa0815c5be384190868aa5e4d9210173d",
+   "leader_laps_done": 22,
+   "scheduled_laps": 66,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2020-r12-R",
+   "anchor": {
+    "driver_id": "grosjean",
+    "lap_number": 43,
+    "state_time_s": 5644.297
+   },
+   "target_driver_id": "grosjean",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 43,
+   "state_identity": "cdb4304ff3d6047d0bf8c6d0524d3eeb0c69d1a8aec1f02a271a2c6c0167f432",
+   "leader_laps_done": 44,
+   "scheduled_laps": 66,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2020-r13-R",
+   "anchor": {
+    "driver_id": "kevin_magnussen",
+    "lap_number": 20,
+    "state_time_s": 3634.339
+   },
+   "target_driver_id": "kevin_magnussen",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r13-R",
+   "anchor": {
+    "driver_id": "hamilton",
+    "lap_number": 41,
+    "state_time_s": 5259.276
+   },
+   "target_driver_id": "hamilton",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r14-R",
+   "anchor": {
+    "driver_id": "ricciardo",
+    "lap_number": 19,
+    "state_time_s": 4188.506
+   },
+   "target_driver_id": "ricciardo",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r14-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 38,
+    "state_time_s": 6162.714
+   },
+   "target_driver_id": "leclerc",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r15-R",
+   "anchor": {
+    "driver_id": "giovinazzi",
+    "lap_number": 19,
+    "state_time_s": 9095.482
+   },
+   "target_driver_id": "giovinazzi",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r15-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 38,
+    "state_time_s": 10932.859
+   },
+   "target_driver_id": "leclerc",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r16-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 29,
+    "state_time_s": 3854.002
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r16-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 58,
+    "state_time_s": 5573.47
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r17-R",
+   "anchor": {
+    "driver_id": "russell",
+    "lap_number": 18,
+    "state_time_s": 4073.652
+   },
+   "target_driver_id": "russell",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2020-r17-R",
+   "anchor": {
+    "driver_id": "kevin_magnussen",
+    "lap_number": 36,
+    "state_time_s": 5990.593
+   },
+   "target_driver_id": "kevin_magnussen",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r01-R",
+   "anchor": {
+    "driver_id": "mick_schumacher",
+    "lap_number": 18,
+    "state_time_s": 4194.734
+   },
+   "target_driver_id": "mick_schumacher",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r01-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 37,
+    "state_time_s": 5983.496
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r02-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 21,
+    "state_time_s": 4146.945
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r02-R",
+   "anchor": {
+    "driver_id": "ocon",
+    "lap_number": 41,
+    "state_time_s": 7657.188
+   },
+   "target_driver_id": "ocon",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r03-R",
+   "anchor": {
+    "driver_id": "russell",
+    "lap_number": 22,
+    "state_time_s": 4074.904
+   },
+   "target_driver_id": "russell",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r03-R",
+   "anchor": {
+    "driver_id": "alonso",
+    "lap_number": 44,
+    "state_time_s": 5915.919
+   },
+   "target_driver_id": "alonso",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r04-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 22,
+    "state_time_s": 3978.656
+   },
+   "target_driver_id": "stroll",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r04-R",
+   "anchor": {
+    "driver_id": "ocon",
+    "lap_number": 44,
+    "state_time_s": 5839.383
+   },
+   "target_driver_id": "ocon",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r05-R",
+   "anchor": {
+    "driver_id": "tsunoda",
+    "lap_number": 25,
+    "state_time_s": 3962.207
+   },
+   "target_driver_id": "tsunoda",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r05-R",
+   "anchor": {
+    "driver_id": "tsunoda",
+    "lap_number": 51,
+    "state_time_s": 5985.013
+   },
+   "target_driver_id": "tsunoda",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r06-R",
+   "anchor": {
+    "driver_id": "tsunoda",
+    "lap_number": 17,
+    "state_time_s": 3906.576
+   },
+   "target_driver_id": "tsunoda",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r06-R",
+   "anchor": {
+    "driver_id": "hamilton",
+    "lap_number": 34,
+    "state_time_s": 5939.877
+   },
+   "target_driver_id": "hamilton",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r07-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 18,
+    "state_time_s": 3850.365
+   },
+   "target_driver_id": "leclerc",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 18,
+   "state_identity": "315991d1666ba6fd4684560ec759582b8df9748cdf461e4be523ec5fdb9802be",
+   "leader_laps_done": 18,
+   "scheduled_laps": 53,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2021-r07-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 36,
+    "state_time_s": 5600.644
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 36,
+   "state_identity": "bbcf6390a83f931d5e93d3059dc9aeb845679441cb5f7c3081ed6530a2bffc96",
+   "leader_laps_done": 36,
+   "scheduled_laps": 53,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2021-r08-R",
+   "anchor": {
+    "driver_id": "ricciardo",
+    "lap_number": 23,
+    "state_time_s": 3645.695
+   },
+   "target_driver_id": "ricciardo",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r08-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 47,
+    "state_time_s": 5299.834
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r09-R",
+   "anchor": {
+    "driver_id": "sainz",
+    "lap_number": 24,
+    "state_time_s": 5529.326
+   },
+   "target_driver_id": "sainz",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r09-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 48,
+    "state_time_s": 7186.147
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r10-R",
+   "anchor": {
+    "driver_id": "mazepin",
+    "lap_number": 17,
+    "state_time_s": 7680.999
+   },
+   "target_driver_id": "mazepin",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r10-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 35,
+    "state_time_s": 9303.795
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r11-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 23,
+    "state_time_s": 7382.519
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r11-R",
+   "anchor": {
+    "driver_id": "hamilton",
+    "lap_number": 47,
+    "state_time_s": 9343.61
+   },
+   "target_driver_id": "hamilton",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r12-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 1,
+    "state_time_s": 15604.57
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r12-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 2,
+    "state_time_s": 15804.002
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r13-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 23,
+    "state_time_s": 5530.986
+   },
+   "target_driver_id": "perez",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 23,
+   "state_identity": "dece678c5b97e812da1e17ac4649cf96887ba35fc6dd892192d85113f9b69f16",
+   "leader_laps_done": 23,
+   "scheduled_laps": 72,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2021-r13-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 47,
+    "state_time_s": 7299.275
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r14-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 17,
+    "state_time_s": 5234.629
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r14-R",
+   "anchor": {
+    "driver_id": "kubica",
+    "lap_number": 34,
+    "state_time_s": 7013.504
+   },
+   "target_driver_id": "kubica",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r15-R",
+   "anchor": {
+    "driver_id": "ricciardo",
+    "lap_number": 18,
+    "state_time_s": 5606.131
+   },
+   "target_driver_id": "ricciardo",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 18,
+   "state_identity": "075b88aef3c94b42fc071584bbfb371d846a439fc006280c1fc7e668409dd43f",
+   "leader_laps_done": 18,
+   "scheduled_laps": 53,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2021-r15-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 35,
+    "state_time_s": 7333.539
+   },
+   "target_driver_id": "leclerc",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 35,
+   "state_identity": "a97054331b1e217fd10f8416e6b5653ae197c2ff89a9e2ef86395f0d041ec6ca",
+   "leader_laps_done": 35,
+   "scheduled_laps": 53,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2021-r16-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 20,
+    "state_time_s": 5630.59
+   },
+   "target_driver_id": "leclerc",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r16-R",
+   "anchor": {
+    "driver_id": "mick_schumacher",
+    "lap_number": 38,
+    "state_time_s": 7469.282
+   },
+   "target_driver_id": "mick_schumacher",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r17-R",
+   "anchor": {
+    "driver_id": "giovinazzi",
+    "lap_number": 18,
+    "state_time_s": 5656.719
+   },
+   "target_driver_id": "giovinazzi",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r17-R",
+   "anchor": {
+    "driver_id": "russell",
+    "lap_number": 36,
+    "state_time_s": 7555.729
+   },
+   "target_driver_id": "russell",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r18-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 24,
+    "state_time_s": 5866.647
+   },
+   "target_driver_id": "leclerc",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r18-R",
+   "anchor": {
+    "driver_id": "hamilton",
+    "lap_number": 48,
+    "state_time_s": 7809.607
+   },
+   "target_driver_id": "hamilton",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r19-R",
+   "anchor": {
+    "driver_id": "tsunoda",
+    "lap_number": 23,
+    "state_time_s": 5710.485
+   },
+   "target_driver_id": "tsunoda",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 23,
+   "state_identity": "f07b358270aa8f1b4f829132d4883154c1b7fbf0ea122eb2056b4f9509e6ec47",
+   "leader_laps_done": 23,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2021-r19-R",
+   "anchor": {
+    "driver_id": "mazepin",
+    "lap_number": 45,
+    "state_time_s": 7457.501
+   },
+   "target_driver_id": "mazepin",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 45,
+   "state_identity": "183bb3194051e861b753d3f271ba9b255b51f26448d00fe9a83f0808e825cc53",
+   "leader_laps_done": 46,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2021-r20-R",
+   "anchor": {
+    "driver_id": "vettel",
+    "lap_number": 19,
+    "state_time_s": 5514.596
+   },
+   "target_driver_id": "vettel",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 19,
+   "state_identity": "7b741881b088718ef7b41223e3d06308d79701a531e7c8733e0cca458672c942",
+   "leader_laps_done": 19,
+   "scheduled_laps": 57,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2021-r20-R",
+   "anchor": {
+    "driver_id": "alonso",
+    "lap_number": 38,
+    "state_time_s": 7201.699
+   },
+   "target_driver_id": "alonso",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 38,
+   "state_identity": "7b25dd06b57cf8622e6ebd3d2cece43f5e547889e08d81df9b22b3588f3117a3",
+   "leader_laps_done": 38,
+   "scheduled_laps": 57,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2021-r21-R",
+   "anchor": {
+    "driver_id": "ricciardo",
+    "lap_number": 15,
+    "state_time_s": 6600.406
+   },
+   "target_driver_id": "ricciardo",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r21-R",
+   "anchor": {
+    "driver_id": "vettel",
+    "lap_number": 32,
+    "state_time_s": 9660.926
+   },
+   "target_driver_id": "vettel",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2021-r22-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 18,
+    "state_time_s": 5393.284
+   },
+   "target_driver_id": "stroll",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 18,
+   "state_identity": "af86a6dba0c1a8881d48252270d41b04e7ca4341882005ecf8757cf63156cfca",
+   "leader_laps_done": 18,
+   "scheduled_laps": 58,
+   "roster_size": 19
+  },
+  {
+   "race_id": "2021-r22-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 37,
+    "state_time_s": 7137.494
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r01-R",
+   "anchor": {
+    "driver_id": "norris",
+    "lap_number": 19,
+    "state_time_s": 5708.614
+   },
+   "target_driver_id": "norris",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 19,
+   "state_identity": "b33d2cb467db7b0ad7a25d6ea08bacc35250d5e0e58cf76e7ed84b4fffe6eab5",
+   "leader_laps_done": 19,
+   "scheduled_laps": 57,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2022-r01-R",
+   "anchor": {
+    "driver_id": "alonso",
+    "lap_number": 38,
+    "state_time_s": 7605.497
+   },
+   "target_driver_id": "alonso",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 38,
+   "state_identity": "670569c66ab2526571d32d2d6a38abd90b2a0c2472fcbf29d0d07e969c268a4c",
+   "leader_laps_done": 38,
+   "scheduled_laps": 57,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2022-r02-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 16,
+    "state_time_s": 5302.064
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "MISSING_DRIVER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r02-R",
+   "anchor": {
+    "driver_id": "russell",
+    "lap_number": 32,
+    "state_time_s": 7070.067
+   },
+   "target_driver_id": "russell",
+   "eligible": false,
+   "reason": "MISSING_DRIVER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r03-R",
+   "anchor": {
+    "driver_id": "norris",
+    "lap_number": 19,
+    "state_time_s": 5537.041
+   },
+   "target_driver_id": "norris",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r03-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 39,
+    "state_time_s": 7355.163
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r04-R",
+   "anchor": {
+    "driver_id": "ocon",
+    "lap_number": 21,
+    "state_time_s": 5883.124
+   },
+   "target_driver_id": "ocon",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r04-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 43,
+    "state_time_s": 7619.458
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r05-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 19,
+    "state_time_s": 5550.681
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r05-R",
+   "anchor": {
+    "driver_id": "vettel",
+    "lap_number": 37,
+    "state_time_s": 7299.942
+   },
+   "target_driver_id": "vettel",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r06-R",
+   "anchor": {
+    "driver_id": "vettel",
+    "lap_number": 21,
+    "state_time_s": 5649.752
+   },
+   "target_driver_id": "vettel",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 21,
+   "state_identity": "59a47e114cb4f19023c4261158737d0f3975948a51f5624ec07e03602ea435d1",
+   "leader_laps_done": 21,
+   "scheduled_laps": 66,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2022-r06-R",
+   "anchor": {
+    "driver_id": "alonso",
+    "lap_number": 43,
+    "state_time_s": 7628.986
+   },
+   "target_driver_id": "alonso",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r07-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 20,
+    "state_time_s": 9539.891
+   },
+   "target_driver_id": "stroll",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r07-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 42,
+    "state_time_s": 12722.626
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r08-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 16,
+    "state_time_s": 5566.077
+   },
+   "target_driver_id": "leclerc",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r08-R",
+   "anchor": {
+    "driver_id": "albon",
+    "lap_number": 32,
+    "state_time_s": 7407.76
+   },
+   "target_driver_id": "albon",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r09-R",
+   "anchor": {
+    "driver_id": "norris",
+    "lap_number": 22,
+    "state_time_s": 5602.706
+   },
+   "target_driver_id": "norris",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r09-R",
+   "anchor": {
+    "driver_id": "latifi",
+    "lap_number": 45,
+    "state_time_s": 7471.083
+   },
+   "target_driver_id": "latifi",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r10-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 16,
+    "state_time_s": 8479.263
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r10-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 34,
+    "state_time_s": 10130.975
+   },
+   "target_driver_id": "leclerc",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r11-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 23,
+    "state_time_s": 5377.396
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 23,
+   "state_identity": "83ec57e15918d5bccf66a50e706a7af96f859fbff40e6905a9c75ccbb4040083",
+   "leader_laps_done": 23,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2022-r11-R",
+   "anchor": {
+    "driver_id": "latifi",
+    "lap_number": 45,
+    "state_time_s": 7035.446
+   },
+   "target_driver_id": "latifi",
+   "eligible": false,
+   "reason": "MISSING_TYRE_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r12-R",
+   "anchor": {
+    "driver_id": "tsunoda",
+    "lap_number": 16,
+    "state_time_s": 4232.918
+   },
+   "target_driver_id": "tsunoda",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 16,
+   "state_identity": "ebd83a72ff47de66dcc139f8c64ac229598f5f4f87c853e8e741daaf839657c9",
+   "leader_laps_done": 16,
+   "scheduled_laps": 53,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2022-r12-R",
+   "anchor": {
+    "driver_id": "ocon",
+    "lap_number": 34,
+    "state_time_s": 6095.538
+   },
+   "target_driver_id": "ocon",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r13-R",
+   "anchor": {
+    "driver_id": "russell",
+    "lap_number": 24,
+    "state_time_s": 5804.576
+   },
+   "target_driver_id": "russell",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 24,
+   "state_identity": "0db2f1bbdff419516b261fc82c21ce35131256d7d0de43c040aec0e8c943763f",
+   "leader_laps_done": 24,
+   "scheduled_laps": 70,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2022-r13-R",
+   "anchor": {
+    "driver_id": "kevin_magnussen",
+    "lap_number": 46,
+    "state_time_s": 7763.432
+   },
+   "target_driver_id": "kevin_magnussen",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r14-R",
+   "anchor": {
+    "driver_id": "albon",
+    "lap_number": 15,
+    "state_time_s": 5673.739
+   },
+   "target_driver_id": "albon",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r14-R",
+   "anchor": {
+    "driver_id": "sainz",
+    "lap_number": 30,
+    "state_time_s": 7370.723
+   },
+   "target_driver_id": "sainz",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r15-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 24,
+    "state_time_s": 5580.582
+   },
+   "target_driver_id": "leclerc",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 24,
+   "state_identity": "bcc6967b4e2f7983b14bbc5021b0263cd8d65d137300fdd688552055de5eb478",
+   "leader_laps_done": 24,
+   "scheduled_laps": 72,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2022-r15-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 48,
+    "state_time_s": 7425.825
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r16-R",
+   "anchor": {
+    "driver_id": "de_vries",
+    "lap_number": 17,
+    "state_time_s": 5267.506
+   },
+   "target_driver_id": "de_vries",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r16-R",
+   "anchor": {
+    "driver_id": "zhou",
+    "lap_number": 34,
+    "state_time_s": 6775.302
+   },
+   "target_driver_id": "zhou",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r17-R",
+   "anchor": {
+    "driver_id": "mick_schumacher",
+    "lap_number": 17,
+    "state_time_s": 9886.927
+   },
+   "target_driver_id": "mick_schumacher",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r17-R",
+   "anchor": {
+    "driver_id": "norris",
+    "lap_number": 37,
+    "state_time_s": 12480.256
+   },
+   "target_driver_id": "norris",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r18-R",
+   "anchor": {
+    "driver_id": "hamilton",
+    "lap_number": 10,
+    "state_time_s": 12746.911
+   },
+   "target_driver_id": "hamilton",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r18-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 19,
+    "state_time_s": 13745.895
+   },
+   "target_driver_id": "stroll",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r19-R",
+   "anchor": {
+    "driver_id": "alonso",
+    "lap_number": 18,
+    "state_time_s": 5667.541
+   },
+   "target_driver_id": "alonso",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r19-R",
+   "anchor": {
+    "driver_id": "alonso",
+    "lap_number": 37,
+    "state_time_s": 7999.395
+   },
+   "target_driver_id": "alonso",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r20-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 23,
+    "state_time_s": 5721.786
+   },
+   "target_driver_id": "stroll",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 23,
+   "state_identity": "70cc7cbbe6ee29a19343fd68b51c4dac888a3843ff2ccf6bc881ee413e1e83c0",
+   "leader_laps_done": 23,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2022-r20-R",
+   "anchor": {
+    "driver_id": "gasly",
+    "lap_number": 46,
+    "state_time_s": 7667.142
+   },
+   "target_driver_id": "gasly",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 46,
+   "state_identity": "830160cce73c3795c1c4c3dc35d757765bcf1b2e309ec604c7b0b676e3820eec",
+   "leader_laps_done": 47,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2022-r21-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 24,
+    "state_time_s": 5790.732
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r21-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 47,
+    "state_time_s": 7600.299
+   },
+   "target_driver_id": "stroll",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2022-r22-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 19,
+    "state_time_s": 5506.789
+   },
+   "target_driver_id": "bottas",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 19,
+   "state_identity": "5272ff6a3cf31203869b134f6248c9df96863ec52bd35e09464a636f1553278d",
+   "leader_laps_done": 19,
+   "scheduled_laps": 58,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2022-r22-R",
+   "anchor": {
+    "driver_id": "albon",
+    "lap_number": 38,
+    "state_time_s": 7274.342
+   },
+   "target_driver_id": "albon",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r01-R",
+   "anchor": {
+    "driver_id": "hulkenberg",
+    "lap_number": 18,
+    "state_time_s": 5600.147
+   },
+   "target_driver_id": "hulkenberg",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r01-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 37,
+    "state_time_s": 7467.114
+   },
+   "target_driver_id": "stroll",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r02-R",
+   "anchor": {
+    "driver_id": "kevin_magnussen",
+    "lap_number": 16,
+    "state_time_s": 5338.252
+   },
+   "target_driver_id": "kevin_magnussen",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 16,
+   "state_identity": "61b62ab791a453ce27681198f9a1085eb63d0db49e58611df226e98791396185",
+   "leader_laps_done": 16,
+   "scheduled_laps": 50,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2023-r02-R",
+   "anchor": {
+    "driver_id": "gasly",
+    "lap_number": 33,
+    "state_time_s": 7102.211
+   },
+   "target_driver_id": "gasly",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r03-R",
+   "anchor": {
+    "driver_id": "gasly",
+    "lap_number": 19,
+    "state_time_s": 6626.846
+   },
+   "target_driver_id": "gasly",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r03-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 38,
+    "state_time_s": 8232.965
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r04-R",
+   "anchor": {
+    "driver_id": "hamilton",
+    "lap_number": 17,
+    "state_time_s": 5775.782
+   },
+   "target_driver_id": "hamilton",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r04-R",
+   "anchor": {
+    "driver_id": "alonso",
+    "lap_number": 34,
+    "state_time_s": 7580.767
+   },
+   "target_driver_id": "alonso",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r05-R",
+   "anchor": {
+    "driver_id": "sargeant",
+    "lap_number": 19,
+    "state_time_s": 5609.282
+   },
+   "target_driver_id": "sargeant",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 19,
+   "state_identity": "c3b522e5ab4b66dad0066c59cd1b41f3b0427ef0a0a8ffce5a210adcb172ee5c",
+   "leader_laps_done": 19,
+   "scheduled_laps": 57,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2023-r05-R",
+   "anchor": {
+    "driver_id": "piastri",
+    "lap_number": 38,
+    "state_time_s": 7367.469
+   },
+   "target_driver_id": "piastri",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 38,
+   "state_identity": "0a4f739bb80a226f4c5e812b2153ca36b72fc3583f10bec6ea9e69395b2a3500",
+   "leader_laps_done": 38,
+   "scheduled_laps": 57,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2023-r06-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 26,
+    "state_time_s": 5774.368
+   },
+   "target_driver_id": "leclerc",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 26,
+   "state_identity": "5e8182c6a2114dfdef04a05165c698bf176ad9e27fe9bc78b3017e2a6a41299f",
+   "leader_laps_done": 26,
+   "scheduled_laps": 78,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2023-r06-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 52,
+    "state_time_s": 7761.832
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 52,
+   "state_identity": "7076aa5c8a3a0b6ff224d557cbd0ce94a444d902351410ef8dcac6245b502954",
+   "leader_laps_done": 52,
+   "scheduled_laps": 78,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2023-r07-R",
+   "anchor": {
+    "driver_id": "norris",
+    "lap_number": 22,
+    "state_time_s": 5573.819
+   },
+   "target_driver_id": "norris",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 22,
+   "state_identity": "327e191fd54afa02b91d0cc6f939438edfa9272a4f4fe8185dc89426e9d3044f",
+   "leader_laps_done": 22,
+   "scheduled_laps": 66,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2023-r07-R",
+   "anchor": {
+    "driver_id": "de_vries",
+    "lap_number": 44,
+    "state_time_s": 7355.674
+   },
+   "target_driver_id": "de_vries",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 44,
+   "state_identity": "2093ca6f9146a3eaf09667ed0a5daf68a46b0ac069f9155902f8324178b22412",
+   "leader_laps_done": 45,
+   "scheduled_laps": 66,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2023-r08-R",
+   "anchor": {
+    "driver_id": "zhou",
+    "lap_number": 23,
+    "state_time_s": 5774.338
+   },
+   "target_driver_id": "zhou",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r08-R",
+   "anchor": {
+    "driver_id": "tsunoda",
+    "lap_number": 46,
+    "state_time_s": 7589.5
+   },
+   "target_driver_id": "tsunoda",
+   "eligible": false,
+   "reason": "MISSING_TYRE_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r09-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 24,
+    "state_time_s": 5546.533
+   },
+   "target_driver_id": "leclerc",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r09-R",
+   "anchor": {
+    "driver_id": "de_vries",
+    "lap_number": 47,
+    "state_time_s": 7242.962
+   },
+   "target_driver_id": "de_vries",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r10-R",
+   "anchor": {
+    "driver_id": "albon",
+    "lap_number": 17,
+    "state_time_s": 5334.101
+   },
+   "target_driver_id": "albon",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r10-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 34,
+    "state_time_s": 7032.088
+   },
+   "target_driver_id": "stroll",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r11-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 24,
+    "state_time_s": 5774.528
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r11-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 47,
+    "state_time_s": 7742.995
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r12-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 15,
+    "state_time_s": 5488.323
+   },
+   "target_driver_id": "stroll",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r12-R",
+   "anchor": {
+    "driver_id": "ricciardo",
+    "lap_number": 29,
+    "state_time_s": 7121.508
+   },
+   "target_driver_id": "ricciardo",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r13-R",
+   "anchor": {
+    "driver_id": "hulkenberg",
+    "lap_number": 23,
+    "state_time_s": 5899.606
+   },
+   "target_driver_id": "hulkenberg",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r13-R",
+   "anchor": {
+    "driver_id": "hamilton",
+    "lap_number": 47,
+    "state_time_s": 7753.871
+   },
+   "target_driver_id": "hamilton",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r14-R",
+   "anchor": {
+    "driver_id": "zhou",
+    "lap_number": 17,
+    "state_time_s": 6459.837
+   },
+   "target_driver_id": "zhou",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r14-R",
+   "anchor": {
+    "driver_id": "sargeant",
+    "lap_number": 34,
+    "state_time_s": 7945.509
+   },
+   "target_driver_id": "sargeant",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r15-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 21,
+    "state_time_s": 5977.375
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r15-R",
+   "anchor": {
+    "driver_id": "hamilton",
+    "lap_number": 41,
+    "state_time_s": 8027.367
+   },
+   "target_driver_id": "hamilton",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r16-R",
+   "anchor": {
+    "driver_id": "sainz",
+    "lap_number": 16,
+    "state_time_s": 5623.444
+   },
+   "target_driver_id": "sainz",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r16-R",
+   "anchor": {
+    "driver_id": "sainz",
+    "lap_number": 34,
+    "state_time_s": 7418.31
+   },
+   "target_driver_id": "sainz",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r17-R",
+   "anchor": {
+    "driver_id": "kevin_magnussen",
+    "lap_number": 19,
+    "state_time_s": 5692.567
+   },
+   "target_driver_id": "kevin_magnussen",
+   "eligible": false,
+   "reason": "MISSING_DRIVER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r17-R",
+   "anchor": {
+    "driver_id": "russell",
+    "lap_number": 38,
+    "state_time_s": 7378.619
+   },
+   "target_driver_id": "russell",
+   "eligible": false,
+   "reason": "MISSING_DRIVER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r18-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 18,
+    "state_time_s": 5653.349
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r18-R",
+   "anchor": {
+    "driver_id": "ricciardo",
+    "lap_number": 37,
+    "state_time_s": 7620.324
+   },
+   "target_driver_id": "ricciardo",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r19-R",
+   "anchor": {
+    "driver_id": "hulkenberg",
+    "lap_number": 23,
+    "state_time_s": 5722.164
+   },
+   "target_driver_id": "hulkenberg",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r19-R",
+   "anchor": {
+    "driver_id": "ocon",
+    "lap_number": 46,
+    "state_time_s": 9055.468
+   },
+   "target_driver_id": "ocon",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r20-R",
+   "anchor": {
+    "driver_id": "russell",
+    "lap_number": 22,
+    "state_time_s": 7072.169
+   },
+   "target_driver_id": "russell",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r20-R",
+   "anchor": {
+    "driver_id": "sargeant",
+    "lap_number": 45,
+    "state_time_s": 8874.461
+   },
+   "target_driver_id": "sargeant",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r21-R",
+   "anchor": {
+    "driver_id": "russell",
+    "lap_number": 17,
+    "state_time_s": 2824.44
+   },
+   "target_driver_id": "russell",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r21-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 34,
+    "state_time_s": 4649.56
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2023-r22-R",
+   "anchor": {
+    "driver_id": "russell",
+    "lap_number": 20,
+    "state_time_s": 5581.887
+   },
+   "target_driver_id": "russell",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 20,
+   "state_identity": "064332141bd7a858e93b4897076873316740a67ebf21aeb70b008e8d8ef19243",
+   "leader_laps_done": 20,
+   "scheduled_laps": 58,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2023-r22-R",
+   "anchor": {
+    "driver_id": "alonso",
+    "lap_number": 39,
+    "state_time_s": 7319.619
+   },
+   "target_driver_id": "alonso",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 39,
+   "state_identity": "6a3c304e3a2a13a5fdb3a3bf755f3f72cd4512b0b3f286e8dc87d67514de5ecd",
+   "leader_laps_done": 39,
+   "scheduled_laps": 58,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r01-R",
+   "anchor": {
+    "driver_id": "hulkenberg",
+    "lap_number": 19,
+    "state_time_s": 5507.55
+   },
+   "target_driver_id": "hulkenberg",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 19,
+   "state_identity": "16bc90d6605008c3d941aed00b0052213ba4b702e2ff7efb3d1434c632d4c454",
+   "leader_laps_done": 19,
+   "scheduled_laps": 57,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r01-R",
+   "anchor": {
+    "driver_id": "tsunoda",
+    "lap_number": 38,
+    "state_time_s": 7374.797
+   },
+   "target_driver_id": "tsunoda",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 38,
+   "state_identity": "7fd51e0c88a5a5e8872221cf1489ac895a45d87f019bb31636200548e25562ba",
+   "leader_laps_done": 38,
+   "scheduled_laps": 57,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r02-R",
+   "anchor": {
+    "driver_id": "piastri",
+    "lap_number": 17,
+    "state_time_s": 5380.987
+   },
+   "target_driver_id": "piastri",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r02-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 33,
+    "state_time_s": 6931.663
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r03-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 19,
+    "state_time_s": 5140.706
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r03-R",
+   "anchor": {
+    "driver_id": "ocon",
+    "lap_number": 38,
+    "state_time_s": 6757.931
+   },
+   "target_driver_id": "ocon",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r04-R",
+   "anchor": {
+    "driver_id": "gasly",
+    "lap_number": 17,
+    "state_time_s": 7217.706
+   },
+   "target_driver_id": "gasly",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r04-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 35,
+    "state_time_s": 8992.52
+   },
+   "target_driver_id": "stroll",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r05-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 18,
+    "state_time_s": 5168.098
+   },
+   "target_driver_id": "perez",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 18,
+   "state_identity": "9e61fff8d4331464233d900673e42198ed873b0d0500b9ba5a9c2546b9898174",
+   "leader_laps_done": 18,
+   "scheduled_laps": 56,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r05-R",
+   "anchor": {
+    "driver_id": "sargeant",
+    "lap_number": 36,
+    "state_time_s": 7407.235
+   },
+   "target_driver_id": "sargeant",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r06-R",
+   "anchor": {
+    "driver_id": "alonso",
+    "lap_number": 19,
+    "state_time_s": 5145.684
+   },
+   "target_driver_id": "alonso",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 19,
+   "state_identity": "2d0972b602f72a31c73c4ed729bad6007933fd00ec8a0dc0db7f20b2ddffbe2e",
+   "leader_laps_done": 19,
+   "scheduled_laps": 57,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r06-R",
+   "anchor": {
+    "driver_id": "ocon",
+    "lap_number": 38,
+    "state_time_s": 7073.692
+   },
+   "target_driver_id": "ocon",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r07-R",
+   "anchor": {
+    "driver_id": "tsunoda",
+    "lap_number": 21,
+    "state_time_s": 5093.747
+   },
+   "target_driver_id": "tsunoda",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 21,
+   "state_identity": "790ec90edc84436ee6d3d26e2315a68d8474b3273d120fb1218a64705d60d442",
+   "leader_laps_done": 21,
+   "scheduled_laps": 63,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r07-R",
+   "anchor": {
+    "driver_id": "hamilton",
+    "lap_number": 42,
+    "state_time_s": 6797.582
+   },
+   "target_driver_id": "hamilton",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 42,
+   "state_identity": "e36a437ff98b87ffa3a84269c6837da7c5685f1975513574f7a9fcada01c6581",
+   "leader_laps_done": 42,
+   "scheduled_laps": 63,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r08-R",
+   "anchor": {
+    "driver_id": "albon",
+    "lap_number": 26,
+    "state_time_s": 7898.384
+   },
+   "target_driver_id": "albon",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r08-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 51,
+    "state_time_s": 9943.891
+   },
+   "target_driver_id": "stroll",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r09-R",
+   "anchor": {
+    "driver_id": "piastri",
+    "lap_number": 22,
+    "state_time_s": 2244.955
+   },
+   "target_driver_id": "piastri",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r09-R",
+   "anchor": {
+    "driver_id": "ocon",
+    "lap_number": 44,
+    "state_time_s": 4369.583
+   },
+   "target_driver_id": "ocon",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r10-R",
+   "anchor": {
+    "driver_id": "ricciardo",
+    "lap_number": 22,
+    "state_time_s": 5256.0
+   },
+   "target_driver_id": "ricciardo",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 22,
+   "state_identity": "b1b3496ab732088aa866009de638e6eb8ee11c189c859412f21dc3d2be54f0b3",
+   "leader_laps_done": 22,
+   "scheduled_laps": 66,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r10-R",
+   "anchor": {
+    "driver_id": "norris",
+    "lap_number": 45,
+    "state_time_s": 7055.095
+   },
+   "target_driver_id": "norris",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 45,
+   "state_identity": "20cb04dba2461e1cc369a2134cde666b1b368d3ec87ebc0e22dce8e55ab735f5",
+   "leader_laps_done": 45,
+   "scheduled_laps": 66,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r11-R",
+   "anchor": {
+    "driver_id": "kevin_magnussen",
+    "lap_number": 24,
+    "state_time_s": 5073.081
+   },
+   "target_driver_id": "kevin_magnussen",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 24,
+   "state_identity": "470c44f816db4d849a739e165cf4b230970ff210e60c42fee5accf5b72576be6",
+   "leader_laps_done": 24,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r11-R",
+   "anchor": {
+    "driver_id": "stroll",
+    "lap_number": 47,
+    "state_time_s": 6750.308
+   },
+   "target_driver_id": "stroll",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 47,
+   "state_identity": "0a72a8617cd9847b0ceccdcf0783c1667f220fce164f7d9c14e04c18f92ec41a",
+   "leader_laps_done": 48,
+   "scheduled_laps": 71,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r12-R",
+   "anchor": {
+    "driver_id": "ricciardo",
+    "lap_number": 17,
+    "state_time_s": 5092.216
+   },
+   "target_driver_id": "ricciardo",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r12-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 34,
+    "state_time_s": 6846.56
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "WET_CONDITIONS",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r13-R",
+   "anchor": {
+    "driver_id": "alonso",
+    "lap_number": 23,
+    "state_time_s": 5295.029
+   },
+   "target_driver_id": "alonso",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 23,
+   "state_identity": "673c0ee40e0bbeb3b3f991bb9eb35b2ab3a9df88ca11cc0eb18c75f223374cca",
+   "leader_laps_done": 23,
+   "scheduled_laps": 70,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r13-R",
+   "anchor": {
+    "driver_id": "piastri",
+    "lap_number": 47,
+    "state_time_s": 7273.619
+   },
+   "target_driver_id": "piastri",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r14-R",
+   "anchor": {
+    "driver_id": "albon",
+    "lap_number": 15,
+    "state_time_s": 4995.863
+   },
+   "target_driver_id": "albon",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r14-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 30,
+    "state_time_s": 6624.008
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r15-R",
+   "anchor": {
+    "driver_id": "hamilton",
+    "lap_number": 24,
+    "state_time_s": 5335.958
+   },
+   "target_driver_id": "hamilton",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 24,
+   "state_identity": "8f66159644dfe5c30254c5e885013c655d457f16dcb6febe09449f6678d7af28",
+   "leader_laps_done": 24,
+   "scheduled_laps": 72,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r15-R",
+   "anchor": {
+    "driver_id": "alonso",
+    "lap_number": 48,
+    "state_time_s": 7177.265
+   },
+   "target_driver_id": "alonso",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "LATE",
+   "decision_lap": 48,
+   "state_identity": "e872b78ed21c4ab99c23c1e6b2dc1d62fd3d998a3c363b9ad12bd2b42efdcebe",
+   "leader_laps_done": 48,
+   "scheduled_laps": 72,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r16-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 18,
+    "state_time_s": 4905.501
+   },
+   "target_driver_id": "leclerc",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r16-R",
+   "anchor": {
+    "driver_id": "leclerc",
+    "lap_number": 36,
+    "state_time_s": 6410.296
+   },
+   "target_driver_id": "leclerc",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r17-R",
+   "anchor": {
+    "driver_id": "max_verstappen",
+    "lap_number": 17,
+    "state_time_s": 5255.149
+   },
+   "target_driver_id": "max_verstappen",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "MID",
+   "decision_lap": 17,
+   "state_identity": "0388cdcf53a9072526fee362854b21378a11291718259c104340373e604f412d",
+   "leader_laps_done": 17,
+   "scheduled_laps": 51,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r17-R",
+   "anchor": {
+    "driver_id": "alonso",
+    "lap_number": 34,
+    "state_time_s": 7121.039
+   },
+   "target_driver_id": "alonso",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r18-R",
+   "anchor": {
+    "driver_id": "zhou",
+    "lap_number": 20,
+    "state_time_s": 5436.766
+   },
+   "target_driver_id": "zhou",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r18-R",
+   "anchor": {
+    "driver_id": "perez",
+    "lap_number": 41,
+    "state_time_s": 7513.76
+   },
+   "target_driver_id": "perez",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r19-R",
+   "anchor": {
+    "driver_id": "russell",
+    "lap_number": 19,
+    "state_time_s": 5504.086
+   },
+   "target_driver_id": "russell",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r19-R",
+   "anchor": {
+    "driver_id": "sainz",
+    "lap_number": 38,
+    "state_time_s": 7377.223
+   },
+   "target_driver_id": "sainz",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r20-R",
+   "anchor": {
+    "driver_id": "bottas",
+    "lap_number": 23,
+    "state_time_s": 5555.128
+   },
+   "target_driver_id": "bottas",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r20-R",
+   "anchor": {
+    "driver_id": "gasly",
+    "lap_number": 47,
+    "state_time_s": 7552.961
+   },
+   "target_driver_id": "gasly",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r21-R",
+   "anchor": {
+    "driver_id": "zhou",
+    "lap_number": 21,
+    "state_time_s": 6150.91
+   },
+   "target_driver_id": "zhou",
+   "eligible": false,
+   "reason": "MISSING_DRIVER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r21-R",
+   "anchor": {
+    "driver_id": "bearman",
+    "lap_number": 44,
+    "state_time_s": 9898.35
+   },
+   "target_driver_id": "bearman",
+   "eligible": false,
+   "reason": "MISSING_DRIVER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r22-R",
+   "anchor": {
+    "driver_id": "albon",
+    "lap_number": 16,
+    "state_time_s": 5016.911
+   },
+   "target_driver_id": "albon",
+   "eligible": true,
+   "reason": "SIMULATION_CAPABLE",
+   "stage": "EARLY",
+   "decision_lap": 16,
+   "state_identity": "be052acc9f0420b2aa4c12c482a5c6e8974b063de100ccd600d35041812604d7",
+   "leader_laps_done": 16,
+   "scheduled_laps": 50,
+   "roster_size": 20
+  },
+  {
+   "race_id": "2024-r22-R",
+   "anchor": {
+    "driver_id": "zhou",
+    "lap_number": 33,
+    "state_time_s": 6710.743
+   },
+   "target_driver_id": "zhou",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r23-R",
+   "anchor": {
+    "driver_id": "hulkenberg",
+    "lap_number": 18,
+    "state_time_s": 5076.656
+   },
+   "target_driver_id": "hulkenberg",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r23-R",
+   "anchor": {
+    "driver_id": "russell",
+    "lap_number": 37,
+    "state_time_s": 6838.153
+   },
+   "target_driver_id": "russell",
+   "eligible": false,
+   "reason": "UNSUPPORTED_TRACK_STATE",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r24-R",
+   "anchor": {
+    "driver_id": "colapinto",
+    "lap_number": 18,
+    "state_time_s": 5145.861
+   },
+   "target_driver_id": "colapinto",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  },
+  {
+   "race_id": "2024-r24-R",
+   "anchor": {
+    "driver_id": "lawson",
+    "lap_number": 37,
+    "state_time_s": 6875.939
+   },
+   "target_driver_id": "lawson",
+   "eligible": false,
+   "reason": "STALE_ROSTER_OBSERVATION",
+   "stage": null,
+   "decision_lap": null,
+   "state_identity": null
+  }
+ ]
+}

@@ -181,7 +181,18 @@ def test_no_serving_changes():
     import subprocess
     out = subprocess.run(["git", "status", "--short"], capture_output=True,
                          text=True, cwd=ROOT).stdout
+    # V3.6F/G charters admit exactly the Strategy 2.0 integration and
+    # frontend-replacement paths; anything else touching api/,
+    # frontend/ or serving still fails.
+    allowed = ("api/v2_strategy_v3_", "api/main.py",
+               "frontend/app/strategy/page.tsx",
+               "frontend/features/strategy/components/Strategy",
+               "frontend/features/strategy/hooks/useStrategy",
+               "frontend/features/strategy/lib/strategy",
+               "frontend/lib/v2.ts")
     for line in out.splitlines():
+        if line[3:].startswith(allowed):
+            continue
         assert "api/" not in line and "frontend/" not in line \
             and "serving" not in line, line
 

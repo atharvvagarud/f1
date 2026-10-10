@@ -45,8 +45,10 @@ FRONTEND = ROOT / "frontend"
 # P12-7 adds features/replay/lib/spatialIntegration.test.ts (pure
 # replay-integration guards, node type-stripping, no corpus) = 19;
 # P12-8 adds features/replay/lib/raceStatus.test.ts (pure status
-# view-model, node type-stripping, no corpus) = 20.
-EXPECTED_TEST_FILES = 20
+# view-model, node type-stripping, no corpus) = 20; V3.6G adds
+# features/strategy/lib/strategy2Machine.test.ts (reads only tracked
+# Strategy2 sources; copy/contract guards, no corpus) = 21.
+EXPECTED_TEST_FILES = 21
 
 # Repo-root-relative frontend test files requiring the ignored corpus.
 CORPUS_DEPENDENT_TEST_FILES: tuple[tuple[str, str], ...] = (

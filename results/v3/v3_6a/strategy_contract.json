@@ -1,0 +1,345 @@
+{
+ "action_policy": {
+  "admitted_initial": [
+   "STAY_OUT",
+   "PIT_NOW:SAMPLED",
+   "PIT_NOW:SOFT",
+   "PIT_NOW:MEDIUM",
+   "PIT_NOW:HARD",
+   "PIT_NEXT_LAP:SAMPLED",
+   "PIT_NEXT_LAP:SOFT",
+   "PIT_NEXT_LAP:MEDIUM",
+   "PIT_NEXT_LAP:HARD"
+  ],
+  "candidate_space": "9 = STAY_OUTx1 + PIT_NOWx4 + PIT_NEXT_LAPx4 (frozen Phase 7 CANONICAL_CANDIDATE_SPECS)",
+  "classification": {
+   "PIT_IN_N_LAPS_N_GT_1": "REQUIRES_NEW_MODELING (multi-lap lookahead; defer to V3.7)",
+   "PIT_NEXT_LAP": "SUPPORTED_NOW",
+   "PIT_NOW": "SUPPORTED_NOW",
+   "PIT_TO_COMPOUND": "SUPPORTED_NOW (SOFT/MEDIUM/HARD/SAMPLED; sampled = simulator draw)",
+   "STAY_OUT": "SUPPORTED_NOW (may be inert vs baseline; inert is reported, not hidden)",
+   "TWO_STOP_PLAN": "REQUIRES_NEW_MODELING (plan horizon beyond single decision; V3.7)",
+   "UNDERCUT_OVERCRT_LABELS": "NOT_DEFENSIBLE as action primitives (emergent narrative labels, not interventions)"
+  },
+  "compound_semantics": "SAMPLED follows frozen simulator draw; explicit compound changes only stint sampling and future transitions; NO direct compound pace delta (frozen limitation)",
+  "default_policy": "neutral action-space coverage, NOT historical performance",
+  "default_product_set": [
+   "STAY_OUT:SAMPLED",
+   "PIT_NOW:SAMPLED",
+   "PIT_NOW:MEDIUM",
+   "PIT_NEXT_LAP:SAMPLED"
+  ],
+  "scope": "single driver, single decision at T, then frozen stochastic mechanics resume"
+ },
+ "architecture": {
+  "options_considered": [
+   "OPTION_1_EXTEND_PHASE7_DIRECTLY",
+   "OPTION_2_THIN_PAIRED_LAYER_AROUND_FROZEN_MC2_PRESERVING_PHASE7",
+   "OPTION_3_REPLACE_PHASE7"
+  ],
+  "scorecard": {
+   "OPTION_1_EXTEND_PHASE7_DIRECTLY": {
+    "complexity": "LOW",
+    "future_v37_compat": "MEDIUM (intervention mechanics stay inside engine)",
+    "regression_risk": "MEDIUM (touches frozen Phase-6/Phase-7 engine code)",
+    "runtime_cost": "SAME",
+    "scientific_safety": "MEDIUM (re-verification of frozen paths required)",
+    "testability": "MEDIUM"
+   },
+   "OPTION_2_THIN_PAIRED_LAYER_AROUND_FROZEN_MC2_PRESERVING_PHASE7": {
+    "complexity": "LOW (reuse S3/S4/S5 substrates)",
+    "future_v37_compat": "HIGH (V3.7 counterfactuals compose on same seam)",
+    "portfolio_value": "HIGH (keeps shipped /strategy working)",
+    "regression_risk": "LOW (no frozen engine edits)",
+    "runtime_cost": "SAME",
+    "scientific_safety": "HIGH (frozen engines untouched; pairing at arm level)",
+    "testability": "HIGH (arm-level determinism + parity tests)"
+   },
+   "OPTION_3_REPLACE_PHASE7": {
+    "complexity": "HIGH",
+    "future_v37_compat": "MEDIUM",
+    "portfolio_value": "NEGATIVE (discards validated S6/S7 evidence)",
+    "regression_risk": "HIGH",
+    "runtime_cost": "SAME",
+    "scientific_safety": "LOW (rebuilds validated CRN/uncertainty/objective semantics)",
+    "testability": "LOW"
+   }
+  },
+  "selected": "OPTION_2_THIN_PAIRED_LAYER_AROUND_FROZEN_MC2_PRESERVING_PHASE7",
+  "selected_rationale": "Phase 7 already implements paired CRN comparison, uncertainty, objectives, eligibility, API, and frontend against the frozen Phase-6 engine. Strategy 2.0's defensible delta is rebasing the intervention seam onto frozen MC2-E semantics plus a widened paired outcome vector. A thin layer reuses all validated substrates with lowest regression risk."
+ },
+ "baseline_semantics": {
+  "adopted_baseline": "SIMULATED_NO_INTERVENTION_REFERENCE (frozen stochastic pit mechanics from the same factual state at T; every candidate delta is measured against it)",
+  "adopted_baseline_note": "The Phase 7 baseline is NOT the observed historical future and NOT a claim about what the team should have done. It is the simulator's ordinary-mechanics reference arm.",
+  "rejected_as_baseline": [
+   "ACTUAL_HISTORICAL_ACTION (post-T knowledge; forbidden as decision-time input)",
+   "CURRENT_OBSERVED_CONTINUATION where 'observed' smuggles post-T pit events"
+  ],
+  "terminology": {
+   "decision_time_available_baseline": "SIMULATED_NO_INTERVENTION_REFERENCE, computable from causal RaceState(T) alone",
+   "historical_observed_future": "post-hoc analysis object; permitted ONLY in V3.6D case-study plausibility review, never as a decision-time input or correctness label"
+  }
+ },
+ "canonicalization": "sha256(json.dumps(payload_minus_contract_hash, sort_keys=True, separators=(',', ':')))",
+ "comparison_unit": {
+  "fields": [
+   "race_id",
+   "decision_lap",
+   "checkpoint_identity",
+   "driver_id",
+   "baseline_action=SIMULATED_NO_INTERVENTION_REFERENCE",
+   "alternative_action",
+   "causal_race_state_identity",
+   "simulation_config",
+   "paired_seed_set",
+   "outcome_differences"
+  ],
+  "key_name": "StrategyComparisonKey",
+  "note": "comparison_identity binds state identity + parameter identity + config + master seed + candidate set (Phase 7 precedent); V3.6B freezes exact field list"
+ },
+ "contract_hash": "2d29c19b47b24035f0d1c503fccc8cd4090595b4ebb2a980001d0a919b0ae59b",
+ "crn_semantics": {
+  "applies_to": "all admitted actions vs the shared baseline arm",
+  "pairing_unit": "complete valid pairs only; partial pairs counted in diagnostics, never imputed",
+  "principle": "Same starting RaceState(T), same simulation count, same seed family, same per-(seed,index) RNG stream identity; ONLY the strategy intervention differs. Shares stream identities, NOT trajectories: event ordering may legitimately diverge after the intervention (frozen CRN_ADOPTED_WITH_LIMITATIONS).",
+  "shared": [
+   "per-(seed,index) pace RNG streams",
+   "per-domain pit timing/compound/loss streams up to the intervention point",
+   "starting RaceState(T) and SimulationState",
+   "simulation count and master seed"
+  ],
+  "structural_divergence_rule": "Do NOT force identical draws where the intervention changes the stochastic structure (e.g. an extra pit stop consumes additional loss/compound draws). Forced pits reuse the frozen draw order compound->loss->stint target."
+ },
+ "eligibility_policy": {
+  "base": "frozen MC2/Phase-6 eligibility taxonomy (SIMULATION_CAPABLE vs TERMINAL_STATE, UNSUPPORTED_TRACK_STATE, WET_CONDITIONS, MISSING_TYRE_STATE, STALE_ROSTER_OBSERVATION, missing metadata/params, TEMPORAL_POLICY, RETIRED_DRIVER_PRESENT, INVALID_INPUT, RECONSTRUCTION_FAILURE, OTHER)",
+  "reason_codes": "explicit machine-readable unsupported_reason; invalid candidates get evaluated=false + static reason; never a partial table",
+  "strategy_stricter_additions": [
+   "target_driver_not_in_roster -> unsupported",
+   "decision_lap beyond race end (decision_beyond_race) -> rejected",
+   "pit_dynamics_required but unavailable -> rejected",
+   "requested compound outside {SOFT,MEDIUM,HARD,SAMPLED} -> rejected",
+   "STAY_OUT + explicit compound -> contract error"
+  ]
+ },
+ "evaluation_plan_v36d": {
+  "forbidden_label": "Did the team historically choose the same action? (must NOT be used as correctness)",
+  "questions": [
+   "deterministic reproducibility (same identity -> bit-identical comparison)",
+   "CRN variance reduction (paired SE vs unpaired SE ratio; S3 precedent median ~0.92)",
+   "seed stability across master seeds",
+   "monotonic/sanity scenarios (e.g. huge lead + PIT_NOW rarely improves win prob)",
+   "intervention sensitivity (applied/suppressed/superseded/inert rates)",
+   "race/stage coverage and unsupported-state rates",
+   "comparison consistency (subset consistency: 9-candidate vs 4-candidate agreement)",
+   "historical case-study plausibility review (post-hoc, non-supervised)"
+  ]
+ },
+ "historical_action_leakage_policy": {
+  "forbidden": [
+   "future pit events after T",
+   "future compounds after T",
+   "future lap times after T",
+   "future finishing position / status after T",
+   "future safety car / weather evolution after T"
+  ],
+  "risk_table": {
+   "adapter_inputs": "SAFE_AT_T (factual-only, null-preserving; never reads future D9/labels/results/model)",
+   "candidate_specs": "SAFE_AT_T (user assumptions at T)",
+   "engine_parameters": "SAFE_AT_T (frozen through-2024 parameter artifact; 2025 excluded from estimation)",
+   "historical_action_after_T": "POST_T_FORBIDDEN (never a decision-time input; V3.6D case-study context only)",
+   "race_results_table": "LABEL_ONLY (evaluation attribution only, never a decision input)",
+   "replay_timeline_position": "SAFE_AT_T (exact anchor; scrubber is exact, no interpolation)",
+   "simulation_futures": "SIMULATION_GROUND_TRUTH_ONLY (counterfactual estimates, not observed truth)",
+   "status_corpus_retired_transitions": "SAFE_AT_T iff retired_known_at(T) with t<=T; anything after T POST_T_FORBIDDEN",
+   "v35_probabilities": "POST_T_FORBIDDEN as decision input (no V3.5 features enter the simulator; C-role reads frozen V3.5 outputs for consistency audit only)"
+  }
+ },
+ "intervention_semantics": {
+  "consequences_simulated_not_set": [
+   "track position after rejoin (emerges from pit loss + frozen mechanics)",
+   "future lap times and pace evolution",
+   "finish order, winner, positions, points",
+   "execution status (applied/suppressed/superseded/inert/race-end-cancelled)"
+  ],
+  "direct_intervention_variables": [
+   "forced pit-stop event for target at L_T+1 (PIT_NOW) or L_T+2 (PIT_NEXT_LAP, unless baseline pits first -> SUPERSEDED)",
+   "suppression of target baseline pit decision once at L_T+1 (STAY_OUT)",
+   "tyre compound for the forced stint (explicit or simulator-sampled)",
+   "tyre age reset to 0 on forced stop; target_age otherwise untouched",
+   "pit-stop count increment on forced stop"
+  ],
+  "principle": "Set ONLY the minimal causal intervention variables at the decision point. NEVER manually set downstream outcomes (positions, gaps, times); they must emerge from frozen MC2 mechanics."
+ },
+ "mc2_identity": {
+  "accepted_simulator": "MC2-E (E_AR1_RESIDUAL)",
+  "commit": "197979d40af0c9dbf90667781d9c83e41613b047",
+  "eligibility_subset": "MC2 unsupported => Strategy unsupported (no fallback)",
+  "freeze": "results/v3/v3_2_freeze.json (schema v3.2-freeze-v1)",
+  "intervention_seam": "MonteCarloEngine.run(..., intervention=...) + collect_index_outcomes=True; frozen draw order compound->loss->stint target; intervention=None byte-identical to Phase-6",
+  "production_demo_count": 5000,
+  "tag": "v3.2-monte-carlo-2"
+ },
+ "non_goals": [
+  "implement Strategy 2.0",
+  "modify Phase 7 / MC2 / V3.5 runtime behavior",
+  "fit/train/tune models or generate predictions",
+  "generate a new simulation corpus",
+  "frontend features, API contract changes, serving changes, new dependencies",
+  "blend/average/normalize V3.5 with MC2",
+  "counterfactual engine V3.7 scope",
+  "future information at decision time T",
+  "optimize against 2025",
+  "commit/tag/push"
+ ],
+ "outcome_measures": {
+  "classification": {
+   "DNF_RETIREMENT_OUTCOMES": "DERIVABLE (retired entries exist in FinishOrder schema; frozen engine emits no DNFs -> report as not-modeled, never zero-filled)",
+   "DOWNSIDE_RISK": "DERIVABLE (paired P(worse finish) / P(finish loss >= k); V3.6B freezes k)",
+   "EXPECTED_FINISH_DIFF": "PRIMARY_CANDIDATE (paired mean of base_pos - cand_pos)",
+   "EXPECTED_POINTS": "REQUIRES_EXTENSION (points not in frozen DriverSimulationSummary; needs audited points table -> V3.6B decision)",
+   "MEDIAN_FINISH_AND_QUANTILES": "DERIVABLE (paired per-index position diffs; report with MC uncertainty)",
+   "PODIUM_FREQ_DIFF": "PRIMARY_CANDIDATE (paired)",
+   "POSITION_GAIN_LOSS_DIST": "DERIVABLE (paired per-index diff distribution)",
+   "TOP10_FREQ_DIFF": "SECONDARY (paired)",
+   "TOP5_FREQ_DIFF": "SECONDARY (paired)",
+   "WIN_FREQ_DIFF": "PRIMARY_CANDIDATE (paired)"
+  }
+ },
+ "parent": {
+  "commit": "6df5d41d3ebead9a1c9b4f0f40ed20a21ce0bff1",
+  "tag": "v3.5-outcome-distribution"
+ },
+ "phase7_audit_identity": {
+  "actions": [
+   "STAY_OUT",
+   "PIT_NOW",
+   "PIT_NEXT_LAP"
+  ],
+  "candidate_space": 9,
+  "comparison": "v1 (DELTA_POLICY complete_valid_pairs; single driver; baseline run once, K candidates paired)",
+  "contracts": {
+   "candidate": "s4-candidates-v1",
+   "comparison": "v1",
+   "intervention": "v1",
+   "objective": "v1",
+   "paired": "s3-paired-v1",
+   "strategy": "s1",
+   "uncertainty": "v1"
+  },
+  "crn": "CRN_ADOPTED_WITH_LIMITATIONS (per-(seed,index) streams; shares environment not trajectory)",
+  "engine": "frozen Phase-6 MonteCarloEngine r5 + pit dynamics r6 (NOT YET MC2-E kernel; rebase is Strategy 2.0's core delta)",
+  "estimator": "paired mean over complete valid pairs (d_win, d_podium, d_finish=base-cand)",
+  "freeze_manifest": "docs/PHASE7_STRATEGY_FREEZE_MANIFEST.json",
+  "objectives": [
+   "MAXIMIZE_WIN_PROBABILITY",
+   "MAXIMIZE_PODIUM_PROBABILITY",
+   "MINIMIZE_EXPECTED_FINISH"
+  ],
+  "probability_semantics": "MONTE_CARLO_FREQUENCY",
+  "served": "149 races 2018-2024; 2025 refused (404)",
+  "tag": "v2-strategy-engine-phase7",
+  "uncertainty": "MONTE_CARLO_SAMPLING_UNCERTAINTY_ONLY (paired SE + paired percentile bootstrap B=2000, MIN_VALID_PAIRS_FOR_CI=30)",
+  "wording": "no best/recommended/optimal; point-estimate leader with not-a-recommendation disclaimer (FORBIDDEN_STRATEGY_COPY enforced)"
+ },
+ "primary_outcome_policy": {
+  "decision": "NO_SINGLE_UNIVERSAL_PRIMARY_UTILITY",
+  "presentation": "trade-off vector per alternative (delta win pp, delta podium pp, delta Top5 pp, delta expected finish pos, downside-risk delta), each with paired 95% MC interval + classification; objective-specific point-estimate leader labeled per explicit objective, never ranked as best",
+  "rationale": "Reducing strategy to one scalaror synthetic score is scientifically undesirable; no arbitrary utility weights are admitted in V3.6",
+  "synthetic_score": "FORBIDDEN (no STRATEGY SCORE; objectives.py precedent: metrics are never combined into a weighted score)"
+ },
+ "prohibited_fusion": [
+  "no averaging of V3.5 marginals with MC2 frequencies",
+  "no field normalization of V3.5 outputs",
+  "no weighted blending / stacking / heuristic score fusion",
+  "V3.8 owns Model x Simulation consensus/fusion; V3.6 must not pre-empt it"
+ ],
+ "schema_version": "v3.6a-strategy-contract-v1",
+ "scientific_question": "Given a causal race state at decision time T, how do plausible strategy interventions change the simulated distribution of future race outcomes under paired stochastic futures?",
+ "simulation_count_recommendation": {
+  "adopt": "5000 paired futures per action (baseline + each admitted alternative share one seed family)",
+  "feasibility_note": "S7 measured 10k/3cands ~48.5s sync; 5k/4cands is the heavier-but-bounded default; V3.6F owns async/cache/demo policy",
+  "rationale": "aligns with frozen MC2 production/demo count; V3.2E convergence TV(5k->10k)=0.0046 within gate; CRN variance reduction lowers required N vs unpaired"
+ },
+ "stage_plan": [
+  "V3.6A landscape + scientific contract (this contract)",
+  "V3.6B action/state/intervention contract + eligibility (StrategyEligibility + StrategyComparisonKey freeze)",
+  "V3.6C paired MC2 strategy engine (thin layer; MC2-E rebase)",
+  "V3.6D historical scientific evaluation + stability/coverage (designed in A, executed in D)",
+  "V3.6E controlled refinement IF WARRANTED (skipped unless D finds defensible refinement)",
+  "V3.6F runtime/API/cache integration",
+  "V3.6G frontend Strategy 2.0 experience",
+  "V3.6H final validation + freeze"
+ ],
+ "temporal_safety": [
+  "exact anchor required; no interpolation/nearest-state",
+  "RETROSPECTIVE_PRODUCT execution policy; through-2024 frozen params",
+  "2018-2024 scope; 2025 refused",
+  "comparison_identity binds state+params+config+seed+candidates",
+  "no historical future used at decision time"
+ ],
+ "uncertainty_semantics": {
+  "available": "AVAILABLE / INSUFFICIENT_PAIRS(<30, CI withheld, point+SE kept) / NO_VALID_PAIRS",
+  "method": "paired SE (std(ddof=1)/sqrt(n)) + paired percentile bootstrap (B=2000, 95%, linear quantile, complete pair as unit); bootstrap seed derived per (substrate,subject,metric), never touches sim RNG",
+  "terminology": "MONTE_CARLO_SAMPLING_UNCERTAINTY_ONLY. NEVER 'model uncertainty', NEVER 'real-world confidence interval'. UI label: '95% MC interval'."
+ },
+ "unsupported_state_policy": "UNSUPPORTED != NEGATIVE RESULT. Return explicit unsupported_reason (200 supported=false) or evaluated=false + static reason per candidate. NEVER fabricate an alternative, fall back to constants, or silently use stale/future data.",
+ "v35_identity": {
+  "champion": "LOGISTIC_CONTROL",
+  "commit": "6df5d41d3ebead9a1c9b4f0f40ed20a21ce0bff1",
+  "probability_semantics": "PER_DRIVER_MARGINAL (NOT a joint finishing-order distribution; NOT field-normalized; NOT exact P1-P20 probabilities; NOT MC2 frequencies)",
+  "research_candidate": "XGB_E (NONLINEAR_RESEARCH_CANDIDATE, not promoted)",
+  "scientific_card_identity": "8d3a8d2ec6aef5d4bb50306036e100b0db6c83386c19ec8f7ce07ae25714446d",
+  "serving": "NONE",
+  "tag": "v3.5-outcome-distribution",
+  "task": "ordered_cumulative_finish_thresholds"
+ },
+ "v35_role": {
+  "primary": "C_VALIDATION_CONSISTENCY_SIGNAL",
+  "scorecard": {
+   "A_PRIMARY_OBJECTIVE": {
+    "causal_interpretation": "FAIL (observational marginals, not interventional)",
+    "scientific_defensibility": "FAIL",
+    "verdict": "REJECTED"
+   },
+   "B_SECONDARY_OUTCOME_SIGNAL": {
+    "causal_interpretation": "FAIL (same as A, weaker)",
+    "double_counting_risk": "HIGH (mixed with MC2 frequencies)",
+    "verdict": "REJECTED"
+   },
+   "C_VALIDATION_CONSISTENCY_SIGNAL": {
+    "causal_interpretation": "N/A (diagnostic, not causal input)",
+    "double_counting_risk": "NONE (no computation path)",
+    "implementation_complexity": "LOW (offline audit in V3.6D)",
+    "mc2_relationship": "CLEAN (separate systems compared, never combined)",
+    "scientific_defensibility": "PASS (detects simulator-vs-model disagreement)",
+    "semantic_compatibility": "PASS (both estimate per-driver outcome tendency, compared as diagnostics)",
+    "temporal_safety": "PASS (frozen V3.5 outputs read offline; no leakage into simulator)",
+    "verdict": "SELECTED"
+   },
+   "D_UI_CONTEXT_ONLY": {
+    "supporting_use": "ADMITTED as secondary display context with marginal-not-joint labeling; never a decision input",
+    "verdict": "ADMITTED_SUPPORTING"
+   },
+   "E_NO_ROLE": {
+    "portfolio_value": "LOW (discards a just-built diagnostic)",
+    "verdict": "REJECTED (C dominates)"
+   }
+  },
+  "supporting_uses": [
+   "D_UI_CONTEXT_ONLY with explicit PER-DRIVER MARGINAL labeling"
+  ],
+  "v38_note": "Any learned/empirical combination of V3.5 with MC2 is owned by V3.8, not V3.6"
+ },
+ "v37_boundary": {
+  "rule": "V3.6 admits ONLY the closed action set in action_policy; everything else routes to V3.7",
+  "v36_owns": "strategy intervention comparison: STAY_OUT / PIT_NOW / PIT_NEXT_LAP (+compound) for the target driver from causal RaceState(T) under paired MC2 futures",
+  "v37_owns": [
+   "remove/alter safety car",
+   "change weather",
+   "change another driver's behavior",
+   "change historical collisions",
+   "arbitrary race-state edits"
+  ]
+ },
+ "v38_boundary": "V3.8 owns Model x Simulation consensus/fusion including any learned/empirical combination of V3.5 marginals with MC2 frequencies. V3.6 uses V3.5 ONLY as C-role consistency signal and D-role UI context."
+}

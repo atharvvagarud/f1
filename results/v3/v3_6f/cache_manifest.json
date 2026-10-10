@@ -1,0 +1,72 @@
+{
+  "comparison_key_version": "v3.6b-comparison-key-v1",
+  "engine_version": "v3.6c-engine-v1",
+  "entries": [
+    {
+      "alternative_count": 9,
+      "anchor_driver_id": "alonso",
+      "anchor_lap_number": 44,
+      "anchor_state_time_s": 4004.408,
+      "artifact_hash": "b6de67c7332117fb35b59099a8045a4e768bc1da4caeeb773d2dfc260bc6ef3d",
+      "cache_key": "83ee2d7e8f77aed79a9b7052d8e36ca6c5618c45fb2a2f686d529f672e898192",
+      "comparison_identities": [],
+      "master_seed": 20240101,
+      "race_id": "2018-r11-R",
+      "simulation_count": 5000,
+      "status": "ok",
+      "supported": false,
+      "target_driver_id": "alonso",
+      "unsupported_reason": "wet_compound_state"
+    },
+    {
+      "alternative_count": 9,
+      "anchor_driver_id": "perez",
+      "anchor_lap_number": 30,
+      "anchor_state_time_s": 6745.686,
+      "artifact_hash": "d1747d72dff0f547e7daee7ce82b16b000b681fbcfba5ac4db348bf7f12ebd62",
+      "cache_key": "89695f8b5b7690b75751729cf58e3b6ac39d3d156c252bddba8485a45ad42672",
+      "comparison_identities": [
+        "2ce095d3e343efb85abe846d7be2fa08a2b3daec22bae5d9b984c1cf35f3a80f",
+        "4ca93ae90ea72ad607cc537a133c4675d079e3cacd2ca1bafd1dee1f1e0d9459",
+        "52060097bb48dabcd010f5a386a7638ce2d3146dc9da89109eb865c8d04ae9c1",
+        "925a102ec9e71a941dd52b833bec0f64507d0d9bd925ea4c63efe24ae7d284f8",
+        "a7bff0628beb159e5d5a447d9b4d37df02754f087ba9d7748beae4316aa21a21",
+        "da2053c88218a8109803bacab7f645277e7028658b15783dcb1c125c18c0ca5a",
+        "f7f81d648d39469fd7617f16382040d90b616f3fa5f94eb8c25e977b94095fc8",
+        "ff62eb6216abd1303752871de3b2090bed3f01eedf1478609a174c36f1590395",
+        "ff95b2d03c3e638a93b1c99faef34f16bdf2e88a1ef45d6e7b171ac80d01833d"
+      ],
+      "master_seed": 20240101,
+      "race_id": "2022-r01-R",
+      "simulation_count": 5000,
+      "status": "ok",
+      "supported": true,
+      "target_driver_id": "perez",
+      "unsupported_reason": null
+    }
+  ],
+  "entry_count": 2,
+  "execution_contract_version": "v3.6b-strategy-execution-contract-v1",
+  "generation": {
+    "anchor_count": 2,
+    "artifact_count": 2,
+    "failures": [],
+    "seed": 20240101,
+    "skipped_existing": 0,
+    "wall_s": 60.98397525004111
+  },
+  "manifest_schema": "v3.6f-strategy-manifest-v1",
+  "mc2_identity": "MC2-E (E_AR1_RESIDUAL)",
+  "outcome_schema_version": "v3.6b-outcome-vector-v1",
+  "reference_kind": "SIMULATED_NO_INTERVENTION_REFERENCE",
+  "simulation_count": 5000,
+  "status": "fixture",
+  "trade_off_fields": [
+    "delta_win_frequency",
+    "delta_podium_frequency",
+    "delta_top5_frequency",
+    "delta_top10_frequency",
+    "delta_expected_finish",
+    "delta_downside_probability"
+  ]
+}

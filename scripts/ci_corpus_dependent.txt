@@ -1032,3 +1032,133 @@ tests/test_v3_2n_final_validation.py::test_api_supported_unsupported
 tests/test_v3_2n_final_validation.py::test_no_runtime_network
 tests/test_v3_2n_final_validation.py::test_replay_checkpoint_synchronization
 tests/test_v3_2n_final_validation.py::test_scientific_card_completeness
+
+# V3.6H reclassification (clean-checkout simulation 2026-10-09: each node
+# fails/errors with corpus-absence signatures without data/v2+data/v3 and
+# passes where the ignored corpus exists; V3.3/V3.4/V3.5/V3.6 backlog —
+# EXPECTED_COLLECTED was last reclassified at V3.2N). TIER 3, not TIER 1.
+# tests/test_v3_6f_cache.py: needs load_v2_service() over ignored data/v2/processed canonical rows
+tests/test_v3_6f_cache.py::test_api_cached_equals_api_live
+tests/test_v3_6f_cache.py::test_cache_key_deterministic
+tests/test_v3_6f_cache.py::test_cache_key_scientific_identity_sensitive
+tests/test_v3_6f_cache.py::test_cache_miss_explicit
+tests/test_v3_6f_cache.py::test_cache_roundtrip_exact
+tests/test_v3_6f_cache.py::test_cached_subset_identity_matches_direct_subset
+tests/test_v3_6f_cache.py::test_catalogue_deterministic_and_served
+tests/test_v3_6f_cache.py::test_corrupt_cache_rejected
+tests/test_v3_6f_cache.py::test_live_disabled_cache_only
+tests/test_v3_6f_cache.py::test_no_arbitrary_cache_file_selection
+tests/test_v3_6f_cache.py::test_provenance_mismatch_rejected
+tests/test_v3_6f_cache.py::test_route_cache_miss_and_invalid_are_explicit
+tests/test_v3_6f_cache.py::test_stale_schema_rejected
+tests/test_v3_6f_cache.py::test_unsupported_cached_explicit
+# tests/test_v3_6f_runtime.py: needs load_v2_service() over ignored data/v2/processed canonical rows
+tests/test_v3_6f_runtime.py::test_2025_firewall
+tests/test_v3_6f_runtime.py::test_direct_engine_vs_api_live_parity_5000
+tests/test_v3_6f_runtime.py::test_duplicate_alternatives_rejected
+tests/test_v3_6f_runtime.py::test_empty_alternatives_rejected
+tests/test_v3_6f_runtime.py::test_live_response_contract
+tests/test_v3_6f_runtime.py::test_phase7_request_still_works
+tests/test_v3_6f_runtime.py::test_production_count_fixed_and_unexposed
+tests/test_v3_6f_runtime.py::test_stay_out_with_compound_rejected
+tests/test_v3_6f_runtime.py::test_unknown_action_rejected
+tests/test_v3_6f_runtime.py::test_unknown_mode_rejected
+tests/test_v3_6f_runtime.py::test_unsupported_state_explicit_no_zeros
+# tests/test_v3_3b_harness.py: reads ignored data/v3/v3_3b + data/v2/processed model_matrix parquets
+tests/test_v3_3b_harness.py::test_84_arm_parity
+tests/test_v3_3b_harness.py::test_family_determinism_and_serialization_tiny
+tests/test_v3_3b_harness.py::test_identity_join_and_duplicate_rejection
+tests/test_v3_3b_harness.py::test_label_parity
+tests/test_v3_3b_harness.py::test_v3_1_logistic_parity_d1
+# tests/test_v3_3c_screening.py: reads ignored data/v3/v3_3c OOF parquets
+tests/test_v3_3c_screening.py::test_2025_absence_from_scientific_artifacts
+tests/test_v3_3c_screening.py::test_all_families_and_folds_executed
+tests/test_v3_3c_screening.py::test_baseline_alignment
+tests/test_v3_3c_screening.py::test_metric_determinism
+tests/test_v3_3c_screening.py::test_oof_probability_bounds
+tests/test_v3_3c_screening.py::test_oof_row_set_equality
+tests/test_v3_3c_screening.py::test_oof_target_equality
+tests/test_v3_3c_screening.py::test_oof_uniqueness
+tests/test_v3_3c_screening.py::test_stage_partition_integrity
+# tests/test_v3_3d_refinement.py: reads ignored data/v3/v3_3d parquets
+tests/test_v3_3d_refinement.py::test_2025_absence
+tests/test_v3_3d_refinement.py::test_oof_alignment
+tests/test_v3_3d_refinement.py::test_probability_bounds
+tests/test_v3_3d_refinement.py::test_raw_vs_calibrated_identity
+# tests/test_v3_3e_holdout.py: reads ignored data/v3/v3_3e prediction parquets
+tests/test_v3_3e_holdout.py::test_baseline_row_alignment
+tests/test_v3_3e_holdout.py::test_no_field_normalization
+tests/test_v3_3e_holdout.py::test_prediction_artifact_hash
+tests/test_v3_3e_holdout.py::test_probability_bounds
+tests/test_v3_3e_holdout.py::test_xgb_row_alignment
+# tests/test_v3_3f_freeze.py: reads ignored data/v3/v3_3e prediction parquets
+tests/test_v3_3f_freeze.py::test_headline_recomputation_from_frozen_predictions
+tests/test_v3_3f_freeze.py::test_no_alternate_post_reveal_prediction_artifact
+tests/test_v3_3f_freeze.py::test_prediction_artifact_hash_authoritative
+tests/test_v3_3f_freeze.py::test_race_level_counts_reproduce
+tests/test_v3_3f_freeze.py::test_row_permutation_invariance
+# tests/test_v3_4b_development.py: reads ignored data/v3/v3_4b prediction parquets
+tests/test_v3_4b_development.py::test_no_field_normalization
+tests/test_v3_4b_development.py::test_prediction_hashes
+tests/test_v3_4b_development.py::test_row_order_permutation_invariance
+tests/test_v3_4b_development.py::test_w0_logistic_identity
+tests/test_v3_4b_development.py::test_w1_xgb_identity
+# tests/test_v3_4c_selection.py: reads ignored data/v3/v3_4b prediction parquets
+tests/test_v3_4c_selection.py::test_b_prediction_hash_verification
+tests/test_v3_4c_selection.py::test_identity_based_alignment
+# tests/test_v3_4d_recipe.py: reads ignored data/v3/v3_4d recipe parquets
+tests/test_v3_4d_recipe.py::test_b_w02_metric_parity
+tests/test_v3_4d_recipe.py::test_b_w02_prediction_parity
+tests/test_v3_4d_recipe.py::test_deterministic_transformation
+tests/test_v3_4d_recipe.py::test_duplicate_identity_rejection
+tests/test_v3_4d_recipe.py::test_missing_identity_rejection
+tests/test_v3_4d_recipe.py::test_probability_bounds
+tests/test_v3_4d_recipe.py::test_row_order_permutation_invariance
+# tests/test_v3_4e_evaluation.py: reads ignored data/v3/v3_4e evaluation parquets
+tests/test_v3_4e_evaluation.py::test_24_races
+tests/test_v3_4e_evaluation.py::test_26692_rows
+tests/test_v3_4e_evaluation.py::test_identity_alignment
+tests/test_v3_4e_evaluation.py::test_prediction_artifact_hash
+# tests/test_v3_5b_dataset.py: reads ignored data/v3/v3_5b + data/v2/processed parquets
+tests/test_v3_5b_dataset.py::test_classified_finisher_semantics
+tests/test_v3_5b_dataset.py::test_classified_retirement_semantics
+tests/test_v3_5b_dataset.py::test_dns_no_state_behavior
+tests/test_v3_5b_dataset.py::test_future_retirement_not_excluded
+tests/test_v3_5b_dataset.py::test_label_nesting_zero_violations
+tests/test_v3_5b_dataset.py::test_no_learned_predictions
+tests/test_v3_5b_dataset.py::test_no_model_fitted
+tests/test_v3_5b_dataset.py::test_outcome_grain_unique
+tests/test_v3_5b_dataset.py::test_permutation_invariance
+tests/test_v3_5b_dataset.py::test_state_identity_unique
+tests/test_v3_5b_dataset.py::test_state_target_alignment_exact
+tests/test_v3_5b_dataset.py::test_target_values_binary
+tests/test_v3_5b_dataset.py::test_unclassified_tail_semantics
+# tests/test_v3_5c_harness.py: reads ignored data/v3/v3_5c OOF parquets
+tests/test_v3_5c_harness.py::test_2025_rejected
+tests/test_v3_5c_harness.py::test_climatology_train_only
+tests/test_v3_5c_harness.py::test_coherent_input_unchanged
+tests/test_v3_5c_harness.py::test_derived_bands_valid
+tests/test_v3_5c_harness.py::test_grid_causal
+tests/test_v3_5c_harness.py::test_no_oof_overlap
+tests/test_v3_5c_harness.py::test_oof_seasons_only_2022_2023_2024
+tests/test_v3_5c_harness.py::test_oof_unique_identities
+tests/test_v3_5c_harness.py::test_position_persistence_causal
+tests/test_v3_5c_harness.py::test_prediction_identity_alignment
+tests/test_v3_5c_harness.py::test_projected_probabilities_coherent
+tests/test_v3_5c_harness.py::test_projection_exact_b_implementation
+tests/test_v3_5c_harness.py::test_race_macro_aggregation
+tests/test_v3_5c_harness.py::test_raw_probabilities_bounded
+tests/test_v3_5c_harness.py::test_row_permutation_invariance
+# tests/test_v3_5d_screening.py: reads ignored data/v3/v3_5d OOF parquets
+tests/test_v3_5d_screening.py::test_2025_rejected
+tests/test_v3_5d_screening.py::test_oof_fold_disjoint
+tests/test_v3_5d_screening.py::test_oof_identity_unique
+tests/test_v3_5d_screening.py::test_prediction_row_permutation_invariant
+tests/test_v3_5d_screening.py::test_projected_coherent
+tests/test_v3_5d_screening.py::test_projection_exact_b_utility
+tests/test_v3_5d_screening.py::test_raw_probabilities_finite_bounded
+# tests/test_v3_5e_refinement.py: reads ignored data/v3/v3_5e parquets
+tests/test_v3_5e_refinement.py::test_oof_schema_and_no_serving_changes
+# tests/test_v3_5f_evaluation.py: reads ignored data/v3/v3_5f prediction parquets
+tests/test_v3_5f_evaluation.py::test_identity_alignment_exact
+tests/test_v3_5f_evaluation.py::test_probabilities_bounded_and_coherent

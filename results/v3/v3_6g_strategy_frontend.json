@@ -1,0 +1,15 @@
+{
+ "build": "tsc/eslint/next-build PASS",
+ "lineage": {
+  "a": "2d29c19b47b24035f0d1c503fccc8cd4090595b4ebb2a980001d0a919b0ae59b",
+  "b": "df821fe13ed587d7a086e93b8ee53a1670130299ca92c5a668608add443e3644",
+  "c_engine": "v3.6c-engine-v1",
+  "d_protocol": "0c2bf7fb6e46a948d811587a64aac89cb10cfe0bf67485ed9ff3b457d64088fc",
+  "d_verdict": "V3.6D COMPLETE \u2014 REFINEMENT NOT WARRANTED \u2014 READY FOR V3.6F",
+  "e": "SKIPPED",
+  "f_verdict": "V3.6F COMPLETE \u2014 RUNTIME/API/CACHE INTEGRATED \u2014 READY FOR V3.6G"
+ },
+ "tests": "253/253 frontend + F regression green",
+ "verdict": "V3.6G COMPLETE \u2014 STRATEGY FRONTEND VALIDATED \u2014 READY FOR V3.6H",
+ "visual": "1600/820/390 verified, no overflow"
+}
