@@ -1,0 +1,108 @@
+{
+  "lineage": {
+    "max_abs_diff": 0.001975429808245839,
+    "mean_abs_diff": 1.2589258515340117e-05,
+    "note": "tracked lineage; agreement never counted twice",
+    "relation": "SHARED_OR_DERIVED_LINEAGE"
+  },
+  "pathology": {
+    "P1": 0,
+    "P10": 0,
+    "P11": 0,
+    "P12": 0,
+    "P13": 0,
+    "P14": 0,
+    "P15": 0,
+    "P16": 0,
+    "P17": 0,
+    "P18": 0,
+    "P19": 0,
+    "P2": 0,
+    "P20": 0,
+    "P3": 0,
+    "P4": 0,
+    "P5": 0,
+    "P6": 0,
+    "P7": 0,
+    "P8": 0,
+    "P9": 0
+  },
+  "protocol_identity": "9cbe85de7c8f0553a098a9a03d016beed80159c785b566c312502d3bf10f2ed1",
+  "reproducibility": {
+    "gap_recompute_match": 12,
+    "seasons": [
+      2022,
+      2023
+    ],
+    "stages": [
+      "EARLY",
+      "LATE",
+      "MID"
+    ],
+    "subset_n": 12
+  },
+  "secondary": {
+    "log_vs_v35_abs": 1.2589258515340117e-05,
+    "log_vs_v35_max": 0.001975429808245839,
+    "log_vs_xgb_abs": 0.01750900589589284,
+    "xgb_vs_mc2_abs": 0.027531437430460243
+  },
+  "stage_groups": {
+    "EARLY": {
+      "leader_mismatch": 4,
+      "mean_spearman": 0.5983115948176543,
+      "n_groups": 7
+    },
+    "LATE": {
+      "leader_mismatch": 0,
+      "mean_spearman": 0.6017787056781171,
+      "n_groups": 3
+    },
+    "MID": {
+      "leader_mismatch": 1,
+      "mean_spearman": 0.730622690553431,
+      "n_groups": 4
+    }
+  },
+  "support_bias": {
+    "comparable_by_race": {
+      "2022-r03-R": 20,
+      "2022-r11-R": 40,
+      "2022-r19-R": 1,
+      "2023-r05-R": 58,
+      "2023-r13-R": 20,
+      "2023-r21-R": 20,
+      "2024-r07-R": 60,
+      "2024-r15-R": 58
+    },
+    "comparable_by_season": {
+      "2022": 61,
+      "2023": 98,
+      "2024": 118
+    },
+    "comparable_by_stage": {
+      "EARLY": 141,
+      "LATE": 56,
+      "MID": 80
+    },
+    "excluded_rows": 23,
+    "exclusion_reasons": {
+      "PREP_REFUSAL": 19,
+      "ZERO_VALID_TRIALS": 4
+    },
+    "selected_races": [
+      "2022-r03-R",
+      "2022-r11-R",
+      "2022-r19-R",
+      "2023-r05-R",
+      "2023-r13-R",
+      "2023-r21-R",
+      "2024-r07-R",
+      "2024-r15-R"
+    ]
+  },
+  "topk": {
+    "mean_jaccard_top3": 0.5583333333333333,
+    "n_groups": 14
+  }
+}

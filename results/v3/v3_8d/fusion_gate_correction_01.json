@@ -1,0 +1,13 @@
+{
+  "correction": "correction_01",
+  "decision": "FUSION_RESEARCH_WARRANTED",
+  "evidence": {
+    "COMPLEMENTARITY": "PASS",
+    "COVERAGE_ADEQUACY": "PASS",
+    "DISTINCT_SIGNAL": "PASS",
+    "ROBUSTNESS": "PASS",
+    "SEMANTIC_VALIDITY": "PASS"
+  },
+  "protocol_identity": "9cbe85de7c8f0553a098a9a03d016beed80159c785b566c312502d3bf10f2ed1",
+  "schema": "v3.8d-fusion-gate-v1+correction-01"
+}

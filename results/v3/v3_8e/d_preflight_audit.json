@@ -1,0 +1,124 @@
+{
+  "bootstrap_reproduction": {
+    "ci95_recomputed": [
+      -0.5367011220527186,
+      -0.0007417371736964612
+    ],
+    "ci95_stored": [
+      -0.5367011220527186,
+      -0.0007417371736964612
+    ],
+    "exact_match": true,
+    "frozen_implementation": "scripts/v3_8d_run.py lines 420-441",
+    "mean_recomputed": -0.15065782073566983,
+    "mean_stored": -0.15065782073566983,
+    "statistic": "row-pooled mean of per-row loss_advantage over a race-resampled corpus: resample 8 races with replacement (seed 987654321), pool ALL rows of picked races, take the row mean. This is NOT the race-macro mean of per-race advantages, which is why the bootstrap mean (-0.151) differs from the race-macro mean advantage (-0.233): races contribute proportional to their row counts under resampling."
+  },
+  "definition": "advantage = ll_log - ll_mc2 per driver-row (binary WIN log loss, eps 1e-15 evaluation-only clipping). advantage > 0 => MC2 lower loss (MC2 better). advantage < 0 => Logistic lower loss (Logistic better). Per-race advantage = row mean of advantage within the race.",
+  "doc_corrections": [
+    "docs/V3_8D_HISTORICAL_CONSENSUS_EVALUATION.md MC2-quality paragraph: 'MC2 better in 7/8 races' corrected to 'Logistic lower loss in 7/8 races; MC2 lower in exactly 1 race (2023-r05-R)', with inline correction note citing this audit.",
+    "docs/V3_8D_HISTORICAL_CONSENSUS_EVALUATION.md disagreement-x-outcome paragraph: 'per-race advantage splits 1-7 for Logistic-MC2' corrected to 'splits 7-1 for Logistic-MC2 (Logistic lower loss in 7 races, MC2 lower in 2023-r05-R only)'.",
+    "docs/V3_8D_HISTORICAL_CONSENSUS_EVALUATION.md complementarity paragraph: '(1 vs 7)' corrected to '(7 vs 1, Logistic vs MC2)' with symmetric-gate note.",
+    "docs/V3_8D_HISTORICAL_CONSENSUS_EVALUATION.md exploratory paragraph: 'race-macro reverses the ranking' corrected to 'race-macro agrees with pooled on ranking direction (race-macro mean advantage -0.233, same direction as pooled)'.",
+    "docs/V3_8D_HISTORICAL_CONSENSUS_EVALUATION.md limitations: 'logistic-side complementarity is one race' corrected to 'mc2-side complementarity is one race (2023-r05-R)'."
+  ],
+  "explanation": "All three statements are mutually consistent once the aggregation/statistic is exact. Per-race advantages show Logistic strictly better in 7/8 races (only 2023-r05-R favors MC2, +0.0128). The bootstrap mean (-0.151) is NEGATIVE, i.e. favors Logistic under the stated sign convention, and its CI barely excludes zero on the Logistic side. The report sentence 'MC2 better in 7/8 races' is a wording/label error repeating the sign-swapped log_better/mc2_better counter labels, not an empirical contradiction. The 'race-macro reverses the ranking' exploratory sentence is likewise incorrect: race-macro mean advantage is -0.233 (Logistic better), same direction as pooled (-0.136 pooled-mean difference). There is no pooled-vs-macro ranking reversal; the outlier inflates the pooled MC2 mean but does not flip either ranking.",
+  "gate_impact": "NONE. COMPLEMENTARITY requires each mechanism strictly better in >=1 race AND both per-row advantage signs present. The symmetric criterion holds under either labelling (7 vs 1 satisfies >=1 each; row signs {-1, 1} present). Gate decision FUSION_RESEARCH_WARRANTED is unchanged. No empirical predictions, population, gate criteria, or gate decision were altered.",
+  "method": "EXISTING D artifacts only: results/v3/v3_8d/per_row_records.json (277 rows) + results/v3/v3_8d/historical_evaluation.json + frozen scripts/v3_8d_run.py implementation. Recomputed per-row binary log loss with the identical eps=1e-15 evaluation-only clipping, re-derived per-race means, re-derived the race-macro mean, and re-executed the frozen bootstrap procedure verbatim (seed 987654321, B=2000, race resample + row-pooled mean). NO MC2 rerun performed; run_mc2 never invoked.",
+  "phase": "V3.8E",
+  "pooled_means": {
+    "mean_ll_log_recomputed": 0.049556,
+    "mean_ll_log_stored": 0.04955567165096611,
+    "mean_ll_mc2_recomputed": 0.185113,
+    "mean_ll_mc2_stored": 0.1851125089765745,
+    "pooled_mean_difference_log_minus_mc2": -0.135557,
+    "ranking": "Logistic lower (better)"
+  },
+  "race_advantages": [
+    {
+      "better": "LOGISTIC",
+      "mean_ll_log": 0.162845,
+      "mean_ll_mc2": 0.223201,
+      "n": 20,
+      "race_id": "2022-r03-R",
+      "recomputed_advantage": -0.060356,
+      "stored_advantage": -0.06035589013444628
+    },
+    {
+      "better": "LOGISTIC",
+      "mean_ll_log": 0.078933,
+      "mean_ll_mc2": 0.09364,
+      "n": 40,
+      "race_id": "2022-r11-R",
+      "recomputed_advantage": -0.014707,
+      "stored_advantage": -0.01470730369326749
+    },
+    {
+      "better": "LOGISTIC",
+      "mean_ll_log": 0.00333,
+      "mean_ll_mc2": 0.006018,
+      "n": 1,
+      "race_id": "2022-r19-R",
+      "recomputed_advantage": -0.002688,
+      "stored_advantage": -0.0026884847610092956
+    },
+    {
+      "better": "MC2",
+      "mean_ll_log": 0.052997,
+      "mean_ll_mc2": 0.04016,
+      "n": 58,
+      "race_id": "2023-r05-R",
+      "recomputed_advantage": 0.012837,
+      "stored_advantage": 0.012837454234774864
+    },
+    {
+      "better": "LOGISTIC",
+      "mean_ll_log": 0.05073,
+      "mean_ll_mc2": 0.065093,
+      "n": 20,
+      "race_id": "2023-r13-R",
+      "recomputed_advantage": -0.014363,
+      "stored_advantage": -0.014362779437256348
+    },
+    {
+      "better": "LOGISTIC",
+      "mean_ll_log": 0.029344,
+      "mean_ll_mc2": 1.798378,
+      "n": 20,
+      "race_id": "2023-r21-R",
+      "recomputed_advantage": -1.769034,
+      "stored_advantage": -1.7690344036117267
+    },
+    {
+      "better": "LOGISTIC",
+      "mean_ll_log": 0.005847,
+      "mean_ll_mc2": 0.015336,
+      "n": 60,
+      "race_id": "2024-r07-R",
+      "recomputed_advantage": -0.009489,
+      "stored_advantage": -0.009489491765179749
+    },
+    {
+      "better": "LOGISTIC",
+      "mean_ll_log": 0.039366,
+      "mean_ll_mc2": 0.043822,
+      "n": 58,
+      "race_id": "2024-r15-R",
+      "recomputed_advantage": -0.004455,
+      "stored_advantage": -0.0044552531506792115
+    }
+  ],
+  "race_macro_mean_advantage": -0.2327820190398489,
+  "root_cause": "scripts/v3_8d_run.py lines 457-460: per_race_adv = mean_ll_log - mean_ll_mc2 (so v > 0 means MC2 better), but log_better counts v > 0 and mc2_better counts v < 0. The two counter labels are sign-swapped relative to the preregistered loss_advantage definition (evaluation_protocol.json scoring.loss_advantage: 'loss_logistic - loss_mc2; positive = MC2 lower loss'). historical_evaluation.json gate_inputs therefore stores log_better=1 / mc2_better=7 when the per-race table in the same artifact shows Logistic lower loss in 7 races. The D report prose repeated the swapped labels.",
+  "row_level_verification": "All 277 stored ll_log / ll_mc2 fields recompute exactly under eps=1e-15 clipping; all 8 stored per-race advantages match recomputation to <1e-9; stored pooled means match; stored bootstrap mean+CI reproduce exactly.",
+  "schema": "v3.8e-d-preflight-audit-v1",
+  "seven_of_eight_verification": "Logistic strictly better (advantage < 0) in 7/8 races; MC2 strictly better (advantage > 0) in 1/8 races (2023-r05-R). The D report sentence 'MC2 better in 7/8 races' is INCORRECT as written; the correct statement is 'Logistic better in 7/8 races'.",
+  "unchanged": [
+    "empirical predictions (all 277 per-row probabilities and losses)",
+    "population (300 candidate / 277 comparable / 23 excluded)",
+    "gate criteria and gate decision (FUSION_RESEARCH_WARRANTED)",
+    "bootstrap numbers (reproduced exactly, not edited)"
+  ],
+  "reconciliation_update": "V3.8D/E reconciliation correction 01 reclassified the combined D issue as CORRECTABLE_D_ANALYSIS_DEFECT: the D bootstrap was implemented as row-pooled resampling (mean -0.151, CI [-0.537, -0.0007], now SUPERSEDED_ROW_POOLED_BOOTSTRAP) instead of the preregistered race-level unit. The corrected race-level bootstrap (observed -0.2328, mean -0.2318, CI [-0.6751, -0.0038], 0.55% of replicates above zero) is reconstructed from the unchanged authoritative D records with zero MC2 reruns. Source predictions, population, provenance, and the FUSION_RESEARCH_WARRANTED gate are unchanged. Corrected D artifacts: results/v3/v3_8d/correction_01.json and *_correction_01.json; corrected D card 67f97c185ca8cc687b59b376bc5a48776e9290d6463a05653fa1a6e18a298985.",
+  "verdict": "CORRECTABLE_D_ANALYSIS_DEFECT"
+}

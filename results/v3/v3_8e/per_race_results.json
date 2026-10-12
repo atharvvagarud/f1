@@ -1,0 +1,67 @@
+[
+  {
+    "delta_fused_vs_log_ll": -0.0018182705788205578,
+    "delta_fused_vs_mc2_ll": 0.011019183655954307,
+    "mean_bs_fused": 0.0173721184181208,
+    "mean_bs_log": 0.01817706965075976,
+    "mean_bs_mc2": 0.012758382758620691,
+    "mean_ll_fused": 0.05117918525757635,
+    "mean_ll_log": 0.05299745583639691,
+    "mean_ll_mc2": 0.040160001601622045,
+    "n": 58,
+    "race_id": "2023-r05-R",
+    "selected_alpha": 0.9
+  },
+  {
+    "delta_fused_vs_log_ll": 6.987634973359969e-05,
+    "delta_fused_vs_mc2_ll": -0.014292903087522749,
+    "mean_bs_fused": 0.011692066408315712,
+    "mean_bs_log": 0.013432808435167495,
+    "mean_bs_mc2": 0.019354772000000003,
+    "mean_ll_fused": 0.05079996941181021,
+    "mean_ll_log": 0.05073009306207661,
+    "mean_ll_mc2": 0.06509287249933296,
+    "n": 20,
+    "race_id": "2023-r13-R",
+    "selected_alpha": 0.8
+  },
+  {
+    "delta_fused_vs_log_ll": 0.016125760626653766,
+    "delta_fused_vs_mc2_ll": -1.752908642985073,
+    "mean_bs_fused": 0.009328579386109894,
+    "mean_bs_log": 0.0037556300619571497,
+    "mean_bs_mc2": 0.078910408,
+    "mean_ll_fused": 0.04546939739750319,
+    "mean_ll_log": 0.029343636770849425,
+    "mean_ll_mc2": 1.7983780403825762,
+    "n": 20,
+    "race_id": "2023-r21-R",
+    "selected_alpha": 0.8
+  },
+  {
+    "delta_fused_vs_log_ll": 0.0,
+    "delta_fused_vs_mc2_ll": -0.009489491765179749,
+    "mean_bs_fused": 0.00021193411218228367,
+    "mean_bs_log": 0.00021193411218228367,
+    "mean_bs_mc2": 0.001523918666666667,
+    "mean_ll_fused": 0.00584680722797853,
+    "mean_ll_log": 0.00584680722797853,
+    "mean_ll_mc2": 0.01533629899315828,
+    "n": 60,
+    "race_id": "2024-r07-R",
+    "selected_alpha": 1.0
+  },
+  {
+    "delta_fused_vs_log_ll": 0.0,
+    "delta_fused_vs_mc2_ll": -0.0044552531506792115,
+    "mean_bs_fused": 0.011425347685667865,
+    "mean_bs_log": 0.011425347685667865,
+    "mean_bs_mc2": 0.014091777931034485,
+    "mean_ll_fused": 0.03936625515274193,
+    "mean_ll_log": 0.03936625515274193,
+    "mean_ll_mc2": 0.043821508303421144,
+    "n": 58,
+    "race_id": "2024-r15-R",
+    "selected_alpha": 1.0
+  }
+]

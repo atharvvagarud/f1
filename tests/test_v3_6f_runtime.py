@@ -368,6 +368,8 @@ def test_no_frontend_changes():
     # any other frontend/ change still fails.
     # V3.7H reconciliation: V3.7G charter additionally admits exactly the
     # Counterfactual Explorer paths (backend/science untouched).
+    # V3.8H reconciliation: V3.8G charter additionally admits exactly the
+    # consensus frontend paths (backend/science untouched).
     allowed = ("frontend/app/strategy/page.tsx",
                "frontend/features/strategy/components/Strategy",
                "frontend/features/strategy/hooks/useStrategy",
@@ -375,6 +377,7 @@ def test_no_frontend_changes():
                "frontend/lib/v2.ts",
                "frontend/app/counterfactuals",
                "frontend/features/counterfactuals",
+               "frontend/app/consensus", "frontend/features/consensus",
                "frontend/components/shell/CommandBar.tsx")
     assert not [f for f in touched if f.startswith("frontend/")
                 and not f.startswith(allowed)], touched

@@ -1,0 +1,82 @@
+{
+  "a_identity": "d0b8785a01347580125b38b311984c793c012352ce3ff175cfa3504379b9a67b",
+  "aggregation": "race-macro primary; state-pooled/stage/year secondary",
+  "b_identity": "d212803f7ed7e8a8563abdd5b7686326e7094d810f415fa1468117541dfbfde7",
+  "bootstrap_policy": {
+    "B": 2000,
+    "level": 95,
+    "seed": 987654321,
+    "unit": "race"
+  },
+  "c_identity": "07cf1ddd9708eaea2280b1d46492d972234f68c77cf3a59cbf412f638e3a74a8",
+  "card_identity": "523898b3d626a7c3baffd65d2c5c921983db361faeb3feb57a7f8984f2e137f9",
+  "findings": {
+    "exploratory": "pooled-vs-macro loss divergence driven by single-row MC2 p=0.0 on actual winner (2023-r21-R lap3 verstappen, ll 34.5); outlier sensitivity, not a mechanism conclusion",
+    "hypotheses": {
+      "H1": "supported",
+      "H2": "supported",
+      "H3": "supported",
+      "H4": "supported-descriptive",
+      "H5": "supported",
+      "H6": "supported",
+      "H7": "supported-as-secondary"
+    },
+    "inside_mc_interval_frac": 0.5306859205776173,
+    "leader_mismatch_states": 5,
+    "log_better_races": 1,
+    "mc2_better_races": 7,
+    "mean_abs_gap": 0.031784009271087564,
+    "median_abs_gap": 0.0007450707342137194,
+    "spearman_macro": 0.5612402304044796,
+    "spearman_pooled": 0.6368577173551183,
+    "top3_jaccard": 0.5583333333333333,
+    "v35_lineage_max_diff": 0.001975429808245839,
+    "xgb_vs_mc2": 0.027531437430460243
+  },
+  "fusion_gate": "FUSION_RESEARCH_WARRANTED",
+  "gate_evidence": {
+    "COMPLEMENTARITY": "PASS",
+    "COVERAGE_ADEQUACY": "PASS",
+    "DISTINCT_SIGNAL": "PASS",
+    "ROBUSTNESS": "PASS",
+    "SEMANTIC_VALIDITY": "PASS"
+  },
+  "ground_truth_boundary": "joined after alignment+metrics; per-row binary winner label; eps 1e-15 evaluation-only",
+  "limitations": [
+    "8-race deterministic subsample, not exhaustive",
+    "2022-2024 only (no 2018-2021 OOF exists)",
+    "single MC2 seed/config",
+    "logistic-side complementarity is one race",
+    "pooled means sensitive to single-row outliers",
+    "2025 excluded"
+  ],
+  "mc_config": {
+    "arm": "E_AR1_RESIDUAL",
+    "frame": "replay timeline frame with state_time_s == d9 row state_time_s for (race, driver, lap)",
+    "master_seed": 20240101,
+    "prep": "frozen _prepare_state_and_mechanisms (V3.2C presence + V3.2D mechanisms + conditioned variance)",
+    "simulation_count": 5000
+  },
+  "next_stage": "V3.8E fusion research permitted (controlled, temporally safe); must prove improvement empirically",
+  "population": {
+    "candidate_rows": 300,
+    "comparable_rows": 277,
+    "excluded_rows": 23,
+    "oof_races": 68,
+    "oof_rows": 74605,
+    "reasons": {
+      "PREP_REFUSAL": 19,
+      "ZERO_VALID_TRIALS": 4
+    },
+    "selected_races": 8
+  },
+  "primary_pair": [
+    "V3_1B_LOGISTIC",
+    "MC2_E"
+  ],
+  "protocol_amendment": "01 (population: latest full-coverage lap per stage; support-grounds, pre-results)",
+  "protocol_identity": "9cbe85de7c8f0553a098a9a03d016beed80159c785b566c312502d3bf10f2ed1",
+  "schema": "v3.8d-consensus-evaluation-card-v1",
+  "source_provenance": "logistic/xgb/v35 OOF TEMPORALLY_OUT_OF_FOLD (folds D1-D3, 2022-2024); MC2 E-arm 5000/20240101 fold-through params; 2025 excluded (REVEALED_HOLDOUT)",
+  "target": "WIN"
+}

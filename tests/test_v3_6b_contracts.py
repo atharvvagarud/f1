@@ -370,8 +370,10 @@ def test_no_api_frontend_change():
     # V3.7H reconciliation: V3.7F charter additionally admits exactly the
     # counterfactual API files; V3.7G charter admits exactly the
     # Counterfactual Explorer paths (frozen science untouched).
+    # V3.8H reconciliation: V3.8F/V3.8G charters additionally admit exactly
+    # the consensus API/frontend paths (frozen science untouched).
     allowed = ("api/v2_strategy_v3_", "api/main.py",
-               "api/v2_counterfactual_")
+               "api/v2_counterfactual_", "api/v2_consensus_")
     assert not any(f.startswith("api/") and not f.startswith(allowed)
                    for f in changed)
     allowed_frontend = ("frontend/app/strategy/page.tsx",
@@ -381,6 +383,8 @@ def test_no_api_frontend_change():
                         "frontend/lib/v2.ts",
                         "frontend/app/counterfactuals",
                         "frontend/features/counterfactuals",
+                        "frontend/app/consensus",
+                        "frontend/features/consensus",
                         "frontend/components/shell/CommandBar.tsx")
     assert not any(f.startswith("frontend/")
                    and not f.startswith(allowed_frontend)

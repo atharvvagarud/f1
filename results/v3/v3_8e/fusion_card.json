@@ -1,0 +1,139 @@
+{
+  "a_identity": "d0b8785a01347580125b38b311984c793c012352ce3ff175cfa3504379b9a67b",
+  "alpha_grid": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "b_identity": "d212803f7ed7e8a8563abdd5b7686326e7094d810f415fa1468117541dfbfde7",
+  "bootstrap_spec": {
+    "B": 2000,
+    "level": 95,
+    "note": "historical evaluation uncertainty only; never MC sampling uncertainty; never real-world or posterior uncertainty",
+    "seed": 987654322,
+    "statistics": [
+      "paired race-macro log-loss delta fusion-vs-Logistic",
+      "paired race-macro log-loss delta fusion-vs-MC2"
+    ],
+    "unit": "evaluation race (resample the 5 evaluation races with replacement; preserve all rows of selected races; recompute race-macro metric; compute paired delta). Row-level bootstrapping is prohibited for primary uncertainty."
+  },
+  "c_identity": "07cf1ddd9708eaea2280b1d46492d972234f68c77cf3a59cbf412f638e3a74a8",
+  "card_identity": "ec6578de410f1ec8f6975e1cf4a2575aa4984967804b22a0b583fe2740948357",
+  "chronology": [
+    "2022-r03-R",
+    "2022-r11-R",
+    "2022-r19-R",
+    "2023-r05-R",
+    "2023-r13-R",
+    "2023-r21-R",
+    "2024-r07-R",
+    "2024-r15-R"
+  ],
+  "controls": [
+    "V3_1B_LOGISTIC on the exact evaluation identities",
+    "MC2_E on the exact evaluation identities"
+  ],
+  "d_card_identity": "67f97c185ca8cc687b59b376bc5a48776e9290d6463a05653fa1a6e18a298985",
+  "d_correction": "correction_01 (corrected D card supersedes 523898b3d626a7c3baffd65d2c5c921983db361faeb3feb57a7f8984f2e137f9 for bootstrap/gate-input labels; empirical D records unchanged; E metrics unchanged)",
+  "d_preflight_verdict": "CORRECTABLE_D_ANALYSIS_DEFECT",
+  "d_protocol_identity": "9cbe85de7c8f0553a098a9a03d016beed80159c785b566c312502d3bf10f2ed1",
+  "e_protocol_identity": "dbe6a565d5a6fa688dbb8e0b3a1be05bad71457777cd2e312f9c164219b128dd",
+  "evaluation_races": [
+    "2023-r05-R",
+    "2023-r13-R",
+    "2023-r21-R",
+    "2024-r07-R",
+    "2024-r15-R"
+  ],
+  "gate": "FUSION_IMPROVEMENT_NOT_SUPPORTED",
+  "known_p0_outlier_sensitivity": {
+    "outlier_removed_scope": "EXPLORATORY_SENSITIVITY_ONLY",
+    "retained_in_primary": true,
+    "state_id": "2023-r21-R|max_verstappen|3"
+  },
+  "next_stage_consequence": "research result only; no serving promotion under any gate outcome; product decisions belong to later V3.8 stages",
+  "population": {
+    "comparable_rows": 277,
+    "eval_races": [
+      "2023-r05-R",
+      "2023-r13-R",
+      "2023-r21-R",
+      "2024-r07-R",
+      "2024-r15-R"
+    ],
+    "eval_rows": 216,
+    "warmup_races": [
+      "2022-r03-R",
+      "2022-r11-R",
+      "2022-r19-R"
+    ]
+  },
+  "primary_metric": "race-macro binary log loss over evaluation races",
+  "prohibited_interpretations": [
+    "pristine holdout validation",
+    "untouched confirmation",
+    "independent confirmation",
+    "new unseen evidence",
+    "prospective validation",
+    "optimal fusion",
+    "true probability",
+    "independent models",
+    "causal improvement",
+    "statistically proven superiority",
+    "production-ready ensemble",
+    "universal improvement",
+    "real-world uncertainty",
+    "pristine holdout confirmation"
+  ],
+  "revealed_corpus_limitation": "V3.8E exists because D examined this historical corpus and warranted fusion research; the D corpus is therefore REVEALED for the decision to perform E. Source predictions remain temporally OOF, but the decision to investigate fusion was made after D examined the corpus. E is controlled historical fusion research on temporally OOF source predictions, with fusion parameters evaluated prequentially/out-of-time wherever applicable. This limitation appears prominently in every E card/report.",
+  "robustness": {
+    "brier_beats_both": false,
+    "loro_stable": false,
+    "outlier_removed_beats_both": false
+  },
+  "schema": "v3.8e-fusion-card-v1",
+  "secondary_metrics": [
+    "state/row-pooled binary log loss",
+    "race-macro Brier score",
+    "state/row-pooled Brier score"
+  ],
+  "selected_alpha_trajectory": [
+    {
+      "race_id": "2023-r05-R",
+      "selected_alpha": 0.9
+    },
+    {
+      "race_id": "2023-r13-R",
+      "selected_alpha": 0.8
+    },
+    {
+      "race_id": "2023-r21-R",
+      "selected_alpha": 0.8
+    },
+    {
+      "race_id": "2024-r07-R",
+      "selected_alpha": 1.0
+    },
+    {
+      "race_id": "2024-r15-R",
+      "selected_alpha": 1.0
+    }
+  ],
+  "source_lineage": "V3_1B_LOGISTIC (raw independent-binary WIN) + MC2_E (mutually-exclusive simulation WIN frequency); V3.5 P_win excluded as SHARED_OR_DERIVED_LINEAGE; V3.4 excluded; XGBoost secondary-only (SECONDARY_XGB_FUSION_NOT_REQUIRED)",
+  "source_probability_families": "independent-binary vs mutually-exclusive frequency; fusion is per-row binary WIN probability, never race-normalized",
+  "tie_break": "among exact ties on the tuning objective, choose the largest alpha (defaults toward the frozen Logistic champion rather than inventing additional simulation influence); deterministic",
+  "tuning_objective": "race-macro binary log loss over PRIOR (history) races only. Pooled-loss tuning, evaluation-race tuning, and continuous post-hoc alpha optimization are prohibited.",
+  "warmup_races": [
+    "2022-r03-R",
+    "2022-r11-R",
+    "2022-r19-R"
+  ]
+}

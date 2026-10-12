@@ -312,8 +312,10 @@ def test_no_serving_api_frontend_change():
         # V3.6F/G chartered Strategy 2.0 paths admitted.
         # V3.7H reconciliation: V3.7F/V3.7G chartered counterfactual
         # integration paths admitted (frozen science untouched).
+        # V3.8H reconciliation: V3.8F/V3.8G chartered consensus
+        # integration paths admitted (frozen science untouched).
         if p.startswith(("api/v2_strategy_v3_", "api/main.py",
-                         "api/v2_counterfactual_",
+                         "api/v2_counterfactual_", "api/v2_consensus_",
                          "frontend/app/strategy/page.tsx",
                          "frontend/features/strategy/components/Strategy",
                          "frontend/features/strategy/hooks/useStrategy",
@@ -321,6 +323,8 @@ def test_no_serving_api_frontend_change():
                          "frontend/lib/v2.ts",
                          "frontend/app/counterfactuals",
                          "frontend/features/counterfactuals",
+                         "frontend/app/consensus",
+                         "frontend/features/consensus",
                          "frontend/components/shell/CommandBar.tsx")):
             continue
         assert not p.startswith(("api/", "frontend/")), line

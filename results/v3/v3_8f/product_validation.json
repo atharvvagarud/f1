@@ -1,0 +1,86 @@
+{
+  "cache_behavior": {
+    "availability_is_free": true,
+    "exact_key": "(race_id, anchor_lap_number, anchor_state_time_s)",
+    "hit_returns_without_recompute": true,
+    "miss_computes_once": true
+  },
+  "corruption_policy_verified": "corrupt fixture -> 503 parameter_unavailable, never benign unsupported",
+  "demo_fixtures": {
+    "supported": {
+      "anchor": {
+        "anchor_lap_number": 2,
+        "anchor_state_time_s": null,
+        "race_id": "2022-r03-R"
+      },
+      "drivers": 20,
+      "exact_leader_match": false,
+      "file": "fixtures/2022-r03-R__lap2.json",
+      "model_leader": ["hamilton"],
+      "selection": "truth-blind: D leader-mismatch group with largest max|absolute_gap| (0.8088)",
+      "simulation_leader": ["sainz"],
+      "values_verbatim_from_d_records": true
+    },
+    "unsupported_requests": [
+      {
+        "anchor": {
+          "anchor_lap_number": 5,
+          "race_id": "2025-r01-R"
+        },
+        "expected": "422 consensus_unsupported STATE_NOT_AVAILABLE"
+      },
+      {
+        "anchor": {
+          "anchor_lap_number": 1,
+          "race_id": "2022-r19-R"
+        },
+        "expected": "422 consensus_unsupported MC2_STATE_INELIGIBLE (model AVAILABLE, comparison NOT_COMPARABLE)"
+      }
+    ]
+  },
+  "focused_tests": {
+    "files": [
+      "tests/test_v3_8f_consensus_api.py",
+      "tests/test_v3_8f_consensus_contract.py"
+    ],
+    "result": "39 passed"
+  },
+  "no_fusion_on_wire": true,
+  "no_source_winner_on_wire": true,
+  "pathology": {
+    "F-P1": 0,
+    "F-P10": 0,
+    "F-P11": 0,
+    "F-P12": 0,
+    "F-P13": 0,
+    "F-P14": 0,
+    "F-P15": 0,
+    "F-P16": 0,
+    "F-P17": 0,
+    "F-P18": 0,
+    "F-P19": 0,
+    "F-P2": 0,
+    "F-P20": 0,
+    "F-P21": 0,
+    "F-P22": 0,
+    "F-P23": 0,
+    "F-P24": 0,
+    "F-P3": 0,
+    "F-P4": 0,
+    "F-P5": 0,
+    "F-P6": 0,
+    "F-P7": 0,
+    "F-P8": 0,
+    "F-P9": 0
+  },
+  "phase": "V3.8F",
+  "refusal_matrix": {
+    "2025_compare": 422,
+    "corrupt_fixture": 503,
+    "malformed_lap": 422,
+    "sim_ineligible_compare": 422,
+    "supported_availability": 200,
+    "supported_compare": 200
+  },
+  "schema": "v3.8f-product-validation-v1"
+}

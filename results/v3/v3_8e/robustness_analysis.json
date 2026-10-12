@@ -1,0 +1,103 @@
+{
+  "extreme_row": {
+    "delta_fused_vs_log": 0.22314355131420976,
+    "delta_fused_vs_mc2": -34.04928561020697,
+    "ll_fused": 0.489490784703709,
+    "ll_log": 0.2663472333894992,
+    "ll_mc2": 34.538776394910684,
+    "p_fused": 0.6129384323558087,
+    "p_logistic": 0.7661730404447609,
+    "p_mc2": 0.0,
+    "race_id": "2023-r21-R",
+    "retained_in_primary": true,
+    "selected_alpha": 0.8,
+    "state_id": "2023-r21-R|max_verstappen|3"
+  },
+  "largest_contributions": [
+    {
+      "delta_vs_log": 0.01821321740821591,
+      "delta_vs_mc2": -0.1808276409879126,
+      "ll_fused": 1.382681339557788,
+      "race_id": "2023-r05-R",
+      "state_id": "2023-r05-R|max_verstappen|18"
+    },
+    {
+      "delta_vs_log": -0.09785724210351843,
+      "delta_vs_mc2": 0.6092191731602694,
+      "ll_fused": 0.9371678388406055,
+      "race_id": "2023-r05-R",
+      "state_id": "2023-r05-R|perez|18"
+    },
+    {
+      "delta_vs_log": 0.0,
+      "delta_vs_mc2": -0.19249259907298433,
+      "ll_fused": 0.7343536467406874,
+      "race_id": "2024-r15-R",
+      "state_id": "2024-r15-R|norris|23"
+    },
+    {
+      "delta_vs_log": 0.0,
+      "delta_vs_mc2": 0.65450329891268,
+      "ll_fused": 0.6617293440044196,
+      "race_id": "2024-r15-R",
+      "state_id": "2024-r15-R|norris|70"
+    },
+    {
+      "delta_vs_log": 0.22314355131420976,
+      "delta_vs_mc2": -34.04928561020697,
+      "ll_fused": 0.489490784703709,
+      "race_id": "2023-r21-R",
+      "state_id": "2023-r21-R|max_verstappen|3"
+    }
+  ],
+  "loro": [
+    {
+      "delta_fused_vs_log": 0.004048909244096836,
+      "delta_fused_vs_mc2": -0.4452865727471137,
+      "dropped_race": "2023-r05-R",
+      "macro_ll_fused": 0.03537060729750847,
+      "macro_ll_log": 0.03132169805341163,
+      "macro_ll_mc2": 0.48065718004462216
+    },
+    {
+      "delta_fused_vs_log": 0.003576872511958304,
+      "delta_fused_vs_mc2": -0.4389585510612445,
+      "dropped_race": "2023-r13-R",
+      "macro_ll_fused": 0.03546541125895,
+      "macro_ll_log": 0.0318885387469917,
+      "macro_ll_mc2": 0.47442396232019446
+    },
+    {
+      "delta_fused_vs_log": -0.0004370985572717395,
+      "delta_fused_vs_mc2": -0.004304616086856845,
+      "dropped_race": "2023-r21-R",
+      "macro_ll_fused": 0.03679805426252676,
+      "macro_ll_log": 0.0372351528197985,
+      "macro_ll_mc2": 0.041102670349383606
+    },
+    {
+      "delta_fused_vs_log": 0.003594341599391704,
+      "delta_fused_vs_mc2": -0.4401594038918302,
+      "dropped_race": "2024-r07-R",
+      "macro_ll_fused": 0.04670370180490792,
+      "macro_ll_log": 0.043109360205516215,
+      "macro_ll_mc2": 0.48686310569673813
+    },
+    {
+      "delta_fused_vs_log": 0.003594341599391704,
+      "delta_fused_vs_mc2": -0.4414179635454553,
+      "dropped_race": "2024-r15-R",
+      "macro_ll_fused": 0.03832383982371707,
+      "macro_ll_log": 0.03472949822432537,
+      "macro_ll_mc2": 0.4797418033691724
+    }
+  ],
+  "outlier_removed": {
+    "delta_fused_vs_log": 0.0006963386406969863,
+    "delta_fused_vs_mc2": -0.014063558653638189,
+    "macro_ll_fused": 0.03385841354945672,
+    "macro_ll_log": 0.033162074908759734,
+    "macro_ll_mc2": 0.04792197220309491,
+    "scope": "EXPLORATORY_SENSITIVITY_ONLY"
+  }
+}

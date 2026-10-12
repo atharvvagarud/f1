@@ -1,0 +1,84 @@
+{
+  "a_identity": "d0b8785a01347580125b38b311984c793c012352ce3ff175cfa3504379b9a67b",
+  "b_identity": "d212803f7ed7e8a8563abdd5b7686326e7094d810f415fa1468117541dfbfde7",
+  "contract_identity": "07cf1ddd9708eaea2280b1d46492d972234f68c77cf3a59cbf412f638e3a74a8",
+  "cross_family_language": "SOURCE-NATIVE WIN-PROBABILITY / SIMULATION-FREQUENCY GAP for V3.1B-vs-MC2 WIN",
+  "d_readiness": "D runs empirical historical analysis without redefining metrics",
+  "directional_change_semantics": "numeric deltas primary; CONVERGING/DIVERGING/UNCHANGED purely descriptive (gap decreased/increased/exactly equal); no meaningful-change threshold",
+  "frozen_parent": {
+    "commit": "30fe18908a41d95113c189274598269a95ef44ca",
+    "tag": "v3.7-counterfactual-engine"
+  },
+  "fusion_prohibition": "no averaging, blending, stacking, meta-model, combined probability, majority vote, consensus leader, confidence/certainty score; not even placeholder interfaces",
+  "ground_truth_prohibition": "no actual/observed/correct-source fields anywhere in C",
+  "implementation_identities": {
+    "metrics": "v3.8c-consensus-metrics-v1",
+    "trajectories": "v3.8c-consensus-trajectories-v1"
+  },
+  "kendall_semantics": "tau-b, tie-aware; degenerate (no comparable ordered info) -> UNSUPPORTED; never substituted by Spearman",
+  "leader_scope_semantics": "COMMON_UNIVERSE_LEADER_SET unless full candidate coverage proven for both sources (then FULL_FIELD_LEADER_SET); never unqualified 'predicted race leader'",
+  "leader_set_semantics": "all drivers sharing best native value; exact-match vs overlap kept distinct diagnostics",
+  "magnitude_semantics": "same state/driver/compatible-target/available/finite only; signed_gap = p_b - p_a; absolute_gap symmetric",
+  "mc_context_semantics": "absolute_gap + mc_se + interval + inside-boolean exposed; NO significance threshold, NO confidence-disagreement score; inside != equivalence",
+  "mc_interval_semantics": "Wilson 95% bounded interval; MONTE CARLO SAMPLING INTERVAL only; deterministic, no bootstrap",
+  "mc_se_semantics": "SE_MC = sqrt(p(1-p)/n); finite-MC sampling variability ONLY; n<=0 unsupported; n never inferred",
+  "metric_forbidden": [
+    "CONSENSUS_SCORE",
+    "CONFIDENCE_SCORE",
+    "CERTAINTY_SCORE",
+    "QUALITY_SCORE",
+    "SOURCE_WINNER_SCORE"
+  ],
+  "metric_taxonomy": [
+    "RANK_AGREEMENT",
+    "LEADER_AGREEMENT",
+    "TOP_K_AGREEMENT",
+    "MAGNITUDE_DISAGREEMENT",
+    "DIRECTIONAL_TEMPORAL_RELATIONSHIP",
+    "MC_SAMPLING_CONTEXT"
+  ],
+  "no_quality_ordering": "primary = research role, never better; no winner/preferred/reliable-source outputs",
+  "normalization_prohibition": "no race/sum normalization, softmax, simplex projection, or rescaling in C",
+  "phase": "V3.8C",
+  "primary_pair": [
+    "V3_1B_LOGISTIC",
+    "MC2_E"
+  ],
+  "race_macro_contract": "per-race aggregates primary (equal weight); state-pooled never forced",
+  "rank_displacement_orientation": "rank_b - rank_a; positive = numerically LOWER rank from B; descriptive only",
+  "rank_semantics": "descending native probability/frequency; rank 1 = highest; input order never affects values",
+  "schema": "v3.8c-consensus-metrics-contract-v1",
+  "secondary_pairs": [
+    "V3_1B_LOGISTIC/V3_5_LOGISTIC_CONTROL",
+    "V3_3_XGBOOST/MC2_E",
+    "V3_1B_LOGISTIC/V3_3_XGBOOST",
+    "V3_5 top-k/MC2 derived top-k where exposed"
+  ],
+  "signed_gap_orientation": "positive = source B numerically higher; NOT more correct/confident/better",
+  "spearman_semantics": "Pearson on average ranks over common comparable drivers (>=2); zero variance -> UNSUPPORTED (never 0/1/NaN)",
+  "stage_aggregation_contract": "pure EARLY/MID/LATE utilities over supplied values (mean/median/support/race counts); frozen labels; D owns interpretation",
+  "state_magnitude_summaries": [
+    "mean_absolute_gap",
+    "median_absolute_gap",
+    "max_absolute_gap",
+    "rms_gap"
+  ],
+  "summary_prohibition": "never called error/loss/calibration error; no weighted combinations",
+  "support_accounting": "candidate/A/B/common/excluded counts on every state metric; 12/20 stays visibly 12/20",
+  "temporal_trajectory_semantics": "ordered exact-state observations; no interpolation/fill/nearest-lap; lap deltas + missing counts recorded",
+  "threshold_prohibition": "no LOW/MEDIUM/HIGH, no 5/10/20pp cutoffs; continuous/descriptive quantities only",
+  "tie_semantics": "AVERAGE RANK; ties never broken by identity, order, or randomness; deterministic serialization only",
+  "topk_boundary_tie_semantics": "boundary ties included; requested_k + effective_set_size recorded; never cut through a tie",
+  "undefined_encoding": "explicit UNSUPPORTED status + reason; never 0/NaN/inf",
+  "undefined_metric_semantics": [
+    "INSUFFICIENT_COMMON_DRIVERS",
+    "ZERO_RANK_VARIANCE",
+    "TARGET_INCOMPATIBLE",
+    "SOURCE_UNAVAILABLE",
+    "MC_TRIAL_COUNT_MISSING",
+    "MC_TRIAL_COUNT_INVALID",
+    "NO_COMPARABLE_STATES",
+    "METADATA_MISMATCH"
+  ],
+  "v35_p_win_lineage": "SHARED_OR_DERIVED_LINEAGE for V3.1B-V3.5-control WIN pair (never two votes); DISTINCT_MECHANISM elsewhere"
+}

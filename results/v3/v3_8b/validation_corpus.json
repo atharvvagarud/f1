@@ -1,0 +1,265 @@
+{
+  "drivers": [
+    "verstappen",
+    "perez",
+    "hamilton"
+  ],
+  "logistic_win": {
+    "a": [
+      0.41,
+      0.18,
+      0.09
+    ],
+    "b": [
+      0.38,
+      0.22,
+      0.11
+    ],
+    "c": [
+      0.52,
+      0.2,
+      0.07
+    ],
+    "d": [
+      0.35,
+      0.15,
+      0.12
+    ],
+    "e": [
+      0.44,
+      0.19,
+      0.1
+    ],
+    "f": [
+      0.58,
+      0.0,
+      0.05
+    ]
+  },
+  "mc2_top3_freq": {
+    "a": [
+      0.62,
+      0.41,
+      0.28
+    ],
+    "b": [
+      0.66,
+      0.44,
+      0.25
+    ],
+    "c": [
+      0.78,
+      0.4,
+      0.2
+    ],
+    "d": [
+      0.55,
+      0.38,
+      0.33
+    ],
+    "e": [
+      0.7,
+      0.42,
+      0.24
+    ]
+  },
+  "mc2_valid_trials": 5000,
+  "mc2_win": {
+    "a": [
+      0.36,
+      0.2,
+      0.1
+    ],
+    "b": [
+      0.4,
+      0.21,
+      0.09
+    ],
+    "c": [
+      0.55,
+      0.18,
+      0.06
+    ],
+    "d": [
+      0.3,
+      0.17,
+      0.14
+    ],
+    "e": [
+      0.46,
+      0.18,
+      0.08
+    ]
+  },
+  "notes": {
+    "mc2_ineligible": "state f has no MC2 records (MC2_STATE_INELIGIBLE; excluded with reason, never zero-filled)",
+    "missing_driver": "V3.5 rows omit perez for state f (UNAVAILABLE + DRIVER_NOT_AVAILABLE)",
+    "native_zero": "state f perez logistic=0.0 is source-emitted zero with support AVAILABLE (distinct from missing)"
+  },
+  "provenance": {
+    "logistic": {
+      "artifact_path": "results/v3/v3_1d_model_card.json",
+      "model_identity": "LogisticRegression C=0.01 RAW 110-col"
+    },
+    "mc2": {
+      "artifact_path": "frozen MonteCarloResult (MC2-E)",
+      "model_identity": "MC2-E (E_AR1_RESIDUAL), 5000 futures"
+    },
+    "v35": {
+      "artifact_path": "frozen V3.5 prediction rows (proj columns)",
+      "model_identity": "LOGISTIC_CONTROL / XGB_E"
+    },
+    "xgb": {
+      "artifact_path": "frozen V3.3 winner predictions",
+      "model_identity": "xgboost.XGBClassifier==3.2.0 diversity candidate"
+    }
+  },
+  "schema": "v3.8b-validation-corpus-v1",
+  "selection_rule": "fixed synthetic identities: 2 races (2022-r01-R, 2023-r05-R) x EARLY/MID/LATE one state each x drivers (verstappen, perez, hamilton); native values are fixed illustrative constants",
+  "states": [
+    {
+      "lap": 8,
+      "race_id": "2022-r01-R",
+      "round": 1,
+      "stage": "EARLY",
+      "state_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "year": 2022
+    },
+    {
+      "lap": 30,
+      "race_id": "2022-r01-R",
+      "round": 1,
+      "stage": "MID",
+      "state_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "year": 2022
+    },
+    {
+      "lap": 50,
+      "race_id": "2022-r01-R",
+      "round": 1,
+      "stage": "LATE",
+      "state_id": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "year": 2022
+    },
+    {
+      "lap": 12,
+      "race_id": "2023-r05-R",
+      "round": 5,
+      "stage": "EARLY",
+      "state_id": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "year": 2023
+    },
+    {
+      "lap": 35,
+      "race_id": "2023-r05-R",
+      "round": 5,
+      "stage": "MID",
+      "state_id": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "year": 2023
+    },
+    {
+      "lap": 60,
+      "race_id": "2023-r05-R",
+      "round": 5,
+      "stage": "LATE",
+      "state_id": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "year": 2023
+    }
+  ],
+  "v35_proj_top1": {
+    "a": [
+      0.41,
+      0.18,
+      0.09
+    ],
+    "b": [
+      0.38,
+      0.22,
+      0.11
+    ],
+    "c": [
+      0.52,
+      0.2,
+      0.07
+    ],
+    "d": [
+      0.35,
+      0.15,
+      0.12
+    ],
+    "e": [
+      0.44,
+      0.19,
+      0.1
+    ],
+    "f": [
+      0.58,
+      0.0,
+      0.05
+    ]
+  },
+  "v35_proj_top3": {
+    "a": [
+      0.7,
+      0.45,
+      0.3
+    ],
+    "b": [
+      0.72,
+      0.48,
+      0.28
+    ],
+    "c": [
+      0.83,
+      0.46,
+      0.22
+    ],
+    "d": [
+      0.63,
+      0.42,
+      0.35
+    ],
+    "e": [
+      0.75,
+      0.47,
+      0.27
+    ],
+    "f": [
+      0.86,
+      0.05,
+      0.18
+    ]
+  },
+  "xgb_win": {
+    "a": [
+      0.39,
+      0.2,
+      0.08
+    ],
+    "b": [
+      0.36,
+      0.24,
+      0.12
+    ],
+    "c": [
+      0.5,
+      0.21,
+      0.06
+    ],
+    "d": [
+      0.33,
+      0.16,
+      0.13
+    ],
+    "e": [
+      0.42,
+      0.2,
+      0.09
+    ],
+    "f": [
+      0.55,
+      0.02,
+      0.05
+    ]
+  }
+}

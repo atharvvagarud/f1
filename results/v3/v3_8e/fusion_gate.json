@@ -1,0 +1,14 @@
+{
+  "decision": "FUSION_IMPROVEMENT_NOT_SUPPORTED",
+  "evidence": {
+    "bootstrap_supportive_vs_log": false,
+    "bootstrap_supportive_vs_mc2": false,
+    "brier_macro_beats_both": false,
+    "loro_stable_both_controls": false,
+    "outlier_removed_still_beats_both": false,
+    "primary_beats_log": false,
+    "primary_beats_mc2": true
+  },
+  "protocol_identity": "dbe6a565d5a6fa688dbb8e0b3a1be05bad71457777cd2e312f9c164219b128dd",
+  "schema": "v3.8e-fusion-gate-v1"
+}

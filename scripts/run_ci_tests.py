@@ -129,7 +129,17 @@ CORPUS_MANIFEST = Path(__file__).resolve().parent / "ci_corpus_dependent.txt"
 # corpus-dependent (no ignored-corpus references; serving-stack inputs
 # match existing Tier-1 serving tests) and 244 source-safe, with no
 # removals = 4693.
-EXPECTED_COLLECTED = 4693
+# V3.8H reclassification: 309 added tests across 11 new files
+# (tests/test_v3_8a_consensus_contract.py, test_v3_8b_alignment.py,
+# test_v3_8b_source_adapters.py, test_v3_8c_consensus_metrics.py,
+# test_v3_8c_consensus_trajectories.py, test_v3_8d_correction_01.py,
+# test_v3_8d_evaluation.py, test_v3_8e_fusion.py,
+# test_v3_8f_consensus_api.py, test_v3_8f_consensus_contract.py,
+# test_v3_8h_freeze.py), of which 0 are corpus-dependent (committed
+# results/v3/v3_8* artifacts are Tier-1 inputs like other tracked
+# artifacts; no ignored-corpus references) and 309 source-safe, with no
+# removals = 5002.
+EXPECTED_COLLECTED = 5002
 
 # (pytest node id, reason it cannot pass at the frozen baseline)
 # P11-1: the 12 pre-existing stale historical pins were genuinely corrected

@@ -1,0 +1,126 @@
+{
+  "contract_identity": "d0b8785a01347580125b38b311984c793c012352ce3ff175cfa3504379b9a67b",
+  "parent": {
+    "commit": "30fe18908a41d95113c189274598269a95ef44ca",
+    "tag": "v3.7-counterfactual-engine"
+  },
+  "schema": "v3.8a-source-audit-v1",
+  "shared_inputs": {
+    "features": "ALL_84 family shared across model sources",
+    "language": "distinct predictive mechanisms, NOT independent systems",
+    "mc2_shares": "RaceState(T) init only; generative mechanism distinct",
+    "training_data": "2018-2024 shared"
+  },
+  "sources": {
+    "MC2": {
+      "artifact": "frozen MonteCarloEngine seam; MonteCarloResult with full finish_position_distribution",
+      "calibration": "frequencies are NOT calibrated real-world probabilities",
+      "evidence": [
+        "raceintel/simulation/results.py",
+        "raceintel/simulation/monte_carlo.py",
+        "results/v3/v3_2_freeze.json"
+      ],
+      "family": "MUTUALLY_EXCLUSIVE_SIMULATION_FREQUENCY",
+      "holdout_status": "PRISTINE wrt 2025 (never read) but product-excluded regardless",
+      "limitations": [
+        "38% state eligibility",
+        "dry-green only",
+        "no traffic/reliability battles",
+        "45 zero-support races"
+      ],
+      "model_identity": "MC2-E (E_AR1_RESIDUAL); PRODUCTION_SIMULATION_COUNT=5000; DEFAULT_MASTER_SEED=20240101",
+      "phase": "V3.2 (MC2-E arm)",
+      "production": "served via simulation/strategy/counterfactual APIs, 2018-2024, 2025->404",
+      "target": "simulated winner frequency; top-k derivable from frozen full-field distributions (no new science)",
+      "temporal_boundary": "factual RaceState(T) init; dry-green only; no DNF/weather/SC",
+      "unit": "whole race per trial; per-driver summaries; state bound via SimulationState.identity + request identity; anchor mismatch fails closed",
+      "years": "temporal folds D1-D3 over 2018-2024; 2025 never touched/read"
+    },
+    "V3.1B_LOGISTIC": {
+      "artifact": "data/v3/v3_1d/final_model_arm_b.joblib (sha 9a1aac51\u2026; git-ignored, hash tracked)",
+      "calibration": "RAW only, ECE 0.00939 arm B, veto-grade",
+      "evidence": [
+        "results/v3/v3_1d_model_card.json",
+        "results/v3/v3_1d_race_dynamics_holdout_and_freeze.json"
+      ],
+      "family": "INDEPENDENT_BINARY_MODEL_PROBABILITY",
+      "holdout_status": "REVEALED (one-shot V3.1D)",
+      "limitations": [
+        "linear only",
+        "EARLY holdout CI spans zero",
+        "stale follower-gap semantics",
+        "24-race one-shot"
+      ],
+      "model_identity": "LogisticRegression C=0.01 RAW, 110-col ALL_84_PLUS_V3_1_DYNAMICS_CORE",
+      "phase": "V3.1B/D",
+      "production": "research-only; serving uses separate frozen 84-col winner model, 2018-2024, 2025->404",
+      "target": "is_winner",
+      "temporal_boundary": "observable state at T; is_winner frozen label",
+      "unit": "(state_id, driver_id) rows; identity joins (predictions.py align, winner.py RaceIndex.sync_lookup)",
+      "years": "train 2018-2024 FINAL_FIT; holdout 2025 (24 races, 26692 states, consumed once)"
+    },
+    "V3.3_XGBOOST": {
+      "artifact": "results/v3/v3_3_final_scientific_card.json + v3_3e final holdout",
+      "calibration": "RAW XGB retained",
+      "evidence": [
+        "raceintel/model_lab/v3_3b_harness.py",
+        "results/v3/v3_3_final_scientific_card.json"
+      ],
+      "family": "INDEPENDENT_BINARY_MODEL_PROBABILITY",
+      "holdout_status": "REVEALED",
+      "limitations": [
+        "diversity evidence modest",
+        "small preregistered grids",
+        "single 24-race holdout"
+      ],
+      "model_identity": "xgboost.XGBClassifier==3.2.0 diversity candidate; standalone superiority NOT established",
+      "phase": "V3.3",
+      "production": "research-only",
+      "target": "is_winner",
+      "temporal_boundary": "same causal-T discipline",
+      "unit": "same (state_id, driver_id) winner task as V3.1B; row_order_incident on record -> identity joins mandatory",
+      "years": "2025 holdout revealed (HOLDOUT_REVEALED=TRUE)"
+    },
+    "V3.4_ENSEMBLE": {
+      "artifact": "raceintel/model_lab/v3_4_ensemble.py (research-only, no serving use)",
+      "classification": "EXCLUDED_FROM_V3_8",
+      "evidence": [
+        "raceintel/model_lab/v3_4_ensemble.py:1-51",
+        "results/v3/v3_4a_ensemble_landscape.json"
+      ],
+      "exclusion_reason": "blends two admitted sources; independent-vote treatment would double-count model information",
+      "family": "ENSEMBLED_MODEL_PROBABILITY",
+      "model_identity": "fixed convex blend w=0.2 XGB + 0.8 frozen V3.1B Logistic",
+      "phase": "V3.4",
+      "production": "research-only",
+      "target": "is_winner (blended)",
+      "years": "2025 already revealed for base models"
+    },
+    "V3.5_MARGINALS": {
+      "artifact": "2025 prediction parquets + results/v3/v3_5_final_scientific_card.json",
+      "calibration": "top5 sigmoid regressed out-of-time; kept as result; PAVA coherence projection",
+      "evidence": [
+        "raceintel/model_lab/outcomes.py",
+        "results/v3/v3_5_final_scientific_card.json",
+        "docs/V3_5_FINAL_REPORT.md"
+      ],
+      "family": "MARGINAL_THRESHOLD_PROBABILITY",
+      "holdout_status": "REVEALED",
+      "limitations": [
+        "top1 weakness persists",
+        "2/4 thresholds improve",
+        "race CI spans zero",
+        "EARLY/MID regress, LATE transfers"
+      ],
+      "model_identity": "LOGISTIC_CONTROL champion (C=0.01); XGB_E research candidate; TOP5_SIGMOID_ONLY frozen",
+      "phase": "V3.5",
+      "production": "NONE (no serving promotion, no routing)",
+      "target": "P(finish<=1/3/5/10) per-driver marginals; THRESHOLD_ORDER=(1,3,5,10)",
+      "temporal_boundary": "causal state T; P_win diagnostic vs V3.1B at 3e-11 (not identity)",
+      "unit": "one causal sidecar state row; keys state_id/driver_id/race_id/season; race-macro aggregation",
+      "years": "ALLOWED 2018-2024; 2025 EVALUATION_ONLY (26692 states / 479 outcomes / 24 races)"
+    }
+  },
+  "stages": "frozen M0 thirds on race_progress_frac (raceintel/model_lab/stages.py)",
+  "verdict": "V3.8A source audit complete; B has an implementable adapter contract"
+}

@@ -1,0 +1,388 @@
+{
+  "adapter_schema": [
+    "state_id",
+    "race_id",
+    "year",
+    "round",
+    "lap",
+    "stage",
+    "driver_id",
+    "source_id",
+    "source_family",
+    "target",
+    "native_probability",
+    "normalization_semantics",
+    "support_status",
+    "support_reason",
+    "artifact_identity",
+    "model_identity",
+    "feature_identity"
+  ],
+  "aggregation": {
+    "primary": "race-macro (equal per-race weight)",
+    "rule": "never let state-dense races dominate silently",
+    "secondary": [
+      "state-pooled",
+      "stage-specific",
+      "fold/year-specific"
+    ]
+  },
+  "agreement_dimensions": [
+    "RANK_AGREEMENT",
+    "PROBABILITY_MAGNITUDE_AGREEMENT",
+    "TOP_K_AGREEMENT",
+    "WINNER_LEADER_AGREEMENT",
+    "DIRECTIONAL_AGREEMENT_THROUGH_TIME",
+    "CALIBRATION_CONDITIONAL_AGREEMENT"
+  ],
+  "architecture": [
+    "frozen source artifacts",
+    "source adapters",
+    "identity-safe alignment",
+    "comparison frame",
+    "agreement/disagreement metrics",
+    "historical evaluation",
+    "empirical gate",
+    "optional product integration"
+  ],
+  "b_readiness": "B implements source adapters + identity-safe alignment per adapter/comparison-frame contracts; no metrics, no fusion",
+  "calibration_role": {
+    "MC2": "frequencies are NOT calibrated real-world probabilities merely by being frequencies",
+    "V3.1B": "RAW, ECE ~0.009, veto-grade",
+    "V3.5": "TOP5_SIGMOID_ONLY frozen; regressed out-of-time (kept as result)"
+  },
+  "comparison_frame": [
+    "state_id",
+    "driver_id",
+    "race",
+    "lap",
+    "stage",
+    "source_a",
+    "source_b",
+    "target_compatible",
+    "p_a_native",
+    "p_b_native",
+    "absolute_difference",
+    "rank_a",
+    "rank_b",
+    "rank_difference",
+    "leader_a",
+    "leader_b",
+    "support metadata",
+    "simulation sampling uncertainty"
+  ],
+  "comparison_unit": [
+    "state_id",
+    "driver_id"
+  ],
+  "comparison_unit_metadata": [
+    "race_id",
+    "season",
+    "round",
+    "lap_number",
+    "state_time_s",
+    "stage"
+  ],
+  "contract_identity": "d0b8785a01347580125b38b311984c793c012352ce3ff175cfa3504379b9a67b",
+  "dependency_direction": "V3.8 -> frozen sources, never reverse",
+  "disagreement_dimensions": [
+    "LOW_DISAGREEMENT",
+    "RANK_DISAGREEMENT",
+    "LEADER_DISAGREEMENT",
+    "MAGNITUDE_DISAGREEMENT",
+    "MODEL_HIGH_SIM_LOW",
+    "MODEL_LOW_SIM_HIGH",
+    "MARGINAL_SIM_DISAGREEMENT",
+    "UNSUPPORTED_COMPARISON"
+  ],
+  "driver_synchronization": {
+    "rule": "explicit support accounting per (state_id, driver_id); never zero-fill; never silent drop",
+    "statuses": [
+      "MODEL_AVAILABLE",
+      "OUTCOME_AVAILABLE",
+      "MC2_AVAILABLE",
+      "PAIR_COMPARABLE",
+      "MULTI_SOURCE_COMPARABLE"
+    ]
+  },
+  "eligibility_intersection": {
+    "note": "MC2 covers ~38% of states; never evaluate on supported rows without reporting exclusions",
+    "report": [
+      "candidate states",
+      "eligible states",
+      "excluded states",
+      "reason distribution",
+      "race/stage/driver coverage"
+    ]
+  },
+  "empirical_questions": [
+    "Q1 rank similarity",
+    "Q2 magnitude differences",
+    "Q3 leader disagreement rate",
+    "Q4 stage variation",
+    "Q5 race variation",
+    "Q6 unusual-state disagreement",
+    "Q7 calibration-against-outcomes when disagreeing",
+    "Q8 V3.5 P_win distinct information",
+    "Q9 top-k context value",
+    "Q10 cross-year stability",
+    "Q11 MC sampling explanatory share",
+    "Q12 any out-of-time combination evidence"
+  ],
+  "evaluation_splits": {
+    "periods": "development / calibration / comparison / evaluation to be fixed in D protocol",
+    "rule": "race-level temporal separation; no random row splits; no driver-state leakage; no future tuning"
+  },
+  "fail_closed": [
+    "state mismatch",
+    "driver mismatch",
+    "target mismatch",
+    "missing source value",
+    "non-finite probability",
+    "probability outside [0,1]",
+    "identity mismatch",
+    "artifact provenance mismatch",
+    "temporal boundary mismatch"
+  ],
+  "fail_closed_forbidden_repairs": [
+    "zero fill",
+    "forward fill",
+    "nearest-lap match",
+    "normalize",
+    "silent drop"
+  ],
+  "frozen_parent": {
+    "commit": "30fe18908a41d95113c189274598269a95ef44ca",
+    "tag": "v3.7-counterfactual-engine"
+  },
+  "fusion_gate": {
+    "outcomes": [
+      "FUSION_NOT_WARRANTED",
+      "FUSION_RESEARCH_WARRANTED",
+      "BLOCKING_SEMANTIC_MISMATCH"
+    ],
+    "rule": "V3.8E exists ONLY on FUSION_RESEARCH_WARRANTED from D; otherwise skip E and productize disagreement itself"
+  },
+  "fusion_hypotheses": [
+    "probability blending",
+    "stacking/meta-model",
+    "calibration-aware combination",
+    "simulation output as model feature",
+    "model probability as simulation prior"
+  ],
+  "fusion_prohibition": "no CONSENSUS average, weighted average, 1-disagreement confidence, traffic lights, majority vote, or global certainty in A/B/C/D",
+  "fusion_risks": [
+    "temporal leakage",
+    "double counting",
+    "holdout contamination",
+    "overfitting",
+    "miscalibration",
+    "semantic mismatch"
+  ],
+  "ground_truth_boundary": "historical outcomes EVALUATION ONLY; never in the predictive comparison frame",
+  "known_limitations": [
+    "contract only, no measurements yet",
+    "V3.5 P_win vs V3.1B near-duplicate (same Logistic family)",
+    "MC2 covers ~38% of states",
+    "2025 non-pristine for all model sources",
+    "XGB diversity modest",
+    "V3.5 top1 weakness persists",
+    "single 24-race holdouts; race-level CIs wide"
+  ],
+  "magnitude_rules": {
+    "diagnostic": "|p_model - p_sim| for same-target pairs only",
+    "forbidden_pairs": [
+      "model win probability vs V3.5 top-3 or other mismatched targets"
+    ],
+    "is_not": [
+      "not automatically an error",
+      "not evidence either source is wrong"
+    ]
+  },
+  "mc_sampling_uncertainty": {
+    "implication": "small model-vs-sim differences may be indistinguishable from MC sampling variation",
+    "is_not": [
+      "model confidence interval",
+      "real-world uncertainty"
+    ],
+    "role": "simulation-frequency interval / sampling SE for MC2 side only"
+  },
+  "no_silent_normalization": {
+    "future_transforms": "require explicit scientific rationale, separate evaluation, and preserved raw values",
+    "raw_preserved": true,
+    "rule": "NEVER race-normalize, softmax, renormalize, or simplex-project any source-native output for convenience"
+  },
+  "phase": "V3.8A",
+  "probability_families": {
+    "ENSEMBLED_MODEL_PROBABILITY": {
+      "examples": [
+        "V3.4 (excluded)"
+      ],
+      "should_sum_to_1": false,
+      "simultaneous_high": true,
+      "sums_to_1": false,
+      "uncertainty": "model calibration error compounded by blending",
+      "unit": "one driver-state"
+    },
+    "INDEPENDENT_BINARY_MODEL_PROBABILITY": {
+      "examples": [
+        "V3.1B Logistic",
+        "V3.3 XGBoost"
+      ],
+      "should_sum_to_1": false,
+      "simultaneous_high": true,
+      "sums_to_1": false,
+      "uncertainty": "model calibration error; no MC sampling error",
+      "unit": "one driver-state"
+    },
+    "MARGINAL_THRESHOLD_PROBABILITY": {
+      "examples": [
+        "V3.5 top1/3/5/10"
+      ],
+      "should_sum_to_1": false,
+      "simultaneous_high": true,
+      "sums_to_1": false,
+      "uncertainty": "model calibration error (top5 sigmoid regressed out-of-time)",
+      "unit": "one driver-state, cumulative thresholds with PAVA coherence"
+    },
+    "MUTUALLY_EXCLUSIVE_SIMULATION_FREQUENCY": {
+      "examples": [
+        "MC2 winner/top-k frequencies"
+      ],
+      "should_sum_to_1": true,
+      "simultaneous_high": false,
+      "sums_to_1": true,
+      "uncertainty": "finite-simulation sampling variability; NOT model confidence, NOT real-world uncertainty",
+      "unit": "whole race (one winner per valid trial)"
+    }
+  },
+  "rank_rules": {
+    "candidates": [
+      "Spearman",
+      "Kendall",
+      "top-1 agreement",
+      "top-3 overlap",
+      "rank displacement",
+      "leader disagreement"
+    ],
+    "note": "rank comparison needs no shared normalization semantics",
+    "ties": "explicit tie handling required in B; no silent averaging"
+  },
+  "schema": "v3.8a-consensus-contract-v1",
+  "scientific_question": "What can be learned from the agreement and disagreement between distinct predictive mechanisms viewing the same factual race state? Disagreement is information; fusion must earn its way through evidence.",
+  "source_independence": "claim only 'distinct predictive mechanisms': models share ALL_84 feature family + 2018-2024 training data; MC2 shares RaceState(T) init but is generative, not discriminative",
+  "sources": {
+    "MC2": {
+      "classification": "PRIMARY_CONSENSUS_SOURCE",
+      "family": "MUTUALLY_EXCLUSIVE_SIMULATION_FREQUENCY",
+      "rationale": "mutually exclusive joint futures; sums to 1 by construction; distinct generative mechanism",
+      "target": "simulated winner frequency (+ derivable top-k from frozen full-field distributions)"
+    },
+    "V3.1B_LOGISTIC": {
+      "classification": "PRIMARY_CONSENSUS_SOURCE",
+      "family": "INDEPENDENT_BINARY_MODEL_PROBABILITY",
+      "rationale": "frozen champion, RAW independent per-driver binaries, never normalized; established winner lineage",
+      "target": "is_winner"
+    },
+    "V3.3_XGBOOST": {
+      "classification": "SECONDARY_DIAGNOSTIC_SOURCE",
+      "family": "INDEPENDENT_BINARY_MODEL_PROBABILITY",
+      "rationale": "same task/semantics as V3.1B; standalone superiority not established; diversity candidate only",
+      "target": "is_winner"
+    },
+    "V3.4_ENSEMBLE": {
+      "classification": "EXCLUDED_FROM_V3_8",
+      "family": "ENSEMBLED_MODEL_PROBABILITY",
+      "rationale": "mathematically blends two admitted sources; treating it as an independent vote double-counts model information",
+      "target": "is_winner (0.2 XGB + 0.8 Logistic convex blend)"
+    },
+    "V3.5_MARGINALS": {
+      "classification": "SECONDARY_DIAGNOSTIC_SOURCE",
+      "family": "MARGINAL_THRESHOLD_PROBABILITY",
+      "rationale": "per-driver marginals, not joint; top-k contextual only; champion is same Logistic family (diagnostic vs V3.1B at 3e-11)",
+      "target": "P(finish<=1/3/5/10); only P_win target-compatible with winner probability"
+    }
+  },
+  "stage_plan": [
+    "V3.8A contract+audit",
+    "V3.8B adapters+alignment",
+    "V3.8C metrics",
+    "V3.8D empirical evaluation",
+    "V3.8E fusion ONLY if D justifies",
+    "V3.8F runtime/API",
+    "V3.8G frontend",
+    "V3.8H freeze"
+  ],
+  "stages": {
+    "definition": "frozen M0 thirds on race_progress_frac: EARLY [0,1/3), MID [1/3,2/3), LATE [2/3,1]",
+    "redefinition": "FORBIDDEN for V3.8"
+  },
+  "state_synchronization": {
+    "forbidden": [
+      "row-number join",
+      "array-index join",
+      "display-order join",
+      "nearest-lap substitution"
+    ],
+    "rule": "EXACT STATE IDENTITY ONLY",
+    "unsupported_is": "UNSUPPORTED_COMPARISON, never silent match"
+  },
+  "status_2025": "REVEALED_HOLDOUT / NON_PRISTINE \u2014 consumed once each by V3.1B/V3.3/V3.5; never touched by MC2; excluded from product paths. Never call it unseen/pristine; no product expansion to 2025.",
+  "target_compatibility": {
+    "compatible": [
+      [
+        "V3.1B is_winner",
+        "MC2 winner frequency"
+      ],
+      [
+        "V3.1B is_winner",
+        "V3.5 P(finish<=1)"
+      ],
+      [
+        "V3.3 is_winner",
+        "MC2 winner frequency"
+      ]
+    ],
+    "context_only": [
+      "V3.5 P(finish<=3/5/10) vs MC2 derived top-k (same frozen distributions, no new science)"
+    ]
+  },
+  "temporal_poison_blacklist": [
+    "future lap time",
+    "future position",
+    "future gap",
+    "future pit",
+    "future compound",
+    "future retirement",
+    "future status",
+    "future weather",
+    "future race control",
+    "future SC/VSC/red flag",
+    "future finish",
+    "winner label",
+    "future team action"
+  ],
+  "terminology": {
+    "consensus_means": "analysis of agreement/disagreement between distinct predictive mechanisms, NOT a fused probability",
+    "forbidden_terms": [
+      "truth score",
+      "confidence score",
+      "combined confidence"
+    ],
+    "frozen_terms": [
+      "SOURCE",
+      "PREDICTIVE_VIEW",
+      "AGREEMENT",
+      "DISAGREEMENT",
+      "COMPARABLE_PAIR",
+      "SOURCE_NATIVE_PROBABILITY",
+      "SIMULATION_FREQUENCY"
+    ]
+  },
+  "threshold_policy": "dimensions frozen in A; numerical thresholds require D evidence, never frozen in A",
+  "title": "Model x Simulation Consensus \u2014 Scientific Contract + Source Audit",
+  "v310_boundary": "no unified Intelligence Explorer; V3.8G surface must stay composable for V3.10",
+  "v37_card_identity": "a7b6d33e89d4157144fad1fa9f380b764bff0d41313995a9fae8b2bbff191fe5",
+  "v37_card_schema": "v3.7-counterfactual-engine-scientific-card-v1",
+  "v39_boundary": "V3.8 exposes disagreement + MC sampling info; never creates a universal uncertainty score (V3.9 owns uncertainty intelligence)"
+}

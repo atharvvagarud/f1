@@ -1,0 +1,130 @@
+{
+  "admitted_runtime_sources": [
+    "V3_1B_LOGISTIC",
+    "MC2_E"
+  ],
+  "availability_semantics": {
+    "comparison": [
+      "COMPARABLE",
+      "NOT_COMPARABLE"
+    ],
+    "expensive_work": "availability never triggers model inference or simulation; provider supports() checks only",
+    "statuses": [
+      "AVAILABLE",
+      "UNAVAILABLE"
+    ]
+  },
+  "cache_policy": "exact-key in-memory result cache keyed by (race_id, anchor_lap_number, anchor_state_time_s); availability never populates the cache; fixture records act as pre-seeded deterministic cache sources; no TTL/eviction controls exposed; corruption fails loudly as 503, never silent fallback",
+  "disagreement_definitions": {
+    "absolute_gap": "abs(simulation_minus_model), C absolute_gap verbatim",
+    "leader": "C leader_set per source over the common driver universe; exact_leader_match on sorted tie-safe sets; ties never broken",
+    "rank": "C descending average_ranks per source over the common driver universe; rank_displacement = simulation_rank minus model_rank via C rank_displacement",
+    "sampling_context": "C mc_sampling_se + wilson_interval per simulated driver from valid_trials; labelled FINITE_MC_SAMPLING_CONTEXT_ONLY",
+    "signed_gap": "simulation_minus_model via C signed_gap(model, simulation)",
+    "top_k": "C topk_set boundary-tie semantics (default k=3) + jaccard; WIN-ranking overlap, NOT P(finish<=k)"
+  },
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/v2/consensus/availability",
+      "purpose": "cheap availability without expensive work"
+    },
+    {
+      "method": "POST",
+      "path": "/v2/consensus/compare",
+      "purpose": "strict typed MODEL/SIMULATION/DISAGREEMENT comparison"
+    }
+  ],
+  "error_contract": {
+    "consensus_unsupported": {
+      "body": ["error", "reason", "detail"],
+      "status": 422,
+      "when": "well-formed exact state a source cannot serve, incl. explicit 2025 PRODUCT_EXCLUDED refusal"
+    },
+    "internal": {
+      "body": ["error", "detail"],
+      "status": 500,
+      "when": "anything else; never disguised as client error; no stack traces/paths/internals"
+    },
+    "parameter_unavailable": {
+      "body": ["error", "detail"],
+      "status": 503,
+      "when": "fixture/cache artifact missing or corrupt; fail loudly, never benign unsupported"
+    },
+    "unknown_race": {
+      "body": ["error", "detail"],
+      "status": 404,
+      "when": "registry miss (incl. any 2025 race)"
+    },
+    "unknown_state": {
+      "body": ["error", "detail"],
+      "status": 422,
+      "when": "well-formed race with no exact anchor state"
+    }
+  },
+  "excluded_sources": [
+    "V3_5_P_WIN (SHARED_OR_DERIVED_LINEAGE, never an independent vote)",
+    "V3_4_ENSEMBLE",
+    "XGBOOST (secondary diagnostic only, not a runtime arm)"
+  ],
+  "forbidden_fields": [
+    "fused_probability",
+    "consensus_probability",
+    "combined_probability",
+    "ensemble_probability",
+    "recommended_probability",
+    "confidence_score",
+    "consensus_score",
+    "preferred_source",
+    "winning_source",
+    "recommendation",
+    "trust_model",
+    "trust_simulation",
+    "source_quality_score"
+  ],
+  "forbidden_runtime_tokens": [
+    "alpha",
+    "blend",
+    "weighted_average",
+    "fused",
+    "ensemble"
+  ],
+  "frozen_parent": {
+    "commit": "30fe18908a41d95113c189274598269a95ef44ca",
+    "tag": "v3.7-counterfactual-engine"
+  },
+  "phase": "V3.8F",
+  "probability_families": {
+    "MC2_E": "MUTUALLY_EXCLUSIVE_SIMULATION_FREQUENCY, target WIN; winner frequencies sum to one by construction over a valid simulated field; never reinterpreted as Logistic-family probability",
+    "V3_1B_LOGISTIC": "INDEPENDENT_BINARY, target WIN; frozen raw positive-class probability; never race-normalized/softmaxed/simplex-projected"
+  },
+  "provenance": {
+    "a_contract": "d0b8785a01347580125b38b311984c793c012352ce3ff175cfa3504379b9a67b",
+    "b_contract": "d212803f7ed7e8a8563abdd5b7686326e7094d810f415fa1468117541dfbfde7",
+    "c_contract": "07cf1ddd9708eaea2280b1d46492d972234f68c77cf3a59cbf412f638e3a74a8",
+    "d_card_corrected": "67f97c185ca8cc687b59b376bc5a48776e9290d6463a05653fa1a6e18a298985",
+    "d_gate_corrected": "FUSION_RESEARCH_WARRANTED",
+    "d_protocol": "9cbe85de7c8f0553a098a9a03d016beed80159c785b566c312502d3bf10f2ed1",
+    "e_card_corrected": "ec6578de410f1ec8f6975e1cf4a2575aa4984967804b22a0b583fe2740948357",
+    "e_gate": "FUSION_IMPROVEMENT_NOT_SUPPORTED",
+    "e_protocol": "dbe6a565d5a6fa688dbb8e0b3a1be05bad71457777cd2e312f9c164219b128dd"
+  },
+  "public_science_controls": "none: providers take the anchor only; no seed, simulation-count, variance-mode, or configuration parameters exist on any F schema/service path",
+  "refusal_policy": "fail closed with typed reason from the frozen B ReasonCode vocabulary; missing sources stay null/absent, never zero; supported MC2 zeros stay numeric 0.0; unsupported drivers never silently dropped",
+  "response_sections": [
+    "state",
+    "availability",
+    "model",
+    "simulation",
+    "disagreement",
+    "provenance"
+  ],
+  "runtime_source_registry": {
+    "MC2_E": "fixture/injected provider arm (demonstration fixture values are verbatim V3.8D MC2-E records)",
+    "V3_1B_LOGISTIC": "fixture/injected provider arm (demonstration fixture values are verbatim frozen Logistic records)"
+  },
+  "schema": "v3.8f-product-contract-v1",
+  "support_semantics": "per-source AVAILABLE/UNAVAILABLE with B ReasonCode; comparison COMPARABLE only when both AVAILABLE; supported simulated-but-winless driver -> numeric 0.0 (not unavailable); missing source -> null/absent (never 0)",
+  "temporal_alignment": "exact (race_id, anchor_lap_number, anchor_state_time_s) identity; both arms keyed by identical state identities per B exact-identity semantics; no interpolation, no future lookup, no forward fill, no outcome labels, no D/E ground truth in runtime",
+  "year_policy_2025": "REVEALED_HOLDOUT / NON_PRISTINE / PRODUCT_EXCLUDED: availability reports both sources UNAVAILABLE/NOT_COMPARABLE; compare refuses 422 consensus_unsupported STATE_NOT_AVAILABLE; no research artifact may extend product support"
+}

@@ -1,0 +1,172 @@
+{
+  "bootstrap": {
+    "delta_fusion_vs_log_macro_bs": {
+      "ci95": [
+        -0.0010444452161110715,
+        0.003182779347963856
+      ],
+      "mean": 0.0005896638175666569
+    },
+    "delta_fusion_vs_log_macro_ll": {
+      "ci95": [
+        -0.0010769870773456175,
+        0.009689431645938981
+      ],
+      "mean": 0.0028415880707438894
+    },
+    "delta_fusion_vs_mc2_macro_bs": {
+      "ci95": [
+        -0.043544035197567804,
+        0.0009733033664663313
+      ],
+      "mean": -0.015195740752682572
+    },
+    "delta_fusion_vs_mc2_macro_ll": {
+      "ci95": [
+        -1.0554948170386842,
+        0.0018550312230320928
+      ],
+      "mean": -0.3503611560547621
+    }
+  },
+  "controls": {
+    "macro_bs_log": 0.00940055798914691,
+    "macro_bs_mc2": 0.025327851871264368,
+    "macro_ll_log": 0.03565684961000868,
+    "macro_ll_mc2": 0.39255774435602214,
+    "pooled_bs_log": 0.009599189917528853,
+    "pooled_bs_mc2": 0.01673170388888889,
+    "pooled_ll_log": 0.03383971420234854,
+    "pooled_ll_mc2": 0.19935427672092645
+  },
+  "deltas": {
+    "delta_fusion_vs_log_macro_bs": 0.0006054512129324008,
+    "delta_fusion_vs_log_macro_ll": 0.0028754732795133603,
+    "delta_fusion_vs_log_pooled_bs": 0.00013868969654147988,
+    "delta_fusion_vs_log_pooled_ll": 0.0010113566942414748,
+    "delta_fusion_vs_mc2_macro_bs": -0.015321842669185057,
+    "delta_fusion_vs_mc2_macro_ll": -0.3540254214665001,
+    "delta_fusion_vs_mc2_pooled_bs": -0.006993824274818558,
+    "delta_fusion_vs_mc2_pooled_ll": -0.16450320582433645
+  },
+  "descriptive": {
+    "disagreement_bins": {
+      "gap_0.01_0.1": {
+        "n": 33,
+        "pooled_ll_fused": 0.10523155646166822,
+        "pooled_ll_log": 0.10602397190942466,
+        "pooled_ll_mc2": 0.12820845492232374
+      },
+      "gap_ge_0.1": {
+        "n": 12,
+        "pooled_ll_fused": 0.32058979604695853,
+        "pooled_ll_log": 0.2991071197341549,
+        "pooled_ll_mc2": 3.228078667977318
+      },
+      "gap_lt_0.01": {
+        "n": 171,
+        "pooled_ll_fused": 0.001217031566461334,
+        "pooled_ll_log": 0.0012941623268211187,
+        "pooled_ll_mc2": 0.000542109611436915
+      }
+    },
+    "season_view": {
+      "2023": {
+        "n": 98,
+        "pooled_ll_fused": 0.04993653144005814,
+        "pooled_ll_log": 0.047707418726219794,
+        "pooled_ll_mc2": 0.4040683505156353
+      },
+      "2024": {
+        "n": 118,
+        "pooled_ll_fused": 0.022322468072353763,
+        "pooled_ll_log": 0.022322468072353763,
+        "pooled_ll_mc2": 0.029337503569389155
+      }
+    },
+    "stage_view": {
+      "EARLY": {
+        "n": 100,
+        "pooled_ll_fused": 0.05515438963972323,
+        "pooled_ll_log": 0.05265560118257926,
+        "pooled_ll_mc2": 0.41453740892246793
+      },
+      "LATE": {
+        "n": 56,
+        "pooled_ll_fused": 0.01780946260751097,
+        "pooled_ll_log": 0.017987460321669434,
+        "pooled_ll_mc2": 0.006718538871112247
+      },
+      "MID": {
+        "n": 60,
+        "pooled_ll_fused": 0.016917707394508427,
+        "pooled_ll_log": 0.01727533952393119,
+        "pooled_ll_mc2": 0.020509078378184768
+      }
+    }
+  },
+  "fusion": {
+    "macro_bs": 0.010006009202079311,
+    "macro_ll": 0.03853232288952204,
+    "pooled_bs": 0.009737879614070332,
+    "pooled_ll": 0.034851070896590015
+  },
+  "gate_inputs": {
+    "bootstrap_supportive_vs_log": false,
+    "bootstrap_supportive_vs_mc2": false,
+    "brier_macro_beats_both": false,
+    "loro_stable_both_controls": false,
+    "outlier_removed_still_beats_both": false,
+    "primary_beats_log": false,
+    "primary_beats_mc2": true
+  },
+  "pathology": {
+    "E-P1": 0,
+    "E-P10": 0,
+    "E-P11": 0,
+    "E-P12": 0,
+    "E-P13": 0,
+    "E-P14": 0,
+    "E-P15": 0,
+    "E-P16": 0,
+    "E-P17": 0,
+    "E-P18": 0,
+    "E-P19": 0,
+    "E-P2": 0,
+    "E-P20": 0,
+    "E-P21": 0,
+    "E-P22": 0,
+    "E-P23": 0,
+    "E-P24": 0,
+    "E-P3": 0,
+    "E-P4": 0,
+    "E-P5": 0,
+    "E-P6": 0,
+    "E-P7": 0,
+    "E-P8": 0,
+    "E-P9": 0
+  },
+  "population": {
+    "comparable_rows": 277,
+    "eval_races": [
+      "2023-r05-R",
+      "2023-r13-R",
+      "2023-r21-R",
+      "2024-r07-R",
+      "2024-r15-R"
+    ],
+    "eval_rows": 216,
+    "warmup_races": [
+      "2022-r03-R",
+      "2022-r11-R",
+      "2022-r19-R"
+    ]
+  },
+  "protocol_identity": "dbe6a565d5a6fa688dbb8e0b3a1be05bad71457777cd2e312f9c164219b128dd",
+  "runtime_s": {
+    "bootstrap": 0.019,
+    "eval": 0.003,
+    "total": 0.03
+  },
+  "schema": "v3.8e-fusion-evaluation-v1"
+}

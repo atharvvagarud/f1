@@ -1,0 +1,230 @@
+{
+  "fixture": "supported_demo",
+  "model": {
+    "drivers": [
+      {
+        "driver_id": "albon",
+        "probability": 0.00034610324280648407,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "alonso",
+        "probability": 0.07146132967626065,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "bottas",
+        "probability": 0.05215062850793108,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "gasly",
+        "probability": 0.029442008459310862,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "hamilton",
+        "probability": 0.5610319935315239,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "kevin_magnussen",
+        "probability": 0.0023020602213147156,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "latifi",
+        "probability": 0.00020992374850611146,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "leclerc",
+        "probability": 0.22626348047062528,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "max_verstappen",
+        "probability": 0.4370277602670266,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "mick_schumacher",
+        "probability": 0.0010842522935508028,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "norris",
+        "probability": 0.018506991974211434,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "ocon",
+        "probability": 0.050672026337936195,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "perez",
+        "probability": 0.07874570027715691,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "ricciardo",
+        "probability": 0.01710858356203382,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "russell",
+        "probability": 0.01572413173275244,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "sainz",
+        "probability": 0.0010109423903737417,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "stroll",
+        "probability": 0.0006979188327479274,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "tsunoda",
+        "probability": 0.006501646641411771,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "vettel",
+        "probability": 0.013196592532093284,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "zhou",
+        "probability": 0.004126616470224106,
+        "valid_trials": 5000
+      }
+    ],
+    "probability_family": "INDEPENDENT_BINARY",
+    "source": "V3_1B_LOGISTIC",
+    "target": "WIN"
+  },
+  "provenance": {
+    "p_logistic": "results/v3/v3_8d/per_row_records.json verbatim",
+    "p_mc2": "results/v3/v3_8d/per_row_records.json verbatim",
+    "valid_trials": "results/v3/v3_8d/mc2_checkpoint.json mc2_out.valid verbatim"
+  },
+  "selection_criterion": "truth-blind: D leader-mismatch group with largest max|absolute_gap| (0.8088); ground truth never consulted",
+  "simulation": {
+    "drivers": [
+      {
+        "driver_id": "albon",
+        "probability": 0.0006,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "alonso",
+        "probability": 0.0058,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "bottas",
+        "probability": 0.0054,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "gasly",
+        "probability": 0.0076,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "hamilton",
+        "probability": 0.0478,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "kevin_magnussen",
+        "probability": 0.0012,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "latifi",
+        "probability": 0.0014,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "leclerc",
+        "probability": 0.0784,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "max_verstappen",
+        "probability": 0.0606,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "mick_schumacher",
+        "probability": 0.004,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "norris",
+        "probability": 0.0188,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "ocon",
+        "probability": 0.0138,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "perez",
+        "probability": 0.0372,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "ricciardo",
+        "probability": 0.0156,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "russell",
+        "probability": 0.025,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "sainz",
+        "probability": 0.8098,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "stroll",
+        "probability": 0.0002,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "tsunoda",
+        "probability": 0.0052,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "vettel",
+        "probability": 0.0012,
+        "valid_trials": 5000
+      },
+      {
+        "driver_id": "zhou",
+        "probability": 0.0024,
+        "valid_trials": 5000
+      }
+    ],
+    "probability_family": "MUTUALLY_EXCLUSIVE_SIMULATION_FREQUENCY",
+    "source": "MC2_E",
+    "target": "WIN"
+  },
+  "state": {
+    "lap_number": 2,
+    "race_id": "2022-r03-R",
+    "season": 2022,
+    "stage": "EARLY",
+    "state_time_s": null
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "admitted_runtime_sources": [
+    "V3_1B_LOGISTIC",
+    "MC2_E"
+  ],
+  "cache_policy": "exact-key in-memory result cache; availability never triggers expensive work; fixture records are deterministic cache sources; corruption fails loudly as 503",
+  "card_identity": "0086785cafe4298dafe171e9a7b6c0fd099d4636151568b3a6c4f7ed1f1f2a45",
+  "d_gate": "FUSION_RESEARCH_WARRANTED",
+  "disagreement_definitions": "signed_gap simulation_minus_model; absolute_gap; descending average ranks + rank_displacement simulation_minus_model; tie-safe leader sets + exact_leader_match; top-k boundary-tie WIN-ranking overlap + jaccard; SE + Wilson 95% labelled FINITE_MC_SAMPLING_CONTEXT_ONLY (all C implementations verbatim)",
+  "e_gate": "FUSION_IMPROVEMENT_NOT_SUPPORTED (no fused probability exists; runtime fusion path absent by architecture)",
+  "endpoint_inventory": [
+    "GET /v2/consensus/availability",
+    "POST /v2/consensus/compare"
+  ],
+  "excluded_sources": [
+    "V3_5_P_WIN (lineage-linked, never an independent vote)",
+    "V3_4_ENSEMBLE",
+    "XGBOOST (secondary diagnostic only)"
+  ],
+  "frozen_parent": {
+    "commit": "30fe18908a41d95113c189274598269a95ef44ca",
+    "tag": "v3.7-counterfactual-engine"
+  },
+  "known_limitations": [
+    "demonstration fixtures cover exactly 2 anchors; live provider wiring is deployment integration, not research",
+    "fixture state_time_s null (D records carry race+lap identity; T equality enforced on available keys)",
+    "comparison requires >=2 common drivers for rank/leader/top-k blocks",
+    "in-memory cache is per-process (no shared TTL store)"
+  ],
+  "mc_sampling_interpretation": "finite-MC sampling context only; never model confidence, total/real-world uncertainty, or significance",
+  "next_stage_readiness": "stable contract + deterministic fixtures ready for V3.8G UI; no visual work in F",
+  "phase": "V3.8F",
+  "probability_family_semantics": "V3_1B_LOGISTIC INDEPENDENT_BINARY WIN (raw, never race-normalized) vs MC2_E MUTUALLY_EXCLUSIVE_SIMULATION_FREQUENCY WIN (never reinterpreted as Logistic-family)",
+  "product_contract": "v3.8f-product-contract-v1",
+  "prohibited_fusion_semantics": "no fused/consensus/combined/ensemble/recommended probability, no runtime alpha/blend/weighted_average, no confidence/consensus score (tested in code and on the wire)",
+  "prohibited_source_winner_semantics": "no preferred/winning source, recommendation, trust scores, or quality scores; product exposes evidence only",
+  "provenance": {
+    "a_contract": "d0b8785a01347580125b38b311984c793c012352ce3ff175cfa3504379b9a67b",
+    "b_contract": "d212803f7ed7e8a8563abdd5b7686326e7094d810f415fa1468117541dfbfde7",
+    "c_contract": "07cf1ddd9708eaea2280b1d46492d972234f68c77cf3a59cbf412f638e3a74a8",
+    "d_card_corrected": "67f97c185ca8cc687b59b376bc5a48776e9290d6463a05653fa1a6e18a298985",
+    "d_gate_corrected": "FUSION_RESEARCH_WARRANTED",
+    "d_protocol": "9cbe85de7c8f0553a098a9a03d016beed80159c785b566c312502d3bf10f2ed1",
+    "e_card_corrected": "ec6578de410f1ec8f6975e1cf4a2575aa4984967804b22a0b583fe2740948357",
+    "e_gate": "FUSION_IMPROVEMENT_NOT_SUPPORTED",
+    "e_protocol": "dbe6a565d5a6fa688dbb8e0b3a1be05bad71457777cd2e312f9c164219b128dd"
+  },
+  "refusal_error_policy": "404 unknown_race; 422 unknown_state / consensus_unsupported(reason+detail); 503 parameter_unavailable on corruption; 500 internal otherwise; no stack traces/paths/internals",
+  "schema": "v3.8f-product-card-v1",
+  "support_semantics": "per-source AVAILABLE/UNAVAILABLE with B ReasonCode; COMPARABLE only when both AVAILABLE; supported MC2 zero stays numeric 0.0; missing stays null/absent",
+  "temporal_alignment_semantics": "exact (race_id, anchor_lap_number, anchor_state_time_s) identity; B exact-identity alignment; no interpolation/future/fill; no outcome labels or D/E ground truth in runtime",
+  "validation_results": "39/39 focused F tests pass; subsystem + targeted A/B/C/D/E regression run separately",
+  "year_policy_2025": "REVEALED_HOLDOUT / NON_PRISTINE / PRODUCT_EXCLUDED: UNAVAILABLE/NOT_COMPARABLE availability, 422 STATE_NOT_AVAILABLE compare refusal"
+}

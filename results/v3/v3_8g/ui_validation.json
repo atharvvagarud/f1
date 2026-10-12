@@ -1,0 +1,69 @@
+{
+  "accessibility_tree_verified": [
+    "main landmark",
+    "h1 + section h2s",
+    "table caption + scope col/row",
+    "sort button aria-labels",
+    "gap direction text labels",
+    "role=status loading",
+    "role=alert error",
+    "role=img viz rows with text equivalents",
+    "details/summary provenance disclosure",
+    "aria-pressed anchor selector"
+  ],
+  "api_cache_behavior": "availability-then-single-compare per selection; abort + session guards; no loops, no polling (tested statically; live inspection showed exactly 2 requests per anchor change)",
+  "focused_tests": {
+    "node_suites": [
+      "frontend/features/consensus/lib/consensusFormat.test.ts",
+      "frontend/features/consensus/components/consensus-page.test.ts"
+    ],
+    "result": "45 passed, 0 failed"
+  },
+  "frontend_build": "next build clean (tsc + static prerender incl. /consensus)",
+  "live_states_inspected": [
+    "supported 2022-r03-R lap 2: full workspace, zero console errors",
+    "unsupported 2022-r19-R lap 1: NOT_COMPARABLE, model AVAILABLE, simulation MC2_STATE_INELIGIBLE, no disagreement rendered",
+    "excluded 2025-r01-R lap 5: NOT_COMPARABLE refusal, no fallback"
+  ],
+  "pathology": {
+    "G-P1": 0,
+    "G-P10": 0,
+    "G-P11": 0,
+    "G-P12": 0,
+    "G-P13": 0,
+    "G-P14": 0,
+    "G-P15": 0,
+    "G-P16": 0,
+    "G-P17": 0,
+    "G-P18": 0,
+    "G-P19": 0,
+    "G-P2": 0,
+    "G-P20": 0,
+    "G-P21": 0,
+    "G-P22": 0,
+    "G-P23": 0,
+    "G-P24": 0,
+    "G-P25": 0,
+    "G-P26": 0,
+    "G-P3": 0,
+    "G-P4": 0,
+    "G-P5": 0,
+    "G-P6": 0,
+    "G-P7": 0,
+    "G-P8": 0,
+    "G-P9": 0
+  },
+  "phase": "V3.8G",
+  "response_semantics_verified_live": [
+    "model leader HAMILTON 56.1% (independent binary, field does not sum to 100%)",
+    "simulation leader SAINZ 81.0% (5000 valid trials)",
+    "LEADER SPLIT, TOP-3 OVERLAP 50%, LARGEST GAP +80.9 pp SAINZ",
+    "supported MC2 zero (STROLL 0.0%) renders numeric, unavailable renders text"
+  ],
+  "schema": "v3.8g-ui-validation-v1",
+  "visual_validation": {
+    "1600": "dense workstation, full table + viz, no clipping",
+    "390": "4 priority columns visible, no viewport overflow, usable targets",
+    "820": "stacked panels, full table, no overflow"
+  }
+}

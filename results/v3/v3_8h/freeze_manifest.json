@@ -1,0 +1,510 @@
+{
+  "description": "Authoritative V3.8 freeze manifest (V3.8H). Enumerates every V3.8-owned artifact across A, B, C, D, D correction 01, E, F, G, H with identities, gates, and file ownership. The original D row-pooled bootstrap is explicitly SUPERSEDED. Historical artifacts are preserved, never deleted.",
+  "freeze_commit_message": "feat: freeze v3.8 model-simulation consensus",
+  "freeze_tag": "v3.8-model-simulation-consensus",
+  "frozen_parent": {
+    "commit": "30fe18908a41d95113c189274598269a95ef44ca",
+    "tag": "v3.7-counterfactual-engine"
+  },
+  "manifest_identity": "51810fb46449bb0bdd42882b064e5b0e80526aa4d4a60881976e9f2db92a7903",
+  "ownership_manifest": [
+    "api/main.py",
+    "api/v2_consensus_routes.py",
+    "api/v2_consensus_schemas.py",
+    "api/v2_consensus_service.py",
+    "docs/V3_8A_CONSENSUS_CONTRACT_SOURCE_AUDIT.md",
+    "docs/V3_8B_SOURCE_ADAPTERS_ALIGNMENT.md",
+    "docs/V3_8C_AGREEMENT_DISAGREEMENT_METRICS.md",
+    "docs/V3_8D_HISTORICAL_CONSENSUS_EVALUATION.md",
+    "docs/V3_8E_CONTROLLED_FUSION_RESEARCH.md",
+    "docs/V3_8F_CONSENSUS_PRODUCT_API.md",
+    "docs/V3_8G_CONSENSUS_DISAGREEMENT_UI.md",
+    "docs/V3_8_FINAL_FREEZE.md",
+    "frontend/app/consensus/page.tsx",
+    "frontend/components/shell/CommandBar.tsx",
+    "frontend/features/consensus/components/ConsensusView.tsx",
+    "frontend/features/consensus/components/FieldTable.tsx",
+    "frontend/features/consensus/components/GapViz.tsx",
+    "frontend/features/consensus/components/consensus-page.test.ts",
+    "frontend/features/consensus/hooks/useConsensus.ts",
+    "frontend/features/consensus/lib/consensusClient.ts",
+    "frontend/features/consensus/lib/consensusFormat.test.ts",
+    "frontend/features/consensus/lib/consensusFormat.ts",
+    "raceintel/consensus/__init__.py",
+    "raceintel/consensus/adapters.py",
+    "raceintel/consensus/alignment.py",
+    "raceintel/consensus/contracts.py",
+    "raceintel/consensus/metrics.py",
+    "raceintel/consensus/product.py",
+    "raceintel/consensus/trajectories.py",
+    "results/v3/v3_8a/consensus_contract.json",
+    "results/v3/v3_8a/source_audit.json",
+    "results/v3/v3_8b/alignment_contract.json",
+    "results/v3/v3_8b/alignment_validation.json",
+    "results/v3/v3_8b/validation_corpus.json",
+    "results/v3/v3_8c/metrics_contract.json",
+    "results/v3/v3_8c/metrics_validation.json",
+    "results/v3/v3_8d/analysis.json",
+    "results/v3/v3_8d/correction_01.json",
+    "results/v3/v3_8d/evaluation_card.json",
+    "results/v3/v3_8d/evaluation_card_correction_01.json",
+    "results/v3/v3_8d/evaluation_protocol.json",
+    "results/v3/v3_8d/evaluation_protocol_amendment_01.json",
+    "results/v3/v3_8d/fusion_gate.json",
+    "results/v3/v3_8d/fusion_gate_correction_01.json",
+    "results/v3/v3_8d/historical_evaluation.json",
+    "results/v3/v3_8d/historical_evaluation_correction_01.json",
+    "results/v3/v3_8d/mc2_checkpoint.json",
+    "results/v3/v3_8d/per_row_records.json",
+    "results/v3/v3_8e/d_preflight_audit.json",
+    "results/v3/v3_8e/fixed_weight_curve.json",
+    "results/v3/v3_8e/fusion_card.json",
+    "results/v3/v3_8e/fusion_evaluation.json",
+    "results/v3/v3_8e/fusion_gate.json",
+    "results/v3/v3_8e/fusion_protocol.json",
+    "results/v3/v3_8e/per_race_results.json",
+    "results/v3/v3_8e/prequential_weights.json",
+    "results/v3/v3_8e/robustness_analysis.json",
+    "results/v3/v3_8f/fixtures/2022-r03-R__lap2.json",
+    "results/v3/v3_8f/fixtures/2022-r19-R__lap1.json",
+    "results/v3/v3_8f/product_card.json",
+    "results/v3/v3_8f/product_contract.json",
+    "results/v3/v3_8f/product_validation.json",
+    "results/v3/v3_8g/ui_card.json",
+    "results/v3/v3_8g/ui_contract.json",
+    "results/v3/v3_8g/ui_validation.json",
+    "results/v3/v3_8h/final_card.json",
+    "results/v3/v3_8h/freeze_manifest.json",
+    "scripts/run_ci_frontend_tests.py",
+    "scripts/run_ci_tests.py",
+    "scripts/v3_8d_analyze.py",
+    "scripts/v3_8d_correction_01.py",
+    "scripts/v3_8d_run.py",
+    "scripts/v3_8e_run.py",
+    "tests/test_v3_8a_consensus_contract.py",
+    "tests/test_v3_8b_alignment.py",
+    "tests/test_v3_8b_source_adapters.py",
+    "tests/test_v3_8c_consensus_metrics.py",
+    "tests/test_v3_8c_consensus_trajectories.py",
+    "tests/test_v3_8d_correction_01.py",
+    "tests/test_v3_8d_evaluation.py",
+    "tests/test_v3_8e_fusion.py",
+    "tests/test_v3_8f_consensus_api.py",
+    "tests/test_v3_8f_consensus_contract.py",
+    "tests/test_v3_8h_freeze.py"
+  ],
+  "programme": "V3.8 Model x Simulation Consensus",
+  "reconciled_historical_guards": [
+    "tests/test_v3_5a_contract.py",
+    "tests/test_v3_5b_dataset.py",
+    "tests/test_v3_5c_harness.py",
+    "tests/test_v3_5d_screening.py",
+    "tests/test_v3_6a_contract.py",
+    "tests/test_v3_6b_contracts.py",
+    "tests/test_v3_6d_evaluation.py",
+    "tests/test_v3_6f_runtime.py",
+    "tests/test_v3_6h_freeze.py",
+    "tests/test_v3_7a_contract.py"
+  ],
+  "runtime_product_status": {
+    "exposed": [
+      "MODEL",
+      "SIMULATION",
+      "DISAGREEMENT"
+    ],
+    "forbidden": [
+      "fused probability",
+      "consensus probability",
+      "combined probability",
+      "source winner",
+      "preferred source",
+      "confidence score",
+      "consensus score"
+    ]
+  },
+  "runtime_sources": [
+    "V3_1B_LOGISTIC",
+    "MC2_E"
+  ],
+  "schema": "v3.8h-freeze-manifest-v1",
+  "stage": "V3.8H",
+  "stages": {
+    "A": {
+      "artifacts": {
+        "consensus_contract.json": {
+          "contract_identity": "d0b8785a01347580125b38b311984c793c012352ce3ff175cfa3504379b9a67b",
+          "status": "AUTHORITATIVE"
+        },
+        "source_audit.json": {
+          "status": "AUTHORITATIVE"
+        }
+      },
+      "doc": "docs/V3_8A_CONSENSUS_CONTRACT_SOURCE_AUDIT.md",
+      "gate": null,
+      "owned_files": [
+        "results/v3/v3_8a/consensus_contract.json",
+        "results/v3/v3_8a/source_audit.json",
+        "docs/V3_8A_CONSENSUS_CONTRACT_SOURCE_AUDIT.md",
+        "tests/test_v3_8a_consensus_contract.py"
+      ],
+      "verdict": "semantics/contract frozen"
+    },
+    "B": {
+      "artifacts": {
+        "alignment_contract.json": {
+          "contract_identity": "d212803f7ed7e8a8563abdd5b7686326e7094d810f415fa1468117541dfbfde7",
+          "status": "AUTHORITATIVE"
+        },
+        "alignment_validation.json": {
+          "status": "AUTHORITATIVE"
+        },
+        "validation_corpus.json": {
+          "status": "AUTHORITATIVE"
+        }
+      },
+      "doc": "docs/V3_8B_SOURCE_ADAPTERS_ALIGNMENT.md",
+      "gate": null,
+      "owned_files": [
+        "results/v3/v3_8b/alignment_contract.json",
+        "results/v3/v3_8b/alignment_validation.json",
+        "results/v3/v3_8b/validation_corpus.json",
+        "docs/V3_8B_SOURCE_ADAPTERS_ALIGNMENT.md",
+        "raceintel/consensus/contracts.py",
+        "raceintel/consensus/adapters.py",
+        "raceintel/consensus/alignment.py",
+        "raceintel/consensus/__init__.py",
+        "tests/test_v3_8b_alignment.py",
+        "tests/test_v3_8b_source_adapters.py"
+      ],
+      "verdict": "source alignment validated"
+    },
+    "C": {
+      "artifacts": {
+        "metrics_contract.json": {
+          "contract_identity": "07cf1ddd9708eaea2280b1d46492d972234f68c77cf3a59cbf412f638e3a74a8",
+          "status": "AUTHORITATIVE"
+        },
+        "metrics_validation.json": {
+          "status": "AUTHORITATIVE"
+        }
+      },
+      "doc": "docs/V3_8C_AGREEMENT_DISAGREEMENT_METRICS.md",
+      "gate": null,
+      "owned_files": [
+        "results/v3/v3_8c/metrics_contract.json",
+        "results/v3/v3_8c/metrics_validation.json",
+        "docs/V3_8C_AGREEMENT_DISAGREEMENT_METRICS.md",
+        "raceintel/consensus/metrics.py",
+        "raceintel/consensus/trajectories.py",
+        "tests/test_v3_8c_consensus_metrics.py",
+        "tests/test_v3_8c_consensus_trajectories.py"
+      ],
+      "verdict": "disagreement metrics validated"
+    },
+    "D": {
+      "artifacts": {
+        "evaluation_protocol.json": {
+          "protocol_identity": "9cbe85de7c8f0553a098a9a03d016beed80159c785b566c312502d3bf10f2ed1",
+          "status": "AUTHORITATIVE"
+        },
+        "evaluation_card.json": {
+          "card_identity": "523898b3d626a7c3baffd65d2c5c921983db361faeb3feb57a7f8984f2e137f9",
+          "status": "HISTORICAL_ORIGINAL"
+        }
+      },
+      "doc": "docs/V3_8D_HISTORICAL_CONSENSUS_EVALUATION.md",
+      "gate": "FUSION_RESEARCH_WARRANTED",
+      "owned_files": [
+        "results/v3/v3_8d/evaluation_protocol.json",
+        "results/v3/v3_8d/evaluation_card.json",
+        "results/v3/v3_8d/historical_evaluation.json",
+        "results/v3/v3_8d/per_row_records.json",
+        "results/v3/v3_8d/analysis.json",
+        "results/v3/v3_8d/mc2_checkpoint.json",
+        "results/v3/v3_8d/fusion_gate.json",
+        "docs/V3_8D_HISTORICAL_CONSENSUS_EVALUATION.md",
+        "scripts/v3_8d_run.py",
+        "scripts/v3_8d_analyze.py",
+        "tests/test_v3_8d_evaluation.py"
+      ],
+      "verdict": "historical disagreement/complementarity observed; row-pooled bootstrap SUPERSEDED"
+    },
+    "D_correction_01": {
+      "artifacts": {
+        "correction_01.json": {
+          "status": "AUTHORITATIVE"
+        },
+        "evaluation_card_correction_01.json": {
+          "card_identity": "67f97c185ca8cc687b59b376bc5a48776e9290d6463a05653fa1a6e18a298985",
+          "status": "AUTHORITATIVE"
+        },
+        "evaluation_protocol_amendment_01.json": {
+          "status": "AUTHORITATIVE"
+        },
+        "fusion_gate_correction_01.json": {
+          "status": "AUTHORITATIVE"
+        },
+        "historical_evaluation_correction_01.json": {
+          "status": "AUTHORITATIVE"
+        }
+      },
+      "corrected_bootstrap": {
+        "B": 2000,
+        "ci95": [
+          -0.675070800341179,
+          -0.0038341926858394522
+        ],
+        "frac_gt_0": 0.0055,
+        "frac_lt_0": 0.9945,
+        "mean": -0.23183645937178618,
+        "observed_race_macro_advantage": -0.23278201903984877,
+        "seed": 987654321,
+        "unit": "RACE"
+      },
+      "defect_class": "CORRECTABLE_D_ANALYSIS_DEFECT",
+      "gate": "FUSION_RESEARCH_WARRANTED",
+      "mc2_reruns": 0,
+      "owned_files": [
+        "results/v3/v3_8d/correction_01.json",
+        "results/v3/v3_8d/evaluation_card_correction_01.json",
+        "results/v3/v3_8d/evaluation_protocol_amendment_01.json",
+        "results/v3/v3_8d/fusion_gate_correction_01.json",
+        "results/v3/v3_8d/historical_evaluation_correction_01.json",
+        "scripts/v3_8d_correction_01.py",
+        "tests/test_v3_8d_correction_01.py"
+      ],
+      "population_changes": 0,
+      "prediction_changes": 0,
+      "superseded": {
+        "evaluation_card.json bootstrap mean -0.15065782073566983 CI [-0.5367011220527186, -0.0007417371736964612]": "SUPERSEDED_ROW_POOLED_BOOTSTRAP"
+      },
+      "verdict": "corrected race-level uncertainty authoritative; fusion research warranted"
+    },
+    "E": {
+      "artifacts": {
+        "fusion_card.json": {
+          "card_identity": "ec6578de410f1ec8f6975e1cf4a2575aa4984967804b22a0b583fe2740948357",
+          "status": "AUTHORITATIVE"
+        },
+        "fusion_evaluation.json": {
+          "status": "AUTHORITATIVE"
+        },
+        "fusion_gate.json": {
+          "status": "AUTHORITATIVE"
+        },
+        "fusion_protocol.json": {
+          "e_protocol_identity": "dbe6a565d5a6fa688dbb8e0b3a1be05bad71457777cd2e312f9c164219b128dd",
+          "status": "AUTHORITATIVE"
+        }
+      },
+      "doc": "docs/V3_8E_CONTROLLED_FUSION_RESEARCH.md",
+      "e_card_original_superseded": "86d94ba7da69eb1e45aeb496a92c51d7519e70851253de043c53a332ff5f47ac",
+      "fusion_vs_logistic_race_macro_ll": {
+        "ci95": [
+          -0.0010769870773456175,
+          0.009689431645938981
+        ],
+        "delta": 0.0028754732795133603
+      },
+      "fusion_vs_mc2_race_macro_ll": {
+        "ci95": [
+          -1.0554948170386842,
+          0.0018550312230320928
+        ],
+        "delta": -0.3540254214665001
+      },
+      "gate": "FUSION_IMPROVEMENT_NOT_SUPPORTED",
+      "owned_files": [
+        "results/v3/v3_8e/fusion_protocol.json",
+        "results/v3/v3_8e/fusion_evaluation.json",
+        "results/v3/v3_8e/fusion_gate.json",
+        "results/v3/v3_8e/fusion_card.json",
+        "results/v3/v3_8e/per_race_results.json",
+        "results/v3/v3_8e/prequential_weights.json",
+        "results/v3/v3_8e/fixed_weight_curve.json",
+        "results/v3/v3_8e/robustness_analysis.json",
+        "results/v3/v3_8e/d_preflight_audit.json",
+        "docs/V3_8E_CONTROLLED_FUSION_RESEARCH.md",
+        "scripts/v3_8e_run.py",
+        "tests/test_v3_8e_fusion.py"
+      ],
+      "primary_prequential_race_macro_ll": {
+        "fusion": 0.03853232288952204,
+        "logistic": 0.03565684961000868,
+        "mc2": 0.39255774435602214
+      },
+      "verdict": "controlled fusion improvement not supported; descriptive alpha surface reaches 1.0 (pure Logistic)"
+    },
+    "F": {
+      "artifacts": {
+        "product_card.json": {
+          "card_identity": "0086785cafe4298dafe171e9a7b6c0fd099d4636151568b3a6c4f7ed1f1f2a45",
+          "status": "AUTHORITATIVE"
+        },
+        "product_contract.json": {
+          "status": "AUTHORITATIVE"
+        },
+        "product_validation.json": {
+          "status": "AUTHORITATIVE"
+        }
+      },
+      "doc": "docs/V3_8F_CONSENSUS_PRODUCT_API.md",
+      "endpoints": [
+        "GET /v2/consensus/availability",
+        "POST /v2/consensus/compare"
+      ],
+      "gate": null,
+      "owned_files": [
+        "results/v3/v3_8f/product_contract.json",
+        "results/v3/v3_8f/product_card.json",
+        "results/v3/v3_8f/product_validation.json",
+        "results/v3/v3_8f/fixtures/2022-r03-R__lap2.json",
+        "results/v3/v3_8f/fixtures/2022-r19-R__lap1.json",
+        "docs/V3_8F_CONSENSUS_PRODUCT_API.md",
+        "api/v2_consensus_routes.py",
+        "api/v2_consensus_schemas.py",
+        "api/v2_consensus_service.py",
+        "api/main.py",
+        "raceintel/consensus/product.py",
+        "tests/test_v3_8f_consensus_api.py",
+        "tests/test_v3_8f_consensus_contract.py"
+      ],
+      "verdict": "MODEL/SIMULATION/DISAGREEMENT API validated"
+    },
+    "G": {
+      "artifacts": {
+        "ui_card.json": {
+          "card_identity": "7c2313fc36e98f58a3f8fd7b3dd328d16fa5f0c3245403c2c80e970785a45391",
+          "status": "AUTHORITATIVE"
+        },
+        "ui_contract.json": {
+          "status": "AUTHORITATIVE"
+        },
+        "ui_validation.json": {
+          "status": "AUTHORITATIVE"
+        }
+      },
+      "doc": "docs/V3_8G_CONSENSUS_DISAGREEMENT_UI.md",
+      "gate": null,
+      "owned_files": [
+        "results/v3/v3_8g/ui_contract.json",
+        "results/v3/v3_8g/ui_card.json",
+        "results/v3/v3_8g/ui_validation.json",
+        "docs/V3_8G_CONSENSUS_DISAGREEMENT_UI.md",
+        "frontend/app/consensus/page.tsx",
+        "frontend/features/consensus/components/ConsensusView.tsx",
+        "frontend/features/consensus/components/FieldTable.tsx",
+        "frontend/features/consensus/components/GapViz.tsx",
+        "frontend/features/consensus/components/consensus-page.test.ts",
+        "frontend/features/consensus/hooks/useConsensus.ts",
+        "frontend/features/consensus/lib/consensusClient.ts",
+        "frontend/features/consensus/lib/consensusFormat.ts",
+        "frontend/features/consensus/lib/consensusFormat.test.ts",
+        "frontend/components/shell/CommandBar.tsx"
+      ],
+      "route": "/consensus",
+      "verdict": "product experience validated"
+    },
+    "H": {
+      "artifacts": {
+        "final_card.json": {
+          "status": "AUTHORITATIVE"
+        },
+        "freeze_manifest.json": {
+          "status": "AUTHORITATIVE"
+        }
+      },
+      "doc": "docs/V3_8_FINAL_FREEZE.md",
+      "gate": "FREEZE_APPROVED",
+      "owned_files": [
+        "results/v3/v3_8h/freeze_manifest.json",
+        "results/v3/v3_8h/final_card.json",
+        "docs/V3_8_FINAL_FREEZE.md",
+        "tests/test_v3_8h_freeze.py",
+        "scripts/run_ci_tests.py",
+        "scripts/run_ci_frontend_tests.py"
+      ],
+      "reconciled_guards": [
+        "tests/test_v3_8a_consensus_contract.py::test_no_scientific_source_files_modified",
+        "tests/test_v3_8a_consensus_contract.py::test_frozen_parent_exact",
+        "tests/test_v3_8b_source_adapters.py::test_no_frozen_source_modified",
+        "tests/test_v3_8c_consensus_metrics.py::test_no_frozen_source_modified",
+        "tests/test_v3_8d_evaluation.py::test_no_frozen_science_modified",
+        "tests/test_v3_8d_correction_01.py::test_original_d_artifacts_untouched",
+        "tests/test_v3_5a_contract.py::test_no_serving_changes",
+        "tests/test_v3_5b_dataset.py::test_no_serving_api_frontend_change",
+        "tests/test_v3_5c_harness.py::test_no_serving_api_frontend_change",
+        "tests/test_v3_5d_screening.py::test_no_serving_api_frontend_changes",
+        "tests/test_v3_6a_contract.py::test_no_serving_api_frontend_mc2_v35_changes",
+        "tests/test_v3_6a_contract.py::test_no_api_change",
+        "tests/test_v3_6a_contract.py::test_no_frontend_change",
+        "tests/test_v3_6b_contracts.py::test_no_api_frontend_change",
+        "tests/test_v3_6d_evaluation.py::test_no_api_frontend_changes",
+        "tests/test_v3_6f_runtime.py::test_no_frontend_changes",
+        "tests/test_v3_6h_freeze.py::test_head_parent_before_freeze_commit",
+        "tests/test_v3_7a_contract.py::test_baseline_clean_at_entry",
+        "tests/test_v3_7a_contract.py::test_no_mc2_api_frontend_modification"
+      ],
+      "verdict": "reconciliation, full validation and freeze"
+    }
+  },
+  "intentional_worktree_changes_note": "Every pre-commit modification to files tracked at the frozen parent (verified: git diff --name-only). New V3.8-owned files are enumerated in ownership_manifest; V3.8 guard reconciliations to new test files need no tracked-modification entry.",
+  "intentional_worktree_changes": [
+    {
+      "path": "api/main.py",
+      "reason": "V3.8F additive router registration (+2 lines)"
+    },
+    {
+      "path": "frontend/components/shell/CommandBar.tsx",
+      "reason": "V3.8G additive navigation entry (+1 line)"
+    },
+    {
+      "path": "scripts/run_ci_tests.py",
+      "reason": "V3.8H Tier-1 reclassification (EXPECTED_COLLECTED accounts for new V3.8 source-safe tests)"
+    },
+    {
+      "path": "scripts/run_ci_frontend_tests.py",
+      "reason": "V3.8H Tier-1 reclassification (EXPECTED_TEST_FILES accounts for new V3.8G source-safe tests)"
+    },
+    {
+      "path": "tests/test_v3_5a_contract.py",
+      "reason": "V3.8H guard reconciliation (admit V3.8F/V3.8G consensus paths)"
+    },
+    {
+      "path": "tests/test_v3_5b_dataset.py",
+      "reason": "V3.8H guard reconciliation (admit V3.8F/V3.8G consensus paths)"
+    },
+    {
+      "path": "tests/test_v3_5c_harness.py",
+      "reason": "V3.8H guard reconciliation (admit V3.8F/V3.8G consensus paths)"
+    },
+    {
+      "path": "tests/test_v3_5d_screening.py",
+      "reason": "V3.8H guard reconciliation (admit V3.8F/V3.8G consensus paths)"
+    },
+    {
+      "path": "tests/test_v3_6a_contract.py",
+      "reason": "V3.8H guard reconciliation (admit V3.8-owned paths; admit V3.8F/V3.8G paths)"
+    },
+    {
+      "path": "tests/test_v3_6b_contracts.py",
+      "reason": "V3.8H guard reconciliation (admit V3.8F/V3.8G consensus paths)"
+    },
+    {
+      "path": "tests/test_v3_6d_evaluation.py",
+      "reason": "V3.8H guard reconciliation (admit V3.8F/V3.8G consensus paths)"
+    },
+    {
+      "path": "tests/test_v3_6f_runtime.py",
+      "reason": "V3.8H guard reconciliation (admit V3.8G consensus paths)"
+    },
+    {
+      "path": "tests/test_v3_6h_freeze.py",
+      "reason": "V3.8H guard reconciliation (HEAD pin stale after V3.7 freeze; frozen-ancestor invariant)"
+    },
+    {
+      "path": "tests/test_v3_7a_contract.py",
+      "reason": "V3.8H guard reconciliation (admit V3.8-owned paths; admit V3.8F/V3.8G paths)"
+    }
+  ]
+}

@@ -186,8 +186,10 @@ def test_no_serving_changes():
     # frontend/ or serving still fails.
     # V3.7H reconciliation: V3.7F/V3.7G charters additionally admit exactly
     # the counterfactual integration paths (frozen science untouched).
+    # V3.8H reconciliation: V3.8F/V3.8G charters additionally admit exactly
+    # the consensus integration paths (frozen science untouched).
     allowed = ("api/v2_strategy_v3_", "api/main.py",
-               "api/v2_counterfactual_",
+               "api/v2_counterfactual_", "api/v2_consensus_",
                "frontend/app/strategy/page.tsx",
                "frontend/features/strategy/components/Strategy",
                "frontend/features/strategy/hooks/useStrategy",
@@ -195,6 +197,7 @@ def test_no_serving_changes():
                "frontend/lib/v2.ts",
                "frontend/app/counterfactuals",
                "frontend/features/counterfactuals",
+               "frontend/app/consensus", "frontend/features/consensus",
                "frontend/components/shell/CommandBar.tsx")
     for line in out.splitlines():
         if line[3:].startswith(allowed):

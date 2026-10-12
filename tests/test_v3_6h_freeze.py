@@ -42,14 +42,20 @@ def test_parent_identity():
 
 
 def test_head_parent_before_freeze_commit():
-    # Before the freeze commit HEAD is the frozen parent; after it, HEAD
-    # is exactly one commit ahead. Both are legitimate freeze states.
+    # V3.8H reconciliation: the HEAD-position pin is stale after the V3.7
+    # freeze (HEAD is legitimately two+ commits past the v3.5 tag).
+    # Final-state invariant preserving the original intent (V3.6 freeze is
+    # exactly one commit atop the v3.5 parent; no history rewrite): the
+    # frozen parent is an ancestor of HEAD, and the recorded V3.6 freeze
+    # commit is a direct child of the parent.
     head = _git("rev-parse", "HEAD")
-    if head != PARENT:
-        count = _git("rev-list", "--count",
-                     "v3.5-outcome-distribution..HEAD")
-        assert count == "1"
-        assert _git("rev-parse", "HEAD^") == PARENT
+    out = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", PARENT, head],
+        cwd=ROOT, capture_output=True)
+    assert out.returncode == 0, head
+    assert _git("rev-parse", "v3.6-strategy-2.0^{commit}") == \
+        "1eb462631b9d7a948e35b8a1658e3bb90035c94c"
+    assert _git("rev-parse", "v3.6-strategy-2.0^{commit}^") == PARENT
 
 
 def test_a_identity():

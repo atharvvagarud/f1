@@ -1,0 +1,180 @@
+{
+  "admitted_sources": [
+    "V3_1B_LOGISTIC",
+    "MC2_E"
+  ],
+  "aggregation": {
+    "primary": "race-macro (equal per-evaluation-race weight) over the 5 evaluation races",
+    "secondary": [
+      "state/row-pooled over evaluation rows"
+    ]
+  },
+  "alpha_grid": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "alpha_interpretation": "alpha = 1.0 is the Logistic control exactly; alpha = 0.0 is the MC2 control exactly; 0 <= alpha <= 1 enforced",
+  "bootstrap": {
+    "B": 2000,
+    "level": 95,
+    "note": "historical evaluation uncertainty only; never MC sampling uncertainty; never real-world or posterior uncertainty",
+    "seed": 987654322,
+    "statistics": [
+      "paired race-macro log-loss delta fusion-vs-Logistic",
+      "paired race-macro log-loss delta fusion-vs-MC2"
+    ],
+    "unit": "evaluation race (resample the 5 evaluation races with replacement; preserve all rows of selected races; recompute race-macro metric; compute paired delta). Row-level bootstrapping is prohibited for primary uncertainty."
+  },
+  "chronology": [
+    "2022-r03-R",
+    "2022-r11-R",
+    "2022-r19-R",
+    "2023-r05-R",
+    "2023-r13-R",
+    "2023-r21-R",
+    "2024-r07-R",
+    "2024-r15-R"
+  ],
+  "controls": [
+    "V3_1B_LOGISTIC on the exact evaluation identities",
+    "MC2_E on the exact evaluation identities"
+  ],
+  "d_preflight_verdict": "REPORTING_DEFECT_ONLY (results/v3/v3_8e/d_preflight_audit.json; empirical D values unchanged; gate FUSION_RESEARCH_WARRANTED intact)",
+  "delta_definitions": {
+    "delta_fusion_vs_log": "loss_fusion - loss_log (race-macro log loss unless stated otherwise)",
+    "delta_fusion_vs_mc2": "loss_fusion - loss_mc2 (race-macro log loss unless stated otherwise)",
+    "sign": "negative = fusion lower loss / better; positive = fusion higher loss / worse. No ambiguous 'advantage' field without explicit direction."
+  },
+  "evaluation_design": "expanding-window prequential by RACE (never random row split): earliest races form the warm-up/tuning history; for each subsequent race, choose alpha on PRIOR races only, freeze it, evaluate the current race, then add the current race to history. No row from an evaluation race influences that race's alpha. No future race influences an earlier race.",
+  "evaluation_races": [
+    "2023-r05-R",
+    "2023-r13-R",
+    "2023-r21-R",
+    "2024-r07-R",
+    "2024-r15-R"
+  ],
+  "excluded_sources": {
+    "V3_4_ENSEMBLE": "excluded entirely",
+    "V3_5_P_WIN": "MUST NOT be a fusion vote; D confirmed SHARED_OR_DERIVED_LINEAGE with Logistic and negligible independent information; a three-vote Logistic+V3.5+MC2 system would double-count Logistic lineage and is prohibited",
+    "XGBOOST": "SECONDARY DIAGNOSTIC ONLY; must not influence selection of the primary Logistic x MC2 fusion; status for this stage: SECONDARY_XGB_FUSION_NOT_REQUIRED (skipped to bound complexity; primary gate unaffected)"
+  },
+  "fixed_weight_curve": "descriptive full-corpus fixed-alpha curve over the preregistered grid (alpha, race-macro LL, pooled LL, race-macro Brier, pooled Brier) for understanding the fusion surface. REVEALED / DESCRIPTIVE ONLY: the full-corpus optimum is marked DESCRIPTIVE_ORACLE_WEIGHT and must never be reported as confirmatory out-of-time improvement or a deployable optimum.",
+  "frozen_parent": {
+    "commit": "30fe18908a41d95113c189274598269a95ef44ca",
+    "tag": "v3.7-counterfactual-engine"
+  },
+  "fusion_formula": "p_fused = alpha * p_log + (1 - alpha) * p_mc2 per driver-row, where p_log is the frozen V3.1B Logistic raw independent-binary WIN probability and p_mc2 is the frozen MC2-E mutually-exclusive simulation WIN frequency. Output is a binary WIN probability per driver-row; it is NOT a race-level mutually-exclusive distribution. Fused probabilities are NEVER normalized across the race.",
+  "gate": {
+    "classes": [
+      "FUSION_IMPROVEMENT_SUPPORTED",
+      "FUSION_IMPROVEMENT_INCONCLUSIVE",
+      "FUSION_IMPROVEMENT_NOT_SUPPORTED",
+      "BLOCKING_SEMANTIC_MISMATCH"
+    ],
+    "decision": "deterministic from preregistered rules below; no weakening after results; 'warranted research' (D) never equals 'supported improvement' (E)",
+    "rules": {
+      "BLOCKING_SEMANTIC_MISMATCH": "semantic/provenance integrity failure",
+      "FUSION_IMPROVEMENT_INCONCLUSIVE": "point estimates beat both controls but uncertainty/robustness cannot support a strong claim",
+      "FUSION_IMPROVEMENT_NOT_SUPPORTED": "fusion fails to beat both controls on primary race-macro log loss, or robust evidence materially favors a control",
+      "FUSION_IMPROVEMENT_SUPPORTED": "requires ALL of: (1) provenance/semantic validity passes; (2) primary prequential fusion has LOWER race-macro log loss than Logistic; (3) LOWER race-macro log loss than MC2; (4) paired race-level bootstrap direction supportive against both controls without the apparent gain being purely one-race pathology; (5) Brier/secondary evidence shows no major contradictory failure; (6) improvement not solely attributable to the known MC2 p=0 extreme row; (7) result scientifically interpretable under the revealed-corpus limitation"
+    }
+  },
+  "identities": {
+    "a_contract": "d0b8785a01347580125b38b311984c793c012352ce3ff175cfa3504379b9a67b",
+    "b_contract": "d212803f7ed7e8a8563abdd5b7686326e7094d810f415fa1468117541dfbfde7",
+    "c_contract": "07cf1ddd9708eaea2280b1d46492d972234f68c77cf3a59cbf412f638e3a74a8",
+    "d_card": "523898b3d626a7c3baffd65d2c5c921983db361faeb3feb57a7f8984f2e137f9",
+    "d_protocol": "9cbe85de7c8f0553a098a9a03d016beed80159c785b566c312502d3bf10f2ed1"
+  },
+  "mc2_reuse": "reuse exact D per-row records and provenance only. No run_mc2 calls, no new futures, no additional races, no alteration of E_AR1_RESIDUAL / 5000 futures / seed 20240101 / rho 0.264 / fold-through parameters / eligibility / replay boundaries. Any E code path importing or calling run_mc2 or generating MC2 futures fails tests.",
+  "mc_sampling_context": "retain D/C finite-MC context (SE = sqrt(p(1-p)/n), Wilson 95%) for description only. MC2 Wilson intervals are NEVER the confidence interval for fusion performance; fused probability inside/outside a Wilson interval establishes nothing about significance. MC sampling uncertainty and historical evaluation uncertainty stay separate.",
+  "metrics": {
+    "primary": "race-macro binary log loss over evaluation races",
+    "secondary": [
+      "state/row-pooled binary log loss",
+      "race-macro Brier score",
+      "state/row-pooled Brier score"
+    ]
+  },
+  "no_serving_promotion": "research only under any gate outcome: no replacement of V3.1B or MC2, no endpoint/strategy/counterfactual/frontend changes, no public fused probability, no production ensemble, no deployment-readiness claim",
+  "normalization_prohibition": "never softmax, race-normalize, simplex-project, or otherwise renormalize Logistic; never renormalize MC2; never reinterpret MC2 frequency as Logistic probability; never normalize fused probabilities across the race; source-native probabilities untouched",
+  "pathology": [
+    "E-P1",
+    "E-P2",
+    "E-P3",
+    "E-P4",
+    "E-P5",
+    "E-P6",
+    "E-P7",
+    "E-P8",
+    "E-P9",
+    "E-P10",
+    "E-P11",
+    "E-P12",
+    "E-P13",
+    "E-P14",
+    "E-P15",
+    "E-P16",
+    "E-P17",
+    "E-P18",
+    "E-P19",
+    "E-P20",
+    "E-P21",
+    "E-P22",
+    "E-P23",
+    "E-P24"
+  ],
+  "phase": "V3.8E",
+  "population": {
+    "candidate_rows": 300,
+    "comparable_rows": 277,
+    "excluded_rows": 23,
+    "note": "all three arms (Logistic, MC2, fusion) share exact evaluation identities; no extra rows, no missing-as-zero, no silent drops",
+    "reasons": {
+      "PREP_REFUSAL": 19,
+      "ZERO_VALID_TRIALS": 4
+    }
+  },
+  "prohibited_interpretations": [
+    "pristine holdout validation",
+    "untouched confirmation",
+    "independent confirmation",
+    "new unseen evidence",
+    "prospective validation",
+    "optimal fusion",
+    "true probability",
+    "independent models",
+    "causal improvement",
+    "statistically proven superiority",
+    "production-ready ensemble",
+    "universal improvement",
+    "real-world uncertainty",
+    "pristine holdout confirmation"
+  ],
+  "protocol_identity": "dbe6a565d5a6fa688dbb8e0b3a1be05bad71457777cd2e312f9c164219b128dd",
+  "revealed_corpus_limitation": "V3.8E exists because D examined this historical corpus and warranted fusion research; the D corpus is therefore REVEALED for the decision to perform E. Source predictions remain temporally OOF, but the decision to investigate fusion was made after D examined the corpus. E is controlled historical fusion research on temporally OOF source predictions, with fusion parameters evaluated prequentially/out-of-time wherever applicable. This limitation appears prominently in every E card/report.",
+  "robustness": {
+    "A_full_primary": "primary analysis includes the known 2023-r21-R lap-3 MC2 p=0.0 winner row; it is never silently removed",
+    "B_loro": "leave-one-race-out influence analysis over evaluation races",
+    "C_extreme_row": "identify the largest absolute per-row log-loss contribution/delta",
+    "D_outlier_removed": "result with the known extreme row removed reported as EXPLORATORY SENSITIVITY ONLY; never replaces the primary result",
+    "E_brier_check": "compare log-loss conclusions with Brier conclusions"
+  },
+  "schema": "v3.8e-fusion-protocol-v1",
+  "scoring_epsilon": "1e-15 evaluation-only clipping of exact 0/1 native values, applied identically to all arms; stored natives untouched (same policy as D, repository precedent V3.5)",
+  "status": "PREREGISTERED_BEFORE_RESULTS",
+  "target": "WIN",
+  "tie_break": "among exact ties on the tuning objective, choose the largest alpha (defaults toward the frozen Logistic champion rather than inventing additional simulation influence); deterministic",
+  "tuning_objective": "race-macro binary log loss over PRIOR (history) races only. Pooled-loss tuning, evaluation-race tuning, and continuous post-hoc alpha optimization are prohibited.",
+  "warmup_justification": "3 is the smallest history that yields a stable race-macro tuning mean (n>=3 avoids single-race tuning pathology, including domination by a single outlier race such as the known MC2 p=0 race) while retaining a 5-race majority of the 8-race corpus for evaluation. Chosen before examining any fusion result.",
+  "warmup_races": 3
+}

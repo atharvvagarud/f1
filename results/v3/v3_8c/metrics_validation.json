@@ -1,0 +1,55 @@
+{
+  "contract_identity": "07cf1ddd9708eaea2280b1d46492d972234f68c77cf3a59cbf412f638e3a74a8",
+  "d_readiness": "D applies frozen metrics race-macro-primary without redefinition",
+  "fixture_rule": "hand-computable mathematical fixtures (perfect/reversed/partial ranks, leader ties, boundary ties, known gaps, MC n edges, partial support, temporal deltas); nothing selected on real historical performance",
+  "fusion_absence": "structural scans: no averaging/blending/stacking/vote/confidence constructs or placeholders",
+  "ground_truth_absence": "structural scans: no actual/observed/correct-source/accuracy tokens",
+  "implementation_identities": {
+    "metrics": "v3.8c-consensus-metrics-v1",
+    "trajectories": "v3.8c-consensus-trajectories-v1"
+  },
+  "independent_recomputation": {
+    "average_ranks": "hand {0.8,0.5,0.5,0.2}->{1,2.5,2.5,4}",
+    "displacement_gaps": "hand-oriented sentinels + reversal negation",
+    "kendall_tie": "hand 0.9128709291752769 + scipy cross-check",
+    "spearman_partial": "hand 0.9486832980505138 + scipy cross-check",
+    "wilson": "hand (0.2087350384231392, 0.23169489045390598) for p=0.22/n=5000"
+  },
+  "known_limitations": [
+    "numeric relationships only, not real-world value",
+    ">=2 common drivers required",
+    "zero-variance UNSUPPORTED",
+    "MC context sampling-only",
+    "V3.5-V3.1B agreement is lineage-linked",
+    "interpretation belongs to D"
+  ],
+  "mc_edge_cases": [
+    "p=0 SE 0 with non-zero Wilson upper",
+    "p=1 bounded below by Wilson",
+    "n<=0 rejected",
+    "n never inferred"
+  ],
+  "orientation_sentinels": "displacement +3 for A2/B5; signed gap reversal negates; absolute gap symmetric",
+  "permutation_invariance": "driver/row/source-order permutations byte-identical",
+  "quality_ordering_absence": "no winner/preferred/reliable-source outputs",
+  "reproducibility": "pure deterministic functions; repeated calls identical",
+  "schema": "v3.8c-consensus-metrics-validation-v1",
+  "support_poison": "missing sides explicit; partial rosters retain coverage; missing != zero; native zero numeric",
+  "target_poison": "WIN/TOP3, WIN/TOP5, TOP3/TOP5 magnitude refused; cross-target rank gated",
+  "temporal_safety": "no historical parquet/label/future reads; B-frames only",
+  "temporal_trajectory_sentinels": [
+    "decreasing/increasing/unchanged gaps",
+    "lap_delta + missing counts on skips",
+    "no interpolation across uncomparable states"
+  ],
+  "threshold_absence": "no LOW/MEDIUM/HIGH, no 5/10/20pp cutoffs",
+  "tie_matrix": [
+    "no ties",
+    "leader tie",
+    "interior tie",
+    "boundary-crossing tie (k=2 -> 4 members)",
+    "all-tied single/both sides -> UNSUPPORTED",
+    "two-driver",
+    "single-driver -> UNSUPPORTED"
+  ]
+}

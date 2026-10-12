@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { href: "/", label: "Predict" },
   { href: "/replay", label: "Replay" },
   { href: "/simulator", label: "Simulate" },
+  { href: "/consensus", label: "Consensus" },
   { href: "/strategy", label: "Strategy" },
   { href: "/counterfactuals", label: "Counterfactuals" },
   { href: "/models", label: "Models" },

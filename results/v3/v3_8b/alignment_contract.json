@@ -1,0 +1,143 @@
+{
+  "a_contract_identity": "d0b8785a01347580125b38b311984c793c012352ce3ff175cfa3504379b9a67b",
+  "a_contract_schema": "v3.8a-consensus-contract-v1",
+  "adapter_identities": {
+    "MC2_E": "v3.8b-mc2-adapter-v1",
+    "V3_1B_LOGISTIC": "v3.8b-logistic-adapter-v1",
+    "V3_3_XGBOOST": "v3.8b-xgb-adapter-v1",
+    "V3_5_LOGISTIC_CONTROL": "v3.8b-v3.5-adapter-v1",
+    "V3_5_XGB_E": "v3.8b-v3.5-adapter-v1"
+  },
+  "adapter_schema": [
+    "state_id",
+    "race_id",
+    "year",
+    "round",
+    "lap",
+    "stage",
+    "driver_id",
+    "source_id",
+    "source_family",
+    "target",
+    "native_probability",
+    "normalization_semantics",
+    "support_status",
+    "support_reason",
+    "provenance",
+    "mc_valid_trials",
+    "derived_from_mc2_counts"
+  ],
+  "comparability_levels": [
+    "MODEL_AVAILABLE",
+    "OUTCOME_AVAILABLE",
+    "MC2_AVAILABLE",
+    "PAIR_COMPARABLE",
+    "MULTI_SOURCE_COMPARABLE"
+  ],
+  "comparison_frame_schema": [
+    "state_id",
+    "driver_id",
+    "race_id",
+    "year",
+    "round",
+    "lap",
+    "stage",
+    "source_a",
+    "source_b",
+    "family_a",
+    "family_b",
+    "target_a",
+    "target_b",
+    "target_compatible",
+    "p_a_native",
+    "p_b_native",
+    "support_a",
+    "support_b",
+    "reason_a",
+    "reason_b",
+    "pair_comparable",
+    "provenance_a",
+    "provenance_b",
+    "mc_valid_trials_a",
+    "mc_valid_trials_b"
+  ],
+  "contract_identity": "d212803f7ed7e8a8563abdd5b7686326e7094d810f415fa1468117541dfbfde7",
+  "fail_closed_rules": [
+    "state mismatch",
+    "driver mismatch",
+    "target mismatch",
+    "missing source value",
+    "non-finite probability",
+    "probability outside [0,1]",
+    "identity mismatch",
+    "artifact/provenance mismatch",
+    "temporal boundary mismatch"
+  ],
+  "frozen_parent": {
+    "commit": "30fe18908a41d95113c189274598269a95ef44ca",
+    "tag": "v3.7-counterfactual-engine"
+  },
+  "ground_truth_boundary": "EVALUATION ONLY; forbidden fields absent from frames",
+  "identity_rules": "exact (state_id, driver_id); exact canonical driver strings; canonical sorted output ordering",
+  "multi_source_frame_schema": [
+    "state_id",
+    "driver_id",
+    "race_id",
+    "year",
+    "round",
+    "lap",
+    "stage",
+    "entries",
+    "excluded"
+  ],
+  "normalization_prohibition": "no race/sum normalization, softmax, simplex projection, or rescaling anywhere in B",
+  "package": "raceintel/consensus/ (contracts.py, adapters.py, alignment.py; repo-convention location, no v2/ dir exists)",
+  "phase": "V3.8B",
+  "provenance_rules": "artifact path + identity + model identity bound per record; provenance mandatory",
+  "reason_vocabulary": [
+    "STATE_NOT_AVAILABLE",
+    "DRIVER_NOT_AVAILABLE",
+    "SOURCE_NOT_AVAILABLE",
+    "TARGET_NOT_AVAILABLE",
+    "MC2_STATE_INELIGIBLE",
+    "TERMINAL_STATE",
+    "PROVENANCE_MISMATCH",
+    "IDENTITY_MISMATCH"
+  ],
+  "schema": "v3.8b-source-alignment-contract-v1",
+  "source_families": {
+    "MC2_E": "MUTUALLY_EXCLUSIVE_SIMULATION_FREQUENCY",
+    "V3_1B_LOGISTIC": "INDEPENDENT_BINARY",
+    "V3_3_XGBOOST": "INDEPENDENT_BINARY",
+    "V3_5_LOGISTIC_CONTROL": "MARGINAL_THRESHOLD",
+    "V3_5_XGB_E": "MARGINAL_THRESHOLD"
+  },
+  "source_registry": [
+    "V3_1B_LOGISTIC",
+    "MC2_E",
+    "V3_5_LOGISTIC_CONTROL",
+    "V3_5_XGB_E",
+    "V3_3_XGBOOST"
+  ],
+  "status_2025": "REVEALED_HOLDOUT / NON_PRISTINE; product-excluded",
+  "support_vocabulary": [
+    "AVAILABLE",
+    "UNAVAILABLE",
+    "UNSUPPORTED"
+  ],
+  "target_compatibility": {
+    "TOP3_TOP5": "NOT_TARGET_COMPATIBLE",
+    "V3.5_TOPK_MC2_DERIVED_TOPK": "TARGET_COMPATIBLE only if exposed",
+    "WIN_TOP3": "NOT_TARGET_COMPATIBLE",
+    "WIN_TOP5": "NOT_TARGET_COMPATIBLE",
+    "WIN_WIN": "TARGET_COMPATIBLE"
+  },
+  "target_registry": [
+    "WIN",
+    "TOP3",
+    "TOP5",
+    "TOP10"
+  ],
+  "temporal_boundary": "T-only inputs; 13-family poison blacklist; no outcome labels in B structures",
+  "v35_p_win_lineage": "lineage-linked to V3.1B, not an independent vote; values preserved, never averaged or deduplicated"
+}

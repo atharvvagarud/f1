@@ -1,0 +1,73 @@
+{
+  "affected_fields": {
+    "bootstrap.adv": {
+      "new": {
+        "ci95": [
+          -0.675070800341179,
+          -0.0038341926858394522
+        ],
+        "frac_gt_0": 0.0055,
+        "frac_lt_0": 0.9945,
+        "mark": "CORRECTED_RACE_LEVEL",
+        "mean": -0.23183645937178618,
+        "observed": -0.23278201903984877
+      },
+      "old": {
+        "ci95": [
+          -0.5367011220527186,
+          -0.0007417371736964612
+        ],
+        "mark": "SUPERSEDED_ROW_POOLED_BOOTSTRAP",
+        "mean": -0.15065782073566983
+      }
+    },
+    "evaluation_card.findings.log_better_races/mc2_better_races": {
+      "new": [
+        7,
+        1
+      ],
+      "old": [
+        1,
+        7
+      ]
+    },
+    "gate_inputs.log_better/mc2_better": {
+      "new": [
+        7,
+        1
+      ],
+      "old": [
+        1,
+        7
+      ]
+    }
+  },
+  "confirmations": {
+    "amendment_01_mutated": false,
+    "exclusion_changes": 0,
+    "mc2_reruns": 0,
+    "original_artifacts_byte_identical": true,
+    "population_changes": 0,
+    "prediction_changes": 0,
+    "probability_changes": 0,
+    "protocol_mutated": false
+  },
+  "corrected_d_card_identity": "67f97c185ca8cc687b59b376bc5a48776e9290d6463a05653fa1a6e18a298985",
+  "corrected_d_gate": "FUSION_RESEARCH_WARRANTED",
+  "correction": "01",
+  "defect_discovery": "V3.8E preflight audit during controlled fusion research: (A) sign-swapped log_better/mc2_better labels and prose; (B) D bootstrap implemented as row-pooled resampling instead of the preregistered race-level unit.",
+  "e_consequence": "CASE_A",
+  "e_status": {
+    "case": "CASE_A",
+    "e_card_new": "ec6578de410f1ec8f6975e1cf4a2575aa4984967804b22a0b583fe2740948357",
+    "e_card_old": "86d94ba7da69eb1e45aeb496a92c51d7519e70851253de043c53a332ff5f47ac",
+    "e_empirical_metrics_unchanged": true,
+    "e_gate_unchanged": "FUSION_IMPROVEMENT_NOT_SUPPORTED",
+    "e_preflight_verdict": "CORRECTABLE_D_ANALYSIS_DEFECT",
+    "e_rerun": false
+  },
+  "original_d_card_identity": "523898b3d626a7c3baffd65d2c5c921983db361faeb3feb57a7f8984f2e137f9",
+  "original_d_gate": "FUSION_RESEARCH_WARRANTED",
+  "runtime_s": 0.013,
+  "schema": "v3.8d-correction-01-v1"
+}

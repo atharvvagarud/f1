@@ -1,0 +1,12 @@
+{
+  "amendment_version": "01",
+  "amends_protocol": "9cbe85de7c8f0553a098a9a03d016beed80159c785b566c312502d3bf10f2ed1",
+  "changed": {
+    "population_rule.per_race": "LATEST lap (by lap_number) with full 20-driver OOF coverage in each stage third (was: earliest)"
+  },
+  "decided_from": "support/refusal analysis only; no agreement, disagreement, outcome, or quality data consulted",
+  "reason": "earliest-lap rule systematically selected race-start states that frozen presence taxonomy refuses (unobserved_roster_member at leader lap-1 T; probe: lap1 refused, laps 5/10 pass in 2022-r03-R); eligibility is factual support metadata, reported transparently",
+  "schema": "v3.8d-consensus-protocol-amendment-v1",
+  "superseded_run": "initial run discarded (49 comparable / 152 refused); amended run is the gate run",
+  "unchanged": "everything else (races, rows, MC config, gate logic, epsilon, bootstrap, hypotheses)"
+}

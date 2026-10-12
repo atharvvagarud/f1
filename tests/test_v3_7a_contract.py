@@ -76,11 +76,23 @@ def test_baseline_clean_at_entry():
                # guards (provenance-neutral; frozen science untouched).
                "tests/test_v3_6", "tests/test_v3_5", "tests/test_v3_4e",
                "scripts/v3_7d_", "scripts/v3_7f_",
-               # V3.7H Tier-1 reclassification (freeze machinery;
-               # frozen science untouched): allowed.
-               "scripts/run_ci_tests.py",
+    # V3.7H Tier-1 reclassification (freeze machinery;
+    # frozen science untouched): allowed.
+    "scripts/run_ci_tests.py",
+    "scripts/run_ci_frontend_tests.py",
+    "raceintel/counterfactual/",
+               # V3.8H reconciliation: V3.8 charters explicitly supersede the
+               # A stage-entry boundary. Admitted exactly (frozen science
+               # untouched; any other path still fails): V3.8
+               # research/evaluation/product artifacts, consensus science
+               # package, D/E scripts, F API integration, G frontend,
+               # H freeze, Tier-1 reclassification.
+               "results/v3/v3_8", "docs/V3_8", "tests/test_v3_8",
+               "scripts/v3_8", "scripts/run_ci_tests.py",
                "scripts/run_ci_frontend_tests.py",
-               "raceintel/counterfactual/",
+               "raceintel/consensus/",
+               "api/v2_consensus_",
+               "frontend/app/consensus", "frontend/features/consensus",
                # Chartered C additive seam extension (the frozen V3.6B
                # guard independently records this trip; see C doc).
                "raceintel/simulation/monte_carlo.py",
@@ -242,11 +254,14 @@ def test_no_mc2_api_frontend_modification():
     # stage-entry assumption. Final-state invariant admits exactly the
     # chartered additive paths (seam hash-pinned); any other
     # MC2/API/frontend mutation still fails.
+    # V3.8H reconciliation: V3.8F/V3.8G charters additionally admit
+    # exactly the consensus API/frontend paths (frozen science untouched).
     out = _git("status", "--short")
     allowed = ("raceintel/simulation/monte_carlo.py",
-               "api/v2_counterfactual_", "api/main.py",
+               "api/v2_counterfactual_", "api/v2_consensus_", "api/main.py",
                "frontend/app/counterfactuals",
                "frontend/features/counterfactuals",
+               "frontend/app/consensus", "frontend/features/consensus",
                "frontend/lib/v2.ts",
                "frontend/components/shell/CommandBar.tsx")
     for line in out.splitlines():

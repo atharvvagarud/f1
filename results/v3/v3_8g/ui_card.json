@@ -1,0 +1,36 @@
+{
+  "card_identity": "7c2313fc36e98f58a3f8fd7b3dd328d16fa5f0c3245403c2c80e970785a45391",
+  "demo_fixtures": {
+    "excluded": "2025-r01-R lap 5 (PRODUCT_EXCLUDED refusal)",
+    "supported": "2022-r03-R lap 2 (20 drivers, leader split HAMILTON/SAINZ, top-3 Jaccard 0.5, max|gap| 0.8088, illustrative only)",
+    "unsupported": "2022-r19-R lap 1 (MODEL AVAILABLE, MC2 MC2_STATE_INELIGIBLE, NOT_COMPARABLE)"
+  },
+  "focused_tests": "45/45 node tests pass (format units + page contract assertions)",
+  "frontend_build": "next build clean incl. /consensus",
+  "frozen_parent": {
+    "commit": "30fe18908a41d95113c189274598269a95ef44ca",
+    "tag": "v3.7-counterfactual-engine"
+  },
+  "known_limitations": [
+    "demo anchors fixed (3); live provider wiring is deployment integration",
+    "fixture state_time_s null (identity on available keys)",
+    "rank detail collapses on small screens by design",
+    "per-process backend cache (unchanged F semantics)"
+  ],
+  "next_stage_readiness": "experience validated against the F contract; V3.8H owns freeze and full Tier-1",
+  "phase": "V3.8G",
+  "provenance": {
+    "a_contract": "d0b8785a01347580125b38b311984c793c012352ce3ff175cfa3504379b9a67b",
+    "b_contract": "d212803f7ed7e8a8563abdd5b7686326e7094d810f415fa1468117541dfbfde7",
+    "c_contract": "07cf1ddd9708eaea2280b1d46492d972234f68c77cf3a59cbf412f638e3a74a8",
+    "d_card_corrected": "67f97c185ca8cc687b59b376bc5a48776e9290d6463a05653fa1a6e18a298985",
+    "d_gate_corrected": "FUSION_RESEARCH_WARRANTED",
+    "e_card_corrected": "ec6578de410f1ec8f6975e1cf4a2575aa4984967804b22a0b583fe2740948357",
+    "e_gate": "FUSION_IMPROVEMENT_NOT_SUPPORTED",
+    "f_product_card": "0086785cafe4298dafe171e9a7b6c0fd099d4636151568b3a6c4f7ed1f1f2a45"
+  },
+  "route": "/consensus",
+  "schema": "v3.8g-ui-card-v1",
+  "ui_contract": "v3.8g-ui-contract-v1",
+  "visual_validation": "inspected live at 1600/820/390 + all three demo anchors, zero console errors"
+}

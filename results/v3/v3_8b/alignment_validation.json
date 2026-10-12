@@ -1,0 +1,35 @@
+{
+  "a_contract_identity": "d0b8785a01347580125b38b311984c793c012352ce3ff175cfa3504379b9a67b",
+  "adapter_identities": {
+    "MC2_E": "v3.8b-mc2-adapter-v1",
+    "V3_1B_LOGISTIC": "v3.8b-logistic-adapter-v1",
+    "V3_3_XGBOOST": "v3.8b-xgb-adapter-v1",
+    "V3_5_LOGISTIC_CONTROL": "v3.8b-v3.5-adapter-v1",
+    "V3_5_XGB_E": "v3.8b-v3.5-adapter-v1"
+  },
+  "b_contract_identity": "d212803f7ed7e8a8563abdd5b7686326e7094d810f415fa1468117541dfbfde7",
+  "c_readiness": "C can compute agreement/disagreement from ComparisonFrame/MultiSourceFrame without source joins",
+  "corpus_rule": "fixed synthetic identities; values agreement-neutral, not selected on outcomes",
+  "driver_identity_checks": "exact canonical strings; permutation-invariant",
+  "frozen_parent": {
+    "commit": "30fe18908a41d95113c189274598269a95ef44ca",
+    "tag": "v3.7-counterfactual-engine"
+  },
+  "ground_truth_absence": "frame field scan finds no metric or truth fields (tested)",
+  "known_limitations": [
+    "fixtures are illustrative constants, not real frozen predictions",
+    "parquet loaders deferred to corpus-backed stages (no dead code in Tier-1)",
+    "MC2 top-k derivation tested on frozen-structure fixtures"
+  ],
+  "normalization_sentinel": "non-summing Logistic state survives adaptation unchanged (tested)",
+  "parity_expectation": "adapted native == source native exactly (difference 0); verified by tests across all corpus records",
+  "reproducibility": "no clock/RNG; canonical sorted ordering; identical inputs -> identical outputs (tested)",
+  "row_order_poison": "shuffled input rows -> identical canonical frames (tested)",
+  "schema": "v3.8b-alignment-validation-v1",
+  "state_identity_checks": "exact match required; mismatch -> UNSUPPORTED_COMPARISON",
+  "status_2025": "REVEALED_HOLDOUT / NON_PRISTINE; product-excluded",
+  "support_accounting": "candidate/intersection/exclusion sets explicit; inner intersections carry exclusion records",
+  "target_compatibility": "WIN-WIN compatible; cross-target incompatible; MC2 top-k gated on exposure",
+  "temporal_poison": "B imports no future/outcome fields; structures reject ground-truth keys (tested)",
+  "validation_corpus": "results/v3/v3_8b/validation_corpus.json (schema v3.8b-validation-corpus-v1; 2 races x 3 stages x 3 drivers; fixed illustrative constants)"
+}

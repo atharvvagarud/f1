@@ -1,0 +1,176 @@
+{
+  "a_identity": "d0b8785a01347580125b38b311984c793c012352ce3ff175cfa3504379b9a67b",
+  "aggregation": {
+    "primary": "race-macro (equal per-race weight)",
+    "secondary": [
+      "state-pooled",
+      "stage-specific",
+      "year/fold-specific"
+    ]
+  },
+  "b_identity": "d212803f7ed7e8a8563abdd5b7686326e7094d810f415fa1468117541dfbfde7",
+  "bootstrap": {
+    "B": 2000,
+    "level": 95,
+    "note": "historical evaluation uncertainty only; never MC sampling uncertainty",
+    "seed": 987654321,
+    "statistics": [
+      "mean spearman",
+      "mean absolute gap",
+      "mean loss advantage"
+    ],
+    "unit": "race"
+  },
+  "c_identity": "07cf1ddd9708eaea2280b1d46492d972234f68c77cf3a59cbf412f638e3a74a8",
+  "excluded_2025": {
+    "role": "never in gate population; secondary context only if discussed",
+    "status": "REVEALED_HOLDOUT / NON_PRISTINE"
+  },
+  "exploratory_policy": "findings beyond H1-H7 labelled EXPLORATORY, never preregistered",
+  "frozen_parent": {
+    "commit": "30fe18908a41d95113c189274598269a95ef44ca",
+    "tag": "v3.7-counterfactual-engine"
+  },
+  "gate": {
+    "COMPLEMENTARITY": "PASS iff each mechanism strictly better (lower race-macro loss) in >=1 race AND both signs of per-row advantage present",
+    "COVERAGE_ADEQUACY": "PASS iff >=6 races with >=1 comparable state AND all 3 stages >=20 comparable rows AND >=150 comparable rows total AND no single race >40% of rows",
+    "DISTINCT_SIGNAL": "PASS iff >=1 state with leader mismatch AND >=1 row with |gap| outside Wilson 95% MC interval",
+    "ROBUSTNESS": "PASS iff race-macro and pooled mean spearman both in (0, 0.99) AND bootstrap CIs computable (n>=6 races)",
+    "SEMANTIC_VALIDITY": "PASS iff OOF fold map exact + state_id joins exact + P4/P5/P6/P10/P11 zero + no normalization + fold-through params used",
+    "decision": "FUSION_RESEARCH_WARRANTED iff all five PASS; BLOCKING_SEMANTIC_MISMATCH iff construction violates A/B/C contract; else FUSION_NOT_WARRANTED; no override"
+  },
+  "ground_truth": {
+    "join_order": "after alignment + metrics; never in B/C structures",
+    "source": "OOF target columns (binary per driver-row); race winner = sole target==1 row (fail-closed otherwise)"
+  },
+  "hypotheses": [
+    "H1 non-trivial imperfect rank agreement",
+    "H2 non-zero leader disagreement subset",
+    "H3 magnitude disagreement beyond MC sampling in some states",
+    "H4 stage variation",
+    "H5 complementary errors, no uniform domination",
+    "H6 V3.5 P_win little independent info",
+    "H7 XGB secondary diversity, superiority not assumed"
+  ],
+  "independent_votes": "Logistic and V3.5 P_win never counted as two votes (SHARED_OR_DERIVED_LINEAGE)",
+  "mc2_config": {
+    "arm": "E_AR1_RESIDUAL",
+    "frame": "replay timeline frame with state_time_s == d9 row state_time_s for (race, driver, lap)",
+    "master_seed": 20240101,
+    "prep": "frozen _prepare_state_and_mechanisms (V3.2C presence + V3.2D mechanisms + conditioned variance)",
+    "simulation_count": 5000
+  },
+  "pathology": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7",
+    "P8",
+    "P9",
+    "P10",
+    "P11",
+    "P12",
+    "P13",
+    "P14",
+    "P15",
+    "P16",
+    "P17",
+    "P18",
+    "P19",
+    "P20"
+  ],
+  "phase": "V3.8D",
+  "population_rule": {
+    "forbidden_inputs": [
+      "agreement",
+      "disagreement",
+      "probabilities",
+      "frequencies",
+      "outcomes",
+      "predictive success"
+    ],
+    "per_race": "earliest lap (by lap_number) with full 20-driver OOF coverage in each stage third (EARLY/MID/LATE)",
+    "races": "68 OOF races sorted by (season, round); every 8th starting index 2 -> 8 races",
+    "rows": "all 20 driver rows per selected (race, lap); MC2 executed per ROW at row-exact T; refusals recorded, never imputed"
+  },
+  "primary_gate_class": "TEMPORALLY_OUT_OF_FOLD",
+  "protocol_identity": "9cbe85de7c8f0553a098a9a03d016beed80159c785b566c312502d3bf10f2ed1",
+  "provenance_classes": [
+    "TEMPORALLY_OUT_OF_FOLD",
+    "REVEALED_HOLDOUT",
+    "IN_SAMPLE",
+    "UNVERIFIED"
+  ],
+  "schema": "v3.8d-consensus-evaluation-protocol-v1",
+  "scoring": {
+    "epsilon": 1e-15,
+    "epsilon_policy": "evaluation-only clipping of exact 0/1 native values; stored natives untouched; applied identically to all sources; repository precedent V3.5",
+    "loss_advantage": "loss_logistic - loss_mc2; positive = MC2 lower loss",
+    "metrics": [
+      "binary log loss",
+      "Brier score",
+      "top-1/rank diagnostics"
+    ],
+    "unit": "driver-row binary WIN event; no race normalization of Logistic"
+  },
+  "secondary_pairs": [
+    "XGB vs MC2",
+    "Logistic vs XGB",
+    "Logistic vs V3.5 P_win (lineage diagnostic)",
+    "V3.5 topk vs MC2 derived topk where exposed"
+  ],
+  "sources": {
+    "logistic_oof": {
+      "class": "TEMPORALLY_OUT_OF_FOLD",
+      "fit_policy": "expanding window strictly earlier seasons",
+      "fold_map": {
+        "D1": 2022,
+        "D2": 2023,
+        "D3": 2024
+      },
+      "model": "v3_1b_baseline C=0.01",
+      "paths": [
+        "data/v3/v3_3c/oof_baseline__D1.parquet",
+        "data/v3/v3_3c/oof_baseline__D2.parquet",
+        "data/v3/v3_3c/oof_baseline__D3.parquet"
+      ]
+    },
+    "mc2": {
+      "class": "TEMPORALLY_OUT_OF_FOLD by construction",
+      "engine": "run_mc2 arm E_AR1_RESIDUAL (frozen V3.2D/E science)",
+      "temporal_policy": "history <= T + fold-through params (FOLD_THROUGH {2022:2021, 2023:2021, 2024:2023})"
+    },
+    "v35_control": {
+      "class": "TEMPORALLY_OUT_OF_FOLD",
+      "columns": "proj_is_topK",
+      "model_filter": "l2_logistic",
+      "paths": [
+        "data/v3/v3_5c/oof_D1.parquet",
+        "data/v3/v3_5c/oof_D2.parquet",
+        "data/v3/v3_5c/oof_D3.parquet"
+      ]
+    },
+    "v35_xgb_e": {
+      "class": "TEMPORALLY_OUT_OF_FOLD",
+      "columns": "proj_is_topK",
+      "paths": [
+        "data/v3/v3_5e/oof_xgb_e__D1.parquet",
+        "data/v3/v3_5e/oof_xgb_e__D2.parquet",
+        "data/v3/v3_5e/oof_xgb_e__D3.parquet"
+      ]
+    },
+    "xgb_oof": {
+      "class": "TEMPORALLY_OUT_OF_FOLD",
+      "paths": [
+        "data/v3/v3_3c/oof_xgboost__D1.parquet",
+        "data/v3/v3_3c/oof_xgboost__D2.parquet",
+        "data/v3/v3_3c/oof_xgboost__D3.parquet"
+      ]
+    }
+  },
+  "status": "PREREGISTERED_BEFORE_RESULTS",
+  "v34": "excluded; never evaluated as a source"
+}

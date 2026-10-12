@@ -1,0 +1,72 @@
+{
+  "accessibility_requirements": [
+    "semantic main landmark",
+    "h1 + h2 hierarchy",
+    "keyboard-operable sort buttons and anchor selector with visible focus",
+    "semantic table (caption, scope col/row, aria sort labels)",
+    "source distinction by shape + text, never color-only",
+    "gap direction by sign + text label, never color-only",
+    "status by text chip, never color-only",
+    "role=status loading, role=alert errors",
+    "native details disclosure for provenance (no hover-only explanations)",
+    "reduced motion: no animation anywhere"
+  ],
+  "api_dependency": {
+    "availability": "GET /v2/consensus/availability (cheap, first)",
+    "compare": "POST /v2/consensus/compare (single request per selection, abort-guarded, no polling)"
+  },
+  "availability_states": [
+    "COMPARABLE: full comparison",
+    "NOT_COMPARABLE: available arm shown, missing arm as explicit unavailable text, disagreement hidden",
+    "unsupported (2025): explicit refusal, no fallback",
+    "error: typed message + retry, no stale fabrication",
+    "loading: role=status text, no skeleton overload"
+  ],
+  "demo_fixture_disclosure": "HISTORICAL REPLAY chip + illustrative-state note on every render; 2022-r03-R lap 2 selected truth-blind (leader mismatch x largest max|gap|); magnitude not presented as typical",
+  "f_contract_consumed": "v3.8f-product-contract-v1",
+  "f_product_card": "0086785cafe4298dafe171e9a7b6c0fd099d4636151568b3a6c4f7ed1f1f2a45",
+  "frontend_data_rule": "backend-authoritative values rendered verbatim (native*100 for display); ranks/ties/intervals never recomputed; no research records, model artifacts, or simulator internals imported",
+  "frozen_parent": {
+    "commit": "30fe18908a41d95113c189274598269a95ef44ca",
+    "tag": "v3.7-counterfactual-engine"
+  },
+  "gap_sign_convention": "signed gap = simulation - model (+ simulation higher, - model higher), visible beside the table and in column help",
+  "leader_semantics": "backend tie-safe leader sets rendered in full, never cut to one; LEADER SPLIT / LEADER MATCH are neutral descriptions, not verdicts",
+  "mc_sampling_wording": "MC SAMPLING RANGE + valid-trials count; labelled finite-simulation sampling; never confidence/certainty/real-world uncertainty; never visually dominant",
+  "phase": "V3.8G",
+  "probability_family_labels": {
+    "model": "Independent binary WIN probabilities — one per driver, never summing to a field total",
+    "simulation": "Winner frequencies over mutually exclusive simulated outcomes"
+  },
+  "prohibited_fusion_concepts": [
+    "fused/combined/consensus/average/recommended probability",
+    "midpoint marker",
+    "overall probability card",
+    "agreement score",
+    "blend/trust slider"
+  ],
+  "prohibited_source_winner_concepts": [
+    "preferred/trusted source",
+    "source winner",
+    "best source",
+    "trust model/simulation",
+    "model-is-wrong / simulation-is-right language",
+    "red/green good/bad agreement semantics"
+  ],
+  "responsive_requirements": [
+    "1600px desktop workstation density",
+    "820px tablet stacked panels, full table",
+    "390px mobile: 4 priority columns (driver/model/sim/gap), rank detail collapsed, no viewport overflow, usable touch targets"
+  ],
+  "route": "/consensus",
+  "schema": "v3.8g-ui-contract-v1",
+  "source_labels": {
+    "disagreement": "DISAGREEMENT",
+    "model": "MODEL / Logistic",
+    "simulation": "SIMULATION / MC2-E"
+  },
+  "top_k_wording": "top-k WIN-ranking overlap (+ Jaccard); explicitly NOT P(finish<=k) wherever shown",
+  "unsupported_behavior": "typed refusal reason in product language; unavailable never rendered as 0%; disagreement requires both sources",
+  "visualization": "paired dumbbell rows (square=MODEL, disc=SIM) on a shared native scale with text values; no midpoint, no averaging, no fill, no band",
+  "year_2025_behavior": "explicit unsupported state with factual reason; no fallback year; no research-only predictions; page still renders"
+}
