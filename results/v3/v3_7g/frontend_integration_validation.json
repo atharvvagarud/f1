@@ -1,0 +1,178 @@
+{
+  "a_identity": "1735954212ec31286fede041639875610003a09cf817177e22cc908e3fcb0a12",
+  "a_schema": "v3.7a-counterfactual-contract-v1",
+  "accessibility": {
+    "aria_expanded_drawers": true,
+    "aria_labels_charts": true,
+    "chart_text_alternatives": true,
+    "escape_behavior": "native select/radio/checkbox controls; drawer toggles are buttons",
+    "focus_restoration": "no dialogs used; drawer toggles keep focus",
+    "keyboard_operable": true,
+    "no_color_only_meaning": true,
+    "reduced_motion": "no ornamental animation; no continuous motion",
+    "semantic_headings": true,
+    "visible_focus": true
+  },
+  "api_only_architecture": {
+    "no_python_imports": true,
+    "no_client_metric_computation": true,
+    "no_eligibility_reimplementation": true,
+    "presentation_formatting_only": true,
+    "routes_used": [
+      "GET /v2/counterfactuals/availability",
+      "POST /v2/counterfactuals/compare"
+    ]
+  },
+  "b_identity": "1865537503136ed3d8603e53741902c320df9387222655b38eef51640294e970",
+  "b_schema": "v3.7b-counterfactual-execution-contract-v1",
+  "backend_immutability": {
+    "api_semantics_unchanged": true,
+    "cache_semantics_unchanged": true,
+    "scientific_code_unchanged": true,
+    "tracked_backend_modifications": [
+      "api/main.py (F router registration, pre-existing)",
+      "frontend/components/shell/CommandBar.tsx (nav item)",
+      "frontend/lib/v2.ts (additive client section)"
+    ]
+  },
+  "backend_regression": {
+    "f_api_contract_sentinels": "19 passed (availability, validation, error states, 2025, corruption, boundaries)",
+    "f_runtime_cache_sentinels": "48 passed (incl. C identity, B1 sign, parity, corruption battery)"
+  },
+  "build_tests": {
+    "eslint": "clean (no errors, no warnings on G paths)",
+    "frontend_regression_suite": "253 passed (all pre-existing suites, incl. strategy)",
+    "g_frontend_tests": "34 passed (node:test)",
+    "production_build": "passing; /counterfactuals prerendered",
+    "tsc_noemit": "clean"
+  },
+  "c_engine_identity": "v3.7c-counterfactual-engine-v1",
+  "c_seam_sha256": "045f392e46b030744f18a76140685ceba7501f80c0b8e265af662e57ca5f5376",
+  "cache_first_ux": {
+    "availability_cached_identities_shown": true,
+    "demo_cache_used": true,
+    "demo_cache_hit_verified": true,
+    "no_fake_availability": true
+  },
+  "cache_miss_behavior": {
+    "copy": "Valid counterfactual — not precomputed in this demo.",
+    "explicit_state": true,
+    "no_metrics_shown": true,
+    "no_policy_bypass_button": true,
+    "ui_verified": true
+  },
+  "claim_audit": {
+    "allowlist": "explicit prohibitions, methodological qualifications, forbidden-copy test list",
+    "frontend_test": "no recommendation/optimality language in G sources (34-test suite)",
+    "hits_outside_allowlist": 0
+  },
+  "comparison_modes": {
+    "plan_vs_plan": "verified in browser (cached PLAN A vs PLAN B result)",
+    "reference_vs_plan": "verified in browser (cached demo result)"
+  },
+  "compound_controls": {
+    "absent": ["INTERMEDIATE", "WET"],
+    "caveat_preserved": true,
+    "options": ["SOFT", "MEDIUM", "HARD", "SAMPLED"]
+  },
+  "d_card_identity": "96debc6392c79019abedc3a51c7c26fb1536e97cabb3fed3136c43ed7c2b19c3",
+  "d_gate": "REFINEMENT_NOT_WARRANTED",
+  "demo_fixture_rule": "canonical replay anchor 2022-r01-R/perez/lap 30 with REFERENCE_VS_PLAN, smallest eligible N (N=1), MEDIUM single stop — minimal intervention on the validated dry-green anchor present in the F demo cache; not chosen for its delta",
+  "e_status": "SKIPPED_BY_V3.7D_GATE",
+  "error_states": {
+    "422_invalid_request": "distinct invalid panel",
+    "500_internal": "distinct error panel",
+    "503_unavailable": "distinct server panel",
+    "supported_false": "distinct scientifically-unsupported panel with backend reason code",
+    "unknown_race_404": "distinct unavailable panel (incl. 2025)"
+  },
+  "f_api_schema": "v3.7f-counterfactual-api-v1",
+  "f_cache_schema": "v3.7f-counterfactual-cache-v1",
+  "f_runtime_identity": "v3.7f-counterfactual-runtime-v1",
+  "finish_distribution": {
+    "backend_frequencies_verbatim": true,
+    "no_quantile_reconstruction": true,
+    "p1_first": true,
+    "ref_vs_alt_bars_plus_table": true
+  },
+  "fixtures_from_real_api": [
+    "availability",
+    "reference-vs-plan",
+    "plan-vs-plan",
+    "multi-stop",
+    "rival",
+    "multi-driver",
+    "unsupported",
+    "invalid-target (422)"
+  ],
+  "h_readiness": {
+    "backend_untouched": true,
+    "no_redesign_needed": true,
+    "ready": true
+  },
+  "known_limitations": [
+    "Demo deployment is cache-first: valid uncached comparisons render NOT PRECOMPUTED (verified in browser).",
+    "Availability supported=true is factual eligibility; compare may still return supported=false.",
+    "No live-run control exists anywhere in the client (verified by test + source audit).",
+    "Top-5/top-10/rival deltas may be null where pair minima are unmet; rendered as em-dash, never zero.",
+    "Screenshots captured for record only and removed from the tree (no binary artifacts committed)."
+  ],
+  "lifecycle_surface": {
+    "statuses": ["EXECUTED", "INERT", "SUPERSEDED", "CANCELLED", "TERMINAL", "INVALID"],
+    "supersession_explained": true,
+    "supersession_visible": "verified in browser (plan-vs-plan 30.7% SUPERSEDED)"
+  },
+  "mc_uncertainty_surface": {
+    "label": "MC sampling 95% interval",
+    "never_real_world_confidence": true
+  },
+  "metric_surfaces": {
+    "descriptive_neutral": ["delta_pit_count"],
+    "orientation": "verbatim backend values; no client sign flips (tested incl. real-fixture recomputation)",
+    "primary": ["WIN Δ", "PODIUM Δ", "TOP-5 Δ", "EXPECTED FINISH Δ", "POSITION GAIN Δ"],
+    "secondary": ["TOP-10", "P(AHEAD OF RIVAL)", "EXPECTED PIT COUNT", "quantiles", "pair counts"]
+  },
+  "multi_driver_status": "plan targets + interventions supported; joint-ordering limitation displayed when active",
+  "multi_stop_status": "add-stop builder, chronological single-trajectory copy, verified via preset",
+  "no_client_live_control": {
+    "no_count_field": true,
+    "no_live_switch": true,
+    "no_mode_field": true,
+    "no_seed_field": true,
+    "test": "request-body key audit in frontend suite"
+  },
+  "pair_accounting": "5,000 / 5,000 COMPLETE PAIRS with exclusion callout (verified in browser)",
+  "performance": {
+    "build_s": "~2.1 compile (local)",
+    "cache_hit_compare_ms": "~35 (local, captured during fixture generation)",
+    "no_charting_dependencies_added": true,
+    "no_scientific_datasets_bundled": true
+  },
+  "pit_count_descriptive": true,
+  "pit_in_n_semantics": "PIT IN N LAPS → scheduled simulated Lap T+N, displayed per intervention (verified N=1→Lap 31, N=5→Lap 35 in browser)",
+  "plan_builder": {
+    "compounds_from_availability": true,
+    "max_8_interventions": true,
+    "multi_target_where_permitted": true,
+    "n_derived_from_availability": true,
+    "no_hardcoded_horizon_max": true
+  },
+  "position_gain_b1": "positive=gained, rendered verbatim; +3/0/-3 unit-tested",
+  "provenance_panel": "expandable; A/B/C/F identities, comparison/state identities, count, seed, source; shortened display with full values",
+  "responsive_validation": {
+    "1600": "verified via screenshot (dense workstation, no overflow)",
+    "390": "verified via screenshot (single column, metric strip 2-col, no clipping)",
+    "820": "verified via screenshot (no horizontal breakage)"
+  },
+  "rival_status": "factual rival select with target-exclusion guard; P(AHEAD OF RIVAL) labelled; backend authoritative on conflicts",
+  "route_decision": "OPTION A — dedicated /counterfactuals route mirroring the /strategy surface architecture (separate feature dir, own hook/machine/components, nav item). V3.6 Strategy 2.0 interface untouched (all 94 strategy-adjacent frontend tests green). V3.10-compatible composable sections, no new global state framework.",
+  "schema": "v3.7g-frontend-integration-validation-v1",
+  "unsupported_2025_behavior": "explicit unknown-race unavailable panel; no fallback, no engine substitution",
+  "unsupported_behavior": {
+    "metrics_absent": true,
+    "reason_code_visible": true,
+    "visually_distinct_from_miss_and_error": true
+  },
+  "v36_card_identity": "102079ab81101f442d380c109a32b71a3b6850f0106e021f0fc4b05a64c80aeb",
+  "verdict": "V3.7G COMPLETE — COUNTERFACTUAL EXPLORER INTEGRATED — READY FOR V3.7H"
+}

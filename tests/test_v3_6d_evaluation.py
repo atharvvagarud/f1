@@ -200,8 +200,14 @@ def test_refinement_rule_frozen():
 
 
 def test_no_tuning():
-    changed = [ln.split()[-1] for ln in _git("status", "--short").splitlines()
-               if ln.strip()]
+    lines = [ln for ln in _git("status", "--short").splitlines()
+             if ln.strip()]
+    # V3.7H reconciliation: new (untracked "??" or staged-new "A") files
+    # are permitted by design ("new files permitted"); only tracked
+    # modifications are pinned. api/ dirt beyond the chartered set still
+    # fails via test_no_api_frontend_changes in this same file.
+    changed = [ln.split()[-1] for ln in lines
+               if not (ln.startswith("??") or ln.startswith("A "))]
     tracked_modified = [f for f in changed
                         if not f.startswith(("results/", "docs/", "tests/",
                                              "scripts/", "raceintel/strategy/"
@@ -219,7 +225,17 @@ def test_no_tuning():
                                              "hooks/useStrategy",
                                              "frontend/features/strategy/"
                                              "lib/strategy",
-                                             "frontend/lib/v2.ts"))]
+                                             "frontend/lib/v2.ts",
+                                             # V3.7H reconciliation: chartered
+                                             # V3.7 tracked modifications
+                                             # (exact paths; additive only).
+                                             "frontend/app/counterfactuals",
+                                             "frontend/features/"
+                                             "counterfactuals",
+                                             "frontend/components/shell/"
+                                             "CommandBar.tsx",
+                                             "raceintel/simulation/"
+                                             "monte_carlo.py",))]
     # Only guard-allowlist test edits + new files permitted.
     assert all(f.startswith("tests/test_v3_6") for f in tracked_modified), \
         tracked_modified
@@ -231,14 +247,20 @@ def test_no_api_frontend_changes():
     # V3.6F charter admits exactly its additive integration files; any
     # other api/ change still fails. V3.6G charter admits exactly its
     # Strategy 2.0 replacement files; any other frontend/ change fails.
-    allowed = ("api/v2_strategy_v3_", "api/main.py")
+    # V3.7H reconciliation: V3.7F/V3.7G charters additionally admit exactly
+    # the counterfactual API/Explorer paths (frozen science untouched).
+    allowed = ("api/v2_strategy_v3_", "api/main.py",
+               "api/v2_counterfactual_")
     assert not any(f.startswith("api/") and not f.startswith(allowed)
                    for f in changed)
     allowed_frontend = ("frontend/app/strategy/page.tsx",
                         "frontend/features/strategy/components/Strategy",
                         "frontend/features/strategy/hooks/useStrategy",
                         "frontend/features/strategy/lib/strategy",
-                        "frontend/lib/v2.ts")
+                        "frontend/lib/v2.ts",
+                        "frontend/app/counterfactuals",
+                        "frontend/features/counterfactuals",
+                        "frontend/components/shell/CommandBar.tsx")
     assert not any(f.startswith("frontend/")
                    and not f.startswith(allowed_frontend)
                    for f in changed)

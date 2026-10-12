@@ -1,0 +1,12 @@
+{
+  "a_identity": "1735954212ec31286fede041639875610003a09cf817177e22cc908e3fcb0a12",
+  "anchors": 71,
+  "b_identity": "1865537503136ed3d8603e53741902c320df9387222655b38eef51640294e970",
+  "c_engine_identity": "v3.7c-counterfactual-engine-v1",
+  "card_identity": "96debc6392c79019abedc3a51c7c26fb1536e97cabb3fed3136c43ed7c2b19c3",
+  "d_protocol_identity": "e4a6101c7267f2db9f85c76bcc07c17ed01c7f85de4a6481f94ab0941634c570",
+  "gate": "REFINEMENT_NOT_WARRANTED",
+  "matrix_wall_s": 9631,
+  "schema": "v3.7d-evaluation-card-v1",
+  "seam_sha256": "045f392e46b030744f18a76140685ceba7501f80c0b8e265af662e57ca5f5376"
+}

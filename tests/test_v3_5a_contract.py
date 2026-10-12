@@ -184,12 +184,18 @@ def test_no_serving_changes():
     # V3.6F/G charters admit exactly the Strategy 2.0 integration and
     # frontend-replacement paths; anything else touching api/,
     # frontend/ or serving still fails.
+    # V3.7H reconciliation: V3.7F/V3.7G charters additionally admit exactly
+    # the counterfactual integration paths (frozen science untouched).
     allowed = ("api/v2_strategy_v3_", "api/main.py",
+               "api/v2_counterfactual_",
                "frontend/app/strategy/page.tsx",
                "frontend/features/strategy/components/Strategy",
                "frontend/features/strategy/hooks/useStrategy",
                "frontend/features/strategy/lib/strategy",
-               "frontend/lib/v2.ts")
+               "frontend/lib/v2.ts",
+               "frontend/app/counterfactuals",
+               "frontend/features/counterfactuals",
+               "frontend/components/shell/CommandBar.tsx")
     for line in out.splitlines():
         if line[3:].startswith(allowed):
             continue

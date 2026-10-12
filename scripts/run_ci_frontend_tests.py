@@ -47,8 +47,11 @@ FRONTEND = ROOT / "frontend"
 # P12-8 adds features/replay/lib/raceStatus.test.ts (pure status
 # view-model, node type-stripping, no corpus) = 20; V3.6G adds
 # features/strategy/lib/strategy2Machine.test.ts (reads only tracked
-# Strategy2 sources; copy/contract guards, no corpus) = 21.
-EXPECTED_TEST_FILES = 21
+# Strategy2 sources; copy/contract guards, no corpus) = 21; V3.7G adds
+# features/counterfactuals/lib/counterfactualMachine.test.ts (reads only
+# tracked counterfactual machine sources + committed sibling fixtures;
+# orientation/copy/contract guards, no corpus) = 22.
+EXPECTED_TEST_FILES = 22
 
 # Repo-root-relative frontend test files requiring the ignored corpus.
 CORPUS_DEPENDENT_TEST_FILES: tuple[tuple[str, str], ...] = (

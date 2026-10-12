@@ -1,0 +1,179 @@
+{
+  "a_identity": "1735954212ec31286fede041639875610003a09cf817177e22cc908e3fcb0a12",
+  "a_schema": "v3.7a-counterfactual-contract-v1",
+  "api_routes": [
+    "GET /v2/counterfactuals/availability",
+    "POST /v2/counterfactuals/compare"
+  ],
+  "api_schema": "v3.7f-counterfactual-api-v1",
+  "availability": {
+    "cheap_no_simulation": true,
+    "compounds_exact": true,
+    "deterministic": true,
+    "factual_only": true,
+    "latency_local_observation_s": "<10 (asserted, no simulation)",
+    "multi_driver_capability": true,
+    "multi_stop_capability": true,
+    "no_recommended_n": true,
+    "valid_n_derivation": true
+  },
+  "b_identity": "1865537503136ed3d8603e53741902c320df9387222655b38eef51640294e970",
+  "b_schema": "v3.7b-counterfactual-execution-contract-v1",
+  "c_engine_identity": "v3.7c-counterfactual-engine-v1",
+  "c_seam_sha256": "045f392e46b030744f18a76140685ceba7501f80c0b8e265af662e57ca5f5376",
+  "c_seam_unchanged": true,
+  "chartered_detector_trips": {
+    "cause": "V3.7F additive integration files (api/v2_counterfactual_*, api/main.py router registration, raceintel/counterfactual/runtime.py, scripts/v3_7f_*, tests/test_v3_7f_*, docs/V3_7F_*, results/v3/v3_7f/) plus the chartered C seam",
+    "disposition": "CHARTERED_ADDITIVE_INTEGRATION_DOCUMENTED",
+    "nodes": [
+      "tests/test_v3_7a_contract.py::test_baseline_clean_at_entry (A-stage entry allowlist; trips on M api/main.py and F additive paths)",
+      "tests/test_v3_7a_contract.py::test_no_mc2_api_frontend_modification (A-stage entry guard; trips on chartered C seam + F api/ integration)"
+    ],
+    "owner": "V3.7H owns Tier-1 reclassification including new F tests",
+    "why_not_a_regression": "frozen A/B/C/D contract, engine, evaluation, MC2, V3.6 and Phase-7 tests green (233 passed in the same Tier-A run); trips assert stage-entry cleanliness, not scientific semantics; frozen tests left unmodified per immutability"
+  },
+  "cache_corruption_tests": {
+    "malformed_rejected": true,
+    "modified_payload_without_identity_rejected": true,
+    "truncated_rejected": true,
+    "wrong_comparison_rejected": true,
+    "wrong_count_rejected": true,
+    "wrong_engine_rejected": true,
+    "wrong_plan_rejected": true,
+    "wrong_schema_rejected": true,
+    "wrong_seed_rejected": true,
+    "wrong_state_rejected": true
+  },
+  "cache_policy": "cache-first; live only on explicit server-side opt-in; miss with live disabled is explicit 404; corrupt with live enabled falls through to live, else 503",  "cache_schema": "v3.7f-counterfactual-cache-v1",
+  "cache_key_version": "v3.7f-counterfactual-cache-key-v1",
+  "cost_safety": {
+    "bounded_interventions_per_plan": 8,
+    "bounded_plans_per_comparison": 2,
+    "no_arbitrary_horizon_cap": true,
+    "no_client_count_seed_surface": true,
+    "roster_bounded_targets": true
+  },
+  "d_artifact_boundary": {
+    "d_imported_by_runtime": false,
+    "d_results_used_for_calculations": false,
+    "provenance_only": true
+  },
+  "d_card_identity": "96debc6392c79019abedc3a51c7c26fb1536e97cabb3fed3136c43ed7c2b19c3",
+  "d_gate": "REFINEMENT_NOT_WARRANTED",
+  "d_protocol_identity": "e4a6101c7267f2db9f85c76bcc07c17ed01c7f85de4a6481f94ab0941634c570",
+  "d_schema": "v3.7d-evaluation-card-v1",
+  "direct_live_cache_parity": {
+    "cases": [
+      "reference-vs-N1",
+      "reference-vs-N2",
+      "reference-vs-N5",
+      "multi-stop",
+      "plan-vs-plan",
+      "rival-outcome",
+      "multi-driver"
+    ],
+    "production_config": "5000 futures / seed 20240101",
+    "verdict": "DIRECT == LIVE == CACHED on scientific content"
+  },
+  "e_status": "SKIPPED_BY_V3.7D_GATE",
+  "error_semantics": {
+    "cache_miss_live_disabled": "404 cache_miss",
+    "corrupt_cache_live_disabled": "503 cache_invalid",
+    "corrupt_cache_live_enabled": "fall through to live run",
+    "internal": "500 internal",
+    "malformed": "422 counterfactual_request_invalid (+ stable reason)",
+    "unsupported": "200 supported=false + B reason codes, metrics empty"
+  },
+  "f_runtime_identity": "v3.7f-counterfactual-runtime-v1",
+  "fixture_cache": {
+    "artifact_count": 7,
+    "complete_pairs_each": 5000,
+    "manifest": "results/v3/v3_7f/cache_manifest.json",
+    "status": "all supported",
+    "wall_s": 86.5
+  },
+  "g_readiness": {
+    "frontend_built": false,
+    "needs_no_python_science_import": true,
+    "obtainable_from_api_only": [
+      "state availability",
+      "valid drivers",
+      "valid horizons",
+      "valid compounds",
+      "comparison forms",
+      "cached/live availability",
+      "supported/unsupported reason",
+      "outcomes",
+      "deltas",
+      "uncertainty",
+      "pair counts",
+      "lifecycle summary",
+      "pit count",
+      "position gain",
+      "rival result",
+      "provenance",
+      "limitations"
+    ],
+    "ready": true
+  },
+  "known_limitations": [
+    "second-stop premise uses absolute supersession window (conservative, inherited from C)",
+    "multi-driver same-lap pits allowed with no stacking delay modelled",
+    "INERT only for baseline-coincident sampled-compound forces",
+    "TERMINAL reachable only via individual-finish edge cases (no DNF generation)",
+    "compound-specific pace differentiation limited/absent (frozen MC2)",
+    "availability supported=true is factual eligibility; compare may still return supported=false with engine reason codes",
+    "fixture/demo cache only; no combinatorial precomputation shipped"
+  ],
+  "live_compute_policy": "default cache-only; enabled via constructor flag or V3_7_COUNTERFACTUAL_ALLOW_LIVE=1; no client mode/live parameter exists",
+  "n1_n2_overlap_parity": "V3.7 N=1 SAMPLED == V3.6 PIT_NOW; V3.7 N=2 SAMPLED == V3.6 PIT_NEXT_LAP (expected finish, win frequency)",
+  "no_strategy_quality_claims": true,
+  "outcome_orientation": {
+    "delta_expected_finish": "base - alt (lower finish better)",
+    "delta_p_ahead_of_rival": "alt - base",
+    "delta_pit_count": "alt - base (descriptive)",
+    "delta_position_gain_loss": "alt - base",
+    "delta_probabilities": "alt - base",
+    "position_gain": "factual_position_T - simulated_final_position"
+  },
+  "performance_observations": {
+    "availability_local_s": 0.108,
+    "cache_hit_local_s": 0.059,
+    "fixture_generation_7_comparisons_wall_s": 86.5,
+    "one_live_5000_future_comparison_server_s": "~13 (request log duration for live N=2, local env, real state)",
+    "scope": "environment-local observations only; no claims beyond measured environment"
+  },
+  "production_count": 5000,
+  "production_seed": 20240101,
+  "request_validation": {
+    "bad_compound_422": true,
+    "bad_target_422": true,
+    "conflicting_targets_422": true,
+    "extra_poison_fields_422": true,
+    "form_plan_mismatch_422": true,
+    "horizon_violation_unsupported": true,
+    "n_zero_422": true,
+    "primary_mismatch_unsupported": true,
+    "public_count_seed_override_impossible": true,
+    "rejected_kinds_422": true,
+    "rival_is_target_unsupported": true
+  },
+  "schema": "v3.7f-runtime-integration-validation-v1",
+  "temporal_safety": {
+    "api_poison_blocked_identical": true,
+    "cache_poison_blocked": true,
+    "direct_poison_blocked_identical": true,
+    "no_historical_reads_in_f_stack": true
+  },
+  "unsupported_2025": {
+    "availability_2025": "404 unknown_race",
+    "compare_2025": "404 unknown_race"
+  },
+  "unsupported_behavior": {
+    "metrics_empty": true,
+    "no_fallback_substitution": true,
+    "reason_codes": true
+  },
+  "v36_card_identity_authoritative": "102079ab81101f442d380c109a32b71a3b6850f0106e021f0fc4b05a64c80aeb",
+  "verdict": "V3.7F COMPLETE — RUNTIME/API/CACHE INTEGRATED — READY FOR V3.7G"
+}

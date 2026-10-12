@@ -1,0 +1,246 @@
+{
+  "architecture": {
+    "options": [
+      "extend_V3.6_action_enum",
+      "generic_schedule_above_MC2",
+      "new_scenario_engine_wrapping_MC2"
+    ],
+    "reason": "V3.6 immutability forbids enum extension; a new wrapper duplicates the validated engine. A schedule layer reuses MC2/Phase-7/V3.6 mechanics, supports multi-step, keeps CRN, and leaves V3.8/V3.10 integration points.",
+    "selected": "generic_schedule_above_MC2"
+  },
+  "candidates": {
+    "ALTERNATIVE_COMPOUND_PLAN": {
+      "classification": "SUPPORTED_NOW",
+      "reason": "Requested-compound override mechanics exist (sampled transition overridden; loss/age/stint effects). No explicit compound pace delta (frozen) \u2014 disclosed, not pretended. V3.6D shows distinguishable compound effects via loss/age mechanics.",
+      "required_data": "none beyond T-factual.",
+      "required_mechanics": "none (contract composition in B).",
+      "temporal_safety_risk": "LOW.",
+      "v37_stage": "B/C",
+      "validation_requirement": "compound-effect distinguishability re-check under plans."
+    },
+    "COMPETITOR_STRATEGY": {
+      "classification": "SUPPORTABLE_WITH_CAUSAL_EXTENSION",
+      "reason": "MC2 produces joint field futures (gapless FinishOrder), so rival-pit effects propagate through ordering \u2014 but traffic/overtaking is gated off, so only pit-cycle ordering effects, never battles. Needs multi-target plan support (same extension as MULTI_STOP_PLAN).",
+      "required_data": "none beyond T-factual.",
+      "required_mechanics": "multi-target plan; propagation limited to ordering.",
+      "temporal_safety_risk": "MEDIUM: must not imply traffic effects the simulator lacks.",
+      "v37_stage": "B/C",
+      "validation_requirement": "ordering-propagation sanity; no-battle disclosure."
+    },
+    "DRIVER_RETIREMENT": {
+      "classification": "REJECT",
+      "reason": "No reliability hazard family exists (R3/R6); reliability_enabled=True is rejected, not faked; kernel never simulates DNFs. Frozen post-T retirements forbidden.",
+      "required_data": "reliability covariates (none admitted).",
+      "required_mechanics": "calibrated retirement hazard (out of V3.7 scope).",
+      "temporal_safety_risk": "HIGH: almost invites historical-outcome reuse.",
+      "v37_stage": "none",
+      "validation_requirement": "none in V3.7."
+    },
+    "MULTI_DRIVER": {
+      "classification": "SUPPORTABLE_WITH_CAUSAL_EXTENSION",
+      "reason": "Single-target plans today (_InterventionPlan has one target_index; one intervention per run). Simultaneous plans need conflict semantics (same-lap compound conflicts, pit-constraint handling, retirement/finish cancellation) plus CRN extension over schedules.",
+      "required_data": "none beyond T-factual.",
+      "required_mechanics": "multi-target schedule; fail-closed conflict rules; per-(seed,index) stream discipline across targets.",
+      "temporal_safety_risk": "MEDIUM: order dependence / RNG contamination must be excluded.",
+      "v37_stage": "B/C",
+      "validation_requirement": "target-order invariance; conflict fail-closed tests."
+    },
+    "MULTI_STOP_PLAN": {
+      "classification": "SUPPORTABLE_WITH_CAUSAL_EXTENSION",
+      "reason": "Engine runs carry exactly one intervention (_InterventionPlan/_InterventionTracker, one decision_lap). A second forced stop needs a schedule-capable engine extension with conflict semantics. Chained runs from simulated states are REJECTED (breaks factual provenance and CRN).",
+      "required_data": "none beyond T-factual.",
+      "required_mechanics": "CounterfactualPlan schedule type; multi-event tracker; conflict resolution (fail-closed or frozen deterministic).",
+      "temporal_safety_risk": "MEDIUM: later events must key off simulated, never historical, state.",
+      "v37_stage": "B/C",
+      "validation_requirement": "cross-plan consistency; second-stop execution diagnostics."
+    },
+    "PIT_IN_N_LAPS": {
+      "classification": "SUPPORTED_NOW",
+      "reason": "Single-intervention mechanics generalize: the note_completion decision rule already waits (PIT_NEXT_LAP forces at decision_lap+2 with baseline at +1). Extending the wait window with per-lap baseline-pit supersession needs a B-stage contract, not new simulator mechanics.",
+      "required_data": "none beyond T-factual.",
+      "required_mechanics": "N-window supersession rule in plan contract (B).",
+      "temporal_safety_risk": "LOW: trigger reads simulated state only.",
+      "v37_stage": "B/C",
+      "validation_requirement": "execution-rate vs N curve; horizon cap evidence in D."
+    },
+    "RACE_STATE_EDITS": {
+      "classification": "REJECT",
+      "reason": "Gaps, positions, tyre ages, and pace are state facts, not user-editable interventions. Arbitrary edits risk physically impossible states.",
+      "required_data": "none.",
+      "required_mechanics": "none (forbidden).",
+      "temporal_safety_risk": "HIGH: edits smuggle post-T information.",
+      "v37_stage": "none",
+      "validation_requirement": "B-stage prohibition test."
+    },
+    "SAFETY_CAR": {
+      "classification": "REJECT",
+      "reason": "No deployment trigger, duration, compression, restart, pit-loss-change, or tyre-effect mechanics exist (regime_support: SC DEFERRED, compression/restart out of scope; kernel never simulates SC). Active-SC states are ineligible; dry-green runs never generate SC.",
+      "required_data": "none admitted.",
+      "required_mechanics": "causal trigger + duration + compression + restart models (out of V3.7 scope).",
+      "temporal_safety_risk": "HIGH: historical SC reuse is the natural failure mode.",
+      "v37_stage": "none",
+      "validation_requirement": "none in V3.7."
+    },
+    "TRACK_STATUS_RED_FLAG": {
+      "classification": "REJECT",
+      "reason": "All non-green regimes deferred (YELLOW/VSC/RED); historical occurrence does not imply generative capability.",
+      "required_data": "none admitted.",
+      "required_mechanics": "out of scope.",
+      "temporal_safety_risk": "HIGH.",
+      "v37_stage": "none",
+      "validation_requirement": "none in V3.7."
+    },
+    "UNDERCUT_OVERCUT_PRIMITIVE": {
+      "classification": "REJECT",
+      "reason": "Narrative labels, not interventions: no separate causal mechanism exists beyond pit-timing differences. Admitted only as DERIVED descriptions (plan-vs-plan deltas plus driver-vs-driver outcomes).",
+      "required_data": "none.",
+      "required_mechanics": "none (derived analysis).",
+      "temporal_safety_risk": "LOW as derived; HIGH if primitized (fake mechanism).",
+      "v37_stage": "none (derived)",
+      "validation_requirement": "derived-description discipline in B/G copy guards."
+    },
+    "WEATHER": {
+      "classification": "REJECT",
+      "reason": "No stochastic weather evolution exists (WET DEFERRED: no causal transition mechanism). Historical post-T weather reuse is forbidden.",
+      "required_data": "none admitted.",
+      "required_mechanics": "causal weather evolution + tyre response (out of scope).",
+      "temporal_safety_risk": "HIGH.",
+      "v37_stage": "none",
+      "validation_requirement": "none in V3.7."
+    }
+  },
+  "classification_enum": [
+    "SUPPORTED_NOW",
+    "SUPPORTABLE_WITH_CAUSAL_EXTENSION",
+    "RESEARCH_ONLY",
+    "REJECT"
+  ],
+  "compute_policy": "Plan count multiplies 5000-future cost: horizons x compounds x drivers x multi-stop combos. Prune on scientific validity (eligibility, execution collapse), never on top-strategy heuristics. No broad cache build in V3.7A.",
+  "conflict_policy": "Fail closed or frozen deterministic semantics; never silently resolve. Same-lap same-driver conflicts, cross-driver pit constraints, post-retirement/finish cancellations specified in B.",
+  "contract_hash": "1735954212ec31286fede041639875610003a09cf817177e22cc908e3fcb0a12",
+  "crn_generalization": {
+    "divergence": "Schedule-dependent pit-domain draw counts and supersession/cancellation paths are documented structural divergence; complete-pair accounting preserved; no claim that CRN removes model uncertainty.",
+    "schedule_rule": "same initial state, same stream family, same index; schedules differ only.",
+    "streams": "per-(master_seed, simulation_index) identities preserved."
+  },
+  "definition": {
+    "causal_boundary": "T: everything at or before T is factual input; everything after T is either MC2-simulated (allowed) or historical (forbidden as input).",
+    "counterfactual": "SIMULATOR-CONDITIONAL OUTCOMES UNDER CONTROLLED INTERVENTIONS: MC2 futures generated from a causal RaceState(T) after a controlled post-T modification.",
+    "factual_state": "information observed at or before T.",
+    "historical_future": "what actually happened after T. FORBIDDEN as simulation input; allowed only as explicitly designed post-hoc context/evaluation.",
+    "intervention": "a controlled modification imposed after T.",
+    "not_established": [
+      "what would truly have happened",
+      "causal treatment effects in the real world",
+      "optimal strategy",
+      "team decision correctness",
+      "historical counterfactual truth"
+    ],
+    "simulated_consequence": "future state generated by MC2 after the intervention."
+  },
+  "evaluation_design": {
+    "layers": [
+      "synthetic_invariants",
+      "historical_eligible_state_sample",
+      "stress_scenarios",
+      "multi_plan_consistency",
+      "seed_count_stability",
+      "crn_analysis",
+      "case_studies",
+      "unsupported_coverage"
+    ],
+    "sampling": "deterministic preregistered policy in D (no post-hoc selection)."
+  },
+  "intervention_horizon": {
+    "max_n": "No fixed small cap in contract (any fixed N would be UI arbitrary). V3.7B freezes the window mechanics; V3.7D sets an evidence cap if execution collapses beyond N*.",
+    "rule": "N >= 1; N <= remaining_laps - 1; the trigger reads SIMULATED state only; a baseline pit on any earlier lap supersedes the plan; race end cancels."
+  },
+  "leakage_threat_model": {
+    "rule": "Post-T historical pit/compounds/lap-times/positions/gaps/status/retirement/race-control/SC/weather/finish/team-strategy: forbidden as input; allowed only as explicitly designed post-hoc context/evaluation; simulated futures are the only admissible post-T driver."
+  },
+  "outcomes": {
+    "admitted": {
+      "PIT_COUNT": "tracked per trajectory (pit_count_distribution exists).",
+      "POSITION_GAIN_LOSS": "linear transform of finish.",
+      "P_AHEAD_OF_RIVAL": "joint futures exist; per-pair rival retention is B/C plumbing, not new mechanics."
+    },
+    "rejected": {
+      "DNF_PROBABILITY": "no retirement generation.",
+      "EXPECTED_POINTS": "still deferred (no points model)."
+    },
+    "research": {
+      "TIME_LOSS": "verify gap/time retention before admission."
+    },
+    "retained": [
+      "win",
+      "podium",
+      "top5",
+      "top10",
+      "expected_finish",
+      "finish_position_distribution",
+      "downside_probability"
+    ]
+  },
+  "parent": {
+    "commit": "1eb462631b9d7a948e35b8a1658e3bb90035c94c",
+    "tag": "v3.6-strategy-2.0"
+  },
+  "product_questions": [
+    "What if Norris waited three laps before stopping?",
+    "How does PIT L+2 compare with PIT L+5?",
+    "How does this plan change the probability of finishing ahead of Verstappen?"
+  ],
+  "reference": {
+    "canonical": "SIMULATED_NO_INTERVENTION_REFERENCE (unchanged).",
+    "plan_vs_plan": "Admitted as secondary comparisons with identical CRN/pair discipline; never replaces the canonical reference; no historical-future baseline."
+  },
+  "schedule_abstraction": {
+    "decision": "Compositional CounterfactualPlan (ordered intervention list), not PIT_IN_2/PIT_IN_3/... enums. Decided in A; built in C."
+  },
+  "schema": "v3.7a-counterfactual-contract-v1",
+  "spatial_role": "VISUALIZATION_CONTEXT_ONLY",
+  "stage_plan": [
+    "V3.7A",
+    "V3.7B",
+    "V3.7C",
+    "V3.7D",
+    "V3.7E_gated",
+    "V3.7F",
+    "V3.7G_conditional",
+    "V3.7H"
+  ],
+  "state_machine": {
+    "note": "V3.6 vocabulary reused (INERT/SUPERSEDED/CANCELLED/TERMINAL). PLANNED/ELIGIBLE added for pre-trigger schedule members. Transitions frozen in B.",
+    "states": [
+      "PLANNED",
+      "ELIGIBLE",
+      "EXECUTED",
+      "INERT",
+      "SUPERSEDED",
+      "CANCELLED",
+      "TERMINAL",
+      "INVALID"
+    ]
+  },
+  "v35_boundary": "V3.5 learned probabilities stay outside counterfactual computation.",
+  "v36_scientific_card_identity": "102079ab81101f442d380c109a32b71a3b6850f0106e021f0fc4b05a64c80aeb",
+  "v38_boundary": "V3.8 owns model x simulation consensus/fusion.",
+  "validation_limits": {
+    "impossible": [
+      "true_counterfactual_accuracy"
+    ],
+    "possible": [
+      "determinism",
+      "temporal_safety",
+      "mechanical_invariants",
+      "crn_variance_reduction",
+      "seed_stability",
+      "simulation_count_stability",
+      "sanity_scenarios",
+      "intervention_sensitivity",
+      "cross_plan_consistency",
+      "historical_plausibility"
+    ]
+  },
+  "verdict": "V3.7A COMPLETE \u2014 COUNTERFACTUAL CONTRACT FROZEN \u2014 READY FOR V3.7B"
+}

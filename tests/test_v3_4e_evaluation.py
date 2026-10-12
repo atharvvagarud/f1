@@ -214,7 +214,11 @@ def test_serving_promotion_none():
 
 
 def test_no_final_v34_freeze_tag_commit_yet():
+    # V3.7H reconciliation: the V3.4 entry-time assumption ("no v3.4 tag
+    # yet") was superseded by the V3.4 freeze itself, which created the
+    # frozen v3.4-ensemble tag. Final-state invariant: exactly the frozen
+    # tag may exist; any other v3.4* tag still fails.
     import subprocess
     tags = subprocess.run(["git", "tag", "-l", "v3.4*"],
                           capture_output=True, text=True).stdout
-    assert "v3.4" not in tags
+    assert "v3.4" not in tags or tags.split() == ["v3.4-ensemble"], tags

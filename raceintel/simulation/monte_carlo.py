@@ -341,6 +341,28 @@ REASON_BASELINE_PIT_SUPPRESSED = "baseline_pit_suppressed"
 REASON_SUPERSEDED_BY_BASELINE_PIT = "intervention_superseded_by_baseline_pit"
 REASON_RACE_END_SUPPRESSED = "race_end_suppressed"
 
+# V3.7 schedule reasons (additive; same stability contract as above).
+REASON_SCHEDULE_BASELINE_PREEMPTED = "schedule_baseline_preempted"
+REASON_SCHEDULE_INERT_COINCIDES = "schedule_inert_baseline_coincides"
+REASON_SCHEDULE_TRIGGER_MISSED = "schedule_trigger_missed"
+REASON_SCHEDULE_DRIVER_FINISHED = "schedule_driver_finished"
+
+# The only executable V3.7 schedule kind (V3.7A SUPPORTED_NOW). Any other
+# kind fails closed in _resolve_intervention with UNSUPPORTED_ACTION.
+SCHEDULE_ACTION_PIT_IN_N_LAPS = "PIT_IN_N_LAPS"
+SCHEDULE_ACTIONS = (SCHEDULE_ACTION_PIT_IN_N_LAPS,)
+
+# V3.7 schedule lifecycle states (B contract vocabulary; distinct from the
+# Phase-7 INTERVENTION_* statuses, which are untouched).
+SCHEDULE_PLANNED = "PLANNED"
+SCHEDULE_ELIGIBLE = "ELIGIBLE"
+SCHEDULE_EXECUTED = "EXECUTED"
+SCHEDULE_INERT = "INERT"
+SCHEDULE_SUPERSEDED = "SUPERSEDED"
+SCHEDULE_CANCELLED = "CANCELLED"
+SCHEDULE_TERMINAL = "TERMINAL"
+SCHEDULE_INVALID = "INVALID"
+
 # Shared per-event decision tokens returned by ``_InterventionState``.
 _DECISION_BASELINE = "BASELINE"
 _DECISION_FORCE = "FORCE"
@@ -390,6 +412,10 @@ def _resolve_intervention(intervention, initial_state: SimulationState,
     """
     if intervention is None:
         return None
+    schedule_events = getattr(intervention, "schedule_events", None)
+    if schedule_events is not None:
+        return _resolve_schedule(intervention, schedule_events,
+                                 initial_state, config)
     target_id = getattr(intervention, "target_driver_id", None)
     action = getattr(intervention, "action", None)
     if hasattr(action, "value"):
@@ -453,13 +479,249 @@ def _resolve_intervention(intervention, initial_state: SimulationState,
     return plan
 
 
+@dataclass(frozen=True)
+class _ScheduleEvent:
+    """One resolved schedule event (V3.7 additive runtime plan).
+
+    ``trigger_lap`` is the target driver's own lap at which the forced pit
+    fires (decision_lap + N). ``compound`` is None (sampled transition) or
+    an explicit dry compound.
+    """
+
+    target_index: int
+    target_driver_id: str
+    trigger_lap: int
+    compound: Optional[str]
+    decision_lap: int
+
+
+@dataclass(frozen=True)
+class _SchedulePlan:
+    """Resolved multi-event runtime plan (one per run, V3.7).
+
+    Built by ``_resolve_schedule`` from a duck-typed V3.7 schedule
+    (``schedule_events``). The scalar oracle and the vectorized batch both
+    drive it through ``_ScheduleState.note_for_driver`` so the two paths
+    cannot drift \u2014 the same sharing contract as ``_InterventionState``.
+    """
+
+    events: tuple
+    decision_state_identity: str
+
+
+def _resolve_schedule(intervention, schedule_events, initial_state,
+                      config: SimulationConfig) -> _SchedulePlan:
+    """Validate a V3.7 schedule and build the neutral runtime plan.
+
+    Each event is duck-typed (target_driver_id, kind, lap_offset_n,
+    requested_compound, decision_lap); the plan-level
+    ``decision_state_identity`` anchors the whole schedule to the live
+    state. Validation mirrors the single-action path with the same reason
+    codes; any rejected kind (weather/SC/retirement/state-edit/\u2026)
+    fails here with UNSUPPORTED_ACTION before any RNG draw.
+    """
+    state_identity = getattr(intervention, "decision_state_identity", None)
+    if state_identity != initial_state.identity():
+        raise StrategyInterventionError(
+            REASON_STRATEGY_ANCHOR_MISMATCH,
+            "schedule.decision_state_identity must exactly equal the "
+            "supplied SimulationState identity")
+    roster = initial_state.roster_driver_ids
+    try:
+        items = tuple(schedule_events)
+    except TypeError:
+        raise StrategyInterventionError(
+            REASON_STRATEGY_MALFORMED,
+            "schedule.schedule_events must be a tuple of schedule events")
+    if not items:
+        raise StrategyInterventionError(
+            REASON_STRATEGY_MALFORMED,
+            "schedule needs at least one scheduled event")
+    resolved = []
+    for event in items:
+        target_id = getattr(event, "target_driver_id", None)
+        kind = getattr(event, "kind", None)
+        offset = getattr(event, "lap_offset_n", None)
+        requested = getattr(event, "requested_compound", None)
+        decision_lap = getattr(event, "decision_lap", None)
+        if not isinstance(target_id, str) or not target_id.strip():
+            raise StrategyInterventionError(
+                REASON_STRATEGY_MALFORMED,
+                "schedule event target_driver_id must be a non-empty "
+                f"string, got {target_id!r}")
+        if kind not in SCHEDULE_ACTIONS:
+            raise StrategyInterventionError(
+                REASON_STRATEGY_UNSUPPORTED_ACTION,
+                "schedule event kind must be one of "
+                f"{list(SCHEDULE_ACTIONS)} (rejected counterfactual kinds "
+                f"fail closed), got {kind!r}")
+        if type(offset) is not int or offset < 1:
+            raise StrategyInterventionError(
+                REASON_STRATEGY_MALFORMED,
+                f"schedule event lap_offset_n must be a positive int, got "
+                f"{offset!r}")
+        if target_id not in roster:
+            raise StrategyInterventionError(
+                REASON_STRATEGY_TARGET_DRIVER_NOT_IN_ROSTER,
+                f"schedule target driver {target_id!r} is not in the "
+                f"SimulationState roster {list(roster)}")
+        entry = initial_state.driver_by_id[target_id]
+        if type(decision_lap) is not int or decision_lap != entry.lap_number:
+            raise StrategyInterventionError(
+                REASON_STRATEGY_DECISION_LAP_MISMATCH,
+                "schedule event decision_lap must equal the target driver's "
+                f"factual lap_number at T ({entry.lap_number!r}), got "
+                f"{decision_lap!r}")
+        if requested is not None and requested not in DRY_COMPOUNDS:
+            raise StrategyInterventionError(
+                REASON_STRATEGY_UNSUPPORTED_COMPOUND,
+                "schedule requested_compound must be None or a dry compound "
+                f"{list(DRY_COMPOUNDS)}, got {requested!r}")
+        trigger = int(decision_lap) + int(offset)
+        if trigger > initial_state.scheduled_laps:
+            raise StrategyInterventionError(
+                REASON_STRATEGY_DECISION_BEYOND_RACE,
+                f"schedule event needs the target driver's lap {trigger} "
+                f"but the scheduled distance is "
+                f"{initial_state.scheduled_laps}: no room for the decision")
+        resolved.append(_ScheduleEvent(
+            target_index=roster.index(target_id),
+            target_driver_id=target_id,
+            trigger_lap=trigger,
+            compound=requested,
+            decision_lap=int(decision_lap),
+        ))
+    if not config.pit_dynamics_enabled:
+        raise StrategyInterventionError(
+            REASON_STRATEGY_PIT_DYNAMICS_REQUIRED,
+            "a schedule requires pit_dynamics_enabled=True; the "
+            "forced pit mechanics are the Phase-6 pit model")
+    return _SchedulePlan(events=tuple(resolved),
+                         decision_state_identity=state_identity)
+
+
+class _ScheduleEventState:
+    """Runtime lifecycle state for one schedule event (V3.7).
+
+    Starts PLANNED; the first trajectory event flips the trajectory's
+    events to ELIGIBLE. Terminal states never leave.
+    """
+
+    def __init__(self, event: _ScheduleEvent):
+        self.event = event
+        self.status = SCHEDULE_PLANNED
+        self.reason: Optional[str] = None
+        self.applied_lap: Optional[int] = None
+        self.compound_used: Optional[str] = None
+
+    def to_dict(self) -> dict:
+        return {
+            "target_driver_id": self.event.target_driver_id,
+            "kind": SCHEDULE_ACTION_PIT_IN_N_LAPS,
+            "trigger_lap": self.event.trigger_lap,
+            "requested_compound": self.event.compound,
+            "status": self.status,
+            "reason": self.reason,
+            "applied_lap": self.applied_lap,
+            "compound_used": self.compound_used,
+        }
+
+
+class _ScheduleState:
+    """Per-trajectory schedule execution state (V3.7).
+
+    Drives every scheduled target's lap completions through one shared
+    rule used by BOTH the scalar oracle and the vectorized batch.
+    """
+
+    def __init__(self, plan: _SchedulePlan):
+        self.plan = plan
+        self.events = [_ScheduleEventState(e) for e in plan.events]
+        self.started = False
+
+    def _ensure_started(self) -> None:
+        if not self.started:
+            self.started = True
+            for state in self.events:
+                if state.status == SCHEDULE_PLANNED:
+                    state.status = SCHEDULE_ELIGIBLE
+
+    def note_for_driver(self, driver_index: int, *, lap_done: int,
+                        finished: bool, race_over: bool,
+                        baseline_pit: bool):
+        """Resolve one scheduled-target lap completion.
+
+        Returns ``(decision_token, override_compound, event_state)`` where
+        the token is one of the shared ``_DECISION_*`` tokens and the event
+        state is the forced event (or None). At most one event forces per
+        call: contract-level conflicts already forbid duplicate
+        (target, trigger) pairs. A natural pit strictly inside an event's
+        (decision, trigger) window supersedes it (absolute-window rule).
+        """
+        self._ensure_started()
+        mine = [s for s in self.events
+                if s.event.target_index == driver_index
+                and s.status == SCHEDULE_ELIGIBLE]
+        mine.sort(key=lambda s: s.event.trigger_lap)
+        for state in mine:
+            trigger = state.event.trigger_lap
+            if lap_done != trigger:
+                continue
+            if race_over or finished or (
+                    baseline_pit and state.event.compound is None):
+                break
+            state.status = SCHEDULE_EXECUTED
+            state.reason = REASON_FORCED_PIT
+            state.applied_lap = lap_done
+            return (_DECISION_FORCE, state.event.compound, state)
+        for state in mine:
+            # A force above already returned; only non-force outcomes remain.
+            if state.status != SCHEDULE_ELIGIBLE:
+                continue
+            trigger = state.event.trigger_lap
+            if lap_done == trigger:
+                if race_over:
+                    state.status = SCHEDULE_CANCELLED
+                    state.reason = REASON_RACE_END_SUPPRESSED
+                elif finished:
+                    state.status = SCHEDULE_TERMINAL
+                    state.reason = REASON_SCHEDULE_DRIVER_FINISHED
+                elif baseline_pit:
+                    state.status = SCHEDULE_INERT
+                    state.reason = REASON_SCHEDULE_INERT_COINCIDES
+                    state.applied_lap = lap_done
+            elif lap_done < trigger:
+                if baseline_pit:
+                    state.status = SCHEDULE_SUPERSEDED
+                    state.reason = REASON_SCHEDULE_BASELINE_PREEMPTED
+            else:
+                # Defensive: laps advance by one, so a pending trigger is
+                # never skipped; fail closed rather than silently reviving.
+                state.status = SCHEDULE_CANCELLED
+                state.reason = REASON_SCHEDULE_TRIGGER_MISSED
+        return (_DECISION_BASELINE, None, None)
+
+    def finalize(self) -> None:
+        """A still-ELIGIBLE event never reached its trigger (race end)."""
+        self._ensure_started()
+        for state in self.events:
+            if state.status in (SCHEDULE_PLANNED, SCHEDULE_ELIGIBLE):
+                state.status = SCHEDULE_CANCELLED
+                state.reason = REASON_RACE_END_SUPPRESSED
+
+    def to_dict(self) -> dict:
+        return {
+            "schedule": True,
+            "events": [s.to_dict() for s in self.events],
+        }
+
+
 class _InterventionState:
     """Per-trajectory intervention execution state and shared decision rule.
 
     The SAME ``note_completion`` rule drives the scalar oracle and the
     vectorized batch, so their intervention mechanics cannot drift.
     """
-
     def __init__(self, plan: _InterventionPlan):
         self.plan = plan
         self.status = INTERVENTION_PENDING
@@ -1217,7 +1479,9 @@ def _evolve_scalar(initial_state: SimulationState, selection,
 
     ``intervention`` (optional) applies the shared Phase-7 decision rule at
     the TARGET DRIVER'S OWN lap completions only. It never touches any other
-    driver's direct state and never mutates ``initial_state``.
+    driver's direct state and never mutates ``initial_state``. A V3.7
+    schedule plan consults every scheduled target instead (same rule family,
+    ``_ScheduleState.note_for_driver``).
     """
     scheduled = initial_state.scheduled_laps
     drivers = [
@@ -1238,8 +1502,10 @@ def _evolve_scalar(initial_state: SimulationState, selection,
         for entry in initial_state.drivers
     ]
 
-    target = (drivers[intervention.plan.target_index]
-              if intervention is not None else None)
+    target = None
+    if intervention is not None and not isinstance(
+            intervention.plan, _SchedulePlan):
+        target = drivers[intervention.plan.target_index]
 
     if max(driver.lap_number for driver in drivers) >= scheduled:
         if intervention is not None:
@@ -1300,6 +1566,12 @@ def _evolve_scalar(initial_state: SimulationState, selection,
         schedule(driver)
 
     bound = max_lap_events(len(drivers), scheduled)
+    sched_targets = None
+    if intervention is not None and isinstance(
+            intervention.plan, _SchedulePlan):
+        sched_targets = {e.target_index for e in intervention.plan.events}
+    driver_index_of = {id(driver): index
+                       for index, driver in enumerate(drivers)}
     for _ in range(bound):
         active = [driver for driver in drivers if not driver.finished]
         if not active:
@@ -1323,7 +1595,21 @@ def _evolve_scalar(initial_state: SimulationState, selection,
         # reschedule. A pit at the race-end instant is suppressed (R6-AB).
         for driver in batch:
             decision = _DECISION_BASELINE
-            if intervention is not None and driver is target:
+            sched_override = None
+            sched_event = None
+            if sched_targets is not None and \
+                    driver_index_of[id(driver)] in sched_targets:
+                decision, sched_override, sched_event = \
+                    intervention.note_for_driver(
+                        driver_index_of[id(driver)],
+                        lap_done=int(driver.lap_number),
+                        finished=bool(driver.finished),
+                        race_over=bool(race_over),
+                        baseline_pit=bool(
+                            pit is not None and not race_over
+                            and driver.tyre_age >= driver.target_age),
+                    )
+            elif intervention is not None and driver is target:
                 decision = intervention.note_completion(
                     lap_done=int(driver.lap_number),
                     finished=bool(driver.finished),
@@ -1336,9 +1622,13 @@ def _evolve_scalar(initial_state: SimulationState, selection,
             if decision == _DECISION_SUPPRESS:
                 pass  # STAY_OUT: baseline decision suppressed, no draws
             elif decision == _DECISION_FORCE:
-                event = pit.perform(driver,
-                                    intervention.plan.requested_compound)
-                intervention.compound_used = event["compound_after"]
+                if sched_event is not None:
+                    event = pit.perform(driver, sched_override)
+                    sched_event.compound_used = event["compound_after"]
+                else:
+                    event = pit.perform(driver,
+                                        intervention.plan.requested_compound)
+                    intervention.compound_used = event["compound_after"]
                 if trace is not None:
                     trace.append(event)
             elif pit is not None and not race_over \
@@ -1402,7 +1692,12 @@ def _scalar_trajectory(initial_state: SimulationState,
             initial_state.roster_size, max_draws, contract_version,
             collect_diagnostics)
     intervention = (_InterventionState(intervention_plan)
-                    if intervention_plan is not None else None)
+                    if intervention_plan is not None
+                    and not isinstance(intervention_plan, _SchedulePlan)
+                    else None)
+    if intervention_plan is not None and isinstance(
+            intervention_plan, _SchedulePlan):
+        intervention = _ScheduleState(intervention_plan)
     try:
         classification, pit_counts = _evolve_scalar(
             initial_state, selection, sampler, pool, zero_noise, pit, trace,
@@ -1495,8 +1790,14 @@ class _ChunkEvolution:
         self.D = len(self.drivers)
         self.B = len(indices)
         self.intervention_plan = intervention_plan
-        self.iv = ([_InterventionState(intervention_plan) for _ in range(self.B)]
-                   if intervention_plan is not None else None)
+        if intervention_plan is None:
+            self.iv = None
+        elif isinstance(intervention_plan, _SchedulePlan):
+            self.iv = [_ScheduleState(intervention_plan)
+                       for _ in range(self.B)]
+        else:
+            self.iv = [_InterventionState(intervention_plan)
+                       for _ in range(self.B)]
         self.zero_noise = zero_noise
         self.progress_slope = float(selection.progress.value)
         self.degradation_slope = float(selection.degradation.value)
@@ -1782,13 +2083,32 @@ class _ChunkEvolution:
         """Resolve the target driver's decision at this event (batch path).
 
         Uses the SAME ``_InterventionState.note_completion`` rule as the
-        scalar oracle so the two paths cannot diverge. Returns
+        scalar oracle so the two paths cannot diverge. A V3.7 schedule
+        consults every scheduled target through the shared
+        ``_ScheduleState.note_for_driver`` rule instead. Returns
         ``(force, suppress, override)`` boolean/object arrays plus updates each
         row's execution status.
         """
         force = np.zeros((self.B, self.D), dtype=bool)
         suppress = np.zeros((self.B, self.D), dtype=bool)
         override = np.full((self.B, self.D), None, dtype=object)
+        if isinstance(self.intervention_plan, _SchedulePlan):
+            for column in {e.target_index
+                           for e in self.intervention_plan.events}:
+                for row in np.where(advance[:, column])[0]:
+                    decision, compound, _ = self.iv[row].note_for_driver(
+                        column,
+                        lap_done=int(self.lap[row, column]),
+                        finished=bool(newly_finished[row, column]),
+                        race_over=bool(race_over_rows[row]),
+                        baseline_pit=bool(
+                            self.age[row, column]
+                            >= self.target_age[row, column]),
+                    )
+                    if decision == _DECISION_FORCE:
+                        force[row, column] = True
+                        override[row, column] = compound
+            return force, suppress, override
         column = self.intervention_plan.target_index
         for row in np.where(advance[:, column])[0]:
             state = self.iv[row]
@@ -1852,11 +2172,25 @@ class _ChunkEvolution:
                     force, suppress, override = self._intervention_step(
                         advance, newly_finished, race_over_rows)
                     self._maybe_pit(candidate, force, suppress, override)
-                    column = self.intervention_plan.target_index
-                    for row in np.where(force[:, column])[0]:
-                        value = self.compound[row, column]
-                        self.iv[row].compound_used = (
-                            None if value is None else str(value))
+                    if isinstance(self.intervention_plan, _SchedulePlan):
+                        for row, column in zip(*np.where(force)):
+                            value = self.compound[row, column]
+                            for ev_state in self.iv[row].events:
+                                if (ev_state.event.target_index == column
+                                        and ev_state.status
+                                        == SCHEDULE_EXECUTED
+                                        and ev_state.applied_lap
+                                        == int(self.lap[row, column])
+                                        and ev_state.compound_used is None):
+                                    ev_state.compound_used = (
+                                        None if value is None else str(value))
+                                    break
+                    else:
+                        column = self.intervention_plan.target_index
+                        for row in np.where(force[:, column])[0]:
+                            value = self.compound[row, column]
+                            self.iv[row].compound_used = (
+                                None if value is None else str(value))
             need = advance & ~newly_finished
             self._schedule(need)
             self.traj_done = self.traj_done | race_over_rows
@@ -2102,6 +2436,8 @@ class MonteCarloEngine:
                     [""] * config.simulation_count, dtype=object),
                 "finish_position": np.zeros(
                     (config.simulation_count, field_size), dtype=np.int64),
+                "pit_count": np.zeros(
+                    (config.simulation_count, field_size), dtype=np.int64),
             }
 
         position_counts = np.zeros((field_size, field_size + 1),
@@ -2155,6 +2491,8 @@ class MonteCarloEngine:
                         rank, order,
                         np.broadcast_to(positions, order.shape), axis=1)
                     index_outcomes["finish_position"][global_rows] = rank
+                    index_outcomes["pit_count"][global_rows] = \
+                        evolution.pit_count[valid_rows]
                     index_outcomes["valid"][global_rows] = True
                 valid_count += len(valid_rows)
                 if len(samples) < sample_limit:
@@ -2250,6 +2588,8 @@ class MonteCarloEngine:
                     [""] * config.simulation_count, dtype=object),
                 "finish_position": np.zeros(
                     (config.simulation_count, field_size), dtype=np.int64),
+                "pit_count": np.zeros(
+                    (config.simulation_count, field_size), dtype=np.int64),
             }
 
         position_counts = np.zeros((field_size, field_size + 1),
@@ -2281,6 +2621,9 @@ class MonteCarloEngine:
                 diagnostic_transitions.update(fragment["transition_counts"])
                 diagnostic_losses.extend(fragment["loss_values"])
                 diagnostic_targets.extend(fragment["target_values"])
+                if index_outcomes is not None:
+                    index_outcomes["pit_count"][index, :] = np.asarray(
+                        fragment["pit_counts"], dtype=np.int64)
             for entry in result.classification.entries:
                 column = index_by_driver[entry.driver_id]
                 position_counts[column, int(entry.finish_position)] += 1

@@ -1,0 +1,60 @@
+{
+  "admitted_scope": [
+    "PIT_IN_N_LAPS",
+    "MULTI_STOP_PLAN",
+    "ALTERNATIVE_COMPOUND_PLAN",
+    "COMPETITOR_STRATEGY",
+    "MULTI_DRIVER",
+    "P_AHEAD_OF_RIVAL",
+    "PIT_COUNT",
+    "POSITION_GAIN_LOSS"
+  ],
+  "contract_hash": "1735954212ec31286fede041639875610003a09cf817177e22cc908e3fcb0a12",
+  "mc2_evidence": {
+    "compound": "override mechanics exist; no pace delta (loss/age/stint only)",
+    "kernel": "never simulates DNFs/weather/SC",
+    "plans_per_run": "exactly one single-target intervention",
+    "regimes": "YELLOW/VSC/SAFETY_CAR/WET/RED all DEFERRED with exact reasons",
+    "reliability": "reliability_enabled=True rejected, not faked",
+    "streams": "per-(master_seed, simulation_index) identities",
+    "traffic": "gated off; free-air ordering retained"
+  },
+  "parent": {
+    "commit": "1eb462631b9d7a948e35b8a1658e3bb90035c94c",
+    "tag": "v3.6-strategy-2.0"
+  },
+  "rejected_scope": [
+    "UNDERCUT_OVERCUT_PRIMITIVE",
+    "DRIVER_RETIREMENT",
+    "SAFETY_CAR",
+    "WEATHER",
+    "TRACK_STATUS_RED_FLAG",
+    "RACE_STATE_EDITS",
+    "EXPECTED_POINTS",
+    "DNF_PROBABILITY"
+  ],
+  "research_scope": [
+    "TIME_LOSS"
+  ],
+  "schema": "v3.7a-counterfactual-landscape-v1",
+  "v36_limits": {
+    "provides": [
+      "one_target_driver",
+      "one_decision_point",
+      "PIT_NOW",
+      "PIT_NEXT_LAP",
+      "STAY_OUT",
+      "compound_selection",
+      "no_intervention_reference",
+      "paired_CRN_futures",
+      "outcome_trade_offs"
+    ],
+    "restriction_kinds": {
+      "PIT_NEXT_LAP_cap": "IMPLEMENTATION (wait-window contract)",
+      "cache_first_tiny_catalogue": "PRODUCT+PERFORMANCE",
+      "no_compound_pace_delta": "SCIENTIFIC (deferred pace effect)",
+      "no_weather_SC_retirement": "SCIENTIFIC (no generative mechanics)",
+      "single_driver_single_decision": "SCIENTIFIC+IMPLEMENTATION (one plan per run)"
+    }
+  }
+}

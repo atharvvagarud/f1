@@ -366,10 +366,15 @@ def test_no_frontend_changes():
     touched = [line[3:] for line in out.splitlines() if line.strip()]
     # V3.6G charter admits exactly its Strategy 2.0 replacement files;
     # any other frontend/ change still fails.
+    # V3.7H reconciliation: V3.7G charter additionally admits exactly the
+    # Counterfactual Explorer paths (backend/science untouched).
     allowed = ("frontend/app/strategy/page.tsx",
                "frontend/features/strategy/components/Strategy",
                "frontend/features/strategy/hooks/useStrategy",
                "frontend/features/strategy/lib/strategy",
-               "frontend/lib/v2.ts")
+               "frontend/lib/v2.ts",
+               "frontend/app/counterfactuals",
+               "frontend/features/counterfactuals",
+               "frontend/components/shell/CommandBar.tsx")
     assert not [f for f in touched if f.startswith("frontend/")
                 and not f.startswith(allowed)], touched

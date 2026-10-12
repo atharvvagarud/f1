@@ -310,12 +310,18 @@ def test_no_serving_api_frontend_change():
     for line in out.splitlines():
         p = line[3:]
         # V3.6F/G chartered Strategy 2.0 paths admitted.
+        # V3.7H reconciliation: V3.7F/V3.7G chartered counterfactual
+        # integration paths admitted (frozen science untouched).
         if p.startswith(("api/v2_strategy_v3_", "api/main.py",
+                         "api/v2_counterfactual_",
                          "frontend/app/strategy/page.tsx",
                          "frontend/features/strategy/components/Strategy",
                          "frontend/features/strategy/hooks/useStrategy",
                          "frontend/features/strategy/lib/strategy",
-                         "frontend/lib/v2.ts")):
+                         "frontend/lib/v2.ts",
+                         "frontend/app/counterfactuals",
+                         "frontend/features/counterfactuals",
+                         "frontend/components/shell/CommandBar.tsx")):
             continue
         assert not p.startswith(("api/", "frontend/")), line
         assert "serving" not in p or "model_lab/serving" not in p, line

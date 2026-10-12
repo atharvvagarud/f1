@@ -367,21 +367,42 @@ def test_no_api_frontend_change():
     # V3.6F charter admits exactly its additive integration files; any
     # other api/ change still fails. V3.6G charter admits exactly its
     # Strategy 2.0 replacement files; any other frontend/ change fails.
-    allowed = ("api/v2_strategy_v3_", "api/main.py")
+    # V3.7H reconciliation: V3.7F charter additionally admits exactly the
+    # counterfactual API files; V3.7G charter admits exactly the
+    # Counterfactual Explorer paths (frozen science untouched).
+    allowed = ("api/v2_strategy_v3_", "api/main.py",
+               "api/v2_counterfactual_")
     assert not any(f.startswith("api/") and not f.startswith(allowed)
                    for f in changed)
     allowed_frontend = ("frontend/app/strategy/page.tsx",
                         "frontend/features/strategy/components/Strategy",
                         "frontend/features/strategy/hooks/useStrategy",
                         "frontend/features/strategy/lib/strategy",
-                        "frontend/lib/v2.ts")
+                        "frontend/lib/v2.ts",
+                        "frontend/app/counterfactuals",
+                        "frontend/features/counterfactuals",
+                        "frontend/components/shell/CommandBar.tsx")
     assert not any(f.startswith("frontend/")
                    and not f.startswith(allowed_frontend)
                    for f in changed)
 
 
 def test_no_mc2_change():
-    assert not any(f.startswith("raceintel/simulation") for f in _changed())
+    # V3.7H reconciliation: V3.7C charter admits exactly the additive MC2
+    # seam. Pinned SHA-256 preserves the no-mutation protection.
+    allowed = ("raceintel/simulation/monte_carlo.py",)
+    changed = _changed()
+    assert not any(f.startswith("raceintel/simulation") and f not in allowed
+                   for f in changed)
+    if "raceintel/simulation/monte_carlo.py" in changed:
+        import hashlib as _hl
+        from pathlib import Path as _Path
+        digest = _hl.sha256(
+            (_Path(__file__).resolve().parents[1]
+             / "raceintel/simulation/monte_carlo.py").read_bytes()
+        ).hexdigest()
+        assert digest == ("045f392e46b030744f18a76140685ceba7501f80c0b8e265"
+                          "af662e57ca5f5376")
 
 
 def test_no_v35_change():

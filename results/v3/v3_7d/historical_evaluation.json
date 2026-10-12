@@ -1,0 +1,674 @@
+{
+  "adapted": 70,
+  "adapter_unsupported": {
+    "SimulationUnavailableError: unobserved_roster_member: roster members with no observation at or before T: ['mazepin']": 1
+  },
+  "adapter_unsupported_count": 1,
+  "anchors": 71,
+  "families": {
+    "MULTIDRIVER": {
+      "deltas": {
+        "delta_expected_finish": {
+          "frac_negative": 0.9428571428571428,
+          "frac_positive": 0.05714285714285714,
+          "frac_zero": 0.0,
+          "max": 0.33179999999999943,
+          "median": -0.8895,
+          "min": -5.2262,
+          "n": 70,
+          "q25": -1.6097500000000013,
+          "q75": -0.4093999999999993
+        },
+        "delta_p_ahead_of_rival": {
+          "n": 0
+        },
+        "delta_podium_frequency": {
+          "frac_negative": 0.35714285714285715,
+          "frac_positive": 0.08571428571428572,
+          "frac_zero": 0.5571428571428572,
+          "max": 0.03260000000000007,
+          "median": 0.0,
+          "min": -0.4626,
+          "n": 70,
+          "q25": -0.01175,
+          "q75": 0.0
+        },
+        "delta_position_gain_loss": {
+          "frac_negative": 0.9428571428571428,
+          "frac_positive": 0.05714285714285714,
+          "frac_zero": 0.0,
+          "max": 0.33179999999999943,
+          "median": -0.8895,
+          "min": -5.2262,
+          "n": 70,
+          "q25": -1.60975,
+          "q75": -0.4094000000000001
+        },
+        "delta_win_frequency": {
+          "frac_negative": 0.2857142857142857,
+          "frac_positive": 0.05714285714285714,
+          "frac_zero": 0.6571428571428571,
+          "max": 0.061,
+          "median": 0.0,
+          "min": -0.3766,
+          "n": 70,
+          "q25": -0.0012499999999999998,
+          "q75": 0.0
+        }
+      },
+      "n": 70,
+      "pair_rate": 5000.0,
+      "supported": 70,
+      "unsupported": {}
+    },
+    "MULTISTOP": {
+      "deltas": {
+        "delta_expected_finish": {
+          "frac_negative": 0.9857142857142858,
+          "frac_positive": 0.0,
+          "frac_zero": 0.014285714285714285,
+          "max": 0.0,
+          "median": -2.3073000000000006,
+          "min": -6.441799999999999,
+          "n": 70,
+          "q25": -3.29045,
+          "q75": -1.3649
+        },
+        "delta_p_ahead_of_rival": {
+          "frac_negative": 0.9857142857142858,
+          "frac_positive": 0.0,
+          "frac_zero": 0.014285714285714285,
+          "max": 0.0,
+          "median": -0.22279999999999994,
+          "min": -0.5888,
+          "n": 70,
+          "q25": -0.32139999999999996,
+          "q75": -0.1339
+        },
+        "delta_podium_frequency": {
+          "frac_negative": 0.45714285714285713,
+          "frac_positive": 0.0,
+          "frac_zero": 0.5428571428571428,
+          "max": 0.0,
+          "median": 0.0,
+          "min": -0.7872,
+          "n": 70,
+          "q25": -0.14969999999999994,
+          "q75": 0.0
+        },
+        "delta_position_gain_loss": {
+          "frac_negative": 0.9857142857142858,
+          "frac_positive": 0.0,
+          "frac_zero": 0.014285714285714285,
+          "max": 0.0,
+          "median": -2.3072999999999997,
+          "min": -6.441800000000001,
+          "n": 70,
+          "q25": -3.29045,
+          "q75": -1.3649
+        },
+        "delta_win_frequency": {
+          "frac_negative": 0.35714285714285715,
+          "frac_positive": 0.0,
+          "frac_zero": 0.6428571428571429,
+          "max": 0.0,
+          "median": 0.0,
+          "min": -0.39799999999999996,
+          "n": 70,
+          "q25": -0.011149999999999998,
+          "q75": 0.0
+        }
+      },
+      "n": 70,
+      "pair_rate": 5000.0,
+      "supported": 70,
+      "unsupported": {}
+    },
+    "N1": {
+      "deltas": {
+        "delta_expected_finish": {
+          "frac_negative": 0.9571428571428572,
+          "frac_positive": 0.04285714285714286,
+          "frac_zero": 0.0,
+          "max": 0.24980000000000047,
+          "median": -1.0482999999999991,
+          "min": -4.8042,
+          "n": 70,
+          "q25": -1.8290499999999998,
+          "q75": -0.4729999999999994
+        },
+        "delta_p_ahead_of_rival": {
+          "frac_negative": 0.9714285714285714,
+          "frac_positive": 0.02857142857142857,
+          "frac_zero": 0.0,
+          "max": 0.07559999999999995,
+          "median": -0.10319999999999999,
+          "min": -0.4094,
+          "n": 70,
+          "q25": -0.18125,
+          "q75": -0.034999999999999976
+        },
+        "delta_podium_frequency": {
+          "frac_negative": 0.45714285714285713,
+          "frac_positive": 0.014285714285714285,
+          "frac_zero": 0.5285714285714286,
+          "max": 0.007800000000000029,
+          "median": 0.0,
+          "min": -0.5372,
+          "n": 70,
+          "q25": -0.07374999999999994,
+          "q75": 0.0
+        },
+        "delta_position_gain_loss": {
+          "frac_negative": 0.9571428571428572,
+          "frac_positive": 0.04285714285714286,
+          "frac_zero": 0.0,
+          "max": 0.24980000000000002,
+          "median": -1.0483,
+          "min": -4.8042,
+          "n": 70,
+          "q25": -1.8290499999999996,
+          "q75": -0.47299999999999953
+        },
+        "delta_win_frequency": {
+          "frac_negative": 0.3142857142857143,
+          "frac_positive": 0.04285714285714286,
+          "frac_zero": 0.6428571428571429,
+          "max": 0.1074,
+          "median": 0.0,
+          "min": -0.37220000000000003,
+          "n": 70,
+          "q25": -0.00435,
+          "q75": 0.0
+        }
+      },
+      "n": 70,
+      "pair_rate": 5000.0,
+      "supported": 70,
+      "unsupported": {}
+    },
+    "N2": {
+      "deltas": {
+        "delta_expected_finish": {
+          "frac_negative": 0.9571428571428572,
+          "frac_positive": 0.02857142857142857,
+          "frac_zero": 0.014285714285714285,
+          "max": 0.16000000000000014,
+          "median": -0.9406000000000001,
+          "min": -4.523999999999999,
+          "n": 70,
+          "q25": -1.5886999999999996,
+          "q75": -0.31704999999999905
+        },
+        "delta_p_ahead_of_rival": {
+          "frac_negative": 0.9428571428571428,
+          "frac_positive": 0.04285714285714286,
+          "frac_zero": 0.014285714285714285,
+          "max": 0.07680000000000003,
+          "median": -0.08869999999999997,
+          "min": -0.3806,
+          "n": 70,
+          "q25": -0.16435000000000002,
+          "q75": -0.03019999999999995
+        },
+        "delta_podium_frequency": {
+          "frac_negative": 0.42857142857142855,
+          "frac_positive": 0.02857142857142857,
+          "frac_zero": 0.5428571428571428,
+          "max": 0.007800000000000029,
+          "median": 0.0,
+          "min": -0.5114000000000001,
+          "n": 70,
+          "q25": -0.06164999999999997,
+          "q75": 0.0
+        },
+        "delta_position_gain_loss": {
+          "frac_negative": 0.9571428571428572,
+          "frac_positive": 0.02857142857142857,
+          "frac_zero": 0.014285714285714285,
+          "max": 0.16000000000000003,
+          "median": -0.9405999999999999,
+          "min": -4.524,
+          "n": 70,
+          "q25": -1.5886999999999998,
+          "q75": -0.3170500000000004
+        },
+        "delta_win_frequency": {
+          "frac_negative": 0.3142857142857143,
+          "frac_positive": 0.04285714285714286,
+          "frac_zero": 0.6428571428571429,
+          "max": 0.10999999999999999,
+          "median": 0.0,
+          "min": -0.36600000000000005,
+          "n": 70,
+          "q25": -0.004500000000000017,
+          "q75": 0.0
+        }
+      },
+      "n": 70,
+      "pair_rate": 5000.0,
+      "supported": 70,
+      "unsupported": {}
+    },
+    "N2_SOFT": {
+      "deltas": {
+        "delta_expected_finish": {
+          "frac_negative": 0.9714285714285714,
+          "frac_positive": 0.014285714285714285,
+          "frac_zero": 0.014285714285714285,
+          "max": 0.23819999999999908,
+          "median": -1.5804999999999996,
+          "min": -5.381599999999999,
+          "n": 70,
+          "q25": -2.5579000000000005,
+          "q75": -0.5910000000000006
+        },
+        "delta_p_ahead_of_rival": {
+          "frac_negative": 0.9571428571428572,
+          "frac_positive": 0.02857142857142857,
+          "frac_zero": 0.014285714285714285,
+          "max": 0.01980000000000004,
+          "median": -0.16049999999999998,
+          "min": -0.48460000000000003,
+          "n": 70,
+          "q25": -0.25620000000000004,
+          "q75": -0.06209999999999999
+        },
+        "delta_podium_frequency": {
+          "frac_negative": 0.44285714285714284,
+          "frac_positive": 0.014285714285714285,
+          "frac_zero": 0.5428571428571428,
+          "max": 0.0034000000000000002,
+          "median": 0.0,
+          "min": -0.5114000000000001,
+          "n": 70,
+          "q25": -0.09774999999999999,
+          "q75": 0.0
+        },
+        "delta_position_gain_loss": {
+          "frac_negative": 0.9714285714285714,
+          "frac_positive": 0.014285714285714285,
+          "frac_zero": 0.014285714285714285,
+          "max": 0.2382000000000002,
+          "median": -1.5805,
+          "min": -5.381600000000001,
+          "n": 70,
+          "q25": -2.5579,
+          "q75": -0.591
+        },
+        "delta_win_frequency": {
+          "frac_negative": 0.34285714285714286,
+          "frac_positive": 0.014285714285714285,
+          "frac_zero": 0.6428571428571429,
+          "max": 0.001600000000000018,
+          "median": 0.0,
+          "min": -0.36660000000000004,
+          "n": 70,
+          "q25": -0.0071500000000000105,
+          "q75": 0.0
+        }
+      },
+      "n": 70,
+      "pair_rate": 5000.0,
+      "supported": 70,
+      "unsupported": {}
+    },
+    "N3": {
+      "deltas": {
+        "delta_expected_finish": {
+          "frac_negative": 0.9428571428571428,
+          "frac_positive": 0.02857142857142857,
+          "frac_zero": 0.02857142857142857,
+          "max": 0.19140000000000157,
+          "median": -0.8387,
+          "min": -4.2728,
+          "n": 70,
+          "q25": -1.4830499999999995,
+          "q75": -0.22379999999999972
+        },
+        "delta_p_ahead_of_rival": {
+          "frac_negative": 0.9,
+          "frac_positive": 0.07142857142857142,
+          "frac_zero": 0.02857142857142857,
+          "max": 0.0802,
+          "median": -0.0766,
+          "min": -0.3718,
+          "n": 70,
+          "q25": -0.15910000000000002,
+          "q75": -0.020250000000000004
+        },
+        "delta_podium_frequency": {
+          "frac_negative": 0.42857142857142855,
+          "frac_positive": 0.02857142857142857,
+          "frac_zero": 0.5428571428571428,
+          "max": 0.018399999999999972,
+          "median": 0.0,
+          "min": -0.4772,
+          "n": 70,
+          "q25": -0.042300000000000004,
+          "q75": 0.0
+        },
+        "delta_position_gain_loss": {
+          "frac_negative": 0.9428571428571428,
+          "frac_positive": 0.02857142857142857,
+          "frac_zero": 0.02857142857142857,
+          "max": 0.19140000000000001,
+          "median": -0.8387,
+          "min": -4.2728,
+          "n": 70,
+          "q25": -1.4830499999999998,
+          "q75": -0.22380000000000003
+        },
+        "delta_win_frequency": {
+          "frac_negative": 0.3142857142857143,
+          "frac_positive": 0.05714285714285714,
+          "frac_zero": 0.6285714285714286,
+          "max": 0.10920000000000002,
+          "median": 0.0,
+          "min": -0.3612,
+          "n": 70,
+          "q25": -0.00405,
+          "q75": 0.0
+        }
+      },
+      "n": 70,
+      "pair_rate": 5000.0,
+      "supported": 70,
+      "unsupported": {}
+    },
+    "N5": {
+      "deltas": {
+        "delta_expected_finish": {
+          "frac_negative": 0.9142857142857143,
+          "frac_positive": 0.05714285714285714,
+          "frac_zero": 0.02857142857142857,
+          "max": 0.20520000000000005,
+          "median": -0.6841000000000002,
+          "min": -4.1554,
+          "n": 70,
+          "q25": -1.2650499999999996,
+          "q75": -0.18945
+        },
+        "delta_p_ahead_of_rival": {
+          "frac_negative": 0.8428571428571429,
+          "frac_positive": 0.12857142857142856,
+          "frac_zero": 0.02857142857142857,
+          "max": 0.0852,
+          "median": -0.0625,
+          "min": -0.35619999999999996,
+          "n": 70,
+          "q25": -0.14320000000000002,
+          "q75": -0.016149999999999942
+        },
+        "delta_podium_frequency": {
+          "frac_negative": 0.4142857142857143,
+          "frac_positive": 0.05714285714285714,
+          "frac_zero": 0.5285714285714286,
+          "max": 0.023399999999999976,
+          "median": 0.0,
+          "min": -0.4072,
+          "n": 70,
+          "q25": -0.04009999999999998,
+          "q75": 0.0
+        },
+        "delta_position_gain_loss": {
+          "frac_negative": 0.9142857142857143,
+          "frac_positive": 0.05714285714285714,
+          "frac_zero": 0.02857142857142857,
+          "max": 0.20520000000000002,
+          "median": -0.6840999999999999,
+          "min": -4.1554,
+          "n": 70,
+          "q25": -1.2650500000000002,
+          "q75": -0.18945000000000004
+        },
+        "delta_win_frequency": {
+          "frac_negative": 0.3,
+          "frac_positive": 0.05714285714285714,
+          "frac_zero": 0.6428571428571429,
+          "max": 0.11080000000000001,
+          "median": 0.0,
+          "min": -0.35340000000000005,
+          "n": 70,
+          "q25": -0.0013499999999999947,
+          "q75": 0.0
+        }
+      },
+      "n": 70,
+      "pair_rate": 5000.0,
+      "supported": 70,
+      "unsupported": {}
+    },
+    "N8": {
+      "deltas": {
+        "delta_expected_finish": {
+          "frac_negative": 0.8285714285714286,
+          "frac_positive": 0.12857142857142856,
+          "frac_zero": 0.04285714285714286,
+          "max": 0.16599999999999993,
+          "median": -0.4616000000000007,
+          "min": -4.122999999999999,
+          "n": 70,
+          "q25": -0.9943999999999993,
+          "q75": -0.07644999999999913
+        },
+        "delta_p_ahead_of_rival": {
+          "frac_negative": 0.8142857142857143,
+          "frac_positive": 0.14285714285714285,
+          "frac_zero": 0.04285714285714286,
+          "max": 0.06960000000000005,
+          "median": -0.0413,
+          "min": -0.3434,
+          "n": 70,
+          "q25": -0.12370000000000003,
+          "q75": -0.006899999999999934
+        },
+        "delta_podium_frequency": {
+          "frac_negative": 0.35714285714285715,
+          "frac_positive": 0.07142857142857142,
+          "frac_zero": 0.5714285714285714,
+          "max": 0.026000000000000023,
+          "median": 0.0,
+          "min": -0.30800000000000005,
+          "n": 70,
+          "q25": -0.0269,
+          "q75": 0.0
+        },
+        "delta_position_gain_loss": {
+          "frac_negative": 0.8285714285714286,
+          "frac_positive": 0.12857142857142856,
+          "frac_zero": 0.04285714285714286,
+          "max": 0.16600000000000004,
+          "median": -0.4616000000000001,
+          "min": -4.122999999999999,
+          "n": 70,
+          "q25": -0.9944,
+          "q75": -0.07645000000000043
+        },
+        "delta_win_frequency": {
+          "frac_negative": 0.2857142857142857,
+          "frac_positive": 0.05714285714285714,
+          "frac_zero": 0.6571428571428571,
+          "max": 0.08300000000000002,
+          "median": 0.0,
+          "min": -0.3506,
+          "n": 70,
+          "q25": -0.0007999999999999998,
+          "q75": 0.0
+        }
+      },
+      "n": 70,
+      "pair_rate": 5000.0,
+      "supported": 70,
+      "unsupported": {}
+    },
+    "PVP_N2_N5": {
+      "deltas": {
+        "delta_expected_finish": {
+          "frac_negative": 0.014285714285714285,
+          "frac_positive": 0.9714285714285714,
+          "frac_zero": 0.014285714285714285,
+          "max": 1.0968,
+          "median": 0.23199999999999932,
+          "min": -0.021599999999999397,
+          "n": 70,
+          "q25": 0.1193499999999994,
+          "q75": 0.36059999999999937
+        },
+        "delta_p_ahead_of_rival": {
+          "frac_negative": 0.02857142857142857,
+          "frac_positive": 0.9571428571428572,
+          "frac_zero": 0.014285714285714285,
+          "max": 0.0816,
+          "median": 0.02090000000000003,
+          "min": -0.00039999999999995595,
+          "n": 70,
+          "q25": 0.013099999999999959,
+          "q75": 0.03539999999999997
+        },
+        "delta_podium_frequency": {
+          "frac_negative": 0.02857142857142857,
+          "frac_positive": 0.38571428571428573,
+          "frac_zero": 0.5857142857142857,
+          "max": 0.10420000000000001,
+          "median": 0.0,
+          "min": -0.001,
+          "n": 70,
+          "q25": 0.0,
+          "q75": 0.011600000000000003
+        },
+        "delta_position_gain_loss": {
+          "frac_negative": 0.014285714285714285,
+          "frac_positive": 0.9714285714285714,
+          "frac_zero": 0.014285714285714285,
+          "max": 1.0968,
+          "median": 0.23200000000000004,
+          "min": -0.02159999999999984,
+          "n": 70,
+          "q25": 0.11934999999999996,
+          "q75": 0.36060000000000003
+        },
+        "delta_win_frequency": {
+          "frac_negative": 0.02857142857142857,
+          "frac_positive": 0.2714285714285714,
+          "frac_zero": 0.7,
+          "max": 0.04520000000000002,
+          "median": 0.0,
+          "min": -0.008199999999999985,
+          "n": 70,
+          "q25": 0.0,
+          "q75": 0.0003499999999999995
+        }
+      },
+      "n": 70,
+      "pair_rate": 5000.0,
+      "supported": 70,
+      "unsupported": {}
+    },
+    "PVP_SINGLE_MULTI": {
+      "deltas": {
+        "delta_expected_finish": {
+          "frac_negative": 0.9714285714285714,
+          "frac_positive": 0.014285714285714285,
+          "frac_zero": 0.014285714285714285,
+          "max": 0.19679999999999964,
+          "median": -1.1240999999999997,
+          "min": -3.226800000000001,
+          "n": 70,
+          "q25": -1.780750000000001,
+          "q75": -0.6278499999999996
+        },
+        "delta_p_ahead_of_rival": {
+          "frac_negative": 0.9857142857142858,
+          "frac_positive": 0.0,
+          "frac_zero": 0.014285714285714285,
+          "max": 0.0,
+          "median": -0.11979999999999996,
+          "min": -0.44100000000000006,
+          "n": 70,
+          "q25": -0.17889999999999995,
+          "q75": -0.04325000000000001
+        },
+        "delta_podium_frequency": {
+          "frac_negative": 0.4,
+          "frac_positive": 0.014285714285714285,
+          "frac_zero": 0.5857142857142857,
+          "max": 0.001,
+          "median": 0.0,
+          "min": -0.3736,
+          "n": 70,
+          "q25": -0.03109999999999999,
+          "q75": 0.0
+        },
+        "delta_position_gain_loss": {
+          "frac_negative": 0.9714285714285714,
+          "frac_positive": 0.014285714285714285,
+          "frac_zero": 0.014285714285714285,
+          "max": 0.19679999999999986,
+          "median": -1.1241,
+          "min": -3.2268,
+          "n": 70,
+          "q25": -1.7807500000000003,
+          "q75": -0.62785
+        },
+        "delta_win_frequency": {
+          "frac_negative": 0.3142857142857143,
+          "frac_positive": 0.0,
+          "frac_zero": 0.6857142857142857,
+          "max": 0.0,
+          "median": 0.0,
+          "min": -0.42779999999999996,
+          "n": 70,
+          "q25": -0.0006,
+          "q75": 0.0
+        }
+      },
+      "n": 70,
+      "pair_rate": 5000.0,
+      "supported": 70,
+      "unsupported": {}
+    }
+  },
+  "horizon": {
+    "1": {
+      "pair_rate": 5000.0
+    },
+    "2": {
+      "pair_rate": 5000.0
+    },
+    "3": {
+      "pair_rate": 5000.0
+    },
+    "5": {
+      "pair_rate": 5000.0
+    },
+    "8": {
+      "pair_rate": 5000.0
+    }
+  },
+  "lifecycle": {
+    "MULTIDRIVER/alternative/EXECUTED": 639017,
+    "MULTIDRIVER/alternative/SUPERSEDED": 60983,
+    "MULTISTOP/alternative/EXECUTED": 609448,
+    "MULTISTOP/alternative/SUPERSEDED": 90552,
+    "N1/alternative/EXECUTED": 350000,
+    "N2/alternative/EXECUTED": 319547,
+    "N2/alternative/SUPERSEDED": 30453,
+    "N2_SOFT/alternative/EXECUTED": 319547,
+    "N2_SOFT/alternative/SUPERSEDED": 30453,
+    "N3/alternative/EXECUTED": 304209,
+    "N3/alternative/SUPERSEDED": 45791,
+    "N5/alternative/EXECUTED": 277718,
+    "N5/alternative/SUPERSEDED": 72282,
+    "N8/alternative/EXECUTED": 236643,
+    "N8/alternative/SUPERSEDED": 113357,
+    "PVP_N2_N5/alternative/EXECUTED": 277718,
+    "PVP_N2_N5/alternative/SUPERSEDED": 72282,
+    "PVP_N2_N5/base/EXECUTED": 319547,
+    "PVP_N2_N5/base/SUPERSEDED": 30453,
+    "PVP_SINGLE_MULTI/alternative/EXECUTED": 609448,
+    "PVP_SINGLE_MULTI/alternative/SUPERSEDED": 90552,
+    "PVP_SINGLE_MULTI/base/EXECUTED": 319547,
+    "PVP_SINGLE_MULTI/base/SUPERSEDED": 30453
+  }
+}

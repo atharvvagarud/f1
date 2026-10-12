@@ -122,7 +122,14 @@ CORPUS_MANIFEST = Path(__file__).resolve().parent / "ci_corpus_dependent.txt"
 # ci_corpus_dependent.txt; clean-checkout simulation evidence in the
 # manifest header) and 489 source-safe, plus 20 source-safe V3.6H freeze
 # tests (tests/test_v3_6h_freeze.py), with no removals = 4449.
-EXPECTED_COLLECTED = 4449
+# V3.7H reclassification: 244 added tests across 7 new files
+# (tests/test_v3_7a_contract.py, test_v3_7b_contracts.py,
+# test_v3_7c_engine.py, test_v3_7d_evaluation.py, test_v3_7f_api.py,
+# test_v3_7f_cache.py, test_v3_7f_runtime.py), of which 0 are
+# corpus-dependent (no ignored-corpus references; serving-stack inputs
+# match existing Tier-1 serving tests) and 244 source-safe, with no
+# removals = 4693.
+EXPECTED_COLLECTED = 4693
 
 # (pytest node id, reason it cannot pass at the frozen baseline)
 # P11-1: the 12 pre-existing stale historical pins were genuinely corrected

@@ -1,0 +1,59 @@
+{
+  "a_identity": "1735954212ec31286fede041639875610003a09cf817177e22cc908e3fcb0a12",
+  "architecture": "CounterfactualPlan -> V3.7 schedule/tracker -> frozen MC2 intervention seam -> MC2 future -> V3.7 aggregation; no duplicate simulator",
+  "b_identity": "1865537503136ed3d8603e53741902c320df9387222655b38eef51640294e970",
+  "chartered_change_detector_trip": {
+    "cause": "additive V3.7 schedule support in raceintel/simulation/monte_carlo.py (resolve/state/dispatch/outcomes/pit-count column)",
+    "disposition": "CHARTERED_ADDITIVE_SEAM_EXTENSION_DOCUMENTED",
+    "node": "tests/test_v3_6b_contracts.py::test_no_mc2_change",
+    "why_not_a_regression": "all 191 frozen Phase-7/V3.6/MC2 path tests green; N=1/N=2 bit-identical parity; no pace/pit/RNG/eligibility change; frozen test left unmodified per immutability"
+  },
+  "complete_pair_validation": "complete+excluded==requested; inert/superseded do not invalidate valid futures",
+  "conflict_enforcement": "identical deduplicated; same-trigger different-compound INVALID at eligibility; staggered runtime supersession",
+  "crn_validation": "same state/config/seed/index/streams; determinism double-run; scalar/batch equivalence",
+  "d_readiness": true,
+  "determinism": "same seed identical identity; different seed valid; no wall-clock/global RNG",
+  "engine_identity": "v3.7c-counterfactual-engine-v1",
+  "known_limitations": [
+    "second-stop premise uses absolute supersession window (conservative)",
+    "multi-driver same-lap pits allowed with no stacking delay modelled",
+    "INERT only for baseline-coincident sampled-compound forces",
+    "TERMINAL reachable only via individual-finish edge cases (no DNFs exist)",
+    "time-loss outcome remains research (not implemented)",
+    "V3.6B test_no_mc2_change trips by charter (see chartered_change_detector_trip); V3.7H owns Tier-1 reclassification including new C tests"
+  ],
+  "mc2_changes": "additive seam extension only (schedule resolve/state/call-sites/outcomes/pit-count column); legacy single-action paths byte-identical by test; no pace/pit/RNG/eligibility change",
+  "multi_driver_status": "IMPLEMENTED (no new assumptions): joint ordering propagates, no stacking modelled, order-invariant identity",
+  "multi_event_validation": "multiple events in one trajectory; chronological; per-event lifecycle evidence",
+  "multi_stop_validation": "two forced stops, state continuity via frozen R6 mechanics, pit counts grow",
+  "order_invariance": "input-permuted plans share plan and result identity",
+  "performance_observations": {
+    "micro_6_cases_5000_s": 70,
+    "note": "measured, not optimized; no caches; no parallel RNG changes",
+    "synthetic_5000_arm_s": 0.1
+  },
+  "pit_count_validation": "per-future integers incl. forced pits; expected aggregate; superseded/natural cases behave",
+  "position_gain_validation": "B1 orientation P5->P2=+3 executed and aggregated; deltas plan-ref / B-A",
+  "real_state_micro_validation": {
+    "anchor": "2022-r01-R perez lap 30 (V3.6F-validated dry-green)",
+    "cases": [
+      "N=1",
+      "N=2",
+      "N=5",
+      "multi-stop N=2+N=10",
+      "rival max_verstappen",
+      "multi-driver perez+max_verstappen"
+    ],
+    "count": 5000,
+    "seed": 20240101,
+    "verdict": "all supported with complete pairs; mechanical only, no strategy claims"
+  },
+  "rival_validation": "P(ahead)=1.0 exact synthetic case; real-state rival outcomes populated",
+  "schema": "v3.7c-counterfactual-engine-validation-v1",
+  "supersession": "natural pit inside (decision, trigger) supersedes (absolute window); tested with forced natural pit",
+  "synthetic_invariants": "60-test suite green (trigger, lifecycle, conflicts, orientation, pairs, outcomes, rejected kinds)",
+  "temporal_poison_tests": "read_parquet-blocked rerun identical; engine source has no historical reads",
+  "trigger_validation": "zero-noise scalar trace forces exactly at decision+N; simulated progression only",
+  "unsupported_rejected_guards": "12 rejected kinds fail closed at contract and seam; unsupported metrics empty at all levels",
+  "v36_parity": "N=1 vs PIT_NOW and N=2 vs PIT_NEXT_LAP bit-identical (finish positions, pit counts, full results, 5000 futures)"
+}

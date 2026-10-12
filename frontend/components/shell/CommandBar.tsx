@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { href: "/replay", label: "Replay" },
   { href: "/simulator", label: "Simulate" },
   { href: "/strategy", label: "Strategy" },
+  { href: "/counterfactuals", label: "Counterfactuals" },
   { href: "/models", label: "Models" },
   { href: "/about", label: "About" },
 ] as const;

@@ -1,0 +1,12 @@
+{
+  "a_identity": "1735954212ec31286fede041639875610003a09cf817177e22cc908e3fcb0a12",
+  "api_modified": false,
+  "b_identity": "1865537503136ed3d8603e53741902c320df9387222655b38eef51640294e970",
+  "c_readiness": true,
+  "frontend_modified": false,
+  "mc2_modified": false,
+  "remaining_implementation_decisions": [],
+  "runtime_implementation_present": false,
+  "stage": "V3.7B",
+  "v36_modified": false
+}

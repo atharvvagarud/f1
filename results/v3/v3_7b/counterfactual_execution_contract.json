@@ -1,0 +1,341 @@
+{
+  "a_provenance": {
+    "identity": "1735954212ec31286fede041639875610003a09cf817177e22cc908e3fcb0a12",
+    "parent_commit": "1eb462631b9d7a948e35b8a1658e3bb90035c94c",
+    "parent_tag": "v3.6-strategy-2.0",
+    "schema": "v3.7a-counterfactual-contract-v1"
+  },
+  "ahead_of_rival_semantics": {
+    "definition": "frequency target ahead of rival over valid complete paired futures",
+    "delta": "alt - base",
+    "inputs": "simulated finishing order only"
+  },
+  "c_readiness": {
+    "ready": true,
+    "unresolved_scientific_decisions": []
+  },
+  "canonical_ordering": {
+    "key": [
+      "scheduled_lap",
+      "target_driver_id",
+      "kind",
+      "requested_compound"
+    ],
+    "permutation_invariance": "across targets; chronological within target"
+  },
+  "comparison_forms": {
+    "canonical_reference": "SIMULATED_NO_INTERVENTION_REFERENCE",
+    "forms": [
+      "REFERENCE_VS_PLAN",
+      "PLAN_VS_PLAN"
+    ],
+    "key_version": "v3.7b-comparison-key-v1"
+  },
+  "complete_pair_contract": {
+    "estimands": "complete valid pairs only",
+    "forbidden": [
+      "replaced",
+      "imputed",
+      "borrowed",
+      "independently resampled"
+    ],
+    "inert_superseded": "not auto-invalid if future valid"
+  },
+  "compound_caveat": "provenance communicates compound presence with pace-model limitation",
+  "compound_semantics": {
+    "caveat": "explicit compound pace delta absent/limited per frozen MC2",
+    "enum": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "SAMPLED"
+    ],
+    "role": "intervention parameter, not pace-effect claim"
+  },
+  "conflict_matrix": {
+    "distinct_targets": "VALID (no stacking modelled)",
+    "identical": "DEDUPLICATE",
+    "same_target_staggered": "RUNTIME_SUPERSESSION",
+    "same_trigger_different_compounds": "INVALID",
+    "verdicts": [
+      "VALID",
+      "DEDUPLICATE",
+      "INVALID",
+      "RUNTIME_SUPERSESSION"
+    ]
+  },
+  "contract_hash": "1865537503136ed3d8603e53741902c320df9387222655b38eef51640294e970",
+  "crn_contract": {
+    "divergence": "pit-domain draw counts + supersession paths documented; pairs preserved",
+    "rule": "same factual state, same simulation config, same root seed family, same simulation index, same stochastic stream family; only the intervention schedule differs",
+    "stream_rule": "PCG64 SeedSequence[master_seed, simulation_index, domain_tag]"
+  },
+  "delta_orientation": {
+    "delta_expected_finish": "base - alt",
+    "delta_p_ahead_of_rival": "alt - base",
+    "delta_pit_count": "alt - base (descriptive; not improvement-directed)",
+    "delta_podium_frequency": "alt - base",
+    "delta_position_gain_loss": "alt - base",
+    "delta_top10_frequency": "alt - base",
+    "delta_top5_frequency": "alt - base",
+    "delta_win_frequency": "alt - base",
+    "rule": "POSITIVE = IMPROVEMENT (except pit_count, descriptive)"
+  },
+  "eligibility_hierarchy": {
+    "levels": [
+      "STATE",
+      "INTERVENTION",
+      "PLAN",
+      "COMPARISON"
+    ],
+    "new_reason_codes": [
+      "INVALID_TRIGGER",
+      "CONFLICTING_INTERVENTIONS",
+      "TARGET_NOT_PRESENT",
+      "RIVAL_NOT_PRESENT",
+      "UNSUPPORTED_INTERVENTION_KIND",
+      "INVALID_PLAN"
+    ]
+  },
+  "lifecycle": {
+    "states": [
+      "PLANNED",
+      "ELIGIBLE",
+      "EXECUTED",
+      "INERT",
+      "SUPERSEDED",
+      "CANCELLED",
+      "TERMINAL",
+      "INVALID"
+    ],
+    "v36_mapping": {
+      "CANCELLED": "INTERVENTION_RACE_END_CANCELLED",
+      "ELIGIBLE": null,
+      "EXECUTED": "INTERVENTION_APPLIED",
+      "INERT": null,
+      "INVALID": null,
+      "PLANNED": null,
+      "SUPERSEDED": "INTERVENTION_SUPERSEDED",
+      "TERMINAL": null
+    }
+  },
+  "multi_driver_contract": {
+    "complete_pair_compatible": true,
+    "deterministic_target_ordering": true,
+    "execution": "DEFERRED to C extension",
+    "joint_field_only": true,
+    "no_traffic_battle_claims": true,
+    "order_invariant": true,
+    "same_crn_family": true
+  },
+  "multi_stop_representation": {
+    "chained_runs": "REJECTED",
+    "compositional": true,
+    "ordering": "canonical chronological"
+  },
+  "outcome_schema": {
+    "metrics": [
+      "win_frequency",
+      "podium_frequency",
+      "top5_frequency",
+      "top10_frequency",
+      "expected_finish",
+      "median_finish",
+      "finish_q25",
+      "finish_q75",
+      "p_ahead_of_rival",
+      "pit_count",
+      "position_gain_loss"
+    ],
+    "version": "v3.7b-outcome-schema-v1"
+  },
+  "pit_count_semantics": {
+    "representation": "per-future integer + expected aggregate; forced pits counted; descriptive, minimum sufficient"
+  },
+  "plan_schema": {
+    "fields": [
+      "target_driver_ids",
+      "interventions",
+      "rival_driver_id"
+    ],
+    "version": "v3.7b-plan-v1"
+  },
+  "position_gain_semantics": {
+    "aggregate": "expected_position_gain is the arithmetic mean over valid membership (no further sign change)",
+    "comparative_delta": "plan_gain - reference_gain (REFERENCE_VS_PLAN); plan_B_gain - plan_A_gain (PLAN_VS_PLAN); positive = ALT greater gain",
+    "definition": "factual_position_T - simulated_final_position; positive = numerically lower/better finish (positions gained); zero = unchanged; negative = numerically higher/worse finish (positions lost); expected aggregate is the arithmetic mean over valid membership",
+    "examples": {
+      "P5_to_P2": 3,
+      "P5_to_P5": 0,
+      "P5_to_P8": -3
+    },
+    "inputs": "factual causal position at T and MC2 simulated final position only; never historical final result",
+    "per_future": "factual_position_T - simulated_final_position"
+  },
+  "provenance_schema": {
+    "fields": [
+      "v37a_contract_identity",
+      "v37b_contract_identity",
+      "plan_schema_version",
+      "comparison_schema_version",
+      "mc2_identity",
+      "state_identity",
+      "simulation_count",
+      "master_seed",
+      "outcome_schema_version",
+      "reference_kind",
+      "comparison_form",
+      "seed_stream_rule"
+    ]
+  },
+  "reason_codes": {
+    "v36_reuse": "by reference (not redefined)",
+    "v37_new": [
+      "INVALID_TRIGGER",
+      "CONFLICTING_INTERVENTIONS",
+      "TARGET_NOT_PRESENT",
+      "RIVAL_NOT_PRESENT",
+      "UNSUPPORTED_INTERVENTION_KIND",
+      "INVALID_PLAN"
+    ]
+  },
+  "rejected_intervention_kinds": [
+    "WEATHER",
+    "SAFETY_CAR",
+    "VSC",
+    "RED_FLAG",
+    "RETIREMENT",
+    "RELIABILITY",
+    "ARBITRARY_POSITION",
+    "ARBITRARY_GAP",
+    "ARBITRARY_PACE",
+    "ARBITRARY_TYRE_AGE",
+    "UNDERCUT",
+    "OVERCUT"
+  ],
+  "reuse_table": {
+    "CRN_substrate": "REUSE_VERBATIM generalized to schedules",
+    "DEFAULT_MASTER_SEED_20240101": "REUSE_VERBATIM",
+    "FORBIDDEN_AT_T": "REUSE_VERBATIM + plan-field extension",
+    "PRODUCTION_SIMULATION_COUNT_5000": "REUSE_VERBATIM",
+    "STRATEGY_ACTION_LAP_OFFSETS": "REUSE_VERBATIM (equivalence-mapping source)",
+    "SUPPORTED_REQUESTED_COMPOUNDS_plus_SAMPLED": "REUSE_VERBATIM",
+    "SimulationConfig_SimulationState_identity": "REUSE_VERBATIM",
+    "StrategyAction_enum": "REUSE_VERBATIM (reference only; B kind is separate, enum untouched)",
+    "StrategyComparisonKey": "WRAP (discipline reference for PlanComparisonKey)",
+    "StrategyIntervention": "WRAP (pattern reference for ScheduledIntervention)",
+    "canonical_sha256_Provenance": "REUSE_VERBATIM (only frozen import)",
+    "eligibility_hierarchy": "EXTEND_ADDITIVELY (STATE/INTERVENTION/PLAN/COMPARISON)",
+    "execution_statuses": "REUSE_VERBATIM (lifecycle mapping)",
+    "uncertainty_result_types": "REUSE_VERBATIM pattern",
+    "unsupported_reason_codes": "REUSE_VERBATIM by reference + 6 new V37 codes"
+  },
+  "rival_schema": {
+    "must_differ_from_targets": true,
+    "must_exist_factual": true,
+    "no_historical_classification": true,
+    "no_v35": true
+  },
+  "scheduled_intervention_schema": {
+    "version": "v3.7b-scheduled-intervention-v1"
+  },
+  "schema": "v3.7b-counterfactual-execution-contract-v1",
+  "simulation_config": {
+    "master_seed": 20240101,
+    "no_caller_override": true,
+    "no_rng_change": true,
+    "simulation_count": 5000
+  },
+  "supersession": {
+    "baseline_pit_before_trigger": "SUPERSEDED",
+    "earlier_plan_changes_stint": "SUPERSEDED at runtime",
+    "no_historical_inspection": true,
+    "no_silent_reschedule": true,
+    "second_stop_assumptions_invalidated": "SUPERSEDED/CANCELLED at runtime"
+  },
+  "target_schema": {
+    "forms": [
+      "single",
+      "competitor",
+      "multiple"
+    ],
+    "identity": "canonical driver identity from simulation state"
+  },
+  "temporal_safety_rules": {
+    "allowed": [
+      "factual T state",
+      "user schedule",
+      "frozen pre-T parameters",
+      "simulator future"
+    ],
+    "forbidden_plan_fields": [
+      "observed_future_pit_lap",
+      "future_weather",
+      "future_safety_car",
+      "future_finish",
+      "historical_outcome",
+      "recommendation_score",
+      "future_result",
+      "winner",
+      "future",
+      "result"
+    ],
+    "forbidden_post_T": [
+      "future_pit_events",
+      "future_compounds",
+      "future_lap_times",
+      "future_result",
+      "future_finishing_position",
+      "future_safety_car",
+      "future_weather",
+      "historical_observed_action_after_T",
+      "v35_post_race_labels"
+    ]
+  },
+  "terminal_semantics": {
+    "never_negative_result": true,
+    "request_time_invalid": "INVALID",
+    "simulated_future_nonexecutable": "CANCELLED/TERMINAL"
+  },
+  "transition_table": {
+    "CANCELLED": [],
+    "ELIGIBLE": [
+      "EXECUTED",
+      "INERT",
+      "SUPERSEDED",
+      "CANCELLED",
+      "TERMINAL"
+    ],
+    "EXECUTED": [],
+    "INERT": [],
+    "INVALID": [],
+    "PLANNED": [
+      "ELIGIBLE",
+      "CANCELLED",
+      "TERMINAL",
+      "INVALID"
+    ],
+    "SUPERSEDED": [],
+    "TERMINAL": []
+  },
+  "trigger_semantics": {
+    "equivalence": {
+      "N=1": "PIT_NOW mechanics",
+      "N=2": "PIT_NEXT_LAP mechanics",
+      "N>=3": "no V3.6 counterpart"
+    },
+    "horizon_rule": "N >= 1; N <= remaining_laps - 1",
+    "scheduled_lap": "decision_lap + N (off-by-one frozen)"
+  },
+  "undercut_overcut_status": "derived analytical labels only; no primitive kinds",
+  "unsupported_result_schema": {
+    "forbidden": [
+      "zero",
+      "NaN-as-result",
+      "fallback",
+      "historical/Phase7/V3.6/V3.5 substitute"
+    ],
+    "metrics": {},
+    "supported": false
+  }
+}

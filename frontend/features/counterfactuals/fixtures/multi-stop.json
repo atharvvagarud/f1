@@ -1,0 +1,298 @@
+{
+  "alternative_aggregate": {
+    "downside_vs_other": 0.6208,
+    "expected_finish": 3.7054,
+    "expected_pit_count": 3.418,
+    "expected_position_gain": 0.2946,
+    "finish_position_distribution": [
+      {
+        "finish_position": 1,
+        "frequency": 0.044
+      },
+      {
+        "finish_position": 2,
+        "frequency": 0.1476
+      },
+      {
+        "finish_position": 3,
+        "frequency": 0.2648
+      },
+      {
+        "finish_position": 4,
+        "frequency": 0.2888
+      },
+      {
+        "finish_position": 5,
+        "frequency": 0.1594
+      },
+      {
+        "finish_position": 6,
+        "frequency": 0.0732
+      },
+      {
+        "finish_position": 7,
+        "frequency": 0.0106
+      },
+      {
+        "finish_position": 8,
+        "frequency": 0.0058
+      },
+      {
+        "finish_position": 9,
+        "frequency": 0.0026
+      },
+      {
+        "finish_position": 10,
+        "frequency": 0.0008
+      },
+      {
+        "finish_position": 11,
+        "frequency": 0.001
+      },
+      {
+        "finish_position": 12,
+        "frequency": 0.001
+      },
+      {
+        "finish_position": 13,
+        "frequency": 0.0002
+      },
+      {
+        "finish_position": 14,
+        "frequency": 0.0002
+      },
+      {
+        "finish_position": 15,
+        "frequency": 0.0
+      },
+      {
+        "finish_position": 16,
+        "frequency": 0.0
+      },
+      {
+        "finish_position": 17,
+        "frequency": 0.0
+      },
+      {
+        "finish_position": 18,
+        "frequency": 0.0
+      },
+      {
+        "finish_position": 19,
+        "frequency": 0.0
+      },
+      {
+        "finish_position": 20,
+        "frequency": 0.0
+      }
+    ],
+    "finish_q25": 3.0,
+    "finish_q75": 5.0,
+    "median_finish": 4.0,
+    "n": 5000,
+    "p_ahead_of_rival": null,
+    "podium_frequency": 0.4564,
+    "target_driver_id": "perez",
+    "top10_frequency": 0.9976,
+    "top5_frequency": 0.9046,
+    "win_frequency": 0.044
+  },
+  "alternative_identity": "302174be20462ba1e2b53a072c00101f679219be93b61702776dd7d2a48bfbd1",
+  "anchor_driver_id": "perez",
+  "anchor_lap_number": 30,
+  "anchor_state_time_s": 6745.686,
+  "api_schema": "v3.7f-counterfactual-api-v1",
+  "base_aggregate": {
+    "downside_vs_other": 0.108,
+    "expected_finish": 2.4074,
+    "expected_pit_count": 2.4738,
+    "expected_position_gain": 1.5926,
+    "finish_position_distribution": [
+      {
+        "finish_position": 1,
+        "frequency": 0.3318
+      },
+      {
+        "finish_position": 2,
+        "frequency": 0.2436
+      },
+      {
+        "finish_position": 3,
+        "frequency": 0.209
+      },
+      {
+        "finish_position": 4,
+        "frequency": 0.1466
+      },
+      {
+        "finish_position": 5,
+        "frequency": 0.0484
+      },
+      {
+        "finish_position": 6,
+        "frequency": 0.0154
+      },
+      {
+        "finish_position": 7,
+        "frequency": 0.0032
+      },
+      {
+        "finish_position": 8,
+        "frequency": 0.0008
+      },
+      {
+        "finish_position": 9,
+        "frequency": 0.0006
+      },
+      {
+        "finish_position": 10,
+        "frequency": 0.0002
+      },
+      {
+        "finish_position": 11,
+        "frequency": 0.0004
+      },
+      {
+        "finish_position": 12,
+        "frequency": 0.0
+      },
+      {
+        "finish_position": 13,
+        "frequency": 0.0
+      },
+      {
+        "finish_position": 14,
+        "frequency": 0.0
+      },
+      {
+        "finish_position": 15,
+        "frequency": 0.0
+      },
+      {
+        "finish_position": 16,
+        "frequency": 0.0
+      },
+      {
+        "finish_position": 17,
+        "frequency": 0.0
+      },
+      {
+        "finish_position": 18,
+        "frequency": 0.0
+      },
+      {
+        "finish_position": 19,
+        "frequency": 0.0
+      },
+      {
+        "finish_position": 20,
+        "frequency": 0.0
+      }
+    ],
+    "finish_q25": 1.0,
+    "finish_q75": 3.0,
+    "median_finish": 2.0,
+    "n": 5000,
+    "p_ahead_of_rival": null,
+    "podium_frequency": 0.7844,
+    "target_driver_id": "perez",
+    "top10_frequency": 0.9996,
+    "top5_frequency": 0.9794,
+    "win_frequency": 0.3318
+  },
+  "base_identity": "SIMULATED_NO_INTERVENTION_REFERENCE",
+  "cache_key": "a49136adffccd9a3f92315f0315086c40b94da74139bf995ee203c115529687d",
+  "comparison_form": "REFERENCE_VS_PLAN",
+  "comparison_identity": "1cc1c92223505515c3a911b856e06d37273954d7c1c772a7048f8103260f774c",
+  "complete_pairs": 5000,
+  "config_identity": "f21e4ceff4f6455015bd4aa57d88de05bc53e2776534a77d6e335236a7dd6994",
+  "deltas": {
+    "delta_expected_finish": {
+      "ci_high": -1.24879,
+      "ci_low": -1.3482,
+      "metric": "delta_expected_finish",
+      "paired_se": 0.02542849821960276,
+      "point_estimate": -1.298
+    },
+    "delta_p_ahead_of_rival": {
+      "ci_high": null,
+      "ci_low": null,
+      "metric": "delta_p_ahead_of_rival",
+      "paired_se": null,
+      "point_estimate": null
+    },
+    "delta_podium_frequency": {
+      "ci_high": -0.31139500000000003,
+      "ci_low": -0.34440499999999996,
+      "metric": "delta_podium_frequency",
+      "paired_se": 0.008237522161079194,
+      "point_estimate": -0.328
+    },
+    "delta_position_gain_loss": {
+      "ci_high": null,
+      "ci_low": null,
+      "metric": "delta_position_gain_loss",
+      "paired_se": null,
+      "point_estimate": -1.298
+    },
+    "delta_win_frequency": {
+      "ci_high": -0.274,
+      "ci_low": -0.3006,
+      "metric": "delta_win_frequency",
+      "paired_se": 0.006914028692343682,
+      "point_estimate": -0.2878
+    }
+  },
+  "excluded_pairs": 0,
+  "execution_source": "cache",
+  "human_reason": "",
+  "level": null,
+  "lifecycle_summary": {
+    "alternative": {
+      "EXECUTED": 8344,
+      "SUPERSEDED": 1656
+    },
+    "base": {}
+  },
+  "limitations": "simulator-conditional outcomes under controlled interventions; not what would truly have happened; no optimal/recommended strategy; no causal real-world effect; compound-specific pace differentiation is limited/absent per frozen MC2 (compound is an intervention parameter, not a pace-effect claim); multi-driver plans propagate through joint ordering only (no pit-box stacking, traffic-battle, or team-order model)",
+  "master_seed": 20240101,
+  "parameter_identity": "9c40e92e74ed756ea5f3dc58d13ddb1cfc25a586958858131fe57225e7f3ab9c",
+  "primary_target_driver_id": "perez",
+  "provenance": {
+    "api_schema": "v3.7f-counterfactual-api-v1",
+    "cache_schema_version": "v3.7f-counterfactual-cache-v1",
+    "comparison_form": "REFERENCE_VS_PLAN",
+    "comparison_identity": "1cc1c92223505515c3a911b856e06d37273954d7c1c772a7048f8103260f774c",
+    "engine_identity": "v3.7c-counterfactual-engine-v1",
+    "evaluation_gate": "REFINEMENT_NOT_WARRANTED",
+    "master_seed": 20240101,
+    "mc2_identity": "MC2-E (E_AR1_RESIDUAL)",
+    "outcome_schema_version": "v3.7b-outcome-schema-v1",
+    "plan_identity": "302174be20462ba1e2b53a072c00101f679219be93b61702776dd7d2a48bfbd1",
+    "reference_kind": "SIMULATED_NO_INTERVENTION_REFERENCE",
+    "runtime_identity": "v3.7f-counterfactual-runtime-v1",
+    "seed_stream_rule": "PCG64 SeedSequence[master_seed, simulation_index, domain_tag]",
+    "simulation_count": 5000,
+    "state_identity": "c567449622bc4bd48265c606990543f2e1432e7bd5816ef6886d7026abf4fac9",
+    "v37a_contract_identity": "1735954212ec31286fede041639875610003a09cf817177e22cc908e3fcb0a12",
+    "v37b_contract_identity": "1865537503136ed3d8603e53741902c320df9387222655b38eef51640294e970",
+    "validated_by": "96debc6392c79019abedc3a51c7c26fb1536e97cabb3fed3136c43ed7c2b19c3"
+  },
+  "race_id": "2022-r01-R",
+  "reason_code": null,
+  "requested_pairs": 5000,
+  "rival_driver_id": null,
+  "runtime": {
+    "adaptation_s": 5.904200952500105e-05,
+    "analysis_s": 0.0,
+    "reconstruction_s": 0.033540832926519215,
+    "simulation_s": 0.020283333025872707,
+    "total_s": 0.053883207961916924
+  },
+  "simulation_count": 5000,
+  "state_identity": "c567449622bc4bd48265c606990543f2e1432e7bd5816ef6886d7026abf4fac9",
+  "supported": true,
+  "target_driver_ids": [
+    "perez"
+  ]
+}

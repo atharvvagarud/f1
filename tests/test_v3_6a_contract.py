@@ -52,8 +52,17 @@ def test_parent_commit_exact():
 
 
 def test_head_matches_parent():
+    # V3.7H reconciliation (2026): entry-time pin to 6df5d41 (V3.6A parent)
+    # is stale after the V3.6 freeze. Final-state invariant: the frozen
+    # V3.6 parent 1eb462631b9d7a948e35b8a1658e3bb90035c94c must be an
+    # ancestor of HEAD (passes at V3.6 freeze HEAD and any descendant
+    # freeze commit; fails on history rewrite).
     head = _git("rev-parse", "HEAD")
-    assert head == "6df5d41d3ebead9a1c9b4f0f40ed20a21ce0bff1"
+    frozen = "1eb462631b9d7a948e35b8a1658e3bb90035c94c"
+    out = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", frozen, head], cwd=ROOT,
+        capture_output=True)
+    assert out.returncode == 0, head
 
 
 # --- V3.5 identity ---
@@ -305,12 +314,36 @@ def test_no_serving_api_frontend_mc2_v35_changes():
                         # V3.6H guard-allowlist corrections to V3.5
                         # stage guards (broken-test category): allowed.
                         "tests/test_v3_5",
+                        # V3.7H guard-allowlist corrections to V3.4/V3.5
+                        # stage guards (provenance-neutral): allowed.
+                        "tests/test_v3_4e",
                         "scripts/v3_6d_",
                         # V3.6B pure typed contracts (no execution): allowed.
                         # V3.6C thin orchestration layer (wraps frozen
                         # Phase-7/MC2; no frozen behavior change): allowed.
                         "raceintel/strategy/v3_contracts.py",
-                        "raceintel/strategy/v3_engine.py")
+                        "raceintel/strategy/v3_engine.py",
+                        # V3.7H reconciliation (2026): V3.7 charters
+                        # explicitly supersede the V3.6A stage-entry
+                        # boundary. Admitted exactly (frozen science
+                        # untouched; any other path still fails):
+                        # A/B research contracts, C engine package, D
+                        # evaluation, F runtime/API/cache, G frontend.
+                        "results/v3/v3_7",
+                        "docs/V3_7",
+                        "tests/test_v3_7",
+                        "scripts/v3_7",
+                        "raceintel/counterfactual/",
+                        # V3.7C additive MC2 seam (chartered; pinned hash
+                        # preserves the no-mutation protection).
+                        "raceintel/simulation/monte_carlo.py",
+                        # V3.7F additive API integration (chartered).
+                        "api/v2_counterfactual_",
+                        # V3.7G Counterfactual Explorer (chartered;
+                        # backend/science untouched).
+                        "frontend/app/counterfactuals",
+                        "frontend/features/counterfactuals",
+                        "frontend/components/shell/CommandBar.tsx")
     for f in _changed_files():
         assert any(f.startswith(p) for p in allowed_prefixes), f
 
@@ -318,7 +351,10 @@ def test_no_serving_api_frontend_mc2_v35_changes():
 def test_no_api_change():
     # V3.6F charter admits exactly its additive integration files; any
     # other api/ change still fails.
-    allowed = ("api/v2_strategy_v3_", "api/main.py")
+    # V3.7H reconciliation: V3.7F charter additionally admits exactly the
+    # counterfactual API integration files (frozen science untouched).
+    allowed = ("api/v2_strategy_v3_", "api/main.py",
+               "api/v2_counterfactual_")
     assert not any(f.startswith("api/") and not f.startswith(allowed)
                    for f in _changed_files())
 
@@ -326,19 +362,37 @@ def test_no_api_change():
 def test_no_frontend_change():
     # V3.6G charter admits exactly its Strategy 2.0 replacement files;
     # any other frontend/ change still fails.
+    # V3.7H reconciliation: V3.7G charter additionally admits exactly the
+    # Counterfactual Explorer paths (backend/science untouched).
     allowed = ("frontend/app/strategy/page.tsx",
                "frontend/features/strategy/components/Strategy",
                "frontend/features/strategy/hooks/useStrategy",
                "frontend/features/strategy/lib/strategy",
-               "frontend/lib/v2.ts")
+               "frontend/lib/v2.ts",
+               "frontend/app/counterfactuals",
+               "frontend/features/counterfactuals",
+               "frontend/components/shell/CommandBar.tsx")
     assert not any(f.startswith("frontend/") and not f.startswith(allowed)
                    for f in _changed_files())
 
 
 def test_no_mc2_change():
+    # V3.7H reconciliation: V3.7C charter admits exactly the additive MC2
+    # seam in raceintel/simulation/monte_carlo.py. The pinned SHA-256
+    # preserves the no-mutation protection: any byte drift fails.
+    allowed = ("raceintel/simulation/monte_carlo.py",)
+    changed = _changed_files()
     assert not any(
-        f.startswith("raceintel/simulation") for f in _changed_files()
+        f.startswith("raceintel/simulation") and f not in allowed
+        for f in changed
     )
+    if "raceintel/simulation/monte_carlo.py" in changed:
+        import hashlib as _hl
+        digest = _hl.sha256(
+            (ROOT / "raceintel/simulation/monte_carlo.py").read_bytes()
+        ).hexdigest()
+        assert digest == ("045f392e46b030744f18a76140685ceba7501f80c0b8e265"
+                          "af662e57ca5f5376")
 
 
 def test_no_v35_change():

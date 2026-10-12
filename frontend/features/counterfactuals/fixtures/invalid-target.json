@@ -1,0 +1,8 @@
+{
+  "status": 422,
+  "body": {
+    "error": "counterfactual_request_invalid",
+    "reason": "target_not_present",
+    "detail": "target 'nobody' not in factual roster"
+  }
+}

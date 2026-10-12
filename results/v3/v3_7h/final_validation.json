@@ -1,0 +1,87 @@
+{
+  "claim_audit": "pass; all hits are prohibitions or forbidden-language guards",
+  "diff_audit": "only chartered V3.7 paths; 4 tracked science/registration mods justified; guard/test/runner reconciliations justified; no secrets/logs/screenshots/junk",
+  "freeze_readiness": true,
+  "frontend_gate": {
+    "build": "success; /counterfactuals prerendered",
+    "lint": "clean exit 0",
+    "node_tests": "270 passed, 0 failed (22 files, 21 selected, 1 corpus-deselected)",
+    "npm_ci": "ok",
+    "package_lock": "unchanged",
+    "smoke": "prod servers on 8001/3001; /counterfactuals 200, shell+methodology+limitations render, explicit API-error states (foreign :8000 occupant, CORS); 390 clean; fixture comparison_identity == live API comparison_identity",
+    "typecheck": "clean"
+  },
+  "frozen_parent": {
+    "commit": "1eb462631b9d7a948e35b8a1658e3bb90035c94c",
+    "tag": "v3.6-strategy-2.0"
+  },
+  "graphify": {
+    "delta_note": "entry->final delta reflects H artifacts (card/validation/docs) + guard edits; direction verified unchanged",
+    "direction": "frontend->HTTP->API->runtime->C engine->MC2; no forbidden production dependency; no new cycles",
+    "entry": {
+      "communities": 489,
+      "links": 40649,
+      "nodes": 17860
+    },
+    "final": {
+      "communities": 507,
+      "links": 40692,
+      "nodes": 17894
+    }
+  },
+  "guard_reconciliation": [
+    "tests/test_v3_6a_contract.py: head_matches_parent->frozen-ancestor; serving/mc2/api/frontend guards admit exact V3.7 paths, seam hash-pinned",
+    "tests/test_v3_6b_contracts.py: api/frontend + mc2 seam detectors admit exact V3.7 paths, seam hash-pinned",
+    "tests/test_v3_6d_evaluation.py: no_tuning (new files permitted by design; tracked mods pinned), no_api_frontend_changes",
+    "tests/test_v3_6f_runtime.py: no_frontend_changes",
+    "tests/test_v3_5a_contract.py + test_v3_5b_dataset.py + test_v3_5c_harness.py + test_v3_5d_screening.py: serving guards admit exact V3.7 paths",
+    "tests/test_v3_4e_evaluation.py: v34-freeze-tag guard admits exactly frozen v3.4-ensemble",
+    "tests/test_v3_7a_contract.py: baseline_clean final-phase allowlist; mc2/api/frontend guard -> final-state invariant, seam hash-pinned; no_v36_modification admits guard-edit test files only",
+    "scripts/run_ci_tests.py: EXPECTED_COLLECTED 4449->4693 (244 new V3.7 tests, 0 corpus-dependent)",
+    "scripts/run_ci_frontend_tests.py: EXPECTED_TEST_FILES 21->22 (G machine test, source-safe)"
+  ],
+  "phase": "V3.7H",
+  "provenance": {
+    "a_identity": "1735954212ec31286fede041639875610003a09cf817177e22cc908e3fcb0a12",
+    "a_schema": "v3.7a-counterfactual-contract-v1",
+    "b_identity": "1865537503136ed3d8603e53741902c320df9387222655b38eef51640294e970",
+    "b_schema": "v3.7b-counterfactual-execution-contract-v1",
+    "c_engine": "v3.7c-counterfactual-engine-v1",
+    "c_seam_sha256": "045f392e46b030744f18a76140685ceba7501f80c0b8e265af662e57ca5f5376",
+    "d_card_identity": "96debc6392c79019abedc3a51c7c26fb1536e97cabb3fed3136c43ed7c2b19c3",
+    "d_card_schema": "v3.7d-evaluation-card-v1",
+    "d_gate": "REFINEMENT_NOT_WARRANTED",
+    "d_protocol_identity": "e4a6101c7267f2db9f85c76bcc07c17ed01c7f85de4a6481f94ab0941634c570",
+    "d_protocol_schema": "v3.7d-evaluation-protocol-v1",
+    "e_status": "SKIPPED_BY_V3.7D_GATE",
+    "f_api": "v3.7f-counterfactual-api-v1",
+    "f_cache": "v3.7f-counterfactual-cache-v1",
+    "f_cache_key": "v3.7f-counterfactual-cache-key-v1",
+    "f_manifest": "v3.7f-counterfactual-manifest-v1",
+    "f_runtime": "v3.7f-counterfactual-runtime-v1",
+    "g_schema": "v3.7g-frontend-integration-validation-v1",
+    "recomputation": "all identities recomputed from repository artifacts; all match"
+  },
+  "schema": "v3.7h-final-validation-v1",
+  "scientific_card_identity": "a7b6d33e89d4157144fad1fa9f380b764bff0d41313995a9fae8b2bbff191fe5",
+  "targeted_tests": {
+    "guards_post_reconciliation": "all 18 reconciled guards green",
+    "v37_suites": "242 passed, 2 stale-guard failures pre-reconciliation (now green)"
+  },
+  "tier1_final": {
+    "collected": 4693,
+    "command": ".venv/bin/python scripts/run_ci_tests.py",
+    "deselected": 1048,
+    "duration_s": 2882,
+    "failed": 0,
+    "passed": 3641,
+    "selected": 3650,
+    "skipped": 0,
+    "xfailed": 4
+  },
+  "tier1_run1": {
+    "classification": "all 4 STALE HISTORICAL GUARD (3 V3.7-dirt trips + 1 pre-existing v3.4-tag trip); narrowly reconciled, no science change",
+    "result": "4 failed, 3637 passed, 1048 deselected, 4 xfailed"
+  },
+  "verdict": "V3.7H COMPLETE \u2014 V3.7 FROZEN \u2014 READY FOR V3.8"
+}

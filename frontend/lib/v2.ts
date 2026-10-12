@@ -1113,3 +1113,215 @@ export function isStrategyV3CacheMiss(error: unknown): boolean {
     error.code === "cache_miss"
   );
 }
+
+// --- Counterfactual comparison (V3.7F) ---
+//
+// Typed boundary over POST /v2/counterfactuals/compare and
+// GET /v2/counterfactuals/availability. The server compares simulated
+// outcomes under a controlled PIT_IN_N_LAPS intervention plan against
+// the simulated no-intervention reference (or plan A vs plan B), 5000
+// paired futures in production. Values pass through verbatim: the
+// frontend formats and labels only — it never re-derives estimates,
+// intervals, orientations, or lifecycle counts, and it never sends a
+// simulation count, seed, or live/compute-mode flag (the server owns
+// live-compute authorization; there is no such request field).
+
+export type CounterfactualCompound = "SOFT" | "MEDIUM" | "HARD" | "SAMPLED";
+export type CounterfactualForm = "REFERENCE_VS_PLAN" | "PLAN_VS_PLAN";
+
+export type CounterfactualIntervention = {
+  target_driver_id: string;
+  kind: "PIT_IN_N_LAPS";
+  lap_offset_n: number;
+  requested_compound?: CounterfactualCompound;
+};
+
+export type CounterfactualPlan = {
+  target_driver_ids: string[];
+  interventions: CounterfactualIntervention[];
+};
+
+export type CounterfactualCompareRequest = SimulationAnchor & {
+  comparison_form: CounterfactualForm;
+  base_plan?: CounterfactualPlan | null;
+  alternative_plan: CounterfactualPlan;
+  rival_driver_id?: string | null;
+};
+
+export type CounterfactualAvailabilityDriver = {
+  driver_id: string;
+  position: number | null;
+  decision_lap: number;
+  remaining_laps: number;
+  eligible_n_min: number | null;
+  eligible_n_max: number | null;
+  eligible: boolean;
+  compound: string | null;
+  status: string;
+};
+
+export type CounterfactualAvailability = {
+  api_schema: string;
+  supported: boolean;
+  level: string | null;
+  reason_code: string | null;
+  human_reason: string | null;
+  state_identity: string | null;
+  race_id: string;
+  anchor_driver_id: string;
+  anchor_lap_number: number;
+  anchor_state_time_s: number;
+  season: number | null;
+  scheduled_laps: number | null;
+  leader_laps_done: number | null;
+  drivers: CounterfactualAvailabilityDriver[];
+  eligible_targets: string[];
+  supported_compounds: string[];
+  comparison_forms: string[];
+  multi_stop_capable: boolean;
+  multi_driver_capable: boolean;
+  rival_candidates: string[];
+  cached_comparison_identities: string[];
+  live_enabled: boolean;
+  provenance: Record<string, unknown>;
+  limitations: string;
+};
+
+export type CounterfactualAggregate = {
+  target_driver_id: string;
+  n: number;
+  win_frequency: number;
+  podium_frequency: number;
+  top5_frequency: number;
+  top10_frequency: number;
+  expected_finish: number;
+  median_finish: number;
+  finish_q25: number;
+  finish_q75: number;
+  finish_position_distribution: { finish_position: number; frequency: number }[];
+  downside_vs_other: number | null;
+  p_ahead_of_rival: number | null;
+  expected_pit_count: number;
+  expected_position_gain: number | null;
+};
+
+export type CounterfactualDelta = {
+  metric: string;
+  point_estimate: number | null;
+  paired_se: number | null;
+  ci_low: number | null;
+  ci_high: number | null;
+};
+
+export type CounterfactualRuntime = {
+  reconstruction_s: number;
+  adaptation_s: number;
+  simulation_s: number;
+  analysis_s: number;
+  total_s: number;
+};
+
+export type CounterfactualCompareResponse = {
+  api_schema: string;
+  supported: boolean;
+  level: string | null;
+  reason_code: string | null;
+  human_reason: string | null;
+  comparison_form: string | null;
+  comparison_identity: string | null;
+  base_identity: string | null;
+  alternative_identity: string | null;
+  state_identity: string | null;
+  parameter_identity: string | null;
+  config_identity: string | null;
+  master_seed: number | null;
+  simulation_count: number | null;
+  race_id: string;
+  anchor_driver_id: string;
+  anchor_lap_number: number;
+  anchor_state_time_s: number;
+  target_driver_ids: string[];
+  primary_target_driver_id: string | null;
+  rival_driver_id: string | null;
+  base_aggregate: CounterfactualAggregate | null;
+  alternative_aggregate: CounterfactualAggregate | null;
+  deltas: Record<string, CounterfactualDelta>;
+  complete_pairs: number | null;
+  requested_pairs: number | null;
+  excluded_pairs: number | null;
+  lifecycle_summary: Record<string, Record<string, number>>;
+  provenance: Record<string, unknown>;
+  limitations: string;
+  execution_source: "live_engine" | "cache" | null;
+  cache_key: string | null;
+  runtime: CounterfactualRuntime | null;
+};
+
+/**
+ * Compare simulated outcomes under a controlled intervention plan.
+ * Cache-first server-side; no count/seed/mode is ever sent.
+ */
+export async function postCounterfactualCompare(
+  request: CounterfactualCompareRequest,
+  fetcher: FetchLike = fetch,
+  base?: string,
+  signal?: AbortSignal,
+): Promise<CounterfactualCompareResponse> {
+  return readJson<CounterfactualCompareResponse>(
+    fetcher,
+    `${baseOf(base)}/v2/counterfactuals/compare`,
+    {
+      method: "POST",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(request),
+      signal,
+    },
+  );
+}
+
+/** Cheap factual availability for one exact anchor (never simulates). */
+export async function getCounterfactualAvailability(
+  anchor: SimulationAnchor,
+  fetcher: FetchLike = fetch,
+  base?: string,
+  signal?: AbortSignal,
+): Promise<CounterfactualAvailability> {
+  const query =
+    `?race_id=${encodeURIComponent(anchor.race_id)}` +
+    `&anchor_driver_id=${encodeURIComponent(anchor.anchor_driver_id)}` +
+    `&anchor_lap_number=${encodeURIComponent(String(anchor.anchor_lap_number))}` +
+    `&anchor_state_time_s=${encodeURIComponent(String(anchor.anchor_state_time_s))}`;
+  return readJson<CounterfactualAvailability>(
+    fetcher,
+    `${baseOf(base)}/v2/counterfactuals/availability${query}`,
+    { cache: "no-store", signal },
+  );
+}
+
+/** True when a 422 is the stable counterfactual request-validation contract. */
+export function isCounterfactualRequestInvalid(error: unknown): boolean {
+  return (
+    error instanceof V2ApiError &&
+    error.status === 422 &&
+    error.code === "counterfactual_request_invalid"
+  );
+}
+
+/** True when the response is the explicit cache-miss product state. */
+export function isCounterfactualCacheMiss(error: unknown): boolean {
+  return (
+    error instanceof V2ApiError &&
+    error.status === 404 &&
+    error.code === "cache_miss"
+  );
+}
+
+/** True when the race is outside the served 2018–2024 registry. */
+export function isCounterfactualUnknownRace(error: unknown): boolean {
+  return (
+    error instanceof V2ApiError &&
+    error.status === 404 &&
+    error.code === "unknown_race"
+  );
+}
