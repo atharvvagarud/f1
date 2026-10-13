@@ -1,0 +1,37 @@
+{
+ "classification": "MC2_PERFORMANCE_ENGINEERING_FROZEN",
+ "cumulative_reduction_pct": 68.9,
+ "cumulative_speedup": 3.214,
+ "final_batch": {
+  "w1_s": 117.895,
+  "w8_s": 31.14,
+  "w8_vs_w1": 3.786
+ },
+ "graphify": {
+  "cycles": "none (executor above kernel; kernel has no batch dependency; science independent of artifacts; no API/frontend dependency)",
+  "entry": {
+   "links": 42826,
+   "nodes": 19016
+  },
+  "final": {
+   "links": 42860,
+   "nodes": 19038
+  }
+ },
+ "parity": "EXACT (scientific/rng/event-order)",
+ "post_run_delta": "tier1_results.json (run2 recorded) + final_card.json tier1 section (C1->C2); no code/test/collection change; freeze file re-run green",
+ "schema": "mc2-perf-freeze-validation-v1",
+ "tier1_authoritative": {
+  "collected": 5076,
+  "deselected": 1048,
+  "errors": 0,
+  "failed": 0,
+  "passed": 4024,
+  "returncode": 0,
+  "runtime_s": 3759.89,
+  "skipped": 0,
+  "xfailed": 4,
+  "xpassed": 0
+ },
+ "worktree": "only P0/P1/P2A/P2B/P3-1/freeze files; no unrelated user work"
+}

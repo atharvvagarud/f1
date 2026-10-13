@@ -1,0 +1,30 @@
+{
+ "artifacts": [
+  "interpolation_inventory.json",
+  "optimization_ledger.json",
+  "scalar_exactness.json",
+  "microbenchmark.json",
+  "baseline_profile.json",
+  "baseline_benchmark.json",
+  "component_results.json",
+  "live_parity.json",
+  "production_parity.json",
+  "final_profile.json",
+  "final_benchmark.json",
+  "p1_compatibility.json",
+  "p3_1_validation.json",
+  "p3_1_card.json",
+  "pre_p31_kernel.py"
+ ],
+ "binding_speedup_measured": 1.0025,
+ "card_identity": "9a6636dcd6d15bd313b327c6033bcc12b549261e0a075760ac79cf58e1698272",
+ "classification": "C_SCALAR_INTERPOLATION_NOT_WORTHWHILE",
+ "production_code_delta": "none",
+ "recommendation": "PERFORMANCE_FREEZE",
+ "schema": "mc2-perf-p3-1-card-v1",
+ "v38": {
+  "commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+  "tag": "v3.8-model-simulation-consensus"
+ },
+ "verdict": "MC2 PERFORMANCE P3-1 COMPLETE \u2014 SCALAR INTERPOLATION OPTIMIZATION REJECTED \u2014 EXACT PARITY PRESERVED"
+}

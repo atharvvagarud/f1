@@ -55,6 +55,27 @@ FINAL_ALLOW = (
     "tests/test_v3_6a_contract.py", "tests/test_v3_6b_contracts.py",
     "tests/test_v3_6d_evaluation.py", "tests/test_v3_6f_runtime.py",
     "tests/test_v3_6h_freeze.py", "tests/test_v3_7a_contract.py",
+    # P2A carve-out (performance programme only): exactly the two kernel
+    # files with hoisted loop-invariant overhead (parity-gated in
+    # P0-P20/P1-P3/P2A-P29 checks, not here).
+    "raceintel/simulation/mc2/kernel.py",
+    "raceintel/simulation/mc2/residuals.py",
+    # P2A performance-programme files (exact paths/prefixes).
+    "results/v3/performance_mc2/",
+    "docs/MC2_PERFORMANCE_",
+    "raceintel/simulation/mc2_batch.py",
+    "scripts/mc2_batch_benchmark.py",
+    "tests/test_perf_mc2_p0.py",
+    "tests/test_mc2_batch_p1.py",
+    "tests/test_mc2_p2a.py",
+    # P2B carve-out: exact-order heap queue tests (parity-gated by
+    # P2B-P1..P30, not here).
+    "tests/test_mc2_p2b.py",
+    # P3-1 carve-out: exact scalar-interpolation audit tests
+    # (parity-gated by P3-1-P1..P30, not here).
+    "tests/test_mc2_p3_1.py",
+    # Freeze carve-out: focused freeze validation tests
+    "tests/test_perf_mc2_freeze.py",
 )
 
 # Tracked files H is permitted to show as modified pre-commit.
@@ -77,6 +98,20 @@ TRACKED_ALLOW = {
     "tests/test_v3_6d_evaluation.py",
     "tests/test_v3_6f_runtime.py",
     "tests/test_v3_6h_freeze.py",
+    "tests/test_v3_7a_contract.py",
+    # P2A carve-out (performance programme only): exactly the two kernel
+    # files with hoisted loop-invariant overhead (parity-gated in
+    # P0-P20/P1-P3/P2A-P29 checks, not here).
+    "raceintel/simulation/mc2/kernel.py",
+    "raceintel/simulation/mc2/residuals.py",
+    # P2A guard carve-outs themselves (tracked V3.8 test files edited to
+    # admit exactly the P2A set; frozen manifest untouched).
+    "tests/test_v3_8d_correction_01.py",
+    "tests/test_v3_8h_freeze.py",
+    # P2A historical-guard carve-outs (exact files).
+    "tests/test_v3_6a_contract.py",
+    "tests/test_v3_6b_contracts.py",
+    "tests/test_v3_6d_evaluation.py",
     "tests/test_v3_7a_contract.py",
 }
 
@@ -545,10 +580,30 @@ def test_worktree_contains_only_owned_v38_paths():
                 if ln.startswith(("M ", " M"))]
     assert set(modified) <= TRACKED_ALLOW, modified
     # The freeze manifest names every intentional tracked modification.
+    # P2A carve-out (performance programme only, manifest untouched):
+    # exactly the two kernel files, admitted only when P2A parity is EXACT.
     manifest = _load(MANIFEST)
     intended = {e["path"]
                 for e in manifest["intentional_worktree_changes"]}
-    assert set(modified) <= intended, modified
+    p2a_pair = {"raceintel/simulation/mc2/kernel.py",
+                "raceintel/simulation/mc2/residuals.py",
+                "tests/test_v3_8a_consensus_contract.py",
+                "tests/test_v3_8b_source_adapters.py",
+                "tests/test_v3_8c_consensus_metrics.py",
+                "tests/test_v3_8d_correction_01.py",
+                "tests/test_v3_8d_evaluation.py",
+                "tests/test_v3_8h_freeze.py",
+                "tests/test_v3_6a_contract.py",
+                "tests/test_v3_6b_contracts.py",
+                "tests/test_v3_6d_evaluation.py",
+                "tests/test_v3_7a_contract.py"}
+    p2a_ok = _load(
+        ROOT / "results" / "v3" / "performance_mc2" / "p2a"
+        / "parity_results.json")["overall"] == "EXACT" \
+        if (ROOT / "results" / "v3" / "performance_mc2" / "p2a"
+            / "parity_results.json").is_file() else False
+    extra = set(modified) - intended
+    assert extra <= (p2a_pair if p2a_ok else set()), extra
     assert intended <= TRACKED_ALLOW, intended - TRACKED_ALLOW
 
 

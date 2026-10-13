@@ -1,0 +1,29 @@
+{
+ "executor_version": "mc2-batch-v1",
+ "parity": {
+  "2022-r03-R|39": {
+   "direct_serial_match": true,
+   "p0_match": true
+  },
+  "2023-r21-R|40": {
+   "direct_serial_match": true,
+   "p0_match": true
+  },
+  "2024-r15-R|440": {
+   "direct_serial_match": true,
+   "p0_match": true
+  },
+  "all_identical": true,
+  "cross_worker_identical": {
+   "1": true,
+   "2": true,
+   "4": true,
+   "6": true,
+   "8": true
+  },
+  "direct_serial_match": true,
+  "direct_serial_s": 103.364,
+  "p0_fixtures_match": true
+ },
+ "schema": "mc2-perf-p1-parity-v1"
+}

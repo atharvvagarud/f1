@@ -304,6 +304,29 @@ def test_no_frozen_science_modified():
         "tests/test_v3_6a_contract.py", "tests/test_v3_6b_contracts.py",
         "tests/test_v3_6d_evaluation.py", "tests/test_v3_6f_runtime.py",
         "tests/test_v3_6h_freeze.py", "tests/test_v3_7a_contract.py",
+        # P2A carve-out (performance programme only): exactly the two
+        # kernel files with hoisted loop-invariant overhead; public APIs,
+        # validation, RNG, and arithmetic order unchanged (parity-gated
+        # in P0-P20/P1-P3/P2A-P29 checks, not here).
+        "raceintel/simulation/mc2/kernel.py",
+        "raceintel/simulation/mc2/residuals.py",
+        # P2A performance-programme files (exact paths/prefixes; science
+        # and product behavior unchanged).
+        "results/v3/performance_mc2/",
+        "docs/MC2_PERFORMANCE_",
+        "raceintel/simulation/mc2_batch.py",
+        "scripts/mc2_batch_benchmark.py",
+        "tests/test_perf_mc2_p0.py",
+        "tests/test_mc2_batch_p1.py",
+        "tests/test_mc2_p2a.py",
+        # P2B carve-out: exact-order heap queue tests (parity-gated by
+        # P2B-P1..P30, not here).
+        "tests/test_mc2_p2b.py",
+        # P3-1 carve-out: exact scalar-interpolation audit tests
+        # (parity-gated by P3-1-P1..P30, not here).
+        "tests/test_mc2_p3_1.py",
+        # Freeze carve-out: focused freeze validation tests
+        "tests/test_perf_mc2_freeze.py",
     )
     out = _git("status", "--short")
     for line in out.splitlines():

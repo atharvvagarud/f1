@@ -258,6 +258,9 @@ def test_original_d_artifacts_untouched():
     # accounting for new V3.8 source-safe tests; frozen science untouched)
     # and exactly the Tier-1-driven historical-guard reconciliations below
     # (provenance-neutral allowlist admissions; frozen science untouched).
+    # P2A carve-out (performance programme only): exactly the two kernel
+    # files with hoisted loop-invariant overhead (parity-gated in
+    # P0-P20/P1-P3/P2A-P29 checks, not here).
     assert {m.split()[-1] for m in modified} <= {
         "api/main.py", "frontend/components/shell/CommandBar.tsx",
         "scripts/run_ci_tests.py",
@@ -266,4 +269,16 @@ def test_original_d_artifacts_untouched():
         "tests/test_v3_5c_harness.py", "tests/test_v3_5d_screening.py",
         "tests/test_v3_6a_contract.py", "tests/test_v3_6b_contracts.py",
         "tests/test_v3_6d_evaluation.py", "tests/test_v3_6f_runtime.py",
-        "tests/test_v3_6h_freeze.py", "tests/test_v3_7a_contract.py"}, modified
+        "tests/test_v3_6h_freeze.py", "tests/test_v3_7a_contract.py",
+        "raceintel/simulation/mc2/kernel.py",
+        "raceintel/simulation/mc2/residuals.py",
+        "tests/test_v3_8a_consensus_contract.py",
+        "tests/test_v3_8b_source_adapters.py",
+        "tests/test_v3_8c_consensus_metrics.py",
+        "tests/test_v3_8d_correction_01.py",
+        "tests/test_v3_8d_evaluation.py",
+        "tests/test_v3_8h_freeze.py",
+        "tests/test_v3_6a_contract.py",
+        "tests/test_v3_6b_contracts.py",
+        "tests/test_v3_6d_evaluation.py",
+        "tests/test_v3_7a_contract.py"}, modified

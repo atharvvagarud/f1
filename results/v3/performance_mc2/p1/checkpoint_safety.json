@@ -1,0 +1,8 @@
+{
+  "concurrent_writes": "impossible by construction: only the parent opens the checkpoint path, once per completed task, via atomic tmp+replace",
+  "corruption_on_interrupt": "tmp file unlinked on failure; os.replace is atomic; partial resume file never parsed as complete (entries keyed by exact identity+stamp)",
+  "description": "P1 checkpoint safety case (single-writer architecture).",
+  "resume": "identity (race_id, frame_index) + config stamp (executor_version, arm, seed, count, rho) must both match; stale entries ignored and recomputed; corrupt file falls back to recompute, never blocks",
+  "schema": "mc2-perf-p1-checkpoint-v1",
+  "stale_protection": "bump EXECUTOR_VERSION or change any config field and old entries are ignored (verified by _stamp_matches unit test)"
+}

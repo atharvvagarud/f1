@@ -1,0 +1,28 @@
+{
+  "architecture": {
+    "algorithm": "PCG64",
+    "consumption_order": "event order within a simulation (schedule() consumes pool[cursor] as events are scheduled); pool is bulk-drawn, so consumption order across events is data-dependent via event times, but the (sim_id -> full draw sequence) mapping is fixed",
+    "contract_version_tag": "sha256(contract_version)[:4] mixed as third entropy word",
+    "domains": "R5 pace/residual stream frozen as rng_for_simulation (3-word entropy); R6 domains add a 4th word; MC2 uses own tag mc2-rng-v1 + domain mc2-ar1 (never perturbs R3/R6)",
+    "generator_type": "numpy Generator(PCG64(SeedSequence))",
+    "mc2_stream": "SeedSequence([master_seed, simulation_id, sha256(mc2-rng-v1)[:4], sha256(mc2-domain:mc2-ar1)[:4]])",
+    "per_simulation_stream": "mc2_stream(master_seed, sim_id): one dedicated Generator per simulation id",
+    "root_seed_entry": "run_mc2(master_seed=20240101, simulation_count)"
+  },
+  "description": "P0 RNG architecture map. Per-simulation streams make future-level parallelism exact by construction.",
+  "ordering_chunking_risks": {
+    "chunked_trials": "NO RISK: documented chunk invariant; one stream per simulation consumed in event order regardless of chunking",
+    "reordered_drivers": "NO RISK within run_mc2: roster order fixed by initial_state.drivers; per-sim streams independent of driver iteration for RNG identity (event-order consumption is deterministic given fixed inputs)",
+    "reordered_trials": "NO RISK: sim_id-keyed streams; aggregation (winner_counts, positions) is order-independent summation",
+    "worker_count": "NO RISK: streams keyed by scientific identity (seed, sim_id), never by worker/scheduler"
+  },
+  "random_consumption": {
+    "ar1": "empirical draws via sampler.sample_unit(uniform) from the per-sim pool; AR(1) recursion deterministic given draws",
+    "other_domains": "pit/compound/reliability domains exist in R6 but MC2 E-arm path consumes only the MC2 pace pool (pits-off, dry-green, no DNF simulation)",
+    "per_driver_identity": "none: no per-driver stream; all draws come from the per-simulation pool in event order",
+    "per_trial_identity": "simulation_id -> SeedSequence -> PCG64 stream; bulk rng.random(bound) per sim",
+    "retirement_reliability": "none consumed (no retirement dynamics in MC2)",
+    "tyre_performance": "deterministic (expected_lap_time_s degradation); stochasticity only via residual draws"
+  },
+  "schema": "mc2-perf-p0-rng-v1"
+}

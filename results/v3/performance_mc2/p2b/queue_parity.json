@@ -1,0 +1,24 @@
+{
+ "description": "Queue-level parity: scripted + fuzz selection sequences identical; live event traces (83160 events, 80 sims, 2 states) bit-identical; small-live full outputs identical on 3 states x {10, 60} sims; RNG stream identity unchanged.",
+ "fuzz_cases_exact": 5000,
+ "live_event_trace": {
+  "exact": true,
+  "legacy_events": 83160,
+  "new_events": 83160
+ },
+ "rng_stream_identity": true,
+ "schema": "mc2-perf-p2b-queue-parity-v1",
+ "scripted_cases_exact": 8,
+ "small_live_full_output": {
+  "exact": true,
+  "sim_counts": [
+   10,
+   60
+  ],
+  "states": [
+   "2022-r03-R|39",
+   "2023-r21-R|40",
+   "2024-r15-R|440"
+  ]
+ }
+}

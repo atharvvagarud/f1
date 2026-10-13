@@ -1,0 +1,73 @@
+{
+  "candidates": [
+    {
+      "aggregation": "dict concat of per-state full-field results (trivial)",
+      "checkpoint": "requires version-stamped keys + per-worker files or single-writer merge",
+      "determinism_risk": "NONE: per-state inputs independent; per-sim streams keyed by (seed, sim_id); result assembly order-independent",
+      "expected_efficiency": "near-linear to core count for the 277-state workload (states vary 26-31s; mild tail)",
+      "id": "A",
+      "implementation_complexity": "LOW",
+      "rank": 1,
+      "rng": "no implications (streams are per-simulation, worker-blind by construction)",
+      "scientific_independence": "EXACT: distinct factual field states; no shared mutable science",
+      "serialization": "small per job (prepared state/params in, full-field dists out); prep ~0.07s replicated per worker or done in parent",
+      "unit": "independent historical states/runs (outer level)"
+    },
+    {
+      "aggregation": "concatenation of per-chunk winner counts/position lists (order-independent sums)",
+      "checkpoint": "chunk results merge before checkpoint write",
+      "determinism_risk": "NONE by construction (documented chunk invariant); verify with parity fixtures",
+      "expected_efficiency": "near-linear within a run; best combined with A for load balance",
+      "id": "C",
+      "implementation_complexity": "LOW-MEDIUM",
+      "rank": 2,
+      "rng": "none (sim_id-keyed streams chunk-invariant)",
+      "scientific_independence": "EXACT: simulations independent by construction",
+      "serialization": "chunk boundaries are integer sim_id ranges (negligible)",
+      "unit": "simulation-future chunks within one MC2 run"
+    },
+    {
+      "aggregation": "same as A at coarser grain",
+      "checkpoint": "same as A",
+      "determinism_risk": "NONE",
+      "expected_efficiency": "same as A with coarser tail",
+      "id": "B",
+      "implementation_complexity": "LOW",
+      "rank": 3,
+      "rng": "none",
+      "scientific_independence": "EXACT",
+      "serialization": "same as A",
+      "unit": "independent races (subsumed by A; coarser tail balance)",
+      "verdict": "SUBSUMED_BY_A"
+    },
+    {
+      "aggregation": "n/a",
+      "checkpoint": "n/a",
+      "determinism_risk": "n/a",
+      "expected_efficiency": "NEGATIVE: 20x duplicated field simulations",
+      "id": "D",
+      "implementation_complexity": "n/a",
+      "rank": 99,
+      "rng": "n/a",
+      "scientific_independence": "INVALID UNIT: simulation is full-field; per-driver parallelism duplicates the whole field simulation per driver",
+      "serialization": "n/a",
+      "unit": "drivers",
+      "verdict": "REJECTED"
+    }
+  ],
+  "description": "P0 parallelism feasibility ranking from actual code structure. No implementation in P0.",
+  "schema": "mc2-perf-p0-parallel-v1",
+  "threading": {
+    "assessment": "NOT VIABLE as a speedup path: ~90% of profiled time is CPython bytecode (per-event calls, dict ops, dataclass churn) under the GIL. NumPy kernels that release the GIL (PCG64 bulk draw, interp core) are ~10% and already fast. Do not implement a thread pool.",
+    "gil_hotspots": ["kernel.schedule closure", "mc2_residual_step + DriverMechanism churn", "mc2_expected_pace_s + DynamicsInput churn", "sample_unit per-draw interp dispatch", "event-queue min/sorted/dictcomp"]
+  },
+  "vectorization": {
+    "ar1_step": "INHERENTLY_SEQUENTIAL within (sim, driver) across laps (eps_t depends on eps_{t-1}); vectorizable across sims/drivers only with exact op replication",
+    "drift_arithmetic": "SAFELY_VECTORIZABLE across sims (pure function of run-fixed slopes + laps_ahead)",
+    "event_queue": "SEMANTICALLY_RISKY to vectorize (data-dependent event order drives RNG cursor consumption; heap preserves order exactly instead)",
+    "expected_pace": "SAFELY_VECTORIZABLE across sims/drivers/laps-ahead (pure arithmetic)",
+    "interp_sampler": "SAFELY_VECTORIZABLE across the per-sim pool (same np.interp values; verify bit-identity)",
+    "residual_recursion": "POSSIBLY_VECTORIZABLE across sims with identical op order; requires parity proof",
+    "rule": "Do not vectorize if it changes update order, RNG consumption, retirement/order semantics, or scientifically meaningful floating behavior"
+  }
+}

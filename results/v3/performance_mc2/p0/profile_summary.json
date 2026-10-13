@@ -1,0 +1,35 @@
+{
+  "conclusion": "Per-event Python overhead dominates: the event loop body (schedule + pace + residual + sampler + drift + min/sorted/dict housekeeping) accounts for ~90% of run time. Native kernels (PCG64 bulk draws, interp core) are minor. 5.6M schedule calls per 5000-sim run (20 drivers x ~56 laps).",
+  "description": "P0 cProfile evidence for run_mc2 at production 5000 on the ordinary state (2022-r03-R frame 39). Profiled wall 100.7s includes profiler overhead; clean wall is ~30.5s. Ratios, not absolute seconds, are the evidence.",
+  "hotspots_cumulative_s_of_100.7": [
+    {"calls": 5600000, "cum_s": 68.013, "note": "per-event schedule closure; 67.5% of run", "symbol": "kernel.schedule"},
+    {"calls": 5600000, "cum_s": 24.558, "note": "includes DriverMechanism rebuild per step", "symbol": "kernel.mc2_residual_step"},
+    {"calls": 5600000, "cum_s": 19.133, "note": "includes DynamicsInput construction per event", "symbol": "kernel.mc2_expected_pace_s"},
+    {"calls": 5600000, "cum_s": 14.891, "note": "scalar np.interp per draw incl. asarray overhead", "symbol": "monte_carlo.ResidualSampler.sample_unit"},
+    {"calls": 5600000, "cum_s": 11.703, "symbol": "dynamics.combined_drift"},
+    {"calls": 22400400, "cum_s": 11.403, "note": "16.8M from _clip(max/min) + 5.6M event-time min", "symbol": "builtin.min"},
+    {"calls": 5600000, "cum_s": 10.245, "note": "validate_rho called 3x per step (see below)", "symbol": "residuals.ar1_step"},
+    {"calls": 5700000, "cum_s": 9.582, "note": "frozen-dataclass allocation churn per step", "symbol": "DriverMechanism.__init__"},
+    {"calls": 11200000, "cum_s": 7.62, "symbol": "dynamics.drift_exponential"},
+    {"calls": 5700000, "cum_s": 6.785, "symbol": "DriverMechanism.__post_init__"},
+    {"calls": 5600000, "cum_s": 6.427, "symbol": "numpy.interp"},
+    {"calls": 16900000, "cum_s": 6.119, "note": "3x per residual step: ar1_step + innovation_scale + __post_init__", "symbol": "residuals.validate_rho"},
+    {"calls": 5605045, "cum_s": 6.034, "note": "per-step batch ordering", "symbol": "builtin.sorted"},
+    {"calls": 5600000, "cum_s": 5.886, "note": "per-step pending filter", "symbol": "kernel.<dictcomp line 249>"},
+    {"calls": 16800000, "cum_s": 5.151, "note": "3x per event: 2 in drift_exponential + 1 in combined_drift", "symbol": "dynamics._clip"},
+    {"calls": 16800000, "cum_s": 4.932, "note": "3x per np.interp scalar call", "symbol": "numpy.asarray"}
+  ],
+  "hotspots_self_s": [
+    {"calls": 1, "self_s": 8.634, "symbol": "kernel.run_mc2 (loop frame + aggregation)"},
+    {"calls": 22400400, "self_s": 6.317, "symbol": "builtin.min"},
+    {"calls": 5600000, "self_s": 5.987, "symbol": "kernel.schedule"},
+    {"calls": 5600000, "self_s": 5.886, "symbol": "kernel.<dictcomp>"},
+    {"calls": 5600000, "self_s": 5.33, "symbol": "kernel.mc2_expected_pace_s"},
+    {"calls": 116637417, "self_s": 5.086, "symbol": "kernel.<genexpr line 253>"},
+    {"calls": 16800000, "self_s": 4.932, "symbol": "numpy.asarray"},
+    {"calls": 11200000, "self_s": 4.519, "symbol": "kernel.<genexpr line 254>"}
+  ],
+  "method": "cProfile on run_mc2 (E_AR1_RESIDUAL, 20240101, 5000 sims); pstats cumulative + tottime",
+  "schema": "mc2-perf-p0-profile-v1",
+  "total_calls": 538373117
+}

@@ -1,0 +1,29 @@
+{
+  "artifacts": [
+    "optimization_ledger.json",
+    "baseline_profile.json",
+    "baseline_benchmark.json",
+    "component_results.json",
+    "parity_results.json",
+    "final_profile.json",
+    "final_benchmark.json",
+    "deferred_candidates.json",
+    "p2a_validation.json",
+    "p2a_card.json"
+  ],
+  "card_identity": "353fab85f51b5ae65892616e7f68164cf263880bf3386466bb5d575ed9fa4f84",
+  "classification": "LOW_RISK_OVERHEAD_OPTIMIZATION_SUCCESSFUL",
+  "description": "P2A card: low-risk kernel overhead elimination at exact bit parity (1.81x single-state). No vectorization, no heap, no chunking, no API change.",
+  "doc": "docs/MC2_PERFORMANCE_P2A_KERNEL_OVERHEAD.md",
+  "median_speedup": 1.806,
+  "parity": "EXACT all canonical hashes (3 states, reps, executor configs)",
+  "recommended_next": "P2B event-loop/data-structure optimization",
+  "schema": "mc2-perf-p2a-card-v1",
+  "stage": "MC2-PERF-P2A",
+  "total_speedup": 1.813,
+  "v38_baseline": {
+    "commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+    "tag": "v3.8-model-simulation-consensus"
+  },
+  "verdict": "MC2 PERFORMANCE P2A COMPLETE — LOW-RISK KERNEL OPTIMIZATION VALIDATED — READY FOR NEXT PERFORMANCE GATE"
+}

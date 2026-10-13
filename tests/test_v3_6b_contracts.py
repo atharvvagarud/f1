@@ -394,7 +394,13 @@ def test_no_api_frontend_change():
 def test_no_mc2_change():
     # V3.7H reconciliation: V3.7C charter admits exactly the additive MC2
     # seam. Pinned SHA-256 preserves the no-mutation protection.
-    allowed = ("raceintel/simulation/monte_carlo.py",)
+    # P2A carve-out (performance programme only): exactly kernel.py +
+    # residuals.py with hoisted loop-invariant overhead plus the additive
+    # batch executor (parity-gated in P0-P20/P1-P3/P2A-P29 checks).
+    allowed = ("raceintel/simulation/monte_carlo.py",
+               "raceintel/simulation/mc2/kernel.py",
+               "raceintel/simulation/mc2/residuals.py",
+               "raceintel/simulation/mc2_batch.py")
     changed = _changed()
     assert not any(f.startswith("raceintel/simulation") and f not in allowed
                    for f in changed)

@@ -139,7 +139,34 @@ CORPUS_MANIFEST = Path(__file__).resolve().parent / "ci_corpus_dependent.txt"
 # results/v3/v3_8* artifacts are Tier-1 inputs like other tracked
 # artifacts; no ignored-corpus references) and 309 source-safe, with no
 # removals = 5002.
-EXPECTED_COLLECTED = 5002
+# MC2-Perf-P0 reclassification: 8 added tests in tests/test_perf_mc2_p0.py
+# (audit-only performance baseline; corpus-guarded live check + static
+# artifact/config/pathology checks; no corpus dependence added), with no
+# removals = 5010.
+# MC2-Perf-P1 reclassification: 18 added tests in
+# tests/test_mc2_batch_p1.py (deterministic batch-executor unit/audit
+# checks + corpus-guarded small live parity smoke; production-scale proof
+# asserted via committed p1 artifacts, not rerun), with no removals = 5028.
+# MC2-Perf-P2A reclassification: 12 added tests in
+# tests/test_mc2_p2a.py (low-risk kernel-overhead audit; parity/pathology
+# checks + corpus-guarded small live checks; production evidence asserted
+# via committed p2a artifacts, not rerun), with no removals = 5040.
+# MC2-Perf-P2B reclassification: 13 added tests in
+# tests/test_mc2_p2b.py (exact-order heap event-queue audit; scripted/fuzz/
+# tie/live-trace checks + corpus-guarded small live parity; production
+# evidence asserted via committed p2b artifacts, not rerun), with no
+# removals = 5053.
+# MC2-Perf-P3-1 reclassification: 14 added tests in
+# tests/test_mc2_p3_1.py (exact scalar-interpolation audit: inventory/
+# exactness/microbenchmark/parity/pathology checks + corpus-guarded grid
+# assumption checks; production evidence asserted via committed p3_1
+# artifacts, not rerun), with no removals = 5067.
+# MC2-Perf-Freeze reclassification: 9 added tests in
+# tests/test_perf_mc2_freeze.py (focused freeze validation only: provenance/
+# manifest/parity/benchmark-identity/P3-1-zero-delta/guard/card/pathology/
+# pin checks; production evidence asserted via committed freeze artifacts,
+# not rerun), with no removals = 5076.
+EXPECTED_COLLECTED = 5076
 
 # (pytest node id, reason it cannot pass at the frozen baseline)
 # P11-1: the 12 pre-existing stale historical pins were genuinely corrected

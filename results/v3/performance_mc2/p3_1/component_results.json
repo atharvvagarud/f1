@@ -1,0 +1,37 @@
+{
+ "components": [
+  {
+   "decision": "REVERTED_NO_BENEFIT (0.25%, inside rep noise +-1-2%)",
+   "id": "P3-1A",
+   "item": "run-local np.interp binding (same function, same args)",
+   "parity": "EXACT (all 7 P0 hashes, small-live, RNG)",
+   "timing": {
+    "post_total_wall_s": 23.54,
+    "pre_total_wall_s": 23.6,
+    "speedup": 1.0025
+   }
+  },
+  {
+   "decision": "REJECTED (exactness requires fused multiply-add unavailable in Python 3.11)",
+   "id": "P3-1B",
+   "item": "pure-Python scalar transcription of C loop",
+   "parity": "not implementable exactly without fma (see scalar_exactness.json)",
+   "timing": null
+  },
+  {
+   "decision": "REJECTED (slower C conversion path)",
+   "id": "P3-1A2",
+   "item": "skip inner float(), pass np.float64",
+   "parity": "bit-identical (0/50051 adversarial mismatches) but ~17% slower",
+   "timing": null
+  },
+  {
+   "decision": "REJECTED (private API, fragile)",
+   "id": "P3-1D",
+   "item": "direct umath C-loop call",
+   "parity": null,
+   "timing": null
+  }
+ ],
+ "schema": "mc2-perf-p3-1-components-v1"
+}

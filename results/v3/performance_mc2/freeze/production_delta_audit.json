@@ -1,0 +1,52 @@
+{
+ "changes": [
+  {
+   "file": "raceintel/simulation/mc2_batch.py",
+   "kind": "new",
+   "parity_evidence": "results/v3/performance_mc2/p1/parity_results.json",
+   "performance_evidence": "results/v3/performance_mc2/p1/benchmark_results.json (w8 151.2s vs w1 412.3s)",
+   "purpose": "state-level multiprocessing executor above kernel; no kernel change",
+   "scientific_behavior_changed": false,
+   "stage": "P1"
+  },
+  {
+   "file": "raceintel/simulation/mc2/kernel.py",
+   "kind": "modified",
+   "parity_evidence": "results/v3/performance_mc2/p2a/parity_results.json (EXACT)",
+   "performance_evidence": "results/v3/performance_mc2/p2a/final_benchmark.json (1.81x / ~45%)",
+   "purpose": "hoist loop-invariant overhead (rho validation, innovation scales, decay powers, sampler grids, mechanism scalars, inline pace/AR1); identical arithmetic order",
+   "scientific_behavior_changed": false,
+   "stage": "P2A"
+  },
+  {
+   "file": "raceintel/simulation/mc2/residuals.py",
+   "kind": "modified",
+   "parity_evidence": "results/v3/performance_mc2/p2a/parity_results.json (EXACT)",
+   "performance_evidence": "component of P2A 1.81x",
+   "purpose": "hoist tag/dim SeedSequence inputs to import time; bit-identical streams",
+   "scientific_behavior_changed": false,
+   "stage": "P2A"
+  },
+  {
+   "file": "raceintel/simulation/mc2/kernel.py",
+   "kind": "modified",
+   "parity_evidence": "results/v3/performance_mc2/p2b/production_parity.json (EXACT) + queue_parity.json + event_order_contract.json",
+   "performance_evidence": "results/v3/performance_mc2/p2b/final_benchmark.json (1.97x)",
+   "purpose": "dict+min+sorted event scan replaced by binary heap with identical (time, driver_id) ordering, same-stamp batch drain, pop-then-push (no stale entries)",
+   "scientific_behavior_changed": false,
+   "stage": "P2B"
+  },
+  {
+   "file": "(none)",
+   "kind": "none",
+   "parity_evidence": "results/v3/performance_mc2/p3_1/production_parity.json (EXACT); freeze verified diff(kernel.py, pre_p31_kernel.py) empty",
+   "performance_evidence": "results/v3/performance_mc2/p3_1/microbenchmark.json + final_benchmark.json",
+   "purpose": "scalar interpolation candidate (~1.0025x, noise) REJECTED and reverted; production kernel byte-identical to pre-P3-1",
+   "scientific_behavior_changed": false,
+   "stage": "P3-1"
+  }
+ ],
+ "from": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+ "p31_production_delta": "zero",
+ "schema": "mc2-perf-freeze-delta-v1"
+}

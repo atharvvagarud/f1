@@ -1,0 +1,17 @@
+{
+ "domains": [
+  "mc2-ar1 (+default)"
+ ],
+ "draw_count_and_order": "proven by full-output exactness at 5000 futures (pools consumed in event order) + test_rng_stream_identity_unchanged green",
+ "draws_per_sim": 8,
+ "kernel_identity_both_arms": "mc2-r1-research+mc2-kernel-v1+mc2-rng-v1+state:mc2-field-v1+presence:v3.2c-presence-v1",
+ "overall": "EXACT",
+ "root_seed": 20240101,
+ "schema": "mc2-perf-freeze-rng-parity-v1",
+ "stream_probe_sims": [
+  0,
+  1,
+  2
+ ],
+ "streams_bit_identical_v38_vs_final": true
+}

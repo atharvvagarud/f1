@@ -1,0 +1,17 @@
+{
+ "description": "Production parity: post-change 5000-future runs vs all 7 P0 canonical hashes, all reps exact; executor-5000 vs fixture exact.",
+ "executor_5000_vs_fixture_7hashes": true,
+ "overall": "EXACT",
+ "schema": "mc2-perf-p2b-production-parity-v1",
+ "states": {
+  "complex_late": {
+   "reps_exact_7hashes": true
+  },
+  "mid_late": {
+   "reps_exact_7hashes": true
+  },
+  "ordinary_early": {
+   "reps_exact_7hashes": true
+  }
+ }
+}

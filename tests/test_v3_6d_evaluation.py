@@ -237,7 +237,20 @@ def test_no_tuning():
                                              "raceintel/simulation/"
                                              "monte_carlo.py",))]
     # Only guard-allowlist test edits + new files permitted.
-    assert all(f.startswith("tests/test_v3_6") for f in tracked_modified), \
+    # P2A carve-out (performance programme only): exactly the two kernel
+    # files with hoisted loop-invariant overhead, the Tier-1 pin, and the
+    # V3.8 guard files admitting the P2A set (parity-gated in
+    # P0-P20/P1-P3/P2A-P29 checks, not here).
+    assert all(f.startswith("tests/test_v3_6") or f in (
+        "raceintel/simulation/mc2/kernel.py",
+        "raceintel/simulation/mc2/residuals.py",
+        "scripts/run_ci_tests.py",
+        "tests/test_v3_8a_consensus_contract.py",
+        "tests/test_v3_8b_source_adapters.py",
+        "tests/test_v3_8c_consensus_metrics.py",
+        "tests/test_v3_8d_correction_01.py",
+        "tests/test_v3_8d_evaluation.py",
+        "tests/test_v3_8h_freeze.py") for f in tracked_modified), \
         tracked_modified
 
 

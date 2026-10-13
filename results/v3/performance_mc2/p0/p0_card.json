@@ -1,0 +1,40 @@
+{
+  "artifacts": [
+    "baseline.json",
+    "baseline_fixtures.json",
+    "profile_summary.json",
+    "duplicate_work_audit.json",
+    "rng_audit.json",
+    "checkpoint_audit.json",
+    "parallelism_options.json",
+    "optimization_plan.json",
+    "p0_card.json"
+  ],
+  "card_identity": "686d115d9da751504ae826eebcb5bf2bc7c0f19b09259f036a1443b6d7308ce6",
+  "description": "P0 card: baseline + profiling + optimization plan for post-V3.8 MC2 performance engineering. Audit-only; no production code changed; V3.8 immutable.",
+  "doc": "docs/MC2_PERFORMANCE_P0_BASELINE_PROFILING.md",
+  "parity_standard": {
+    "checks": [
+      "eligibility identical",
+      "refusal reasons identical",
+      "valid trial counts identical",
+      "driver set identical",
+      "winner counts and frequencies identical (exact)",
+      "outcome/position distributions identical (exact)",
+      "rank ordering identical",
+      "strategy outputs identical where MC2 reused",
+      "counterfactual outputs identical where MC2 reused"
+    ],
+    "equality": "exact (bit-identical hashes over canonical JSON) where deterministic architecture permits; any tolerance-based proposal requires separate scientific justification before implementation",
+    "fixtures": "results/v3/performance_mc2/p0/baseline_fixtures.json (3 states x 5000, 7 hashes each)",
+    "matrix": "serial(1) == parallel(2) == parallel(4) == parallel(N) for all scientifically meaningful outputs"
+  },
+  "recommended_p1": "outer multiprocessing over independent states (+ within-run future chunking for balance); benchmark matrix workers 1/2/4/6/8 with parity, CPU, RSS, thermal evidence",
+  "schema": "mc2-perf-p0-card-v1",
+  "stage": "MC2-PERF-P0",
+  "v38_baseline": {
+    "commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+    "tag": "v3.8-model-simulation-consensus"
+  },
+  "verdict": "MC2 PERFORMANCE P0 COMPLETE — BASELINE PROFILED — READY FOR P1"
+}

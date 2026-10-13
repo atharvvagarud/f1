@@ -1,0 +1,187 @@
+{
+ "description": "P2B pre-change cProfile: one 5000-future ordinary_early run through the saved P2A kernel; event-queue min/sorted/dictcomp/genexpr dominate.",
+ "environment": {
+  "arch": "arm64",
+  "cpu": "Apple M4",
+  "host": "Atharvas-MacBook-Air-2.local",
+  "numpy": "2.4.2",
+  "os": "macOS-27.0-arm64-arm-64bit",
+  "python": "3.11.15"
+ },
+ "prim_calls": 296238348,
+ "schema": "mc2-perf-p2b-profile-v1",
+ "top": [
+  {
+   "calls": "100000",
+   "cum_s": 0.004,
+   "prim_calls": "100000",
+   "self_s": 0.004,
+   "symbol": "~:0(<method 'append' of 'list' objects>)"
+  },
+  {
+   "calls": "1",
+   "cum_s": 0.0,
+   "prim_calls": "1",
+   "self_s": 0.0,
+   "symbol": "~:0(<built-in method from_bytes>)"
+  },
+  {
+   "calls": "110041",
+   "cum_s": 0.003,
+   "prim_calls": "110041",
+   "self_s": 0.003,
+   "symbol": "~:0(<method 'get' of 'dict' objects>)"
+  },
+  {
+   "calls": "5600000",
+   "cum_s": 0.271,
+   "prim_calls": "5600000",
+   "self_s": 0.271,
+   "symbol": "~:0(<method 'pop' of 'dict' objects>)"
+  },
+  {
+   "calls": "11200064",
+   "cum_s": 0.407,
+   "prim_calls": "11200064",
+   "self_s": 0.407,
+   "symbol": "~:0(<method 'items' of 'dict' objects>)"
+  },
+  {
+   "calls": "5600003",
+   "cum_s": 0.223,
+   "prim_calls": "5600003",
+   "self_s": 0.223,
+   "symbol": "~:0(<method 'values' of 'dict' objects>)"
+  },
+  {
+   "calls": "5000",
+   "cum_s": 0.002,
+   "prim_calls": "5000",
+   "self_s": 0.002,
+   "symbol": "~:0(<built-in method fromkeys>)"
+  },
+  {
+   "calls": "1",
+   "cum_s": 0.0,
+   "prim_calls": "1",
+   "self_s": 0.0,
+   "symbol": "~:0(<method 'encode' of 'str' objects>)"
+  },
+  {
+   "calls": "46",
+   "cum_s": 0.0,
+   "prim_calls": "46",
+   "self_s": 0.0,
+   "symbol": "~:0(<built-in method builtins.abs>)"
+  },
+  {
+   "calls": "5600000",
+   "cum_s": 0.233,
+   "prim_calls": "5600000",
+   "self_s": 0.233,
+   "symbol": "~:0(<built-in method builtins.issubclass>)"
+  },
+  {
+   "calls": "11220002",
+   "cum_s": 0.439,
+   "prim_calls": "11220002",
+   "self_s": 0.439,
+   "symbol": "~:0(<built-in method builtins.len>)"
+  },
+  {
+   "calls": "16800003",
+   "cum_s": 0.993,
+   "prim_calls": "16800003",
+   "self_s": 0.993,
+   "symbol": "~:0(<built-in method builtins.max>)"
+  },
+  {
+   "calls": "22400401",
+   "cum_s": 10.321,
+   "prim_calls": "22400401",
+   "self_s": 5.757,
+   "symbol": "~:0(<built-in method builtins.min>)"
+  },
+  {
+   "calls": "5605045",
+   "cum_s": 5.612,
+   "prim_calls": "5605045",
+   "self_s": 1.28,
+   "symbol": "~:0(<built-in method builtins.sorted>)"
+  },
+  {
+   "calls": "40",
+   "cum_s": 0.0,
+   "prim_calls": "40",
+   "self_s": 0.0,
+   "symbol": "~:0(<built-in method builtins.sum>)"
+  },
+  {
+   "calls": "5000",
+   "cum_s": 0.002,
+   "prim_calls": "5000",
+   "self_s": 0.002,
+   "symbol": "~:0(<method 'set' of '_contextvars.ContextVar' objects>)"
+  },
+  {
+   "calls": "5000",
+   "cum_s": 0.001,
+   "prim_calls": "5000",
+   "self_s": 0.001,
+   "symbol": "~:0(<method 'reset' of '_contextvars.ContextVar' objects>)"
+  },
+  {
+   "calls": "1",
+   "cum_s": 0.0,
+   "prim_calls": "1",
+   "self_s": 0.0,
+   "symbol": "~:0(<built-in method _hashlib.openssl_sha256>)"
+  },
+  {
+   "calls": "1",
+   "cum_s": 0.0,
+   "prim_calls": "1",
+   "self_s": 0.0,
+   "symbol": "~:0(<method 'digest' of '_hashlib.HASH' objects>)"
+  },
+  {
+   "calls": "1",
+   "cum_s": 0.0,
+   "prim_calls": "1",
+   "self_s": 0.0,
+   "symbol": "~:0(<method 'disable' of '_lsprof.Profiler' objects>)"
+  },
+  {
+   "calls": "16800023",
+   "cum_s": 0.582,
+   "prim_calls": "16800023",
+   "self_s": 0.582,
+   "symbol": "~:0(<built-in method math.isfinite>)"
+  },
+  {
+   "calls": "2",
+   "cum_s": 0.0,
+   "prim_calls": "2",
+   "self_s": 0.0,
+   "symbol": "~:0(<built-in method math.sqrt>)"
+  },
+  {
+   "calls": "5000",
+   "cum_s": 0.002,
+   "prim_calls": "5000",
+   "self_s": 0.002,
+   "symbol": "~:0(<built-in method _abc._abc_instancecheck>)"
+  },
+  {
+   "calls": "2",
+   "cum_s": 0.0,
+   "prim_calls": "1",
+   "self_s": 0.0,
+   "symbol": "~:0(<built-in method _abc._abc_subclasscheck>)"
+  }
+ ],
+ "total_calls": 296238350,
+ "total_time_s": 51.525,
+ "valid": 5000,
+ "which": "legacy"
+}

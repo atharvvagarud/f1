@@ -1,0 +1,12 @@
+{
+  "classification": "LOW_RISK_OVERHEAD_OPTIMIZATION_SUCCESSFUL",
+  "classification_reason": "1.81x single-state gain (45% reduction) at exact bit parity across all canonical hashes, reps, states, and executor configurations; implementation confined to hoisting/redundant-construction removal with public APIs and validation intact",
+  "description": "P2A validation record.",
+  "invalid_input_parity": "public validators (validate_rho, ar1_step, mc2_residual_step, DriverMechanism, drift bounds, run_mc2 arm/seed/count) reject identically (explicit tests)",
+  "median_speedup": 1.806,
+  "p1_executor_compatibility": "w1==w2==w4 reduced-sims; executor-5000 matches P0 fixture",
+  "recommended_next": "P2B event-loop/data-structure optimization (heap queue now ~57% of profile) — event-queue proof obligations recorded in deferred_candidates.json",
+  "rng_parity": "streams/draws/order unchanged (same SeedSequence inputs, same pool, same consumption order, same counts); proven by exact output hashes",
+  "schema": "mc2-perf-p2a-validation-v1",
+  "total_speedup": 1.813
+}

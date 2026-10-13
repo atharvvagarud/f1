@@ -1,0 +1,144 @@
+{
+ "canonical_hashes": {
+  "complex_late": {
+   "expected_finish": "e1ee46b7b2c2666b77f62bf6cd9c2a7b77a8162a8262714d61a83da4eb3424ed",
+   "podium_frequency": "83888c6e0c1f20a7df13a61311813fc20ca72575437f671c33fac422c04679ff",
+   "position_counts": "d566997cc3978424cc886246b579f2a3b60c89ea17e7f24665b9ed9ba3017ba2",
+   "position_distribution": "805c7638d720ddd38fb8dbbf9bdde61f134986231e08c60d9ca2216de7aad1d2",
+   "sample_order": "e2ab10b86fb60cace9ee3feda496d23e14f190cf144db33834e9660ab36da1f8",
+   "winner_counts": "2603ff06cac731160ee78cd69bf35f91d2d0b0a5769168884f4472619403971a",
+   "winner_frequency": "fa1d98b862867bb6643c00ef8f72b319b5d8a985768f78ab077077569d00674b"
+  },
+  "mid_late": {
+   "expected_finish": "93fc8e7fbe5a79be7784bdc7f99b76fc8fd28473a7b9bc4030f77479531036bc",
+   "podium_frequency": "a759c557c446d39c38c9bda251812a163ae4c22edfa5293ea535effa29602546",
+   "position_counts": "8e0da6f13cbd27b26718470a50d88f29ee200f4730d2256b515bafbe9fb4dfc3",
+   "position_distribution": "d8c67e7cde3a3c443076ac295ea50e2240bd92c5f55df4ed87f429548842f67b",
+   "sample_order": "97b6df26efd56d1cf55248c5859eac1a356ca71217ccd6dd5830fb46e542de15",
+   "winner_counts": "42e6c8e6e37552e9719f1e9cba4a8e516ea617ad527e10b2756b0b2fd50e65f7",
+   "winner_frequency": "279d1309dc0f2cd122f125c9fda000d196e7deddbd86e7b3df166b8cd81ebcc3"
+  },
+  "ordinary_early": {
+   "expected_finish": "ddc1abefe0a1781e493a3129037e27c39967b6918fd2abfb5a8310997d3fbb8a",
+   "podium_frequency": "7c9d6cb10b440bccc745f684a6f7664fe0ff649fda2d2b697ed14c3e3f2eceb5",
+   "position_counts": "095259a7dd621a06e6b8aec0acc65be8267b44be3c2c4ff99de956cedade9373",
+   "position_distribution": "7e757459939c6eaf3c7077d69e68b99b23dc30c150ecd2725c56650fd0ff3624",
+   "sample_order": "ec603463f68ff4530949d84cc127061dbadcbf0ad9db62ec3d84fc250ff026cf",
+   "winner_counts": "069da96e2ca17c9b44618523de2a7713778551b1112f4f59de72bced8f9ab9d5",
+   "winner_frequency": "89af4dbe46a625484fea78502e1bff3c751e0447d31c61893156a30355c96424"
+  }
+ },
+ "card_identity": "8ae26d07371279036398937d24d10c353f9ebfb6d7d4cd3562e8c261b4f0b35e",
+ "cumulative_reduction_pct": 68.9,
+ "cumulative_speedup": 3.214,
+ "deferred_register": {
+  "A_cross_simulation_vectorization": "likely large benefit; scientific risk HIGH (RNG/draw-order/rounding); needs exactness proof harness; DEFERRED",
+  "B_future_chunk_multiprocessing": "helps low-state-count latency; complexity HIGH (RNG splitting, checkpoint fan-in); DEFERRED",
+  "C_interpolation_vectorized_sampling": "P3-1 proved ~1.0025x at exactness floor; DEFERRED",
+  "D_drift_pace_vectorization": "remaining arithmetic share; benefit unproven; DEFERRED"
+ },
+ "final_batch": {
+  "parity": true,
+  "w1_s": 117.895,
+  "w8_futures_per_sec": 2408.5,
+  "w8_s": 31.14,
+  "w8_states_per_sec": 0.4817,
+  "w8_vs_w1": 3.786
+ },
+ "final_collection_count": 5076,
+ "final_profile": {
+  "total_calls": 146000933,
+  "wall_s": 28.677
+ },
+ "final_single_state_latency_s": {
+  "mean_of_medians": 9.22,
+  "median_of_medians": 8.773
+ },
+ "freeze_manifest_identity": "0f89e9ed29b769acf7811b50f2ae255d7a068a0bc9f3bf779c09157da3185a70",
+ "freeze_verdict": "MC2 PERFORMANCE ENGINEERING FROZEN \u2014 DETERMINISTIC OPTIMIZATION COMPLETE \u2014 READY FOR NEXT PROJECT PHASE",
+ "frozen_parent": {
+  "commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+  "tag": "v3.8-model-simulation-consensus"
+ },
+ "per_state_speedup": {
+  "complex_late": 3.159,
+  "mid_late": 3.621,
+  "ordinary_early": 2.947
+ },
+ "programme": "MC2 deterministic performance engineering (post-V3.8) \u2014 freeze",
+ "retained_production_files": [
+  "raceintel/simulation/mc2_batch.py (new, P1)",
+  "raceintel/simulation/mc2/kernel.py (P2A hoisting + P2B heap)",
+  "raceintel/simulation/mc2/residuals.py (P2A tag/dim hoisting)"
+ ],
+ "schema": "mc2-perf-freeze-card-v1",
+ "scientific_equivalence": "EXACT: canonical 7-hash parity x3 states x2 reps (final==fixture, v38==final), RNG streams bit-identical, event ordering exact, P3-1 delta zero",
+ "stages": {
+  "P0": {
+   "identity": "686d115d9da751504ae826eebcb5bf2bc7c0f19b09259f036a1443b6d7308ce6",
+   "verdict": "MC2 PERFORMANCE P0 COMPLETE \u2014 BASELINE PROFILED \u2014 READY FOR P1"
+  },
+  "P1": {
+   "identity": "98e5770f913db5e89214f4ca4ed6cd3c61ebc3fbe961f5666515a84401a8a45d",
+   "verdict": "MC2 PERFORMANCE P1 COMPLETE \u2014 DETERMINISTIC STATE PARALLELISM VALIDATED \u2014 READY FOR NEXT PERFORMANCE GATE",
+   "w1_s": 412.337,
+   "w8_s": 151.168
+  },
+  "P2A": {
+   "identity": "353fab85f51b5ae65892616e7f68164cf263880bf3386466bb5d575ed9fa4f84",
+   "speedup": 1.813,
+   "verdict": "MC2 PERFORMANCE P2A COMPLETE \u2014 LOW-RISK KERNEL OPTIMIZATION VALIDATED \u2014 READY FOR NEXT PERFORMANCE GATE"
+  },
+  "P2B": {
+   "identity": "1d6cb7c0f5bf19837767568861bdb67339fed5826316a848ddf8964363f9c20e",
+   "speedup": 1.969,
+   "verdict": "MC2 PERFORMANCE P2B COMPLETE \u2014 EXACT-ORDER EVENT QUEUE OPTIMIZATION VALIDATED \u2014 READY FOR NEXT PERFORMANCE GATE"
+  },
+  "P3-1": {
+   "identity": "9a6636dcd6d15bd313b327c6033bcc12b549261e0a075760ac79cf58e1698272",
+   "production_delta": "none",
+   "recommendation": "PERFORMANCE_FREEZE",
+   "verdict": "MC2 PERFORMANCE P3-1 COMPLETE \u2014 SCALAR INTERPOLATION OPTIMIZATION REJECTED \u2014 EXACT PARITY PRESERVED"
+  }
+ },
+ "tier1": {
+  "authoritative_run": 2,
+  "counts_stable_across_runs": true,
+  "runs": [
+   {
+    "collected": 5076,
+    "errors": 0,
+    "failed": 0,
+    "manifest_deselect_ids": 1043,
+    "passed": 4024,
+    "returncode": 0,
+    "role": "preliminary (placeholder-card tree)",
+    "run": 1,
+    "runtime_s": 3376.79,
+    "selected": 4033,
+    "skipped": 0,
+    "tests_deselected": 1048,
+    "xfailed": 4,
+    "xpassed": 0
+   },
+   {
+    "collected": 5076,
+    "errors": 0,
+    "failed": 0,
+    "manifest_deselect_ids": 1043,
+    "passed": 4024,
+    "returncode": 0,
+    "role": "AUTHORITATIVE (final tree, card C1 self-consistent)",
+    "run": 2,
+    "runtime_s": 3759.89,
+    "selected": 4033,
+    "skipped": 0,
+    "tests_deselected": 1048,
+    "xfailed": 4,
+    "xpassed": 0
+   }
+  ],
+  "schema": "mc2-perf-freeze-tier1-v1",
+  "status": "GREEN"
+ }
+}

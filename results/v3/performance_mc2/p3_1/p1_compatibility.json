@@ -1,0 +1,11 @@
+{
+ "production_5000_executor_vs_fixture": true,
+ "schema": "mc2-perf-p3-1-p1compat-v1",
+ "smoke": {
+  "serial_eq_w1_eq_w2_eq_w4": true,
+  "tasks": [
+   "2022-r03-R|39x30",
+   "2022-r03-R|30x30"
+  ]
+ }
+}

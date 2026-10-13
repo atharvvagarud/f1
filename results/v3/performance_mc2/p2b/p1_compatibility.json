@@ -1,0 +1,12 @@
+{
+ "description": "P1 executor compatibility after kernel change: serial == w1 == w2 == w4 on reduced smoke corpus; production-5000 executor run matches canonical fixture.",
+ "production_5000_executor_vs_fixture": true,
+ "schema": "mc2-perf-p2b-p1compat-v1",
+ "smoke": {
+  "serial_eq_w1_eq_w2_eq_w4": true,
+  "tasks": [
+   "2022-r03-R|39x30",
+   "2022-r03-R|30x30"
+  ]
+ }
+}

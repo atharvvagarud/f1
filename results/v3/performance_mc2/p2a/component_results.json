@@ -1,0 +1,56 @@
+{
+  "components": [
+    {
+      "delta": "tag/dim sha256 per sim eliminated (replaced by import-time constants + per-domain memo)",
+      "id": "P2A-2",
+      "parity": "exact (part of combined gate below)",
+      "status": "ACCEPTED",
+      "timing": "micro (subsumed in combined measurement)"
+    },
+    {
+      "delta": "validate_rho 16.9M -> distinct-rhos-per-run; innovation sqrt 5.6M -> per-rho table; all public validators untouched",
+      "id": "P2A-1",
+      "parity": "exact (part of combined gate below)",
+      "status": "ACCEPTED",
+      "timing": "see combined"
+    },
+    {
+      "delta": "5.7M frozen-dataclass rebuilds eliminated; per-sim prev-eps dict + internal evolve with identical arithmetic/order; arm dispatch hoisted per run; public mc2_residual_step untouched",
+      "id": "P2A-4",
+      "parity": "exact (part of combined gate below)",
+      "status": "ACCEPTED",
+      "timing": "see combined"
+    },
+    {
+      "delta": "5.6M DynamicsInput builds eliminated; decay**h memoized (identical floats); decay validation once per run; exact op order incl. clip mix; public drift functions untouched",
+      "id": "P2A-3",
+      "parity": "exact (part of combined gate below)",
+      "status": "ACCEPTED",
+      "timing": "see combined"
+    },
+    {
+      "delta": "2 asarray/draw eliminated via per-run grid arrays; scalar np.interp arithmetic unchanged; public sample_unit untouched",
+      "id": "P2A-5",
+      "parity": "exact (part of combined gate below)",
+      "status": "ACCEPTED",
+      "timing": "see combined"
+    },
+    {
+      "delta": "combined hot-loop group (P2A-1..5 interdependent via shared hoisting block): 31.42/26.98/27.80s -> 17.14/14.95/15.47s medians (1.83x/1.81x/1.80x); total 86.21s -> 47.55s = 1.81x (45% reduction); calls 538M -> 296M",
+      "id": "P2A-GROUP",
+      "parity": "EXACT all 7 canonical hashes + valid on all 3 states x multiple reps; P0 fixture match; P1 executor w1==w2==w4 + executor-5000 fixture match",
+      "status": "ACCEPTED",
+      "timing": "1.81x total, 1.81x median"
+    },
+    {
+      "delta": "not pursued: retains the expected_lap_time_s call (two sources of truth rejected for ~5% prospective gain)",
+      "id": "P2A-6",
+      "parity": "n/a",
+      "status": "NOT_PURSUED",
+      "timing": "n/a"
+    }
+  ],
+  "description": "P2A component record. Interdependent hoisting items landed as one parity-gated group; post-profile attributes each elimination.",
+  "reverted": [],
+  "schema": "mc2-perf-p2a-components-v1"
+}

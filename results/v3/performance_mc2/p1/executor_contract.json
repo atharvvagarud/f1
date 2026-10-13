@@ -1,0 +1,14 @@
+{
+  "aggregation": "parent assembles canonically by (race_id, frame_index); never by completion order/PID/scheduling/worker count",
+  "checkpoint": "single parent writer only; atomic tmp+os.replace; version-stamped entries (executor_version + arm/seed/count/rho); resume matches identity+stamp, ignores stale/corrupt; workers never open the checkpoint",
+  "config_identity": ["arm", "master_seed", "simulation_count", "rho", "kernel_identity"],
+  "description": "P1 executor input/output contract. Wraps the frozen scientific path; kernel unchanged.",
+  "failure": "refusals (PREP_REFUSAL/ZERO_VALID_TRIALS) are typed envelopes; unexpected worker exceptions raise Mc2BatchError naming exact states after checkpointing completed ones; no fabrication, substitution, silent rerun, or partial-as-complete; KeyboardInterrupt cleans up via pool shutdown",
+  "forbidden": ["worker-specific RNG (PID/worker-index/time offsets)", "nested pools", "threads for the kernel", "driver-level parallelism", "within-run future chunking (later stage)", "public API worker controls", "shared-checkpoint writers"],
+  "implementation": "concurrent.futures.ProcessPoolExecutor, spawn context, module-level execute_state_task, explicit initializer paths (no fork inheritance)",
+  "output": ["exact state identity", "status complete/refused", "refusal reason where applicable", "valid/invalid counts", "driver set", "full-field winner counts/frequencies/expected_finish/position distributions/podium/sample_order", "kernel_identity", "executor_version", "prep_s/run_s timings"],
+  "schema": "mc2-perf-p1-contract-v1",
+  "sequence": ["P1", "P2", "P3"],
+  "task_identity": ["race_id", "frame_index", "fold_through"],
+  "worker_policy": "default_workers(n) = max(1, min(8, cpu_count, n)); explicit override execution-only; never in science identity"
+}

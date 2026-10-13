@@ -93,6 +93,27 @@ def test_baseline_clean_at_entry():
                "raceintel/consensus/",
                "api/v2_consensus_",
                "frontend/app/consensus", "frontend/features/consensus",
+               # P2A carve-out (performance programme only): exactly the
+               # two kernel files with hoisted loop-invariant overhead
+               # (parity-gated in P0-P20/P1-P3/P2A-P29 checks, not here)
+               # plus the performance-programme files (exact paths).
+               "raceintel/simulation/mc2/kernel.py",
+               "raceintel/simulation/mc2/residuals.py",
+               "raceintel/simulation/mc2_batch.py",
+               "scripts/mc2_batch_benchmark.py",
+               "results/v3/performance_mc2/",
+               "docs/MC2_PERFORMANCE_",
+               "tests/test_perf_mc2_p0.py",
+               "tests/test_mc2_batch_p1.py",
+               "tests/test_mc2_p2a.py",
+               # P2B carve-out (performance programme only): exact-order
+               # heap queue tests (parity-gated by P2B-P1..P30, not here).
+               "tests/test_mc2_p2b.py",
+               # P3-1 carve-out: exact scalar-interpolation audit tests
+               # (parity-gated by P3-1-P1..P30, not here).
+               "tests/test_mc2_p3_1.py",
+               # Freeze carve-out: focused freeze validation tests
+               "tests/test_perf_mc2_freeze.py",
                # Chartered C additive seam extension (the frozen V3.6B
                # guard independently records this trip; see C doc).
                "raceintel/simulation/monte_carlo.py",
@@ -256,8 +277,14 @@ def test_no_mc2_api_frontend_modification():
     # MC2/API/frontend mutation still fails.
     # V3.8H reconciliation: V3.8F/V3.8G charters additionally admit
     # exactly the consensus API/frontend paths (frozen science untouched).
+    # P2A carve-out (performance programme only): exactly the two kernel
+    # files with hoisted overhead plus the additive batch executor
+    # (parity-gated in P0-P20/P1-P3/P2A-P29 checks, not here).
     out = _git("status", "--short")
     allowed = ("raceintel/simulation/monte_carlo.py",
+               "raceintel/simulation/mc2/kernel.py",
+               "raceintel/simulation/mc2/residuals.py",
+               "raceintel/simulation/mc2_batch.py",
                "api/v2_counterfactual_", "api/v2_consensus_", "api/main.py",
                "frontend/app/counterfactuals",
                "frontend/features/counterfactuals",

@@ -1,0 +1,59 @@
+{
+ "note": "No regenerated fixtures; P0 canonical outputs authoritative; v38 arm independently reproduces them.",
+ "overall": "EXACT",
+ "schema": "mc2-perf-freeze-scientific-parity-v1",
+ "states": {
+  "complex_late": {
+   "eligibility_refusal": "identical by construction (shared prepare; valid=5000 invalid=0 both arms)",
+   "final_all_7_match_fixture_per_rep": [
+    true,
+    true
+   ],
+   "frame_index": 40,
+   "race_id": "2023-r21-R",
+   "v38_vs_final_full_output_equal_per_rep": [
+    true,
+    true
+   ],
+   "valid": [
+    5000,
+    5000
+   ]
+  },
+  "mid_late": {
+   "eligibility_refusal": "identical by construction (shared prepare; valid=5000 invalid=0 both arms)",
+   "final_all_7_match_fixture_per_rep": [
+    true,
+    true
+   ],
+   "frame_index": 440,
+   "race_id": "2024-r15-R",
+   "v38_vs_final_full_output_equal_per_rep": [
+    true,
+    true
+   ],
+   "valid": [
+    5000,
+    5000
+   ]
+  },
+  "ordinary_early": {
+   "eligibility_refusal": "identical by construction (shared prepare; valid=5000 invalid=0 both arms)",
+   "final_all_7_match_fixture_per_rep": [
+    true,
+    true
+   ],
+   "frame_index": 39,
+   "race_id": "2022-r03-R",
+   "v38_vs_final_full_output_equal_per_rep": [
+    true,
+    true
+   ],
+   "valid": [
+    5000,
+    5000
+   ]
+  }
+ },
+ "workload": "canonical P0 fixtures, 5000 futures/state, 2 reps, same machine/env"
+}

@@ -1,0 +1,32 @@
+{
+  "artifacts": [
+    "executor_contract.json",
+    "benchmark_corpus.json",
+    "parity_results.json",
+    "benchmark_results.json",
+    "worker_matrix.json",
+    "checkpoint_safety.json",
+    "checkpoint_w1.json",
+    "checkpoint_w2.json",
+    "checkpoint_w4.json",
+    "checkpoint_w6.json",
+    "checkpoint_w8.json",
+    "p1_validation.json",
+    "p1_card.json"
+  ],
+  "card_identity": "98e5770f913db5e89214f4ca4ed6cd3c61ebc3fbe961f5666515a84401a8a45d",
+  "classification": "STATE_PARALLELISM_USEFUL_BUT_SINGLE_STATE_OPTIMIZATION_WARRANTED",
+  "description": "P1 card: deterministic state-level multiprocessing over exact MC2 field states. Kernel unchanged; exact parity at workers 1/2/4/6/8; single-writer checkpoints; failures typed.",
+  "doc": "docs/MC2_PERFORMANCE_P1_MULTIPROCESSING.md",
+  "executor": "raceintel/simulation/mc2_batch.py (mc2-batch-v1)",
+  "parity": "direct serial == executor w=1 == w=2/4/6/8 == P0 fixtures (bit-identical)",
+  "recommended_next": "P2 kernel-overhead elimination and/or within-run future chunking for few-state workloads and single-state latency",
+  "schema": "mc2-perf-p1-card-v1",
+  "stage": "MC2-PERF-P1",
+  "v38_baseline": {
+    "commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+    "tag": "v3.8-model-simulation-consensus"
+  },
+  "verdict": "MC2 PERFORMANCE P1 COMPLETE — DETERMINISTIC STATE PARALLELISM VALIDATED — READY FOR NEXT PERFORMANCE GATE",
+  "wall_s": {"1": 412.337, "2": 262.968, "4": 201.723, "6": 166.951, "8": 151.168}
+}

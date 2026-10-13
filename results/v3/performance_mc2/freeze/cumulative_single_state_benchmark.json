@@ -1,0 +1,78 @@
+{
+ "claim": "MC2 single-state execution is 3.21x faster than frozen V3.8 (directly measured; NOT derived from stage products)",
+ "cumulative_reduction_pct": 68.9,
+ "cumulative_speedup": 3.214,
+ "description": "Authoritative cumulative single-state comparison: ORIGINAL V3.8 vs FINAL optimized, same machine/env/corpus/seed/config/reps.",
+ "environment": {
+  "host": "fanless Apple Silicon",
+  "python": "3.11"
+ },
+ "method": {
+  "corpus": "canonical P0 3-state corpus x 5000 futures",
+  "final_code": "working tree (post-P2B kernel, P3-1 reverted)",
+  "harness": "/tmp/freeze_harness/arm.py (frozen prep + run_mc2, production config)",
+  "reps": 2,
+  "thermal_policy": "sequential reps, same host, no competing heavy work",
+  "v38_code": "/tmp/f1-v38-freeze (detached worktree at v3.8 tag; data/v2 symlinked read-only)"
+ },
+ "per_state": [
+  {
+   "canonical_output_equality": true,
+   "final_median_s": 10.703,
+   "final_wall_s": [
+    9.632,
+    11.774
+   ],
+   "frame_index": 39,
+   "label": "ordinary_early",
+   "race_id": "2022-r03-R",
+   "reduction_pct": 66.1,
+   "speedup": 2.947,
+   "v38_median_s": 31.5465,
+   "v38_wall_s": [
+    31.26,
+    31.833
+   ]
+  },
+  {
+   "canonical_output_equality": true,
+   "final_median_s": 8.773,
+   "final_wall_s": [
+    8.945,
+    8.601
+   ],
+   "frame_index": 40,
+   "label": "complex_late",
+   "race_id": "2023-r21-R",
+   "reduction_pct": 68.3,
+   "speedup": 3.159,
+   "v38_median_s": 27.717,
+   "v38_wall_s": [
+    27.538,
+    27.896
+   ]
+  },
+  {
+   "canonical_output_equality": true,
+   "final_median_s": 8.176,
+   "final_wall_s": [
+    8.671,
+    7.681
+   ],
+   "frame_index": 440,
+   "label": "mid_late",
+   "race_id": "2024-r15-R",
+   "reduction_pct": 72.4,
+   "speedup": 3.621,
+   "v38_median_s": 29.6065,
+   "v38_wall_s": [
+    30.163,
+    29.05
+   ]
+  }
+ ],
+ "schema": "mc2-perf-freeze-cumulative-v1",
+ "stage_product_note": "1.806 x 1.969 = 3.556 (NOT the claim; direct measurement 3.214x is authoritative)",
+ "total_final_median_s": 27.65,
+ "total_v38_median_s": 88.87
+}

@@ -1,0 +1,73 @@
+{
+ "corpus": {
+  "futures_per_state": 5000,
+  "source": "results/v3/performance_mc2/p1/benchmark_corpus.json",
+  "states": 15
+ },
+ "description": "Freeze final batch: optimized kernel + state multiprocessing, 15-state P1 corpus x 5000 futures, workers 1 and 8.",
+ "environment": {
+  "cpu_logical": 10,
+  "python": "3.11.15"
+ },
+ "machine_note": "fanless Apple Silicon; wall times include worker spawn + prep; contextual telemetry only, no throttling claim.",
+ "w1": {
+  "executor_wall_s": 117.893,
+  "futures_per_sec": 636.2,
+  "futures_per_state": 5000,
+  "hashes": {
+   "2022-r03-R|30": "490755c39a10c56249e2c01798ae5c2525699d71a6e0b059dc5e99755911054e",
+   "2022-r03-R|39": "47e55f175dad8d9f54cb5c35f616a254d358955f5431c711d7286fcbc2b816b7",
+   "2022-r11-R|433": "205fb60669f1287186ebde7c01531a771954a2ec418d2f3de6ecd14da0423d92",
+   "2022-r11-R|473": "46252ad55d2f2f4232fa78e4a6c2edd6464f5aef054a08dac37bca2cc7caa756",
+   "2022-r19-R|19": "d5ae2a0fb01fe23de9cbbf97f5c0961a72f7d7cedf0584bca089450f13633f2d",
+   "2023-r05-R|347": "c45d8ec79620f69841280ff55d2e1712b948198bd64ca618d146458a36fdaa63",
+   "2023-r05-R|713": "96723d25fd6b3e75440c512a115433c260f47899f219b30428741516ed4d0325",
+   "2023-r13-R|262": "568b500df26b5194a3a89cefe21832afbda244321f364fd280187c05adcdd308",
+   "2023-r13-R|270": "9693d7c87cd66cdde558e49e1d8a54d4a309636bf8d21af5e257419cfc4f5e6d",
+   "2023-r21-R|45": "ba302df98db9b7ee91af4b3c8779dfa6fe92ec2a7b80a6c830483ae8d09e9e57",
+   "2023-r21-R|58": "b27b1b65f8a7b0dc40b45e3532089adcebb378716cf3ad5bf446bc9dd4116cc4",
+   "2024-r07-R|398": "298f4f8d3bb3d506ee4bb2f5c25eced14792eed8854dae220a05177c9913b9bb",
+   "2024-r07-R|805": "aa2ec824ee4e74aa0aef93a035b432e12bb9aa81d9f0b20c1808c7bcb150daee",
+   "2024-r15-R|456": "d19e087d448d2029ca6876d457698c75159709c6a41a6c1b814f331f79495ed4",
+   "2024-r15-R|913": "20ed893295ffb5340668cbbf441a660076c954f9bb547e0396803ab268ee32eb"
+  },
+  "peak_child_rss_mb": 162112.0,
+  "states": 15,
+  "states_per_sec": 0.1272,
+  "sum_prep_s": 1.643,
+  "sum_run_s": 116.074,
+  "wall_s": 117.895,
+  "workers": 1
+ },
+ "w1_w8_hash_parity": true,
+ "w8": {
+  "executor_wall_s": 31.137,
+  "futures_per_sec": 2408.5,
+  "futures_per_state": 5000,
+  "hashes": {
+   "2022-r03-R|30": "490755c39a10c56249e2c01798ae5c2525699d71a6e0b059dc5e99755911054e",
+   "2022-r03-R|39": "47e55f175dad8d9f54cb5c35f616a254d358955f5431c711d7286fcbc2b816b7",
+   "2022-r11-R|433": "205fb60669f1287186ebde7c01531a771954a2ec418d2f3de6ecd14da0423d92",
+   "2022-r11-R|473": "46252ad55d2f2f4232fa78e4a6c2edd6464f5aef054a08dac37bca2cc7caa756",
+   "2022-r19-R|19": "d5ae2a0fb01fe23de9cbbf97f5c0961a72f7d7cedf0584bca089450f13633f2d",
+   "2023-r05-R|347": "c45d8ec79620f69841280ff55d2e1712b948198bd64ca618d146458a36fdaa63",
+   "2023-r05-R|713": "96723d25fd6b3e75440c512a115433c260f47899f219b30428741516ed4d0325",
+   "2023-r13-R|262": "568b500df26b5194a3a89cefe21832afbda244321f364fd280187c05adcdd308",
+   "2023-r13-R|270": "9693d7c87cd66cdde558e49e1d8a54d4a309636bf8d21af5e257419cfc4f5e6d",
+   "2023-r21-R|45": "ba302df98db9b7ee91af4b3c8779dfa6fe92ec2a7b80a6c830483ae8d09e9e57",
+   "2023-r21-R|58": "b27b1b65f8a7b0dc40b45e3532089adcebb378716cf3ad5bf446bc9dd4116cc4",
+   "2024-r07-R|398": "298f4f8d3bb3d506ee4bb2f5c25eced14792eed8854dae220a05177c9913b9bb",
+   "2024-r07-R|805": "aa2ec824ee4e74aa0aef93a035b432e12bb9aa81d9f0b20c1808c7bcb150daee",
+   "2024-r15-R|456": "d19e087d448d2029ca6876d457698c75159709c6a41a6c1b814f331f79495ed4",
+   "2024-r15-R|913": "20ed893295ffb5340668cbbf441a660076c954f9bb547e0396803ab268ee32eb"
+  },
+  "peak_child_rss_mb": 170608.0,
+  "states": 15,
+  "states_per_sec": 0.4817,
+  "sum_prep_s": 5.971,
+  "sum_run_s": 207.297,
+  "wall_s": 31.14,
+  "workers": 8
+ },
+ "w8_vs_w1_speedup": 3.786
+}

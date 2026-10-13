@@ -1,0 +1,11 @@
+{
+  "contamination": "no stale/superseded marking: resume key is bare state_id membership. A checkpoint from an incompatible code/config version would be silently reused (same state_id, different science). Future design must version-stamp entries (kernel_identity + arm + seed + count).",
+  "description": "P0 audit of results/v3/v3_8d/mc2_checkpoint.json semantics (frozen; not modified).",
+  "granularity": "per state_id (per exact field state); full-field payloads (winner_frequency + full position_distribution + valid + fold_through + frame_index), NOT target-only",
+  "identity": "bare state_id string (race|driver|lap); no config/kernel/seed version in the key",
+  "lookup": "dict membership in an in-memory dict loaded once from JSON (O(1) per row); file rewritten every 5 rows",
+  "parallel_writers": "NOT SUITABLE as-is: single shared JSON file with full-dict rewrites; concurrent writers would clobber. Future: per-worker files or single-writer merge, plus version-stamped keys.",
+  "reuse": "completed simulations reusable across reruns of the same script only (crash resume); not reusable across states (keys are state-exact, correctly)",
+  "serialization": "json.dump of the entire accumulated dict every 5 rows (~56 dumps to 1.3MB final); O(n^2) total bytes; minor at 277 rows",
+  "size_final_bytes": 1266922
+}

@@ -1,0 +1,124 @@
+{
+  "candidates": [
+    {
+      "call_count_per_5000run": 16900000,
+      "current": "validate_rho called 3x per residual step (ar1_step + innovation_scale + DriverMechanism.__post_init__)",
+      "expected_benefit": "~6s/100s profiled",
+      "function": "raceintel/simulation/mc2/residuals.py:validate_rho",
+      "id": "P2A-1",
+      "immutable_proof": "rho fixed per mechanism per run (D sets uniform 0.264); mechanisms dict fixed for the run",
+      "inputs": "rho per driver mechanism",
+      "parity": "public validators untouched; invalid rho still raises identically (tests); fixture hashes",
+      "risk": "LOW",
+      "transformation": "validate distinct rhos once per run_mc2; hot loop uses internal unchecked step + precomputed scale per rho",
+      "verdict": "SAFE_P2A"
+    },
+    {
+      "call_count_per_5000run": 10000,
+      "current": "mc2_stream recomputes sha256(tag)+sha256(dim) per simulation (5000x/run); innovation_scale sqrt per step (5.6M)",
+      "expected_benefit": "small + enables P2A-1 scale reuse",
+      "function": "raceintel/simulation/mc2/residuals.py:mc2_stream",
+      "id": "P2A-2",
+      "immutable_proof": "tag/dim are pure functions of module-constant domain strings; scale is a pure function of run-fixed rho",
+      "inputs": "constant domain strings; run-fixed rho",
+      "parity": "SeedSequence entropy integers identical -> streams identical; fixture hashes",
+      "risk": "LOW",
+      "transformation": "module-level _MC2_TAG/_MC2_DIM constants; per-run rho->scale table",
+      "verdict": "SAFE_P2A"
+    },
+    {
+      "call_count_per_5000run": 5600000,
+      "current": "DynamicsInput dataclass built per event + combined_drift dispatch + per-call decay validation + decay**h pow per drift (11.2M pows)",
+      "expected_benefit": "~4-6s/100s profiled",
+      "function": "raceintel/simulation/mc2/kernel.py:mc2_expected_pace_s",
+      "id": "P2A-3",
+      "immutable_proof": "slopes fixed per driver per run (None->0.0 coercible once); decay fixed per run; laps_ahead bounded ~1..64 so decay powers memoizable with identical float values",
+      "inputs": "per-driver slopes (run-fixed); laps_ahead (varies, bounded)",
+      "parity": "public combined_drift/drift_exponential untouched; internal replicates exact op order incl. float() coercions; fixture hashes",
+      "risk": "LOW",
+      "transformation": "kernel-internal slope-pair floats per driver + memoized decay-power table + internal drift replicating exact arithmetic",
+      "verdict": "SAFE_P2A"
+    },
+    {
+      "call_count_per_5000run": 5700000,
+      "current": "DriverMechanism frozen dataclass rebuilt per residual step carrying 6 unchanged fields + previous_eps (init 9.6s + post_init 6.8s cum)",
+      "expected_benefit": "~12-16s/100s profiled (largest single item)",
+      "function": "raceintel/simulation/mc2/kernel.py:mc2_residual_step",
+      "id": "P2A-4",
+      "immutable_proof": "all fields except previous_eps fixed per run; eps evolution is scalar and local (same pattern as existing lap/time/age dicts); public mc2_residual_step untouched for external callers",
+      "inputs": "previous_eps (evolves); all else run-fixed",
+      "parity": "identical arithmetic in identical order (rho*prev + scale*draw); public function + validation intact; fixture hashes; no cross-sim sharing (per-sim local dicts)",
+      "risk": "LOW-MEDIUM (mechanical; parity-proven)",
+      "transformation": "run-local fixed-mechanism dict + prev_eps dict + internal evolve step; arm dispatch hoisted per run",
+      "verdict": "SAFE_P2A"
+    },
+    {
+      "call_count_per_5000run": 5600000,
+      "current": "sample_unit does float()+2x asarray(tuple)+interp+float() per draw; _xp/_fp tuples immutable per sampler",
+      "expected_benefit": "~3s/100s profiled (2 of 3 asarray calls removed)",
+      "function": "raceintel/simulation/monte_carlo.py:ResidualSampler.sample_unit",
+      "id": "P2A-5",
+      "immutable_proof": "sampler immutable for the run; numpy arrays of the same tuples interpolate identically",
+      "inputs": "sampler grid tuples (run-fixed)",
+      "parity": "interp arithmetic unchanged (still scalar np.interp per draw); public sample_unit untouched; fixture hashes",
+      "risk": "LOW",
+      "transformation": "per-run numpy xp/fp arrays; internal scalar sample using them",
+      "verdict": "SAFE_P2A"
+    },
+    {
+      "call_count_per_5000run": 5600000,
+      "current": "expected_lap_time_s call + attribute lookups (selection.progress.value etc.) per event",
+      "expected_benefit": "~1-2s/100s profiled",
+      "function": "raceintel/simulation/engine.py:expected_lap_time_s",
+      "id": "P2A-6",
+      "immutable_proof": "selection object fixed per run; attribute values immutable",
+      "inputs": "selection scalars (run-fixed)",
+      "parity": "no arithmetic duplication (call retained); only attribute binding hoisted to locals; fixture hashes",
+      "risk": "LOW",
+      "transformation": "bind selection scalars + base_pace to locals per run; keep the call (no inline copy)",
+      "verdict": "SAFE_P2A"
+    },
+    {
+      "current": "per-step min/sorted/dictcomp over pending dicts (~17s cum)",
+      "expected_benefit": "large, but tie/order semantics could change",
+      "function": "run_mc2 event loop",
+      "id": "P2B-1",
+      "parity": "requires exact (time, driver_id) order proof",
+      "risk": "MEDIUM",
+      "transformation": "heap event queue",
+      "verdict": "DEFER_P2B"
+    },
+    {
+      "current": "5.6M scalar np.interp calls",
+      "expected_benefit": "large",
+      "function": "sampler",
+      "id": "P3-1",
+      "parity": "requires bit-identity proof of vectorized interp",
+      "risk": "MEDIUM",
+      "transformation": "vectorized quantile over per-sim pool",
+      "verdict": "DEFER_P3"
+    },
+    {
+      "current": "per-event arithmetic across sims",
+      "expected_benefit": "large",
+      "function": "pace/drift/residual",
+      "id": "P3-2",
+      "parity": "requires float-order + event-order proof",
+      "risk": "MEDIUM-HIGH",
+      "transformation": "cross-sim NumPy vectorization",
+      "verdict": "DEFER_P3"
+    },
+    {
+      "current": "within-run future chunks",
+      "function": "orchestration",
+      "id": "LATER-1",
+      "parity": "chunk invariant already documented; separate stage",
+      "risk": "LOW",
+      "transformation": "future-chunk multiprocessing",
+      "verdict": "DEFER_P2B",
+      "verdict_note": "later stage, not P2B-queue work"
+    }
+  ],
+  "description": "P2A optimization ledger. Only SAFE_P2A items implemented; each with parity + microbenchmark, revert if no value.",
+  "schema": "mc2-perf-p2a-ledger-v1"
+}

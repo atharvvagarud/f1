@@ -1,0 +1,29 @@
+{
+ "artifacts": [
+  "event_order_contract.json",
+  "legacy_kernel_p2a.py",
+  "legacy_trace.json",
+  "tie_case_validation.json",
+  "heap_design.json",
+  "baseline_profile.json",
+  "baseline_benchmark.json",
+  "queue_parity.json",
+  "production_parity.json",
+  "final_profile.json",
+  "final_benchmark.json",
+  "p1_compatibility.json",
+  "p2b_validation.json",
+  "p2b_card.json"
+ ],
+ "card_identity": "1d6cb7c0f5bf19837767568861bdb67339fed5826316a848ddf8964363f9c20e",
+ "classification": "A_EVENT_QUEUE_OPTIMIZATION_SUCCESSFUL",
+ "event_trace_parity": "EXACT",
+ "production_parity": "EXACT",
+ "schema": "mc2-perf-p2b-card-v1",
+ "total_wall_speedup": 1.969,
+ "v38": {
+  "commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+  "tag": "v3.8-model-simulation-consensus"
+ },
+ "verdict": "MC2 PERFORMANCE P2B COMPLETE \u2014 EXACT-ORDER EVENT QUEUE OPTIMIZATION VALIDATED \u2014 READY FOR NEXT PERFORMANCE GATE"
+}

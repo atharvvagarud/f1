@@ -43,6 +43,14 @@ __all__ = [
 #: enabling MC2 mechanisms can never shift a frozen R3 draw).
 MC2_AR1_DOMAIN = "mc2-ar1"
 
+#: P2A hoisting: tag/dim below are pure functions of module-constant domain
+#: strings, so they are computed once at import. mc2_stream() uses these
+#: exact integers; SeedSequence entropy (and therefore every stream) is
+#: bit-identical to the per-call derivation. Verified by fixture parity.
+_MC2_TAG = int.from_bytes(hashlib.sha256(b"mc2-rng-v1").digest()[:4],
+                          "big")
+_MC2_DIM_BY_DOMAIN: dict = {}
+
 #: V3.2A reference measurement (development prior, re-estimated per fold).
 RHO_REFERENCE = 0.264
 
@@ -93,10 +101,14 @@ def mc2_stream(master_seed: int, simulation_id: int,
         raise ValueError("seeds must be plain Python ints")
     if master_seed < 0 or simulation_id < 0:
         raise ValueError("seeds must be non-negative")
-    tag = int.from_bytes(hashlib.sha256(b"mc2-rng-v1").digest()[:4], "big")
-    dim = int.from_bytes(
-        hashlib.sha256(f"mc2-domain:{domain}".encode()).digest()[:4], "big")
-    seq = np.random.SeedSequence([master_seed, simulation_id, tag, dim])
+    dim = _MC2_DIM_BY_DOMAIN.get(domain)
+    if dim is None:
+        dim = int.from_bytes(
+            hashlib.sha256(f"mc2-domain:{domain}".encode()).digest()[:4],
+            "big")
+        _MC2_DIM_BY_DOMAIN[domain] = dim
+    seq = np.random.SeedSequence([master_seed, simulation_id, _MC2_TAG,
+                                  dim])
     return np.random.Generator(np.random.PCG64(seq))
 
 

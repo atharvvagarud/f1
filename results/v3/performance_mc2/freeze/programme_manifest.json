@@ -1,0 +1,57 @@
+{
+ "cumulative_method": "isolated worktree /tmp/f1-v38-freeze at v3.8 tag; same machine/env/corpus/config/reps; harness /tmp/freeze_harness/arm.py",
+ "freeze_provenance_edits": [
+  "tests/test_perf_mc2_p0.py: HEAD== relaxed to merge-base ancestor (freeze-tolerant)",
+  "tests/test_mc2_p2b.py: HEAD== relaxed to merge-base ancestor (freeze-tolerant)",
+  "tests/test_mc2_p3_1.py: HEAD== relaxed to merge-base ancestor (freeze-tolerant)",
+  "scripts/run_ci_tests.py: pin comment now accounts P2A(12)+P2B(13); pin value unchanged (5067)"
+ ],
+ "frozen_parent": {
+  "commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+  "tag": "v3.8-model-simulation-consensus"
+ },
+ "programme": "MC2 deterministic performance engineering (post-V3.8)",
+ "schema": "mc2-perf-freeze-manifest-v1",
+ "stages": {
+  "P0": {
+   "card_identity": "686d115d9da751504ae826eebcb5bf2bc7c0f19b09259f036a1443b6d7308ce6",
+   "classification": null,
+   "tests": [
+    "tests/test_perf_mc2_p0.py"
+   ],
+   "verdict": "MC2 PERFORMANCE P0 COMPLETE \u2014 BASELINE PROFILED \u2014 READY FOR P1"
+  },
+  "P1": {
+   "card_identity": "98e5770f913db5e89214f4ca4ed6cd3c61ebc3fbe961f5666515a84401a8a45d",
+   "classification": "STATE_PARALLELISM_USEFUL_BUT_SINGLE_STATE_OPTIMIZATION_WARRANTED",
+   "tests": [
+    "tests/test_mc2_batch_p1.py"
+   ],
+   "verdict": "MC2 PERFORMANCE P1 COMPLETE \u2014 DETERMINISTIC STATE PARALLELISM VALIDATED \u2014 READY FOR NEXT PERFORMANCE GATE"
+  },
+  "P2A": {
+   "card_identity": "353fab85f51b5ae65892616e7f68164cf263880bf3386466bb5d575ed9fa4f84",
+   "classification": "LOW_RISK_OVERHEAD_OPTIMIZATION_SUCCESSFUL",
+   "tests": [
+    "tests/test_mc2_p2a.py"
+   ],
+   "verdict": "MC2 PERFORMANCE P2A COMPLETE \u2014 LOW-RISK KERNEL OPTIMIZATION VALIDATED \u2014 READY FOR NEXT PERFORMANCE GATE"
+  },
+  "P2B": {
+   "card_identity": "1d6cb7c0f5bf19837767568861bdb67339fed5826316a848ddf8964363f9c20e",
+   "classification": "A_EVENT_QUEUE_OPTIMIZATION_SUCCESSFUL",
+   "tests": [
+    "tests/test_mc2_p2b.py"
+   ],
+   "verdict": "MC2 PERFORMANCE P2B COMPLETE \u2014 EXACT-ORDER EVENT QUEUE OPTIMIZATION VALIDATED \u2014 READY FOR NEXT PERFORMANCE GATE"
+  },
+  "P3-1": {
+   "card_identity": "9a6636dcd6d15bd313b327c6033bcc12b549261e0a075760ac79cf58e1698272",
+   "classification": "C_SCALAR_INTERPOLATION_NOT_WORTHWHILE",
+   "tests": [
+    "tests/test_mc2_p3_1.py"
+   ],
+   "verdict": "MC2 PERFORMANCE P3-1 COMPLETE \u2014 SCALAR INTERPOLATION OPTIMIZATION REJECTED \u2014 EXACT PARITY PRESERVED"
+  }
+ }
+}

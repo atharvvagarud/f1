@@ -1,0 +1,397 @@
+{
+ "description": "Adversarial tie characterization: 8 scripted queue cases (incl. 2-way/3-way ties, reversed insertion, rescheduling chains, hypothetical same-stamp newcomer, mid-batch failure) plus 5000 seeded fuzz cases, all legacy-vs-heap exact. Natural fixtures produce no ties (continuous float clocks), recorded in the legacy/live traces.",
+ "fuzz": {
+  "cases": 5000,
+  "covers": [
+   "random ties from small time pool",
+   "reversed insertion",
+   "reschedule chains",
+   "hypothetical same-stamp successors",
+   "terminal removal",
+   "mid-batch failure"
+  ],
+  "mismatches": 0,
+  "seed_base": 1000000
+ },
+ "legacy_rule_proven": "ties resolve by ascending driver_id string order, NOT insertion order (tie2-BA: B inserted first, A processed first); dict/insertion order provably irrelevant",
+ "natural_tie_census": {
+  "events_examined": 83160,
+  "same_stamp_adjacent": 0,
+  "sims_per_state": 40
+ },
+ "schema": "mc2-perf-p2b-tie-validation-v1",
+ "scripted_cases": [
+  {
+   "exact": true,
+   "heap_seq": [
+    [
+     10.0,
+     "B"
+    ],
+    [
+     20.0,
+     "C"
+    ],
+    [
+     30.0,
+     "A"
+    ]
+   ],
+   "init": {
+    "A": [
+     30.0,
+     2,
+     2
+    ],
+    "B": [
+     10.0,
+     2,
+     2
+    ],
+    "C": [
+     20.0,
+     2,
+     2
+    ]
+   },
+   "legacy_seq": [
+    [
+     10.0,
+     "B"
+    ],
+    [
+     20.0,
+     "C"
+    ],
+    [
+     30.0,
+     "A"
+    ]
+   ],
+   "name": "unequal"
+  },
+  {
+   "exact": true,
+   "heap_seq": [
+    [
+     10.0,
+     "A"
+    ],
+    [
+     10.0,
+     "B"
+    ]
+   ],
+   "init": {
+    "A": [
+     10.0,
+     2,
+     2
+    ],
+    "B": [
+     10.0,
+     2,
+     2
+    ]
+   },
+   "legacy_seq": [
+    [
+     10.0,
+     "A"
+    ],
+    [
+     10.0,
+     "B"
+    ]
+   ],
+   "name": "tie2-AB"
+  },
+  {
+   "exact": true,
+   "heap_seq": [
+    [
+     10.0,
+     "A"
+    ],
+    [
+     10.0,
+     "B"
+    ]
+   ],
+   "init": {
+    "A": [
+     10.0,
+     2,
+     2
+    ],
+    "B": [
+     10.0,
+     2,
+     2
+    ]
+   },
+   "legacy_seq": [
+    [
+     10.0,
+     "A"
+    ],
+    [
+     10.0,
+     "B"
+    ]
+   ],
+   "name": "tie2-BA"
+  },
+  {
+   "exact": true,
+   "heap_seq": [
+    [
+     5.0,
+     "A"
+    ],
+    [
+     5.0,
+     "B"
+    ],
+    [
+     5.0,
+     "C"
+    ]
+   ],
+   "init": {
+    "A": [
+     5.0,
+     2,
+     2
+    ],
+    "B": [
+     5.0,
+     2,
+     2
+    ],
+    "C": [
+     5.0,
+     2,
+     2
+    ]
+   },
+   "legacy_seq": [
+    [
+     5.0,
+     "A"
+    ],
+    [
+     5.0,
+     "B"
+    ],
+    [
+     5.0,
+     "C"
+    ]
+   ],
+   "name": "tie3"
+  },
+  {
+   "exact": true,
+   "heap_seq": [
+    [
+     10.0,
+     "A"
+    ],
+    [
+     10.0,
+     "B"
+    ],
+    [
+     20.0,
+     "A"
+    ],
+    [
+     20.0,
+     "B"
+    ],
+    [
+     30.0,
+     "A"
+    ],
+    [
+     30.0,
+     "B"
+    ]
+   ],
+   "init": {
+    "A": [
+     10.0,
+     2,
+     2
+    ],
+    "B": [
+     10.0,
+     2,
+     2
+    ]
+   },
+   "legacy_seq": [
+    [
+     10.0,
+     "A"
+    ],
+    [
+     10.0,
+     "B"
+    ],
+    [
+     20.0,
+     "A"
+    ],
+    [
+     20.0,
+     "B"
+    ],
+    [
+     30.0,
+     "A"
+    ],
+    [
+     30.0,
+     "B"
+    ]
+   ],
+   "name": "chain-ties"
+  },
+  {
+   "exact": true,
+   "heap_seq": [
+    [
+     10.0,
+     "A"
+    ],
+    [
+     10.0,
+     "B"
+    ],
+    [
+     10.0,
+     "A"
+    ]
+   ],
+   "init": {
+    "A": [
+     10.0,
+     2,
+     2
+    ],
+    "B": [
+     10.0,
+     2,
+     2
+    ]
+   },
+   "legacy_seq": [
+    [
+     10.0,
+     "A"
+    ],
+    [
+     10.0,
+     "B"
+    ],
+    [
+     10.0,
+     "A"
+    ]
+   ],
+   "name": "same-stamp-newcomer"
+  },
+  {
+   "exact": true,
+   "heap_seq": [
+    [
+     10.0,
+     "A"
+    ]
+   ],
+   "init": {
+    "A": [
+     10.0,
+     2,
+     2
+    ],
+    "B": [
+     10.0,
+     2,
+     2
+    ]
+   },
+   "legacy_seq": [
+    [
+     10.0,
+     "A"
+    ]
+   ],
+   "name": "mid-batch-fail"
+  },
+  {
+   "exact": true,
+   "heap_seq": [
+    [
+     5.0,
+     "A"
+    ],
+    [
+     5.0,
+     "C"
+    ],
+    [
+     7.5,
+     "D"
+    ],
+    [
+     9.0,
+     "B"
+    ]
+   ],
+   "init": {
+    "A": [
+     5.0,
+     2,
+     2
+    ],
+    "B": [
+     9.0,
+     2,
+     2
+    ],
+    "C": [
+     5.0,
+     3,
+     3
+    ],
+    "D": [
+     7.5,
+     2,
+     2
+    ]
+   },
+   "legacy_seq": [
+    [
+     5.0,
+     "A"
+    ],
+    [
+     5.0,
+     "C"
+    ],
+    [
+     7.5,
+     "D"
+    ],
+    [
+     9.0,
+     "B"
+    ]
+   ],
+   "name": "mixed"
+  }
+ ]
+}

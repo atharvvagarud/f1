@@ -1,0 +1,11 @@
+{
+ "evidence": [
+  "tests/test_mc2_p2b.py full file green on final tree (13 tests: scripted/fuzz/tie/invariant/live-trace)",
+  "results/v3/performance_mc2/p2b/queue_parity.json (committed)",
+  "results/v3/performance_mc2/p2b/event_order_contract.json: (time, driver_id) legacy ordering, same-stamp batch drain, pop-then-push, no stale entries",
+  "freeze live: v38 vs final full outputs bit-identical at 5000 futures x3 states x2 reps"
+ ],
+ "heap_design_unchanged_during_freeze": true,
+ "overall": "EXACT",
+ "schema": "mc2-perf-freeze-event-order-v1"
+}

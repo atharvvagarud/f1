@@ -1,0 +1,40 @@
+{
+ "call_reduction": {
+  "post_calls": 146000933,
+  "pre_calls": 296238350
+ },
+ "component": "legacy event queue -> exact-order heap queue",
+ "decision": "ACCEPTED",
+ "full_tier1": "deferred to the final performance freeze: exact internal event-trace parity holds, production canonical parity holds, targeted regression green, no cross-cutting failures",
+ "new_dominant_hotspot": "scalar interpolation dispatch (np.interp wrapper ~5.5s cum of 26.8s profiled) inside the schedule frame; event-queue selection eliminated from the profile",
+ "per_state": {
+  "complex_late": {
+   "post_run_s": 7.384,
+   "post_wall_s": 7.461,
+   "pre_run_s": 14.266,
+   "pre_wall_s": 14.32,
+   "run_speedup": 1.932,
+   "wall_speedup": 1.919
+  },
+  "mid_late": {
+   "post_run_s": 7.507,
+   "post_wall_s": 7.603,
+   "pre_run_s": 14.93,
+   "pre_wall_s": 15.023,
+   "run_speedup": 1.989,
+   "wall_speedup": 1.976
+  },
+  "ordinary_early": {
+   "post_run_s": 8.323,
+   "post_wall_s": 8.645,
+   "pre_run_s": 17.06,
+   "pre_wall_s": 17.332,
+   "run_speedup": 2.05,
+   "wall_speedup": 2.005
+  }
+ },
+ "schema": "mc2-perf-p2b-validation-v1",
+ "total_post_wall_s": 23.709,
+ "total_pre_wall_s": 46.675,
+ "total_wall_speedup": 1.969
+}

@@ -1,0 +1,40 @@
+{
+ "authoritative_run": 2,
+ "counts_stable_across_runs": true,
+ "runs": [
+  {
+   "collected": 5076,
+   "errors": 0,
+   "failed": 0,
+   "manifest_deselect_ids": 1043,
+   "passed": 4024,
+   "returncode": 0,
+   "role": "preliminary (placeholder-card tree)",
+   "run": 1,
+   "runtime_s": 3376.79,
+   "selected": 4033,
+   "skipped": 0,
+   "tests_deselected": 1048,
+   "xfailed": 4,
+   "xpassed": 0
+  },
+  {
+   "collected": 5076,
+   "errors": 0,
+   "failed": 0,
+   "manifest_deselect_ids": 1043,
+   "passed": 4024,
+   "returncode": 0,
+   "role": "AUTHORITATIVE (final tree, card C1 self-consistent)",
+   "run": 2,
+   "runtime_s": 3759.89,
+   "selected": 4033,
+   "skipped": 0,
+   "tests_deselected": 1048,
+   "xfailed": 4,
+   "xpassed": 0
+  }
+ ],
+ "schema": "mc2-perf-freeze-tier1-v1",
+ "status": "GREEN"
+}

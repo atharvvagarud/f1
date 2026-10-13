@@ -1,0 +1,25 @@
+{
+  "classification": "STATE_PARALLELISM_USEFUL_BUT_SINGLE_STATE_OPTIMIZATION_WARRANTED",
+  "classification_reason": "substantial multi-state throughput gain (2.73x at 8 workers) with exact parity, but per-task efficiency collapses with worker count (median state 28s at w=1 to 74s at w=8) and single-state latency is unchanged; kernel/future-chunk work remains valuable",
+  "description": "P1 validation record: exact parity plus benchmark interpretation.",
+  "direct_serial_vs_executor_w1": true,
+  "executor_w1_vs_wN": {"2": true, "4": true, "6": true, "8": true},
+  "first_run_heat_variance": {
+    "note": "first matrix (heat-soaked sequence) showed a transient w=4 inversion (275.6s slower than w=2 at 246.4s); cooled rerun is monotonic. Evidence of placement/thermal variance; do not over-interpret single samples",
+    "run1_wall_s": {"1": 366.5, "2": 246.4, "4": 275.6, "6": 165.8, "8": 146.6}
+  },
+  "p0_fixtures_match": true,
+  "parity_bit_identical_all_worker_counts": true,
+  "per_state_median_run_s": {"1": 28.2, "2": 36.3, "4": 53.5, "6": 65.2, "8": 73.6},
+  "portable_default": "min(8, cpu_count, n_tasks); execution-only; benchmark winner on this machine (8 by wall) is not a universal default",
+  "schema": "mc2-perf-p1-validation-v1",
+  "single_state_latency": "unchanged by design (one state remains one task); product /compare latency is future work",
+  "speedup_efficiency": {
+    "2": {"efficiency": 0.784, "speedup": 1.568},
+    "4": {"efficiency": 0.511, "speedup": 2.044},
+    "6": {"efficiency": 0.412, "speedup": 2.47},
+    "8": {"efficiency": 0.341, "speedup": 2.728}
+  },
+  "sustained_behavior": "total CPU-work grows with workers (sum run_s 410s at w=1 to 1054s at w=8): contention across heterogeneous (4P+6E) cores and shared thermal/power budget; throughput still rises to 496 futures/s",
+  "wall_s_run2_cooled": {"1": 412.337, "2": 262.968, "4": 201.723, "6": 166.951, "8": 151.168}
+}

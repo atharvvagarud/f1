@@ -1,0 +1,56 @@
+{
+  "benchmark_matrix_recommended": {
+    "measure": ["wall time", "CPU utilization", "peak RSS", "scientific parity vs P0 fixtures", "sustained/thermal behavior (repeat runs)"],
+    "note": "Do not assume 8 workers beat 4 or 6 on a thermally constrained Apple Silicon machine; measure, including Efficiency-core placement effects.",
+    "workers": [1, 2, 4, 6, 8]
+  },
+  "description": "P0 evidence-derived optimization sequence. No implementation in P0. Each item states what changes, why faster, invariant, parity test, rollback.",
+  "schema": "mc2-perf-p0-plan-v1",
+  "sequence": [
+    {
+      "engineering_complexity": "LOW",
+      "expected_benefit": "near-linear wall reduction on N cores for multi-state workloads (the 281-run class)",
+      "id": "P1",
+      "parity_test": "P0 fixture hashes bit-identical at workers 1/2/4/N; eligibility/refusal/counts/frequencies/distributions/orders identical",
+      "rollback": "any parity mismatch or sublinear collapse with no diagnosis -> serial fallback (one flag)",
+      "scientific_invariant": "per-state inputs and per-sim streams unchanged; assembly order-independent",
+      "scientific_risk": "NONE (worker-blind streams; independent states)",
+      "validation_burden": "LOW (parity fixtures + benchmark matrix)",
+      "what": "outer multiprocessing over independent states (candidate A), with within-run future chunking (candidate C) for load balance",
+      "why": "277-state workload is embarrassingly parallel; RNG keyed by scientific identity so any worker/order yields identical outputs"
+    },
+    {
+      "engineering_complexity": "MEDIUM",
+      "expected_benefit": "large single-process factor: ~70-80% of profiled time is call/allocation/validation overhead around simple arithmetic",
+      "id": "P2",
+      "parity_test": "bit-identical P0 fixture hashes + targeted unit parity (event order, drift table, sampler vectorization, heap queue)",
+      "rollback": "any hash mismatch -> revert component-wise (each sub-item independently revertible)",
+      "scientific_invariant": "identical arithmetic in identical order; identical RNG consumption order; identical event order",
+      "scientific_risk": "LOW (mechanical; each sub-item parity-proven)",
+      "sub_items": [
+        "hoist run-fixed validation/scale (validate_rho 3x/step -> 1x/run; innovation_scale sqrt hoisted)",
+        "mutable per-driver mechanism state instead of frozen-dataclass rebuild per step (same field updates)",
+        "precomputed per-driver drift table over laps_ahead (exact same values)",
+        "vectorized sampler over the per-sim uniform pool (verify np.interp bit-identity)",
+        "heap event queue with (time, driver_id) tie-break (exact same event order)",
+        "hoist mc2_stream domain tag/dim constants",
+        "checkpoint: incremental/version-stamped writes"
+      ],
+      "validation_burden": "MEDIUM (per-component parity + full fixture hashes)",
+      "what": "eliminate per-event Python overhead without changing arithmetic or order",
+      "why": "profile: 5.6M schedule calls/run dominated by dataclass churn (16.4s), repeated validation (6.1s), scalar interp dispatch (14.9s), queue scans (17.4s min/sorted/dict)"
+    },
+    {
+      "engineering_complexity": "HIGH",
+      "expected_benefit": "additional factor on top of P2 for the residual arithmetic-bound portion",
+      "id": "P3",
+      "parity_test": "bit-identical fixture hashes required; any float-order deviation needs separate scientific justification first (not assumed)",
+      "rollback": "any parity deviation -> keep P1+P2 only",
+      "scientific_invariant": "same operations in same order per element; same RNG consumption; same event/order semantics",
+      "scientific_risk": "MEDIUM (float association/order and event-order coupling need proof)",
+      "validation_burden": "HIGH (exact-parity proof + full benchmark matrix)",
+      "what": "exact NumPy vectorization across simulations for pace/drift/residual arithmetic",
+      "why": "per-event arithmetic is pure; event loop ordering is the only coupling"
+    }
+  ]
+}

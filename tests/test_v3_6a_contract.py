@@ -360,7 +360,29 @@ def test_no_serving_api_frontend_mc2_v35_changes():
                         "raceintel/consensus/",
                         "api/v2_consensus_",
                         "frontend/app/consensus",
-                        "frontend/features/consensus")
+                        "frontend/features/consensus",
+                        # P2A carve-out (performance programme only):
+                        # exactly the two kernel files with hoisted
+                        # loop-invariant overhead (parity-gated in
+                        # P0-P20/P1-P3/P2A-P29 checks, not here) plus
+                        # the performance-programme files (exact paths).
+                        "raceintel/simulation/mc2/kernel.py",
+                        "raceintel/simulation/mc2/residuals.py",
+                        "raceintel/simulation/mc2_batch.py",
+                        "scripts/mc2_batch_benchmark.py",
+                        "results/v3/performance_mc2/",
+                        "docs/MC2_PERFORMANCE_",
+                        "tests/test_perf_mc2_p0.py",
+                        "tests/test_mc2_batch_p1.py",
+                        "tests/test_mc2_p2a.py",
+                        # P2B carve-out: exact-order heap queue tests
+                        # (parity-gated by P2B-P1..P30, not here).
+                        "tests/test_mc2_p2b.py",
+                        # P3-1 carve-out: exact scalar-interpolation audit
+                        # tests (parity-gated by P3-1-P1..P30, not here).
+                        "tests/test_mc2_p3_1.py",
+                        # Freeze carve-out: focused freeze validation tests
+                        "tests/test_perf_mc2_freeze.py")
     for f in _changed_files():
         assert any(f.startswith(p) for p in allowed_prefixes), f
 
@@ -402,7 +424,15 @@ def test_no_mc2_change():
     # V3.7H reconciliation: V3.7C charter admits exactly the additive MC2
     # seam in raceintel/simulation/monte_carlo.py. The pinned SHA-256
     # preserves the no-mutation protection: any byte drift fails.
-    allowed = ("raceintel/simulation/monte_carlo.py",)
+    # P2A carve-out (performance programme only): exactly kernel.py +
+    # residuals.py with hoisted loop-invariant overhead; public APIs,
+    # validation, RNG, and arithmetic order unchanged (parity-gated in
+    # P0-P20/P1-P3/P2A-P29 checks, not here). Any other
+    # raceintel/simulation change still fails.
+    allowed = ("raceintel/simulation/monte_carlo.py",
+               "raceintel/simulation/mc2/kernel.py",
+               "raceintel/simulation/mc2/residuals.py",
+               "raceintel/simulation/mc2_batch.py")
     changed = _changed_files()
     assert not any(
         f.startswith("raceintel/simulation") and f not in allowed

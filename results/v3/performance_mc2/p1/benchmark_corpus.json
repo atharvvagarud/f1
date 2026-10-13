@@ -1,0 +1,97 @@
+{
+ "schema": "mc2-perf-p1-corpus-v1",
+ "selection_rule": "first 2 sorted state_ids per race with stored D runs (fixed before timing; outcome-blind)",
+ "simulation_count": 5000,
+ "states": [
+  {
+   "fold_through": 2021,
+   "frame_index": 39,
+   "race_id": "2022-r03-R",
+   "state_id": "2022-r03-R|albon|2"
+  },
+  {
+   "fold_through": 2021,
+   "frame_index": 30,
+   "race_id": "2022-r03-R",
+   "state_id": "2022-r03-R|alonso|2"
+  },
+  {
+   "fold_through": 2021,
+   "frame_index": 433,
+   "race_id": "2022-r11-R",
+   "state_id": "2022-r11-R|albon|22"
+  },
+  {
+   "fold_through": 2021,
+   "frame_index": 473,
+   "race_id": "2022-r11-R",
+   "state_id": "2022-r11-R|albon|24"
+  },
+  {
+   "fold_through": 2021,
+   "frame_index": 19,
+   "race_id": "2022-r19-R",
+   "state_id": "2022-r19-R|ocon|1"
+  },
+  {
+   "fold_through": 2021,
+   "frame_index": 347,
+   "race_id": "2023-r05-R",
+   "state_id": "2023-r05-R|albon|18"
+  },
+  {
+   "fold_through": 2021,
+   "frame_index": 713,
+   "race_id": "2023-r05-R",
+   "state_id": "2023-r05-R|albon|36"
+  },
+  {
+   "fold_through": 2021,
+   "frame_index": 270,
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R|albon|14"
+  },
+  {
+   "fold_through": 2021,
+   "frame_index": 262,
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R|alonso|14"
+  },
+  {
+   "fold_through": 2021,
+   "frame_index": 45,
+   "race_id": "2023-r21-R",
+   "state_id": "2023-r21-R|albon|3"
+  },
+  {
+   "fold_through": 2021,
+   "frame_index": 58,
+   "race_id": "2023-r21-R",
+   "state_id": "2023-r21-R|alonso|3"
+  },
+  {
+   "fold_through": 2023,
+   "frame_index": 398,
+   "race_id": "2024-r07-R",
+   "state_id": "2024-r07-R|albon|19"
+  },
+  {
+   "fold_through": 2023,
+   "frame_index": 805,
+   "race_id": "2024-r07-R",
+   "state_id": "2024-r07-R|albon|39"
+  },
+  {
+   "fold_through": 2023,
+   "frame_index": 456,
+   "race_id": "2024-r15-R",
+   "state_id": "2024-r15-R|albon|23"
+  },
+  {
+   "fold_through": 2023,
+   "frame_index": 913,
+   "race_id": "2024-r15-R",
+   "state_id": "2024-r15-R|albon|46"
+  }
+ ]
+}

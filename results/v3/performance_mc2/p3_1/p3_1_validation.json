@@ -1,0 +1,8 @@
+{
+ "classification": "C_SCALAR_INTERPOLATION_NOT_WORTHWHILE",
+ "decision": "REVERTED_NO_BENEFIT",
+ "full_tier1": "deferred to the final performance freeze (exact parity throughout, targeted regression green, no cross-cutting risk; production code unchanged)",
+ "production_code_delta": "none (working kernel byte-identical to pre-P3-1 tree)",
+ "recommendation": "PERFORMANCE_FREEZE",
+ "schema": "mc2-perf-p3-1-validation-v1"
+}

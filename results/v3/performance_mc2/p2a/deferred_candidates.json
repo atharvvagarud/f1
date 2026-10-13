@@ -1,0 +1,29 @@
+{
+  "deferred": [
+    {
+      "id": "P2B-1",
+      "ordering_invariants_needing_proof": ["event sequence identical: (completion_time, driver_id) tie-break preserved exactly", "RNG cursor consumption order unchanged", "finished-order and invalid-handling identical"],
+      "item": "heap event queue replacing per-step min/sorted/dictcomp (~57% of post-P2A profile)",
+      "stage": "P2B"
+    },
+    {
+      "id": "P3-1",
+      "item": "vectorized sampler over per-sim uniform pool (interp dispatch now top remaining kernel: ~6s/53s)",
+      "parity_needing_proof": "np.interp bit-identity array-vs-scalar",
+      "stage": "P3"
+    },
+    {
+      "id": "P3-2",
+      "item": "cross-simulation NumPy vectorization of pace/drift/residual arithmetic",
+      "parity_needing_proof": "float association/order + event-order coupling",
+      "stage": "P3"
+    },
+    {
+      "id": "LATER-1",
+      "item": "within-run future-chunk multiprocessing (for few-state workloads and single-run latency)",
+      "stage": "later"
+    }
+  ],
+  "description": "P2A-deferred candidates with proof obligations. Nothing here implemented in P2A.",
+  "schema": "mc2-perf-p2a-deferred-v1"
+}

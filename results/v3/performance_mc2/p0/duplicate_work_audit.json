@@ -1,0 +1,73 @@
+{
+  "candidates": [
+    {
+      "finding": "REFUTED by checkpoint evidence: 277 stored runs span 277 distinct (race, frame_index) states (group size 1 everywhere). Each driver row on a nominal lap maps to a different timeline frame (driver-specific state_time_s). Cross-row simulation reuse would change T and is scientifically invalid.",
+      "inputs": "full-field initial_state at exact T, selection, sampler, per-driver mechanisms at T",
+      "item": "full-field run_mc2 across driver rows of one (race, lap)",
+      "verdict": "NOT_REUSABLE"
+    },
+    {
+      "finding": "run_mc2 has no target-driver parameter; outputs are full-field (winner/position distributions for every driver). Per-row extraction of one driver's slice is presentation-only.",
+      "inputs": "identical simulation; extraction differs",
+      "item": "per-row probability extraction",
+      "verdict": "PRESENTATION_EXTRACTION (no simulation work to save)"
+    },
+    {
+      "finding": "D runner already caches params/service/grid per race; _service_for has module cache. Prep ~0.07s/state vs ~19-30s run. No material duplication.",
+      "inputs": "params, race service, timeline grid",
+      "item": "race-level prep inputs across rows",
+      "verdict": "IDENTICAL_REUSABLE (already reused)"
+    },
+    {
+      "finding": "_prepare_state_and_mechanisms re-derives history/slopes per distinct T. Distinct T means distinct history windows; sharing across T would change mechanisms.",
+      "inputs": "history window <= T, anchor, slopes, sampler selection",
+      "item": "per-state preparation",
+      "verdict": "STATE_DEPENDENT"
+    },
+    {
+      "finding": "mc2_stream recomputes sha256(tag)+sha256(dim) per simulation (5000x/run); both are module constants. Micro-duplication.",
+      "inputs": "constant domain strings",
+      "item": "RNG domain tag derivation per simulation",
+      "verdict": "IDENTICAL_REUSABLE"
+    },
+    {
+      "finding": "rho, regime_std_s, slopes fixed per run, yet validate_rho runs 3x per residual step (16.9M calls) and innovation_scale sqrt recomputed per step. Hoistable without semantic change.",
+      "inputs": "run-fixed mechanism parameters",
+      "item": "per-step validation and scale recomputation",
+      "verdict": "IDENTICAL_REUSABLE"
+    },
+    {
+      "finding": "DriverMechanism frozen dataclass rebuilt per residual step (5.7M constructions/run) carrying 6 unchanged fields + previous_eps. Allocation churn, not science.",
+      "inputs": "previous_eps evolves; all else run-fixed",
+      "item": "mechanism object construction per step",
+      "verdict": "PARTIALLY_REUSABLE (eps state must evolve identically)"
+    },
+    {
+      "finding": "DynamicsInput dataclass built per event (5.6M); slopes run-fixed, only laps_ahead varies. Drift table per (driver, laps_ahead) is exactly precomputable (bounded ~60 laps).",
+      "inputs": "run-fixed slopes; laps_ahead varies",
+      "item": "drift input construction per event",
+      "verdict": "PARTIALLY_REUSABLE"
+    },
+    {
+      "finding": "pool of uniforms bulk-drawn per sim (good), then sample_unit does scalar np.interp per draw (5.6M calls, 3x asarray each). Vectorized quantile over the pool array computes the same values.",
+      "inputs": "one pool array per sim; order-preserving consumption",
+      "item": "scalar sampler calls over bulk pool",
+      "verdict": "IDENTICAL_REUSABLE (verify bit-identity in P2)"
+    },
+    {
+      "finding": "checkpoint json.dump of the entire accumulated mc2_out every 5 rows (~56 full dumps, final 1.3MB) = O(n^2) serialization. Minor at 277 rows; redesign before parallel writers.",
+      "inputs": "append-only results",
+      "item": "checkpoint serialization",
+      "verdict": "PARTIALLY_REUSABLE"
+    },
+    {
+      "finding": "per-step min/sorted/dictcomp over pending dicts (22.4M min calls). Event order is deterministic (time, driver_id tie-break); a heap preserves it exactly with lower constant.",
+      "inputs": "same event set and tie-break",
+      "item": "event-queue scans",
+      "verdict": "PARTIALLY_REUSABLE (order must be preserved exactly)"
+    }
+  ],
+  "computational_unit": "one full-field MC2 run for one exact factual field state (race_id, frame_index/state_time_s) at fixed (arm, seed, simulation_count); per-row extraction is presentation",
+  "description": "P0 duplicate-work audit. The headline hypothesis (share one simulation across drivers of a lap) is refuted with checkpoint evidence; remaining duplication is within-run overhead.",
+  "schema": "mc2-perf-p0-duplicate-v1"
+}

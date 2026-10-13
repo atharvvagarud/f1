@@ -1,0 +1,12 @@
+{
+  "checks_per_state": ["winner_counts", "winner_frequency", "expected_finish", "position_counts", "position_distribution", "podium_frequency", "sample_order", "valid"],
+  "complex_late": "EXACT",
+  "description": "P2A exact parity: optimized kernel vs P0 canonical fixture hashes (7 hashes + valid each), multiple reps.",
+  "executor_5000_vs_p0_fixture": true,
+  "executor_w1_eq_w2_eq_w4": true,
+  "mid_late": "EXACT",
+  "ordinary_early": "EXACT",
+  "overall": "EXACT",
+  "p1_executor_compatibility": "w=1/2/4 identical at reduced sims; executor-5000 matches P0 fixture",
+  "schema": "mc2-perf-p2a-parity-v1"
+}

@@ -1,0 +1,102 @@
+{
+ "schema": "mc2-perf-p2a-profile-v1",
+ "description": "P2A post-optimization cProfile top (same state, 296M calls, 52.6s profiled); eliminated: residual_step/expected_pace/sample_unit/combined_drift/dataclass churn/validate/asarray; new dominants: event-queue min/sorted/dictcomp, interp dispatch, schedule frame",
+ "top": [
+  {
+   "calls": "1",
+   "self_s": "7.853",
+   "cum_s": "52.645",
+   "symbol": "/Users/tfatharva/f1-in-race-prediction_main/raceintel/simulation/mc2/kernel.py:187(run_mc2)"
+  },
+  {
+   "calls": "5600000",
+   "self_s": "7.575",
+   "cum_s": "22.317",
+   "symbol": "/Users/tfatharva/f1-in-race-prediction_main/raceintel/simulation/mc2/kernel.py:300(schedule)"
+  },
+  {
+   "calls": "22400401",
+   "self_s": "5.836",
+   "cum_s": "10.488",
+   "symbol": "{built-in"
+  },
+  {
+   "calls": "5600000",
+   "self_s": "5.883",
+   "cum_s": "5.883",
+   "symbol": "/Users/tfatharva/f1-in-race-prediction_main/raceintel/simulation/mc2/kernel.py:352(<dictcomp>)"
+  },
+  {
+   "calls": "5605045",
+   "self_s": "1.309",
+   "cum_s": "5.699",
+   "symbol": "{built-in"
+  },
+  {
+   "calls": "5600000",
+   "self_s": "2.915",
+   "cum_s": "4.927",
+   "symbol": "/Users/tfatharva/f1-in-race-prediction_main/raceintel/simulation/mc2/kernel.py:168(_drift_pure)"
+  },
+  {
+   "calls": "116637417",
+   "self_s": "4.651",
+   "cum_s": "4.651",
+   "symbol": "/Users/tfatharva/f1-in-race-prediction_main/raceintel/simulation/mc2/kernel.py:356(<genexpr>)"
+  },
+  {
+   "calls": "11200000",
+   "self_s": "4.384",
+   "cum_s": "4.384",
+   "symbol": "/Users/tfatharva/f1-in-race-prediction_main/raceintel/simulation/mc2/kernel.py:357(<genexpr>)"
+  },
+  {
+   "calls": "5600000",
+   "self_s": "2.243",
+   "cum_s": "2.981",
+   "symbol": "/Users/tfatharva/f1-in-race-prediction_main/raceintel/simulation/engine.py:449(expected_lap_time_s)"
+  },
+  {
+   "calls": "5600000",
+   "self_s": "1.751",
+   "cum_s": "1.751",
+   "symbol": "{built-in"
+  },
+  {
+   "calls": "5600000",
+   "self_s": "0.868",
+   "cum_s": "1.100",
+   "symbol": "/Users/tfatharva/f1-in-race-prediction_main/.venv/lib/python3.11/site-packages/numpy/lib/_type_check_impl.py:270(iscomplexobj)"
+  },
+  {
+   "calls": "16800003",
+   "self_s": "0.986",
+   "cum_s": "0.986",
+   "symbol": "{built-in"
+  },
+  {
+   "calls": "11200000",
+   "self_s": "0.738",
+   "cum_s": "0.738",
+   "symbol": "/Users/tfatharva/f1-in-race-prediction_main/raceintel/simulation/engine.py:441(_clamp_age)"
+  },
+  {
+   "calls": "16800023",
+   "self_s": "0.574",
+   "cum_s": "0.574",
+   "symbol": "{built-in"
+  },
+  {
+   "calls": "11220002",
+   "self_s": "0.430",
+   "cum_s": "0.430",
+   "symbol": "{built-in"
+  },
+  {
+   "calls": "11200064",
+   "self_s": "0.402",
+   "cum_s": "0.402",
+   "symbol": "{method"
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+  "config_identity": {
+    "arm": "E_AR1_RESIDUAL",
+    "kernel_identity": "mc2-r1-research+mc2-kernel-v1+mc2-rng-v1+state:mc2-field-v1+presence:v3.2c-presence-v1",
+    "master_seed": 20240101,
+    "mc2_domain": "mc2-ar1",
+    "rho": 0.264,
+    "simulation_count_production": 5000
+  },
+  "description": "P0 frozen baseline for the post-V3.8 MC2 performance programme. V3.8 is immutable; this file records the workload, the authoritative Tier-1 reconciliation, and clean (unprofiled) timing evidence. No optimization implemented.",
+  "machine": {
+    "cores_logical": 10,
+    "cores_perf": 4,
+    "note": "fanless Apple Silicon class; sustained/thermal behavior matters for P1 benchmarking",
+    "numpy": "2.4.2",
+    "python": "3.11 (GIL present)"
+  },
+  "motivation_workload_v38d": {
+    "checkpoint_sum_s": 5425.2,
+    "frozen_total_s": 5446.5,
+    "prep_plus_overhead_s": 21.3,
+    "runs_timed": 280,
+    "seconds_per_run": 19.38,
+    "simulation_count": 5000
+  },
+  "p0_clean_timing": {
+    "note": "unprofiled wall time, same ordinary state (2022-r03-R frame 39, 20 drivers); linear fit slope ~0.0061 s/future, intercept ~0.006 s (setup negligible)",
+    "production_states_5000": [
+      {"label": "ordinary_early", "rss_mb": 152.2, "valid": 5000, "wall_s": 30.519},
+      {"label": "complex_late", "rss_mb": 168.4, "valid": 5000, "wall_s": 26.493},
+      {"label": "mid_late", "rss_mb": 191.0, "valid": 5000, "wall_s": 27.763}
+    ],
+    "scale_same_state": [
+      {"rss_mb": 148.2, "sims": 100, "valid": 100, "wall_s": 0.616},
+      {"rss_mb": 148.6, "sims": 500, "valid": 500, "wall_s": 3.077},
+      {"rss_mb": 149.2, "sims": 1000, "valid": 1000, "wall_s": 6.116},
+      {"rss_mb": 150.5, "sims": 2500, "valid": 2500, "wall_s": 15.309},
+      {"rss_mb": 152.2, "sims": 5000, "valid": 5000, "wall_s": 30.519}
+    ]
+  },
+  "prep_cost_s_per_state": 0.07,
+  "schema": "mc2-perf-p0-baseline-v1",
+  "tier1_reconciliation": {
+    "collected": 5002,
+    "deselected_items": 1048,
+    "errors": 0,
+    "explanation": "1043 corpus-manifest nodes deselect 1048 collected items because one bare node id (test_v2_phase6_r71.py::test_accepted_state_matches_pre_fix_result_identity) covers 6 parametrizations (+5). 5002-1048=3954 run = 3950 passed + 4 xfailed.",
+    "failed": 0,
+    "log": "authoritative Tier-1 rerun /tmp/v38h_tier1b.log",
+    "manifest_nodes": 1043,
+    "passed": 3950,
+    "runtime_s": 3284.35,
+    "skipped": 0,
+    "xfailed": 4,
+    "xpassed": 0
+  },
+  "v38_baseline": {
+    "commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+    "tag": "v3.8-model-simulation-consensus"
+  }
+}

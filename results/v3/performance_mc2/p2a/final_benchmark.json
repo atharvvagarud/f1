@@ -1,0 +1,18 @@
+{
+  "config": {"arm": "E_AR1_RESIDUAL", "master_seed": 20240101, "rho": 0.264, "simulation_count": 5000},
+  "corpus": "same 3 states as baseline_benchmark.json",
+  "description": "P2A post-optimization measurements: same environment/corpus/states; 2 reps each plus one extra ordinary rep during parity.",
+  "median_speedup_vs_baseline": {"complex_late": 1.806, "mid_late": 1.797, "ordinary_early": 1.833, "total": 1.813},
+  "median_wall_s": {"complex_late": 14.945, "mid_late": 15.465, "ordinary_early": 17.14, "total": 47.55},
+  "reps": [
+    {"label": "ordinary_early", "rep": 1, "valid": 5000, "wall_s": 17.33},
+    {"label": "ordinary_early", "rep": 2, "valid": 5000, "wall_s": 17.12},
+    {"label": "ordinary_early", "rep": 3, "valid": 5000, "wall_s": 17.15},
+    {"label": "complex_late", "rep": 1, "valid": 5000, "wall_s": 15.03},
+    {"label": "complex_late", "rep": 2, "valid": 5000, "wall_s": 14.86},
+    {"label": "mid_late", "rep": 1, "valid": 5000, "wall_s": 15.59},
+    {"label": "mid_late", "rep": 2, "valid": 5000, "wall_s": 15.34}
+  ],
+  "schema": "mc2-perf-p2a-final-v1",
+  "total_speedup": 1.813
+}

@@ -1,0 +1,15 @@
+{
+ "description": "Pre-P3-1 module vs binding tree at small sim counts (binding identical by construction; reverted tree identical by diff).",
+ "full_output": "EXACT",
+ "rng_stream_identity": true,
+ "schema": "mc2-perf-p3-1-live-parity-v1",
+ "sim_counts": [
+  10,
+  60
+ ],
+ "states": [
+  "2022-r03-R|39",
+  "2023-r21-R|40",
+  "2024-r15-R|440"
+ ]
+}

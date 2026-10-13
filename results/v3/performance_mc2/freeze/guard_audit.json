@@ -1,0 +1,36 @@
+{
+ "carve_out_paths": [
+  "docs/MC2_PERFORMANCE_",
+  "raceintel/simulation/mc2/kernel.py",
+  "raceintel/simulation/mc2/residuals.py",
+  "raceintel/simulation/mc2_batch.py",
+  "results/v3/performance_mc2/",
+  "scripts/mc2_batch_benchmark.py",
+  "scripts/run_ci_tests.py",
+  "tests/test_mc2_batch_p1.py",
+  "tests/test_mc2_p2a.py",
+  "tests/test_mc2_p2b.py",
+  "tests/test_mc2_p3_1.py",
+  "tests/test_perf_mc2_freeze.py",
+  "tests/test_perf_mc2_p0.py"
+ ],
+ "freeze_additions": {
+  "scripts/run_ci_tests.py comment": "accounting-only comment fix (P2A/P2B lines); pin value unchanged until freeze-test reclassification",
+  "tests/test_perf_mc2_freeze.py": "new focused freeze checks (manifest/parity/card/PF pathology); allowlisted narrowly in V3.8-era guards"
+ },
+ "guard_files_touched": [
+  "tests/test_v3_6a_contract.py",
+  "tests/test_v3_6b_contracts.py",
+  "tests/test_v3_6d_evaluation.py",
+  "tests/test_v3_7a_contract.py",
+  "tests/test_v3_8a_consensus_contract.py",
+  "tests/test_v3_8b_source_adapters.py",
+  "tests/test_v3_8c_consensus_metrics.py",
+  "tests/test_v3_8d_correction_01.py",
+  "tests/test_v3_8d_evaluation.py",
+  "tests/test_v3_8h_freeze.py"
+ ],
+ "narrowness": "exact file paths or programme-prefixes only (results/v3/performance_mc2/, docs/MC2_PERFORMANCE_); no broad globs; frozen science paths remain protected; parity-gated (P0-P20/P1-P3/P2A-P29/P2B-P1..30/P3-1-P1..30), not guard-weakened",
+ "schema": "mc2-perf-freeze-guard-v1",
+ "weakening_beyond_necessary": false
+}

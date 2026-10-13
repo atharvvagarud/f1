@@ -1,0 +1,19 @@
+{
+  "config": {"arm": "E_AR1_RESIDUAL", "master_seed": 20240101, "rho": 0.264, "simulation_count": 5000},
+  "corpus": [
+    {"frame_index": 39, "label": "ordinary_early", "race_id": "2022-r03-R"},
+    {"frame_index": 40, "label": "complex_late", "race_id": "2023-r21-R"},
+    {"frame_index": 440, "label": "mid_late", "race_id": "2024-r15-R"}
+  ],
+  "description": "P2A controlled pre-optimization baseline: same environment/states as post measurements; 2 reps, median reported. Do not substitute P0 cross-environment numbers.",
+  "median_wall_s": {"complex_late": 26.982, "mid_late": 27.8, "ordinary_early": 31.423, "total": 86.205},
+  "reps": [
+    {"label": "ordinary_early", "rep": 1, "valid": 5000, "wall_s": 31.302},
+    {"label": "complex_late", "rep": 1, "valid": 5000, "wall_s": 26.8},
+    {"label": "mid_late", "rep": 1, "valid": 5000, "wall_s": 27.863},
+    {"label": "ordinary_early", "rep": 2, "valid": 5000, "wall_s": 31.543},
+    {"label": "complex_late", "rep": 2, "valid": 5000, "wall_s": 27.163},
+    {"label": "mid_late", "rep": 2, "valid": 5000, "wall_s": 27.736}
+  ],
+  "schema": "mc2-perf-p2a-baseline-v1"
+}

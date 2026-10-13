@@ -1,0 +1,163 @@
+{
+ "config": {
+  "arm": "E_AR1_RESIDUAL",
+  "master_seed": 20240101,
+  "rho": 0.264,
+  "simulation_count": 5000
+ },
+ "corpus": [
+  {
+   "fold_through": 2021,
+   "frame_index": 39,
+   "label": "ordinary_early",
+   "race_id": "2022-r03-R"
+  },
+  {
+   "fold_through": 2021,
+   "frame_index": 40,
+   "label": "complex_late",
+   "race_id": "2023-r21-R"
+  },
+  {
+   "fold_through": 2023,
+   "frame_index": 440,
+   "label": "mid_late",
+   "race_id": "2024-r15-R"
+  }
+ ],
+ "description": "P2B post-optimization measurement: identical corpus/environment/reps after exact-order heap queue.",
+ "environment": {
+  "arch": "arm64",
+  "cpu": "Apple M4",
+  "host": "Atharvas-MacBook-Air-2.local",
+  "numpy": "2.4.2",
+  "os": "macOS-27.0-arm64-arm-64bit",
+  "python": "3.11.15"
+ },
+ "median": {
+  "complex_late": {
+   "run_s": 7.38392233394552,
+   "wall_s": 7.46129975002259
+  },
+  "mid_late": {
+   "run_s": 7.506620291969739,
+   "wall_s": 7.603178124991246
+  },
+  "ordinary_early": {
+   "run_s": 8.322649292065762,
+   "wall_s": 8.64520637493115
+  }
+ },
+ "mode": "post",
+ "reps": [
+  {
+   "hashes": {
+    "expected_finish": "ddc1abefe0a1781e493a3129037e27c39967b6918fd2abfb5a8310997d3fbb8a",
+    "podium_frequency": "7c9d6cb10b440bccc745f684a6f7664fe0ff649fda2d2b697ed14c3e3f2eceb5",
+    "position_counts": "095259a7dd621a06e6b8aec0acc65be8267b44be3c2c4ff99de956cedade9373",
+    "position_distribution": "7e757459939c6eaf3c7077d69e68b99b23dc30c150ecd2725c56650fd0ff3624",
+    "sample_order": "ec603463f68ff4530949d84cc127061dbadcbf0ad9db62ec3d84fc250ff026cf",
+    "winner_counts": "069da96e2ca17c9b44618523de2a7713778551b1112f4f59de72bced8f9ab9d5",
+    "winner_frequency": "89af4dbe46a625484fea78502e1bff3c751e0447d31c61893156a30355c96424"
+   },
+   "invalid": 0,
+   "label": "ordinary_early",
+   "prep_s": 0.3505123750073835,
+   "rep": 1,
+   "run_s": 8.289807209046558,
+   "valid": 5000,
+   "wall_s": 8.64520637493115
+  },
+  {
+   "hashes": {
+    "expected_finish": "e1ee46b7b2c2666b77f62bf6cd9c2a7b77a8162a8262714d61a83da4eb3424ed",
+    "podium_frequency": "83888c6e0c1f20a7df13a61311813fc20ca72575437f671c33fac422c04679ff",
+    "position_counts": "d566997cc3978424cc886246b579f2a3b60c89ea17e7f24665b9ed9ba3017ba2",
+    "position_distribution": "805c7638d720ddd38fb8dbbf9bdde61f134986231e08c60d9ca2216de7aad1d2",
+    "sample_order": "e2ab10b86fb60cace9ee3feda496d23e14f190cf144db33834e9660ab36da1f8",
+    "winner_counts": "2603ff06cac731160ee78cd69bf35f91d2d0b0a5769168884f4472619403971a",
+    "winner_frequency": "fa1d98b862867bb6643c00ef8f72b319b5d8a985768f78ab077077569d00674b"
+   },
+   "invalid": 0,
+   "label": "complex_late",
+   "prep_s": 0.07733229105360806,
+   "rep": 1,
+   "run_s": 7.38392233394552,
+   "valid": 5000,
+   "wall_s": 7.46129975002259
+  },
+  {
+   "hashes": {
+    "expected_finish": "93fc8e7fbe5a79be7784bdc7f99b76fc8fd28473a7b9bc4030f77479531036bc",
+    "podium_frequency": "a759c557c446d39c38c9bda251812a163ae4c22edfa5293ea535effa29602546",
+    "position_counts": "8e0da6f13cbd27b26718470a50d88f29ee200f4730d2256b515bafbe9fb4dfc3",
+    "position_distribution": "d8c67e7cde3a3c443076ac295ea50e2240bd92c5f55df4ed87f429548842f67b",
+    "sample_order": "97b6df26efd56d1cf55248c5859eac1a356ca71217ccd6dd5830fb46e542de15",
+    "winner_counts": "42e6c8e6e37552e9719f1e9cba4a8e516ea617ad527e10b2756b0b2fd50e65f7",
+    "winner_frequency": "279d1309dc0f2cd122f125c9fda000d196e7deddbd86e7b3df166b8cd81ebcc3"
+   },
+   "invalid": 0,
+   "label": "mid_late",
+   "prep_s": 0.0964835420018062,
+   "rep": 1,
+   "run_s": 7.506620291969739,
+   "valid": 5000,
+   "wall_s": 7.603178124991246
+  },
+  {
+   "hashes": {
+    "expected_finish": "ddc1abefe0a1781e493a3129037e27c39967b6918fd2abfb5a8310997d3fbb8a",
+    "podium_frequency": "7c9d6cb10b440bccc745f684a6f7664fe0ff649fda2d2b697ed14c3e3f2eceb5",
+    "position_counts": "095259a7dd621a06e6b8aec0acc65be8267b44be3c2c4ff99de956cedade9373",
+    "position_distribution": "7e757459939c6eaf3c7077d69e68b99b23dc30c150ecd2725c56650fd0ff3624",
+    "sample_order": "ec603463f68ff4530949d84cc127061dbadcbf0ad9db62ec3d84fc250ff026cf",
+    "winner_counts": "069da96e2ca17c9b44618523de2a7713778551b1112f4f59de72bced8f9ab9d5",
+    "winner_frequency": "89af4dbe46a625484fea78502e1bff3c751e0447d31c61893156a30355c96424"
+   },
+   "invalid": 0,
+   "label": "ordinary_early",
+   "prep_s": 0.054145458037965,
+   "rep": 2,
+   "run_s": 8.322649292065762,
+   "valid": 5000,
+   "wall_s": 8.376851874985732
+  },
+  {
+   "hashes": {
+    "expected_finish": "e1ee46b7b2c2666b77f62bf6cd9c2a7b77a8162a8262714d61a83da4eb3424ed",
+    "podium_frequency": "83888c6e0c1f20a7df13a61311813fc20ca72575437f671c33fac422c04679ff",
+    "position_counts": "d566997cc3978424cc886246b579f2a3b60c89ea17e7f24665b9ed9ba3017ba2",
+    "position_distribution": "805c7638d720ddd38fb8dbbf9bdde61f134986231e08c60d9ca2216de7aad1d2",
+    "sample_order": "e2ab10b86fb60cace9ee3feda496d23e14f190cf144db33834e9660ab36da1f8",
+    "winner_counts": "2603ff06cac731160ee78cd69bf35f91d2d0b0a5769168884f4472619403971a",
+    "winner_frequency": "fa1d98b862867bb6643c00ef8f72b319b5d8a985768f78ab077077569d00674b"
+   },
+   "invalid": 0,
+   "label": "complex_late",
+   "prep_s": 0.05398845893796533,
+   "rep": 2,
+   "run_s": 7.109120666980743,
+   "valid": 5000,
+   "wall_s": 7.16314708290156
+  },
+  {
+   "hashes": {
+    "expected_finish": "93fc8e7fbe5a79be7784bdc7f99b76fc8fd28473a7b9bc4030f77479531036bc",
+    "podium_frequency": "a759c557c446d39c38c9bda251812a163ae4c22edfa5293ea535effa29602546",
+    "position_counts": "8e0da6f13cbd27b26718470a50d88f29ee200f4730d2256b515bafbe9fb4dfc3",
+    "position_distribution": "d8c67e7cde3a3c443076ac295ea50e2240bd92c5f55df4ed87f429548842f67b",
+    "sample_order": "97b6df26efd56d1cf55248c5859eac1a356ca71217ccd6dd5830fb46e542de15",
+    "winner_counts": "42e6c8e6e37552e9719f1e9cba4a8e516ea617ad527e10b2756b0b2fd50e65f7",
+    "winner_frequency": "279d1309dc0f2cd122f125c9fda000d196e7deddbd86e7b3df166b8cd81ebcc3"
+   },
+   "invalid": 0,
+   "label": "mid_late",
+   "prep_s": 0.05981491704005748,
+   "rep": 2,
+   "run_s": 7.4280510829994455,
+   "valid": 5000,
+   "wall_s": 7.487907583010383
+  }
+ ],
+ "schema": "mc2-perf-p2b-bench-v1"
+}
