@@ -1,0 +1,28 @@
+{
+ "alignment": {
+  "identity": "(state_id, driver_id) + race_id/frame/stage/temporal boundary",
+  "missing": "MISSING / UNSUPPORTED, not zero",
+  "prohibited": [
+   "zero filling",
+   "silent dropping",
+   "nearest-state substitution",
+   "cross-lap alignment",
+   "driver remapping by position",
+   "future-state borrowing"
+  ]
+ },
+ "evaluation_labels": "offline evaluation artifacts ONLY, explicitly labeled",
+ "policy_2025": "REVEALED_HOLDOUT / NON_PRISTINE for research; PRODUCT-EXCLUDED / UNSUPPORTED where frozen contracts require (PRODUCT_EXCLUDED_SEASONS={2025}); V3.9 must not expose 2025",
+ "prohibited_future_inputs": [
+  "laps",
+  "results",
+  "tyre degradation",
+  "retirements",
+  "race-control events",
+  "weather",
+  "telemetry",
+  "outcomes"
+ ],
+ "runtime_rule": "uncertainty evidence at state T uses ONLY information available at or before T (outcome-blind)",
+ "schema": "v3.9a-temporal-v1"
+}

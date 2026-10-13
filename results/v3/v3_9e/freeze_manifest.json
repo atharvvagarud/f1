@@ -1,0 +1,50 @@
+{
+ "commit_scope": "accumulated V3.9A/B/C/D/E programme: contract, measurement, runtime bundle/API, product UI, freeze validation",
+ "freeze_commit_message": "feat(uncertainty): freeze v3.9 uncertainty intelligence",
+ "freeze_tag": "v3.9-uncertainty-intelligence",
+ "frozen_parents": {
+  "mc2_performance_commit": "32466c436845ee02c3af79ce08d1c102b9d91384",
+  "mc2_performance_tag": "v3.8-mc2-performance",
+  "v38_commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+  "v38_tag": "v3.8-model-simulation-consensus"
+ },
+ "guard_reconciliation": "results/v3/v3_9e/guard_reconciliation.json (23 exact stage-owned admissions; invariants intact)",
+ "manifest_identity": "ae5562c65aa0bc1d6d8b059abe8c0ff968254cdbe2060530f30b5c57a294886b",
+ "owned_paths": {
+  "freeze": [
+   "results/v3/v3_9e/",
+   "docs/V3_9_UNCERTAINTY_INTELLIGENCE_FINAL.md",
+   "tests/test_v3_9e_freeze.py"
+  ],
+  "v39a": [
+   "results/v3/v3_9a/",
+   "docs/V3_9A_UNCERTAINTY_INTELLIGENCE_CONTRACT.md",
+   "tests/test_v3_9a_contract.py"
+  ],
+  "v39b": [
+   "results/v3/v3_9b/",
+   "docs/V3_9B_UNCERTAINTY_EVIDENCE_MEASUREMENT.md",
+   "tests/test_v3_9b_measurement.py"
+  ],
+  "v39c": [
+   "results/v3/v3_9c/",
+   "docs/V3_9C_RUNTIME_UNCERTAINTY_BUNDLE.md",
+   "tests/test_v3_9c_bundle.py",
+   "raceintel/uncertainty/",
+   "api/v2_uncertainty_routes.py",
+   "api/v2_uncertainty_schemas.py",
+   "api/v2_uncertainty_service.py",
+   "api/main.py (2-line router registration)"
+  ],
+  "v39d": [
+   "frontend/app/uncertainty/",
+   "frontend/features/uncertainty/",
+   "docs/V3_9D_UNCERTAINTY_PRODUCT_UI.md",
+   "results/v3/v3_9d/",
+   "frontend/components/shell/CommandBar.tsx (1-line nav entry)"
+  ]
+ },
+ "programme_manifest": "results/v3/v3_9e/programme_manifest.json",
+ "push_status": "not pushed",
+ "schema": "v3.9e-freeze-manifest-v1"
+}

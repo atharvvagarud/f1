@@ -1,0 +1,51 @@
+{
+ "note": "AUDIT ONLY; nothing perturbed in V3.9A",
+ "parameters": {
+  "anchor_offset_s": {
+   "location": "DriverMechanism (per-state computed from <=T history)",
+   "rationale": "state-derived, not a global parameter; perturbing breaks causal meaning",
+   "status": "UNSUPPORTED_FOR_SENSITIVITY"
+  },
+  "dynamics_primary_decay": {
+   "location": "mc2/dynamics.py",
+   "rationale": "fixed constant with admitted candidates; no fitted uncertainty",
+   "status": "SCIENTIFICALLY_FIXED"
+  },
+  "innovation_scale": {
+   "rationale": "sqrt(1-rho^2) follows rho; not independent",
+   "status": "DERIVED_FROM_RHO"
+  },
+  "master_seed_simulation_count_arm": {
+   "rationale": "scientific identity (5000/E_AR1_RESIDUAL/20240101)",
+   "status": "SCIENTIFICALLY_FIXED"
+  },
+  "regime_std_s": {
+   "fitted_or_fixed": "empirical",
+   "location": "mc2/kernel.py + variance.py select_variance()",
+   "meaning": "era/global empirical residual std with sample counts",
+   "provenance": "empirical (std, sample_count) per regime",
+   "rationale": "standard error of the std estimate is derivable from frozen (std, n)",
+   "status": "ELIGIBLE_FOR_SENSITIVITY_RESEARCH"
+  },
+  "rho_ar1": {
+   "fitted_or_fixed": "fitted-reference",
+   "location": "raceintel/simulation/mc2/residuals.py",
+   "meaning": "AR(1) autocorrelation of driver residuals",
+   "provenance": "reference 0.264 (V3.2A measurement); re-estimated per fold; stability bound |rho|<=0.8",
+   "rationale": "executable range must be compiled from frozen per-fold estimates, not invented",
+   "status": "NEEDS_PROVENANCE"
+  },
+  "slope_l3_slope_l10": {
+   "location": "DriverMechanism (per-state computed)",
+   "rationale": "state-derived quantities, not perturbable parameters",
+   "status": "UNSUPPORTED_FOR_SENSITIVITY"
+  }
+ },
+ "range_rule": "range ONLY from fitted uncertainty / empirical distribution / documented calibration / justified domain source / frozen evidence; arbitrary \u00b1%, aesthetic, visibility-seeking, or future-informed ranges PROHIBITED",
+ "rng_policy_crn": {
+  "limitation_reporting": "if a parameter change alters topology so CRN correspondence is invalid, the future experiment must explicitly report it",
+  "rule": "compare configurations under COMMON RANDOM NUMBERS (same root seed, sim_id, stream family, future identity) so draw noise does not masquerade as sensitivity",
+  "status": "POLICY_ENCODED_EXPERIMENT_DEFERRED"
+ },
+ "schema": "v3.9a-sensitivity-audit-v1"
+}

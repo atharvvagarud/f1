@@ -1,0 +1,21 @@
+{
+ "excluded_from_primary": [
+  "V3.3 XGBoost",
+  "V3.4 ensemble",
+  "V3.5 outcome marginals"
+ ],
+ "fetch_per_request": {
+  "cached_repeat": 0,
+  "model": 1,
+  "simulation": 1
+ },
+ "metric_implementation": "raceintel.consensus.metrics (imported unmodified)",
+ "model_provider": "api.v2_consensus_service.FixtureProvider arm=model (reused)",
+ "new_implementations": 0,
+ "primary_sources": [
+  "V3_1B_LOGISTIC",
+  "MC2_E"
+ ],
+ "schema": "v3.9c-reuse-v1",
+ "simulation_provider": "api.v2_consensus_service.FixtureProvider arm=simulation (reused)"
+}

@@ -339,6 +339,13 @@ def test_no_serving_api_frontend_change():
                          "frontend/features/counterfactuals",
                          "frontend/app/consensus",
                          "frontend/features/consensus",
-                         "frontend/components/shell/CommandBar.tsx")):
+                         "frontend/components/shell/CommandBar.tsx",
+                         # V3.9C carve-out: uncertainty bundle API (additive).
+                         "api/v2_uncertainty_",
+                         # V3.9D carve-out (product UI stage only:
+                         # /uncertainty route + uncertainty feature
+                         # modules; no science change).
+                         "frontend/app/uncertainty/",
+                         "frontend/features/uncertainty/")):
             continue
         assert not p.startswith(("api/", "frontend/", "raceintel/model_lab/serving")), line

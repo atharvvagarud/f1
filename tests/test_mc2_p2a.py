@@ -345,6 +345,23 @@ def _p2a_counts():
         "tests/test_v3_6b_contracts.py",
         "tests/test_v3_6d_evaluation.py",
         "tests/test_v3_7a_contract.py",
+        # V3.9A carve-out: freeze pin/pathology reconciliation + this
+        # file's own carve-out admission (no science change).
+        "tests/test_perf_mc2_freeze.py",
+        "tests/test_perf_mc2_p0.py",
+        "tests/test_mc2_p2a.py",
+        # V3.9C carve-out: uncertainty router registration.
+        "api/main.py",
+        # V3.9D carve-out: uncertainty nav entry (one line, presentation
+        # only; V3.8H-allowlisted wiring file).
+        "frontend/components/shell/CommandBar.tsx",
+        # V3.9E carve-out: freeze-owned guard reconciliations admitting
+        # exact V3.9 paths (no science change).
+        "tests/test_v3_5a_contract.py",
+        "tests/test_v3_5b_dataset.py",
+        "tests/test_v3_5c_harness.py",
+        "tests/test_v3_5d_screening.py",
+        "tests/test_v3_6f_runtime.py",
     }
     counts["P2A-P29"] = sum(1 for f in diff if f not in allowed_tracked)
     counts["P2A-P30"] = sum(

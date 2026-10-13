@@ -1,0 +1,15 @@
+{
+ "between_era_spread_is": "heterogeneity across eras/data windows, NOT parameter uncertainty",
+ "bootstrap_frozen": false,
+ "ci_frozen": false,
+ "code": "raceintel/simulation/estimator.py (_build_residual, _distribution_entry)",
+ "estimator": "population SD (ddof=0) of median-centered finite residuals per era/global (_distribution_entry); sample_count=n frozen",
+ "estimator_se_frozen": false,
+ "frozen_values": "results/v3/v3_2e/parameter_stability.json variance_std (std, n, support per era/through-season)",
+ "normal_theory_invalid_reason": "repo's own AR(1) model (rho>0) contradicts the i.i.d. assumption behind std/sqrt(2n)",
+ "normal_theory_se_valid": false,
+ "recalculation_is": "refitting on (possibly other) data; not a frozen range source",
+ "schema": "v3.9b-regime-std-v1",
+ "status": "PROVENANCE_INSUFFICIENT",
+ "support_field_is": "observed residual data range in seconds, NOT a parameter range; misuse prohibited"
+}

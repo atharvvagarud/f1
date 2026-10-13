@@ -1,0 +1,38 @@
+{
+ "boundary": {
+  "k_eq_0_valid_zeros": 187,
+  "k_eq_n": 0,
+  "missing": 0
+ },
+ "classification": "U2_MEASURED",
+ "interpretation": "finite Monte Carlo sampling precision ONLY",
+ "n": 5000,
+ "n_below_5000": 0,
+ "schema": "v3.9b-u2-summary-v1",
+ "se": {
+  "count": 277.0,
+  "max": 0.007071,
+  "mean": 0.000811,
+  "median": 0.0,
+  "min": 0.0,
+  "p10": 0.0,
+  "p25": 0.0,
+  "p75": 0.00049,
+  "p90": 0.00355,
+  "stdev": 0.001732
+ },
+ "states": 277,
+ "typical_precision": "mean Wilson width ~0.0037; max SE 0.0071 at p=0.5",
+ "wilson_width": {
+  "count": 277.0,
+  "max": 0.027707,
+  "mean": 0.003724,
+  "median": 0.000768,
+  "min": 0.000768,
+  "p10": 0.000768,
+  "p25": 0.000768,
+  "p75": 0.002066,
+  "p90": 0.013928,
+  "stdev": 0.006544
+ }
+}

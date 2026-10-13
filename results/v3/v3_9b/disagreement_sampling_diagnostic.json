@@ -1,0 +1,22 @@
+{
+ "abs_gap_over_se": {
+  "count": 90.0,
+  "max": 398.806386,
+  "mean": 34.49213,
+  "median": 12.396453,
+  "min": 0.152548,
+  "p10": 1.279701,
+  "p25": 2.825127,
+  "p75": 29.55283,
+  "p90": 61.142585,
+  "stdev": 72.546684
+ },
+ "infinite_ratio_se_eq_0_count": 187,
+ "inside_interval_count": 147,
+ "label": "DESCRIPTIVE_DIAGNOSTIC_ONLY",
+ "no_source_winner": true,
+ "not_a_hypothesis_test": true,
+ "outside_interval_count": 130,
+ "reading": "large disagreement + narrow sampling interval means the disagreement is unlikely to be explained merely by finite MC sampling noise; it does NOT identify which source is correct",
+ "schema": "v3.9b-diagnostic-v1"
+}

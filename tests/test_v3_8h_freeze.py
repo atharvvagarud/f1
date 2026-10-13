@@ -76,6 +76,34 @@ FINAL_ALLOW = (
     "tests/test_mc2_p3_1.py",
     # Freeze carve-out: focused freeze validation tests
     "tests/test_perf_mc2_freeze.py",
+    # V3.9A carve-out (contract stage only, no science/runtime change).
+    "results/v3/v3_9a/",
+    "docs/V3_9A",
+    "tests/test_v3_9a_contract.py",
+    # V3.9B carve-out (offline measurement stage, no science/runtime change).
+    "results/v3/v3_9b/",
+    "docs/V3_9B",
+    "tests/test_v3_9b_measurement.py",
+    # V3.9C carve-out (runtime bundle stage,
+    # thin product layer only: bundle + API).
+    "results/v3/v3_9c/",
+    "docs/V3_9C",
+    "tests/test_v3_9c_bundle.py",
+    "raceintel/uncertainty/",
+    "api/v2_uncertainty_",
+    # V3.9D carve-out (product UI stage only: /uncertainty route,
+    # uncertainty feature modules, stage docs/artifacts; no science,
+    # runtime, or API change).
+    "results/v3/v3_9d/",
+    "docs/V3_9D",
+    "frontend/app/uncertainty/",
+    "frontend/features/uncertainty/",
+    # V3.9E carve-out (freeze stage only: programme manifest, parity
+    # records, final audits, freeze test + final doc; no science or
+    # runtime change).
+    "results/v3/v3_9e/",
+    "docs/V3_9_UNCERTAINTY_INTELLIGENCE_FINAL.md",
+    "tests/test_v3_9e_freeze.py",
 )
 
 # Tracked files H is permitted to show as modified pre-commit.
@@ -88,6 +116,12 @@ TRACKED_ALLOW = {
     "tests/test_v3_8d_evaluation.py",
     "scripts/run_ci_tests.py",
     "scripts/run_ci_frontend_tests.py",
+    # V3.9A carve-out: freeze pin/pathology reconciliation (no science).
+    "tests/test_perf_mc2_freeze.py",
+    "tests/test_perf_mc2_p0.py",
+    "tests/test_mc2_p2a.py",
+    # V3.9C carve-out: uncertainty router registration (2 lines, additive).
+    "api/main.py",
     # V3.8H Tier-1-driven historical-guard reconciliations (exact files).
     "tests/test_v3_5a_contract.py",
     "tests/test_v3_5b_dataset.py",
@@ -596,7 +630,13 @@ def test_worktree_contains_only_owned_v38_paths():
                 "tests/test_v3_6a_contract.py",
                 "tests/test_v3_6b_contracts.py",
                 "tests/test_v3_6d_evaluation.py",
-                "tests/test_v3_7a_contract.py"}
+                "tests/test_v3_7a_contract.py",
+                # V3.9A carve-out: freeze pin/pathology reconciliation.
+                "tests/test_perf_mc2_freeze.py",
+                "tests/test_perf_mc2_p0.py",
+                "tests/test_mc2_p2a.py",
+                # V3.9C carve-out: uncertainty router registration.
+                "api/main.py"}
     p2a_ok = _load(
         ROOT / "results" / "v3" / "performance_mc2" / "p2a"
         / "parity_results.json")["overall"] == "EXACT" \

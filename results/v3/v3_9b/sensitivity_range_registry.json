@@ -1,0 +1,34 @@
+{
+ "entries": {
+  "anchor_offset_s_slope_l3_slope_l10": {
+   "lower": null,
+   "reason": "V3.9A: state-derived, not parameters",
+   "status": "UNSUPPORTED_FOR_SENSITIVITY",
+   "upper": null
+  },
+  "dynamics_primary_decay_seed_count_arm": {
+   "lower": null,
+   "reason": "V3.9A: fixed identity constants",
+   "status": "SCIENTIFICALLY_FIXED",
+   "upper": null
+  },
+  "regime_std_s": {
+   "allowed_future_use": "none until a justified construction is registered",
+   "central": "per-era frozen std",
+   "lower": null,
+   "reason": "no frozen estimator uncertainty; normal-theory SE invalid; era spread is heterogeneity",
+   "status": "PROVENANCE_INSUFFICIENT",
+   "upper": null
+  },
+  "rho": {
+   "allowed_future_use": "none until a justified construction is registered",
+   "central": 0.264,
+   "lower": null,
+   "reason": "deployed value is a fixed reference, not an estimate; no CI/SE; fold diagnostics are not a range",
+   "status": "PROVENANCE_INSUFFICIENT",
+   "upper": null
+  }
+ },
+ "executable_ranges": 0,
+ "schema": "v3.9b-range-registry-v1"
+}

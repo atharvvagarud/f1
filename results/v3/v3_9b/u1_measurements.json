@@ -1,0 +1,394 @@
+{
+ "by_season": {
+  "2022": {
+   "abs_gap": {
+    "count": 61.0,
+    "max": 0.808789,
+    "mean": 0.04927,
+    "median": 0.001727,
+    "min": 4e-06,
+    "p10": 0.000254,
+    "p25": 0.000498,
+    "p75": 0.03476,
+    "p90": 0.116385,
+    "stdev": 0.131432
+   },
+   "n": 61
+  },
+  "2023": {
+   "abs_gap": {
+    "count": 98.0,
+    "max": 0.766173,
+    "mean": 0.039324,
+    "median": 0.001267,
+    "min": 0.0,
+    "p10": 8e-06,
+    "p25": 0.000141,
+    "p75": 0.008074,
+    "p90": 0.075019,
+    "stdev": 0.126406
+   },
+   "n": 98
+  },
+  "2024": {
+   "abs_gap": {
+    "count": 118.0,
+    "max": 0.476842,
+    "mean": 0.016483,
+    "median": 0.000207,
+    "min": 1e-06,
+    "p10": 9e-06,
+    "p25": 5.3e-05,
+    "p75": 0.003839,
+    "p90": 0.042655,
+    "stdev": 0.058511
+   },
+   "n": 118
+  }
+ },
+ "by_stage": {
+  "EARLY": {
+   "abs_gap": {
+    "count": 141.0,
+    "max": 0.808789,
+    "mean": 0.048154,
+    "median": 0.001452,
+    "min": 0.0,
+    "p10": 2.8e-05,
+    "p25": 0.000211,
+    "p75": 0.016247,
+    "p90": 0.108408,
+    "stdev": 0.136778
+   },
+   "n": 141
+  },
+  "LATE": {
+   "abs_gap": {
+    "count": 56.0,
+    "max": 0.476842,
+    "mean": 0.01443,
+    "median": 0.000226,
+    "min": 0.0,
+    "p10": 1.1e-05,
+    "p25": 4.2e-05,
+    "p75": 0.002929,
+    "p90": 0.037642,
+    "stdev": 0.064088
+   },
+   "n": 56
+  },
+  "MID": {
+   "abs_gap": {
+    "count": 80.0,
+    "max": 0.214579,
+    "mean": 0.015079,
+    "median": 0.000444,
+    "min": 0.0,
+    "p10": 8e-06,
+    "p25": 0.000103,
+    "p75": 0.004236,
+    "p90": 0.039975,
+    "stdev": 0.040404
+   },
+   "n": 80
+  }
+ },
+ "evidence": {
+  "n_per_state": 5000,
+  "outcome_labels_used": false,
+  "race_laps": 15,
+  "races": 8,
+  "rows": 277,
+  "seasons": [
+   2022,
+   2023,
+   2024
+  ]
+ },
+ "magnitudes": {
+  "absolute_gap": {
+   "count": 277.0,
+   "max": 0.808789,
+   "mean": 0.031784,
+   "median": 0.000745,
+   "min": 0.0,
+   "p10": 1.4e-05,
+   "p25": 0.000121,
+   "p75": 0.007132,
+   "p90": 0.068882,
+   "stdev": 0.105369
+  },
+  "signed_gap": {
+   "count": 277.0,
+   "max": 0.808789,
+   "mean": -0.000419,
+   "median": -0.000239,
+   "min": -0.766173,
+   "p10": -0.026447,
+   "p25": -0.001739,
+   "p75": -1.1e-05,
+   "p90": 0.009276,
+   "stdev": 0.110058
+  }
+ },
+ "metric_implementation": "v3.8c-consensus-metrics-v1",
+ "orientation": "signed_gap = simulation_minus_model",
+ "primary_pair": [
+  "V3_1B_LOGISTIC",
+  "MC2_E"
+ ],
+ "rank_leader_topk": {
+  "drivers_per_lap": [
+   20,
+   20,
+   20,
+   20,
+   20,
+   18,
+   20,
+   20,
+   20,
+   20,
+   20,
+   20,
+   20,
+   18
+  ],
+  "excluded_single_driver_lap": 1,
+  "leader_agreement_rate": 0.642857,
+  "leader_disagreement_count": 5,
+  "race_laps_measured": 14,
+  "spearman": {
+   "count": 14.0,
+   "max": 0.865179,
+   "mean": 0.636858,
+   "median": 0.67435,
+   "min": -0.13925,
+   "p10": 0.546119,
+   "p25": 0.59885,
+   "p75": 0.746219,
+   "p90": 0.8062,
+   "stdev": 0.232469
+  },
+  "top3_jaccard": {
+   "count": 14.0,
+   "max": 1.0,
+   "mean": 0.642857,
+   "median": 0.5,
+   "min": 0.5,
+   "p10": 0.5,
+   "p25": 0.5,
+   "p75": 1.0,
+   "p90": 1.0,
+   "stdev": 0.225877
+  }
+ },
+ "rank_rows": [
+  {
+   "lap": 2,
+   "leader_agree": false,
+   "leader_logistic": "hamilton",
+   "leader_mc2": "sainz",
+   "n_drivers": 20,
+   "race_id": "2022-r03-R",
+   "spearman": 0.667168,
+   "top3_jaccard": 0.5
+  },
+  {
+   "lap": 22,
+   "leader_agree": false,
+   "leader_logistic": "leclerc",
+   "leader_mc2": "max_verstappen",
+   "n_drivers": 20,
+   "race_id": "2022-r11-R",
+   "spearman": 0.67435,
+   "top3_jaccard": 0.5
+  },
+  {
+   "lap": 24,
+   "leader_agree": false,
+   "leader_logistic": "leclerc",
+   "leader_mc2": "max_verstappen",
+   "n_drivers": 20,
+   "race_id": "2022-r11-R",
+   "spearman": 0.67435,
+   "top3_jaccard": 0.5
+  },
+  {
+   "lap": 18,
+   "leader_agree": true,
+   "leader_logistic": "perez",
+   "leader_mc2": "perez",
+   "n_drivers": 20,
+   "race_id": "2023-r05-R",
+   "spearman": 0.8062,
+   "top3_jaccard": 1.0
+  },
+  {
+   "lap": 36,
+   "leader_agree": true,
+   "leader_logistic": "max_verstappen",
+   "leader_mc2": "max_verstappen",
+   "n_drivers": 20,
+   "race_id": "2023-r05-R",
+   "spearman": 0.699086,
+   "top3_jaccard": 1.0
+  },
+  {
+   "lap": 56,
+   "leader_agree": true,
+   "leader_logistic": "max_verstappen",
+   "leader_mc2": "max_verstappen",
+   "n_drivers": 18,
+   "race_id": "2023-r05-R",
+   "spearman": 0.546119,
+   "top3_jaccard": 1.0
+  },
+  {
+   "lap": 14,
+   "leader_agree": true,
+   "leader_logistic": "max_verstappen",
+   "leader_mc2": "max_verstappen",
+   "n_drivers": 20,
+   "race_id": "2023-r13-R",
+   "spearman": 0.569926,
+   "top3_jaccard": 0.5
+  },
+  {
+   "lap": 3,
+   "leader_agree": false,
+   "leader_logistic": "max_verstappen",
+   "leader_mc2": "norris",
+   "n_drivers": 20,
+   "race_id": "2023-r21-R",
+   "spearman": -0.13925,
+   "top3_jaccard": 0.5
+  },
+  {
+   "lap": 19,
+   "leader_agree": true,
+   "leader_logistic": "max_verstappen",
+   "leader_mc2": "max_verstappen",
+   "n_drivers": 20,
+   "race_id": "2024-r07-R",
+   "spearman": 0.865179,
+   "top3_jaccard": 0.5
+  },
+  {
+   "lap": 39,
+   "leader_agree": true,
+   "leader_logistic": "max_verstappen",
+   "leader_mc2": "max_verstappen",
+   "n_drivers": 20,
+   "race_id": "2024-r07-R",
+   "spearman": 0.746219,
+   "top3_jaccard": 0.5
+  },
+  {
+   "lap": 51,
+   "leader_agree": true,
+   "leader_logistic": "max_verstappen",
+   "leader_mc2": "max_verstappen",
+   "n_drivers": 20,
+   "race_id": "2024-r07-R",
+   "spearman": 0.660368,
+   "top3_jaccard": 1.0
+  },
+  {
+   "lap": 23,
+   "leader_agree": false,
+   "leader_logistic": "norris",
+   "leader_mc2": "max_verstappen",
+   "n_drivers": 20,
+   "race_id": "2024-r15-R",
+   "spearman": 0.744609,
+   "top3_jaccard": 0.5
+  },
+  {
+   "lap": 46,
+   "leader_agree": true,
+   "leader_logistic": "norris",
+   "leader_mc2": "norris",
+   "n_drivers": 20,
+   "race_id": "2024-r15-R",
+   "spearman": 0.802836,
+   "top3_jaccard": 0.5
+  },
+  {
+   "lap": 70,
+   "leader_agree": true,
+   "leader_logistic": "norris",
+   "leader_mc2": "norris",
+   "n_drivers": 18,
+   "race_id": "2024-r15-R",
+   "spearman": 0.59885,
+   "top3_jaccard": 0.5
+  }
+ ],
+ "schema": "v3.9b-u1-measurements-v1",
+ "temporal_within_race": {
+  "2022-r11-R": [
+   {
+    "lap": 22,
+    "mean_abs_gap": 0.020973,
+    "n": 20
+   },
+   {
+    "lap": 24,
+    "mean_abs_gap": 0.024615,
+    "n": 20
+   }
+  ],
+  "2023-r05-R": [
+   {
+    "lap": 18,
+    "mean_abs_gap": 0.026164,
+    "n": 20
+   },
+   {
+    "lap": 36,
+    "mean_abs_gap": 0.01045,
+    "n": 20
+   },
+   {
+    "lap": 56,
+    "mean_abs_gap": 0.005196,
+    "n": 18
+   }
+  ],
+  "2024-r07-R": [
+   {
+    "lap": 19,
+    "mean_abs_gap": 0.009991,
+    "n": 20
+   },
+   {
+    "lap": 39,
+    "mean_abs_gap": 0.010715,
+    "n": 20
+   },
+   {
+    "lap": 51,
+    "mean_abs_gap": 0.009278,
+    "n": 20
+   }
+  ],
+  "2024-r15-R": [
+   {
+    "lap": 23,
+    "mean_abs_gap": 0.026279,
+    "n": 20
+   },
+   {
+    "lap": 46,
+    "mean_abs_gap": 0.014536,
+    "n": 20
+   },
+   {
+    "lap": 70,
+    "mean_abs_gap": 0.029388,
+    "n": 18
+   }
+  ]
+ }
+}

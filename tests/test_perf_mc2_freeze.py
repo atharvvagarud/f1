@@ -152,7 +152,16 @@ def test_freeze_pathology_all_zero():
         ("performance_mc2" in ln or "MC2_PERFORMANCE" in ln
          or "mc2_batch" in ln or "mc2_p" in ln or "perf_mc2" in ln
          or "run_ci_tests" in ln or "test_v3_" in ln
-         or "mc2/kernel.py" in ln or "mc2/residuals.py" in ln)
+         or "mc2/kernel.py" in ln or "mc2/residuals.py" in ln
+         # V3.9A carve-out (contract stage only): v3_9a contract paths
+         or "v3_9a" in ln or "V3_9A" in ln
+         # V3.9B carve-out (offline measurement stage): v3_9b paths
+         or "v3_9b" in ln or "V3_9B" in ln
+         # V3.9C carve-out (runtime bundle stage): router registration
+         or "api/main.py" in ln
+         # V3.9D carve-out (product UI stage only): uncertainty nav entry
+         # (one line, presentation only; V3.8H-allowlisted wiring file)
+         or "frontend/components/shell/CommandBar.tsx" in ln)
         for ln in dirty_source) else 1
     counts["PF-P25"] = 0 if _load(FZ / "guard_audit.json")["weakening_beyond_necessary"] is False else 1
     counts["PF-P26"] = 0  # collection guard intact (pin 5067+N reconciled; see pin test)
@@ -173,11 +182,15 @@ def test_collection_pin_reconciled():
     import re
     src = (ROOT / "scripts" / "run_ci_tests.py").read_text()
     m = re.search(r"EXPECTED_COLLECTED\s*=\s*(\d+)", src)
-    assert m and int(m.group(1)) == 5067 + 9
+    # V3.9A reconciliation: 5076 + 24 contract tests = 5100.
+    # V3.9B reconciliation: 5100 + 22 measurement tests = 5122.
+    # V3.9C reconciliation: 5122 + 26 bundle/API tests = 5148.
+    # V3.9E reconciliation: 5148 + 28 freeze tests = 5176.
+    assert m and int(m.group(1)) == 5122 + 26 + 28
     out = subprocess.run(
         ["/Users/tfatharva/f1-in-race-prediction_main/.venv/bin/python",
          "-m", "pytest", "tests/", "--collect-only", "-q",
          "-p", "no:cacheprovider"],
         cwd=ROOT, capture_output=True, text=True, check=True).stdout
     n = int(out.strip().splitlines()[-1].split()[0])
-    assert n == 5067 + 9, n
+    assert n == 5122 + 26 + 28, n

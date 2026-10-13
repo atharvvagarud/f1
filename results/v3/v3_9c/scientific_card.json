@@ -1,0 +1,40 @@
+{
+ "artifacts": [
+  "runtime_contract.json",
+  "api_contract.json",
+  "source_reuse_audit.json",
+  "alignment_validation.json",
+  "u1_runtime_parity.json",
+  "u2_runtime_parity.json",
+  "u3_status_validation.json",
+  "refusal_validation.json",
+  "performance_overhead.json",
+  "validation.json",
+  "scientific_card.json"
+ ],
+ "card_identity": "2f7eb9a49311e34f5b7b9978a21b54787f8be17c9e242b23e04c780c847fbb25",
+ "classification": "RUNTIME_UNCERTAINTY_BUNDLE_VALIDATED",
+ "doc": "docs/V3_9C_RUNTIME_UNCERTAINTY_BUNDLE.md",
+ "implementation": [
+  "raceintel/uncertainty/__init__.py",
+  "raceintel/uncertainty/bundle.py",
+  "api/v2_uncertainty_schemas.py",
+  "api/v2_uncertainty_service.py",
+  "api/v2_uncertainty_routes.py",
+  "api/main.py (+2 lines)"
+ ],
+ "no_frontend": true,
+ "no_fusion": true,
+ "no_score": true,
+ "parents": {
+  "v38_commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+  "v39a_card": "e3e2c3cfa2ebbd239b205479d6b7b9ee12130deddf3d4803c261c06b91ae099a",
+  "v39b_card": "a016290d56567805f715c91157960277ee76d7c8ecd00573a4b1ca56ce4b5ebf"
+ },
+ "schema": "v3.9c-scientific-card-v1",
+ "stage": "V3.9C_RUNTIME_UNCERTAINTY_BUNDLE",
+ "u1_parity": "EXACT",
+ "u2_parity": "EXACT",
+ "u3": "PROVENANCE_UNAVAILABLE",
+ "verdict": "V3.9C COMPLETE \u2014 RUNTIME UNCERTAINTY BUNDLE VALIDATED \u2014 READY FOR V3.9D"
+}

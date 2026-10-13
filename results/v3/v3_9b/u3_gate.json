@@ -1,0 +1,7 @@
+{
+ "classification": "U3_PROVENANCE_INSUFFICIENT",
+ "crn_policy": "preserved from V3.9A (same root seed/sim_id/domains/future identity; report topology breaks)",
+ "gate": "U3_NOT_EXECUTABLE",
+ "reason": "zero RANGE_SUPPORTED parameters; no experiment may run",
+ "schema": "v3.9b-u3-gate-v1"
+}

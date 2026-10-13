@@ -1,0 +1,35 @@
+{
+ "classification": "U1_MEASURED",
+ "leader_agreement_rate": 0.642857,
+ "magnitudes": {
+  "absolute_gap": {
+   "count": 277.0,
+   "max": 0.808789,
+   "mean": 0.031784,
+   "median": 0.000745,
+   "min": 0.0,
+   "p10": 1.4e-05,
+   "p25": 0.000121,
+   "p75": 0.007132,
+   "p90": 0.068882,
+   "stdev": 0.105369
+  },
+  "signed_gap": {
+   "count": 277.0,
+   "max": 0.808789,
+   "mean": -0.000419,
+   "median": -0.000239,
+   "min": -0.766173,
+   "p10": -0.026447,
+   "p25": -0.001739,
+   "p75": -1.1e-05,
+   "p90": 0.009276,
+   "stdev": 0.110058
+  }
+ },
+ "rank_median_spearman": 0.67435,
+ "reading": "typically small gaps with a heavy tail of large disagreements; a 90th-percentile gap is unusually large historically, not a confidence level",
+ "schema": "v3.9b-u1-summary-v1",
+ "scope": "magnitude over 277 pairs; rank/leader/top-k over 14 full-field race-laps",
+ "top3_jaccard_median": 0.5
+}

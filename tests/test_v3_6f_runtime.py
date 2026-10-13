@@ -378,6 +378,10 @@ def test_no_frontend_changes():
                "frontend/app/counterfactuals",
                "frontend/features/counterfactuals",
                "frontend/app/consensus", "frontend/features/consensus",
+               # V3.9D carve-out (product UI stage only: /uncertainty
+               # route + uncertainty feature modules; no science change).
+               "frontend/app/uncertainty/",
+               "frontend/features/uncertainty/",
                "frontend/components/shell/CommandBar.tsx")
     assert not [f for f in touched if f.startswith("frontend/")
                 and not f.startswith(allowed)], touched

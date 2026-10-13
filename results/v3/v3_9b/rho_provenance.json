@@ -1,0 +1,32 @@
+{
+ "bootstrap": false,
+ "ci": false,
+ "deployment_origin": "hard-coded reference constant in the run path (scripts/run_v3_2e_backtest.py: rho=0.264 for E_AR1_RESIDUAL); NOT fitted at deploy time",
+ "deployment_value": 0.264,
+ "diagnostic": "measured_within_driver_race_lag1_autocorr (_lag1_autocorr; Pearson lag-1 within race-driver); recorded, not deployed",
+ "estimator_se": false,
+ "fold_construction_documented": false,
+ "fold_spread_is": "between-split heterogeneity of a diagnostic, NOT a confidence interval for the deployed constant",
+ "forbidden_constructions": [
+  "min/max folds as range",
+  "5th/95th percentile as range",
+  "mean \u00b1 SD as range",
+  "rho \u00b1 10%"
+ ],
+ "historical_diagnostics": {
+  "D1": {
+   "n_pairs": 1208,
+   "rho": 0.2246084817995701
+  },
+  "D2": {
+   "n_pairs": 1588,
+   "rho": 0.48470290660589166
+  },
+  "D3": {
+   "n_pairs": 2054,
+   "rho": 0.3647139843488948
+  }
+ },
+ "schema": "v3.9b-rho-v1",
+ "status": "PROVENANCE_INSUFFICIENT"
+}

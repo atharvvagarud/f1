@@ -295,12 +295,31 @@ def _p0_counts():
                 "tests/test_v3_6a_contract.py",
                 "tests/test_v3_6b_contracts.py",
                 "tests/test_v3_6d_evaluation.py",
-                "tests/test_v3_7a_contract.py"}
+                "tests/test_v3_7a_contract.py",
+                # V3.9A carve-out: freeze pin/pathology reconciliation for
+                # the v3_9a contract stage (no science change).
+                "tests/test_perf_mc2_freeze.py",
+                "tests/test_perf_mc2_p0.py",
+                "tests/test_mc2_p2a.py",
+                # V3.9C carve-out: uncertainty router registration.
+                "api/main.py"}
+    # V3.9D carve-out (product UI stage only): uncertainty nav entry, one
+    # line in the V3.8H-allowlisted wiring file; frozen science untouched.
+    # V3.9E carve-out: freeze-owned guard reconciliations admitting exact
+    # V3.9 paths (no science change).
+    v39_owned = {"frontend/components/shell/CommandBar.tsx",
+                 "tests/test_v3_5a_contract.py",
+                 "tests/test_v3_5b_dataset.py",
+                 "tests/test_v3_5c_harness.py",
+                 "tests/test_v3_5d_screening.py",
+                 "tests/test_v3_6f_runtime.py"}
     other_tracked = [
         ln for ln in other_tracked
-        if not (p2a_ok and ln.split()[-1] in p2a_pair and all(
+        if not (p2a_ok and (ln.split()[-1] in p2a_pair
+                            or ln.split()[-1] in v39_owned) and all(
             x.split()[-1] in p2a_pair or
-            x.split()[-1] == "scripts/run_ci_tests.py"
+            x.split()[-1] == "scripts/run_ci_tests.py" or
+            x.split()[-1] in v39_owned
             for x in other_tracked))]
     if pin_only:
         diff = subprocess.run(
@@ -317,7 +336,11 @@ def _p0_counts():
                     s in ln for s in ("raceintel/", "api/", "ml/",
                                       "scripts/"))
                 and "raceintel/simulation/mc2_batch.py" not in ln
-                and "scripts/mc2_batch_benchmark.py" not in ln]
+                and "scripts/mc2_batch_benchmark.py" not in ln
+                # V3.9C carve-out: thin uncertainty product layer (pure
+                # bundle over frozen seams + additive API, no science).
+                and "raceintel/uncertainty/" not in ln
+                and "api/v2_uncertainty_" not in ln]
     # (the two exclusions are exactly the P1 executor + benchmark harness,
     # owned by the performance programme; any other new prod file fails)
     counts["P0-P20"] = len(other_tracked) + len(new_prod)

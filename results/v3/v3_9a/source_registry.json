@@ -1,0 +1,46 @@
+{
+ "parents": {
+  "perf_commit": "32466c436845ee02c3af79ce08d1c102b9d91384",
+  "perf_tag": "v3.8-mc2-performance",
+  "v38_commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+  "v38_tag": "v3.8-model-simulation-consensus"
+ },
+ "schema": "v3.9a-source-registry-v1",
+ "sources": {
+  "MC2_E": {
+   "probability_family": "MUTUALLY_EXCLUSIVE_SIMULATION_FREQUENCY",
+   "production_config": {
+    "arm": "E_AR1_RESIDUAL",
+    "futures": 5000,
+    "master_seed": 20240101,
+    "rng": "deterministic scientific identity (mc2-rng-v1)"
+   },
+   "reinterpretation_prohibited": true,
+   "role": "PRIMARY_SIMULATOR"
+  },
+  "V3_1B_LOGISTIC": {
+   "evidence": "raceintel/consensus/contracts.py SourceFamily; product.py compose() passes values verbatim",
+   "normalization_prohibited": true,
+   "probability_family": "INDEPENDENT_BINARY",
+   "role": "PRIMARY_MODEL",
+   "semantics": "independent binary positive-class probabilities; NOT race-normalized"
+  },
+  "V3_3_XGBOOST": {
+   "role": "SECONDARY_DIVERSITY_RESEARCH_ONLY"
+  },
+  "V3_4_ENSEMBLE": {
+   "note": "excluded unless a later explicit contract changes this",
+   "role": "EXCLUDED_FROM_V3_9_PRIMARY"
+  },
+  "V3_5_MARGINALS": {
+   "champion": "LOGISTIC_CONTROL",
+   "note": "V3_5_LOGISTIC_CONTROL shares V3.1B winner lineage (SHARED_OR_DERIVED_LINEAGE): never two votes; applicable only where scientifically valid",
+   "role": "SECONDARY_RESEARCH",
+   "serving": "NONE"
+  },
+  "V3_8_COMPARISON": {
+   "identity": "v3.8c-consensus-metrics-v1; PRIMARY_PAIR V3_1B_LOGISTIC vs MC2_E",
+   "role": "PRIMARY_CROSS_SOURCE_DISAGREEMENT_EVIDENCE"
+  }
+ }
+}

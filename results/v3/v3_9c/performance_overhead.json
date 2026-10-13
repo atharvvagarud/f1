@@ -1,0 +1,10 @@
+{
+ "field_drivers": 20,
+ "mean_ms": 0.0462,
+ "p50_ms": 0.0432,
+ "p90_ms": 0.0471,
+ "reps": 200,
+ "schema": "v3.9c-overhead-v1",
+ "scope": "bundle calculation on already-resolved 20-driver payloads only; MC2 itself not benchmarked",
+ "verdict": "NEGLIGIBLE (~0.05ms vs seconds-scale source computation)"
+}

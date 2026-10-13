@@ -1,0 +1,43 @@
+{
+ "no_f1_empirical_claim": true,
+ "pathology": {
+  "V3.9A-P1": 0,
+  "V3.9A-P10": 0,
+  "V3.9A-P11": 0,
+  "V3.9A-P12": 0,
+  "V3.9A-P13": 0,
+  "V3.9A-P14": 0,
+  "V3.9A-P15": 0,
+  "V3.9A-P16": 0,
+  "V3.9A-P17": 0,
+  "V3.9A-P18": 0,
+  "V3.9A-P19": 0,
+  "V3.9A-P2": 0,
+  "V3.9A-P20": 0,
+  "V3.9A-P21": 0,
+  "V3.9A-P22": 0,
+  "V3.9A-P23": 0,
+  "V3.9A-P24": 0,
+  "V3.9A-P25": 0,
+  "V3.9A-P26": 0,
+  "V3.9A-P27": 0,
+  "V3.9A-P28": 0,
+  "V3.9A-P29": 0,
+  "V3.9A-P3": 0,
+  "V3.9A-P30": 0,
+  "V3.9A-P4": 0,
+  "V3.9A-P5": 0,
+  "V3.9A-P6": 0,
+  "V3.9A-P7": 0,
+  "V3.9A-P8": 0,
+  "V3.9A-P9": 0
+ },
+ "schema": "v3.9a-validation-v1",
+ "synthetic_checks": {
+  "k=0_n=5000": "VALID zero simulation frequency, NOT missing (SE=0, Wilson non-degenerate)",
+  "model=0.8_simulation=0.4": "disagreement exists (signed_gap=+0.4 sim-minus-model in native units; NOT confidence)",
+  "sensitivity_provenance_absent": "PROVENANCE_UNAVAILABLE, NOT zero sensitivity",
+  "source_absent": "MISSING_SOURCE, NOT 0"
+ },
+ "synthetic_only": true
+}

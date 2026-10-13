@@ -1,0 +1,7 @@
+{
+ "k_eq_0_remains_available_zero": true,
+ "max_abs_diff_vs_v39b_recomputation": 0.0,
+ "n_from_evidence": true,
+ "schema": "v3.9c-u2-parity-v1",
+ "verdict": "EXACT"
+}

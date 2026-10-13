@@ -1,0 +1,24 @@
+{
+ "families_preserved": {
+  "model": {
+   "probability_family": "INDEPENDENT_BINARY",
+   "source": "V3_1B_LOGISTIC"
+  },
+  "simulation": {
+   "probability_family": "MUTUALLY_EXCLUSIVE_SIMULATION_FREQUENCY",
+   "source": "MC2_E"
+  }
+ },
+ "field": {
+  "leader_agree": false,
+  "leader_model": "hamilton",
+  "leader_simulation": "sainz",
+  "n_common_drivers": 20,
+  "rank_correlation_spearman": 0.6671681554925596,
+  "top3_jaccard": 0.5
+ },
+ "fixture": "2022-r03-R lap2 (20 drivers, frozen v3_8f)",
+ "max_abs_diff_vs_frozen_metric_defs": 0.0,
+ "schema": "v3.9c-u1-parity-v1",
+ "verdict": "EXACT"
+}

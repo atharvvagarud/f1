@@ -1,0 +1,15 @@
+{
+ "note": "STRUCTURE ONLY; no API/UI implemented in V3.9A",
+ "panels": {
+  "MODEL_x_SIMULATION": "disagreement evidence (U1)",
+  "MONTE_CARLO_PRECISION": "finite-sampling evidence (U2)",
+  "SIMULATOR_SENSITIVITY": "parameter-response evidence (U3, when available)"
+ },
+ "principle": "show WHY the system disagrees/is uncertain, not a scalar",
+ "prohibited": [
+  "CONFIDENCE: 82%",
+  "any magic scalar",
+  "traffic-light confidence"
+ ],
+ "schema": "v3.9a-product-v1"
+}

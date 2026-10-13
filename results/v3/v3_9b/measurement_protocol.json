@@ -1,0 +1,14 @@
+{
+ "n_derived_from_evidence": true,
+ "no_mc2_rerun": true,
+ "no_outcome_use": "target column present in frozen evidence but never read for measurement",
+ "no_perturbation": true,
+ "no_refit": true,
+ "reads_only": [
+  "results/v3/v3_8d/per_row_records.json",
+  "results/v3/v3_8d/mc2_checkpoint.json",
+  "results/v3/v3_2e/parameter_stability.json",
+  "raceintel/consensus/metrics.py (imported unmodified)"
+ ],
+ "schema": "v3.9b-protocol-v1"
+}

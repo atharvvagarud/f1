@@ -1,0 +1,34 @@
+{
+ "api_added": false,
+ "artifacts": [
+  "measurement_protocol.json",
+  "aligned_evidence_accounting.json",
+  "u1_measurements.json",
+  "u1_summary.json",
+  "u1_stage_summary.json",
+  "u2_measurements.json",
+  "u2_summary.json",
+  "disagreement_sampling_diagnostic.json",
+  "regime_std_provenance.json",
+  "rho_provenance.json",
+  "sensitivity_range_registry.json",
+  "u3_gate.json",
+  "validation.json",
+  "scientific_card.json"
+ ],
+ "card_identity": "a016290d56567805f715c91157960277ee76d7c8ecd00573a4b1ca56ce4b5ebf",
+ "classification": "U1_U2_MEASURED_U3_NOT_READY",
+ "doc": "docs/V3_9B_UNCERTAINTY_EVIDENCE_MEASUREMENT.md",
+ "frontend_added": false,
+ "mc2_reruns": 0,
+ "parents": {
+  "v38_commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+  "v39a_card": "e3e2c3cfa2ebbd239b205479d6b7b9ee12130deddf3d4803c261c06b91ae099a"
+ },
+ "schema": "v3.9b-scientific-card-v1",
+ "stage": "V3.9B_UNCERTAINTY_EVIDENCE_MEASUREMENT",
+ "u1": "U1_MEASURED",
+ "u2": "U2_MEASURED",
+ "u3": "U3_PROVENANCE_INSUFFICIENT",
+ "verdict": "V3.9B COMPLETE \u2014 U1/U2 MEASURED \u2014 U3 PROVENANCE INSUFFICIENT \u2014 READY FOR UNCERTAINTY PRODUCT GATE"
+}

@@ -166,7 +166,25 @@ CORPUS_MANIFEST = Path(__file__).resolve().parent / "ci_corpus_dependent.txt"
 # manifest/parity/benchmark-identity/P3-1-zero-delta/guard/card/pathology/
 # pin checks; production evidence asserted via committed freeze artifacts,
 # not rerun), with no removals = 5076.
-EXPECTED_COLLECTED = 5076
+# V3.9A reclassification: 24 added tests in
+# tests/test_v3_9a_contract.py (contract-only synthetic checks: source/
+# taxonomy/disagreement/sampling/sensitivity/status/claims/temporal/product/
+# card/pathology checks; no corpus dependence added), with no removals = 5100.
+# V3.9B reclassification: 22 added tests in
+# tests/test_v3_9b_measurement.py (offline measurement checks on frozen
+# evidence/small fixtures: alignment/U1/U2/provenance/gate/card/pathology;
+# no MC2 execution, no corpus dependence added), with no removals = 5122.
+# V3.9C reclassification: 26 added tests in
+# tests/test_v3_9c_bundle.py (runtime bundle + API checks on fixtures:
+# registry/families/alignment/parity/status/endpoints/refusals/provenance/
+# schema/controls/overhead/card/pathology; no MC2 execution, no corpus
+# dependence added), with no removals = 5148.
+# V3.9E reclassification: 28 added tests in
+# tests/test_v3_9e_freeze.py (freeze-only checks on fixtures: parent tags/
+# card identities/manifest/taxonomy/families/boundaries/prohibitions/
+# alignment/temporal/2025/API/frontend/collection/reconciliation; no MC2
+# execution, no corpus dependence added), with no removals = 5176.
+EXPECTED_COLLECTED = 5176
 
 # (pytest node id, reason it cannot pass at the frozen baseline)
 # P11-1: the 12 pre-existing stale historical pins were genuinely corrected

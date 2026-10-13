@@ -1,0 +1,20 @@
+{
+ "errors": {
+  "404": "unknown_race",
+  "422": "unknown_state/uncertainty_unsupported",
+  "500": "internal",
+  "503": "parameter_unavailable"
+ },
+ "refusals": {
+  "2025": 422,
+  "corrupt": 503,
+  "malformed": 422,
+  "unknown_state": 422
+ },
+ "registration": "api/main.py include_router (2 lines)",
+ "routes": [
+  "GET /v2/uncertainty/availability",
+  "POST /v2/uncertainty/compare"
+ ],
+ "schema": "v3.9c-api-contract-v1"
+}

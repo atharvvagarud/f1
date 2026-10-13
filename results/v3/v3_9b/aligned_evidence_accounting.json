@@ -1,0 +1,22 @@
+{
+ "excluded_single_driver_lap": 1,
+ "full_field_laps": 14,
+ "has_2025": false,
+ "missing_zero_filled": 0,
+ "outcome_labels_used": false,
+ "pairs": 277,
+ "race_laps": 15,
+ "races": 8,
+ "schema": "v3.9b-accounting-v1",
+ "seasons": [
+  2022,
+  2023,
+  2024
+ ],
+ "stages": {
+  "EARLY": 141,
+  "LATE": 56,
+  "MID": 80
+ },
+ "unsupported_silently_dropped": 0
+}

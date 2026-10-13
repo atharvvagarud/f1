@@ -1,0 +1,34 @@
+{
+ "calculation": "v3.9c-uncertainty-bundle-v1",
+ "mc2_resolutions_per_request_max": 1,
+ "metric_implementation": "v3.8c-consensus-metrics-v1",
+ "no_public_science_controls": [
+  "seed",
+  "future count",
+  "rho",
+  "arm",
+  "sensitivity range",
+  "worker count"
+ ],
+ "prohibited_fields": [
+  "confidence_score",
+  "uncertainty_score",
+  "trust_score",
+  "reliability_score",
+  "combined_score",
+  "overall_confidence",
+  "certainty_percentage",
+  "preferred_source",
+  "winner_source",
+  "trusted_source",
+  "recommended_probability",
+  "consensus_probability"
+ ],
+ "schema": "v3.9c-runtime-contract-v1",
+ "sections": [
+  "disagreement",
+  "monte_carlo_sampling",
+  "simulator_sensitivity"
+ ],
+ "service": "raceintel/uncertainty/bundle.py"
+}

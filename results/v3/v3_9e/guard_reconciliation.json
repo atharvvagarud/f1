@@ -1,0 +1,215 @@
+{
+ "after": "23 reconciliations verified green individually; full preflight + Tier-1 authoritative pending at ledger time",
+ "before": "9 failed in V3.9D Tier-B subset (V3.9D-ownership) + 14 further trips surfaced in wider freeze preflight, each proven below to admit only exact V3.9C-addon-API (first shipped V3.9C), V3.9D-product-UI, V3.9E-freeze, or staged guard-reconciliation paths",
+ "blocking_assessment": "none of the ten is science/API/product-behavior related; all are worktree-path ownership admissions. No freeze block.",
+ "forbidden_avoided": [
+  "no wildcarding of V3.9 directories (exact prefixes/files only)",
+  "no broad frontend allowance (two exact dirs + one already-allowlisted wiring file)",
+  "no disabled/xfail/skipped tests",
+  "no frozen-path protection weakened (invariants and assertions intact; one existence check converted to existence-plus-boundary check)"
+ ],
+ "reconciliations": [
+  {
+   "failing_test": "tests/test_v3_8a_consensus_contract.py::test_no_scientific_source_files_modified",
+   "new_paths": [
+    "frontend/app/uncertainty/",
+    "frontend/features/uncertainty/",
+    "results/v3/v3_9d/",
+    "docs/V3_9D*",
+    "results/v3/v3_9e/",
+    "docs/V3_9_UNCERTAINTY_INTELLIGENCE_FINAL.md",
+    "tests/test_v3_9e_freeze.py"
+   ],
+   "ownership": "V3.9D product UI (presentation only) + V3.9E freeze records",
+   "resolution": "append exact V3.9D + V3.9E carve-out prefixes to allowlist tuple"
+  },
+  {
+   "failing_test": "tests/test_v3_8b_source_adapters.py::test_no_frozen_source_modified",
+   "new_paths": [
+    "same V3.9D/E set"
+   ],
+   "ownership": "V3.9D product UI + V3.9E freeze records",
+   "resolution": "append exact V3.9D + V3.9E carve-out prefixes to allowlist tuple"
+  },
+  {
+   "failing_test": "tests/test_v3_8c_consensus_metrics.py::test_no_frozen_source_modified",
+   "new_paths": [
+    "same V3.9D/E set"
+   ],
+   "ownership": "V3.9D product UI + V3.9E freeze records",
+   "resolution": "append exact V3.9D + V3.9E carve-out prefixes to allowlist tuple"
+  },
+  {
+   "failing_test": "tests/test_v3_8d_evaluation.py::test_no_frozen_science_modified",
+   "new_paths": [
+    "same V3.9D/E set"
+   ],
+   "ownership": "V3.9D product UI + V3.9E freeze records",
+   "resolution": "append exact V3.9D + V3.9E carve-out prefixes to allowlist tuple"
+  },
+  {
+   "failing_test": "tests/test_v3_8h_freeze.py::test_worktree_contains_only_owned_v38_paths",
+   "new_paths": [
+    "same V3.9D/E set"
+   ],
+   "ownership": "V3.9D product UI + V3.9E freeze records; M CommandBar already TRACKED_ALLOW-listed",
+   "resolution": "append exact V3.9D + V3.9E carve-out prefixes to FINAL_ALLOW (modified-set and manifest-intent checks already satisfied)"
+  },
+  {
+   "failing_test": "tests/test_v3_8h_freeze.py::test_h_pathology_superset_all_zero (H-P24=2)",
+   "new_paths": [
+    "frontend/app/uncertainty/",
+    "frontend/features/uncertainty/"
+   ],
+   "ownership": "V3.9D product UI",
+   "resolution": "same FINAL_ALLOW admission drives H-P24 to 0; no other H-P left nonzero"
+  },
+  {
+   "failing_test": "tests/test_v3_9a_contract.py::test_no_production_runtime_dependency",
+   "new_paths": [
+    "M frontend/components/shell/CommandBar.tsx (one-line V3.9D nav entry; consensus line committed at V3.8)"
+   ],
+   "ownership": "V3.9D presentation wiring",
+   "resolution": "admit exact file to allowed_modified set"
+  },
+  {
+   "failing_test": "tests/test_v3_9b_measurement.py::test_no_runtime_code_modified",
+   "new_paths": [
+    "M frontend/components/shell/CommandBar.tsx"
+   ],
+   "ownership": "V3.9D presentation wiring",
+   "resolution": "admit exact file to runtime exclusion list"
+  },
+  {
+   "failing_test": "tests/test_v3_9c_bundle.py::test_no_frontend_changes",
+   "new_paths": [
+    "frontend/app/uncertainty/",
+    "frontend/features/uncertainty/",
+    "M CommandBar"
+   ],
+   "ownership": "V3.9D product UI",
+   "resolution": "allowlist the three exact paths; convert route-absence assertion into route-exists-plus-API-boundary assertion (strictly stronger)"
+  },
+  {
+   "discovered": "freeze audit (outside V3.9D Tier-B subset filter)",
+   "failing_test": "tests/test_perf_mc2_freeze.py::test_freeze_pathology_all_zero (PF-P24=1)",
+   "new_paths": [
+    "M frontend/components/shell/CommandBar.tsx (same one-line V3.9D nav entry)"
+   ],
+   "ownership": "V3.9D presentation wiring",
+   "resolution": "admit exact wiring file to PF-P24 token chain alongside existing V3.9A/B/C carve-outs"
+  },
+  {
+   "failing_test": "tests/test_v3_5a_contract.py::test_no_serving_changes",
+   "new_paths": [
+    "?? api/v2_uncertainty_*",
+    "?? frontend/app/uncertainty/",
+    "?? frontend/features/uncertainty/"
+   ],
+   "ownership": "V3.9C additive API + V3.9D product UI",
+   "resolution": "admit exact api + frontend prefixes alongside chartered strategy/counterfactual/consensus paths"
+  },
+  {
+   "failing_test": "tests/test_v3_5b_dataset.py::test_no_serving_api_frontend_change",
+   "new_paths": [
+    "same V3.9C/D set"
+   ],
+   "ownership": "V3.9C additive API + V3.9D product UI",
+   "resolution": "admit exact api + frontend prefixes"
+  },
+  {
+   "failing_test": "tests/test_v3_5c_harness.py::test_no_serving_api_frontend_change",
+   "new_paths": [
+    "same V3.9C/D set"
+   ],
+   "ownership": "V3.9C additive API + V3.9D product UI",
+   "resolution": "admit exact api + frontend prefixes"
+  },
+  {
+   "failing_test": "tests/test_v3_5d_screening.py::test_no_serving_api_frontend_changes",
+   "new_paths": [
+    "same V3.9C/D set"
+   ],
+   "ownership": "V3.9C additive API + V3.9D product UI",
+   "resolution": "admit exact api + frontend prefixes"
+  },
+  {
+   "failing_test": "tests/test_v3_6a_contract.py::test_no_serving_api_frontend_mc2_v35_changes",
+   "new_paths": [
+    "full V3.9D/E set (all status lines scanned)"
+   ],
+   "ownership": "V3.9D product UI + V3.9E freeze records",
+   "resolution": "append exact V3.9D + V3.9E carve-out prefixes"
+  },
+  {
+   "failing_test": "tests/test_v3_6a_contract.py::test_no_frontend_change",
+   "new_paths": [
+    "?? frontend/app/uncertainty/",
+    "?? frontend/features/uncertainty/"
+   ],
+   "ownership": "V3.9D product UI",
+   "resolution": "admit exact frontend prefixes (V3.9D reconciliation comment)"
+  },
+  {
+   "failing_test": "tests/test_v3_6b_contracts.py::test_no_api_frontend_change",
+   "new_paths": [
+    "?? frontend/app/uncertainty/",
+    "?? frontend/features/uncertainty/ (api already V3.9C-admitted)"
+   ],
+   "ownership": "V3.9D product UI",
+   "resolution": "admit exact frontend prefixes"
+  },
+  {
+   "failing_test": "tests/test_v3_6d_evaluation.py::test_no_api_frontend_changes",
+   "new_paths": [
+    "?? frontend/app/uncertainty/",
+    "?? frontend/features/uncertainty/ (api already V3.9C-admitted)"
+   ],
+   "ownership": "V3.9D product UI",
+   "resolution": "admit exact frontend prefixes"
+  },
+  {
+   "failing_test": "tests/test_v3_6f_runtime.py::test_no_frontend_changes",
+   "new_paths": [
+    "?? frontend/app/uncertainty/",
+    "?? frontend/features/uncertainty/"
+   ],
+   "ownership": "V3.9D product UI",
+   "resolution": "admit exact frontend prefixes"
+  },
+  {
+   "failing_test": "tests/test_v3_7a_contract.py::test_baseline_clean_at_entry",
+   "new_paths": [
+    "full V3.9D/E set (all status lines scanned)"
+   ],
+   "ownership": "V3.9D product UI + V3.9E freeze records",
+   "resolution": "append exact V3.9D + V3.9E carve-out prefixes"
+  },
+  {
+   "failing_test": "tests/test_v3_7a_contract.py::test_no_mc2_api_frontend_modification",
+   "new_paths": [
+    "?? frontend/app/uncertainty/",
+    "?? frontend/features/uncertainty/ (api already V3.9C-admitted)"
+   ],
+   "ownership": "V3.9D product UI",
+   "resolution": "admit exact frontend prefixes"
+  },
+  {
+   "failing_test": "tests/test_mc2_p2a.py::test_p2a_pathology_all_zero (P2A-P29=1)",
+   "new_paths": [
+    "M frontend/components/shell/CommandBar.tsx (diff-name scope)"
+   ],
+   "ownership": "V3.9D presentation wiring",
+   "resolution": "admit exact wiring file; second-order: admit the 5 newly-touched guard files (5a/5b/5c/5d/6f) as freeze-owned reconciliations"
+  },
+  {
+   "failing_test": "tests/test_perf_mc2_p0.py::test_p0_pathology_all_zero (P0-P20=15)",
+   "new_paths": [
+    "M tracked set incl. V3.9D wiring + V3.8H/V3.9 guard-reconciliation files (predates V3.9D for 6x/7x entries)"
+   ],
+   "ownership": "V3.9 programme guard reconciliations + V3.9D wiring",
+   "resolution": "admit exact v39_owned set (CommandBar + 5a/5b/5c/5d/6f) alongside p2a_pair; fail-closed otherwise"
+  }
+ ],
+ "schema": "v3.9e-guard-reconciliation-v1"
+}

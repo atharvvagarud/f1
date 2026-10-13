@@ -1,0 +1,34 @@
+{
+ "artifacts": [
+  "source_registry.json",
+  "uncertainty_taxonomy.json",
+  "disagreement_metric_registry.json",
+  "mc_sampling_contract.json",
+  "sensitivity_parameter_audit.json",
+  "status_contract.json",
+  "claim_language_contract.json",
+  "temporal_contract.json",
+  "product_representation_contract.json",
+  "validation.json",
+  "scientific_card.json"
+ ],
+ "card_identity": "e3e2c3cfa2ebbd239b205479d6b7b9ee12130deddf3d4803c261c06b91ae099a",
+ "classification": "UNCERTAINTY_CONTRACT_PARTIALLY_SUPPORTED",
+ "doc": "docs/V3_9A_UNCERTAINTY_INTELLIGENCE_CONTRACT.md",
+ "implementation_introduced": "none (contract + audit + synthetic validation only)",
+ "parents": {
+  "perf_commit": "32466c436845ee02c3af79ce08d1c102b9d91384",
+  "perf_tag": "v3.8-mc2-performance",
+  "v38_commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+  "v38_tag": "v3.8-model-simulation-consensus"
+ },
+ "schema": "v3.9a-scientific-card-v1",
+ "stage": "V3.9A_UNCERTAINTY_INTELLIGENCE_CONTRACT",
+ "taxonomy": [
+  "U1_DISAGREEMENT",
+  "U2_MC_SAMPLING",
+  "U3_SIMULATOR_SENSITIVITY"
+ ],
+ "u3_executable_ranges": "none (framework ready; regime_std eligible, rho needs provenance)",
+ "verdict": "V3.9A COMPLETE \u2014 UNCERTAINTY CONTRACT PARTIALLY SUPPORTED \u2014 REVIEW REQUIRED"
+}

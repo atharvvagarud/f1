@@ -1,0 +1,12 @@
+{
+ "schema": "v3.9a-status-v1",
+ "statuses": {
+  "AVAILABLE": "evidence present and valid",
+  "INSUFFICIENT_SIMULATIONS": "n too small/invalid for the quantity; NOT 0",
+  "MISSING_SOURCE": "required source absent; NOT 0",
+  "NOT_APPLICABLE": "family does not apply to this query",
+  "PROVENANCE_UNAVAILABLE": "sensitivity range lacks provenance; NOT zero sensitivity",
+  "UNSUPPORTED_STATE": "state refused/ineligible under frozen semantics; NOT 0"
+ },
+ "zero_rule": "0 is a scientific value; unavailable evidence is never encoded as 0 or false confidence"
+}

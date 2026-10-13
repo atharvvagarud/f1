@@ -114,6 +114,34 @@ def test_baseline_clean_at_entry():
                "tests/test_mc2_p3_1.py",
                # Freeze carve-out: focused freeze validation tests
                "tests/test_perf_mc2_freeze.py",
+               # V3.9A carve-out (contract stage only, no science/runtime change).
+               "results/v3/v3_9a/",
+               "docs/V3_9A",
+               "tests/test_v3_9a_contract.py",
+               # V3.9B carve-out (offline measurement stage, no science/runtime change).
+               "results/v3/v3_9b/",
+               "docs/V3_9B",
+               "tests/test_v3_9b_measurement.py",
+               # V3.9C carve-out (runtime bundle stage,
+               # thin product layer only: bundle + API).
+               "results/v3/v3_9c/",
+               "docs/V3_9C",
+               "tests/test_v3_9c_bundle.py",
+               "raceintel/uncertainty/",
+               "api/v2_uncertainty_",
+               # V3.9D carve-out (product UI stage only: /uncertainty
+               # route, uncertainty feature modules, stage docs/artifacts;
+               # no science change).
+               "results/v3/v3_9d/",
+               "docs/V3_9D",
+               "frontend/app/uncertainty/",
+               "frontend/features/uncertainty/",
+               # V3.9E carve-out (freeze stage only: programme manifest,
+               # parity records, final audits, freeze test + final doc;
+               # no science change).
+               "results/v3/v3_9e/",
+               "docs/V3_9_UNCERTAINTY_INTELLIGENCE_FINAL.md",
+               "tests/test_v3_9e_freeze.py",
                # Chartered C additive seam extension (the frozen V3.6B
                # guard independently records this trip; see C doc).
                "raceintel/simulation/monte_carlo.py",
@@ -286,9 +314,15 @@ def test_no_mc2_api_frontend_modification():
                "raceintel/simulation/mc2/residuals.py",
                "raceintel/simulation/mc2_batch.py",
                "api/v2_counterfactual_", "api/v2_consensus_", "api/main.py",
+               # V3.9C carve-out: uncertainty bundle API (additive).
+               "api/v2_uncertainty_",
                "frontend/app/counterfactuals",
                "frontend/features/counterfactuals",
                "frontend/app/consensus", "frontend/features/consensus",
+               # V3.9D carve-out (product UI stage only: /uncertainty
+               # route + uncertainty feature modules; no science change).
+               "frontend/app/uncertainty/",
+               "frontend/features/uncertainty/",
                "frontend/lib/v2.ts",
                "frontend/components/shell/CommandBar.tsx")
     for line in out.splitlines():

@@ -1,0 +1,14 @@
+{
+ "common_drivers": 20,
+ "fixture_drivers": 20,
+ "identity": "(state_id, driver_id) + race/lap/stage",
+ "partial_arm_behavior": "explicit MISSING_SOURCE entries (verified: sainz/simulation)",
+ "prohibited": [
+  "nearest state/lap",
+  "position remapping",
+  "zero filling",
+  "silent dropping",
+  "cross-driver substitution"
+ ],
+ "schema": "v3.9c-alignment-v1"
+}

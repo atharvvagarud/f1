@@ -1,0 +1,78 @@
+{
+ "candidates": {
+  "model_family_disagreement": {
+   "rationale": "V3.1B vs V3.3/V3.5 diversity is scientifically distinct but secondary to the primary pair",
+   "status": "SECONDARY_V3_9"
+  },
+  "outcome_distribution_spread": {
+   "rationale": "V3.5 marginal spread where applicable; MUST NOT be relabeled sampling uncertainty or aleatoric uncertainty",
+   "status": "SECONDARY_V3_9"
+  },
+  "strategy_counterfactual_mc_sampling": {
+   "rationale": "reference existing frozen V3.6/V3.7 sampling evidence with shared vocabulary; do not reinterpret as causal confidence",
+   "status": "SECONDARY_V3_9"
+  },
+  "temporal_instability": {
+   "rationale": "needs its own alignment/persistence contract before use",
+   "status": "DEFERRED"
+  }
+ },
+ "epistemic_aleatoric_rule": "labels PROHIBITED unless the mathematical construction supports the decomposition; disagreement is not epistemic, outcome spread is not calibrated aleatoric",
+ "families": {
+  "U1_DISAGREEMENT": {
+   "is_not": [
+    "statistical uncertainty",
+    "confidence",
+    "error probability",
+    "model failure",
+    "simulator failure",
+    "epistemic variance",
+    "aleatoric variance",
+    "calibration error"
+   ],
+   "meaning": "divergence between scientifically distinct inference mechanisms (V3.1B vs MC2-E) on the same causally aligned state/driver",
+   "probability_families_preserved": true,
+   "status": "PRIMARY_V3_9"
+  },
+  "U2_MC_SAMPLING": {
+   "is_not": [
+    "simulator model uncertainty",
+    "real-world outcome uncertainty",
+    "model disagreement",
+    "parameter uncertainty",
+    "calibration",
+    "prediction correctness"
+   ],
+   "meaning": "finite-simulation sampling variability of p_hat=k/n; uncertainty in the Monte Carlo ESTIMATE",
+   "reducing_n_effect": "increasing n may reduce U2 while leaving every other family unchanged",
+   "status": "PRIMARY_V3_9"
+  },
+  "U3_SIMULATOR_SENSITIVITY": {
+   "is_not": [
+    "posterior distribution",
+    "Bayesian uncertainty",
+    "calibrated confidence interval",
+    "causal uncertainty",
+    "probability that the simulator is wrong"
+   ],
+   "meaning": "variation of MC2 outputs under a predeclared set of scientifically defensible parameter perturbations; SENSITIVITY analysis",
+   "range_rule": "perturbation range ONLY from fitted uncertainty / empirical distribution / documented calibration range / justified domain source / frozen evidence; arbitrary percentages PROHIBITED",
+   "status": "PRIMARY_V3_9_FRAMEWORK_READY_NO_EXECUTABLE_RANGE"
+  }
+ },
+ "rejected": {
+  "V3_4_ENSEMBLE": "REJECTED for primary V3.9 semantics"
+ },
+ "representation": "VECTOR / structured evidence bundle {disagreement, mc_sampling, simulator_sensitivity}, never a scalar",
+ "schema": "v3.9a-taxonomy-v1",
+ "universal_score_prohibition": [
+  "uncertainty_score",
+  "confidence_score",
+  "trust_score",
+  "reliability_score",
+  "weighted composites",
+  "traffic-light confidence",
+  "0-100 certainty",
+  "HIGH/MEDIUM/LOW universal confidence"
+ ]
+}

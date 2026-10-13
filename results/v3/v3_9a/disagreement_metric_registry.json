@@ -1,0 +1,48 @@
+{
+ "implementation": "v3.8c-consensus-metrics-v1 (raceintel/consensus/metrics.py); REUSED UNCHANGED",
+ "metrics": {
+  "directional_temporal": {
+   "allowed": "whether disagreement grows/shrinks over laps",
+   "family": "DIRECTIONAL_TEMPORAL_RELATIONSHIP",
+   "prohibited": "trend confidence",
+   "units": "signed change"
+  },
+  "leader_disagreement": {
+   "allowed": "whether mechanisms name the same leader",
+   "family": "LEADER_AGREEMENT",
+   "prohibited": "probability that the leader is wrong",
+   "symmetric": true,
+   "units": "driver identity (set)"
+  },
+  "magnitude_gap": {
+   "allowed": "numeric divergence magnitude/direction",
+   "family": "MAGNITUDE_DISAGREEMENT",
+   "prohibited": "calibration error, uncertainty magnitude",
+   "symmetric": "absolute_gap symmetric; signed_gap asymmetric (sim-minus-model)",
+   "units": "probability points (native families preserved)"
+  },
+  "rank_disagreement": {
+   "allowed": "order divergence between mechanisms",
+   "family": "RANK_AGREEMENT",
+   "prohibited": "correctness, confidence, error probability",
+   "symmetric": true,
+   "units": "rank positions (average ranks, ties averaged)"
+  },
+  "topk_overlap": {
+   "allowed": "set agreement on top-k",
+   "family": "TOP_K_AGREEMENT",
+   "prohibited": "confidence in the top-k",
+   "symmetric": true,
+   "units": "Jaccard similarity in [0,1]"
+  }
+ },
+ "missing_behavior": "UNSUPPORTED with explicit reason (never 0/NaN); MetricResult.value=None",
+ "orientation": "signed_gap = simulation_minus_model",
+ "primary_pair": [
+  "V3_1B_LOGISTIC",
+  "MC2_E"
+ ],
+ "renaming_prohibited": "do not rename disagreement as uncertainty for presentation",
+ "schema": "v3.9a-disagreement-registry-v1",
+ "temporal_requirement": "B-aligned frames at identical (state_id, driver_id); no cross-lap comparison"
+}

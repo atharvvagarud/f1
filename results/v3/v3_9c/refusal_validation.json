@@ -1,0 +1,12 @@
+{
+ "cases": {
+  "2025_availability": "PRODUCT_EXCLUDED",
+  "2025_compare": 422,
+  "corrupt_fixture": "ConsensusArtifactUnavailableError->503",
+  "malformed_compare": 422,
+  "unknown_lap_compare": 422
+ },
+ "invented_zero": false,
+ "schema": "v3.9c-refusal-v1",
+ "silent_fallback": false
+}

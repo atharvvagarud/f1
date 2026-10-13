@@ -270,6 +270,12 @@ def test_original_d_artifacts_untouched():
         "tests/test_v3_6a_contract.py", "tests/test_v3_6b_contracts.py",
         "tests/test_v3_6d_evaluation.py", "tests/test_v3_6f_runtime.py",
         "tests/test_v3_6h_freeze.py", "tests/test_v3_7a_contract.py",
+        # V3.9A carve-out: freeze pin/pathology reconciliation.
+        "tests/test_perf_mc2_freeze.py",
+        "tests/test_perf_mc2_p0.py",
+        "tests/test_mc2_p2a.py",
+        # V3.9C carve-out: uncertainty router registration.
+        "api/main.py",
         "raceintel/simulation/mc2/kernel.py",
         "raceintel/simulation/mc2/residuals.py",
         "tests/test_v3_8a_consensus_contract.py",

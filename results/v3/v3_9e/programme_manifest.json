@@ -1,0 +1,50 @@
+{
+ "product_scope": "presentation only on frozen V3.9C API; no science, runtime, or contract change",
+ "programme": "V3.9 Uncertainty Intelligence",
+ "programme_identity": "18edb61ee558186f8c0efe3ab4cf299550255530f6682a1e5c44245b62342796",
+ "runtime_scope": "V3.9C v3.9c-uncertainty-bundle-v1 over frozen V3.8 seams; cache-first; no public science controls",
+ "schema": "v3.9e-programme-manifest-v1",
+ "scientific_scope": "U1/U2 supported+measured+runtime+product; U3 framework defined, provenance insufficient, zero executable ranges",
+ "stage_classifications": {
+  "V3.9A": "UNCERTAINTY_CONTRACT_PARTIALLY_SUPPORTED",
+  "V3.9B": "U1_U2_MEASURED_U3_NOT_READY",
+  "V3.9C": "RUNTIME_UNCERTAINTY_BUNDLE_VALIDATED",
+  "V3.9D": "UNCERTAINTY_PRODUCT_UI_VALIDATED (A)",
+  "V3.9E": "V3_9_UNCERTAINTY_INTELLIGENCE_FROZEN (on success)"
+ },
+ "stage_links": {
+  "V3.9A": {
+   "artifacts": "results/v3/v3_9a/",
+   "card": "results/v3/v3_9a/scientific_card.json",
+   "card_identity": "e3e2c3cfa2ebbd239b205479d6b7b9ee12130deddf3d4803c261c06b91ae099a",
+   "doc": "docs/V3_9A_UNCERTAINTY_INTELLIGENCE_CONTRACT.md",
+   "tests": "tests/test_v3_9a_contract.py"
+  },
+  "V3.9B": {
+   "artifacts": "results/v3/v3_9b/",
+   "card": "results/v3/v3_9b/scientific_card.json",
+   "card_identity": "a016290d56567805f715c91157960277ee76d7c8ecd00573a4b1ca56ce4b5ebf",
+   "doc": "docs/V3_9B_UNCERTAINTY_EVIDENCE_MEASUREMENT.md",
+   "tests": "tests/test_v3_9b_measurement.py"
+  },
+  "V3.9C": {
+   "artifacts": "results/v3/v3_9c/",
+   "card": "results/v3/v3_9c/scientific_card.json",
+   "card_identity": "2f7eb9a49311e34f5b7b9978a21b54787f8be17c9e242b23e04c780c847fbb25",
+   "doc": "docs/V3_9C_RUNTIME_UNCERTAINTY_BUNDLE.md",
+   "tests": "tests/test_v3_9c_bundle.py"
+  },
+  "V3.9D": {
+   "artifacts": "results/v3/v3_9d/",
+   "card": "results/v3/v3_9d/scientific_card.json",
+   "classification": "UNCERTAINTY_PRODUCT_UI_VALIDATED (A)",
+   "doc": "docs/V3_9D_UNCERTAINTY_PRODUCT_UI.md",
+   "frontend_tests": [
+    "frontend/features/uncertainty/lib/uncertaintyFormat.test.ts",
+    "frontend/features/uncertainty/components/uncertainty-page.test.ts"
+   ],
+   "route": "/uncertainty"
+  }
+ },
+ "statement_of_bound": "V3.9 is NOT a universal uncertainty estimator. It is structured uncertainty/evidence intelligence with separate families: U1 disagreement between distinct mechanisms, U2 finite-sampling precision of MC2 frequencies, U3 explicit non-established sensitivity. No universal score exists anywhere in the programme."
+}

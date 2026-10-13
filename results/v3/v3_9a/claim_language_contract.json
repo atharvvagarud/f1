@@ -1,0 +1,17 @@
+{
+ "allowed": [
+  "Model and simulator disagree on the leading driver.",
+  "The simulator assigns X probability based on 5000 futures.",
+  "Finite Monte Carlo sampling interval: ...",
+  "Output is sensitive to the registered parameter perturbation."
+ ],
+ "prohibited": [
+  "The prediction is 90% certain.",
+  "The AI is highly confident.",
+  "There is a 10% chance the model is wrong.",
+  "This interval captures the true race probability.",
+  "The simulator knows the uncertainty."
+ ],
+ "rule": "prohibited claims require future scientific validation specifically establishing them",
+ "schema": "v3.9a-claims-v1"
+}

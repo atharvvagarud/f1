@@ -1,0 +1,43 @@
+{
+ "evidence_checks": {
+  "checkpoint_keys_match": true,
+  "gaps_recompute_from_natives": true,
+  "n_all_5000": true,
+  "no_outcome_column_read": true,
+  "rows": 277,
+  "stored_sampling_context_recomputed_max_diff": 0.0
+ },
+ "pathology": {
+  "V3.9B-P1": 0,
+  "V3.9B-P10": 0,
+  "V3.9B-P11": 0,
+  "V3.9B-P12": 0,
+  "V3.9B-P13": 0,
+  "V3.9B-P14": 0,
+  "V3.9B-P15": 0,
+  "V3.9B-P16": 0,
+  "V3.9B-P17": 0,
+  "V3.9B-P18": 0,
+  "V3.9B-P19": 0,
+  "V3.9B-P2": 0,
+  "V3.9B-P20": 0,
+  "V3.9B-P21": 0,
+  "V3.9B-P22": 0,
+  "V3.9B-P23": 0,
+  "V3.9B-P24": 0,
+  "V3.9B-P25": 0,
+  "V3.9B-P26": 0,
+  "V3.9B-P27": 0,
+  "V3.9B-P28": 0,
+  "V3.9B-P29": 0,
+  "V3.9B-P3": 0,
+  "V3.9B-P30": 0,
+  "V3.9B-P4": 0,
+  "V3.9B-P5": 0,
+  "V3.9B-P6": 0,
+  "V3.9B-P7": 0,
+  "V3.9B-P8": 0,
+  "V3.9B-P9": 0
+ },
+ "schema": "v3.9b-validation-v1"
+}

@@ -373,7 +373,9 @@ def test_no_api_frontend_change():
     # V3.8H reconciliation: V3.8F/V3.8G charters additionally admit exactly
     # the consensus API/frontend paths (frozen science untouched).
     allowed = ("api/v2_strategy_v3_", "api/main.py",
-               "api/v2_counterfactual_", "api/v2_consensus_")
+               "api/v2_counterfactual_", "api/v2_consensus_",
+               # V3.9C carve-out: uncertainty bundle API (additive).
+               "api/v2_uncertainty_")
     assert not any(f.startswith("api/") and not f.startswith(allowed)
                    for f in changed)
     allowed_frontend = ("frontend/app/strategy/page.tsx",
@@ -385,6 +387,11 @@ def test_no_api_frontend_change():
                         "frontend/features/counterfactuals",
                         "frontend/app/consensus",
                         "frontend/features/consensus",
+                        # V3.9D carve-out (product UI stage only:
+                        # /uncertainty route + uncertainty feature
+                        # modules; no science change).
+                        "frontend/app/uncertainty/",
+                        "frontend/features/uncertainty/",
                         "frontend/components/shell/CommandBar.tsx")
     assert not any(f.startswith("frontend/")
                    and not f.startswith(allowed_frontend)

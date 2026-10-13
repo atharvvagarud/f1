@@ -31,6 +31,7 @@ from api.v2_counterfactual_routes import (
     router as v2_counterfactual_router,
 )
 from api.v2_consensus_routes import router as v2_consensus_router
+from api.v2_uncertainty_routes import router as v2_uncertainty_router
 from api.v2_explanation_routes import router as v2_explanation_router
 from api.v2_replay_routes import router as v2_replay_router
 from api.v2_routes import router as v2_router
@@ -103,6 +104,7 @@ def create_app(config: ServingConfig | None = None) -> FastAPI:
     app.include_router(v2_strategy_v3_router)
     app.include_router(v2_counterfactual_router)
     app.include_router(v2_consensus_router)
+    app.include_router(v2_uncertainty_router)
     return app
 
 

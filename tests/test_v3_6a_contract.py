@@ -382,7 +382,35 @@ def test_no_serving_api_frontend_mc2_v35_changes():
                         # tests (parity-gated by P3-1-P1..P30, not here).
                         "tests/test_mc2_p3_1.py",
                         # Freeze carve-out: focused freeze validation tests
-                        "tests/test_perf_mc2_freeze.py")
+                        "tests/test_perf_mc2_freeze.py",
+                        # V3.9A carve-out (contract stage only, no science/runtime change).
+                        "results/v3/v3_9a/",
+                        "docs/V3_9A",
+                        "tests/test_v3_9a_contract.py",
+                        # V3.9B carve-out (offline measurement stage, no science/runtime change).
+                        "results/v3/v3_9b/",
+                        "docs/V3_9B",
+                        "tests/test_v3_9b_measurement.py",
+                        # V3.9C carve-out (runtime bundle stage,
+                        # thin product layer only: bundle + API).
+                        "results/v3/v3_9c/",
+                        "docs/V3_9C",
+                        "tests/test_v3_9c_bundle.py",
+                        "raceintel/uncertainty/",
+                        "api/v2_uncertainty_",
+                        # V3.9D carve-out (product UI stage only:
+                        # /uncertainty route, uncertainty feature modules,
+                        # stage docs/artifacts; no science change).
+                        "results/v3/v3_9d/",
+                        "docs/V3_9D",
+                        "frontend/app/uncertainty/",
+                        "frontend/features/uncertainty/",
+                        # V3.9E carve-out (freeze stage only: programme
+                        # manifest, parity records, final audits, freeze
+                        # test + final doc; no science change).
+                        "results/v3/v3_9e/",
+                        "docs/V3_9_UNCERTAINTY_INTELLIGENCE_FINAL.md",
+                        "tests/test_v3_9e_freeze.py")
     for f in _changed_files():
         assert any(f.startswith(p) for p in allowed_prefixes), f
 
@@ -395,7 +423,9 @@ def test_no_api_change():
     # V3.8H reconciliation: V3.8F charter additionally admits exactly the
     # consensus API integration files (frozen science untouched).
     allowed = ("api/v2_strategy_v3_", "api/main.py",
-               "api/v2_counterfactual_", "api/v2_consensus_")
+               "api/v2_counterfactual_", "api/v2_consensus_",
+               # V3.9C carve-out: uncertainty bundle API (additive).
+               "api/v2_uncertainty_")
     assert not any(f.startswith("api/") and not f.startswith(allowed)
                    for f in _changed_files())
 
@@ -407,6 +437,9 @@ def test_no_frontend_change():
     # Counterfactual Explorer paths (backend/science untouched).
     # V3.8H reconciliation: V3.8G charter additionally admits exactly the
     # consensus frontend paths (backend/science untouched).
+    # V3.9D reconciliation: V3.9D charter additionally admits exactly the
+    # uncertainty product UI paths (presentation only; frozen science
+    # untouched).
     allowed = ("frontend/app/strategy/page.tsx",
                "frontend/features/strategy/components/Strategy",
                "frontend/features/strategy/hooks/useStrategy",
@@ -415,6 +448,8 @@ def test_no_frontend_change():
                "frontend/app/counterfactuals",
                "frontend/features/counterfactuals",
                "frontend/app/consensus", "frontend/features/consensus",
+               "frontend/app/uncertainty",
+               "frontend/features/uncertainty",
                "frontend/components/shell/CommandBar.tsx")
     assert not any(f.startswith("frontend/") and not f.startswith(allowed)
                    for f in _changed_files())

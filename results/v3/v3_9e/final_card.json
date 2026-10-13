@@ -1,0 +1,67 @@
+{
+ "api_routes": [
+  "GET /v2/uncertainty/availability",
+  "POST /v2/uncertainty/compare"
+ ],
+ "avoided_claims": [
+  "complete uncertainty quantification",
+  "calibrated confidence",
+  "epistemic/aleatoric decomposition",
+  "simulator robustness",
+  "real-world uncertainty interval"
+ ],
+ "card_identity": "2f8c4fd9a35b4dc5c058262b17d5fed151ddd26049c0dc10693a0d9947dafadf",
+ "classification": "V3_9_UNCERTAINTY_INTELLIGENCE_FROZEN",
+ "collection": {
+  "final_expected": 5176,
+  "final_observed": 5176
+ },
+ "empirical_evidence": {
+  "comparable_pairs": 277,
+  "k_eq_0_valid": 187,
+  "leader_agreement": "9 / 14 comparable leader states",
+  "max_se": 0.007071,
+  "mean_abs_gap": 0.0318,
+  "mean_wilson_width": 0.00372,
+  "median_abs_gap": 0.0007,
+  "median_spearman": 0.6744,
+  "n_5000_states": 277,
+  "race_laps": 15,
+  "races": 8,
+  "seasons": "2022-2024"
+ },
+ "freeze_commit_message": "feat(uncertainty): freeze v3.9 uncertainty intelligence",
+ "freeze_tag": "v3.9-uncertainty-intelligence",
+ "frontend_route": "/uncertainty",
+ "frontend_validation": {
+  "build": "clean, /uncertainty emitted",
+  "tests": "386/386 pass",
+  "typecheck": "clean"
+ },
+ "parent_anchors": {
+  "mc2_performance_commit": "32466c436845ee02c3af79ce08d1c102b9d91384",
+  "mc2_performance_tag": "v3.8-mc2-performance",
+  "v38_commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+  "v38_tag": "v3.8-model-simulation-consensus"
+ },
+ "push_status": "not pushed",
+ "schema": "v3.9e-final-card-v1",
+ "stage_cards": {
+  "V3.9A": "e3e2c3cfa2ebbd239b205479d6b7b9ee12130deddf3d4803c261c06b91ae099a",
+  "V3.9B": "a016290d56567805f715c91157960277ee76d7c8ecd00573a4b1ca56ce4b5ebf",
+  "V3.9C": "2f7eb9a49311e34f5b7b9978a21b54787f8be17c9e242b23e04c780c847fbb25",
+  "V3.9D": "UNCERTAINTY_PRODUCT_UI_VALIDATED (A; unhashed stage record)"
+ },
+ "tier1": {
+  "collected": 5176,
+  "deselected": 1048,
+  "errors": 0,
+  "failed": 0,
+  "passed": 4124,
+  "runtime_s": 3106.4,
+  "xfailed": 4
+ },
+ "u1": "supported / measured / runtime / product",
+ "u2": "supported / measured / runtime / product",
+ "u3": "provenance insufficient / non-executable / product-visible limitation"
+}

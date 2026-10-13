@@ -1,0 +1,23 @@
+{
+ "edge_behavior": {
+  "n=0": "INVALID input (raises); status INSUFFICIENT_SIMULATIONS, never zero-filled",
+  "p_hat=0": "VALID zero simulation frequency, NOT missing; SE=0, Wilson=(0, upper>0)",
+  "p_hat=1": "VALID, symmetric to p=0",
+  "production_n=5000": "SE <= sqrt(0.25/5000) ~= 0.0071 (max at p=0.5)",
+  "refused_state": "UNSUPPORTED_STATE (eligibility/refusal from frozen MC2 semantics)",
+  "small_n": "Wilson preferred over normal interval; normal intervals not blindly used at boundaries"
+ },
+ "implementation": "v3.8c-consensus-metrics-v1 (mc_sampling_se, wilson_interval); REUSED UNCHANGED IN V3.9A",
+ "outcome_spread_distinction": {
+  "A_sampling_uncertainty": "How precisely did 5000 futures estimate this simulator frequency?",
+  "B_outcome_spread": "How varied were the simulator's generated outcomes?",
+  "rule": "NOT the same; broad spread with large n gives small SE. Frozen into contract."
+ },
+ "quantities": {
+  "n": "valid futures only; refused/invalid excluded, never imputed",
+  "p_hat": "k/n with n = valid MC2 futures",
+  "standard_error": "sqrt(p(1-p)/n); finite-sampling variability ONLY",
+  "wilson_95": "registered safer method; bounded, non-degenerate at p=0/1"
+ },
+ "schema": "v3.9a-mc-sampling-v1"
+}
