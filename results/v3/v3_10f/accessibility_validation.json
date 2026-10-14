@@ -1,0 +1,13 @@
+{
+  "validation": "telemetry accessibility (live render)",
+  "disclosure_keyboard": "pass (native details/summary; focus verified, Enter toggles)",
+  "table_semantics": "stacked list + definition-list rows used instead of wide tables (no table semantics required; list/descendant structure exposed in snapshot)",
+  "text_equivalents": "pass (no charts introduced; every value is text: times, deltas, compounds, stint ranges)",
+  "color_only": "pass (compounds/status are text labels; no team colors, no gradients, no color encoding)",
+  "focus_visible": "pass (summary uses focus-visible outline token, matching shell disclosures)",
+  "missing_state_text": "pass (in-progress / unavailable / no-evidence states all carry explicit text)",
+  "reduced_motion": "pass (no animation, no transitions introduced)",
+  "hover_only": "pass (nothing hover-gated; disclosures are tap/click/keyboard)",
+  "headings": "pass (h3 Telemetry inside the Selected driver region; proper nesting)",
+  "console_errors": "zero console errors during the validation session"
+}

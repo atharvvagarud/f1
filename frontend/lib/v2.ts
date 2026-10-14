@@ -654,6 +654,74 @@ export async function getReplayProbabilityTimeline(
   });
 }
 
+// --- V3.10F driver telemetry (historical evidence, causally sliced client-side) ---
+//
+// Typed boundary over GET /v2/races/{race_id}/replay/telemetry. One
+// race-scoped read-only request serves every driver's completed-lap and
+// stint evidence; the causal (<=T) slicing happens in the pure selector
+// (features/pit-wall/lib/telemetry.ts), never here. Values pass through
+// verbatim: no reference, delta, validity, or model computation.
+
+export type TelemetryLapPoint = {
+  driver_id: string;
+  lap_number: number;
+  observed_at_s: number;
+  lap_time_s: number | null;
+  sector_1_s: number | null;
+  sector_2_s: number | null;
+  sector_3_s: number | null;
+  compound: string | null;
+  tyre_life: number | null;
+  stint_number: number | null;
+  stint_lap: number | null;
+  fresh_tyre: boolean | null;
+  pit_entry: boolean | null;
+  pit_exit: boolean | null;
+  track_status: string | null;
+  deleted: boolean | null;
+  is_accurate: boolean | null;
+  fastf1_generated: boolean | null;
+};
+
+export type TelemetryStintPoint = {
+  driver_id: string;
+  stint_number: number;
+  compound: string | null;
+  fresh_tyre: boolean | null;
+  start_lap: number | null;
+  end_lap: number | null;
+  start_observed_at_s: number | null;
+  end_observed_at_s: number | null;
+  pit_in_lap: number | null;
+  pit_out_lap: number | null;
+  tyre_age_at_start: number | null;
+};
+
+export type TelemetryResponse = {
+  race_id: string;
+  telemetry_contract_version: string;
+  lap_count: number;
+  stint_count: number;
+  laps: TelemetryLapPoint[];
+  stints: TelemetryStintPoint[];
+};
+
+/** One race-scoped telemetry load (cache per race in the caller). */
+export async function getRaceTelemetry(
+  raceId: string,
+  fetcher: FetchLike = fetch,
+  base?: string,
+  signal?: AbortSignal,
+): Promise<TelemetryResponse> {
+  const url =
+    `${baseOf(base)}/v2/races/${encodeURIComponent(raceId)}` +
+    `/replay/telemetry`;
+  return readJson<TelemetryResponse>(fetcher, url, {
+    cache: "no-store",
+    signal,
+  });
+}
+
 // --- R8 Monte Carlo simulator (Phase-6) ---
 //
 // Typed boundary over POST /v2/simulations/race. The server reconstructs the

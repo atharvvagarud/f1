@@ -58,7 +58,16 @@ def test_no_runtime_code_modified():
                and m != "api/main.py"
                # V3.9D carve-out: uncertainty nav entry (one line,
                # presentation only; already V3.8H-allowlisted wiring file).
-               and m != "frontend/components/shell/CommandBar.tsx"]
+               and m != "frontend/components/shell/CommandBar.tsx"
+               # V3.10I reconciliation (freeze): exact V3.10 product
+               # modifications (workspace shell, replay calm prop,
+               # expert prefill x2, telemetry client; presentation
+               # only, frozen science untouched).
+               and m != "frontend/components/shell/AppShell.tsx"
+               and m != "frontend/features/counterfactuals/components/CounterfactualView.tsx"
+               and m != "frontend/features/replay/components/SpatialTrackPanel.tsx"
+               and m != "frontend/features/strategy/components/Strategy2View.tsx"
+               and m != "frontend/lib/v2.ts"]
     assert runtime == [], runtime
     # V3.9C owns raceintel/uncertainty (thin bundle over frozen seams):
     # purity holds iff it imports only frozen consensus seams, never MC2
@@ -234,15 +243,25 @@ def test_no_mc2_rerun_or_bayes_or_api():
     assert not (ROOT / "raceintel" / "simulation" / "bayesian_tyre.py").exists()
     # V3.9C owns exactly the additive uncertainty API trio (no other api/);
     # V3.9B itself adds no API.
+    # V3.10I reconciliation (freeze): the V3.9C trio is committed at the
+    # frozen parent, so the pre-commit worktree check becomes a freeze
+    # invariant — trio tracked, and exactly the additive V3.10F telemetry
+    # trio untracked (no other api/).
     import subprocess as sp
     out = sp.run(["git", "status", "--porcelain=v1"], cwd=ROOT,
                  capture_output=True, text=True, check=True).stdout
+    tracked = sp.run(["git", "ls-files", "api/"], cwd=ROOT,
+                     capture_output=True, text=True, check=True).stdout.split()
+    for f in ("api/v2_uncertainty_routes.py",
+              "api/v2_uncertainty_schemas.py",
+              "api/v2_uncertainty_service.py"):
+        assert f in tracked, f
     new_api = sorted(ln.split()[-1] for ln in out.splitlines()
                      if ln.strip().startswith("??")
-                     and ln.split()[-1].startswith("api/v2_uncertainty_"))
-    assert new_api == ["api/v2_uncertainty_routes.py",
-                       "api/v2_uncertainty_schemas.py",
-                       "api/v2_uncertainty_service.py"], new_api
+                     and ln.split()[-1].startswith("api/"))
+    assert new_api == ["api/v2_telemetry_routes.py",
+                       "api/v2_telemetry_schemas.py",
+                       "api/v2_telemetry_service.py"], new_api
 
 
 def test_performance_freeze_provenance():

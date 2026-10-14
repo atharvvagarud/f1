@@ -34,6 +34,7 @@ from api.v2_consensus_routes import router as v2_consensus_router
 from api.v2_uncertainty_routes import router as v2_uncertainty_router
 from api.v2_explanation_routes import router as v2_explanation_router
 from api.v2_replay_routes import router as v2_replay_router
+from api.v2_telemetry_routes import router as v2_telemetry_router
 from api.v2_routes import router as v2_router
 from api.v2_simulation_routes import router as v2_simulation_router
 from api.v2_simulation_service import SimulationParameterUnavailableError
@@ -96,6 +97,7 @@ def create_app(config: ServingConfig | None = None) -> FastAPI:
     app.include_router(router)
     app.include_router(v2_router)
     app.include_router(v2_replay_router)
+    app.include_router(v2_telemetry_router)
     app.include_router(v2_explanation_router)
     app.include_router(v2_timeline_explanation_router)
     app.include_router(v2_simulation_router)

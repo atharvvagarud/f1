@@ -1,0 +1,262 @@
+{
+  "audit": "V3.10D",
+  "scope": "sample",
+  "scope_note": "Season-stratified sample (first+last round per season plus wet 2024 S\u00e3o Paulo). Full-registry multiprocess audit exceeds this machine's memory; derivation is a pure function of frames so mapping-rate findings generalize. Every served race still gets its corpus derived at runtime when visited in the product.",
+  "races_audited": 15,
+  "frames_total": 15879,
+  "events_total": 1827,
+  "by_kind": {
+    "RC_MESSAGE": 351,
+    "LAP": 862,
+    "PIT": 495,
+    "FLAG_YELLOW": 41,
+    "FLAG_GREEN": 54,
+    "FLAG_VSC": 14,
+    "FLAG_SAFETY_CAR": 9,
+    "FLAG_RED": 1
+  },
+  "rejected_total": 0,
+  "by_reason": {},
+  "races_with_zero_events": [],
+  "elapsed_s": 522.5,
+  "per_race": [
+    {
+      "race_id": "2018-r01-R",
+      "total_frames": 940,
+      "events_total": 120,
+      "by_kind": {
+        "RC_MESSAGE": 29,
+        "LAP": 57,
+        "PIT": 18,
+        "FLAG_YELLOW": 7,
+        "FLAG_GREEN": 7,
+        "FLAG_VSC": 1,
+        "FLAG_SAFETY_CAR": 1
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 57
+    },
+    {
+      "race_id": "2018-r21-R",
+      "total_frames": 942,
+      "events_total": 98,
+      "by_kind": {
+        "LAP": 54,
+        "PIT": 18,
+        "RC_MESSAGE": 19,
+        "FLAG_GREEN": 4,
+        "FLAG_VSC": 2,
+        "FLAG_YELLOW": 1
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 54
+    },
+    {
+      "race_id": "2019-r01-R",
+      "total_frames": 1041,
+      "events_total": 91,
+      "by_kind": {
+        "FLAG_GREEN": 2,
+        "RC_MESSAGE": 9,
+        "LAP": 57,
+        "PIT": 22,
+        "FLAG_YELLOW": 1
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 57
+    },
+    {
+      "race_id": "2019-r21-R",
+      "total_frames": 1075,
+      "events_total": 99,
+      "by_kind": {
+        "FLAG_GREEN": 1,
+        "RC_MESSAGE": 18,
+        "LAP": 54,
+        "PIT": 26
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 54
+    },
+    {
+      "race_id": "2020-r01-R",
+      "total_frames": 1059,
+      "events_total": 150,
+      "by_kind": {
+        "RC_MESSAGE": 32,
+        "LAP": 67,
+        "FLAG_YELLOW": 6,
+        "PIT": 38,
+        "FLAG_GREEN": 4,
+        "FLAG_SAFETY_CAR": 3
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 67
+    },
+    {
+      "race_id": "2020-r17-R",
+      "total_frames": 1044,
+      "events_total": 105,
+      "by_kind": {
+        "RC_MESSAGE": 24,
+        "LAP": 54,
+        "FLAG_YELLOW": 1,
+        "FLAG_VSC": 1,
+        "FLAG_SAFETY_CAR": 1,
+        "PIT": 23,
+        "FLAG_GREEN": 1
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 54
+    },
+    {
+      "race_id": "2021-r01-R",
+      "total_frames": 1026,
+      "events_total": 113,
+      "by_kind": {
+        "LAP": 55,
+        "FLAG_GREEN": 3,
+        "RC_MESSAGE": 12,
+        "PIT": 40,
+        "FLAG_VSC": 2,
+        "FLAG_YELLOW": 1
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 55
+    },
+    {
+      "race_id": "2021-r22-R",
+      "total_frames": 1000,
+      "events_total": 130,
+      "by_kind": {
+        "RC_MESSAGE": 34,
+        "LAP": 57,
+        "PIT": 29,
+        "FLAG_YELLOW": 3,
+        "FLAG_GREEN": 4,
+        "FLAG_VSC": 2,
+        "FLAG_SAFETY_CAR": 1
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 57
+    },
+    {
+      "race_id": "2022-r01-R",
+      "total_frames": 1125,
+      "events_total": 142,
+      "by_kind": {
+        "RC_MESSAGE": 20,
+        "LAP": 56,
+        "PIT": 58,
+        "FLAG_YELLOW": 3,
+        "FLAG_GREEN": 3,
+        "FLAG_VSC": 1,
+        "FLAG_SAFETY_CAR": 1
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 56
+    },
+    {
+      "race_id": "2022-r22-R",
+      "total_frames": 1117,
+      "events_total": 113,
+      "by_kind": {
+        "RC_MESSAGE": 21,
+        "LAP": 57,
+        "PIT": 31,
+        "FLAG_YELLOW": 2,
+        "FLAG_GREEN": 2
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 57
+    },
+    {
+      "race_id": "2023-r01-R",
+      "total_frames": 1056,
+      "events_total": 136,
+      "by_kind": {
+        "RC_MESSAGE": 26,
+        "LAP": 56,
+        "FLAG_GREEN": 2,
+        "PIT": 50,
+        "FLAG_YELLOW": 1,
+        "FLAG_VSC": 1
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 56
+    },
+    {
+      "race_id": "2023-r22-R",
+      "total_frames": 1157,
+      "events_total": 102,
+      "by_kind": {
+        "LAP": 57,
+        "RC_MESSAGE": 8,
+        "PIT": 37
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 57
+    },
+    {
+      "race_id": "2024-r01-R",
+      "total_frames": 1129,
+      "events_total": 126,
+      "by_kind": {
+        "RC_MESSAGE": 22,
+        "FLAG_GREEN": 3,
+        "LAP": 56,
+        "PIT": 43,
+        "FLAG_YELLOW": 2
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 56
+    },
+    {
+      "race_id": "2024-r21-R",
+      "total_frames": 1134,
+      "events_total": 167,
+      "by_kind": {
+        "FLAG_GREEN": 13,
+        "LAP": 68,
+        "FLAG_YELLOW": 9,
+        "RC_MESSAGE": 37,
+        "PIT": 34,
+        "FLAG_VSC": 3,
+        "FLAG_SAFETY_CAR": 2,
+        "FLAG_RED": 1
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 68
+    },
+    {
+      "race_id": "2024-r24-R",
+      "total_frames": 1034,
+      "events_total": 135,
+      "by_kind": {
+        "RC_MESSAGE": 40,
+        "FLAG_VSC": 1,
+        "LAP": 57,
+        "FLAG_GREEN": 5,
+        "PIT": 28,
+        "FLAG_YELLOW": 4
+      },
+      "rejected_total": 0,
+      "by_reason": {},
+      "lap_count": 57
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "audit": "V3.10B",
+  "v39_freeze": {
+    "commit": "fb0d8d8772bdc1343bc6be6c5ff9ee68cddd7203",
+    "tag": "v3.9-uncertainty-intelligence",
+    "head_matches": true,
+    "method": "git rev-parse HEAD + tag^{commit} + Python guard tests"
+  },
+  "v310a_integrity": "intact: docs/V3_10A_PIT_WALL_INFORMATION_ARCHITECTURE.md + results/v3/v3_10a/ untouched (route_inventory still classifies /replay primary; pinned by Python guard)",
+  "graphify": {
+    "entry_nodes": 19329,
+    "entry_links": 43467,
+    "final_nodes": 19431,
+    "final_links": 43665,
+    "delta_note": "+102 nodes/+198 links from indexing the new V3.10B substrate (workspace core/URL/adapter/links/provider + tests), doc, and artifacts; intended direction only (product -> workspace state -> replay identity primitives); workspace core has zero imports (no workspace -> science edges); no cycles; no result-artifact runtime imports"
+  },
+  "python": {
+    "baseline": 5176,
+    "new_guard_tests": 3,
+    "total": 5179,
+    "method": "uv run pytest tests/ --collect-only -q; focused guards pass"
+  },
+  "frontend": {
+    "baseline": 386,
+    "new_focused_tests": 47,
+    "total": 433,
+    "result": "433/433 pass",
+    "typecheck": "npx tsc --noEmit clean",
+    "lint": "eslint clean on workspace + AppShell",
+    "build": "production build prerenders all 11 routes"
+  },
+  "science": {
+    "api_changed": false,
+    "models_rerun": false,
+    "mc2_runs": false,
+    "mc2_eligibility": "3678/9644 (38.14%) untouched",
+    "new_science_requests": 0
+  },
+  "pathology": {
+    "V3.10B-P1": 0,
+    "V3.10B-P2": 0,
+    "V3.10B-P3": 0,
+    "V3.10B-P4": 0,
+    "V3.10B-P5": 0,
+    "V3.10B-P6": 0,
+    "V3.10B-P7": 0,
+    "V3.10B-P8": 0,
+    "V3.10B-P9": 0,
+    "V3.10B-P10": 0,
+    "V3.10B-P11": 0,
+    "V3.10B-P12": 0,
+    "V3.10B-P13": 0,
+    "V3.10B-P14": 0,
+    "V3.10B-P15": 0,
+    "V3.10B-P16": 0,
+    "V3.10B-P17": 0,
+    "V3.10B-P18": 0,
+    "V3.10B-P19": 0,
+    "V3.10B-P20": 0
+  },
+  "git": {
+    "committed": false,
+    "tagged": false,
+    "pushed": false
+  },
+  "classification": "A. SHARED_WORKSPACE_STATE_VALIDATED"
+}

@@ -1,0 +1,17 @@
+{
+  "validation": "responsive pit-wall with telemetry (live render, 2021-r01-R frame 400 hamilton)",
+  "w1600": {
+    "closed": "pass (shot_1600_closed.png; track dominant; calm L0 preserved)",
+    "open": "pass (shot_1600_open.png; telemetry inside driver region; scrollWidth 1600 == viewport 1600)"
+  },
+  "w820": {
+    "open": "pass (shot_820_open.png; single-column telemetry rows; scrollWidth 820 == viewport 820)",
+    "closed": "pass (telemetry defaults closed on fresh navigation at every width)"
+  },
+  "w390": {
+    "closed": "pass (shot_390_closed.png; scrollWidth 390 == viewport 390)",
+    "open": "pass (shot_390_open.png; stacked factual rows, no page-level horizontal scroll, no wide tables)"
+  },
+  "overflow": "zero page-level overflow at all widths, closed and open",
+  "hierarchy": "track remains dominant; telemetry never becomes a multi-dashboard grid"
+}

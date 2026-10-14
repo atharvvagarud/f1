@@ -1,0 +1,20 @@
+{
+  "validation": "causal visibility across replay states (2021-r01-R hamilton, live render)",
+  "frame_200_T3456_leader11": {
+    "recent_completed": [7, 8, 9, 10, 11],
+    "reference": "LAP 8 (best so far at T)",
+    "in_progress": "LAP 12, values unavailable",
+    "stints": "STINT 1 MEDIUM lap 1-current, stint age 11, ACTIVE; zero completed; no STINT 2/3 trace"
+  },
+  "frame_400_T4511_leader22": {
+    "recent_completed": [18, 19, 20, 21, 22],
+    "reference": "LAP 15 (best so far at T; moved only via <=T evidence)",
+    "in_progress": "LAP 23, values unavailable",
+    "stints": "STINT 1 MEDIUM 1-13 COMPLETED; STINT 2 HARD lap 14-current, stint age 9, ACTIVE; no STINT 3 trace"
+  },
+  "driver_switch_same_frame": {
+    "max_verstappen": "recent 18-22 with LAP 18 Pit lap tag (+21.111 descriptive); reference LAP 19; STINT 1 MEDIUM 1-17 COMPLETED; STINT 2 MEDIUM lap 18-current age 5 ACTIVE; no STINT 3 trace",
+    "per_driver_reference": "hamilton LAP 15 vs verstappen LAP 19 at identical T (independent slices)"
+  },
+  "result": "reveal-before/at/after boundaries behave; advancing T only adds newly-completed evidence"
+}

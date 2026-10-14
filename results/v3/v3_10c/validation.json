@@ -1,0 +1,72 @@
+{
+  "audit": "V3.10C",
+  "v39_freeze": {
+    "commit": "fb0d8d8772bdc1343bc6be6c5ff9ee68cddd7203",
+    "tag": "v3.9-uncertainty-intelligence",
+    "head_matches": true
+  },
+  "v310a_integrity": "unchanged (audit artifacts untouched)",
+  "v310b_integrity": "WorkspaceState semantics unchanged; no fields added; provider/adapter/URL contracts untouched (only new consumer code)",
+  "graphify": {
+    "entry_nodes": 19431,
+    "entry_links": 43665,
+    "final_nodes": 19480,
+    "final_links": 43801,
+    "direction": "/pit-wall -> workspace substrate + existing replay presentation/data boundaries; no pit-wall -> science edges; no workspace -> science edges; no cycles"
+  },
+  "python": {
+    "baseline": 5179,
+    "new_guard_tests": 0,
+    "total": 5179,
+    "status": "match (no backend changes, Tier-1 not run per spec)"
+  },
+  "frontend": {
+    "baseline": 433,
+    "new_focused_tests": 26,
+    "total": 459,
+    "result": "459/459 pass (131 suites)",
+    "typecheck": "npx tsc --noEmit clean",
+    "lint": "eslint clean (pit-wall, shell, app/pit-wall)",
+    "build": "production build prerenders all 12 routes incl. /pit-wall"
+  },
+  "browser": {
+    "1600": "pass, no overflow, track-dominant two-column",
+    "820": "pass after grid-areas fix, calm single column",
+    "390": "pass, no page overflow, priority order correct",
+    "interactions": "race select -> ?race=&frame=0; driver select -> &driver=; reload restores identical state"
+  },
+  "science": {
+    "changed": false,
+    "mc2_runs": false,
+    "mc2_eligibility": "3678/9644 (38.14%) untouched",
+    "api_changed": false
+  },
+  "pathology": {
+    "V3.10C-P1": 0,
+    "V3.10C-P2": 0,
+    "V3.10C-P3": 0,
+    "V3.10C-P4": 0,
+    "V3.10C-P5": 0,
+    "V3.10C-P6": 0,
+    "V3.10C-P7": 0,
+    "V3.10C-P8": 0,
+    "V3.10C-P9": 0,
+    "V3.10C-P10": 0,
+    "V3.10C-P11": 0,
+    "V3.10C-P12": 0,
+    "V3.10C-P13": 0,
+    "V3.10C-P14": 0,
+    "V3.10C-P15": 0,
+    "V3.10C-P16": 0,
+    "V3.10C-P17": 0,
+    "V3.10C-P18": 0,
+    "V3.10C-P19": 0,
+    "V3.10C-P20": 0
+  },
+  "git": {
+    "committed": false,
+    "tagged": false,
+    "pushed": false
+  },
+  "classification": "A. PIT_WALL_SHELL_VALIDATED"
+}

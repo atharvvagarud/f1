@@ -8,6 +8,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
+  { href: "/pit-wall", label: "Pit wall" },
+  { href: "/replay", label: "Races" },
+  { href: "/models", label: "Models" },
+  { href: "/about", label: "About" },
+] as const;
+
+// Expert/deep-dive surfaces (V3.10C). Removed from primary weight, never
+// deleted: every route stays directly reachable and deep-linkable. RACES
+// maps to /replay because it is the existing served-race selection surface.
+const EXPERT_ITEMS = [
   { href: "/", label: "Predict" },
   { href: "/replay", label: "Replay" },
   { href: "/simulator", label: "Simulate" },
@@ -15,8 +25,6 @@ const NAV_ITEMS = [
   { href: "/uncertainty", label: "Uncertainty" },
   { href: "/strategy", label: "Strategy" },
   { href: "/counterfactuals", label: "Counterfactuals" },
-  { href: "/models", label: "Models" },
-  { href: "/about", label: "About" },
 ] as const;
 
 export function CommandBar() {
@@ -66,6 +74,33 @@ export function CommandBar() {
             Historical · V2
           </span>
         </div>
+      </div>
+      <div className="border-t border-ink-700">
+        <nav
+          aria-label="Expert"
+          className="mx-auto flex max-w-7xl items-center gap-1 overflow-x-auto px-4 py-1.5 sm:px-6"
+        >
+          <span className="shrink-0 font-data text-[10px] uppercase tracking-[0.14em] text-fg-dim">
+            Expert
+          </span>
+          {EXPERT_ITEMS.map((item) => {
+            const active = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={`shrink-0 px-2 py-1 font-ui text-[10px] uppercase tracking-[0.12em] transition-colors ${
+                  active
+                    ? "font-semibold text-fg"
+                    : "text-fg-dim hover:text-fg"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
       </div>
     </header>
   );

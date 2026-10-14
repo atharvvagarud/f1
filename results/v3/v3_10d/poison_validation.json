@@ -1,0 +1,1 @@
+{"audit":"V3.10D","method":"synthetic digests with future SC/message/pit/flag storm past T; node --test","results":["future events invisible in feed/markers/counts at T","nextEventFrame returns a bare number (no identity leak)","all events appear exactly at/after their observable frame","21 event-model tests pass incl. 4 poison cases"]}

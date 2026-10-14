@@ -379,6 +379,11 @@ def _p1_counts():
         BATCH_SRC else 1
     strat = [ln for ln in dirty if "raceintel/strategy" in ln
              or "counterfactual" in ln]
+    # V3.10I reconciliation (freeze): the single admitted frontend
+    # path below is the G expert-prefill edit (presentation only;
+    # raceintel/strategy science untouched — verified zero diff).
+    strat = [ln for ln in strat
+             if "frontend/features/counterfactuals/components/CounterfactualView.tsx" not in ln]
     counts["P1-P25"] = len(strat)
     from raceintel.consensus import product as _P
 

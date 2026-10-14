@@ -1,0 +1,16 @@
+{
+  "contract": "sector/lap reference + delta semantics (V3.10F)",
+  "selector": "selectReferenceLap(completed<=T)",
+  "reference_definition": "best (minimum) recorded lap_time_s among the driver's completed laps with observed_at_s <= T, excluding FastF1-generated synthetic rows; ties resolve to the earliest lap",
+  "reference_label": "best completed lap so far, LAP n",
+  "why_best_so_far": "minimum is robust to pit laps (a pit lap can never be the minimum); previous-lap reference would inject pit-lap noise into every delta",
+  "excluded_from_reference": ["fastf1_generated rows (SOURCE_METADATA, causally safe to exclude)"],
+  "not_excluded_from_reference": {
+    "deleted_laps": "POST_RACE stewards knowledge; excluding would leak the future",
+    "pit_laps": "IN_LAP evidence, shown factually with a Pit lap tag; can never be the minimum",
+    "sc_vsc_laps": "slower by construction; documented limitation, deltas stay descriptive"
+  },
+  "delta_definition": "lap/sector value minus the same field of the reference lap; null when either side missing",
+  "delta_language": "descriptive only (S1 +0.112 vs best LAP n); no qualitative labels, no causal claims",
+  "forbidden": ["future personal best", "final-race best", "future leader lap", "future race average", "tyre-degradation wording", "traffic/driver-mistake claims"]
+}

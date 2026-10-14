@@ -1,0 +1,17 @@
+{
+  "contract": "completed + active stint history (V3.10F)",
+  "selector": "selectStintHistory(corpus, driverId, T, currentCompound, frameStintNumber, observedLap)",
+  "completed_stint": "stint with end_observed_at_s != null and <= T; shows stint number, compound (entity, observed past), start-end lap range, lap count, COMPLETED",
+  "active_stint": "stint with start_observed_at_s <= T and end not observed by T, matching the frame state's stint_number",
+  "active_stint_facts": "compound from the causal frame state (never backfilled; null renders UNKNOWN), start lap (past-observed), stint age = observedLap - startLap + 1, ACTIVE",
+  "active_stint_never_shows": ["entity end_lap (future leak)", "entity compound when frame compound differs", "next-stint pit data"],
+  "ambiguous_transition": "frame stint_number null while stints underway -> activeUnknown, explicit unavailable text, never estimated",
+  "unplaceable_entity_stint": "frame reports a stint the entity cannot place causally -> frame facts alone, explicitly partial",
+  "future_stints": "hidden entirely, including their count; no 'stint k of N', no blank slots, no width/count-derived structure",
+  "tyre_age_terminology": "STINT AGE only (observed laps in stint); raw FastF1 tyre_life includes other-session laps and is never relabelled",
+  "observed_example_2021_r01_hamilton_T4511": {
+    "completed": ["STINT 1 MEDIUM laps 1-13 COMPLETED"],
+    "active": "STINT 2 HARD lap 14-current, stint age 9, ACTIVE",
+    "hidden": "STINT 3 (future)"
+  }
+}

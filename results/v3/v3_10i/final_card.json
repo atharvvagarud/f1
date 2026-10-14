@@ -1,0 +1,33 @@
+{
+  "accessibility": "single announcer; calm spatial cue; persistent controls; 40-stop keyboard walkthrough; 44px touch; no hue-only carriers",
+  "causal_guarantees": "exact frames; <=T selectors; no future identity/location/count/structure; no snapping; keyed stale guards",
+  "classification": "V3_10_PIT_WALL_EXPERIENCE_FROZEN",
+  "counterfactual_semantics": "V3.7 frozen; simulator-conditional; explicit PIT_IN_N_LAPS; no causal claim",
+  "deferred": "MC2 coverage expansion (next); no V3.11",
+  "frozen_parent": "fb0d8d8772bdc1343bc6be6c5ff9ee68cddd7203",
+  "intelligence_sources": "frozen V3.1B Logistic x MC2-E, side-by-side, finite MC precision only",
+  "limitations": [
+    "MC2 38.14%",
+    "2025 excluded",
+    "sparse E anchors",
+    "no recommendation",
+    "no fusion",
+    "separate expert surfaces"
+  ],
+  "product_route": "/pit-wall",
+  "programme": "V3.10 integrated causal race-intelligence workspace (A-H)",
+  "responsive": "1600/820/390 verified; track dominant; mobile intentionally reduced",
+  "strategy_semantics": "V3.6 frozen; explicit cached compare; no recommendation",
+  "telemetry_semantics": "completed evidence <=T; descriptive only",
+  "test_gates": {
+    "frontend": "604/604 + typecheck + lint + build",
+    "python_tier1": "5186 collected; 5177 passed; 0 failed; 5 skipped; 4 xfailed (pre-existing)"
+  },
+  "workspace_identity": [
+    "raceId",
+    "frameIndex",
+    "selectedDriverId"
+  ],
+  "freeze_tag": "v3.10-pit-wall",
+  "manifest_identity": "418a68564f1d3957c83b58ea3594564abfb3530ca887bf93c422eb8fcb2c0bb3"
+}

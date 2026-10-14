@@ -1,0 +1,1 @@
+{"audit":"V3.10B","reload":"hydrateFromUrl deterministic and stateless: race=X&frame=123&driver=NOR resolves identically on every parse (tested twice-equal); no hidden prior component state; provider hydrates once on mount (client-only effect; SSR renders idle null so hydration matches); empty query = idle (not error); malformed query = recorded initError, never crash"}

@@ -1,0 +1,16 @@
+{
+  "stage": "V3.10D",
+  "title": "Race control feed + event-aware timeline",
+  "verdict": "V3.10D COMPLETE \u2014 EVENT-AWARE REPLAY VALIDATED \u2014 READY FOR V3.10E",
+  "classification": "A. EVENT_AWARE_REPLAY_VALIDATED",
+  "events": "closed 9-kind taxonomy; first-observable-frame mapping; causal visible set; generic NEXT EVENT; exact prev/next event + prev/next lap",
+  "feed": "latest-5 causal + disclosure; rows seek exact frames; driver chips select; empty vs unavailable distinguished",
+  "validation": "frontend 496 (459+37) pending final run; coverage 1827 events/15 races, 100% mapping; browser 1600/820/390 with before/at reveal proof",
+  "deferred": [
+    "V3.10E driver intelligence",
+    "V3.10F sector/tyre",
+    "V3.10G strategy/counterfactuals",
+    "MC2 coverage (3678/9644)"
+  ],
+  "next_gate": "V3.10E \u2014 SELECTED-DRIVER INTELLIGENCE INTEGRATION"
+}

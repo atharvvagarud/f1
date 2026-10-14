@@ -1,0 +1,484 @@
+{
+  "audit": "V3.10G strategy parity: contextual surface consumes the same frozen endpoint + payload as the expert page (POST /v2/strategies/compare-v3 mode=cached, full 9-action set)",
+  "http_status": 200,
+  "execution_source": "cache",
+  "simulation_count": 5000,
+  "master_seed": 20240101,
+  "reference_kind": "SIMULATED_NO_INTERVENTION_REFERENCE",
+  "supported": true,
+  "alternative_count": 9,
+  "candidate_order": [
+    "STAY_OUT:SAMPLED",
+    "PIT_NOW:SAMPLED",
+    "PIT_NOW:SOFT",
+    "PIT_NOW:MEDIUM",
+    "PIT_NOW:HARD",
+    "PIT_NEXT_LAP:SAMPLED",
+    "PIT_NEXT_LAP:SOFT",
+    "PIT_NEXT_LAP:MEDIUM",
+    "PIT_NEXT_LAP:HARD"
+  ],
+  "alternatives": [
+    {
+      "candidate_key": "STAY_OUT:SAMPLED",
+      "evaluated": true,
+      "reason": null,
+      "deltas": {
+        "delta_win_frequency": {
+          "point_estimate": 0.0032,
+          "paired_se": 0.0021906418653801266,
+          "ci_low": -0.001,
+          "ci_high": 0.0076,
+          "valid_pairs": 5000
+        },
+        "delta_podium_frequency": {
+          "point_estimate": 0.0004,
+          "paired_se": 0.002993619941153429,
+          "ci_low": -0.0054,
+          "ci_high": 0.0064,
+          "valid_pairs": 5000
+        },
+        "delta_top5_frequency": {
+          "point_estimate": 0.0,
+          "paired_se": 0.0012650375741505872,
+          "ci_low": -0.0024,
+          "ci_high": 0.0026,
+          "valid_pairs": 5000
+        },
+        "delta_top10_frequency": {
+          "point_estimate": 0.0002,
+          "paired_se": 0.0001999999999999992,
+          "ci_low": 0.0,
+          "ci_high": 0.0006,
+          "valid_pairs": 5000
+        },
+        "delta_expected_finish": {
+          "point_estimate": 0.0056,
+          "paired_se": 0.008280545965593302,
+          "ci_low": -0.01040499999999999,
+          "ci_high": 0.0226,
+          "valid_pairs": 5000
+        },
+        "delta_downside_probability": {
+          "point_estimate": 0.0386,
+          "paired_se": 0.0027246087239342982,
+          "ci_low": 0.0332,
+          "ci_high": 0.044,
+          "valid_pairs": 5000
+        }
+      },
+      "complete_pairs": 5000,
+      "excluded_pairs": 0
+    },
+    {
+      "candidate_key": "PIT_NOW:SAMPLED",
+      "evaluated": true,
+      "reason": null,
+      "deltas": {
+        "delta_win_frequency": {
+          "point_estimate": -0.2076,
+          "paired_se": 0.007664998267428767,
+          "ci_low": -0.2226,
+          "ci_high": -0.1932,
+          "valid_pairs": 5000
+        },
+        "delta_podium_frequency": {
+          "point_estimate": -0.154,
+          "paired_se": 0.008078976047172693,
+          "ci_low": -0.169405,
+          "ci_high": -0.138,
+          "valid_pairs": 5000
+        },
+        "delta_top5_frequency": {
+          "point_estimate": -0.0222,
+          "paired_se": 0.0031150237036874206,
+          "ci_low": -0.0284,
+          "ci_high": -0.0162,
+          "valid_pairs": 5000
+        },
+        "delta_top10_frequency": {
+          "point_estimate": -0.0012,
+          "paired_se": 0.0005654873607703737,
+          "ci_low": -0.0024,
+          "ci_high": -0.0002,
+          "valid_pairs": 5000
+        },
+        "delta_expected_finish": {
+          "point_estimate": -0.6998,
+          "paired_se": 0.02471878224425941,
+          "ci_low": -0.7456050000000001,
+          "ci_high": -0.6514,
+          "valid_pairs": 5000
+        },
+        "delta_downside_probability": {
+          "point_estimate": 0.4998,
+          "paired_se": 0.007071774458988287,
+          "ci_low": 0.486595,
+          "ci_high": 0.5134,
+          "valid_pairs": 5000
+        }
+      },
+      "complete_pairs": 5000,
+      "excluded_pairs": 0
+    },
+    {
+      "candidate_key": "PIT_NOW:SOFT",
+      "evaluated": true,
+      "reason": null,
+      "deltas": {
+        "delta_win_frequency": {
+          "point_estimate": -0.272,
+          "paired_se": 0.007212045668223923,
+          "ci_low": -0.286,
+          "ci_high": -0.257795,
+          "valid_pairs": 5000
+        },
+        "delta_podium_frequency": {
+          "point_estimate": -0.2378,
+          "paired_se": 0.008603780390468071,
+          "ci_low": -0.25420499999999996,
+          "ci_high": -0.2212,
+          "valid_pairs": 5000
+        },
+        "delta_top5_frequency": {
+          "point_estimate": -0.0406,
+          "paired_se": 0.0037246614101852384,
+          "ci_low": -0.0476,
+          "ci_high": -0.0336,
+          "valid_pairs": 5000
+        },
+        "delta_top10_frequency": {
+          "point_estimate": -0.0006,
+          "paired_se": 0.00044717780982370396,
+          "ci_low": -0.0016,
+          "ci_high": 0.0002,
+          "valid_pairs": 5000
+        },
+        "delta_expected_finish": {
+          "point_estimate": -1.0192,
+          "paired_se": 0.025148613531416095,
+          "ci_low": -1.0674,
+          "ci_high": -0.9704,
+          "valid_pairs": 5000
+        },
+        "delta_downside_probability": {
+          "point_estimate": 0.5998,
+          "paired_se": 0.006929472961135316,
+          "ci_low": 0.5862,
+          "ci_high": 0.6134,
+          "valid_pairs": 5000
+        }
+      },
+      "complete_pairs": 5000,
+      "excluded_pairs": 0
+    },
+    {
+      "candidate_key": "PIT_NOW:MEDIUM",
+      "evaluated": true,
+      "reason": null,
+      "deltas": {
+        "delta_win_frequency": {
+          "point_estimate": -0.1618,
+          "paired_se": 0.008075716404077381,
+          "ci_low": -0.177805,
+          "ci_high": -0.1458,
+          "valid_pairs": 5000
+        },
+        "delta_podium_frequency": {
+          "point_estimate": -0.1356,
+          "paired_se": 0.008276244755047178,
+          "ci_low": -0.1522,
+          "ci_high": -0.1192,
+          "valid_pairs": 5000
+        },
+        "delta_top5_frequency": {
+          "point_estimate": -0.0322,
+          "paired_se": 0.0035433237261935173,
+          "ci_low": -0.0392,
+          "ci_high": -0.0256,
+          "valid_pairs": 5000
+        },
+        "delta_top10_frequency": {
+          "point_estimate": -0.0014,
+          "paired_se": 0.0006630957240005882,
+          "ci_low": -0.0028,
+          "ci_high": -0.0002,
+          "valid_pairs": 5000
+        },
+        "delta_expected_finish": {
+          "point_estimate": -0.6142,
+          "paired_se": 0.026638573436259156,
+          "ci_low": -0.6656,
+          "ci_high": -0.56059,
+          "valid_pairs": 5000
+        },
+        "delta_downside_probability": {
+          "point_estimate": 0.4858,
+          "paired_se": 0.0070689225440081615,
+          "ci_low": 0.4716,
+          "ci_high": 0.4996,
+          "valid_pairs": 5000
+        }
+      },
+      "complete_pairs": 5000,
+      "excluded_pairs": 0
+    },
+    {
+      "candidate_key": "PIT_NOW:HARD",
+      "evaluated": true,
+      "reason": null,
+      "deltas": {
+        "delta_win_frequency": {
+          "point_estimate": -0.2102,
+          "paired_se": 0.007710712224989244,
+          "ci_low": -0.225605,
+          "ci_high": -0.1946,
+          "valid_pairs": 5000
+        },
+        "delta_podium_frequency": {
+          "point_estimate": -0.1402,
+          "paired_se": 0.008156107921017397,
+          "ci_low": -0.1556,
+          "ci_high": -0.12539500000000003,
+          "valid_pairs": 5000
+        },
+        "delta_top5_frequency": {
+          "point_estimate": -0.014,
+          "paired_se": 0.002960160892671437,
+          "ci_low": -0.0198,
+          "ci_high": -0.0086,
+          "valid_pairs": 5000
+        },
+        "delta_top10_frequency": {
+          "point_estimate": -0.0006,
+          "paired_se": 0.00044717780982370407,
+          "ci_low": -0.0016,
+          "ci_high": 0.0002,
+          "valid_pairs": 5000
+        },
+        "delta_expected_finish": {
+          "point_estimate": -0.661,
+          "paired_se": 0.024350244082501867,
+          "ci_low": -0.7126,
+          "ci_high": -0.61299,
+          "valid_pairs": 5000
+        },
+        "delta_downside_probability": {
+          "point_estimate": 0.5076,
+          "paired_se": 0.007070958046088057,
+          "ci_low": 0.4934,
+          "ci_high": 0.5210049999999999,
+          "valid_pairs": 5000
+        }
+      },
+      "complete_pairs": 5000,
+      "excluded_pairs": 0
+    },
+    {
+      "candidate_key": "PIT_NEXT_LAP:SAMPLED",
+      "evaluated": true,
+      "reason": null,
+      "deltas": {
+        "delta_win_frequency": {
+          "point_estimate": -0.19,
+          "paired_se": 0.007594177658368467,
+          "ci_low": -0.2048,
+          "ci_high": -0.17579500000000003,
+          "valid_pairs": 5000
+        },
+        "delta_podium_frequency": {
+          "point_estimate": -0.1448,
+          "paired_se": 0.007598561681523777,
+          "ci_low": -0.1594,
+          "ci_high": -0.1296,
+          "valid_pairs": 5000
+        },
+        "delta_top5_frequency": {
+          "point_estimate": -0.0208,
+          "paired_se": 0.0028275556606729424,
+          "ci_low": -0.0264,
+          "ci_high": -0.015195000000000028,
+          "valid_pairs": 5000
+        },
+        "delta_top10_frequency": {
+          "point_estimate": -0.0006,
+          "paired_se": 0.00044717780982370445,
+          "ci_low": -0.0016,
+          "ci_high": 0.0002,
+          "valid_pairs": 5000
+        },
+        "delta_expected_finish": {
+          "point_estimate": -0.6362,
+          "paired_se": 0.023479356209948028,
+          "ci_low": -0.68201,
+          "ci_high": -0.588195,
+          "valid_pairs": 5000
+        },
+        "delta_downside_probability": {
+          "point_estimate": 0.4522,
+          "paired_se": 0.007039385100171446,
+          "ci_low": 0.4386,
+          "ci_high": 0.4668,
+          "valid_pairs": 5000
+        }
+      },
+      "complete_pairs": 5000,
+      "excluded_pairs": 0
+    },
+    {
+      "candidate_key": "PIT_NEXT_LAP:SOFT",
+      "evaluated": true,
+      "reason": null,
+      "deltas": {
+        "delta_win_frequency": {
+          "point_estimate": -0.2688,
+          "paired_se": 0.007045512035897262,
+          "ci_low": -0.2826,
+          "ci_high": -0.255,
+          "valid_pairs": 5000
+        },
+        "delta_podium_frequency": {
+          "point_estimate": -0.2172,
+          "paired_se": 0.008115294424770969,
+          "ci_low": -0.233,
+          "ci_high": -0.20139500000000002,
+          "valid_pairs": 5000
+        },
+        "delta_top5_frequency": {
+          "point_estimate": -0.0364,
+          "paired_se": 0.003378948276948302,
+          "ci_low": -0.0432,
+          "ci_high": -0.03,
+          "valid_pairs": 5000
+        },
+        "delta_top10_frequency": {
+          "point_estimate": -0.0012,
+          "paired_se": 0.0005654873607703877,
+          "ci_low": -0.0024,
+          "ci_high": -0.0002,
+          "valid_pairs": 5000
+        },
+        "delta_expected_finish": {
+          "point_estimate": -0.9514,
+          "paired_se": 0.024000058511630624,
+          "ci_low": -0.998005,
+          "ci_high": -0.9058,
+          "valid_pairs": 5000
+        },
+        "delta_downside_probability": {
+          "point_estimate": 0.5502,
+          "paired_se": 0.007036042437239558,
+          "ci_low": 0.5368,
+          "ci_high": 0.5636,
+          "valid_pairs": 5000
+        }
+      },
+      "complete_pairs": 5000,
+      "excluded_pairs": 0
+    },
+    {
+      "candidate_key": "PIT_NEXT_LAP:MEDIUM",
+      "evaluated": true,
+      "reason": null,
+      "deltas": {
+        "delta_win_frequency": {
+          "point_estimate": -0.158,
+          "paired_se": 0.007872712106966644,
+          "ci_low": -0.173405,
+          "ci_high": -0.1424,
+          "valid_pairs": 5000
+        },
+        "delta_podium_frequency": {
+          "point_estimate": -0.1374,
+          "paired_se": 0.007763781505210821,
+          "ci_low": -0.153,
+          "ci_high": -0.121,
+          "valid_pairs": 5000
+        },
+        "delta_top5_frequency": {
+          "point_estimate": -0.026,
+          "paired_se": 0.0031026964635730617,
+          "ci_low": -0.03200499999999999,
+          "ci_high": -0.02,
+          "valid_pairs": 5000
+        },
+        "delta_top10_frequency": {
+          "point_estimate": -0.001,
+          "paired_se": 0.0005290141502779118,
+          "ci_low": -0.0022,
+          "ci_high": 0.0,
+          "valid_pairs": 5000
+        },
+        "delta_expected_finish": {
+          "point_estimate": -0.583,
+          "paired_se": 0.024827917453887238,
+          "ci_low": -0.6312,
+          "ci_high": -0.5349900000000001,
+          "valid_pairs": 5000
+        },
+        "delta_downside_probability": {
+          "point_estimate": 0.4472,
+          "paired_se": 0.007032234528547213,
+          "ci_low": 0.4338,
+          "ci_high": 0.461,
+          "valid_pairs": 5000
+        }
+      },
+      "complete_pairs": 5000,
+      "excluded_pairs": 0
+    },
+    {
+      "candidate_key": "PIT_NEXT_LAP:HARD",
+      "evaluated": true,
+      "reason": null,
+      "deltas": {
+        "delta_win_frequency": {
+          "point_estimate": -0.181,
+          "paired_se": 0.007566984329993753,
+          "ci_low": -0.196,
+          "ci_high": -0.16659500000000002,
+          "valid_pairs": 5000
+        },
+        "delta_podium_frequency": {
+          "point_estimate": -0.1204,
+          "paired_se": 0.007551964938668945,
+          "ci_low": -0.134405,
+          "ci_high": -0.1056,
+          "valid_pairs": 5000
+        },
+        "delta_top5_frequency": {
+          "point_estimate": -0.0134,
+          "paired_se": 0.002654335528794329,
+          "ci_low": -0.018204999999999992,
+          "ci_high": -0.0084,
+          "valid_pairs": 5000
+        },
+        "delta_top10_frequency": {
+          "point_estimate": -0.0004,
+          "paired_se": 0.00039999999999999395,
+          "ci_low": -0.0012,
+          "ci_high": 0.0004,
+          "valid_pairs": 5000
+        },
+        "delta_expected_finish": {
+          "point_estimate": -0.5606,
+          "paired_se": 0.02303761433688112,
+          "ci_low": -0.607015,
+          "ci_high": -0.5164,
+          "valid_pairs": 5000
+        },
+        "delta_downside_probability": {
+          "point_estimate": 0.4402,
+          "paired_se": 0.007021014950146983,
+          "ci_low": 0.4264,
+          "ci_high": 0.4548,
+          "valid_pairs": 5000
+        }
+      },
+      "complete_pairs": 5000,
+      "excluded_pairs": 0
+    }
+  ],
+  "delta_sign_semantics": "probability deltas ALT - REF; expected-finish delta REF - ALT (positive = improvement).",
+  "parity_claim": "contextual compact rows select WIN/PODIUM/EXPECTED deltas verbatim from this payload via frozen formatters; no recomputation. Exact payload equality with the expert page holds by construction (identical request, identical cache artifact, identical typed client)."
+}

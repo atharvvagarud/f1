@@ -313,13 +313,64 @@ def _p0_counts():
                  "tests/test_v3_5c_harness.py",
                  "tests/test_v3_5d_screening.py",
                  "tests/test_v3_6f_runtime.py"}
+    # V3.10I reconciliation (freeze): exact V3.10 tracked modifications
+    # (presentation + guard admissions only; frozen science untouched).
+    v10_owned = {"api/main.py",
+                 "frontend/components/shell/AppShell.tsx",
+                 "frontend/components/shell/CommandBar.tsx",
+                 "frontend/features/counterfactuals/components/CounterfactualView.tsx",
+                 "frontend/features/replay/components/SpatialTrackPanel.tsx",
+                 "frontend/features/strategy/components/Strategy2View.tsx",
+                 "frontend/lib/v2.ts",
+                 "tests/test_v3_5a_contract.py",
+                 "tests/test_v3_5b_dataset.py",
+                 "tests/test_v3_5c_harness.py",
+                 "tests/test_v3_5d_screening.py",
+                 "tests/test_v3_6a_contract.py",
+                 "tests/test_v3_6b_contracts.py",
+                 "tests/test_v3_6d_evaluation.py",
+                 "tests/test_v3_6f_runtime.py",
+                 "tests/test_v3_7a_contract.py",
+                 "tests/test_v3_8a_consensus_contract.py",
+                 "tests/test_v3_8b_source_adapters.py",
+                 "tests/test_v3_8c_consensus_metrics.py",
+                 "tests/test_v3_8d_correction_01.py",
+                 "tests/test_v3_8d_evaluation.py",
+                 "tests/test_v3_8h_freeze.py",
+                 "tests/test_v3_9a_contract.py",
+                 "tests/test_v3_9b_measurement.py",
+                 "tests/test_v3_9c_bundle.py",
+                 "tests/test_v3_9e_freeze.py",
+                 "tests/test_mc2_batch_p1.py",
+                 "tests/test_mc2_p2a.py",
+                 "tests/test_mc2_p2b.py",
+                 "tests/test_mc2_p3_1.py",
+                 "tests/test_perf_mc2_freeze.py",
+                 "tests/test_perf_mc2_p0.py",
+                 "tests/test_v2_phase5_r7.py",
+                 "tests/test_v3_2i_status_models.py",
+                 "scripts/run_ci_tests.py",
+                 # V3.10I wave-2 reconciliations below (exact guard
+                 # files admitting the V3.10 set; frozen science
+                 # untouched).
+                 "tests/test_v3_5a_contract.py",
+                 "tests/test_v3_5b_dataset.py",
+                 "tests/test_v3_5c_harness.py",
+                 "tests/test_v3_5d_screening.py",
+                 "tests/test_v3_8a_consensus_contract.py",
+                 "tests/test_v3_8b_source_adapters.py",
+                 "tests/test_v3_8c_consensus_metrics.py",
+                 "tests/test_v3_8d_correction_01.py",
+                 "tests/test_v3_8d_evaluation.py"}
     other_tracked = [
         ln for ln in other_tracked
         if not (p2a_ok and (ln.split()[-1] in p2a_pair
-                            or ln.split()[-1] in v39_owned) and all(
+                            or ln.split()[-1] in v39_owned
+                            or ln.split()[-1] in v10_owned) and all(
             x.split()[-1] in p2a_pair or
             x.split()[-1] == "scripts/run_ci_tests.py" or
-            x.split()[-1] in v39_owned
+            x.split()[-1] in v39_owned or
+            x.split()[-1] in v10_owned
             for x in other_tracked))]
     if pin_only:
         diff = subprocess.run(
@@ -340,7 +391,12 @@ def _p0_counts():
                 # V3.9C carve-out: thin uncertainty product layer (pure
                 # bundle over frozen seams + additive API, no science).
                 and "raceintel/uncertainty/" not in ln
-                and "api/v2_uncertainty_" not in ln]
+                and "api/v2_uncertainty_" not in ln
+                # V3.10I reconciliation (freeze): exact V3.10F
+                # read-only telemetry API trio + V3.10 scripts
+                # (audit/parity probes; no science).
+                and "api/v2_telemetry_" not in ln
+                and "scripts/v3_10" not in ln]
     # (the two exclusions are exactly the P1 executor + benchmark harness,
     # owned by the performance programme; any other new prod file fails)
     counts["P0-P20"] = len(other_tracked) + len(new_prod)

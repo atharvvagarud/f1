@@ -1,0 +1,381 @@
+{
+  "scope": {
+    "seasons": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "races_audited": 149,
+    "driver_race_entries": 2973,
+    "lap_rows": 162728,
+    "stint_rows": 8030,
+    "stint_races": 149,
+    "pit_stop_rows": 5452
+  },
+  "field_coverage": {
+    "race_id": {
+      "present": 162728,
+      "total": 162728,
+      "coverage_pct": 100.0,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    "driver_id": {
+      "present": 162728,
+      "total": 162728,
+      "coverage_pct": 100.0,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    "lap_number": {
+      "present": 162728,
+      "total": 162728,
+      "coverage_pct": 100.0,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    "state_time_s": {
+      "present": 162728,
+      "total": 162728,
+      "coverage_pct": 100.0,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    "lap_start_s": {
+      "present": 162728,
+      "total": 162728,
+      "coverage_pct": 100.0,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    "lap_time_s": {
+      "present": 159914,
+      "total": 162728,
+      "coverage_pct": 98.27,
+      "missing": 2814,
+      "missing_pct": 1.73
+    },
+    "sector_1_s": {
+      "present": 159217,
+      "total": 162728,
+      "coverage_pct": 97.84,
+      "missing": 3511,
+      "missing_pct": 2.16
+    },
+    "sector_2_s": {
+      "present": 162392,
+      "total": 162728,
+      "coverage_pct": 99.79,
+      "missing": 336,
+      "missing_pct": 0.21
+    },
+    "sector_3_s": {
+      "present": 162236,
+      "total": 162728,
+      "coverage_pct": 99.7,
+      "missing": 492,
+      "missing_pct": 0.3
+    },
+    "sector_1_end_s": {
+      "present": 158837,
+      "total": 162728,
+      "coverage_pct": 97.61,
+      "missing": 3891,
+      "missing_pct": 2.39
+    },
+    "sector_2_end_s": {
+      "present": 162392,
+      "total": 162728,
+      "coverage_pct": 99.79,
+      "missing": 336,
+      "missing_pct": 0.21
+    },
+    "sector_3_end_s": {
+      "present": 162236,
+      "total": 162728,
+      "coverage_pct": 99.7,
+      "missing": 492,
+      "missing_pct": 0.3
+    },
+    "compound": {
+      "present": 161923,
+      "total": 162728,
+      "coverage_pct": 99.51,
+      "missing": 805,
+      "missing_pct": 0.49
+    },
+    "tyre_life": {
+      "present": 161750,
+      "total": 162728,
+      "coverage_pct": 99.4,
+      "missing": 978,
+      "missing_pct": 0.6
+    },
+    "stint_number": {
+      "present": 162385,
+      "total": 162728,
+      "coverage_pct": 99.79,
+      "missing": 343,
+      "missing_pct": 0.21
+    },
+    "fresh_tyre": {
+      "present": 162728,
+      "total": 162728,
+      "coverage_pct": 100.0,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    "pit_in_s": {
+      "present": 5336,
+      "total": 162728,
+      "coverage_pct": 3.28,
+      "missing": 157392,
+      "missing_pct": 96.72
+    },
+    "pit_out_s": {
+      "present": 5227,
+      "total": 162728,
+      "coverage_pct": 3.21,
+      "missing": 157501,
+      "missing_pct": 96.79
+    },
+    "track_status": {
+      "present": 161388,
+      "total": 162728,
+      "coverage_pct": 99.18,
+      "missing": 1340,
+      "missing_pct": 0.82
+    },
+    "deleted": {
+      "present": 162728,
+      "total": 162728,
+      "coverage_pct": 100.0,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    "deleted_reason": {
+      "present": 1392,
+      "total": 162728,
+      "coverage_pct": 0.86,
+      "missing": 161336,
+      "missing_pct": 99.14
+    },
+    "is_accurate": {
+      "present": 162728,
+      "total": 162728,
+      "coverage_pct": 100.0,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    "fastf1_generated": {
+      "present": 162728,
+      "total": 162728,
+      "coverage_pct": 100.0,
+      "missing": 0,
+      "missing_pct": 0.0
+    },
+    "position": {
+      "present": 162467,
+      "total": 162728,
+      "coverage_pct": 99.84,
+      "missing": 261,
+      "missing_pct": 0.16
+    },
+    "stint_lap": {
+      "present": 162385,
+      "total": 162728,
+      "coverage_pct": 99.79,
+      "missing": 343,
+      "missing_pct": 0.21
+    },
+    "race_leader_laps_at_state": {
+      "present": 162728,
+      "total": 162728,
+      "coverage_pct": 100.0,
+      "missing": 0,
+      "missing_pct": 0.0
+    }
+  },
+  "lap_sector_joint": {
+    "completed_lap_with_all_sectors": 156928,
+    "completed_lap_no_sector": 5,
+    "sectors_but_no_lap_time": 2540
+  },
+  "observation_boundary": {
+    "rule": "lap (driver, lap_number) becomes observable when its D9 row state_time_s <= replay T (anchor_state_time_s). Replay frames ARE the unique state_time_s grid, so the lap row's own state_time_s is a frame anchor time.",
+    "state_time_monotonic_per_driver": "one tie in 2973 driver-races (no decreases)",
+    "state_minus_sector3end_skew_s": {
+      "n": 162236,
+      "min_s": -5553.473,
+      "p50_s": -0.033,
+      "p99_s": 0.0,
+      "max_s": 1.91,
+      "state_before_sector_end_frac_pct": 94.32
+    },
+    "sector_ends_available_but_unused": {
+      "sector_1_end_s": {
+        "present": 158837,
+        "total": 162728,
+        "coverage_pct": 97.61,
+        "missing": 3891,
+        "missing_pct": 2.39
+      },
+      "sector_2_end_s": {
+        "present": 162392,
+        "total": 162728,
+        "coverage_pct": 99.79,
+        "missing": 336,
+        "missing_pct": 0.21
+      },
+      "sector_3_end_s": {
+        "present": 162236,
+        "total": 162728,
+        "coverage_pct": 99.7,
+        "missing": 492,
+        "missing_pct": 0.3
+      }
+    },
+    "partial_sector_policy": "V3.10F uses completed-lap (LAP_END) evidence only; IN_LAP sector-end timestamps are audited but not exposed.",
+    "monotonicity_quirk": {
+      "race": "2021-r08-R",
+      "driver": "stroll",
+      "laps": "4 and 5 share state_time_s=2349.136 (red-flag restart lap; lap 5 has null lap_time)",
+      "rule": "both become visible at the same T via <=; deterministic tie-break by lap_number"
+    },
+    "duplicate_driver_lap_rows": 0
+  },
+  "validity": {
+    "deleted_laps": 1392,
+    "deleted_pct": 0.86,
+    "deleted_availability": "POST_RACE (stewards decision) \u2014 MUST NOT filter the causal reference; documented as limitation.",
+    "is_accurate_true_pct": 85.74,
+    "is_accurate_availability": "POST_RACE flag, not a filter \u2014 informational only.",
+    "fastf1_generated": 261,
+    "fastf1_generated_pct": 0.16,
+    "fastf1_generated_availability": "SOURCE_METADATA (known with the source row, not a future outcome) \u2014 safe to exclude from reference + mark.",
+    "pit_laps": 10319,
+    "pit_lap_pct": 6.34,
+    "pit_lap_policy": "IN_LAP evidence (pit_in_s/pit_out_s), causally known; NOT excluded from history, NOT excluded from best-so-far reference (a pit lap can never be the minimum); displayed factually.",
+    "sc_vsc_policy": "track_status is IN_LAP and causally known; SC/VSC-affected laps are NOT excluded (limitation documented \u2014 deltas stay descriptive).",
+    "lap1_sector1_missing_pct": 100.0
+  },
+  "tyre_semantics": {
+    "compound_values": [
+      "HARD",
+      "HYPERSOFT",
+      "INTERMEDIATE",
+      "MEDIUM",
+      "SOFT",
+      "SUPERSOFT",
+      "ULTRASOFT",
+      "WET"
+    ],
+    "tyre_life_lap1_gt1_pct": 29.68,
+    "tyre_life_note": "source TyreLife INCLUDES laps in other sessions (contract quirk) \u2014 raw tyre_life must NOT be relabelled as laps-on-set. V3.10F uses STINT AGE (stint_lap / observed_lap - start_lap + 1).",
+    "stint_open_end_lap_nulls": 0
+  },
+  "replay_payload": {
+    "already_carried": [
+      "observed_lap_number",
+      "observed_time_s",
+      "compound",
+      "tyre_life",
+      "fresh_tyre",
+      "stint_number",
+      "stint_lap",
+      "pit_stops_completed_so_far",
+      "position"
+    ],
+    "not_carried": [
+      "lap_time_s",
+      "sector_1_s",
+      "sector_2_s",
+      "sector_3_s",
+      "sector_1_end_s",
+      "sector_2_end_s",
+      "sector_3_end_s",
+      "lap_start_s",
+      "pit_in_s",
+      "pit_out_s",
+      "deleted",
+      "is_accurate",
+      "fastf1_generated",
+      "state_time_s"
+    ],
+    "new_readout_required": true,
+    "new_endpoint_justification": "lap_time_s and sector_*_s are absent from every served replay payload (DriverRaceState has no lap/sector slots; verified in api/v2_schemas.py + frontend/lib/v2.ts). Deriving lap times from frame-to-frame observed_time deltas would be estimation, forbidden by V3.10F S5. One race-scoped read-only endpoint over the same frozen D9 corpus is required; the causal selector enforces <=T client-side."
+  },
+  "per_field": {
+    "lap_number": {
+      "source": "driver_lap_state_d9.lap_number",
+      "availability": "LAP_START",
+      "becomes_known": "when the lap begins",
+      "in_replay_payload": false
+    },
+    "lap_time_s": {
+      "source": "driver_lap_state_d9.lap_time_s",
+      "availability": "LAP_END",
+      "becomes_known": "at lap completion (state_time_s of the lap row)",
+      "in_replay_payload": false
+    },
+    "sector_1_s": {
+      "source": "driver_lap_state_d9.sector_1_s",
+      "availability": "LAP_END (conservative V3.10F rule; source also has IN_LAP sector_1_end_s)",
+      "becomes_known": "with the completed lap",
+      "in_replay_payload": false
+    },
+    "sector_2_s": {
+      "source": "driver_lap_state_d9.sector_2_s",
+      "availability": "LAP_END (conservative)",
+      "becomes_known": "with the completed lap",
+      "in_replay_payload": false
+    },
+    "sector_3_s": {
+      "source": "driver_lap_state_d9.sector_3_s",
+      "availability": "LAP_END (conservative)",
+      "becomes_known": "with the completed lap",
+      "in_replay_payload": false
+    },
+    "compound": {
+      "source": "driver_lap_state_d9.compound + stints.compound",
+      "availability": "IN_LAP",
+      "becomes_known": "during the lap / at stint start; current compound always from the causal frame state, never backfilled",
+      "in_replay_payload": true
+    },
+    "tyre_life": {
+      "source": "driver_lap_state_d9.tyre_life",
+      "availability": "IN_LAP",
+      "semantics": "FastF1 TyreLife incl. other sessions \u2014 NOT laps-on-set",
+      "in_replay_payload": true
+    },
+    "stint_number": {
+      "source": "driver_lap_state_d9.stint_number + stints.stint_number",
+      "availability": "IN_LAP",
+      "in_replay_payload": true
+    },
+    "pit_in_s/pit_out_s": {
+      "source": "driver_lap_state_d9 + pit_stops entity",
+      "availability": "IN_LAP",
+      "in_replay_payload": false
+    },
+    "pit_stops_completed_so_far": {
+      "source": "D9 derived",
+      "availability": "IN_LAP",
+      "in_replay_payload": true
+    },
+    "completed_lap_status": {
+      "source": "row presence in D9 (one row per recorded lap)",
+      "availability": "LAP_END",
+      "in_replay_payload": false
+    },
+    "observation_boundary": {
+      "source": "driver_lap_state_d9.state_time_s",
+      "availability": "LAP_END grid == replay frame grid",
+      "in_replay_payload": false
+    }
+  }
+}

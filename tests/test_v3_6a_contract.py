@@ -410,7 +410,54 @@ def test_no_serving_api_frontend_mc2_v35_changes():
                         # test + final doc; no science change).
                         "results/v3/v3_9e/",
                         "docs/V3_9_UNCERTAINTY_INTELLIGENCE_FINAL.md",
-                        "tests/test_v3_9e_freeze.py")
+                        "tests/test_v3_9e_freeze.py",
+                        # V3.10I reconciliation (freeze): V3.10A-H
+                        # charters admitted exactly (pit-wall product,
+                        # workspace substrate, read-only telemetry API,
+                        # stage docs/artifacts/scripts/tests, and these
+                        # guard-allowlist edits themselves; frozen
+                        # science untouched; any other path still fails).
+                        "results/v3/v3_10",
+                        "docs/V3_10",
+                        "tests/test_v3_10",
+                        "tests/test_v3_6a_contract.py",
+                        "tests/test_v3_6b_contracts.py",
+                        "tests/test_v3_6d_evaluation.py",
+                        "tests/test_v3_6f_runtime.py",
+                        "tests/test_v3_7a_contract.py",
+                        "tests/test_v3_8h_freeze.py",
+                        "tests/test_v3_9a_contract.py",
+                        "tests/test_v3_9b_measurement.py",
+                        "tests/test_v3_9c_bundle.py",
+                        "tests/test_v3_9e_freeze.py",
+                        "tests/test_perf_mc2_freeze.py",
+                        "scripts/v3_10",
+                        "scripts/run_ci_tests.py",
+                        "api/v2_telemetry_",
+                        "frontend/app/pit-wall/",
+                        "frontend/features/pit-wall/",
+                        "frontend/features/workspace/",
+                        "frontend/components/shell/AppShell.tsx",
+                        "frontend/features/replay/components/SpatialTrackPanel.tsx",
+                        # V3.10I wave-2 reconciliations below (exact
+                        # guard files admitting the V3.10 set; frozen
+                        # science untouched).
+                        "tests/test_v3_5a_contract.py",
+                        "tests/test_v3_5b_dataset.py",
+                        "tests/test_v3_5c_harness.py",
+                        "tests/test_v3_5d_screening.py",
+                        "tests/test_v3_8a_consensus_contract.py",
+                        "tests/test_v3_8b_source_adapters.py",
+                        "tests/test_v3_8c_consensus_metrics.py",
+                        "tests/test_v3_8d_correction_01.py",
+                        "tests/test_v3_8d_evaluation.py",
+                        "tests/test_mc2_batch_p1.py",
+                        "tests/test_mc2_p2a.py",
+                        "tests/test_mc2_p2b.py",
+                        "tests/test_mc2_p3_1.py",
+                        "tests/test_perf_mc2_p0.py",
+                        "tests/test_v2_phase5_r7.py",
+                        "tests/test_v3_2i_status_models.py")
     for f in _changed_files():
         assert any(f.startswith(p) for p in allowed_prefixes), f
 
@@ -422,10 +469,13 @@ def test_no_api_change():
     # counterfactual API integration files (frozen science untouched).
     # V3.8H reconciliation: V3.8F charter additionally admits exactly the
     # consensus API integration files (frozen science untouched).
+    # V3.10I reconciliation: V3.10F charter additionally admits exactly
+    # the read-only telemetry API trio (frozen science untouched).
     allowed = ("api/v2_strategy_v3_", "api/main.py",
                "api/v2_counterfactual_", "api/v2_consensus_",
                # V3.9C carve-out: uncertainty bundle API (additive).
-               "api/v2_uncertainty_")
+               "api/v2_uncertainty_",
+               "api/v2_telemetry_")
     assert not any(f.startswith("api/") and not f.startswith(allowed)
                    for f in _changed_files())
 
@@ -450,7 +500,16 @@ def test_no_frontend_change():
                "frontend/app/consensus", "frontend/features/consensus",
                "frontend/app/uncertainty",
                "frontend/features/uncertainty",
-               "frontend/components/shell/CommandBar.tsx")
+               "frontend/components/shell/CommandBar.tsx",
+               # V3.10I reconciliation: V3.10A-H pit-wall product
+               # admitted exactly (workspace substrate, shell,
+               # replay calm-announcement prop, expert prefill,
+               # read-only telemetry client; frozen science untouched).
+               "frontend/app/pit-wall/",
+               "frontend/features/pit-wall/",
+               "frontend/features/workspace/",
+               "frontend/components/shell/AppShell.tsx",
+               "frontend/features/replay/components/SpatialTrackPanel.tsx")
     assert not any(f.startswith("frontend/") and not f.startswith(allowed)
                    for f in _changed_files())
 

@@ -346,6 +346,17 @@ def test_no_serving_api_frontend_change():
                          # /uncertainty route + uncertainty feature
                          # modules; no science change).
                          "frontend/app/uncertainty/",
-                         "frontend/features/uncertainty/")):
+                         "frontend/features/uncertainty/",
+                         # V3.10I reconciliation (freeze): V3.10A-H
+                         # product admitted exactly (pit-wall,
+                         # workspace, shell, replay calm prop,
+                         # telemetry client/API; frozen science
+                         # untouched).
+                         "api/v2_telemetry_",
+                         "frontend/app/pit-wall/",
+                         "frontend/features/pit-wall/",
+                         "frontend/features/workspace/",
+                         "frontend/components/shell/AppShell.tsx",
+                         "frontend/features/replay/components/SpatialTrackPanel.tsx")):
             continue
         assert not p.startswith(("api/", "frontend/", "raceintel/model_lab/serving")), line

@@ -1,0 +1,49 @@
+{
+  "audit": "V3.10G counterfactual parity: contextual surface consumes the same frozen endpoint + payload as the expert page (POST /v2/counterfactuals/compare REFERENCE_VS_PLAN, single PIT_IN_N_LAPS)",
+  "http_status": 200,
+  "execution_source": "cache",
+  "simulation_count": 5000,
+  "supported": true,
+  "intervention": "PIT_IN_N_LAPS N=1 MEDIUM on perez",
+  "lifecycle_summary": {
+    "base": {},
+    "alternative": {
+      "EXECUTED": 5000
+    }
+  },
+  "complete_pairs": 5000,
+  "deltas": {
+    "delta_expected_finish": {
+      "point_estimate": -0.6141999999999999,
+      "paired_se": 0.026638573436258625,
+      "ci_low": -0.667405,
+      "ci_high": -0.5634
+    },
+    "delta_p_ahead_of_rival": {
+      "point_estimate": null,
+      "paired_se": null,
+      "ci_low": null,
+      "ci_high": null
+    },
+    "delta_podium_frequency": {
+      "point_estimate": -0.13559999999999994,
+      "paired_se": 0.008276244755047369,
+      "ci_low": -0.1516,
+      "ci_high": -0.1194
+    },
+    "delta_position_gain_loss": {
+      "point_estimate": -0.6142,
+      "paired_se": null,
+      "ci_low": null,
+      "ci_high": null
+    },
+    "delta_win_frequency": {
+      "point_estimate": -0.16179999999999997,
+      "paired_se": 0.008075716404077586,
+      "ci_low": -0.1778,
+      "ci_high": -0.1448
+    }
+  },
+  "delta_sign_semantics": "probability deltas ALT - BASE; expected finish BASE - ALT; position gain ALT - BASE (verbatim backend orientation, no UI sign flips).",
+  "parity_claim": "contextual compact rows select PRIMARY_METRIC_ROWS verbatim via frozen formatters; no recomputation. Exact payload equality with the expert page holds by construction."
+}

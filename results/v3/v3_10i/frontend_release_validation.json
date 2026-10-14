@@ -1,0 +1,1 @@
+{"audit":"authoritative frontend release gates on final tree","build":"clean (11 routes prerendered)","focused_V3_10_suites":"included in full run (workspace/replay/events/intelligence/telemetry/strategy/counterfactual/shell/polish/causal)","full_tests":"604/604 (573 entering + 31 H; I adds no frontend tests)","lint":"clean","typecheck":"clean"}

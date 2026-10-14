@@ -1,0 +1,204 @@
+{
+  "audit": "exact V3.10I reconciliation of the 19 guard failures (narrow admissions + pin updates only)",
+  "forbidden avoided": [
+    "no allow frontend/**",
+    "no dirty-worktree ignore",
+    "no disabled/xfailed/skipped guards",
+    "no loosened science-directory protection",
+    "no wildcard ownership (every path exact + manifest-inventoried)"
+  ],
+  "method": "exact V3.10-owned path admission into frozen allow-lists (precedent: V3.7H/V3.8H/V3.9D reconciliations) + exact pin arithmetic updates",
+  "post_reconciliation_rerun": "35/35 passed",
+  "reconciliations": [
+    {
+      "files": [
+        "tests/test_v3_6a_contract.py"
+      ],
+      "kind": "A paths + A paths",
+      "tests": [
+        "test_no_api_change (+api/v2_telemetry_)",
+        "test_no_frontend_change (+pit-wall/workspace/AppShell/SpatialTrackPanel)",
+        "test_no_serving_api_frontend_mc2_v35_changes (+V3.10 block)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_v3_6b_contracts.py"
+      ],
+      "kind": "A paths",
+      "tests": [
+        "test_no_api_frontend_change (+telemetry trio + pit-wall set)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_v3_6d_evaluation.py"
+      ],
+      "kind": "A paths",
+      "tests": [
+        "test_no_tuning (+AppShell/SpatialTrackPanel)",
+        "test_no_api_frontend_changes (+telemetry trio + pit-wall set)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_v3_6f_runtime.py"
+      ],
+      "kind": "A paths",
+      "tests": [
+        "test_no_frontend_changes (+pit-wall set)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_v3_7a_contract.py"
+      ],
+      "kind": "A paths",
+      "tests": [
+        "test_baseline_clean_at_entry (+V3.10 block incl. reconciled-file self-admissions)",
+        "test_no_mc2_api_frontend_modification (+pit-wall set incl. Strategy2View)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_v3_8h_freeze.py"
+      ],
+      "kind": "A paths",
+      "tests": [
+        "FINAL_ALLOW (+V3.10 block)",
+        "TRACKED_ALLOW (+7 prod + 12 reconciled files)",
+        "extra-set V10_TRACKED carve-out (mirrors P2A pattern)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_v3_9a_contract.py"
+      ],
+      "kind": "A paths (incl. self-admission)",
+      "tests": [
+        "test_no_production_runtime_dependency (+7 prod + reconciled files)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_v3_9b_measurement.py"
+      ],
+      "kind": "A paths + B rewrite",
+      "tests": [
+        "test_no_runtime_code_modified (+5 frontend exclusions)",
+        "test_no_mc2_rerun_or_bayes_or_api (trio-committed freeze invariant + exact telemetry-trio untracked)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_v3_9c_bundle.py"
+      ],
+      "kind": "A paths",
+      "tests": [
+        "test_no_frontend_changes (+pit-wall set incl. G views)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_v3_9e_freeze.py"
+      ],
+      "kind": "B pin",
+      "tests": [
+        "test_collection_accounting (5148+28+10=5186)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_perf_mc2_freeze.py"
+      ],
+      "kind": "B pin + A tokens",
+      "tests": [
+        "test_collection_pin_reconciled (5122+26+28+10=5186)",
+        "PF-P24 (+5 exact V3.10 path tokens)"
+      ]
+    },
+    {
+      "files": [
+        "scripts/run_ci_tests.py"
+      ],
+      "kind": "B pin",
+      "tests": [
+        "EXPECTED_COLLECTED 5176 -> 5186 (+10 V3.10 tests)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_v2_phase5_r7.py"
+      ],
+      "kind": "A exact route admission",
+      "tests": [
+        "test_app_registers_replay_routes_once (4->5 with exact telemetry route)]"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_v3_2i_status_models.py"
+      ],
+      "kind": "A frozen-vocabulary carve-out",
+      "tests": [
+        "test_no_runtime_status_imports (fastf1 only as fastf1_generated identifier)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_v3_5a_contract.py",
+        "tests/test_v3_5b_dataset.py",
+        "tests/test_v3_5c_harness.py",
+        "tests/test_v3_5d_screening.py"
+      ],
+      "kind": "A paths",
+      "tests": [
+        "serving guards (+V3.10 product blocks)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_v3_8a_consensus_contract.py",
+        "tests/test_v3_8b_source_adapters.py",
+        "tests/test_v3_8c_consensus_metrics.py",
+        "tests/test_v3_8d_correction_01.py",
+        "tests/test_v3_8d_evaluation.py"
+      ],
+      "kind": "A paths",
+      "tests": [
+        "frozen-source guards (+V3.10 blocks incl. wave-2)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_mc2_batch_p1.py",
+        "tests/test_mc2_p2a.py",
+        "tests/test_mc2_p2b.py",
+        "tests/test_mc2_p3_1.py"
+      ],
+      "kind": "A substring exclusions + P29 set",
+      "tests": [
+        "P1-P25/P2A-P23/P2B-P28/P3-1-P27 (exact prefill path); P2A-P29 (+V3.10 set)"
+      ]
+    },
+    {
+      "files": [
+        "tests/test_perf_mc2_p0.py"
+      ],
+      "kind": "A sets",
+      "tests": [
+        "P0-P20 (v10_owned set + telemetry/scripts new_prod exclusions)"
+      ]
+    },
+    {
+      "files": [
+        "FINAL_ALLOW/TRACKED_ALLOW/v10_tracked/serving/baseline/v3_9a/PF-P24/P0 sets"
+      ],
+      "kind": "A wave-2 R-set extension",
+      "tests": [
+        "16 additional reconciled guard files admitted everywhere tests/ M is constrained"
+      ]
+    }
+  ],
+  "unexplained_failures": 0
+}

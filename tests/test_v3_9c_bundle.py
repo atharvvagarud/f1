@@ -316,10 +316,21 @@ def test_no_frontend_changes():
     # route, the uncertainty feature modules, and the one-line nav entry.
     # Any other frontend dirt still fails; the API-only boundary is
     # asserted below, not weakened.
+    # V3.10I reconciliation: V3.10A-H pit-wall product admitted exactly
+    # (workspace substrate, shell, replay calm-announcement prop, expert
+    # prefill, read-only telemetry client; frozen science untouched).
     allowed_fe = (
         "frontend/app/uncertainty/",
         "frontend/features/uncertainty/",
         "frontend/components/shell/CommandBar.tsx",
+        "frontend/app/pit-wall/",
+        "frontend/features/pit-wall/",
+        "frontend/features/workspace/",
+        "frontend/components/shell/AppShell.tsx",
+        "frontend/features/counterfactuals/components/CounterfactualView.tsx",
+        "frontend/features/strategy/components/Strategy2View.tsx",
+        "frontend/lib/v2.ts",
+        "frontend/features/replay/components/SpatialTrackPanel.tsx",
     )
     unexpected = [ln for ln in fe
                   if not ln.split()[-1].startswith(allowed_fe)]

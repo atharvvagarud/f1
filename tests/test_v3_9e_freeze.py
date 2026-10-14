@@ -29,7 +29,11 @@ PTAG = "v3.8-mc2-performance"
 ANCHOR = {"race_id": "2022-r03-R", "anchor_lap_number": 2,
           "anchor_state_time_s": None}
 N_FREEZE_TESTS = 28
-EXPECTED_COLLECTED = 5148 + N_FREEZE_TESTS
+# V3.10I reconciliation: 10 V3.10 ownership/API tests
+# (test_v3_10b_workspace_ownership.py + test_v3_10f_telemetry.py; no MC2
+# execution, no corpus dependence added).
+N_V3_10_TESTS = 10
+EXPECTED_COLLECTED = 5148 + N_FREEZE_TESTS + N_V3_10_TESTS
 
 
 def _git(*args):

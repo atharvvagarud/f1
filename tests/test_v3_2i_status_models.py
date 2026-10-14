@@ -5,6 +5,7 @@ the measured Ricciardo flip), stream-clock parsing, scorecard verdict
 vocabulary. No corpus, no network, no simulation.
 """
 
+import re
 import sys
 from pathlib import Path
 
@@ -75,6 +76,12 @@ def test_no_runtime_status_imports():
     sanctioned = {"driver_status.py"}
     banned_imports = {"urllib", "urllib3", "socket", "requests", "http",
                       "httpx", "fastf1"}
+    # V3.10I reconciliation (freeze): api/v2_telemetry_{schemas,
+    # service}.py project the frozen D9 corpus column
+    # `fastf1_generated` (field name + string keys only — pinned
+    # below); no fastf1 library import, no feed client.
+    telemetry_fastf1_files = {"v2_telemetry_schemas.py",
+                              "v2_telemetry_service.py"}
     for base in (ROOT / "raceintel" / "simulation", ROOT / "api"):
         for path in base.rglob("*.py"):
             text = path.read_text(encoding="utf-8")
@@ -82,6 +89,10 @@ def test_no_runtime_status_imports():
             assert "v3_2i" not in text
             for token in ("openf1", "jolpica", "ergast", "livetiming",
                           "formula1.com", "fastf1"):
+                if token == "fastf1" and path.name in telemetry_fastf1_files:
+                    stripped = re.sub(r"fastf1_generated", "", lowered)
+                    assert "fastf1" not in stripped, (path.name, token)
+                    continue
                 assert token not in lowered, (path.name, token)
             if "jsonstream" in lowered:
                 assert path.name in sanctioned, path.name

@@ -1,0 +1,17 @@
+{
+  "stage": "V3.10C",
+  "title": "Pit Wall shell + navigation simplification",
+  "verdict": "V3.10C COMPLETE \u2014 PIT WALL SHELL VALIDATED \u2014 READY FOR V3.10D",
+  "classification": "A. PIT_WALL_SHELL_VALIDATED",
+  "route": "/pit-wall: header + dominant track + driver + order + quiet D/E notes + timeline; workspace-consuming; replay components reused, none forked",
+  "navigation": "PIT WALL/RACES(/replay)/MODELS/ABOUT + subordinate Expert strip; / unchanged; 0 routes deleted",
+  "validation": "frontend 459/459 (433+26), tsc/eslint/build clean, browser 1600/820/390 pass, Python 5179 match, P1-P20 zero",
+  "deferred": [
+    "V3.10D event feed + markers",
+    "V3.10E driver intelligence",
+    "V3.10F sector/tyre",
+    "V3.10G strategy/counterfactual entries",
+    "MC2 coverage (3678/9644)"
+  ],
+  "next_gate": "V3.10D \u2014 RACE CONTROL FEED + EVENT-AWARE TIMELINE"
+}

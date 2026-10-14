@@ -1,0 +1,52 @@
+{
+  "audit": "V3.10G availability-before-execution contracts (live)",
+  "strategy_catalogue": {
+    "endpoint": "GET /v2/strategies/v3/availability[?race_id=]",
+    "entry_count": 2,
+    "race_filtered_count": 1,
+    "entries": [
+      {
+        "race_id": "2018-r11-R",
+        "anchor_driver_id": "alonso",
+        "anchor_lap_number": 44,
+        "anchor_state_time_s": 4004.408,
+        "target_driver_id": "alonso",
+        "master_seed": 20240101,
+        "simulation_count": 5000,
+        "supported": false,
+        "alternative_count": 9
+      },
+      {
+        "race_id": "2022-r01-R",
+        "anchor_driver_id": "perez",
+        "anchor_lap_number": 30,
+        "anchor_state_time_s": 6745.686,
+        "target_driver_id": "perez",
+        "master_seed": 20240101,
+        "simulation_count": 5000,
+        "supported": true,
+        "alternative_count": 9
+      }
+    ],
+    "note": "no per-anchor endpoint: pit wall loads the per-race catalogue once and matches race+anchor+target exactly and locally (zero simulation)."
+  },
+  "counterfactual_availability": {
+    "endpoint": "GET /v2/counterfactuals/availability?race_id=&anchor_driver_id=&anchor_lap_number=&anchor_state_time_s=",
+    "supported": true,
+    "reason_code": null,
+    "eligible_targets_include_perez": true,
+    "perez_n_domain": [
+      1,
+      26
+    ],
+    "perez_decision_lap": 30,
+    "supported_compounds": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "SAMPLED"
+    ],
+    "live_enabled": false,
+    "note": "cheap factual availability per exact anchor; never simulates."
+  }
+}

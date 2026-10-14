@@ -1,0 +1,9 @@
+{
+  "validation": "missingness behavior (V3.10F)",
+  "not_yet_observed": "in-progress lap (number shown, values unavailable); pre-first-completion state; no-new-lap gap state",
+  "source_unavailable": "telemetry fetch failure -> unavailable + retry (never partial, never zeros); driver absent from frame roster -> no-evidence, selection kept",
+  "null_missing": "null lap_time/sectors render as em-dash; deltas null (never 0.000); lap-1 S1 always null (standing start, 100% audited); 2540 rows carry sectors without lap_time (shown factually)",
+  "invalid_excluded": "nothing silently dropped: deleted/is_accurate are POST_RACE and do not filter; fastf1_generated rows display with a Synthetic source row tag and are reference-excluded (SOURCE_METADATA, safe)",
+  "zero_fill": "none anywhere (pinned by server test NaN->None + selector null-passthrough + formatter null->null)",
+  "pinned_by": ["tests/test_v3_10f_telemetry.py::test_nan_projects_to_none_never_zero", "telemetry.test.ts missing-sector + formatter suites"]
+}

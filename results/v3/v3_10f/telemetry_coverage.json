@@ -1,0 +1,97 @@
+{
+  "races_audited": 149,
+  "driver_race_entries": 2973,
+  "lap_rows": 162728,
+  "stint_rows": 8030,
+  "pit_stop_rows": 5452,
+  "lap_time": {
+    "present": 159914,
+    "total": 162728,
+    "coverage_pct": 98.27,
+    "missing": 2814,
+    "missing_pct": 1.73
+  },
+  "sector_1": {
+    "present": 159217,
+    "total": 162728,
+    "coverage_pct": 97.84,
+    "missing": 3511,
+    "missing_pct": 2.16
+  },
+  "sector_2": {
+    "present": 162392,
+    "total": 162728,
+    "coverage_pct": 99.79,
+    "missing": 336,
+    "missing_pct": 0.21
+  },
+  "sector_3": {
+    "present": 162236,
+    "total": 162728,
+    "coverage_pct": 99.7,
+    "missing": 492,
+    "missing_pct": 0.3
+  },
+  "compound": {
+    "present": 161923,
+    "total": 162728,
+    "coverage_pct": 99.51,
+    "missing": 805,
+    "missing_pct": 0.49
+  },
+  "tyre_life": {
+    "present": 161750,
+    "total": 162728,
+    "coverage_pct": 99.4,
+    "missing": 978,
+    "missing_pct": 0.6
+  },
+  "stint_number": {
+    "present": 162385,
+    "total": 162728,
+    "coverage_pct": 99.79,
+    "missing": 343,
+    "missing_pct": 0.21
+  },
+  "fresh_tyre": {
+    "present": 162728,
+    "total": 162728,
+    "coverage_pct": 100.0,
+    "missing": 0,
+    "missing_pct": 0.0
+  },
+  "pit_in": {
+    "present": 5336,
+    "total": 162728,
+    "coverage_pct": 3.28,
+    "missing": 157392,
+    "missing_pct": 96.72
+  },
+  "pit_out": {
+    "present": 5227,
+    "total": 162728,
+    "coverage_pct": 3.21,
+    "missing": 157501,
+    "missing_pct": 96.79
+  },
+  "joint": {
+    "completed_lap_with_all_sectors": 156928,
+    "completed_lap_no_sector": 5,
+    "sectors_but_no_lap_time": 2540
+  },
+  "validity": {
+    "deleted_laps": 1392,
+    "deleted_pct": 0.86,
+    "is_accurate_true_pct": 85.74,
+    "fastf1_generated": 261,
+    "fastf1_generated_pct": 0.16,
+    "pit_laps": 10319,
+    "pit_lap_pct": 6.34,
+    "lap1_sector1_missing_pct": 100.0
+  },
+  "served_example_2021_r01": {
+    "laps": 1027,
+    "stints": 60,
+    "payload_kb": 392
+  }
+}

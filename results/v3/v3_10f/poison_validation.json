@@ -1,0 +1,19 @@
+{
+  "validation": "future-data poison tests (V3.10F)",
+  "unit_poison_tests": {
+    "future_completed_lap_hidden": "pass (telemetry.test.ts: future lap hidden at frame T)",
+    "future_sector_hidden_reference_unmoved": "pass (future lap does not alter the reference; delta uses only the <=T reference lap)",
+    "lap_visible_at_boundary": "pass (1099.999 hidden / 1100 visible)",
+    "future_compound_hidden": "pass (SOFT of future stint 3 absent from serialized view)",
+    "future_pit_transition_hidden": "pass (stint becomes completed exactly at its end boundary)",
+    "future_stint_count_hidden": "pass (no trace of stint 3 in serialized view)",
+    "future_structural_slots": "pass (components receive selector output only; no totals/lengths/counts cross the boundary)"
+  },
+  "live_poison_checks_2021_r01": {
+    "frame_200_vs_400": "LAP 15 reference and laps 18-22 invisible at frame 200; appear only at frame 400 (observation boundaries crossed)",
+    "stint_3": "never rendered at any T before its start observation",
+    "driver_switch": "verstappen slice carries none of hamilton's values and vice versa"
+  },
+  "reference_integrity": "best-so-far computed over <=T slice only; future fast laps cannot move it (pinned by unit test)",
+  "result": "all poison tests pass; zero future leakage observed"
+}

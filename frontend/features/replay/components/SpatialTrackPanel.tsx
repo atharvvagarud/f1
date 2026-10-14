@@ -69,6 +69,7 @@ export function SpatialTrackPanel({
   raceControl,
   selectedDriverId,
   selectionRaceId,
+  announcePending = true,
 }: {
   raceId: string;
   frameIndex: number;
@@ -76,6 +77,13 @@ export function SpatialTrackPanel({
   raceControl: RaceControlState | null;
   selectedDriverId: string | null;
   selectionRaceId: string | null;
+  /**
+   * V3.10H §34: whether the frame-pending cue announces. Pit Wall passes
+   * false while playing so per-frame pending flicker cannot spam
+   * announcements; the cue stays visible (meaningful latency is never
+   * hidden). Defaults true, preserving /replay behavior.
+   */
+  announcePending?: boolean;
 }) {
   const spatial = useSpatialTrack({ raceId, frameIndex, anchorStateTimeS });
   const scopedSelection = spatialSelectionForRace(
@@ -162,7 +170,7 @@ export function SpatialTrackPanel({
         <RaceStatusStrip raceControl={raceControl} />
         {spatial.isFramePending ? (
           <p
-            aria-live="polite"
+            {...(announcePending ? { "aria-live": "polite" } as const : {})}
             className="border border-ink-700 bg-ink-900 px-4 py-2 font-data text-[11px] uppercase tracking-[0.12em] text-fg-dim"
           >
             Updating track — showing frame {displayFrame.frame_index} while

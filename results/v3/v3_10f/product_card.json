@@ -1,0 +1,7 @@
+{
+  "product": "V3.10F selected-driver telemetry (progressive disclosure)",
+  "questions_answered": ["where has the selected driver gained or lost time (vs best completed lap so far)", "what tyre/stint evidence is known at the current replay state"],
+  "interaction": "DRIVER FACTS + MODEL/SIM/DIFFERENCE + DETAILS, then TELEMETRY with [LAP/SECTORS] and [TYRE HISTORY] disclosures, both default closed",
+  "guarantees": ["completed laps only (<=T)", "descriptive deltas, no causal claims", "future stints/compounds/counts never shown", "missing is em-dash, never zero", "one race-scoped request, local re-slice on driver switch", "no strategy, no counterfactuals, no models"],
+  "not_this": ["tyre-degradation modelling", "strategy recommendation", "future stint prediction", "MC2 work"]
+}

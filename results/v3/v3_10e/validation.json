@@ -1,0 +1,75 @@
+{
+  "audit": "V3.10E",
+  "v39_freeze": {
+    "commit": "fb0d8d8772bdc1343bc6be6c5ff9ee68cddd7203",
+    "tag": "v3.9-uncertainty-intelligence",
+    "head_matches": true
+  },
+  "abcd_integrity": "artifacts/semantics unchanged; WorkspaceState untouched; C regions + D feed/markers/nav preserved (pinned); replay/expert pages unmodified",
+  "graphify": {
+    "entry_nodes": 19555,
+    "entry_links": 43971,
+    "final_nodes": 19589,
+    "final_links": 44070
+  },
+  "python": {
+    "baseline": 5179,
+    "new_tests": 0,
+    "total": 5179,
+    "status": "match (no backend changes; Tier-1 not run per spec)"
+  },
+  "frontend": {
+    "baseline": 496,
+    "new_focused_tests": 17,
+    "total": 513,
+    "result": "513/513 pass (148 suites)",
+    "typecheck": "clean",
+    "lint": "clean",
+    "build": "all 12 routes incl. /pit-wall"
+  },
+  "browser": {
+    "comparable": "2022-r03-R f25 hamilton: P3 + MODEL 0.561/SIM 0.048/\u0394 \u22120.513 + n/Wilson line; DETAILS ranks 1v4, leader-different, WilsonViz, U3, families, expert links",
+    "refusal": "2024-r21-R f18 norris: facts + unavailable + SOURCE_NOT_AVAILABLE + missing-is-not-zero + expert links",
+    "links": "/consensus + /uncertainty carry race/frame/driver via B helper",
+    "refetch": "driver switch issues zero science requests (network log)",
+    "widths": {
+      "1600": "pass",
+      "820": "pass",
+      "390": "pass"
+    }
+  },
+  "science": {
+    "changed": false,
+    "mc2_runs": false,
+    "mc2_eligibility": "3678/9644 (38.14%) untouched",
+    "api_changed": false
+  },
+  "pathology": {
+    "V3.10E-P1": 0,
+    "V3.10E-P2": 0,
+    "V3.10E-P3": 0,
+    "V3.10E-P4": 0,
+    "V3.10E-P5": 0,
+    "V3.10E-P6": 0,
+    "V3.10E-P7": 0,
+    "V3.10E-P8": 0,
+    "V3.10E-P9": 0,
+    "V3.10E-P10": 0,
+    "V3.10E-P11": 0,
+    "V3.10E-P12": 0,
+    "V3.10E-P13": 0,
+    "V3.10E-P14": 0,
+    "V3.10E-P15": 0,
+    "V3.10E-P16": 0,
+    "V3.10E-P17": 0,
+    "V3.10E-P18": 0,
+    "V3.10E-P19": 0,
+    "V3.10E-P20": 0
+  },
+  "git": {
+    "committed": false,
+    "tagged": false,
+    "pushed": false
+  },
+  "classification": "A. DRIVER_INTELLIGENCE_VALIDATED"
+}

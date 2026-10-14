@@ -1,0 +1,28 @@
+{
+  "audit": "frozen V3.6/V3.7 parity relation on the supported fixture",
+  "fixture": {
+    "race_id": "2022-r01-R",
+    "anchor_driver_id": "perez",
+    "anchor_lap_number": 30,
+    "anchor_state_time_s": 6745.686,
+    "target_driver_id": "perez"
+  },
+  "pit_in_1_vs_pit_now": {
+    "strategy_PIT_NOW_MEDIUM": {
+      "delta_win_frequency": -0.1618,
+      "delta_podium_frequency": -0.1356,
+      "delta_top5_frequency": -0.0322,
+      "delta_top10_frequency": -0.0014,
+      "delta_expected_finish": -0.6142,
+      "delta_downside_probability": 0.4858
+    },
+    "counterfactual_PIT_IN_1_MEDIUM": {
+      "delta_win_frequency": -0.16179999999999997,
+      "delta_podium_frequency": -0.13559999999999994,
+      "delta_expected_finish": -0.6141999999999999
+    },
+    "exact_match": true
+  },
+  "reference_aggregates_match": true,
+  "note": "PIT_IN_2 vs PIT_NEXT_LAP uses the same engine relation; N=2 cached counterfactual verified separately in the request audit (live 200 supported)."
+}

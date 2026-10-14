@@ -13,6 +13,7 @@
 import { RaceSelector } from "@/features/replay/components/RaceSelector";
 import { readableDriverId } from "@/features/replay/components/StandingsTable";
 import { useCounterfactuals } from "@/features/counterfactuals/hooks/useCounterfactuals";
+import { useExpertWorkspaceHydration } from "@/features/workspace/hooks/useExpertHydration";
 import { CounterfactualPlanBuilder } from "@/features/counterfactuals/components/CounterfactualPlanBuilder";
 import { CounterfactualResults } from "@/features/counterfactuals/components/CounterfactualResults";
 import {
@@ -96,6 +97,33 @@ export function CounterfactualView() {
   } = explorer;
 
   const running = view.kind === "running";
+  // V3.10G: consume the canonical pit-wall deep link (?race=&frame=&driver=)
+  // where supported — race + exact frame + intervention-target prefill only,
+  // no science change. The intervention itself stays user-controlled.
+  useExpertWorkspaceHydration({
+    racesLoading,
+    raceIds: races.map((race) => race.race_id),
+    raceId,
+    totalFrames,
+    frameIndex,
+    driverKey:
+      altTargets.length === 1 &&
+      altItems.every((item) => item.target_driver_id === altTargets[0]) &&
+      baseItems.every((item) => item.target_driver_id === altTargets[0])
+        ? (altTargets[0] ?? "")
+        : "",
+    selectRace,
+    selectFrame,
+    applyDriver: (driverId) => {
+      setAltTargets([driverId]);
+      setAltItems(
+        altItems.map((item) => ({ ...item, target_driver_id: driverId })),
+      );
+      setBaseItems(
+        baseItems.map((item) => ({ ...item, target_driver_id: driverId })),
+      );
+    },
+  });
   const max = Math.max(0, totalFrames - 1);
 
   const status: { label: string; tone: StatusTone } =

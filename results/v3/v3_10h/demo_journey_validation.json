@@ -1,0 +1,28 @@
+{
+  "audit": "30-60s portfolio journey (live, 2022-r01-R, honest refusals included)",
+  "coherence": "single workspace identity throughout (URL canonical); each step builds on the last; return is one Back/click to identical state",
+  "demo_state": {
+    "compound": "MEDIUM 15 new, stint 2 lap 15 (frame facts)",
+    "counterfactual": "available (N 1..26, perez eligible)",
+    "driver": "perez P4 +13.024",
+    "event_context": "124-event race; lap-30 region quiet, lap-45+ SC region rich (frame 950 verified)",
+    "intelligence": "honestly UNAVAILABLE here (SOURCE_NOT_AVAILABLE) \u2014 no strategy-catalogue anchor overlaps E coverage (both precomputed anchors verified NOT_COMPARABLE); documented, not fabricated",
+    "note": "no single served state supports strategy-result + E-available simultaneously (catalogue has exactly 2 anchors; both E-unavailable). E-available states are covered by V3.10E artifacts.",
+    "race": "2022 R1 Bahrain GP, frame 583 (lap 30, GREEN, T 6745.686)",
+    "strategy": "available, 9 cached alternatives",
+    "telemetry": "5 recent laps + 2 stints at T"
+  },
+  "interaction_count": 10,
+  "steps": [
+    "open /pit-wall (1)",
+    "choose 2022-r01-R (1)",
+    "drag timeline to 583 (1)",
+    "select perez (1)",
+    "read MODEL/SIM refusal + expert links (0)",
+    "open LAP/SECTORS (1)",
+    "open TYRE HISTORY (1)",
+    "EXPLORE STRATEGY + read matrix (1)",
+    "open EXPLORE ALTERNATIVE + RUN (2)",
+    "back to identical race/frame/driver (1)"
+  ]
+}

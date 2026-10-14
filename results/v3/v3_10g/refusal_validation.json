@@ -1,0 +1,93 @@
+{
+  "audit": "V3.10G refusal taxonomy (live, fail-closed)",
+  "cf_availability_2025": {
+    "http_status": 404,
+    "body": {
+      "error": "unknown_race",
+      "detail": "no served race '2025-r01-R'"
+    }
+  },
+  "strategy_compare_2025": {
+    "http_status": 404,
+    "body": {
+      "error": "unknown_race",
+      "detail": "no served race '2025-r01-R'"
+    }
+  },
+  "cf_invalid_n": {
+    "http_status": 200,
+    "body": {
+      "api_schema": "v3.7f-counterfactual-api-v1",
+      "supported": false,
+      "level": "INTERVENTION",
+      "reason_code": "INVALID_TRIGGER",
+      "human_reason": "lap_offset_n=99 exceeds horizon (remaining 27 laps: N <= remaining - 1)",
+      "comparison_form": null,
+      "comparison_identity": null,
+      "base_identity": null,
+      "alternative_identity": "13919be15f1ff3479e1b471cf84cdae311d13517ff41a62e388df201d62115d8",
+      "state_identity": "c567449622bc4bd48265c606990543f2e1432e7bd5816ef6886d7026abf4fac9",
+      "parameter_identity": null,
+      "config_identity": null,
+      "master_seed": 20240101,
+      "simulation_count": 5000,
+      "race_id": "2022-r01-R",
+      "anchor_driver_id": "perez",
+      "anchor_lap_number": 30,
+      "anchor_state_time_s": 6745.686,
+      "target_driver_ids": [],
+      "primary_target_driver_id": null,
+      "rival_driver_id": null,
+      "base_aggregate": null,
+      "alternative_aggregate": null,
+      "deltas": {},
+      "complete_pairs": null,
+      "requested_pairs": null,
+      "excluded_pairs": null,
+      "lifecycle_summary": {},
+      "provenance": {
+        "v37a_contract_identity": "1735954212ec31286fede041639875610003a09cf817177e22cc908e3fcb0a12",
+        "v37b_contract_identity": "1865537503136ed3d8603e53741902c320df9387222655b38eef51640294e970",
+        "v37c_engine_identity": "v3.7c-counterfactual-engine-v1",
+        "mc2_identity": "MC2-E (E_AR1_RESIDUAL)",
+        "outcome_schema_version": "v3.7b-outcome-schema-v1",
+        "comparison_key_version": "v3.7b-comparison-key-v1",
+        "reference_kind": "SIMULATED_NO_INTERVENTION_REFERENCE",
+        "simulation_count": 5000,
+        "master_seed": 20240101,
+        "validated_by": "96debc6392c79019abedc3a51c7c26fb1536e97cabb3fed3136c43ed7c2b19c3",
+        "evaluation_gate": "REFINEMENT_NOT_WARRANTED",
+        "v37e_status": "SKIPPED_BY_V3.7D_GATE",
+        "runtime_identity": "v3.7f-counterfactual-runtime-v1",
+        "api_schema": "v3.7f-counterfactual-api-v1"
+      },
+      "limitations": "simulator-conditional outcomes under controlled interventions; not what would truly have happened; no optimal/recommended strategy; no causal real-world effect; compound-specific pace differentiation is limited/absent per frozen MC2 (compound is an intervention parameter, not a pace-effect claim); multi-driver plans propagate through joint ordering only (no pit-box stacking, traffic-battle, or team-order model)",
+      "execution_source": null,
+      "cache_key": null,
+      "runtime": {
+        "reconstruction_s": 0.03444108401890844,
+        "adaptation_s": 6.11250288784504e-05,
+        "simulation_s": 0.0,
+        "analysis_s": 0.0,
+        "total_s": 0.03467412502504885
+      }
+    }
+  },
+  "cf_uncached_valid_plan": {
+    "http_status": 404,
+    "supported": null,
+    "error": "cache_miss",
+    "note": "live_enabled=False so an uncached valid plan is an explicit 404 cache_miss \u2014 never a silent live run, never zeros."
+  },
+  "cf_cached_n5_plan": {
+    "http_status": 200,
+    "supported": true,
+    "note": "N=5 MEDIUM is in the precomputed demo cache (200 supported)."
+  },
+  "strategy_uncached_valid_anchor": {
+    "http_status": 404,
+    "supported": null,
+    "error": "cache_miss",
+    "note": "valid exact anchor with no precomputed artifact is an explicit 404 cache_miss \u2014 rendered as its own product state, never zeros."
+  }
+}

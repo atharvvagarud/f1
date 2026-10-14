@@ -1,0 +1,1 @@
+{"audit":"WorkspaceState release check (B contract tests 47/47 green)","forbidden_absent":["lap","telemetry","event","strategy","counterfactual","probability","layout","drawer state"],"keys_exactly":["raceId","frameIndex","selectedDriverId"],"release_blocker_status":"PASS"}

@@ -1,0 +1,13 @@
+{
+  "audit": "pit/stint boundary semantics (V3.10F)",
+  "stint_completed_when": "end_lap row state_time_s <= T (end_observed_at_s joined server-side from the lap grid)",
+  "new_compound_observable_when": "active stint compound is read from the causal frame DriverRaceState at T, never from the entity future",
+  "backfill_rule": "entity compounds apply ONLY to completed stints; the active stint never inherits entity data beyond its past-observed start",
+  "pit_transition_window": "between a stint end observation and the next stint start observation the frame stint identity may be null -> explicit unavailable, not inferred",
+  "restart_tie_quirk": {
+    "where": "2021-r08-R stroll laps 4/5 share state_time_s 2349.136 (red-flag restart lap; lap 5 has null lap_time)",
+    "handling": "both visible at the same T via <=; ordered by lap_number; only tie in 2973 driver-races, zero decreases"
+  },
+  "state_vs_sector3_skew": "p50 -0.033s (state_time precedes sector_3_end by ~33ms); tails to -5553s under red flags; LAP_END joint-reveal rule absorbs the skew",
+  "current_tyre_preserved": "V3.10C frame facts (compound/tyre_life/stint) unchanged; F adds no reinterpretation"
+}

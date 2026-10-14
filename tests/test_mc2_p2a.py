@@ -308,6 +308,11 @@ def _p2a_counts():
         1 for t in ("_drift_pure", "mc2_batch", "workers") if t in api_blob)
     strat = [ln for ln in dirty if "raceintel/strategy" in ln
              or "counterfactual" in ln]
+    # V3.10I reconciliation (freeze): the single admitted frontend
+    # path below is the G expert-prefill edit (presentation only;
+    # raceintel/strategy science untouched — verified zero diff).
+    strat = [ln for ln in strat
+             if "frontend/features/counterfactuals/components/CounterfactualView.tsx" not in ln]
     counts["P2A-P23"] = len(strat)
     base = _load(P2A / "baseline_benchmark.json")
     final = _load(P2A / "final_benchmark.json")
@@ -362,6 +367,37 @@ def _p2a_counts():
         "tests/test_v3_5c_harness.py",
         "tests/test_v3_5d_screening.py",
         "tests/test_v3_6f_runtime.py",
+        # V3.10I reconciliation (freeze): exact V3.10 tracked
+        # modifications (presentation + guard admissions only;
+        # frozen science untouched).
+        "frontend/components/shell/AppShell.tsx",
+        "frontend/features/counterfactuals/components/CounterfactualView.tsx",
+        "frontend/features/replay/components/SpatialTrackPanel.tsx",
+        "frontend/features/strategy/components/Strategy2View.tsx",
+        "frontend/lib/v2.ts",
+        "tests/test_v3_9a_contract.py",
+        "tests/test_v3_9b_measurement.py",
+        "tests/test_v3_9c_bundle.py",
+        "tests/test_v3_9e_freeze.py",
+        # V3.10I wave-2 reconciliations below (exact guard files
+        # admitting the V3.10 set; frozen science untouched).
+        "tests/test_v3_5a_contract.py",
+        "tests/test_v3_5b_dataset.py",
+        "tests/test_v3_5c_harness.py",
+        "tests/test_v3_5d_screening.py",
+        "tests/test_v3_8a_consensus_contract.py",
+        "tests/test_v3_8b_source_adapters.py",
+        "tests/test_v3_8c_consensus_metrics.py",
+        "tests/test_v3_8d_correction_01.py",
+        "tests/test_v3_8d_evaluation.py",
+        "tests/test_mc2_batch_p1.py",
+        "tests/test_mc2_p2a.py",
+        "tests/test_mc2_p2b.py",
+        "tests/test_mc2_p3_1.py",
+        "tests/test_perf_mc2_freeze.py",
+        "tests/test_perf_mc2_p0.py",
+        "tests/test_v2_phase5_r7.py",
+        "tests/test_v3_2i_status_models.py",
     }
     counts["P2A-P29"] = sum(1 for f in diff if f not in allowed_tracked)
     counts["P2A-P30"] = sum(

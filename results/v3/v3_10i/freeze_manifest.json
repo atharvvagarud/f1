@@ -1,0 +1,81 @@
+{
+  "deferred": [
+    "MC2 SIMULATION COVERAGE EXPANSION (next programme)",
+    "wet-weather modelling (separate scientific gate)",
+    "no V3.11 started"
+  ],
+  "docs": [
+    "docs/V3_10A_PIT_WALL_INFORMATION_ARCHITECTURE.md",
+    "docs/V3_10B_SHARED_WORKSPACE_STATE.md",
+    "docs/V3_10C_PIT_WALL_SHELL.md",
+    "docs/V3_10D_RACE_CONTROL_EVENT_TIMELINE.md",
+    "docs/V3_10E_DRIVER_INTELLIGENCE.md",
+    "docs/V3_10F_DRIVER_TELEMETRY.md",
+    "docs/V3_10G_CONTEXTUAL_DECISION_EXPLORATION.md",
+    "docs/V3_10H_PRODUCT_POLISH.md",
+    "docs/V3_10_PIT_WALL_FINAL.md"
+  ],
+  "frontend_tests": "604/604",
+  "frozen_parent": "fb0d8d8772bdc1343bc6be6c5ff9ee68cddd7203 (v3.9-uncertainty-intelligence)",
+  "graphify": {
+    "nodes": 19796,
+    "edges": 44602
+  },
+  "known_limitations": [
+    "MC2 38.14%",
+    "2025 excluded",
+    "sparse E-comparable anchors",
+    "event-source partiality",
+    "telemetry missingness as em-dash",
+    "no Bayesian tyre degradation",
+    "no recommendation",
+    "no causal counterfactual claim",
+    "no model/simulation fusion",
+    "separate expert surfaces"
+  ],
+  "known_xfails": [
+    "tests/test_known_defects.py::test_monaco_single_model_http_ok[logreg/hgb/xgboost] + test_monaco_ensemble_http_ok (pre-existing Monaco NaN legacy defect, strict=False)"
+  ],
+  "mc2_coverage": {
+    "eligible": 3678,
+    "fraction": 0.3814,
+    "total": 9644
+  },
+  "ownership_manifest": "results/v3/v3_10i/v3_10_ownership_manifest.json (198 files)",
+  "production_files": {
+    "api": 4,
+    "frontend_product_state": 33,
+    "tests_reconciled": 12
+  },
+  "python_collection": 5186,
+  "routes": [
+    "/",
+    "/pit-wall",
+    "/replay",
+    "/simulator",
+    "/strategy",
+    "/counterfactuals",
+    "/consensus",
+    "/uncertainty",
+    "/models",
+    "/about",
+    "/spatial"
+  ],
+  "scientific_files_changed": 0,
+  "stage_range": "V3.10A-V3.10I",
+  "supported_years": "2018-2024 (2025 excluded where frozen contracts require)",
+  "tier1": {
+    "collected": 5186,
+    "passed": 5177,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5,
+    "xfailed": 4,
+    "xpassed": 0,
+    "runtime_s": 5533.49,
+    "return_code": 0
+  },
+  "freeze_commit_message": "feat(pit-wall): freeze v3.10 integrated race intelligence workspace",
+  "freeze_tag": "v3.10-pit-wall",
+  "manifest_identity": "418a68564f1d3957c83b58ea3594564abfb3530ca887bf93c422eb8fcb2c0bb3"
+}

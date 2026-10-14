@@ -1153,8 +1153,12 @@ def test_app_registers_replay_routes_once():
     for route in app.routes:
         if getattr(route, "path", "").startswith("/v2/races/{race_id}/replay"):
             counts[route.path] = counts.get(route.path, 0) + 1
-    assert len(counts) == 4
+    # V3.10I reconciliation (freeze): V3.10F adds exactly one read-only
+    # route (telemetry projection over the frozen corpus); every replay
+    # route is still registered exactly once.
+    assert len(counts) == 5
     assert all(count == 1 for count in counts.values())
+    assert counts.get("/v2/races/{race_id}/replay/telemetry") == 1
 
 
 def test_phase4_and_legacy_routes_preserved():

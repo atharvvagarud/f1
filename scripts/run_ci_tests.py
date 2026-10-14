@@ -184,7 +184,11 @@ CORPUS_MANIFEST = Path(__file__).resolve().parent / "ci_corpus_dependent.txt"
 # card identities/manifest/taxonomy/families/boundaries/prohibitions/
 # alignment/temporal/2025/API/frontend/collection/reconciliation; no MC2
 # execution, no corpus dependence added), with no removals = 5176.
-EXPECTED_COLLECTED = 5176
+# V3.10I reclassification: 10 added tests in
+# tests/test_v3_10b_workspace_ownership.py (workspace ownership) and
+# tests/test_v3_10f_telemetry.py (read-only telemetry API firewall;
+# no MC2 execution, no corpus dependence added), with no removals = 5186.
+EXPECTED_COLLECTED = 5186
 
 # (pytest node id, reason it cannot pass at the frozen baseline)
 # P11-1: the 12 pre-existing stale historical pins were genuinely corrected

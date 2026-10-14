@@ -1,0 +1,9 @@
+{
+  "validation": "A-E compatibility after F",
+  "B_workspace": "WorkspaceState exactly {raceId, frameIndex, selectedDriverId}; workspace lib suites pass (154/154 incl. B/C/D/E); isWorkspaceState key-guard intact",
+  "C_shell": "hierarchy header/track/driver/order/notes/timeline preserved; telemetry renders inside the driver region only; production build includes /pit-wall",
+  "D_events": "event corpus, feed, markers, nav unchanged; event suites pass; telemetry seeks never emit event state and event nav never emits telemetry state",
+  "E_intelligence": "MODEL/SIM/DIFFERENCE, Wilson, U3, refusals, expert links byte-identical in behavior; intelligenceIntegration E-scope guards pass (separate F files keep E sources sector/stint-history-free); live refusal at frame 200 unchanged",
+  "replay": "existing replay routes/payloads untouched; frame endpoints byte-identical in contract (new route is additive)",
+  "science": "V3.1B/MC2/feature-engine/serving-model/strategy/consensus/uncertainty unmodified; no refits; MC2 eligibility 3678/9644 untouched (no MC2 executed)"
+}

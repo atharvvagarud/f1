@@ -17,6 +17,7 @@ import type { ReplayFrameMeta } from "@/lib/v2";
 import { RaceSelector } from "@/features/replay/components/RaceSelector";
 import { readableDriverId } from "@/features/replay/components/StandingsTable";
 import { useStrategy2 } from "@/features/strategy/hooks/useStrategy2";
+import { useExpertWorkspaceHydration } from "@/features/workspace/hooks/useExpertHydration";
 import { Strategy2Results } from "@/features/strategy/components/Strategy2Results";
 import {
   CANONICAL_CANDIDATES,
@@ -172,6 +173,20 @@ export function Strategy2View() {
   } = strategy;
 
   const running = view.kind === "running";
+  // V3.10G: consume the canonical pit-wall deep link (?race=&frame=&driver=)
+  // where supported — race + exact frame + target prefill only, no science
+  // change. Unknown races and out-of-range frames are ignored fail-closed.
+  useExpertWorkspaceHydration({
+    racesLoading,
+    raceIds: races.map((race) => race.race_id),
+    raceId,
+    totalFrames,
+    frameIndex,
+    driverKey: target ?? "",
+    selectRace,
+    selectFrame,
+    applyDriver: selectTarget,
+  });
   const anchor = selectedFrame ? strategyAnchorFromFrame(selectedFrame) : null;
   const selectedRace = races.find((race) => race.race_id === raceId) ?? null;
   const targetState = roster.find((d) => d.driver_id === target) ?? null;

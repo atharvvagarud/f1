@@ -372,10 +372,13 @@ def test_no_api_frontend_change():
     # Counterfactual Explorer paths (frozen science untouched).
     # V3.8H reconciliation: V3.8F/V3.8G charters additionally admit exactly
     # the consensus API/frontend paths (frozen science untouched).
+    # V3.10I reconciliation: V3.10F charter additionally admits exactly
+    # the read-only telemetry API trio (frozen science untouched).
     allowed = ("api/v2_strategy_v3_", "api/main.py",
                "api/v2_counterfactual_", "api/v2_consensus_",
                # V3.9C carve-out: uncertainty bundle API (additive).
-               "api/v2_uncertainty_")
+               "api/v2_uncertainty_",
+               "api/v2_telemetry_")
     assert not any(f.startswith("api/") and not f.startswith(allowed)
                    for f in changed)
     allowed_frontend = ("frontend/app/strategy/page.tsx",
@@ -392,7 +395,15 @@ def test_no_api_frontend_change():
                         # modules; no science change).
                         "frontend/app/uncertainty/",
                         "frontend/features/uncertainty/",
-                        "frontend/components/shell/CommandBar.tsx")
+                        "frontend/components/shell/CommandBar.tsx",
+                        # V3.10I reconciliation: V3.10A-H pit-wall
+                        # product admitted exactly (frozen science
+                        # untouched).
+                        "frontend/app/pit-wall/",
+                        "frontend/features/pit-wall/",
+                        "frontend/features/workspace/",
+                        "frontend/components/shell/AppShell.tsx",
+                        "frontend/features/replay/components/SpatialTrackPanel.tsx")
     assert not any(f.startswith("frontend/")
                    and not f.startswith(allowed_frontend)
                    for f in changed)

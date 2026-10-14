@@ -1,0 +1,14 @@
+{
+  "stage": "V3.10E",
+  "title": "Selected-driver intelligence integration",
+  "verdict": "V3.10E COMPLETE \u2014 DRIVER INTELLIGENCE VALIDATED \u2014 READY FOR V3.10F",
+  "classification": "A. DRIVER_INTELLIGENCE_VALIDATED",
+  "intelligence": "L0 MODEL/SIM/\u0394 + precision line; DETAILS ranks/leaders/Wilson/U3/families/expert links; refusals honest; single frozen source; driver switches free",
+  "validation": "frontend 513/513 (496+17); browser comparable + refusal + links + zero-refetch; Python 5179",
+  "deferred": [
+    "V3.10F sector/tyre",
+    "V3.10G strategy/counterfactuals",
+    "MC2 coverage (3678/9644)"
+  ],
+  "next_gate": "V3.10F \u2014 SECTOR/LAP + TYRE-STINT TELEMETRY"
+}

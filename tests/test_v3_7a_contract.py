@@ -93,6 +93,54 @@ def test_baseline_clean_at_entry():
                "raceintel/consensus/",
                "api/v2_consensus_",
                "frontend/app/consensus", "frontend/features/consensus",
+               # V3.10I reconciliation (freeze): V3.10A-H charters
+               # admitted exactly (pit-wall product, workspace
+               # substrate, read-only telemetry API, stage
+               # docs/artifacts/scripts/tests, and these
+               # guard-allowlist edits themselves; frozen science
+               # untouched; any other path still fails).
+               "results/v3/v3_10",
+               "docs/V3_10",
+               "tests/test_v3_10",
+               "tests/test_v3_6a_contract.py",
+               "tests/test_v3_6b_contracts.py",
+               "tests/test_v3_6d_evaluation.py",
+               "tests/test_v3_6f_runtime.py",
+               "tests/test_v3_7a_contract.py",
+               "tests/test_v3_8h_freeze.py",
+               "tests/test_v3_9a_contract.py",
+               "tests/test_v3_9b_measurement.py",
+               "tests/test_v3_9c_bundle.py",
+               "tests/test_v3_9e_freeze.py",
+               "tests/test_perf_mc2_freeze.py",
+               "scripts/v3_10",
+               "api/v2_telemetry_",
+               "frontend/app/pit-wall/",
+               "frontend/features/pit-wall/",
+               "frontend/features/workspace/",
+               "frontend/components/shell/AppShell.tsx",
+               "frontend/features/counterfactuals/components/CounterfactualView.tsx",
+               "frontend/features/strategy/components/Strategy2View.tsx",
+               "frontend/lib/v2.ts",
+               "frontend/features/replay/components/SpatialTrackPanel.tsx",
+               # V3.10I wave-2 reconciliations below (exact guard files
+               # admitting the V3.10 set; frozen science untouched).
+               "tests/test_v3_5a_contract.py",
+               "tests/test_v3_5b_dataset.py",
+               "tests/test_v3_5c_harness.py",
+               "tests/test_v3_5d_screening.py",
+               "tests/test_v3_8a_consensus_contract.py",
+               "tests/test_v3_8b_source_adapters.py",
+               "tests/test_v3_8c_consensus_metrics.py",
+               "tests/test_v3_8d_correction_01.py",
+               "tests/test_v3_8d_evaluation.py",
+               "tests/test_mc2_batch_p1.py",
+               "tests/test_mc2_p2a.py",
+               "tests/test_mc2_p2b.py",
+               "tests/test_mc2_p3_1.py",
+               "tests/test_perf_mc2_p0.py",
+               "tests/test_v2_phase5_r7.py",
+               "tests/test_v3_2i_status_models.py",
                # P2A carve-out (performance programme only): exactly the
                # two kernel files with hoisted loop-invariant overhead
                # (parity-gated in P0-P20/P1-P3/P2A-P29 checks, not here)
@@ -324,7 +372,18 @@ def test_no_mc2_api_frontend_modification():
                "frontend/app/uncertainty/",
                "frontend/features/uncertainty/",
                "frontend/lib/v2.ts",
-               "frontend/components/shell/CommandBar.tsx")
+               "frontend/components/shell/CommandBar.tsx",
+               # V3.10I reconciliation: V3.10A-H product admitted
+               # exactly (pit-wall, workspace, shell, replay calm
+               # prop, expert prefill, telemetry client/API; frozen
+               # science untouched).
+               "frontend/app/pit-wall/",
+               "frontend/features/pit-wall/",
+               "frontend/features/workspace/",
+               "frontend/components/shell/AppShell.tsx",
+               "frontend/features/strategy/components/Strategy2View.tsx",
+               "frontend/features/replay/components/SpatialTrackPanel.tsx",
+               "api/v2_telemetry_")
     for line in out.splitlines():
         pth = line[3:] if len(line) > 3 else ""
         if pth.startswith(("raceintel/simulation/", "api/", "frontend/")):

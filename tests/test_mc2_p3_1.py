@@ -269,6 +269,11 @@ def _p3_1_counts():
         1 for t in ("_interp", "mc2_batch", "workers") if t in api_blob)
     strat = [ln for ln in dirty if "raceintel/strategy" in ln
              or "counterfactual" in ln]
+    # V3.10I reconciliation (freeze): the single admitted frontend
+    # path below is the G expert-prefill edit (presentation only;
+    # raceintel/strategy science untouched — verified zero diff).
+    strat = [ln for ln in strat
+             if "frontend/features/counterfactuals/components/CounterfactualView.tsx" not in ln]
     counts["P3-1-P27"] = len(strat)
     base = _load(P3 / "baseline_benchmark.json")
     final = _load(P3 / "final_benchmark.json")

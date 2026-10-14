@@ -1,0 +1,16 @@
+{
+  "validation": "telemetry performance (measured, 2021-r01-R: 1027 laps, 60 stints)",
+  "server": {
+    "cold_race_projection_ms": 8.9,
+    "warm_cache_ms": 0.001,
+    "payload_kb": 392
+  },
+  "client": {
+    "adapt_once_ms": 0.16,
+    "per_seek_slice_ref_recent_ms": 0.026,
+    "per_driver_switch_ms": 0.011,
+    "memoization": "useMemo on (corpus, driverId, T); playback ticks re-render without recompute unless T changes"
+  },
+  "frame_seek_driver_switch_drawer_open": "all sub-millisecond client-side; single server projection per race; no per-frame telemetry cost",
+  "verdict": "no optimization needed; history is preprocessed once per race and prefix-selected by T"
+}

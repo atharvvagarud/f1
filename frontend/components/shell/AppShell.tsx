@@ -3,12 +3,15 @@
 // Server component: route awareness is isolated in CommandBar.
 
 import { CommandBar } from "@/components/shell/CommandBar";
+import { WorkspaceProvider } from "@/features/workspace/hooks/useWorkspace";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col bg-ink-950 text-fg">
-      <CommandBar />
-      <main className="flex-1">{children}</main>
+      <WorkspaceProvider>
+        <CommandBar />
+        <main className="flex-1">{children}</main>
+      </WorkspaceProvider>
     </div>
   );
 }

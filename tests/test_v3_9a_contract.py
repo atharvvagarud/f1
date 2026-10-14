@@ -286,6 +286,39 @@ def test_no_production_runtime_dependency():
         "tests/test_v3_5c_harness.py",
         "tests/test_v3_5d_screening.py",
         "tests/test_v3_6f_runtime.py",
+        # V3.10I reconciliation (freeze): exact V3.10 tracked
+        # modifications (7 product files: shell, replay calm prop,
+        # expert prefill x2, telemetry client/router; frozen science
+        # untouched) plus these guard-allowlist edits themselves.
+        "frontend/components/shell/AppShell.tsx",
+        "frontend/features/counterfactuals/components/CounterfactualView.tsx",
+        "frontend/features/replay/components/SpatialTrackPanel.tsx",
+        "frontend/features/strategy/components/Strategy2View.tsx",
+        "frontend/lib/v2.ts",
+        "tests/test_v3_6f_runtime.py",
+        "tests/test_v3_8h_freeze.py",
+        "tests/test_v3_9a_contract.py",
+        "tests/test_v3_9b_measurement.py",
+        "tests/test_v3_9c_bundle.py",
+        "tests/test_v3_9e_freeze.py",
+        # V3.10I wave-2 reconciliations below (exact guard files
+        # admitting the V3.10 set; frozen science untouched).
+        "tests/test_v3_5a_contract.py",
+        "tests/test_v3_5b_dataset.py",
+        "tests/test_v3_5c_harness.py",
+        "tests/test_v3_5d_screening.py",
+        "tests/test_v3_8a_consensus_contract.py",
+        "tests/test_v3_8b_source_adapters.py",
+        "tests/test_v3_8c_consensus_metrics.py",
+        "tests/test_v3_8d_correction_01.py",
+        "tests/test_v3_8d_evaluation.py",
+        "tests/test_mc2_batch_p1.py",
+        "tests/test_mc2_p2a.py",
+        "tests/test_mc2_p2b.py",
+        "tests/test_mc2_p3_1.py",
+        "tests/test_perf_mc2_p0.py",
+        "tests/test_v2_phase5_r7.py",
+        "tests/test_v3_2i_status_models.py",
     }
     for ln in out.splitlines():
         if ln.startswith(("M ", " M")):

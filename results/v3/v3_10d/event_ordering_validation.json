@@ -1,0 +1,1 @@
+{"audit":"V3.10D","order":"frameIndex, then FLAG, MESSAGE, PIT (driver_id ascending), LAP","same_frame":"single deterministic marker (count + ordered details preserved; nothing dropped)","reload_determinism":"pure derivation over dense digests; binary-search visible prefix; tested","tests":["derivation order asserted","marker aggregation asserted (count, kinds, order)"]}

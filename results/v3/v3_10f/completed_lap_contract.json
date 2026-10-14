@@ -1,0 +1,13 @@
+{
+  "contract": "completed-lap causal visibility (V3.10F)",
+  "selector": "selectCompletedDriverLaps(telemetry, selectedDriverId, workspaceFrame)",
+  "clock": "T = frame.frame.anchor_state_time_s (replay frame grid == unique D9 state_time_s grid)",
+  "rule": "lap (driver, lap_number) visible iff its D9 row state_time_s (observed_at_s) <= T",
+  "joint_reveal": "lap_time_s, sector_1_s, sector_2_s, sector_3_s become visible together at the lap observation boundary; no partial-sector exposure",
+  "tie_break": "equal observed_at_s orders by lap_number ascending (covers the single 2021-r08-R stroll laps-4/5 restart tie)",
+  "in_progress": "current lap = maxCompletedLap + 1 shown with number only; final values unavailable, never estimated",
+  "in_progress_gate": "shown only while replay advances (not final frame) and driver is within one lap of the leader; otherwise explicit unavailable state",
+  "scoping": "selectedDriverId only; driver switches re-slice the cached race corpus locally",
+  "missing": "null stays null, rendered as em-dash, never zero-filled",
+  "forbidden": ["future lap rows", "per-lap requests", "estimated lap times", "zero-filled sectors", "all-driver matrix"]
+}

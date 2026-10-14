@@ -1,0 +1,9 @@
+{
+  "audit": "telemetry request behavior (live network log, 2021-r01-R session)",
+  "telemetry_requests": "exactly 1 successful GET /v2/races/{race_id}/replay/telemetry per race (392 KB for 1027 laps + 60 stints); 1 aborted duplicate from full-page navigation (remount, not a second logical request)",
+  "driver_switch": "hamilton -> max_verstappen issued ZERO telemetry requests (module cache + local re-slice, verified in network log)",
+  "frame_seek": "frame navigation issues zero telemetry requests (event-corpus frame fetches are V3.10D, unchanged)",
+  "disclosure_toggle": "opening/closing LAP/SECTORS and TYRE HISTORY issues zero requests (pure render of memoized selector output)",
+  "forbidden_absent": ["per-driver fetch", "per-frame telemetry fetch", "MC2 calls", "strategy calls", "counterfactual calls", "consensus duplication", "uncertainty duplication beyond existing E behavior"],
+  "scientific_endpoints_touched_by_telemetry": "none (availability/compare calls observed belong to the pre-existing E intelligence hook)"
+}

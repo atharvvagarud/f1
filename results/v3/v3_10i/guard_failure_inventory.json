@@ -1,0 +1,187 @@
+{
+  "audit": "exact guard subset that produced 707 passed / 19 failed at V3.10I entry (all worktree-cleanliness/accounting guards; zero science failures); extended with 16 Tier-1-only failures of identical worktree class (total 35)",
+  "class_counts": {
+    "A_EXPECTED_V3_10_OWNERSHIP_CHANGE": 31,
+    "B_STALE_PIN_REQUIRES_EXACT_RECONCILIATION": 4,
+    "C_REAL_FORBIDDEN_CHANGE": 0,
+    "D_UNKNOWN": 0
+  },
+  "failures": [
+    {
+      "classification": "B",
+      "first_offense": "pin 5176 vs collected 5186",
+      "test": "test_mc2_batch_p1.py::test_collection_guard_reconciled"
+    },
+    {
+      "classification": "B",
+      "first_offense": "pin 5122+26+28=5176 vs collected 5186",
+      "test": "test_perf_mc2_freeze.py::test_collection_pin_reconciled"
+    },
+    {
+      "classification": "A",
+      "first_offense": "PF-P24 dirty line M frontend/components/shell/AppShell.tsx",
+      "test": "test_perf_mc2_freeze.py::test_freeze_pathology_all_zero"
+    },
+    {
+      "classification": "A",
+      "first_offense": "M api/main.py (F router registration; V3.10F telemetry trio untracked)",
+      "test": "test_v3_6a_contract.py::test_no_api_change"
+    },
+    {
+      "classification": "A",
+      "first_offense": "pit-wall/workspace dirs + AppShell + SpatialTrackPanel (+ G expert views)",
+      "test": "test_v3_6a_contract.py::test_no_frontend_change"
+    },
+    {
+      "classification": "A",
+      "first_offense": "M frontend/components/shell/AppShell.tsx",
+      "test": "test_v3_6a_contract.py::test_no_serving_api_frontend_mc2_v35_changes"
+    },
+    {
+      "classification": "A",
+      "first_offense": "api/v2_telemetry_ + pit-wall/workspace/AppShell/SpatialTrackPanel",
+      "test": "test_v3_6b_contracts.py::test_no_api_frontend_change"
+    },
+    {
+      "classification": "A",
+      "first_offense": "same as v3_6b",
+      "test": "test_v3_6d_evaluation.py::test_no_api_frontend_changes"
+    },
+    {
+      "classification": "A",
+      "first_offense": "tracked mods AppShell.tsx + SpatialTrackPanel.tsx (rest already admitted)",
+      "test": "test_v3_6d_evaluation.py::test_no_tuning"
+    },
+    {
+      "classification": "A",
+      "first_offense": "8 frontend paths (pit-wall/workspace/AppShell/views/v2.ts)",
+      "test": "test_v3_6f_runtime.py::test_no_frontend_changes"
+    },
+    {
+      "classification": "A",
+      "first_offense": "M frontend/components/shell/AppShell.tsx",
+      "test": "test_v3_7a_contract.py::test_baseline_clean_at_entry"
+    },
+    {
+      "classification": "A",
+      "first_offense": "M frontend/components/shell/AppShell.tsx",
+      "test": "test_v3_7a_contract.py::test_no_mc2_api_frontend_modification"
+    },
+    {
+      "classification": "A",
+      "first_offense": "H-P24 == 3 (CounterfactualView, Strategy2View, v2.ts via FINAL_ALLOW)",
+      "test": "test_v3_8h_freeze.py::test_h_pathology_superset_all_zero"
+    },
+    {
+      "classification": "A",
+      "first_offense": "M frontend/components/shell/AppShell.tsx",
+      "test": "test_v3_8h_freeze.py::test_worktree_contains_only_owned_v38_paths"
+    },
+    {
+      "classification": "A",
+      "first_offense": "M frontend/components/shell/AppShell.tsx (+ 6 more prod mods + guard self-edits)",
+      "test": "test_v3_9a_contract.py::test_no_production_runtime_dependency"
+    },
+    {
+      "classification": "B",
+      "first_offense": "untracked api/v2_uncertainty_ trio absent (committed at frozen parent)",
+      "test": "test_v3_9b_measurement.py::test_no_mc2_rerun_or_bayes_or_api"
+    },
+    {
+      "classification": "A",
+      "first_offense": "5 frontend tracked mods (AppShell, both expert views, SpatialTrackPanel, v2.ts)",
+      "test": "test_v3_9b_measurement.py::test_no_runtime_code_modified"
+    },
+    {
+      "classification": "A",
+      "first_offense": "CounterfactualView + Strategy2View + v2.ts",
+      "test": "test_v3_9c_bundle.py::test_no_frontend_changes"
+    },
+    {
+      "classification": "B",
+      "first_offense": "5148+28=5176 vs collected 5186",
+      "test": "test_v3_9e_freeze.py::test_collection_accounting"
+    },
+    {
+      "classification": "A",
+      "first_offense": "P1-P25==1 via dirty-line substring on G prefill edit path",
+      "test": "test_mc2_batch_p1.py::test_p1_pathology_all_zero"
+    },
+    {
+      "classification": "A",
+      "first_offense": "P2A-P23==1 same substring; P2A-P29==9 tracked mods absent from allowed_tracked",
+      "test": "test_mc2_p2a.py::test_p2a_pathology_all_zero"
+    },
+    {
+      "classification": "A",
+      "first_offense": "P2B-P28==1 same substring",
+      "test": "test_mc2_p2b.py::test_p2b_pathology_all_zero"
+    },
+    {
+      "classification": "A",
+      "first_offense": "P3-1-P27==1 same substring",
+      "test": "test_mc2_p3_1.py::test_p3_1_pathology_all_zero"
+    },
+    {
+      "classification": "A",
+      "first_offense": "P0-P20==24 tracked+untracked V3.10 paths absent from v39_owned/new_prod",
+      "test": "test_perf_mc2_p0.py::test_p0_pathology_all_zero"
+    },
+    {
+      "classification": "A",
+      "first_offense": "replay route count 4 vs 5 (V3.10F telemetry route)",
+      "test": "test_v2_phase5_r7.py::test_app_registers_replay_routes_once"
+    },
+    {
+      "classification": "A",
+      "first_offense": "token fastf1 in frozen fastf1_generated column identifier (no library import)",
+      "test": "test_v3_2i_status_models.py::test_no_runtime_status_imports"
+    },
+    {
+      "classification": "A",
+      "first_offense": "AppShell first-offense (worktree prefixes)",
+      "test": "test_v3_5a_contract.py::test_no_serving_changes"
+    },
+    {
+      "classification": "A",
+      "first_offense": "same class",
+      "test": "test_v3_5b_dataset.py::test_no_serving_api_frontend_change"
+    },
+    {
+      "classification": "A",
+      "first_offense": "same class",
+      "test": "test_v3_5c_harness.py::test_no_serving_api_frontend_change"
+    },
+    {
+      "classification": "A",
+      "first_offense": "same class",
+      "test": "test_v3_5d_screening.py::test_no_serving_api_frontend_changes"
+    },
+    {
+      "classification": "A",
+      "first_offense": "AppShell first-offense (FINAL_ALLOW-style tuple)",
+      "test": "test_v3_8a_consensus_contract.py::test_no_scientific_source_files_modified"
+    },
+    {
+      "classification": "A",
+      "first_offense": "same class",
+      "test": "test_v3_8b_source_adapters.py::test_no_frozen_source_modified"
+    },
+    {
+      "classification": "A",
+      "first_offense": "same class",
+      "test": "test_v3_8c_consensus_metrics.py::test_no_frozen_source_modified"
+    },
+    {
+      "classification": "A",
+      "first_offense": "V3.10 tracked mods absent from exact set",
+      "test": "test_v3_8d_correction_01.py::test_original_d_artifacts_untouched"
+    },
+    {
+      "classification": "A",
+      "first_offense": "AppShell first-offense (allow tuple)",
+      "test": "test_v3_8d_evaluation.py::test_no_frozen_science_modified"
+    }
+  ],
+  "subset": "v3_6|v3_7|v3_9|v3_10|strategy|counterfactual|freeze|ownership|guard"
+}

@@ -1,0 +1,1790 @@
+{
+  "audit": "complete V3.10A-H ownership manifest (freeze input)",
+  "frozen_parent": "fb0d8d8772bdc1343bc6be6c5ff9ee68cddd7203",
+  "science_semantics_changed_total": 0,
+  "file_count": 198,
+  "files": [
+    {
+      "path": "api/main.py",
+      "class": "API_READ_ONLY",
+      "stage": "V3.10F",
+      "purpose": "register read-only telemetry router (additive include)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "api -> v2_telemetry_routes"
+    },
+    {
+      "path": "api/v2_telemetry_routes.py",
+      "class": "API_READ_ONLY",
+      "stage": "V3.10F",
+      "purpose": "GET replay/telemetry route (frozen D9 corpus projection)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "route -> telemetry service"
+    },
+    {
+      "path": "api/v2_telemetry_schemas.py",
+      "class": "API_READ_ONLY",
+      "stage": "V3.10F",
+      "purpose": "telemetry response schemas (read-only projection)",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none"
+    },
+    {
+      "path": "api/v2_telemetry_service.py",
+      "class": "API_READ_ONLY",
+      "stage": "V3.10F",
+      "purpose": "telemetry projection over frozen corpus",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "service -> frozen corpus"
+    },
+    {
+      "path": "docs/V3_10A_PIT_WALL_INFORMATION_ARCHITECTURE.md",
+      "class": "DOC",
+      "stage": "V3.10A",
+      "purpose": "stage design/validation record",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none"
+    },
+    {
+      "path": "docs/V3_10B_SHARED_WORKSPACE_STATE.md",
+      "class": "DOC",
+      "stage": "V3.10B",
+      "purpose": "stage design/validation record",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none"
+    },
+    {
+      "path": "docs/V3_10C_PIT_WALL_SHELL.md",
+      "class": "DOC",
+      "stage": "V3.10C",
+      "purpose": "stage design/validation record",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none"
+    },
+    {
+      "path": "docs/V3_10D_RACE_CONTROL_EVENT_TIMELINE.md",
+      "class": "DOC",
+      "stage": "V3.10D",
+      "purpose": "stage design/validation record",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none"
+    },
+    {
+      "path": "docs/V3_10E_DRIVER_INTELLIGENCE.md",
+      "class": "DOC",
+      "stage": "V3.10E",
+      "purpose": "stage design/validation record",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none"
+    },
+    {
+      "path": "docs/V3_10F_DRIVER_TELEMETRY.md",
+      "class": "DOC",
+      "stage": "V3.10F",
+      "purpose": "stage design/validation record",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none"
+    },
+    {
+      "path": "docs/V3_10G_CONTEXTUAL_DECISION_EXPLORATION.md",
+      "class": "DOC",
+      "stage": "V3.10G",
+      "purpose": "stage design/validation record",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none"
+    },
+    {
+      "path": "docs/V3_10H_PRODUCT_POLISH.md",
+      "class": "DOC",
+      "stage": "V3.10H",
+      "purpose": "stage design/validation record",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none"
+    },
+    {
+      "path": "frontend/app/pit-wall/page.tsx",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10C",
+      "purpose": "/pit-wall route entry (renders PitWallView)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "page -> pit-wall view"
+    },
+    {
+      "path": "frontend/components/shell/AppShell.tsx",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10C",
+      "purpose": "mount WorkspaceProvider (identity only)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "shell -> workspace provider"
+    },
+    {
+      "path": "frontend/components/shell/CommandBar.tsx",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10C",
+      "purpose": "primary nav Pit wall/Races/Models/About + subordinate Expert strip",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "none (links only)"
+    },
+    {
+      "path": "frontend/features/counterfactuals/components/CounterfactualView.tsx",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10G/H",
+      "purpose": "canonical deep-link prefill via useExpertWorkspaceHydration (selection only)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "view -> workspace hydration helper"
+    },
+    {
+      "path": "frontend/features/pit-wall/components/DecisionExploration.tsx",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10G/H",
+      "purpose": "contextual strategy/alternative entries (availability-gated, explicit-run)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/components/DriverPanel.tsx",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10C/E",
+      "purpose": "selected-driver region (facts + intelligence + telemetry host)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/components/DriverTelemetry.tsx",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10F",
+      "purpose": "causal telemetry disclosures",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/components/EventFeed.tsx",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10D",
+      "purpose": "causal race-control feed",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/components/EventMarkers.tsx",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10D",
+      "purpose": "timeline event markers (past only)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/components/EventNav.tsx",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10D",
+      "purpose": "event/lap navigation",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/components/PitWallTransport.tsx",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10C",
+      "purpose": "replay transport + speed",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/components/PitWallView.tsx",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10C/D/E/F/G/H",
+      "purpose": "workspace shell composition (identity only)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/hooks/useDecisionExploration.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10G/H",
+      "purpose": "G entry state (availability-first, explicit-run, keyed stale guards)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/hooks/useDriverIntelligence.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10E",
+      "purpose": "frozen uncertainty bundle per anchor (cached)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/hooks/useDriverTelemetry.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10F",
+      "purpose": "per-race telemetry corpus (cached)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/hooks/usePitWall.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10C",
+      "purpose": "workspace-backed replay follower (no identity)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/hooks/usePitWallEvents.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10D",
+      "purpose": "per-race event corpus follower",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/causalIntegration.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10H",
+      "purpose": "cross-feature poison suite (11 tests)",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/decisionAdapter.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10G",
+      "purpose": "exact-adapter tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/decisionAdapter.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10G",
+      "purpose": "exact workspace->product identity adapter",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/decisionDisplay.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10G",
+      "purpose": "compact display + neutrality tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/decisionDisplay.ts",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10G",
+      "purpose": "compact display over frozen formatters",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/driverFacts.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10C",
+      "purpose": "frame-fact selector tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/driverFacts.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10C",
+      "purpose": "selected-driver frame facts (pure)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/driverIntelligence.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10E",
+      "purpose": "intelligence slice tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/driverIntelligence.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10E",
+      "purpose": "bundle slice per driver (pure)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/eventIntegration.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10D",
+      "purpose": "event wiring/compat tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/events.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10D",
+      "purpose": "causal event model tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/events.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10D",
+      "purpose": "causal event index + selectors (pure)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/frameCorpus.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10D",
+      "purpose": "shared frame corpus reader",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/intelligenceIntegration.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10E",
+      "purpose": "intelligence wiring/scope tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/pitWallIntegrity.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10C/H",
+      "purpose": "shell integrity + G/H contract guards",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/productPolish.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10H",
+      "purpose": "hierarchy/disclosure/a11y/request/route/copy pins (20 tests)",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/telemetry.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10F",
+      "purpose": "causal telemetry selector tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/telemetry.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10F",
+      "purpose": "causal telemetry selectors (pure)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/pit-wall/lib/telemetryIntegration.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10F",
+      "purpose": "telemetry wiring/scope tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "pit-wall internal / frozen clients"
+    },
+    {
+      "path": "frontend/features/replay/components/SpatialTrackPanel.tsx",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10H",
+      "purpose": "optional announcePending prop (default true preserves /replay)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "none (presentational prop)"
+    },
+    {
+      "path": "frontend/features/strategy/components/Strategy2View.tsx",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10G/H",
+      "purpose": "canonical deep-link prefill via useExpertWorkspaceHydration (selection only)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "view -> workspace hydration helper"
+    },
+    {
+      "path": "frontend/features/workspace/hooks/useExpertHydration.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10G/H",
+      "purpose": "canonical deep-link hydration (exact, fail-closed, same-value skips)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "workspace internal only"
+    },
+    {
+      "path": "frontend/features/workspace/hooks/useWorkspace.tsx",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10B",
+      "purpose": "canonical identity provider (URL hydrate once, one-way sync)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "workspace internal only"
+    },
+    {
+      "path": "frontend/features/workspace/lib/deepLinks.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10B/G",
+      "purpose": "deep-link helper + adoption tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "workspace internal only"
+    },
+    {
+      "path": "frontend/features/workspace/lib/deepLinks.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10B/G",
+      "purpose": "workspaceDeepLink + ROUTE_WORKSPACE_ADOPTION",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "workspace internal only"
+    },
+    {
+      "path": "frontend/features/workspace/lib/replayAdapter.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10B",
+      "purpose": "adapter boundary tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "workspace internal only"
+    },
+    {
+      "path": "frontend/features/workspace/lib/replayAdapter.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10B",
+      "purpose": "canonical->replay translation (validated-first)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "workspace internal only"
+    },
+    {
+      "path": "frontend/features/workspace/lib/workspaceIntegrity.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10B",
+      "purpose": "workspace integrity tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "workspace internal only"
+    },
+    {
+      "path": "frontend/features/workspace/lib/workspaceState.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10B",
+      "purpose": "pure core transition tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "workspace internal only"
+    },
+    {
+      "path": "frontend/features/workspace/lib/workspaceState.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10B",
+      "purpose": "canonical WorkspaceState core (exactly 3 keys)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "workspace internal only"
+    },
+    {
+      "path": "frontend/features/workspace/lib/workspaceUrl.test.ts",
+      "class": "FRONTEND_TEST",
+      "stage": "V3.10B",
+      "purpose": "URL codec tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "workspace internal only"
+    },
+    {
+      "path": "frontend/features/workspace/lib/workspaceUrl.ts",
+      "class": "FRONTEND_STATE",
+      "stage": "V3.10B",
+      "purpose": "canonical ?race=&frame=&driver= codec",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "workspace internal only"
+    },
+    {
+      "path": "frontend/lib/v2.ts",
+      "class": "FRONTEND_PRODUCT",
+      "stage": "V3.10F",
+      "purpose": "typed telemetry client (read-only boundary)",
+      "behavior_changed": true,
+      "science_semantics_changed": false,
+      "dependency": "client -> telemetry API"
+    },
+    {
+      "path": "results/v3/v3_10a/demo_user_journey.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10a/expert_view_policy.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10a/implementation_risk_register.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10a/information_density_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10a/navigation_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10a/product_card.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10a/progressive_disclosure_map.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10a/replay_state_model.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10a/responsive_product_model.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10a/route_inventory.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10a/selected_driver_model.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10a/terminology_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10a/validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10a/workspace_hierarchy.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/browser_history_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/causal_boundary_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/compatibility_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/current_state_ownership.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/deep_link_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/driver_selection_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/performance_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/product_card.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/reload_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/replay_adapter_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/transition_contract.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/url_state_contract.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10b/workspace_state_contract.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10c/accessibility_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10c/expert_route_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10c/information_budget_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10c/navigation_contract.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10c/product_card.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10c/replay_reuse_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10c/request_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10c/responsive_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10c/shell_contract.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10c/validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10c/visual_simplification_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10c/workspace_consumption_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/accessibility_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/causal_visibility_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/compatibility_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/event_contract.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/event_coverage.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/event_frame_mapping_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/event_ordering_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/event_source_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/lap_navigation_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/performance_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/poison_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/product_card.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/request_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/responsive_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10d/validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10e/accessibility_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10e/causal_safety_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10e/compatibility_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10e/intelligence_contract.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10e/intelligence_source_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10e/product_card.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10e/refusal_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10e/request_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10e/responsive_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10e/validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/accessibility_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/causal_visibility_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/compatibility_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/completed_lap_contract.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/missingness_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/performance_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/pit_boundary_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/poison_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/product_card.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/request_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/responsive_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/sector_reference_contract.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/shot_1600_closed.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/shot_1600_open.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/shot_390_closed.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/shot_390_open.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/shot_820_open.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/stint_contract.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/telemetry_coverage.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/telemetry_source_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10f/validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/accessibility_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/availability_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/compatibility_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/counterfactual_adapter_contract.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/counterfactual_parity_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/integration_source_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/neutrality_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/product_card.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/refusal_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/request_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/responsive_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/round_trip_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/shot_1600_closed.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/shot_1600_mixed.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/shot_1600_strategy_open.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/shot_390_open.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/shot_820_open.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/stale_response_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/strategy_adapter_contract.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/strategy_parity_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/v36_v37_parity_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10g/validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/accessibility_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/causal_integration_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/color_semantics_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/copy_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/demo_journey_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/disclosure_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/expert_navigation_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/identity_integration_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/information_density_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/loading_refusal_error_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/number_format_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/pathology_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/performance_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/product_card.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/request_budget_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/responsive_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/route_validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/shot_1600_all_open.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/shot_1600_event_rich.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/shot_390_closed.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/shot_820_open.png",
+      "class": "SCREENSHOT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/state_transition_audit.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "results/v3/v3_10h/validation.json",
+      "class": "RESULT_ARTIFACT",
+      "stage": "V3.100",
+      "purpose": "stage evidence artifact",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none (evidence only)"
+    },
+    {
+      "path": "scripts/v3_10d_event_coverage.py",
+      "class": "SCRIPT",
+      "stage": "V3.10D",
+      "purpose": "event corpus coverage probe",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "script -> frozen APIs (read-only)"
+    },
+    {
+      "path": "scripts/v3_10f_telemetry_audit.py",
+      "class": "SCRIPT",
+      "stage": "V3.10F",
+      "purpose": "telemetry corpus audit",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "script -> frozen APIs (read-only)"
+    },
+    {
+      "path": "scripts/v3_10g_parity.py",
+      "class": "SCRIPT",
+      "stage": "V3.10G",
+      "purpose": "live contract + parity validation (read-only)",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "script -> frozen APIs (read-only)"
+    },
+    {
+      "path": "tests/test_v3_10b_workspace_ownership.py",
+      "class": "PYTHON_GUARD",
+      "stage": "V3.10B",
+      "purpose": "workspace ownership guard",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "none"
+    },
+    {
+      "path": "tests/test_v3_10f_telemetry.py",
+      "class": "API_TEST",
+      "stage": "V3.10F",
+      "purpose": "telemetry API firewall/contract tests",
+      "behavior_changed": false,
+      "science_semantics_changed": false,
+      "dependency": "test -> telemetry API"
+    }
+  ]
+}

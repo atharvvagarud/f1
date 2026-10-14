@@ -382,6 +382,13 @@ def test_no_frontend_changes():
                # route + uncertainty feature modules; no science change).
                "frontend/app/uncertainty/",
                "frontend/features/uncertainty/",
-               "frontend/components/shell/CommandBar.tsx")
+               "frontend/components/shell/CommandBar.tsx",
+               # V3.10I reconciliation: V3.10A-H pit-wall product
+               # admitted exactly (frozen science untouched).
+               "frontend/app/pit-wall/",
+               "frontend/features/pit-wall/",
+               "frontend/features/workspace/",
+               "frontend/components/shell/AppShell.tsx",
+               "frontend/features/replay/components/SpatialTrackPanel.tsx")
     assert not [f for f in touched if f.startswith("frontend/")
                 and not f.startswith(allowed)], touched
