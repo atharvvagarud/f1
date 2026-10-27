@@ -331,6 +331,12 @@ def test_no_frontend_changes():
         "frontend/features/strategy/components/Strategy2View.tsx",
         "frontend/lib/v2.ts",
         "frontend/features/replay/components/SpatialTrackPanel.tsx",
+        # C5 post-V3: exact C5 client-consolidation files
+        # (v2.ts + uncertainty clients above).
+        "frontend/lib/http",
+        "frontend/lib/spatial.ts",
+        "frontend/lib/api.ts",
+        "frontend/features/consensus/lib/consensusClient.ts",
     )
     unexpected = [ln for ln in fe
                   if not ln.split()[-1].startswith(allowed_fe)]

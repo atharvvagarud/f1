@@ -214,7 +214,12 @@ def test_no_serving_changes():
                "frontend/features/pit-wall/",
                "frontend/features/workspace/",
                "frontend/components/shell/AppShell.tsx",
-               "frontend/features/replay/components/SpatialTrackPanel.tsx")
+               "frontend/features/replay/components/SpatialTrackPanel.tsx",
+               # C5 post-V3: exact C5 client-consolidation files
+               # not covered above (v2.ts + feature clients are).
+               "frontend/lib/http",
+               "frontend/lib/spatial.ts",
+               "frontend/lib/api.ts")
     for line in out.splitlines():
         if line[3:].startswith(allowed):
             continue

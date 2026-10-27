@@ -220,6 +220,15 @@ FINAL_ALLOW = (
                "docs/V3_FINAL",
                "scripts/v3_final",
                "tests/test_v3_final",
+               # C5 post-V3: exact frontend client-consolidation
+               # charter (shared transport + client migrations;
+               # no science/contract change; any other path fails).
+               "frontend/lib/http",
+               "frontend/lib/v2.ts",
+               "frontend/lib/spatial.ts",
+               "frontend/lib/api.ts",
+               "frontend/features/consensus/lib/consensusClient.ts",
+               "frontend/features/uncertainty/lib/uncertaintyClient.ts",
 )
 # Tracked files H is permitted to show as modified pre-commit.
 TRACKED_ALLOW = {
@@ -309,6 +318,13 @@ TRACKED_ALLOW = {
     # frozen science untouched).
     "docs/INDEX.md",
     "scripts/README.md",
+    # C5 post-V3: exact C5 client-consolidation files
+    # (transport delegation only; contracts unchanged).
+    "frontend/lib/v2.ts",
+    "frontend/lib/spatial.ts",
+    "frontend/lib/api.ts",
+    "frontend/features/consensus/lib/consensusClient.ts",
+    "frontend/features/uncertainty/lib/uncertaintyClient.ts",
 }
 
 
@@ -848,7 +864,15 @@ def test_worktree_contains_only_owned_v38_paths():
                    # V3 Final reconciliation (freeze): navigation
                    # docs terminal-status lines only (docs-only).
                    "docs/INDEX.md",
-                   "scripts/README.md",}
+                   "scripts/README.md",
+                   # C5 post-V3: exact C5 client-consolidation
+                   # files + frontend-CI pin correction (44 files).
+                   "frontend/lib/v2.ts",
+                   "frontend/lib/spatial.ts",
+                   "frontend/lib/api.ts",
+                   "frontend/features/consensus/lib/consensusClient.ts",
+                   "frontend/features/uncertainty/lib/uncertaintyClient.ts",
+                   "scripts/run_ci_frontend_tests.py",}
     p2a_ok = _load(
         ROOT / "results" / "v3" / "performance_mc2" / "p2a"
         / "parity_results.json")["overall"] == "EXACT" \

@@ -10,8 +10,10 @@
 // mapping helpers are pure and side-effect free so `node --test` covers
 // them without a DOM.
 
-export const SPATIAL_API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:8000";
+// @ts-expect-error TS5097 (.ts extension for node type-stripping)
+import { API_BASE, readJson as readSharedJson, resolveBase as sharedResolveBase, type FetchLike as SharedFetchLike } from "./http.ts";
+
+export const SPATIAL_API_BASE = API_BASE;
 
 // Square viewBox convention: svg = render * SPATIAL_VIEWBOX. The backend
 // supplies normalized y-down [0, 1] coordinates; this factor is
@@ -87,10 +89,7 @@ export type SpatialWindow = {
 
 // --- transport ---
 
-export type SpatialFetchLike = (
-  url: string,
-  init?: RequestInit,
-) => Promise<{ ok: boolean; status: number; json: () => Promise<unknown> }>;
+export type SpatialFetchLike = SharedFetchLike;
 
 export type SpatialErrorBody = {
   error?: string;
@@ -129,15 +128,15 @@ async function readSpatialJson<T>(
   url: string,
   init?: RequestInit,
 ): Promise<T> {
-  const res = await fetcher(url, init);
-  const body = (await res.json()) as T | SpatialErrorBody;
-  if (!res.ok) {
-    throw new SpatialApiError(res.status, body as SpatialErrorBody);
-  }
-  return body as T;
+  return readSharedJson<T>(
+    fetcher,
+    url,
+    init,
+    (status, body) => new SpatialApiError(status, body as SpatialErrorBody),
+  );
 }
 
-const spatialBaseOf = (base?: string): string => base ?? SPATIAL_API_BASE;
+const spatialBaseOf = (base?: string): string => sharedResolveBase(base);
 
 function spatialRacePath(raceId: string): string {
   return `${encodeURIComponent(raceId)}/spatial`;

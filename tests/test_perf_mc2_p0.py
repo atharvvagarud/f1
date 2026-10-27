@@ -358,6 +358,14 @@ def _p0_counts():
                  # docs terminal-status lines only (docs-only).
                  "docs/INDEX.md",
                  "scripts/README.md",
+                 # C5 post-V3: exact C5 client-consolidation
+                 # files + frontend-CI pin correction (44 files).
+                 "frontend/lib/v2.ts",
+                 "frontend/lib/spatial.ts",
+                 "frontend/lib/api.ts",
+                 "frontend/features/consensus/lib/consensusClient.ts",
+                 "frontend/features/uncertainty/lib/uncertaintyClient.ts",
+                 "scripts/run_ci_frontend_tests.py",
                  # V3.10I wave-2 reconciliations below (exact guard
                  # files admitting the V3.10 set; frozen science
                  # untouched).

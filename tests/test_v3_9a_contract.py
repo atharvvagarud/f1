@@ -328,6 +328,14 @@ def test_no_production_runtime_dependency():
         # only (docs-only; frozen science untouched).
         "docs/INDEX.md",
         "scripts/README.md",
+        # C5 post-V3: exact C5 client-consolidation files +
+        # frontend-CI pin correction (44 files).
+        "frontend/lib/v2.ts",
+        "frontend/lib/spatial.ts",
+        "frontend/lib/api.ts",
+        "frontend/features/consensus/lib/consensusClient.ts",
+        "frontend/features/uncertainty/lib/uncertaintyClient.ts",
+        "scripts/run_ci_frontend_tests.py",
     }
     for ln in out.splitlines():
         if ln.startswith(("M ", " M")):

@@ -72,7 +72,16 @@ def test_no_runtime_code_modified():
                # tracked since the V3.11 freeze; terminal-status lines
                # only (docs-only, not runtime code).
                and m != "docs/INDEX.md"
-               and m != "scripts/README.md"]
+               and m != "scripts/README.md"
+               # C5 post-V3: exact C5 client-consolidation files
+               # (frontend transport delegation; contracts
+               # unchanged) + frontend-CI pin bump.
+               and m != "frontend/lib/v2.ts"
+               and m != "frontend/lib/spatial.ts"
+               and m != "frontend/lib/api.ts"
+               and m != "frontend/features/consensus/lib/consensusClient.ts"
+               and m != "frontend/features/uncertainty/lib/uncertaintyClient.ts"
+               and m != "scripts/run_ci_frontend_tests.py"]
     assert runtime == [], runtime
     # V3.9C owns raceintel/uncertainty (thin bundle over frozen seams):
     # purity holds iff it imports only frozen consensus seams, never MC2

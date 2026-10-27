@@ -177,7 +177,14 @@ def test_freeze_pathology_all_zero():
          # V3 Final reconciliation (freeze): navigation docs are
          # tracked since the V3.11 freeze; terminal-status lines
          # only (docs-only; frozen science untouched).
-         or "docs/INDEX.md" in ln or "scripts/README.md" in ln)
+         or "docs/INDEX.md" in ln or "scripts/README.md" in ln
+         # C5 post-V3: exact C5 client-consolidation files +
+         # frontend-CI pin bump (contracts unchanged).
+         or "frontend/lib/v2.ts" in ln or "frontend/lib/spatial.ts" in ln
+         or "frontend/lib/api.ts" in ln
+         or "frontend/features/consensus/lib/consensusClient.ts" in ln
+         or "frontend/features/uncertainty/lib/uncertaintyClient.ts" in ln
+         or "run_ci_frontend_tests" in ln)
         for ln in dirty_source) else 1
     counts["PF-P25"] = 0 if _load(FZ / "guard_audit.json")["weakening_beyond_necessary"] is False else 1
     counts["PF-P26"] = 0  # collection guard intact (pin 5067+N reconciled; see pin test)

@@ -54,8 +54,13 @@ FRONTEND = ROOT / "frontend"
 # features/consensus/components/consensus-page.test.ts and
 # features/consensus/lib/consensusFormat.test.ts (read only tracked
 # consensus sources + committed v3_8f fixtures; copy/contract guards,
-# no corpus) = 24.
-EXPECTED_TEST_FILES = 24
+# no corpus) = 24; later stages added pit-wall/workspace/models/
+# prediction/replay/simulation/strategy/uncertainty/consensus suites
+# without bumping this pin (43 at the V3-final freeze); C5 post-V3
+# adds lib/http.test.ts (shared transport guards, node
+# type-stripping, no corpus) and corrects the pin to the true
+# tracked count = 44.
+EXPECTED_TEST_FILES = 44
 
 # Repo-root-relative frontend test files requiring the ignored corpus.
 CORPUS_DEPENDENT_TEST_FILES: tuple[tuple[str, str], ...] = (

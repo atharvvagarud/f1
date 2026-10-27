@@ -9,7 +9,12 @@
 //
 // fetch is injectable for tests. No polling, no streaming.
 
-import { V2ApiError, V2_API_BASE } from "@/lib/v2";
+import { V2ApiError } from "@/lib/v2";
+import {
+  readJson as readSharedJson,
+  resolveBase as sharedResolveBase,
+  type FetchLike as SharedFetchLike,
+} from "@/lib/http";
 
 export type ConsensusAnchor = {
   race_id: string;
@@ -75,29 +80,22 @@ export type ConsensusCompare = {
   provenance: Record<string, string>;
 };
 
-export type FetchLike = (
-  url: string,
-  init?: RequestInit,
-) => Promise<{ ok: boolean; status: number; json: () => Promise<unknown> }>;
+export type FetchLike = SharedFetchLike;
 
 async function readJson<T>(
   fetcher: FetchLike,
   url: string,
   init?: RequestInit,
 ): Promise<T> {
-  const res = await fetcher(url, init);
-  const body = (await res.json()) as T | {
-    error: string;
-    detail?: string;
-    reason?: string;
-  };
-  if (!res.ok) {
-    throw new V2ApiError(res.status, body as { error: string });
-  }
-  return body as T;
+  return readSharedJson<T>(
+    fetcher,
+    url,
+    init,
+    (status, body) => new V2ApiError(status, body as { error: string }),
+  );
 }
 
-const baseOf = (base?: string): string => base ?? V2_API_BASE;
+const baseOf = (base?: string): string => sharedResolveBase(base);
 
 /** Cheap availability only: never triggers expensive backend work. */
 export async function getConsensusAvailability(

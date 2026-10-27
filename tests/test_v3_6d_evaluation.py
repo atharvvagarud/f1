@@ -258,7 +258,15 @@ def test_no_tuning():
         "tests/test_v3_8c_consensus_metrics.py",
         "tests/test_v3_8d_correction_01.py",
         "tests/test_v3_8d_evaluation.py",
-        "tests/test_v3_8h_freeze.py") for f in tracked_modified), \
+        "tests/test_v3_8h_freeze.py",
+        # C5 post-V3: exact C5 client-consolidation files
+        # (transport delegation only; contracts unchanged).
+        "frontend/lib/v2.ts",
+        "frontend/lib/spatial.ts",
+        "frontend/lib/api.ts",
+        "frontend/features/consensus/lib/consensusClient.ts",
+        "frontend/features/uncertainty/lib/uncertaintyClient.ts",
+    ) for f in tracked_modified), \
         tracked_modified
 
 
@@ -303,7 +311,12 @@ def test_no_api_frontend_changes():
                         "frontend/features/pit-wall/",
                         "frontend/features/workspace/",
                         "frontend/components/shell/AppShell.tsx",
-                        "frontend/features/replay/components/SpatialTrackPanel.tsx")
+                        "frontend/features/replay/components/SpatialTrackPanel.tsx",
+                        # C5 post-V3: exact C5 client-consolidation
+                        # files (v2.ts + feature clients above).
+                        "frontend/lib/http",
+                        "frontend/lib/spatial.ts",
+                        "frontend/lib/api.ts")
     assert not any(f.startswith("frontend/")
                    and not f.startswith(allowed_frontend)
                    for f in changed)

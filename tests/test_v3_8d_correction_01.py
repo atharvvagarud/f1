@@ -333,4 +333,10 @@ def test_original_d_artifacts_untouched():
         # only (docs-only; frozen science untouched).
         "docs/INDEX.md",
         "scripts/README.md",
+        # C5 post-V3: exact C5 client-consolidation files.
+        "frontend/lib/v2.ts",
+        "frontend/lib/spatial.ts",
+        "frontend/lib/api.ts",
+        "frontend/features/consensus/lib/consensusClient.ts",
+        "frontend/features/uncertainty/lib/uncertaintyClient.ts",
         "scripts/run_ci_tests.py"}, modified

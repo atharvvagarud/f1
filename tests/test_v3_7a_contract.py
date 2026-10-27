@@ -217,6 +217,14 @@ def test_baseline_clean_at_entry():
                "docs/V3_FINAL",
                "tests/test_v3_final",
                "scripts/v3_final",
+               # C5 post-V3: exact frontend
+               # client-consolidation charter.
+               "frontend/lib/http",
+               "frontend/lib/v2.ts",
+               "frontend/lib/spatial.ts",
+               "frontend/lib/api.ts",
+               "frontend/features/consensus/lib/consensusClient.ts",
+               "frontend/features/uncertainty/lib/uncertaintyClient.ts",
                "scripts/README.md",
                "scripts/run_ci_tests.py",
                "tests/test_perf_mc2_freeze.py",
@@ -417,6 +425,11 @@ def test_no_mc2_api_frontend_modification():
                "frontend/components/shell/AppShell.tsx",
                "frontend/features/strategy/components/Strategy2View.tsx",
                "frontend/features/replay/components/SpatialTrackPanel.tsx",
+               # C5 post-V3: exact C5 client-consolidation files
+               # not covered above (v2.ts + feature clients are).
+               "frontend/lib/http",
+               "frontend/lib/spatial.ts",
+               "frontend/lib/api.ts",
                "api/v2_telemetry_")
     for line in out.splitlines():
         pth = line[3:] if len(line) > 3 else ""

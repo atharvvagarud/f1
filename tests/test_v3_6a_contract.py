@@ -475,6 +475,14 @@ def test_no_serving_api_frontend_mc2_v35_changes():
                         "docs/V3_FINAL",
                         "tests/test_v3_final",
                         "scripts/v3_final",
+                        # C5 post-V3: exact frontend
+                        # client-consolidation charter.
+                        "frontend/lib/http",
+                        "frontend/lib/v2.ts",
+                        "frontend/lib/spatial.ts",
+                        "frontend/lib/api.ts",
+                        "frontend/features/consensus/lib/consensusClient.ts",
+                        "frontend/features/uncertainty/lib/uncertaintyClient.ts",
                         "scripts/README.md",
                         "scripts/run_ci_tests.py",
                         "tests/test_perf_mc2_freeze.py",
@@ -543,7 +551,12 @@ def test_no_frontend_change():
                "frontend/features/pit-wall/",
                "frontend/features/workspace/",
                "frontend/components/shell/AppShell.tsx",
-               "frontend/features/replay/components/SpatialTrackPanel.tsx")
+               "frontend/features/replay/components/SpatialTrackPanel.tsx",
+               # C5 post-V3: exact C5 client-consolidation files
+               # not covered above (v2.ts + feature clients are).
+               "frontend/lib/http",
+               "frontend/lib/spatial.ts",
+               "frontend/lib/api.ts")
     assert not any(f.startswith("frontend/") and not f.startswith(allowed)
                    for f in _changed_files())
 

@@ -389,6 +389,11 @@ def test_no_frontend_changes():
                "frontend/features/pit-wall/",
                "frontend/features/workspace/",
                "frontend/components/shell/AppShell.tsx",
-               "frontend/features/replay/components/SpatialTrackPanel.tsx")
+               "frontend/features/replay/components/SpatialTrackPanel.tsx",
+               # C5 post-V3: exact C5 client-consolidation files
+               # not covered above (v2.ts + feature clients are).
+               "frontend/lib/http",
+               "frontend/lib/spatial.ts",
+               "frontend/lib/api.ts")
     assert not [f for f in touched if f.startswith("frontend/")
                 and not f.startswith(allowed)], touched

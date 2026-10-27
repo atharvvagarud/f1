@@ -416,7 +416,8 @@ Authoritative implementation: `frontend/app/` (routes incl. consensus,
 counterfactuals, models, pit-wall, replay, simulator, spatial,
 strategy, uncertainty), `frontend/features/` (11 domains),
 `frontend/components/`, `frontend/lib/` (`v2.ts` app-wide client,
-`api.ts`, `spatial.ts`, prediction helpers).
+`http.ts` shared transport (post-V3 C5), `api.ts`, `spatial.ts`,
+prediction helpers).
 
 Status: production, frozen through V3.10.
 
@@ -471,7 +472,9 @@ repo — do NOT copy it in). Listed here without implementing:
 - C1 — deepen model_lab suite orchestration
 - C2 — API registration seam
 - C4 — reconcile model worlds / v2 legacy
-- C5 — split frontend v2.ts client
+- C5 — split frontend v2.ts client (COMPLETE post-V3: shared
+  transport extracted to `frontend/lib/http.ts`; endpoint clients
+  retained, contracts unchanged)
 - C7 — derive guard pins from one source
 - C8 — strategy legacy/canonical cleanup
 

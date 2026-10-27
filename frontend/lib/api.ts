@@ -1,33 +1,54 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:8000";
+// @ts-expect-error TS5097 (.ts extension for node type-stripping)
+import { API_BASE } from "./http.ts";
 
-export async function getRaces() {
-  const res = await fetch(`${API_BASE}/races`, { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to load races");
+// Legacy R4 prediction client: thin wrapper over the shared base URL.
+// Failure semantics are intentionally legacy (plain Error with a fixed
+// per-endpoint message, no body parsing on !ok) and pinned by
+// lib/api.test.ts — do not "upgrade" this module to V2ApiError.
+// `any` preserves the legacy untyped surface (res.json() was any).
+async function readLegacyJson(
+  url: string,
+  init: RequestInit | undefined,
+  message: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+): Promise<any> {
+  const res = await fetch(url, init);
+  if (!res.ok) throw new Error(message);
   return res.json();
 }
 
-export async function predictEnsemble(year: number, event: string) {
-  const res = await fetch(`${API_BASE}/predict/ensemble`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ year, event }),
-  });
+export async function getRaces() {
+  return readLegacyJson(
+    `${API_BASE}/races`,
+    { cache: "no-store" },
+    "Failed to load races",
+  );
+}
 
-  if (!res.ok) throw new Error("Failed to predict ensemble");
-  return res.json();
+export async function predictEnsemble(year: number, event: string) {
+  return readLegacyJson(
+    `${API_BASE}/predict/ensemble`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ year, event }),
+    },
+    "Failed to predict ensemble",
+  );
 }
 
 export async function predictSingleModel(
   year: number,
   event: string,
-  model: string
+  model: string,
 ) {
-  const res = await fetch(`${API_BASE}/predict/single-model`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ year, event, model }),
-  });
-
-  if (!res.ok) throw new Error("Failed to predict single model");
-  return res.json();
+  return readLegacyJson(
+    `${API_BASE}/predict/single-model`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ year, event, model }),
+    },
+    "Failed to predict single model",
+  );
 }

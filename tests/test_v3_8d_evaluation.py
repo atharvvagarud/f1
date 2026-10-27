@@ -419,6 +419,13 @@ def test_no_frozen_science_modified():
         "docs/V3_FINAL",
         "tests/test_v3_final",
         "scripts/v3_final",
+        # C5 post-V3: exact frontend client-consolidation charter.
+        "frontend/lib/http",
+        "frontend/lib/v2.ts",
+        "frontend/lib/spatial.ts",
+        "frontend/lib/api.ts",
+        "frontend/features/consensus/lib/consensusClient.ts",
+        "frontend/features/uncertainty/lib/uncertaintyClient.ts",
         "scripts/README.md",
         "scripts/run_ci_tests.py",
         "tests/test_perf_mc2_freeze.py",

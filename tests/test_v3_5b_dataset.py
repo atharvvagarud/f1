@@ -357,6 +357,11 @@ def test_no_serving_api_frontend_change():
                          "frontend/features/pit-wall/",
                          "frontend/features/workspace/",
                          "frontend/components/shell/AppShell.tsx",
-                         "frontend/features/replay/components/SpatialTrackPanel.tsx")):
+                         "frontend/features/replay/components/SpatialTrackPanel.tsx",
+                         # C5 post-V3: exact C5 client-consolidation
+                         # files (v2.ts + feature clients above).
+                         "frontend/lib/http",
+                         "frontend/lib/spatial.ts",
+                         "frontend/lib/api.ts")):
             continue
         assert not p.startswith(("api/", "frontend/", "raceintel/model_lab/serving")), line

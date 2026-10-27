@@ -280,11 +280,15 @@ def _p1_counts():
     counts = {}
     status = _git("status", "--porcelain=v1").splitlines()
     dirty = [ln for ln in status if ln.strip()]
+    # C5 post-V3: the exact C5 client-consolidation file under the
+    # frozen consensus frontend path is transport delegation only
+    # (endpoint/contract unchanged); any other frozen hit still fails.
     frozen_hits = [ln for ln in dirty if any(
         s in ln for s in ("results/v3/v3_8", "docs/V3_8",
                           "raceintel/consensus", "api/v2_consensus",
                           "frontend/app/consensus",
-                          "frontend/features/consensus"))]
+                          "frontend/features/consensus"))
+        and "frontend/features/consensus/lib/consensusClient.ts" not in ln]
     counts["P1-P1"] = 0 if _git(
         "rev-list", "-n", "1", FROZEN_TAG) == FROZEN_COMMIT else 1
     counts["P1-P2"] = len(frozen_hits)

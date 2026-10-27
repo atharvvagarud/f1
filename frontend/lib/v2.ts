@@ -8,8 +8,10 @@
 //
 // No `any` in core replay contracts. fetch is injectable for tests.
 
-export const V2_API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:8000";
+// @ts-expect-error TS5097 (.ts extension for node type-stripping)
+import { API_BASE, readJson as readSharedJson, resolveBase as sharedResolveBase, type FetchLike as SharedFetchLike } from "./http.ts";
+
+export const V2_API_BASE = API_BASE;
 
 export const REPLAY_PAGE_SIZE = 500; // R4 max page size
 
@@ -470,25 +472,22 @@ export class V2ApiError extends Error {
   }
 }
 
-export type FetchLike = (
-  url: string,
-  init?: RequestInit,
-) => Promise<{ ok: boolean; status: number; json: () => Promise<unknown> }>;
+export type FetchLike = SharedFetchLike;
 
 async function readJson<T>(
   fetcher: FetchLike,
   url: string,
   init?: RequestInit,
 ): Promise<T> {
-  const res = await fetcher(url, init);
-  const body = (await res.json()) as T | ReplayErrorBody;
-  if (!res.ok) {
-    throw new V2ApiError(res.status, body as ReplayErrorBody);
-  }
-  return body as T;
+  return readSharedJson<T>(
+    fetcher,
+    url,
+    init,
+    (status, body) => new V2ApiError(status, body as ReplayErrorBody),
+  );
 }
 
-const baseOf = (base?: string): string => base ?? V2_API_BASE;
+const baseOf = (base?: string): string => sharedResolveBase(base);
 
 // --- endpoints ---
 
