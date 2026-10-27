@@ -16,8 +16,8 @@ frontend-dev:  ## Run the Next.js frontend
 test-python: check-python  ## Backend + ML regression suite (needs requirements-test.txt)
 	$(PYTHON) -m pytest tests/ -q
 
-test-frontend:  ## Frontend node:test suites (no extra dependencies)
-	cd frontend && node --test
+test-frontend: check-python  ## Frontend Tier-1 suites via canonical selector (P10-4R selection)
+	cd frontend && $(PYTHON) ../scripts/run_ci_frontend_tests.py
 
 typecheck:  ## Frontend TypeScript check
 	cd frontend && ./node_modules/.bin/tsc --noEmit -p .
@@ -107,8 +107,8 @@ ci-python: check-python  ## CI python gate: source preflight + source-safe suite
 	$(PYTHON) scripts/check_runtime_environment.py --source
 	$(PYTHON) scripts/run_ci_tests.py
 
-ci-frontend: check-python  ## CI frontend gate: npm ci + source-safe tests (P10-4R) + tsc + lint + build
-	cd frontend && npm ci && $(PYTHON) ../scripts/run_ci_frontend_tests.py && ./node_modules/.bin/tsc --noEmit -p . && npm run lint && NEXT_PUBLIC_API_BASE=http://localhost:8000 npm run build && git diff --exit-code -- package-lock.json
+ci-frontend: check-python install-frontend test-frontend typecheck lint  ## CI frontend gate: npm ci + source-safe tests (P10-4R) + tsc + lint + build
+	cd frontend && NEXT_PUBLIC_API_BASE=http://localhost:8000 npm run build && git diff --exit-code -- package-lock.json
 
 ci: ci-python ci-frontend  ## Full ordinary CI equivalent
 

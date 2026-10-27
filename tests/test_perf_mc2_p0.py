@@ -366,6 +366,10 @@ def _p0_counts():
                  "frontend/features/consensus/lib/consensusClient.ts",
                  "frontend/features/uncertainty/lib/uncertaintyClient.ts",
                  "scripts/run_ci_frontend_tests.py",
+                 # C1 post-V3: exact C1 suite-orchestration charter
+                 # (Makefile target recomposition only; no
+                 # science/contract change).
+                 "Makefile",
                  # V3.10I wave-2 reconciliations below (exact guard
                  # files admitting the V3.10 set; frozen science
                  # untouched).

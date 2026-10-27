@@ -184,7 +184,10 @@ def test_freeze_pathology_all_zero():
          or "frontend/lib/api.ts" in ln
          or "frontend/features/consensus/lib/consensusClient.ts" in ln
          or "frontend/features/uncertainty/lib/uncertaintyClient.ts" in ln
-         or "run_ci_frontend_tests" in ln)
+         or "run_ci_frontend_tests" in ln
+         # C1 post-V3: exact C1 suite-orchestration charter (Makefile
+         # target recomposition only; no science/contract change).
+         or "Makefile" in ln)
         for ln in dirty_source) else 1
     counts["PF-P25"] = 0 if _load(FZ / "guard_audit.json")["weakening_beyond_necessary"] is False else 1
     counts["PF-P26"] = 0  # collection guard intact (pin 5067+N reconciled; see pin test)

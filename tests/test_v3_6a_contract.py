@@ -499,7 +499,11 @@ def test_no_serving_api_frontend_mc2_v35_changes():
                         "tests/test_v3_8d_correction_01.py",
                         "tests/test_v3_8d_evaluation.py",
                         "tests/test_v3_9a_contract.py",
-                        "tests/test_v3_9b_measurement.py")
+                        "tests/test_v3_9b_measurement.py",
+                        # C1 post-V3: exact C1 suite-orchestration
+                        # charter (Makefile target recomposition only;
+                        # no science/contract change).
+                        "Makefile")
     for f in _changed_files():
         assert any(f.startswith(p) for p in allowed_prefixes), f
 

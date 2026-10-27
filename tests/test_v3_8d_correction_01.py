@@ -339,4 +339,7 @@ def test_original_d_artifacts_untouched():
         "frontend/lib/api.ts",
         "frontend/features/consensus/lib/consensusClient.ts",
         "frontend/features/uncertainty/lib/uncertaintyClient.ts",
-        "scripts/run_ci_tests.py"}, modified
+        "scripts/run_ci_tests.py",
+        # C1 post-V3: exact C1 suite-orchestration charter (Makefile
+        # target recomposition only; no science/contract change).
+        "Makefile"}, modified

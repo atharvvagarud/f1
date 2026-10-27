@@ -81,7 +81,10 @@ def test_no_runtime_code_modified():
                and m != "frontend/lib/api.ts"
                and m != "frontend/features/consensus/lib/consensusClient.ts"
                and m != "frontend/features/uncertainty/lib/uncertaintyClient.ts"
-               and m != "scripts/run_ci_frontend_tests.py"]
+               and m != "scripts/run_ci_frontend_tests.py"
+               # C1 post-V3: exact C1 suite-orchestration charter
+               # (Makefile target recomposition only).
+               and m != "Makefile"]
     assert runtime == [], runtime
     # V3.9C owns raceintel/uncertainty (thin bundle over frozen seams):
     # purity holds iff it imports only frozen consensus seams, never MC2

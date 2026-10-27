@@ -415,6 +415,9 @@ def _p2a_counts():
         "frontend/features/consensus/lib/consensusClient.ts",
         "frontend/features/uncertainty/lib/uncertaintyClient.ts",
         "scripts/run_ci_frontend_tests.py",
+        # C1 post-V3: exact C1 suite-orchestration charter (Makefile
+        # target recomposition only; no science/contract change).
+        "Makefile",
     }
     counts["P2A-P29"] = sum(1 for f in diff if f not in allowed_tracked)
     counts["P2A-P30"] = sum(

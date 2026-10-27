@@ -336,6 +336,9 @@ def test_no_production_runtime_dependency():
         "frontend/features/consensus/lib/consensusClient.ts",
         "frontend/features/uncertainty/lib/uncertaintyClient.ts",
         "scripts/run_ci_frontend_tests.py",
+        # C1 post-V3: exact C1 suite-orchestration charter (Makefile
+        # target recomposition only; no science/contract change).
+        "Makefile",
     }
     for ln in out.splitlines():
         if ln.startswith(("M ", " M")):

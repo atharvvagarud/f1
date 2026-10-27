@@ -443,6 +443,9 @@ def test_no_frozen_science_modified():
         "tests/test_v3_8d_evaluation.py",
         "tests/test_v3_9a_contract.py",
         "tests/test_v3_9b_measurement.py",
+        # C1 post-V3: exact C1 suite-orchestration charter (Makefile
+        # target recomposition only; no science/contract change).
+        "Makefile",
     )
     out = _git("status", "--short")
     for line in out.splitlines():

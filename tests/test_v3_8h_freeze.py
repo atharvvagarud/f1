@@ -229,6 +229,10 @@ FINAL_ALLOW = (
                "frontend/lib/api.ts",
                "frontend/features/consensus/lib/consensusClient.ts",
                "frontend/features/uncertainty/lib/uncertaintyClient.ts",
+               # C1 post-V3: exact C1 suite-orchestration charter
+               # (Makefile target recomposition only; no
+               # science/contract change).
+               "Makefile",
 )
 # Tracked files H is permitted to show as modified pre-commit.
 TRACKED_ALLOW = {
@@ -325,6 +329,9 @@ TRACKED_ALLOW = {
     "frontend/lib/api.ts",
     "frontend/features/consensus/lib/consensusClient.ts",
     "frontend/features/uncertainty/lib/uncertaintyClient.ts",
+    # C1 post-V3: exact C1 suite-orchestration charter (Makefile
+    # target recomposition only; no science/contract change).
+    "Makefile",
 }
 
 
@@ -872,7 +879,11 @@ def test_worktree_contains_only_owned_v38_paths():
                    "frontend/lib/api.ts",
                    "frontend/features/consensus/lib/consensusClient.ts",
                    "frontend/features/uncertainty/lib/uncertaintyClient.ts",
-                   "scripts/run_ci_frontend_tests.py",}
+                   "scripts/run_ci_frontend_tests.py",
+                   # C1 post-V3: exact C1 suite-orchestration charter
+                   # (Makefile target recomposition only; no
+                   # science/contract change).
+                   "Makefile",}
     p2a_ok = _load(
         ROOT / "results" / "v3" / "performance_mc2" / "p2a"
         / "parity_results.json")["overall"] == "EXACT" \

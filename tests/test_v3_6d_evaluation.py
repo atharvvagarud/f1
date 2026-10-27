@@ -266,6 +266,9 @@ def test_no_tuning():
         "frontend/lib/api.ts",
         "frontend/features/consensus/lib/consensusClient.ts",
         "frontend/features/uncertainty/lib/uncertaintyClient.ts",
+        # C1 post-V3: exact C1 suite-orchestration charter (Makefile
+        # target recomposition only; no science/contract change).
+        "Makefile",
     ) for f in tracked_modified), \
         tracked_modified
 

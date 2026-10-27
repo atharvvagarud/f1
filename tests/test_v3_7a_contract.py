@@ -241,7 +241,11 @@ def test_baseline_clean_at_entry():
                "tests/test_v3_8d_correction_01.py",
                "tests/test_v3_8d_evaluation.py",
                "tests/test_v3_9a_contract.py",
-               "tests/test_v3_9b_measurement.py")
+               "tests/test_v3_9b_measurement.py",
+               # C1 post-V3: exact C1 suite-orchestration charter
+               # (Makefile target recomposition only; no
+               # science/contract change).
+               "Makefile")
     for line in out.splitlines():
         if line.strip():
             # Porcelain XY prefix is not fixed-width after strip(); split.
