@@ -28,47 +28,29 @@ PERF = "32466c436845ee02c3af79ce08d1c102b9d91384"
 PTAG = "v3.8-mc2-performance"
 ANCHOR = {"race_id": "2022-r03-R", "anchor_lap_number": 2,
           "anchor_state_time_s": None}
-N_FREEZE_TESTS = 28
-# V3.10I reconciliation: 10 V3.10 ownership/API tests
-# (test_v3_10b_workspace_ownership.py + test_v3_10f_telemetry.py; no MC2
-# execution, no corpus dependence added).
-N_V3_10_TESTS = 10
-# V3.11A reconciliation: 22 forensics guard tests
-# (tests/test_v3_11a_forensics.py: baseline/identity/stale/track/driver/
-# tyre/terminal forensics, recovery ceilings, temporal poison, read-only
-# firewall; no MC2 execution, no corpus dependence added).
-N_V3_11A_TESTS = 22
-# V3.11B reconciliation: 21 reconstruction-validation guard tests
-# (tests/test_v3_11b_reconstruction.py: registry/protocol/verdicts,
-# timing/tyre rejections, parity, eligibility, poison/boundaries; no MC2
-# execution, no corpus dependence added).
-N_V3_11B_TESTS = 21
-# V3.11C reconciliation: 21 track-forensics guard tests
-# (tests/test_v3_11c_track_forensics.py: TRACK baseline, NULL semantics,
-# persistence boundaries, exposure taxonomy, ledger, ceilings, poison,
-# read-only firewall; no MC2 execution, no corpus dependence added).
-N_V3_11C_TESTS = 21
-# V3.11D reconciliation: 18 VSC-model guard tests
-# (tests/test_v3_11d_vsc_model.py: interval/model/pace/gap/order/pit/RNG/
-# secondary/poison/verdict guards; no MC2 execution, no corpus dependence
-# added).
-N_V3_11D_TESTS = 18
-# V3.11E reconciliation: 21 evidence-resolution guard tests
-# (tests/test_v3_11e_evidence_resolution.py: protocol/duration/gap/spread/
-# ending/pit/poison/parity/verdict/integrity guards; no MC2 execution,
-# no corpus dependence added).
-N_V3_11E_TESTS = 21
-# V3.11F reconciliation: 16 programme-freeze guard tests
-# (tests/test_v3_11f_freeze.py: registry/coverage/terminal/parity/
-# provenance/navigation/manifest guards; no MC2 execution, no corpus
-# dependence added).
-N_V3_11F_TESTS = 16
-# V3 Final reconciliation: 14 final-freeze guard tests
-# (tests/test_v3_final_freeze.py: programme/tag/production/claims/
-# separation/product/provenance guards; no MC2 execution, no corpus
-# dependence added).
-N_V3_FINAL_TESTS = 14
-EXPECTED_COLLECTED = 5148 + N_FREEZE_TESTS + N_V3_10_TESTS + N_V3_11A_TESTS + N_V3_11B_TESTS + N_V3_11C_TESTS + N_V3_11D_TESTS + N_V3_11E_TESTS + N_V3_11F_TESTS + N_V3_FINAL_TESTS
+# Collection provenance (history only, not an executable second pin):
+# 5148 at V3.9C + 28 V3.9E freeze tests + 10 V3.10I ownership/API +
+# 22 V3.11A forensics + 21 V3.11B reconstruction + 21 V3.11C
+# track-forensics + 18 V3.11D VSC-model + 21 V3.11E evidence +
+# 16 V3.11F freeze + 14 V3 Final = 5319. C7 derives the live
+# expectation from the Tier-1 selector instead of maintaining this
+# arithmetic a second time (see _runner_expected_collected).
+
+
+def _runner_expected_collected() -> int:
+    """Canonical collection pin, derived from the Tier-1 selector (C7).
+
+    ``scripts/run_ci_tests.py`` EXPECTED_COLLECTED is the single manual
+    authority; this freeze test reads that value instead of keeping an
+    independent total. Deterministic, stdlib-only, no network.
+    """
+    import importlib.util
+    path = ROOT / "scripts" / "run_ci_tests.py"
+    spec = importlib.util.spec_from_file_location(
+        "c7_run_ci_tests_pin", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.EXPECTED_COLLECTED
 
 
 def _git(*args):
@@ -357,11 +339,9 @@ def test_collection_accounting():
          "-p", "no:cacheprovider"],
         cwd=ROOT, capture_output=True, text=True, check=True).stdout
     n = int(out.strip().splitlines()[-1].split()[0])
-    assert n == EXPECTED_COLLECTED, n
-    src = (ROOT / "scripts" / "run_ci_tests.py").read_text()
-    import re
-    m = re.search(r"EXPECTED_COLLECTED\s*=\s*(\d+)", src)
-    assert m and int(m.group(1)) == EXPECTED_COLLECTED
+    # C7: expectation derived from the Tier-1 selector's canonical pin;
+    # the old regex-agreement half is tautological once derived.
+    assert n == _runner_expected_collected(), n
 
 
 def test_guard_reconciliation_complete():

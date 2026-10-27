@@ -33,6 +33,22 @@ def _canon(obj):
     return json.dumps(obj, sort_keys=True, separators=(",", ":")).encode()
 
 
+def _runner_expected_collected() -> int:
+    """Canonical collection pin, derived from the Tier-1 selector (C7).
+
+    ``scripts/run_ci_tests.py`` EXPECTED_COLLECTED is the single manual
+    authority; this freeze test reads that value instead of keeping an
+    independent total. Deterministic, stdlib-only, no network.
+    """
+    import importlib.util
+    path = ROOT / "scripts" / "run_ci_tests.py"
+    spec = importlib.util.spec_from_file_location(
+        "c7_run_ci_tests_pin", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.EXPECTED_COLLECTED
+
+
 def test_frozen_v38_provenance():
     assert _git("rev-list", "-n", "1", FROZEN_TAG) == FROZEN_COMMIT
     out = _git("merge-base", "--is-ancestor", FROZEN_COMMIT, "HEAD")
@@ -205,26 +221,17 @@ def test_freeze_pathology_all_zero():
 
 
 def test_collection_pin_reconciled():
-    import re
-    src = (ROOT / "scripts" / "run_ci_tests.py").read_text()
-    m = re.search(r"EXPECTED_COLLECTED\s*=\s*(\d+)", src)
-    # V3.9A reconciliation: 5076 + 24 contract tests = 5100.
-    # V3.9B reconciliation: 5100 + 22 measurement tests = 5122.
-    # V3.9C reconciliation: 5122 + 26 bundle/API tests = 5148.
-    # V3.9E reconciliation: 5148 + 28 freeze tests = 5176.
-    # V3.10I reconciliation: 5176 + 10 V3.10 ownership/API tests = 5186.
-    # V3.11A reconciliation: 5186 + 22 forensics guard tests = 5208.
-    # V3.11B reconciliation: 5208 + 21 reconstruction-validation tests = 5229.
-    # V3.11C reconciliation: 5229 + 21 track-forensics tests = 5250.
-    # V3.11D reconciliation: 5250 + 18 VSC-model tests = 5268.
-    # V3.11E reconciliation: 5268 + 21 evidence-resolution tests = 5289.
-    # V3.11F reconciliation: 5289 + 16 programme-freeze tests = 5305.
-    # V3 Final reconciliation: 5305 + 14 final-freeze tests = 5319.
-    assert m and int(m.group(1)) == 5122 + 26 + 28 + 10 + 22 + 21 + 21 + 18 + 21 + 16 + 14
+    # Reconciliation history (provenance only, not an executable second
+    # pin): V3.9A 5076 + 24 = 5100; V3.9B + 22 = 5122; V3.9C + 26 = 5148;
+    # V3.9E + 28 = 5176; V3.10I + 10 = 5186; V3.11A + 22 = 5208;
+    # V3.11B + 21 = 5229; V3.11C + 21 = 5250; V3.11D + 18 = 5268;
+    # V3.11E + 21 = 5289; V3.11F + 16 = 5305; V3 Final + 14 = 5319.
+    # C7 derives the live expectation from the Tier-1 selector's
+    # canonical pin instead of maintaining this arithmetic.
     out = subprocess.run(
         ["/Users/tfatharva/f1-in-race-prediction_main/.venv/bin/python",
          "-m", "pytest", "tests/", "--collect-only", "-q",
          "-p", "no:cacheprovider"],
         cwd=ROOT, capture_output=True, text=True, check=True).stdout
     n = int(out.strip().splitlines()[-1].split()[0])
-    assert n == 5122 + 26 + 28 + 10 + 22 + 21 + 21 + 18 + 21 + 16 + 14, n
+    assert n == _runner_expected_collected(), n
