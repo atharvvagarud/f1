@@ -1,0 +1,60 @@
+{
+ "policy": "inventory only; no deletions in V3 Final; cleanup is a post-V3 engineering decision",
+ "roots": {
+  "data/interim": {
+   "bytes": 1308571,
+   "class": "REPRODUCIBLE_ARTIFACT",
+   "exists": true,
+   "files": 7
+  },
+  "data/processed": {
+   "bytes": 1281893,
+   "class": "REPRODUCIBLE_ARTIFACT",
+   "exists": true,
+   "files": 7
+  },
+  "data/raw/fastf1_cache": {
+   "bytes": 16705765004,
+   "class": "CACHE",
+   "exists": true,
+   "files": 2015
+  },
+  "data/spatial": {
+   "bytes": 579900579,
+   "class": "REPRODUCIBLE_ARTIFACT",
+   "exists": true,
+   "files": 342
+  },
+  "data/v2": {
+   "bytes": 109994431,
+   "class": "FROZEN_RESULT",
+   "exists": true,
+   "files": 1948
+  },
+  "data/v3": {
+   "bytes": 76914438,
+   "class": "FROZEN_RESULT",
+   "exists": true,
+   "files": 95
+  },
+  "graphify-out": {
+   "bytes": 567233160,
+   "class": "REPRODUCIBLE_ARTIFACT",
+   "exists": true,
+   "files": 1694
+  },
+  "results": {
+   "bytes": 246869943,
+   "class": "FROZEN_RESULT",
+   "exists": true,
+   "files": 1600
+  },
+  "runtime_artifacts": {
+   "bytes": 179197834,
+   "class": "REPRODUCIBLE_ARTIFACT",
+   "exists": true,
+   "files": 1957
+  }
+ },
+ "schema_version": "v3-final-inventory-v1"
+}

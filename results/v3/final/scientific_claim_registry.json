@@ -1,0 +1,72 @@
+{
+ "claims": {
+  "consensus": {
+   "allowed": "model/simulation agreement/disagreement display",
+   "evidence": [
+    "docs/V3_8A_CONSENSUS_CONTRACT_SOURCE_AUDIT.md"
+   ],
+   "prohibited": "fused calibrated probability",
+   "status": "production (comparison only)"
+  },
+  "counterfactual": {
+   "allowed": "controlled simulator intervention comparison",
+   "evidence": [
+    "docs/V3_7A_COUNTERFACTUAL_LANDSCAPE_AND_SCIENTIFIC_CONTRACT.md"
+   ],
+   "prohibited": "alternate-history truth",
+   "status": "production"
+  },
+  "mc2_simulation": {
+   "allowed": "distribution of simulated futures over 3678 eligible states (5000 futures)",
+   "evidence": [
+    "docs/V3_2A_SIMULATION_COVERAGE_ARCHITECTURE_AUDIT.md",
+    "results/v3/v3_11_final/coverage_reconciliation.json"
+   ],
+   "prohibited": "coverage of all 9644 states; support for wet/track/terminal-missing regimes",
+   "status": "production (eligible states only)"
+  },
+  "sc_yellow_red_wet": {
+   "allowed": "none (regimes characterized as unsupported)",
+   "evidence": [
+    "docs/V3_11_MC2_COVERAGE_EXPANSION_FINAL.md"
+   ],
+   "prohibited": "any production simulation claim",
+   "status": "not started"
+  },
+  "strategy": {
+   "allowed": "simulator-conditional outcome comparison under controlled interventions",
+   "evidence": [
+    "docs/V3_6A_STRATEGY_LANDSCAPE_AND_SCIENTIFIC_CONTRACT.md"
+   ],
+   "prohibited": "optimal strategy; causal historical effect",
+   "status": "production (authority not yet formalized: Phase-7 vs 2.0 both mounted)"
+  },
+  "uncertainty": {
+   "allowed": "model-simulation disagreement and MC sampling precision",
+   "evidence": [
+    "docs/V3_9A_UNCERTAINTY_INTELLIGENCE_CONTRACT.md"
+   ],
+   "prohibited": "scalar confidence/quality score",
+   "status": "production"
+  },
+  "vsc": {
+   "allowed": "research suggests plausible pace/order/withdrawal structure",
+   "evidence": [
+    "docs/V3_11E_VSC_EVIDENCE_RESOLUTION.md",
+    "results/v3/v3_11_final/terminal_decision.json"
+   ],
+   "prohibited": "production-supported VSC simulation",
+   "status": "research-only (insufficient evidence)"
+  },
+  "winner_prediction": {
+   "allowed": "pre-race/lap-K winner probabilities from the serving multilap checkpoints",
+   "evidence": [
+    "docs/V3_1B_RACE_DYNAMICS_CONSTRUCTION.md",
+    "results/models"
+   ],
+   "prohibited": "certainty about any single race outcome",
+   "status": "production"
+  }
+ },
+ "schema_version": "v3-final-claims-v1"
+}

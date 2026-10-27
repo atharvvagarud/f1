@@ -173,7 +173,11 @@ def test_freeze_pathology_all_zero():
          or "frontend/lib/v2.ts" in ln
          # V3.10I wave-2 reconciliations below (exact guard files
          # admitting the V3.10 set; frozen science untouched).
-         or "tests/test_v2_phase5_r7.py" in ln)
+         or "tests/test_v2_phase5_r7.py" in ln
+         # V3 Final reconciliation (freeze): navigation docs are
+         # tracked since the V3.11 freeze; terminal-status lines
+         # only (docs-only; frozen science untouched).
+         or "docs/INDEX.md" in ln or "scripts/README.md" in ln)
         for ln in dirty_source) else 1
     counts["PF-P25"] = 0 if _load(FZ / "guard_audit.json")["weakening_beyond_necessary"] is False else 1
     counts["PF-P26"] = 0  # collection guard intact (pin 5067+N reconciled; see pin test)
@@ -205,11 +209,12 @@ def test_collection_pin_reconciled():
     # V3.11D reconciliation: 5250 + 18 VSC-model tests = 5268.
     # V3.11E reconciliation: 5268 + 21 evidence-resolution tests = 5289.
     # V3.11F reconciliation: 5289 + 16 programme-freeze tests = 5305.
-    assert m and int(m.group(1)) == 5122 + 26 + 28 + 10 + 22 + 21 + 21 + 18 + 21 + 16
+    # V3 Final reconciliation: 5305 + 14 final-freeze tests = 5319.
+    assert m and int(m.group(1)) == 5122 + 26 + 28 + 10 + 22 + 21 + 21 + 18 + 21 + 16 + 14
     out = subprocess.run(
         ["/Users/tfatharva/f1-in-race-prediction_main/.venv/bin/python",
          "-m", "pytest", "tests/", "--collect-only", "-q",
          "-p", "no:cacheprovider"],
         cwd=ROOT, capture_output=True, text=True, check=True).stdout
     n = int(out.strip().splitlines()[-1].split()[0])
-    assert n == 5122 + 26 + 28 + 10 + 22 + 21 + 21 + 18 + 21 + 16, n
+    assert n == 5122 + 26 + 28 + 10 + 22 + 21 + 21 + 18 + 21 + 16 + 14, n

@@ -67,7 +67,12 @@ def test_no_runtime_code_modified():
                and m != "frontend/features/counterfactuals/components/CounterfactualView.tsx"
                and m != "frontend/features/replay/components/SpatialTrackPanel.tsx"
                and m != "frontend/features/strategy/components/Strategy2View.tsx"
-               and m != "frontend/lib/v2.ts"]
+               and m != "frontend/lib/v2.ts"
+               # V3 Final reconciliation (freeze): navigation docs are
+               # tracked since the V3.11 freeze; terminal-status lines
+               # only (docs-only, not runtime code).
+               and m != "docs/INDEX.md"
+               and m != "scripts/README.md"]
     assert runtime == [], runtime
     # V3.9C owns raceintel/uncertainty (thin bundle over frozen seams):
     # purity holds iff it imports only frozen consensus seams, never MC2

@@ -328,4 +328,9 @@ def test_original_d_artifacts_untouched():
         # of the time-bound V3.9 HEAD pin (tag pin kept; ancestry
         # asserted with equal strength; frozen science untouched).
         "tests/test_v3_10b_workspace_ownership.py",
+        # V3 Final reconciliation (freeze): navigation docs are
+        # tracked since the V3.11 freeze; terminal-status lines
+        # only (docs-only; frozen science untouched).
+        "docs/INDEX.md",
+        "scripts/README.md",
         "scripts/run_ci_tests.py"}, modified

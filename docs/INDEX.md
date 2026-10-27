@@ -45,6 +45,8 @@ references key on their exact paths.
 - V3.11D/E did NOT authorize VSC integration. Coverage expansion is
   terminal: STOP_V3_11_COVERAGE_EXPANSION.
 - MC2 production coverage remains 3678/9644 = 38.14%.
+- V3 programme is frozen (see `docs/V3_FINAL_PROGRAMME_SYNTHESIS.md`;
+  final tag `v3-final`). Active V3 development has ended.
 - Frozen scientific evidence must not be moved or renamed.
 
 ## Platform / data ingestion
@@ -344,7 +346,7 @@ Research implementation (NOT production): `scripts/v3_11c_*.py`
 (sources, regimes, ledger), `scripts/v3_11a_mc2_coverage_forensics.py`
 (coverage forensics).
 
-Status: uncommitted research. V3.11C verdict:
+Status: frozen research (committed at the V3.11 freeze). V3.11C verdict:
 TRACK_SOURCE_REGIME_FORENSICS_COMPLETE — forensics only, no regime
 simulation, no eligibility change.
 
@@ -369,7 +371,7 @@ cards. No production integration authorized.
 Research implementation (NOT production): `scripts/v3_11d_*.py`
 (episodes, analysis, protocol, `v3_11d_vsc_model.py`, validation).
 
-Status: uncommitted research. V3.11D verdict:
+Status: frozen research (committed at the V3.11 freeze). V3.11D verdict:
 VSC_REGIME_MODEL_INSUFFICIENT_EVIDENCE — no production integration
 authorized, no eligibility change.
 

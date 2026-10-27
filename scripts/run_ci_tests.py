@@ -200,7 +200,11 @@ CORPUS_MANIFEST = Path(__file__).resolve().parent / "ci_corpus_dependent.txt"
 # tests/test_v3_11f_freeze.py (registry/coverage/terminal/parity/
 # provenance/navigation/manifest guards; no MC2 execution, no corpus
 # dependence added), with no removals = 5305.
-EXPECTED_COLLECTED = 5305
+# V3 Final programme freeze: 14 added tests in
+# tests/test_v3_final_freeze.py (programme/tag/production/claims/
+# separation/product/provenance guards; no MC2 execution, no corpus
+# dependence added), with no removals = 5319.
+EXPECTED_COLLECTED = 5319
 
 # (pytest node id, reason it cannot pass at the frozen baseline)
 # P11-1: the 12 pre-existing stale historical pins were genuinely corrected

@@ -18,6 +18,9 @@ These must NOT be retroactively moved during active V3 development.
 Reorganizing frozen stages would break provenance links for cosmetic
 benefit. Index over them (`docs/INDEX.md`); do not relocate them.
 
+V3 Final note: active V3 development has ended with the V3 Final freeze
+(`v3-final`). The forward rule above now governs any future work.
+
 ## FORWARD RULE (new work only)
 
 For NEW work from this point onward:

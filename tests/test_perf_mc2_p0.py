@@ -354,6 +354,10 @@ def _p0_counts():
                  # repair of the time-bound V3.9 HEAD pin (tag pin
                  # kept; ancestry asserted with equal strength).
                  "tests/test_v3_10b_workspace_ownership.py",
+                 # V3 Final reconciliation (freeze): navigation
+                 # docs terminal-status lines only (docs-only).
+                 "docs/INDEX.md",
+                 "scripts/README.md",
                  # V3.10I wave-2 reconciliations below (exact guard
                  # files admitting the V3.10 set; frozen science
                  # untouched).
@@ -406,6 +410,10 @@ def _p0_counts():
                 # VSC model/evidence resolution; no production code)
                 # + architecture navigation baseline doc (docs-only).
                 and "scripts/v3_11" not in ln
+                # V3 Final reconciliation (freeze): offline
+                # consolidation-record generator (stdlib-only, no
+                # production imports, no science).
+                and "scripts/v3_final" not in ln
                 and "scripts/README.md" not in ln]
     # (the two exclusions are exactly the P1 executor + benchmark harness,
     # owned by the performance programme; any other new prod file fails)

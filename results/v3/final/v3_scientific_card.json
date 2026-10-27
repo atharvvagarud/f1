@@ -1,0 +1,38 @@
+{
+ "canonical_parent": "v3.11-mc2-coverage (766496322c393f5341f1fb46bbd2cd8d43d80dd1)",
+ "canonical_prediction_model": "ml/inference serving path over results/models multilap checkpoints (logreg/hgb/xgboost)",
+ "canonical_simulation": "MC2-E (raceintel/simulation, seed 20240101)",
+ "frozen_status": "V3_PROGRAMME_FROZEN",
+ "product_surface": "Pit Wall (/pit-wall)",
+ "production_mc2_coverage": "3678 / 9644 (38.14%)",
+ "programme": "F1 Intelligence V3",
+ "promoted_capabilities": [
+  "winner prediction",
+  "MC2 simulation (eligible states)",
+  "strategy comparison",
+  "counterfactuals",
+  "consensus comparison",
+  "uncertainty (disagreement + precision)",
+  "spatial replay",
+  "Pit Wall workspace"
+ ],
+ "research_only_capabilities": [
+  "V3.3 XGBoost diversity",
+  "V3.4 ensemble blend",
+  "V3.5 outcome marginals",
+  "V3.11D VSC model"
+ ],
+ "schema_version": "v3-final-card-v1",
+ "stage_registry": "results/v3/final/v3_tag_registry.json",
+ "tag_target": "v3-final (created at freeze commit)",
+ "unsupported_regimes": [
+  "wet",
+  "VSC",
+  "SC",
+  "yellow",
+  "red/restart",
+  "unresolved-missing",
+  "terminal (where applicable)"
+ ],
+ "validation_result": "authoritative Tier-1 + frontend + smoke + perf recorded in the V3 Final freeze report"
+}

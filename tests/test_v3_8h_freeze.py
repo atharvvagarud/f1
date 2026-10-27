@@ -211,6 +211,15 @@ FINAL_ALLOW = (
                "docs/V3_11_MC2_COVERAGE_EXPANSION_FINAL.md",
                "scripts/v3_11f",
                "tests/test_v3_11f",
+               # V3 Final reconciliation (freeze): final
+               # consolidation records admitted exactly (tag
+               # registry/manifests/claim registry/synthesis +
+               # focused freeze tests; frozen science untouched;
+               # any other path still fails).
+               "results/v3/final/",
+               "docs/V3_FINAL",
+               "scripts/v3_final",
+               "tests/test_v3_final",
 )
 # Tracked files H is permitted to show as modified pre-commit.
 TRACKED_ALLOW = {
@@ -295,6 +304,11 @@ TRACKED_ALLOW = {
     # time-bound V3.9 HEAD pin (tag pin kept; ancestry asserted with
     # equal strength; frozen science untouched).
     "tests/test_v3_10b_workspace_ownership.py",
+    # V3 Final reconciliation (freeze): navigation docs are tracked
+    # since the V3.11 freeze; terminal-status lines only (docs-only;
+    # frozen science untouched).
+    "docs/INDEX.md",
+    "scripts/README.md",
 }
 
 
@@ -830,7 +844,11 @@ def test_worktree_contains_only_owned_v38_paths():
                    # V3.11F reconciliation (freeze): narrow stale-guard
                    # repair of the time-bound V3.9 HEAD pin (tag pin
                    # kept; ancestry asserted with equal strength).
-                   "tests/test_v3_10b_workspace_ownership.py",}
+                   "tests/test_v3_10b_workspace_ownership.py",
+                   # V3 Final reconciliation (freeze): navigation
+                   # docs terminal-status lines only (docs-only).
+                   "docs/INDEX.md",
+                   "scripts/README.md",}
     p2a_ok = _load(
         ROOT / "results" / "v3" / "performance_mc2" / "p2a"
         / "parity_results.json")["overall"] == "EXACT" \

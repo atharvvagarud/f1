@@ -1,0 +1,37 @@
+{
+ "canonical_consensus": "model + simulation comparison (PRIMARY_CONSENSUS_SOURCE: V3.1B Logistic, MC2); no promoted fusion",
+ "canonical_product_surface": "Pit Wall (/pit-wall)",
+ "canonical_simulation": "MC2-E (raceintel/simulation, mc2 kernel + R4/R5 engine family)",
+ "canonical_uncertainty": "model-simulation disagreement + finite MC sampling precision; no scalar confidence score",
+ "canonical_winner_model": "serving path ml/inference over results/models multilap checkpoints (logreg/hgb/xgboost; majority-vote ensemble + single-model selection); research champion Logistic (V3.1B dynamics); V3.3/V3.4 unpromoted",
+ "frozen_research_only": [
+  "XGBoost diversity candidate (V3.3)",
+  "V3.4 ensemble recipe (.8/.2, mixed)",
+  "V3.5 outcome-distribution candidate (marginals)",
+  "V3.11D VSC regime model (insufficient evidence)",
+  "V3.2F/H regime precursors (descriptive)"
+ ],
+ "parent_lineage": "V2 consolidated baseline -> V3.1 .. V3.11 (see v3_tag_registry.json)",
+ "production_mc2_coverage": "3678 / 9644 (38.14%)",
+ "programme": "F1 Intelligence V3",
+ "schema_version": "v3-final-manifest-v1",
+ "unsupported_domains": [
+  "track regimes beyond supported green/dry semantics",
+  "wet conditions",
+  "unresolved missing observations (driver/tyre/temporal)",
+  "terminal states where applicable"
+ ],
+ "v3_stages": [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11"
+ ]
+}

@@ -63,7 +63,12 @@ N_V3_11E_TESTS = 21
 # provenance/navigation/manifest guards; no MC2 execution, no corpus
 # dependence added).
 N_V3_11F_TESTS = 16
-EXPECTED_COLLECTED = 5148 + N_FREEZE_TESTS + N_V3_10_TESTS + N_V3_11A_TESTS + N_V3_11B_TESTS + N_V3_11C_TESTS + N_V3_11D_TESTS + N_V3_11E_TESTS + N_V3_11F_TESTS
+# V3 Final reconciliation: 14 final-freeze guard tests
+# (tests/test_v3_final_freeze.py: programme/tag/production/claims/
+# separation/product/provenance guards; no MC2 execution, no corpus
+# dependence added).
+N_V3_FINAL_TESTS = 14
+EXPECTED_COLLECTED = 5148 + N_FREEZE_TESTS + N_V3_10_TESTS + N_V3_11A_TESTS + N_V3_11B_TESTS + N_V3_11C_TESTS + N_V3_11D_TESTS + N_V3_11E_TESTS + N_V3_11F_TESTS + N_V3_FINAL_TESTS
 
 
 def _git(*args):

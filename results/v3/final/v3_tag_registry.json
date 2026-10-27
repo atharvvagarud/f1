@@ -1,0 +1,113 @@
+{
+ "schema_version": "v3-final-tag-registry-v1",
+ "tags": {
+  "V3.1": {
+   "annotation": "F1 Race Intelligence v3.1 Race Dynamics",
+   "classification": "Race Dynamics research complete",
+   "commit": "64c5af094bd1304e23a5c7d3d5b782b0eef11aca",
+   "immutable": true,
+   "notes": "verified resolvable at freeze time",
+   "stage": "V3.1",
+   "tag": "v3.1-race-dynamics"
+  },
+  "V3.10": {
+   "annotation": "V3.10 pit-wall experience frozen: integrated causal race-intelligence workspace (A-H). Parent v3.9-uncertainty-intelligence fb0d8d8. Manifest results/v3/v3_10i/freeze_manifest.json identity 418a68564f1d3957c83b58ea3594564abfb3530ca887bf93c422eb8fcb2c0bb3.",
+   "classification": "Pit Wall workspace frozen",
+   "commit": "2c00e7ea4e61b6477cac3207e8379f087b0ec527",
+   "immutable": true,
+   "notes": "verified resolvable at freeze time",
+   "stage": "V3.10",
+   "tag": "v3.10-pit-wall"
+  },
+  "V3.11": {
+   "annotation": "V3.11 MC2 Coverage Expansion terminal coverage 3678/9644 (38.14%) VSC evidence insufficient no production eligibility expansion",
+   "classification": "Coverage terminal 3678/9644",
+   "commit": "766496322c393f5341f1fb46bbd2cd8d43d80dd1",
+   "immutable": true,
+   "notes": "verified resolvable at freeze time",
+   "stage": "V3.11",
+   "tag": "v3.11-mc2-coverage"
+  },
+  "V3.2": {
+   "annotation": "V3.2 Monte Carlo 2.0",
+   "classification": "MC2 production simulation frozen",
+   "commit": "197979d40af0c9dbf90667781d9c83e41613b047",
+   "immutable": true,
+   "notes": "verified resolvable at freeze time",
+   "stage": "V3.2",
+   "tag": "v3.2-monte-carlo-2"
+  },
+  "V3.3": {
+   "annotation": "V3.3 Multi-Model Lab \u2014 temporal multi-model evaluation",
+   "classification": "Multi-model research, no promotion",
+   "commit": "563fff21f94f169097079b003816181c31227aa9",
+   "immutable": true,
+   "notes": "verified resolvable at freeze time",
+   "stage": "V3.3",
+   "tag": "v3.3-multi-model-lab"
+  },
+  "V3.4": {
+   "annotation": "V3.4 Ensemble \u2014 temporally safe model blending evaluation",
+   "classification": "Ensemble mixed, no promotion",
+   "commit": "3cbd28470ffa211bd754d4262eb10d66d149bf00",
+   "immutable": true,
+   "notes": "verified resolvable at freeze time",
+   "stage": "V3.4",
+   "tag": "v3.4-ensemble"
+  },
+  "V3.5": {
+   "annotation": "V3.5 Outcome Distribution frozen",
+   "classification": "Marginals only, no promotion",
+   "commit": "6df5d41d3ebead9a1c9b4f0f40ed20a21ce0bff1",
+   "immutable": true,
+   "notes": "verified resolvable at freeze time",
+   "stage": "V3.5",
+   "tag": "v3.5-outcome-distribution"
+  },
+  "V3.6": {
+   "annotation": "V3.6 Strategy 2.0 \u2014 paired MC2 counterfactual strategy intelligence",
+   "classification": "Strategy 2.0 additive integration",
+   "commit": "1eb462631b9d7a948e35b8a1658e3bb90035c94c",
+   "immutable": true,
+   "notes": "verified resolvable at freeze time",
+   "stage": "V3.6",
+   "tag": "v3.6-strategy-2.0"
+  },
+  "V3.7": {
+   "annotation": "V3.7 Counterfactual Engine \u2014 simulator-conditional controlled interventions",
+   "classification": "Counterfactual engine frozen",
+   "commit": "30fe18908a41d95113c189274598269a95ef44ca",
+   "immutable": true,
+   "notes": "verified resolvable at freeze time",
+   "stage": "V3.7",
+   "tag": "v3.7-counterfactual-engine"
+  },
+  "V3.8": {
+   "annotation": "V3.8 Model x Simulation Consensus",
+   "classification": "Consensus frozen, no fusion",
+   "commit": "15df86b864fa552c69c4b7a53e22f1fc3b4c4ca1",
+   "immutable": true,
+   "notes": "verified resolvable at freeze time",
+   "stage": "V3.8",
+   "tag": "v3.8-model-simulation-consensus"
+  },
+  "V3.8P": {
+   "annotation": "MC2 deterministic performance engineering freeze",
+   "classification": "MC2 performance optimization frozen",
+   "commit": "32466c436845ee02c3af79ce08d1c102b9d91384",
+   "immutable": true,
+   "notes": "verified resolvable at freeze time",
+   "stage": "V3.8P",
+   "tag": "v3.8-mc2-performance"
+  },
+  "V3.9": {
+   "annotation": "V3.9 Uncertainty Intelligence freeze",
+   "classification": "Uncertainty frozen, no scalar",
+   "commit": "fb0d8d8772bdc1343bc6be6c5ff9ee68cddd7203",
+   "immutable": true,
+   "notes": "verified resolvable at freeze time",
+   "stage": "V3.9",
+   "tag": "v3.9-uncertainty-intelligence"
+  }
+ }
+}

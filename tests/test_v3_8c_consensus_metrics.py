@@ -504,6 +504,12 @@ def test_no_frozen_source_modified():
         "docs/INDEX.md",
         "tests/test_v3_11",
         "scripts/v3_11",
+        # V3 Final reconciliation (freeze): final
+        # consolidation records admitted exactly.
+        "results/v3/final/",
+        "docs/V3_FINAL",
+        "tests/test_v3_final",
+        "scripts/v3_final",
         "scripts/README.md",
         "scripts/run_ci_tests.py",
         "tests/test_perf_mc2_freeze.py",

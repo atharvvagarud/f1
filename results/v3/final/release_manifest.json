@@ -1,0 +1,59 @@
+{
+ "config_identities": {
+  "api/config.py": "fe0831905e4a47f26f8b113b24cf399a60105d51c39f6178f73bc6a74c0913d1",
+  "ml/config.py": "15cc96c4a6511b5efc7b53bf61809eebd62d5641adb1f318056085677005053c"
+ },
+ "dependencies": {
+  "fastapi": "0.135.1",
+  "lightgbm": "not-installed",
+  "numpy": "2.4.2",
+  "pandas": "2.3.3",
+  "scikit-learn": "1.8.0",
+  "scipy": "1.17.0",
+  "xgboost": "3.2.0"
+ },
+ "frontend_lock_sha256": "719c7159b7b9b540c368ed17503240cc9829bb23c3d129938726300adf26c82a",
+ "graphify": {
+  "communities": 575,
+  "edges": 45493,
+  "nodes": 20307,
+  "source": "graphify update . stdout 2026-10-27 (final, pre-commit)",
+  "status": "RECORDED"
+ },
+ "model_artifacts": {
+  "dir": "results/models",
+  "files": 21,
+  "names": [
+   "hgb_lap10/",
+   "hgb_lap10_multilap/",
+   "hgb_lap15_multilap/",
+   "hgb_lap20_multilap/",
+   "hgb_lap25_multilap/",
+   "hgb_lap5_multilap/",
+   "hgb_weather_lap10/",
+   "hgb_weather_lap10_tuned/",
+   "logreg_lap10/",
+   "logreg_lap10_multilap/",
+   "logreg_lap15_multilap/",
+   "logreg_lap20_multilap/",
+   "logreg_lap25_multilap/",
+   "logreg_lap5_multilap/",
+   "logreg_weather_lap10/",
+   "xgboost_lap10/",
+   "xgboost_lap10_multilap/",
+   "xgboost_lap15_multilap/",
+   "xgboost_lap20_multilap/",
+   "xgboost_lap25_multilap/",
+   "xgboost_lap5_multilap/"
+  ]
+ },
+ "node": "v23.11.0",
+ "python": "3.11.15",
+ "python_full": "3.11.15 (main, Jun 23 2026, 15:46:51) [Clang 22.1.3 ]",
+ "schema_version": "v3-final-release-v1",
+ "seeds": {
+  "mc2_master": 20240101,
+  "note": "no retraining in V3 Final; seeds are historical provenance",
+  "v3_11e_bootstrap": 7
+ }
+}

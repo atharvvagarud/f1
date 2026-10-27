@@ -1,0 +1,11 @@
+{
+ "note": "re-run generator after Tier-1/graphify refresh, then copy these identities into docs/V3_FINAL_PROGRAMME_SYNTHESIS.md",
+ "schema_version": "v3-final-identities-v1",
+ "sha256": {
+  "product_authority_audit.json": "949b60ca2d07c0d261bcec156425e8d30bd5a7f03204b58becdf224f55759d93",
+  "release_manifest.json": "5afff004e6e6deec0c5bec23b370de66bb9372fd1b47d70646405cad2bf275c3",
+  "scientific_claim_registry.json": "4fdf0264b8188ac725400cf610ecd01c422a97aaf56f12c874d2ca889d626b61",
+  "v3_programme_manifest.json": "62bb8ba35a358e6037801c95097c4bbeb633c73c3052c247f7291ebedc404011",
+  "v3_scientific_card.json": "667b6cbb17b5cf485a5f8aa40f53b150aa2aa660250e3a284b5591629ac1187f"
+ }
+}

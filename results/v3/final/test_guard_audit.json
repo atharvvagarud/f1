@@ -1,0 +1,50 @@
+{
+ "collection_formula": "5268 base + 21 (E) + 16 (F) + 14 (final freeze tests)",
+ "expected_collection": 5319,
+ "freeze_test_files": [
+  "tests/test_perf_mc2_freeze.py",
+  "tests/test_v2_phase4_freeze.py",
+  "tests/test_v2_phase5_freeze.py",
+  "tests/test_v2_phase6_freeze.py",
+  "tests/test_v3_11f_freeze.py",
+  "tests/test_v3_3f_freeze.py",
+  "tests/test_v3_6h_freeze.py",
+  "tests/test_v3_8h_freeze.py",
+  "tests/test_v3_9e_freeze.py",
+  "tests/test_v3_final_freeze.py"
+ ],
+ "guard_inventory": {
+  "scripts/run_ci_tests.py": {
+   "exists": true,
+   "sha256": "ffe4c7b4c65760f3b597efba758224f924acc8cb56dbf3e6f307c2a6d3226cc8"
+  },
+  "tests/test_perf_mc2_freeze.py": {
+   "exists": true,
+   "sha256": "9efa2a836a42ad595e5fc4ef4e087a2461b670f94d64c34aacc68dbad73d79f3"
+  },
+  "tests/test_perf_mc2_p0.py": {
+   "exists": true,
+   "sha256": "ff7488044832bfe5bec8924102b365dfbb8b7d6dea35580531bd94ad3cbc74c7"
+  },
+  "tests/test_v3_8h_freeze.py": {
+   "exists": true,
+   "sha256": "b53b93de0e038642cd759a35b5d3ed89cd0cc15deb247bde685ac325f6f72a45"
+  },
+  "tests/test_v3_9e_freeze.py": {
+   "exists": true,
+   "sha256": "298058f031a6c3c4084c873d17d03075180709c03e1911fc2056a4aacaa7eea6"
+  },
+  "tests/test_v3_final_freeze.py": {
+   "exists": true,
+   "sha256": "8f4c0517590c21268b7016c896887c6e9973f045d5f9e04b4120bbdefcd7c6eb"
+  }
+ },
+ "policy": "no test bypassed for convenience; skips/xfails only where pre-existing and documented in the Tier-1 record",
+ "schema_version": "v3-final-guards-v1",
+ "temporal_poison_test_files": [],
+ "tier1": {
+  "log": "/tmp/tier1_v3final.log",
+  "status": "RECORDED",
+  "tail": " is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.\n    mutated = pd.concat([race_r1, extra], ignore_index=True)\n\ntests/test_v2_phase4_r2.py::test_future_mutation_invariance[rival_future_row_add]\n  /Users/tfatharva/f1-in-race-prediction_main/tests/test_v2_phase4_r2.py:513: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.\n    mutated = pd.concat(\n\ntests/test_v2_phase4_r2.py::test_future_mutation_invariance[future_pit]\n  /Users/tfatharva/f1-in-race-prediction_main/tests/test_v2_phase4_r2.py:530: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.\n    mutated = pd.concat(\n\ntests/test_v2_phase4_r2.py::test_future_mutation_invariance[future_driver_append]\n  /Users/tfatharva/f1-in-race-prediction_main/tests/test_v2_phase4_r2.py:539: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.\n    mutated = pd.concat(\n\ntests/test_v2_phase4_r2.py::test_future_mutation_invariance[unrelated_race]\n  /Users/tfatharva/f1-in-race-prediction_main/tests/test_v2_phase4_r2.py:544: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.\n    mutated = pd.concat(\n\ntests/test_v2_phase4_r6.py::test_end_to_end_same_lap_future_hazard\ntests/test_v2_phase4_r6.py::test_end_to_end_same_lap_future_hazard\ntests/test_v2_phase4_r6.py::test_end_to_end_same_lap_future_hazard\ntests/test_v2_phase4_r6.py::test_end_to_end_same_lap_future_hazard\n  /Users/tfatharva/f1-in-race-prediction_main/tests/test_v2_phase4_r6.py:445: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.\n    mutated = pd.concat([states, poison.to_frame().T],\n\ntests/test_v3_10f_telemetry.py::test_projection_shape_and_counts\n  /Users/tfatharva/f1-in-race-prediction_main/tests/test_v3_10f_telemetry.py:44: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.\n    return pd.concat(parts, ignore_index=True)\n\ntests/test_v3_2g_status_corpus.py::test_position_null_provenance_overlap\n  /Users/tfatharva/f1-in-race-prediction_main/tests/test_v3_2g_status_corpus.py:70: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.\n    dl = pd.concat(frames, ignore_index=True)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n5310 passed, 5 skipped, 4 xfailed, 71 warnings in 4109.25s (1:08:29)\n"
+ }
+}

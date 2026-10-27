@@ -402,6 +402,11 @@ def _p2a_counts():
         # the time-bound V3.9 HEAD pin (tag pin kept; ancestry asserted
         # with equal strength; frozen science untouched).
         "tests/test_v3_10b_workspace_ownership.py",
+        # V3 Final reconciliation (freeze): navigation docs are
+        # tracked since the V3.11 freeze; terminal-status lines
+        # only (docs-only; frozen science untouched).
+        "docs/INDEX.md",
+        "scripts/README.md",
     }
     counts["P2A-P29"] = sum(1 for f in diff if f not in allowed_tracked)
     counts["P2A-P30"] = sum(

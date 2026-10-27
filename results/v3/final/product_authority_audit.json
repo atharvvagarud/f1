@@ -1,0 +1,98 @@
+{
+ "domains": {
+  "consensus": {
+   "note": "comparison only; sources V3.1B Logistic + MC2-E; no fusion promoted",
+   "paths": [
+    "raceintel/consensus",
+    "api/v2_consensus_service.py"
+   ],
+   "verdict": "CANONICAL"
+  },
+  "counterfactuals": {
+   "note": "V3.7 controlled interventions, simulator-conditional",
+   "paths": [
+    "raceintel/counterfactual",
+    "api/v2_counterfactual_routes.py",
+    "frontend/features/counterfactuals"
+   ],
+   "verdict": "CANONICAL"
+  },
+  "legacy_ml_island": {
+   "note": "serving seam retained; superseded for science by model_lab (retire only post-V3 with ADR)",
+   "paths": [
+    "ml"
+   ],
+   "verdict": "LEGACY_ACTIVE"
+  },
+  "mc2": {
+   "note": "MC2-E production runtime; 5000-future campaigns; seed 20240101",
+   "runtime_path": [
+    "raceintel/simulation/engine.py",
+    "raceintel/simulation/mc2/kernel.py",
+    "raceintel/simulation/monte_carlo.py"
+   ],
+   "verdict": "CANONICAL"
+  },
+  "pit_wall": {
+   "note": "primary integrated race-intelligence workspace",
+   "paths": [
+    "frontend/app/pit-wall/page.tsx",
+    "frontend/features/pit-wall",
+    "api/v2_telemetry_routes.py"
+   ],
+   "verdict": "CANONICAL"
+  },
+  "spatial_replay": {
+   "note": "Phase-12 spatial programme + replay intelligence",
+   "paths": [
+    "raceintel/spatial",
+    "raceintel/replay",
+    "frontend/lib/spatial.ts"
+   ],
+   "verdict": "CANONICAL"
+  },
+  "strategy": {
+   "note": "Phase-7 (POST /v2/strategies/compare) and Strategy 2.0 (POST /v2/strategies/compare-v3) both mounted; no repository evidence supersedes either (E finding retained)",
+   "paths": [
+    "raceintel/strategy",
+    "api/v2_strategy_routes.py",
+    "api/v2_strategy_v3_routes.py"
+   ],
+   "verdict": "AUTHORITY_NOT_YET_FORMALIZED"
+  },
+  "uncertainty": {
+   "note": "V3.9 disagreement + sampling precision; no scalar",
+   "paths": [
+    "raceintel/uncertainty",
+    "api/v2_uncertainty_routes.py"
+   ],
+   "verdict": "CANONICAL"
+  },
+  "v2_package": {
+   "note": "zero importers; tracked baseline, not a product surface (post-V3 backlog C4)",
+   "paths": [
+    "v2"
+   ],
+   "verdict": "FROZEN_EVIDENCE_ONLY"
+  },
+  "vsc_model": {
+   "note": "plausible but insufficient evidence; no integration",
+   "paths": [
+    "results/v3/v3_11d",
+    "results/v3/v3_11e"
+   ],
+   "verdict": "RESEARCH_ONLY"
+  },
+  "winner_prediction": {
+   "artifacts": "results/models",
+   "note": "R4 serving path; ensemble = majority vote over checkpoints/models (not the V3.4 blend)",
+   "serving_path": [
+    "ml/inference.py",
+    "ml/config.py",
+    "api/services/prediction_service.py"
+   ],
+   "verdict": "CANONICAL"
+  }
+ },
+ "schema_version": "v3-final-authority-v1"
+}

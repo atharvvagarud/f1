@@ -1,0 +1,41 @@
+{
+ "comment_or_docstring_refs_non_edges": [
+  "raceintel/simulation/mc2/kernel.py:302",
+  "raceintel/strategy/v3_contracts.py:1",
+  "api/v2_telemetry_service.py:1"
+ ],
+ "dynamic_import_sites_reviewed": [
+  "raceintel/model_lab/bagged_candidates.py",
+  "raceintel/model_lab/bagged_runner.py",
+  "raceintel/model_lab/logreg.py",
+  "raceintel/model_lab/model_runner.py",
+  "raceintel/model_lab/nonlinear_runner.py",
+  "raceintel/model_lab/outcomes.py",
+  "raceintel/model_lab/run.py",
+  "raceintel/model_lab/run_models.py",
+  "raceintel/model_lab/tree_candidates.py",
+  "raceintel/model_lab/tuning_candidates.py"
+ ],
+ "forbidden_import_edges": [],
+ "frontend_code_hits": [],
+ "known_preexisting_edge": {
+  "edge": [
+   "api/v2_explanation_service.py",
+   "scripts.replay_feature_matrix"
+  ],
+  "justification": "lazy (function-level) import of frozen E1.6 offline cache utility; predates V3.11; target has zero v3_11/final refs; removal would be a behavior change, forbidden in V3 Final; post-V3 backlog (API seam / scripts forward rule)",
+  "sites": [
+   "api/v2_explanation_service.py"
+  ]
+ },
+ "production_code_refs_to_research_paths": [],
+ "research_internal_reads_model_lab": [
+  "raceintel/model_lab/v3_3b_harness.py:57",
+  "raceintel/model_lab/v3_3b_harness.py:61",
+  "raceintel/model_lab/v3_4_ensemble.py:14"
+ ],
+ "research_scripts_importing_production": 17,
+ "rule": "research may import production; production must not import results/docs/scripts/tests evidence",
+ "schema_version": "v3-final-separation-v1",
+ "verdict": "PASS"
+}
