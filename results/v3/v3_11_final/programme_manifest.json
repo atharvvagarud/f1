@@ -1,0 +1,21 @@
+{
+ "eligibility_delta": 0,
+ "final_synthesis": "docs/V3_11_MC2_COVERAGE_EXPANSION_FINAL.md",
+ "navigation_baseline": [
+  "docs/INDEX.md",
+  "scripts/README.md"
+ ],
+ "parent_commit": "2c00e7ea4e61b6477cac3207e8379f087b0ec527",
+ "parent_tag": "v3.10-pit-wall",
+ "production_diff_empty": true,
+ "production_status_empty": true,
+ "programme": "V3.11 MC2 Coverage Expansion",
+ "schema_version": "v3.11f-manifest-v1",
+ "stages": [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E"
+ ]
+}

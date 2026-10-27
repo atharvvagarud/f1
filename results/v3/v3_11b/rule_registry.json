@@ -1,0 +1,39 @@
+{
+ "accepted_rules": [],
+ "forced_acceptance": false,
+ "insufficient_evidence_rules": [],
+ "protocol_sha256": "5849607042825ca6d31e049e880b3ddde8b693b5c739e2182268021acfa357ef",
+ "rejected_rules": [
+  "TIMING_GAP_RECONSTRUCTION",
+  "TYRE_WITHIN_STINT_PERSISTENCE",
+  "NULL_TRACK_SEMANTICS"
+ ],
+ "rules": [
+  {
+   "candidates": 51,
+   "evidence": "results/v3/v3_11b/timing_gap_validation.json",
+   "production_implementation": false,
+   "protocol_id": "V3.11B-PROTOCOL-T1",
+   "rule_id": "TIMING_GAP_RECONSTRUCTION",
+   "verdict": "REJECTED"
+  },
+  {
+   "candidates": 4,
+   "evidence": "results/v3/v3_11b/tyre_persistence_validation.json",
+   "production_implementation": false,
+   "protocol_id": "V3.11B-PROTOCOL-Y1",
+   "rule_id": "TYRE_WITHIN_STINT_PERSISTENCE",
+   "verdict": "REJECTED"
+  },
+  {
+   "candidates": 59,
+   "deferred_to": "track-source reconstruction stage",
+   "evidence": "results/v3/v3_11b/deferred_rule_analysis.json",
+   "production_implementation": false,
+   "protocol_id": "V3.11B-PROTOCOL-K1",
+   "rule_id": "NULL_TRACK_SEMANTICS",
+   "verdict": "REJECTED"
+  }
+ ],
+ "schema_version": "v3.11b-rule-registry-v1"
+}

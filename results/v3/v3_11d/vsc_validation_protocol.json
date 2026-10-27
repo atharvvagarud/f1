@@ -1,0 +1,60 @@
+{
+ "acceptance_gates": {
+  "G1_pace": "validation MAE <= 10.0s (H-comparable absolute gate; decontaminated windows)",
+  "G2_gap": "steady ACTIVE gap-change median <= 1.0s AND p90 <= 3.0s (~2x PRE baseline 0.42/1.53)",
+  "G3_order": "steady ACTIVE change rate <= 15% (PRE baseline bound 14.4%)",
+  "G4_spread": "ACTIVE/PRE spread median ratio in [0.8, 1.25]",
+  "G5_withdrawal": "|POST-PRE median| <= 5.0s (immediate green return)",
+  "G6_pit_fail_closed": "rule specified: refuse VSC simulation crossing pit events under VSC (no validated loss model)",
+  "G7_causality": "interval semantics causal (C contract); poison-pinned; deterministic",
+  "G8_green_parity": "GREEN path byte-identical (isolation + frozen suites green)"
+ },
+ "calibration": {
+  "episodes": "usable calibration split (2018-2021)",
+  "parameter": "R = median driver-lap ACTIVE/PRE ratio, pooled calibration ACTIVE laps",
+  "race_specific_alternative": "per-race median ratio (research comparison only; global preferred unless validation proves need)"
+ },
+ "candidates": {
+  "V0": "refuse VSC (frozen control; explicit TRACK rejection)",
+  "V1": "global pace ratio R (median ACTIVE/PRE on calibration episodes) applied to expected green pace during causally-known VSC laps; frozen ordering mechanics",
+  "V2": "V1 + validated gap-preservation claim (uniform ratio; no extra mechanism)",
+  "V3": "EXCLUDED at protocol time: pit-loss evidence insufficient (out-lap marginals n=7); fail-closed where pit events are relevant"
+ },
+ "coverage_note": "no gate uses coverage percentage; +41/38.57% is context only",
+ "declared_before_scoring": true,
+ "duration_gate": {
+  "on_failure": "duration remains the integration blocker (confirms H); no duration component fitted",
+  "rule": "median-duration predictor; calibration slope in [0.5, 1.5] AND MAE <= 1.0 lap on validation split"
+ },
+ "exclusions": [
+  "NO_FULL_VSC_LAP",
+  "TRANSITION_INTO_RED_FLAG",
+  "TRANSITION_INTO_SAFETY_CAR",
+  "TRUNCATED_ACTIVE_AT_END",
+  "entry/exit transition laps from ACTIVE pace metric",
+  "pit laps from pace/order/gap metrics",
+  "retirement laps from order metric (retrospective label)",
+  "single-lap runs (NO_FULL_VSC_LAP) from all metrics"
+ ],
+ "metrics": {
+  "duration": "median-duration rule MAE (laps) + calibration slope on validation split (independent H check)",
+  "gap": "steady ACTIVE pairwise-gap-change distribution vs PRE baseline",
+  "order": "steady ACTIVE position-change rate vs PRE baseline",
+  "pace": "MAE of R_cal*base vs actual ACTIVE lap times (seconds, absolute scale)",
+  "pit": "INSUFFICIENT (fail-closed rule instead of metric)",
+  "spread": "ACTIVE/PRE field-spread ratio",
+  "withdrawal": "POST-PRE median pace delta"
+ },
+ "protocol_sha256": "fd710c688c57abaab6e0ac31a7ca8e10a1cf0112bee875dc26cd5b33f9836d1f",
+ "rejection_criteria": [
+  "any of G1-G5 fails on the validation split",
+  "G6/G7/G8 not satisfiable",
+  "duration gate fails => integration blocked (dynamics may still be reported, verdict at most INSUFFICIENT_EVIDENCE)"
+ ],
+ "schema_version": "v3.11d-validation-protocol-v1",
+ "seed_policy": "deterministic replay only; zero stochastic futures in D; no RNG streams created or consumed",
+ "validation": {
+  "aggregation": "episode-macro (each episode equal weight) + pooled driver-lap; both reported",
+  "episodes": "usable validation split (2022-2024), unscored until this protocol froze"
+ }
+}

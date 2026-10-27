@@ -1,0 +1,10 @@
+{
+ "calibration_R": 1.272,
+ "classification": "VSC_REGIME_MODEL_INSUFFICIENT_EVIDENCE",
+ "frozen_base": "v3.10-pit-wall (2c00e7e)",
+ "integration_decision": "INSUFFICIENT_EVIDENCE",
+ "production_effect": "none",
+ "schema_version": "v3.11d-scientific-card-v1",
+ "stage": "V3.11D VSC regime model (research validation)",
+ "validation_mae_s": 9.54
+}

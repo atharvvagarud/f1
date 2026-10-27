@@ -1,0 +1,1588 @@
+{
+ "by_race_id": {
+  "2018-r01-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 46,
+    "TERMINAL": 1,
+    "TRACK": 20
+   },
+   "eligible": 4,
+   "total": 72,
+   "unsupported": 68
+  },
+  "2018-r02-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "MISSING_TYRE": 52,
+    "TERMINAL": 1,
+    "TRACK": 11
+   },
+   "eligible": 0,
+   "total": 65,
+   "unsupported": 65
+  },
+  "2018-r03-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 34
+   },
+   "eligible": 22,
+   "total": 58,
+   "unsupported": 36
+  },
+  "2018-r04-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "MISSING_TYRE": 3,
+    "STALE": 34,
+    "TERMINAL": 1,
+    "TRACK": 19
+   },
+   "eligible": 0,
+   "total": 58,
+   "unsupported": 58
+  },
+  "2018-r05-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 10,
+    "TERMINAL": 1,
+    "TRACK": 12,
+    "WET": 49
+   },
+   "eligible": 0,
+   "total": 73,
+   "unsupported": 73
+  },
+  "2018-r06-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 2,
+    "STALE": 21,
+    "TERMINAL": 1,
+    "TRACK": 8,
+    "WET": 11
+   },
+   "eligible": 43,
+   "total": 86,
+   "unsupported": 43
+  },
+  "2018-r07-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 66,
+    "TERMINAL": 1,
+    "TRACK": 2
+   },
+   "eligible": 0,
+   "total": 70,
+   "unsupported": 70
+  },
+  "2018-r08-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 46,
+    "TERMINAL": 1,
+    "TRACK": 9
+   },
+   "eligible": 0,
+   "total": 57,
+   "unsupported": 57
+  },
+  "2018-r09-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "MISSING_TYRE": 1,
+    "STALE": 55,
+    "TERMINAL": 1,
+    "TRACK": 13
+   },
+   "eligible": 10,
+   "total": 81,
+   "unsupported": 71
+  },
+  "2018-r10-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "MISSING_TYRE": 40,
+    "TERMINAL": 1,
+    "TRACK": 17
+   },
+   "eligible": 0,
+   "total": 59,
+   "unsupported": 59
+  },
+  "2018-r11-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 14,
+    "TERMINAL": 1,
+    "TRACK": 43,
+    "WET": 18
+   },
+   "eligible": 3,
+   "total": 80,
+   "unsupported": 77
+  },
+  "2018-r12-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 63,
+    "TERMINAL": 1,
+    "TRACK": 10
+   },
+   "eligible": 0,
+   "total": 75,
+   "unsupported": 75
+  },
+  "2018-r13-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "MISSING_TYRE": 1,
+    "STALE": 39,
+    "TERMINAL": 2,
+    "TRACK": 2
+   },
+   "eligible": 0,
+   "total": 45,
+   "unsupported": 45
+  },
+  "2018-r14-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 43,
+    "TERMINAL": 1,
+    "TRACK": 5,
+    "WET": 7
+   },
+   "eligible": 0,
+   "total": 57,
+   "unsupported": 57
+  },
+  "2018-r15-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 57,
+    "TERMINAL": 1,
+    "TRACK": 2
+   },
+   "eligible": 0,
+   "total": 61,
+   "unsupported": 61
+  },
+  "2018-r16-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "MISSING_TYRE": 1,
+    "TERMINAL": 1,
+    "TRACK": 2
+   },
+   "eligible": 50,
+   "total": 55,
+   "unsupported": 5
+  },
+  "2018-r17-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "MISSING_TYRE": 1,
+    "STALE": 10,
+    "TERMINAL": 1,
+    "TRACK": 9
+   },
+   "eligible": 35,
+   "total": 57,
+   "unsupported": 22
+  },
+  "2018-r18-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 42,
+    "TERMINAL": 1,
+    "TRACK": 9
+   },
+   "eligible": 10,
+   "total": 63,
+   "unsupported": 53
+  },
+  "2018-r19-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 63,
+    "TERMINAL": 1,
+    "TRACK": 12
+   },
+   "eligible": 5,
+   "total": 82,
+   "unsupported": 77
+  },
+  "2018-r20-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 4
+   },
+   "eligible": 69,
+   "total": 75,
+   "unsupported": 6
+  },
+  "2018-r21-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 46,
+    "TERMINAL": 1,
+    "TRACK": 6,
+    "WET": 3
+   },
+   "eligible": 0,
+   "total": 57,
+   "unsupported": 57
+  },
+  "2019-r01-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 44,
+    "TERMINAL": 1,
+    "TRACK": 2
+   },
+   "eligible": 12,
+   "total": 60,
+   "unsupported": 48
+  },
+  "2019-r02-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 18
+   },
+   "eligible": 52,
+   "total": 72,
+   "unsupported": 20
+  },
+  "2019-r03-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 1
+   },
+   "eligible": 54,
+   "total": 57,
+   "unsupported": 3
+  },
+  "2019-r04-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 9,
+    "TERMINAL": 1,
+    "TRACK": 7
+   },
+   "eligible": 39,
+   "total": 57,
+   "unsupported": 18
+  },
+  "2019-r05-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 14,
+    "TERMINAL": 1,
+    "TRACK": 8
+   },
+   "eligible": 44,
+   "total": 68,
+   "unsupported": 24
+  },
+  "2019-r06-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 2,
+    "TRACK": 13,
+    "WET": 59
+   },
+   "eligible": 12,
+   "total": 87,
+   "unsupported": 75
+  },
+  "2019-r07-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 57,
+    "TERMINAL": 1,
+    "TRACK": 6
+   },
+   "eligible": 9,
+   "total": 74,
+   "unsupported": 65
+  },
+  "2019-r08-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 2,
+    "TRACK": 9
+   },
+   "eligible": 51,
+   "total": 63,
+   "unsupported": 12
+  },
+  "2019-r09-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 69,
+   "total": 71,
+   "unsupported": 2
+  },
+  "2019-r10-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 29,
+    "TERMINAL": 1,
+    "TRACK": 8
+   },
+   "eligible": 18,
+   "total": 57,
+   "unsupported": 39
+  },
+  "2019-r11-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 30,
+    "WET": 52
+   },
+   "eligible": 0,
+   "total": 84,
+   "unsupported": 84
+  },
+  "2019-r12-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 1
+   },
+   "eligible": 67,
+   "total": 70,
+   "unsupported": 3
+  },
+  "2019-r13-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 40,
+    "TERMINAL": 1,
+    "TRACK": 3
+   },
+   "eligible": 0,
+   "total": 45,
+   "unsupported": 45
+  },
+  "2019-r14-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 23,
+    "TERMINAL": 1,
+    "TRACK": 9
+   },
+   "eligible": 27,
+   "total": 61,
+   "unsupported": 34
+  },
+  "2019-r15-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 17,
+    "TERMINAL": 1,
+    "TRACK": 12
+   },
+   "eligible": 33,
+   "total": 64,
+   "unsupported": 31
+  },
+  "2019-r16-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 46,
+    "TERMINAL": 1,
+    "TRACK": 10
+   },
+   "eligible": 0,
+   "total": 58,
+   "unsupported": 58
+  },
+  "2019-r17-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 2
+   },
+   "eligible": 50,
+   "total": 54,
+   "unsupported": 4
+  },
+  "2019-r18-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 2,
+    "TRACK": 3
+   },
+   "eligible": 67,
+   "total": 73,
+   "unsupported": 6
+  },
+  "2019-r19-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 44,
+    "TERMINAL": 1,
+    "TRACK": 3
+   },
+   "eligible": 8,
+   "total": 57,
+   "unsupported": 49
+  },
+  "2019-r20-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 9,
+    "TERMINAL": 1,
+    "TRACK": 13
+   },
+   "eligible": 50,
+   "total": 74,
+   "unsupported": 24
+  },
+  "2019-r21-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 53,
+   "total": 55,
+   "unsupported": 2
+  },
+  "2020-r01-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 38,
+    "TRACK": 26
+   },
+   "eligible": 11,
+   "total": 76,
+   "unsupported": 65
+  },
+  "2020-r02-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 2
+   },
+   "eligible": 67,
+   "total": 71,
+   "unsupported": 4
+  },
+  "2020-r03-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "MISSING_TYRE": 33,
+    "TERMINAL": 1,
+    "TRACK": 7,
+    "WET": 5
+   },
+   "eligible": 32,
+   "total": 79,
+   "unsupported": 47
+  },
+  "2020-r04-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 2,
+    "STALE": 42,
+    "TERMINAL": 1,
+    "TRACK": 13
+   },
+   "eligible": 0,
+   "total": 58,
+   "unsupported": 58
+  },
+  "2020-r05-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 2
+   },
+   "eligible": 50,
+   "total": 54,
+   "unsupported": 4
+  },
+  "2020-r06-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 2
+   },
+   "eligible": 64,
+   "total": 68,
+   "unsupported": 4
+  },
+  "2020-r07-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 30,
+    "TERMINAL": 2,
+    "TRACK": 5
+   },
+   "eligible": 9,
+   "total": 47,
+   "unsupported": 38
+  },
+  "2020-r08-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 27,
+    "TERMINAL": 1,
+    "TRACK": 10
+   },
+   "eligible": 18,
+   "total": 57,
+   "unsupported": 39
+  },
+  "2020-r09-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 50,
+    "TERMINAL": 1,
+    "TRACK": 12
+   },
+   "eligible": 0,
+   "total": 64,
+   "unsupported": 64
+  },
+  "2020-r10-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 48,
+    "TERMINAL": 1,
+    "TRACK": 6
+   },
+   "eligible": 0,
+   "total": 56,
+   "unsupported": 56
+  },
+  "2020-r11-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 37,
+    "TERMINAL": 1,
+    "TRACK": 17
+   },
+   "eligible": 14,
+   "total": 70,
+   "unsupported": 56
+  },
+  "2020-r12-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 64,
+   "total": 66,
+   "unsupported": 2
+  },
+  "2020-r13-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 25,
+    "TERMINAL": 1,
+    "TRACK": 13
+   },
+   "eligible": 29,
+   "total": 69,
+   "unsupported": 40
+  },
+  "2020-r14-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 22,
+    "WET": 57
+   },
+   "eligible": 0,
+   "total": 81,
+   "unsupported": 81
+  },
+  "2020-r15-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 48,
+    "TERMINAL": 1,
+    "TRACK": 10
+   },
+   "eligible": 0,
+   "total": 60,
+   "unsupported": 60
+  },
+  "2020-r16-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 73,
+    "TERMINAL": 1,
+    "TRACK": 19
+   },
+   "eligible": 0,
+   "total": 94,
+   "unsupported": 94
+  },
+  "2020-r17-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 42,
+    "TERMINAL": 1,
+    "TRACK": 5
+   },
+   "eligible": 8,
+   "total": 57,
+   "unsupported": 49
+  },
+  "2021-r01-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 51,
+    "TERMINAL": 1,
+    "TRACK": 4
+   },
+   "eligible": 0,
+   "total": 57,
+   "unsupported": 57
+  },
+  "2021-r02-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 2,
+    "TERMINAL": 1,
+    "TRACK": 18,
+    "WET": 53
+   },
+   "eligible": 0,
+   "total": 74,
+   "unsupported": 74
+  },
+  "2021-r03-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 60,
+    "TERMINAL": 1,
+    "TRACK": 4
+   },
+   "eligible": 1,
+   "total": 67,
+   "unsupported": 66
+  },
+  "2021-r04-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 56,
+    "TERMINAL": 1,
+    "TRACK": 3
+   },
+   "eligible": 6,
+   "total": 67,
+   "unsupported": 61
+  },
+  "2021-r05-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 76,
+   "total": 78,
+   "unsupported": 2
+  },
+  "2021-r06-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 13,
+    "TERMINAL": 1,
+    "TRACK": 17
+   },
+   "eligible": 27,
+   "total": 59,
+   "unsupported": 32
+  },
+  "2021-r07-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 51,
+   "total": 53,
+   "unsupported": 2
+  },
+  "2021-r08-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 69,
+   "total": 71,
+   "unsupported": 2
+  },
+  "2021-r09-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 68,
+    "TERMINAL": 3,
+    "TRACK": 2
+   },
+   "eligible": 0,
+   "total": 74,
+   "unsupported": 74
+  },
+  "2021-r10-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 49,
+    "TERMINAL": 1,
+    "TRACK": 5
+   },
+   "eligible": 0,
+   "total": 56,
+   "unsupported": 56
+  },
+  "2021-r11-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 3,
+    "WET": 66
+   },
+   "eligible": 0,
+   "total": 71,
+   "unsupported": 71
+  },
+  "2021-r12-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TRACK": 1,
+    "WET": 1
+   },
+   "eligible": 0,
+   "total": 3,
+   "unsupported": 3
+  },
+  "2021-r13-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 2
+   },
+   "eligible": 70,
+   "total": 74,
+   "unsupported": 4
+  },
+  "2021-r14-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 2,
+    "STALE": 21,
+    "TERMINAL": 1,
+    "TRACK": 10
+   },
+   "eligible": 25,
+   "total": 59,
+   "unsupported": 34
+  },
+  "2021-r15-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 12,
+    "WET": 8
+   },
+   "eligible": 45,
+   "total": 67,
+   "unsupported": 22
+  },
+  "2021-r16-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 6,
+    "WET": 56
+   },
+   "eligible": 0,
+   "total": 64,
+   "unsupported": 64
+  },
+  "2021-r17-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 5
+   },
+   "eligible": 54,
+   "total": 61,
+   "unsupported": 7
+  },
+  "2021-r18-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 67,
+    "TERMINAL": 1,
+    "TRACK": 2
+   },
+   "eligible": 0,
+   "total": 71,
+   "unsupported": 71
+  },
+  "2021-r19-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 11
+   },
+   "eligible": 65,
+   "total": 78,
+   "unsupported": 13
+  },
+  "2021-r20-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 1,
+    "TERMINAL": 1,
+    "TRACK": 11
+   },
+   "eligible": 54,
+   "total": 68,
+   "unsupported": 14
+  },
+  "2021-r21-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 31,
+    "TERMINAL": 1,
+    "TRACK": 22
+   },
+   "eligible": 8,
+   "total": 63,
+   "unsupported": 55
+  },
+  "2021-r22-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 16,
+    "TERMINAL": 1,
+    "TRACK": 12
+   },
+   "eligible": 36,
+   "total": 66,
+   "unsupported": 30
+  },
+  "2022-r01-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 7,
+    "TERMINAL": 1,
+    "TRACK": 9
+   },
+   "eligible": 45,
+   "total": 63,
+   "unsupported": 18
+  },
+  "2022-r02-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 56
+   },
+   "eligible": 0,
+   "total": 56,
+   "unsupported": 56
+  },
+  "2022-r03-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 50,
+    "TERMINAL": 1,
+    "TRACK": 9
+   },
+   "eligible": 1,
+   "total": 62,
+   "unsupported": 61
+  },
+  "2022-r04-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 5,
+    "WET": 58
+   },
+   "eligible": 0,
+   "total": 65,
+   "unsupported": 65
+  },
+  "2022-r05-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 9,
+    "TERMINAL": 1,
+    "TRACK": 13
+   },
+   "eligible": 39,
+   "total": 63,
+   "unsupported": 24
+  },
+  "2022-r06-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 4
+   },
+   "eligible": 64,
+   "total": 70,
+   "unsupported": 6
+  },
+  "2022-r07-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 2,
+    "MISSING_TYRE": 2,
+    "TRACK": 24,
+    "WET": 61
+   },
+   "eligible": 0,
+   "total": 89,
+   "unsupported": 89
+  },
+  "2022-r08-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 38,
+    "TERMINAL": 2,
+    "TRACK": 9
+   },
+   "eligible": 9,
+   "total": 59,
+   "unsupported": 50
+  },
+  "2022-r09-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 53,
+    "TERMINAL": 1,
+    "TRACK": 13
+   },
+   "eligible": 8,
+   "total": 76,
+   "unsupported": 68
+  },
+  "2022-r10-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 47,
+    "TERMINAL": 1,
+    "TRACK": 7
+   },
+   "eligible": 0,
+   "total": 56,
+   "unsupported": 56
+  },
+  "2022-r11-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "MISSING_TYRE": 31,
+    "TERMINAL": 1,
+    "TRACK": 7
+   },
+   "eligible": 36,
+   "total": 76,
+   "unsupported": 40
+  },
+  "2022-r12-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 31,
+    "TERMINAL": 1,
+    "TRACK": 11
+   },
+   "eligible": 17,
+   "total": 61,
+   "unsupported": 44
+  },
+  "2022-r13-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 2,
+    "TERMINAL": 1,
+    "TRACK": 12,
+    "WET": 18
+   },
+   "eligible": 49,
+   "total": 82,
+   "unsupported": 33
+  },
+  "2022-r14-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 40,
+    "TERMINAL": 2,
+    "TRACK": 3
+   },
+   "eligible": 0,
+   "total": 46,
+   "unsupported": 46
+  },
+  "2022-r15-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 18,
+    "TERMINAL": 1,
+    "TRACK": 17
+   },
+   "eligible": 44,
+   "total": 81,
+   "unsupported": 37
+  },
+  "2022-r16-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 33,
+    "TERMINAL": 1,
+    "TRACK": 11
+   },
+   "eligible": 12,
+   "total": 58,
+   "unsupported": 46
+  },
+  "2022-r17-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TRACK": 24,
+    "WET": 50
+   },
+   "eligible": 0,
+   "total": 75,
+   "unsupported": 75
+  },
+  "2022-r18-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TRACK": 1,
+    "WET": 27
+   },
+   "eligible": 0,
+   "total": 29,
+   "unsupported": 29
+  },
+  "2022-r19-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 33,
+    "TERMINAL": 1,
+    "TRACK": 7
+   },
+   "eligible": 16,
+   "total": 58,
+   "unsupported": 42
+  },
+  "2022-r20-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 3,
+    "TERMINAL": 1,
+    "TRACK": 4
+   },
+   "eligible": 66,
+   "total": 75,
+   "unsupported": 9
+  },
+  "2022-r21-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 57,
+    "TERMINAL": 1,
+    "TRACK": 14
+   },
+   "eligible": 0,
+   "total": 73,
+   "unsupported": 73
+  },
+  "2022-r22-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 3
+   },
+   "eligible": 57,
+   "total": 62,
+   "unsupported": 5
+  },
+  "2023-r01-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 14,
+    "TERMINAL": 1,
+    "TRACK": 4
+   },
+   "eligible": 41,
+   "total": 61,
+   "unsupported": 20
+  },
+  "2023-r02-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 30,
+    "TERMINAL": 1,
+    "TRACK": 4
+   },
+   "eligible": 15,
+   "total": 51,
+   "unsupported": 36
+  },
+  "2023-r03-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 50,
+    "TERMINAL": 1,
+    "TRACK": 10
+   },
+   "eligible": 0,
+   "total": 62,
+   "unsupported": 62
+  },
+  "2023-r04-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 37,
+    "TERMINAL": 1,
+    "TRACK": 7
+   },
+   "eligible": 8,
+   "total": 54,
+   "unsupported": 46
+  },
+  "2023-r05-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 55,
+   "total": 57,
+   "unsupported": 2
+  },
+  "2023-r06-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 17,
+    "WET": 25
+   },
+   "eligible": 51,
+   "total": 95,
+   "unsupported": 44
+  },
+  "2023-r07-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 64,
+   "total": 66,
+   "unsupported": 2
+  },
+  "2023-r08-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "MISSING_TYRE": 33,
+    "STALE": 24,
+    "TERMINAL": 1,
+    "TRACK": 11
+   },
+   "eligible": 7,
+   "total": 77,
+   "unsupported": 70
+  },
+  "2023-r09-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 55,
+    "TERMINAL": 1,
+    "TRACK": 5
+   },
+   "eligible": 11,
+   "total": 73,
+   "unsupported": 62
+  },
+  "2023-r10-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 14,
+    "TERMINAL": 1,
+    "TRACK": 6
+   },
+   "eligible": 31,
+   "total": 53,
+   "unsupported": 22
+  },
+  "2023-r11-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 2
+   },
+   "eligible": 68,
+   "total": 72,
+   "unsupported": 4
+  },
+  "2023-r12-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 35,
+    "TERMINAL": 2,
+    "TRACK": 1,
+    "WET": 5
+   },
+   "eligible": 1,
+   "total": 45,
+   "unsupported": 44
+  },
+  "2023-r13-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 40,
+    "TERMINAL": 1,
+    "TRACK": 13,
+    "WET": 23
+   },
+   "eligible": 0,
+   "total": 78,
+   "unsupported": 78
+  },
+  "2023-r14-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 49,
+   "total": 51,
+   "unsupported": 2
+  },
+  "2023-r15-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 54,
+    "TERMINAL": 2,
+    "TRACK": 15
+   },
+   "eligible": 2,
+   "total": 74,
+   "unsupported": 72
+  },
+  "2023-r16-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 23,
+    "TERMINAL": 1,
+    "TRACK": 8
+   },
+   "eligible": 27,
+   "total": 60,
+   "unsupported": 33
+  },
+  "2023-r17-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 61
+   },
+   "eligible": 0,
+   "total": 61,
+   "unsupported": 61
+  },
+  "2023-r18-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 2
+   },
+   "eligible": 54,
+   "total": 57,
+   "unsupported": 3
+  },
+  "2023-r19-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 35,
+    "TERMINAL": 1,
+    "TRACK": 12
+   },
+   "eligible": 30,
+   "total": 79,
+   "unsupported": 49
+  },
+  "2023-r20-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 68,
+    "TERMINAL": 1,
+    "TRACK": 1
+   },
+   "eligible": 0,
+   "total": 71,
+   "unsupported": 71
+  },
+  "2023-r21-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 40,
+    "TERMINAL": 1,
+    "TRACK": 13
+   },
+   "eligible": 2,
+   "total": 57,
+   "unsupported": 55
+  },
+  "2023-r22-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 56,
+   "total": 58,
+   "unsupported": 2
+  },
+  "2024-r01-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 3
+   },
+   "eligible": 55,
+   "total": 60,
+   "unsupported": 5
+  },
+  "2024-r02-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 41,
+    "TERMINAL": 1,
+    "TRACK": 3
+   },
+   "eligible": 5,
+   "total": 51,
+   "unsupported": 46
+  },
+  "2024-r03-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 38,
+    "TERMINAL": 1,
+    "TRACK": 6
+   },
+   "eligible": 18,
+   "total": 64,
+   "unsupported": 46
+  },
+  "2024-r04-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 52,
+    "TERMINAL": 1,
+    "TRACK": 3
+   },
+   "eligible": 0,
+   "total": 57,
+   "unsupported": 57
+  },
+  "2024-r05-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 26,
+    "TERMINAL": 1,
+    "TRACK": 12
+   },
+   "eligible": 19,
+   "total": 59,
+   "unsupported": 40
+  },
+  "2024-r06-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 25,
+    "TERMINAL": 1,
+    "TRACK": 7
+   },
+   "eligible": 27,
+   "total": 61,
+   "unsupported": 34
+  },
+  "2024-r07-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 61,
+   "total": 63,
+   "unsupported": 2
+  },
+  "2024-r08-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 76,
+    "TERMINAL": 1,
+    "TRACK": 4
+   },
+   "eligible": 1,
+   "total": 83,
+   "unsupported": 82
+  },
+  "2024-r09-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 19,
+    "WET": 54
+   },
+   "eligible": 0,
+   "total": 75,
+   "unsupported": 75
+  },
+  "2024-r10-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "WET": 1
+   },
+   "eligible": 63,
+   "total": 66,
+   "unsupported": 3
+  },
+  "2024-r11-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 6
+   },
+   "eligible": 70,
+   "total": 78,
+   "unsupported": 8
+  },
+  "2024-r12-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "WET": 34
+   },
+   "eligible": 16,
+   "total": 52,
+   "unsupported": 36
+  },
+  "2024-r13-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 2
+   },
+   "eligible": 68,
+   "total": 72,
+   "unsupported": 4
+  },
+  "2024-r14-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 1
+   },
+   "eligible": 41,
+   "total": 44,
+   "unsupported": 3
+  },
+  "2024-r15-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 70,
+   "total": 72,
+   "unsupported": 2
+  },
+  "2024-r16-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 51,
+   "total": 53,
+   "unsupported": 2
+  },
+  "2024-r17-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1,
+    "TRACK": 4
+   },
+   "eligible": 49,
+   "total": 55,
+   "unsupported": 6
+  },
+  "2024-r18-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 60,
+   "total": 62,
+   "unsupported": 2
+  },
+  "2024-r19-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 50,
+    "TERMINAL": 1,
+    "TRACK": 6
+   },
+   "eligible": 1,
+   "total": 59,
+   "unsupported": 58
+  },
+  "2024-r20-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 65,
+    "TERMINAL": 1,
+    "TRACK": 4
+   },
+   "eligible": 0,
+   "total": 71,
+   "unsupported": 71
+  },
+  "2024-r21-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 85
+   },
+   "eligible": 0,
+   "total": 85,
+   "unsupported": 85
+  },
+  "2024-r22-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "TERMINAL": 1
+   },
+   "eligible": 48,
+   "total": 50,
+   "unsupported": 2
+  },
+  "2024-r23-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 47,
+    "TERMINAL": 1,
+    "TRACK": 15
+   },
+   "eligible": 0,
+   "total": 64,
+   "unsupported": 64
+  },
+  "2024-r24-R": {
+   "by_reason": {
+    "MISSING_DRIVER": 1,
+    "STALE": 56,
+    "TERMINAL": 2,
+    "TRACK": 6
+   },
+   "eligible": 1,
+   "total": 66,
+   "unsupported": 65
+  }
+ },
+ "schema_version": "v3.11a-race-distribution-v1"
+}

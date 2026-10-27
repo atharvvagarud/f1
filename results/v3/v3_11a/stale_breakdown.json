@@ -1,0 +1,104 @@
+{
+ "age_probe_agreement": {
+  "max_abs_diff_within_1s": 0.05,
+  "n_mismatch_gt_1s": 0,
+  "n_within_1s": 7977,
+  "note": "Probe recomputes T - max(D9 state_time_s <= T); agreement proves the probe mirrors frozen sync semantics and consumes no future rows."
+ },
+ "age_probe_mismatches": [],
+ "mass_clock_reset_states": 196,
+ "multi_offender_states": 2306,
+ "n_states": 3294,
+ "offender_count_dist": {
+  "1": 988,
+  "18": 1,
+  "19": 12,
+  "2": 1028,
+  "3": 751,
+  "4": 285,
+  "5": 149,
+  "6": 25,
+  "7": 42,
+  "8": 12,
+  "9": 1
+ },
+ "schema_version": "v3.11a-stale-breakdown-v1",
+ "single_offender_states": 988,
+ "stale_shape_dist": {
+  "INDIVIDUAL_DISAPPEARANCE": 3047,
+  "MASS_CLOCK_RESET_SUSPECTED": 196,
+  "TIMING_GAP": 51
+ },
+ "taxonomy_note": "Frozen STALE has ONE stale dimension: per-driver D9-row observation_age_s = T - observed_time_s versus 3.0 expected lap times (engine.contemporaneous_roster_offenders). No per-field TYRE/TRACK/WEATHER freshness gate exists in frozen eligibility; multi-cause overlap is carried by blocking_conditions.",
+ "threshold_s": {
+  "count": 7977,
+  "max": 336.6,
+  "median": 267.7,
+  "p75": 295.4,
+  "p90": 323.4,
+  "p95": 330.8,
+  "p99": 336.6
+ },
+ "top_offender_drivers": [
+  [
+   "ocon",
+   518
+  ],
+  [
+   "kevin_magnussen",
+   505
+  ],
+  [
+   "leclerc",
+   445
+  ],
+  [
+   "sainz",
+   418
+  ],
+  [
+   "max_verstappen",
+   414
+  ],
+  [
+   "stroll",
+   406
+  ],
+  [
+   "perez",
+   403
+  ],
+  [
+   "hulkenberg",
+   378
+  ],
+  [
+   "tsunoda",
+   365
+  ],
+  [
+   "albon",
+   345
+  ],
+  [
+   "alonso",
+   336
+  ],
+  [
+   "ricciardo",
+   331
+  ],
+  [
+   "bottas",
+   328
+  ],
+  [
+   "gasly",
+   288
+  ],
+  [
+   "russell",
+   269
+  ]
+ ]
+}

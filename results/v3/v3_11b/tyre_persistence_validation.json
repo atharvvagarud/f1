@@ -1,0 +1,15 @@
+{
+ "Y1_same_stint_states": "0/4",
+ "Y2_boundary_states": "0/4",
+ "Y3_runtime_causality": "specified runtime procedure reads only state_time_s <= T rows; next-compound labels used offline only (this script); no default/inferred/strategy compound anywhere (poison-pinned in tests/test_v3_11b_reconstruction.py)",
+ "Y4_offline_label_note": "informative only: next native compounds exist >T but must never enter runtime logic",
+ "criteria_met": {
+  "Y1": false,
+  "Y2": false,
+  "Y3": true
+ },
+ "protocol_sha256": "5849607042825ca6d31e049e880b3ddde8b693b5c739e2182268021acfa357ef",
+ "schema_version": "v3.11b-tyre-persistence-validation-v1",
+ "verdict": "REJECTED",
+ "verdict_note": "Rejected: no testable R2 instance (0/4 states carry any prior <=T compound). Broader validation on non-R2 states would serve zero B transitions and is out of scope per \u00a715."
+}

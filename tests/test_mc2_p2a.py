@@ -398,6 +398,10 @@ def _p2a_counts():
         "tests/test_perf_mc2_p0.py",
         "tests/test_v2_phase5_r7.py",
         "tests/test_v3_2i_status_models.py",
+        # V3.11F reconciliation (freeze): narrow stale-guard repair of
+        # the time-bound V3.9 HEAD pin (tag pin kept; ancestry asserted
+        # with equal strength; frozen science untouched).
+        "tests/test_v3_10b_workspace_ownership.py",
     }
     counts["P2A-P29"] = sum(1 for f in diff if f not in allowed_tracked)
     counts["P2A-P30"] = sum(

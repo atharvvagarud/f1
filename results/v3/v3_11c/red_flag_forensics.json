@@ -1,0 +1,31 @@
+{
+ "conclusion": "RED/RESTART requires dedicated suspension semantics (tyre-change rules, reset effects, new-race restart); remains unsupported by design. No reconstruction across red attempted in C.",
+ "mass_clock_reset_link": "196 V3.11A MASS_CLOCK_RESET states concentrate in red-flag races (2020-r09-R x48 etc.); suspension freezes the session clock while wall/lap clocks reset -- reconstruction across the boundary is discontinuity-bridging and forbidden",
+ "post_red_clock_gap_s": {
+  "count": 20,
+  "max": 7708.8,
+  "median": 1491.1
+ },
+ "rc_red_flags": 27,
+ "red_intervals": 21,
+ "red_races": [
+  "2020-r08-R",
+  "2020-r09-R",
+  "2020-r15-R",
+  "2021-r02-R",
+  "2021-r06-R",
+  "2021-r10-R",
+  "2021-r11-R",
+  "2021-r12-R",
+  "2021-r21-R",
+  "2022-r10-R",
+  "2022-r18-R",
+  "2023-r03-R",
+  "2023-r13-R",
+  "2023-r19-R",
+  "2023-r20-R",
+  "2024-r04-R",
+  "2024-r21-R"
+ ],
+ "schema_version": "v3.11c-red-forensics-v1"
+}

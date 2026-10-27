@@ -1,0 +1,8 @@
+{
+ "green_prediction_outputs_changed": false,
+ "green_rng_streams_changed": false,
+ "method": "research model lives in scripts/v3_11d_vsc_model.py (stdlib only); production kernel/adapter/presence byte-identical; GREEN suites re-run in \u00a740",
+ "production_diff_empty": true,
+ "production_diff_paths": [],
+ "schema_version": "v3.11d-green-parity-v1"
+}

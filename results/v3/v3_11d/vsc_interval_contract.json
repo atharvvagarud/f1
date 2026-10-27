@@ -1,0 +1,17 @@
+{
+ "activation_tokens": [
+  "vsc"
+ ],
+ "continuation_tokens": [
+  "vsc"
+ ],
+ "equality_semantics": "lap-end clock: token at state_time_s == T is observable at T (last-char rule); activation >T invisible; withdrawal >T invisible until observed",
+ "green_return": "all_clear following vsc_ending (59/62) or directly following vsc (13/82)",
+ "pre_first_message": "UNKNOWN, never GREEN by default",
+ "provenance": "V3.11C track-source forensics (token-run intervals; no VSC RC category exists)",
+ "schema_version": "v3.11d-interval-contract-v1",
+ "scope": "research input (episode construction + replay anchoring); NOT production eligibility",
+ "withdrawal_tokens": [
+  "vsc_ending"
+ ]
+}

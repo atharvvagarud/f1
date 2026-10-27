@@ -1,0 +1,5 @@
+{
+ "note": "projection only if ACCEPTED_FOR_INTEGRATION; otherwise skipped per \u00a733",
+ "schema_version": "v3.11d-projected-v1",
+ "status": "NOT_APPLICABLE_MODEL_NOT_ACCEPTED"
+}

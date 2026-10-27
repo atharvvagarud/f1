@@ -1,0 +1,52 @@
+{
+ "bar_met": false,
+ "d_comparison_in_lap_count": 73,
+ "full_loss_bar": "out N>=15 AND in N>=30 AND in-lap median CI width <= 5s (primary scope)",
+ "method": "D in-lap method replicated exactly (1.28 documented ratio); out-lap marginals added (pit_out_s in window + token vsc)",
+ "primary_usable29": {
+  "in_lap": {
+   "count": 73,
+   "max": 18.12,
+   "mean": -1.45,
+   "median": -0.08,
+   "p25": -8.77,
+   "p75": 5.37,
+   "p90": 10.58
+  },
+  "in_lap_median_ci_width_s": 7.29,
+  "out_lap": {
+   "count": 7,
+   "max": 26.94,
+   "mean": 22.76,
+   "median": 23.43,
+   "p25": 22.0,
+   "p75": 25.21,
+   "p90": 26.66
+  }
+ },
+ "protocol_sha256": "b298c0a395e02f13b02f6703bd2c5d03ba52f058924723e0e09b09adbfd88d63",
+ "question": "EQ6",
+ "schema_version": "v3.11e-pit-evidence-v1",
+ "secondary_all_nontruncated": {
+  "in_lap": {
+   "count": 163,
+   "max": 26.38,
+   "mean": -3.06,
+   "median": -4.31,
+   "p25": -10.21,
+   "p75": 4.01,
+   "p90": 10.58
+  },
+  "note": "diagnostic; exit type does not contaminate the VSC token run itself",
+  "out_lap": {
+   "count": 14,
+   "max": 26.94,
+   "mean": 18.7,
+   "median": 17.62,
+   "p25": 14.78,
+   "p75": 23.15,
+   "p90": 25.72
+  }
+ },
+ "verdict": "PIT_LOSS_INSUFFICIENT_EVIDENCE"
+}

@@ -1,0 +1,14 @@
+{
+ "decision": "STOP_V3_11_COVERAGE_EXPANSION",
+ "existing_production_mc2_canonical": true,
+ "no_further_coverage_stage_authorized": true,
+ "programme": "V3.11 MC2 Coverage Expansion",
+ "red_restart_research_authorized": false,
+ "sc_research_authorized": false,
+ "schema_version": "v3.11f-terminal-v1",
+ "scientific_reason": "insufficient evidence, not refutation (VSC plausible; gap/spread/duration/pit underpowered; zero dimensions refuted)",
+ "terminal": true,
+ "vsc_production_integration_authorized": false,
+ "wet_research_authorized": false,
+ "yellow_research_authorized": false
+}

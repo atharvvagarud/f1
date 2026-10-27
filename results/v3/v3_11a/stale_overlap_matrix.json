@@ -1,0 +1,23 @@
+{
+ "blocker_sets_for_stale_primary": {
+  "STALE_ROSTER_OBSERVATION": 3294
+ },
+ "finding": "All 3294 final-STALE states carry STALE alone (green, dry, observed, tyred at probe granularity); stale offenders additionally coexist in 1740 harder-blocked states (TRACK/WET/TYRE/TERMINAL primaries take precedence). Summing per-field recovery opportunities without unique-state accounting would double-count these 1740.",
+ "methodology_caveat": "blocking_conditions STALE appears only when the adapter succeeded (sim_state built); adapter-blocked (MISSING_DRIVER) states cannot show STALE overlap by construction of the frozen V3.2F probe.",
+ "n_states": 3294,
+ "non_stale_primary_with_stale_offenders": 1740,
+ "schema_version": "v3.11a-stale-overlap-matrix-v1",
+ "stale_offender_cooccurrence_by_final_primary": {
+  "MISSING_TYRE": 192,
+  "STALE": 3294,
+  "TERMINAL": 145,
+  "TRACK": 788,
+  "WET": 615
+ },
+ "stale_offenders_anywhere_total": 5034,
+ "stale_only": 3294,
+ "with_terminal": 0,
+ "with_track": 0,
+ "with_tyre": 0,
+ "with_wet": 0
+}

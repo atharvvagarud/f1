@@ -1,0 +1,85 @@
+{
+ "label": "HISTORICAL DYNAMICS VALIDATION (not counterfactual accuracy)",
+ "pace_basis": "R_cal * 95s nominal green lap (order/gap comparison only; absolute times not scored)",
+ "replays": [
+  {
+   "anchor_lap": 14,
+   "episode": "2018-r09-R#vsc5",
+   "order_agreement": [
+    0.889,
+    0.444
+   ],
+   "rank_presence": [
+    0.889,
+    0.444
+   ],
+   "state_id": "2018-r09-R:269"
+  },
+  {
+   "anchor_lap": 15,
+   "episode": "2020-r11-R#vsc6",
+   "order_agreement": [
+    0.562
+   ],
+   "rank_presence": [
+    0.692
+   ],
+   "state_id": "2020-r11-R:294"
+  },
+  {
+   "anchor_lap": 2,
+   "episode": "2019-r18-R#vsc0",
+   "order_agreement": [
+    1.0,
+    0.8
+   ],
+   "rank_presence": [
+    1.0,
+    0.8
+   ],
+   "state_id": "2019-r18-R:20"
+  },
+  {
+   "anchor_lap": 11,
+   "episode": "2021-r19-R#vsc3",
+   "order_agreement": [
+    1.0,
+    0.895
+   ],
+   "rank_presence": [
+    1.0,
+    0.895
+   ],
+   "state_id": "2021-r19-R:219"
+  },
+  {
+   "anchor_lap": 14,
+   "episode": "2023-r09-R#vsc3",
+   "order_agreement": [
+    0.818,
+    0.455
+   ],
+   "rank_presence": [
+    0.818,
+    0.455
+   ],
+   "state_id": "2023-r09-R:260"
+  },
+  {
+   "anchor_lap": 47,
+   "episode": "2022-r15-R#vsc10",
+   "order_agreement": [
+    1.0,
+    1.0
+   ],
+   "rank_presence": [
+    1.0,
+    1.0
+   ],
+   "state_id": "2022-r15-R:912"
+  }
+ ],
+ "schema_version": "v3.11d-replay-v1",
+ "selection_rule": "first secondary-free VSC anchor per usable episode, max 6 (deterministic, not cherry-picked)",
+ "stochastic_futures_run": 0
+}

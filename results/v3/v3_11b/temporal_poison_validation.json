@@ -1,0 +1,12 @@
+{
+ "analysis_script_causality": "v3_11b_timing_gap.py / v3_11b_tyre.py look up prior rows via searchsorted(T, side='right')-1; next-native rows are labelled OFFLINE ONLY and never feed a runtime decision (no runtime decision exists)",
+ "future_pit_consumed": 0,
+ "future_retirement_consumed": 0,
+ "future_timing_consumed": 0,
+ "future_track_consumed": 0,
+ "future_tyre_consumed": 0,
+ "next_observation_temptation": "H-T1's TIMING_GAP shape (reappearance known only via future) is exactly the backfill temptation \u00a733 warns about; the rejection blocks it by construction",
+ "schema_version": "v3.11b-temporal-poison-v1",
+ "scope": "no runtime reconstruction procedure exists in B (all rules rejected); poison obligations attach to the analysis specifications, pinned in tests/test_v3_11b_reconstruction.py",
+ "verdict": "PASS (nothing to poison; frozen-path poison suites re-run in \u00a740)"
+}

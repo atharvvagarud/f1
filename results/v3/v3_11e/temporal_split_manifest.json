@@ -1,0 +1,670 @@
+{
+ "counts": {
+  "calibration|usable=False": 27,
+  "calibration|usable=True": 16,
+  "validation|usable=False": 26,
+  "validation|usable=True": 13
+ },
+ "episodes": [
+  {
+   "episode_id": "2018-r01-R#vsc14",
+   "exclusion": "TRANSITION_INTO_SAFETY_CAR",
+   "race_id": "2018-r01-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2018-r02-R#vsc1",
+   "exclusion": null,
+   "race_id": "2018-r02-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2018-r05-R#vsc3",
+   "exclusion": null,
+   "race_id": "2018-r05-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2018-r06-R#vsc7",
+   "exclusion": null,
+   "race_id": "2018-r06-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2018-r08-R#vsc5",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2018-r08-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2018-r09-R#vsc5",
+   "exclusion": null,
+   "race_id": "2018-r09-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2018-r12-R#vsc2",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2018-r12-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2018-r12-R#vsc5",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2018-r12-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2018-r14-R#vsc0",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2018-r14-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2018-r17-R#vsc6",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2018-r17-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2018-r18-R#vsc5",
+   "exclusion": null,
+   "race_id": "2018-r18-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2018-r19-R#vsc2",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2018-r19-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2018-r19-R#vsc6",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2018-r19-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2018-r19-R#vsc11",
+   "exclusion": null,
+   "race_id": "2018-r19-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2018-r21-R#vsc2",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2018-r21-R",
+   "season": 2018,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2019-r03-R#vsc0",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2019-r03-R",
+   "season": 2019,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2019-r04-R#vsc8",
+   "exclusion": null,
+   "race_id": "2019-r04-R",
+   "season": 2019,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2019-r08-R#vsc8",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2019-r08-R",
+   "season": 2019,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2019-r11-R#vsc4",
+   "exclusion": null,
+   "race_id": "2019-r11-R",
+   "season": 2019,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2019-r11-R#vsc10",
+   "exclusion": null,
+   "race_id": "2019-r11-R",
+   "season": 2019,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2019-r14-R#vsc7",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2019-r14-R",
+   "season": 2019,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2019-r14-R#vsc11",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2019-r14-R",
+   "season": 2019,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2019-r16-R#vsc3",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2019-r16-R",
+   "season": 2019,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2019-r18-R#vsc0",
+   "exclusion": null,
+   "race_id": "2019-r18-R",
+   "season": 2019,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2020-r10-R#vsc2",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2020-r10-R",
+   "season": 2020,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2020-r11-R#vsc6",
+   "exclusion": null,
+   "race_id": "2020-r11-R",
+   "season": 2020,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2020-r13-R#vsc3",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2020-r13-R",
+   "season": 2020,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2020-r14-R#vsc3",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2020-r14-R",
+   "season": 2020,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2020-r16-R#vsc3",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2020-r16-R",
+   "season": 2020,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2020-r16-R#vsc7",
+   "exclusion": "NO_FULL_VSC_LAP;TRANSITION_INTO_SAFETY_CAR",
+   "race_id": "2020-r16-R",
+   "season": 2020,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2020-r17-R#vsc2",
+   "exclusion": "TRANSITION_INTO_SAFETY_CAR",
+   "race_id": "2020-r17-R",
+   "season": 2020,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2021-r01-R#vsc2",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2021-r01-R",
+   "season": 2021,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2021-r14-R#vsc0",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2021-r14-R",
+   "season": 2021,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2021-r14-R#vsc11",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2021-r14-R",
+   "season": 2021,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2021-r17-R#vsc2",
+   "exclusion": null,
+   "race_id": "2021-r17-R",
+   "season": 2021,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2021-r19-R#vsc3",
+   "exclusion": null,
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2021-r19-R#vsc6",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2021-r19-R",
+   "season": 2021,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2021-r20-R#vsc11",
+   "exclusion": null,
+   "race_id": "2021-r20-R",
+   "season": 2021,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2021-r21-R#vsc8",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2021-r21-R",
+   "season": 2021,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2021-r21-R#vsc11",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2021-r21-R",
+   "season": 2021,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2021-r21-R#vsc14",
+   "exclusion": null,
+   "race_id": "2021-r21-R",
+   "season": 2021,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2021-r21-R#vsc17",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2021-r21-R",
+   "season": 2021,
+   "split": "calibration",
+   "usable": false
+  },
+  {
+   "episode_id": "2021-r22-R#vsc5",
+   "exclusion": null,
+   "race_id": "2021-r22-R",
+   "season": 2021,
+   "split": "calibration",
+   "usable": true
+  },
+  {
+   "episode_id": "2022-r01-R#vsc5",
+   "exclusion": "TRANSITION_INTO_SAFETY_CAR",
+   "race_id": "2022-r01-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2022-r02-R#vsc5",
+   "exclusion": null,
+   "race_id": "2022-r02-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": true
+  },
+  {
+   "episode_id": "2022-r03-R#vsc6",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2022-r03-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2022-r05-R#vsc3",
+   "exclusion": "NO_FULL_VSC_LAP;TRANSITION_INTO_SAFETY_CAR",
+   "race_id": "2022-r05-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2022-r07-R#vsc20",
+   "exclusion": "NO_FULL_VSC_LAP;TRANSITION_INTO_SAFETY_CAR",
+   "race_id": "2022-r07-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2022-r08-R#vsc2",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2022-r08-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2022-r08-R#vsc7",
+   "exclusion": null,
+   "race_id": "2022-r08-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": true
+  },
+  {
+   "episode_id": "2022-r09-R#vsc2",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2022-r09-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2022-r09-R#vsc5",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2022-r09-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2022-r11-R#vsc4",
+   "exclusion": null,
+   "race_id": "2022-r11-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": true
+  },
+  {
+   "episode_id": "2022-r12-R#vsc12",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2022-r12-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2022-r13-R#vsc1",
+   "exclusion": null,
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": true
+  },
+  {
+   "episode_id": "2022-r13-R#vsc11",
+   "exclusion": null,
+   "race_id": "2022-r13-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": true
+  },
+  {
+   "episode_id": "2022-r15-R#vsc10",
+   "exclusion": null,
+   "race_id": "2022-r15-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": true
+  },
+  {
+   "episode_id": "2022-r16-R#vsc2",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2022-r16-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2022-r17-R#vsc6",
+   "exclusion": null,
+   "race_id": "2022-r17-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": true
+  },
+  {
+   "episode_id": "2022-r17-R#vsc10",
+   "exclusion": null,
+   "race_id": "2022-r17-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": true
+  },
+  {
+   "episode_id": "2022-r17-R#vsc14",
+   "exclusion": null,
+   "race_id": "2022-r17-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": true
+  },
+  {
+   "episode_id": "2022-r20-R#vsc2",
+   "exclusion": null,
+   "race_id": "2022-r20-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": true
+  },
+  {
+   "episode_id": "2022-r21-R#vsc5",
+   "exclusion": "TRANSITION_INTO_SAFETY_CAR",
+   "race_id": "2022-r21-R",
+   "season": 2022,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2023-r01-R#vsc3",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2023-r01-R",
+   "season": 2023,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2023-r03-R#vsc5",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2023-r03-R",
+   "season": 2023,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2023-r08-R#vsc2",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2023-r08-R",
+   "season": 2023,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2023-r09-R#vsc3",
+   "exclusion": null,
+   "race_id": "2023-r09-R",
+   "season": 2023,
+   "split": "validation",
+   "usable": true
+  },
+  {
+   "episode_id": "2023-r10-R#vsc1",
+   "exclusion": "NO_FULL_VSC_LAP;TRANSITION_INTO_SAFETY_CAR",
+   "race_id": "2023-r10-R",
+   "season": 2023,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2023-r13-R#vsc5",
+   "exclusion": "NO_FULL_VSC_LAP;TRANSITION_INTO_RED_FLAG",
+   "race_id": "2023-r13-R",
+   "season": 2023,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2023-r15-R#vsc6",
+   "exclusion": null,
+   "race_id": "2023-r15-R",
+   "season": 2023,
+   "split": "validation",
+   "usable": true
+  },
+  {
+   "episode_id": "2023-r16-R#vsc4",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2023-r16-R",
+   "season": 2023,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2023-r19-R#vsc2",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2023-r19-R",
+   "season": 2023,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2023-r21-R#vsc0",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2023-r21-R",
+   "season": 2023,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2024-r03-R#vsc2",
+   "exclusion": null,
+   "race_id": "2024-r03-R",
+   "season": 2024,
+   "split": "validation",
+   "usable": true
+  },
+  {
+   "episode_id": "2024-r03-R#vsc6",
+   "exclusion": "TRUNCATED_ACTIVE_AT_END",
+   "race_id": "2024-r03-R",
+   "season": 2024,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2024-r05-R#vsc2",
+   "exclusion": "TRANSITION_INTO_SAFETY_CAR",
+   "race_id": "2024-r05-R",
+   "season": 2024,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2024-r06-R#vsc1",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2024-r06-R",
+   "season": 2024,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2024-r11-R#vsc5",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2024-r11-R",
+   "season": 2024,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2024-r17-R#vsc4",
+   "exclusion": "TRUNCATED_ACTIVE_AT_END",
+   "race_id": "2024-r17-R",
+   "season": 2024,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2024-r21-R#vsc9",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2024-r21-R",
+   "season": 2024,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2024-r23-R#vsc11",
+   "exclusion": "NO_FULL_VSC_LAP;TRANSITION_INTO_SAFETY_CAR",
+   "race_id": "2024-r23-R",
+   "season": 2024,
+   "split": "validation",
+   "usable": false
+  },
+  {
+   "episode_id": "2024-r24-R#vsc1",
+   "exclusion": "NO_FULL_VSC_LAP",
+   "race_id": "2024-r24-R",
+   "season": 2024,
+   "split": "validation",
+   "usable": false
+  }
+ ],
+ "schema_version": "v3.11e-split-manifest-v1",
+ "source": "results/v3/v3_11d/vsc_episode_dataset.csv (frozen, read-only)",
+ "split_changed": false,
+ "split_rule": "calibration = season <= 2021; validation = season >= 2022 (D split retained)"
+}

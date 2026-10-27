@@ -1,0 +1,36 @@
+{
+ "by_regime_secondary_free": {
+  "RED": {
+   "ceiling_eligible": 3681,
+   "ceiling_fraction": 0.3817,
+   "states": 3
+  },
+  "SC": {
+   "ceiling_eligible": 3744,
+   "ceiling_fraction": 0.3882,
+   "states": 66
+  },
+  "VSC": {
+   "ceiling_eligible": 3719,
+   "ceiling_fraction": 0.3856,
+   "states": 41
+  },
+  "YELLOW": {
+   "ceiling_eligible": 3801,
+   "ceiling_fraction": 0.3941,
+   "states": 123
+  }
+ },
+ "combined_secondary_free": {
+  "ceiling_eligible": 3911,
+  "ceiling_fraction": 0.4055,
+  "states": 233
+ },
+ "current": {
+  "eligible": 3678,
+  "fraction": 0.3814,
+  "total": 9644
+ },
+ "label": "DIAGNOSTIC ARITHMETIC CEILING, NOT EXPECTED PRODUCTION COVERAGE",
+ "schema_version": "v3.11c-ceilings-v1"
+}

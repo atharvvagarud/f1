@@ -1,0 +1,23 @@
+{
+ "ceiling": {
+  "eligible": 3792,
+  "fraction": 0.3932,
+  "total": 9644
+ },
+ "decomposition": {
+  "NULL_TRACK": 59,
+  "TIMING_GAP": 51,
+  "TYRE_STINT": 4
+ },
+ "decomposition_exact_per_A": true,
+ "prose_discrepancy": {
+  "explanation": "39.91% corresponds to 3849 = 3678+171, an intermediate V3.11A run predating the mass-clock-reset refinement (r2_alone was 171 before the 196 MASS_CLOCK_RESET states were moved R2->R4). Final machine artifacts (recovery_classification.json, recovery_ceilings.json) say 114 -> 3792/9644 = 39.32%. Machine-readable unique-state arithmetic governs.",
+  "machine_authoritative": 0.3932,
+  "v3_11a_artifacts_rewritten": false,
+  "v3_11a_prose_claim": 0.3991
+ },
+ "r2_unique_states": 114,
+ "registry": "results/v3/v3_11b/r2_candidate_registry.json",
+ "registry_sha256": "f8e0c565e681eebc9554f14a5085ca0b3a6ed29abace14de037638a626e9e38a",
+ "schema_version": "v3.11b-candidate-reconciliation-v1"
+}

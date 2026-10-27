@@ -1,0 +1,30 @@
+{
+ "excess_bands": {
+  "0_30s_beyond": 46,
+  "120_600s_beyond": 876,
+  "30_120s_beyond": 134,
+  "600_1800s_beyond": 2465,
+  "at_or_below_threshold": 0,
+  "gt_1800s_beyond": 4456
+ },
+ "excess_beyond_threshold_s": {
+  "count": 7977,
+  "max": 9945.3,
+  "median": 2066.5,
+  "p75": 3476.3,
+  "p90": 4618.68,
+  "p95": 5327.2,
+  "p99": 7076.3
+ },
+ "offender_age_s": {
+  "count": 7977,
+  "max": 10232.7,
+  "median": 2336.4,
+  "p75": 3749.8,
+  "p90": 4906.1,
+  "p95": 5595.94,
+  "p99": 7326.9
+ },
+ "schema_version": "v3.11a-stale-age-distribution-v1",
+ "threshold_scale_note": "Threshold is dynamic: 3.0 x base_pace_s (median 267.7s). Bands are excess-beyond-threshold seconds."
+}

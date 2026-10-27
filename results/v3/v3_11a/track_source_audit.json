@@ -1,0 +1,24 @@
+{
+ "conclusion": "No source fusion implemented in A; interval reconstruction from causal sources is the V3.11B candidate.",
+ "schema_version": "v3.11a-track-source-audit-v1",
+ "sources": {
+  "d9_track_state": {
+   "coverage": "present except null pre-first-message rows",
+   "domain": "D9 lap-end clock (D6 session time, unchanged)",
+   "persists_until_changed": "YES (race-control semantics)",
+   "semantics": "per-lap last-char FastF1 TrackStatus mapping; codes 1/2/4/5/6/7; no LOCAL vs FULL course"
+  },
+  "event_intervals": {
+   "coverage": "all 149 races in coverage_opportunity_raw.episodes",
+   "domain": "offline run-length episodes over D9 frame",
+   "persists_until_changed": "YES by construction (offline)",
+   "semantics": "modal token per state_time_s (V3.2F audit)"
+  },
+  "race_control_messages": {
+   "coverage": "2018-2024 fetched; 2022 via FastF1 mirror",
+   "domain": "session clock HH:MM:SS.mmm (V3.2J clock audit)",
+   "persists_until_changed": "NEEDS_RESEARCH",
+   "semantics": "Retired/status delta feed; unreliable windows pinned"
+  }
+ }
+}

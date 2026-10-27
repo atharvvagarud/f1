@@ -33,7 +33,37 @@ N_FREEZE_TESTS = 28
 # (test_v3_10b_workspace_ownership.py + test_v3_10f_telemetry.py; no MC2
 # execution, no corpus dependence added).
 N_V3_10_TESTS = 10
-EXPECTED_COLLECTED = 5148 + N_FREEZE_TESTS + N_V3_10_TESTS
+# V3.11A reconciliation: 22 forensics guard tests
+# (tests/test_v3_11a_forensics.py: baseline/identity/stale/track/driver/
+# tyre/terminal forensics, recovery ceilings, temporal poison, read-only
+# firewall; no MC2 execution, no corpus dependence added).
+N_V3_11A_TESTS = 22
+# V3.11B reconciliation: 21 reconstruction-validation guard tests
+# (tests/test_v3_11b_reconstruction.py: registry/protocol/verdicts,
+# timing/tyre rejections, parity, eligibility, poison/boundaries; no MC2
+# execution, no corpus dependence added).
+N_V3_11B_TESTS = 21
+# V3.11C reconciliation: 21 track-forensics guard tests
+# (tests/test_v3_11c_track_forensics.py: TRACK baseline, NULL semantics,
+# persistence boundaries, exposure taxonomy, ledger, ceilings, poison,
+# read-only firewall; no MC2 execution, no corpus dependence added).
+N_V3_11C_TESTS = 21
+# V3.11D reconciliation: 18 VSC-model guard tests
+# (tests/test_v3_11d_vsc_model.py: interval/model/pace/gap/order/pit/RNG/
+# secondary/poison/verdict guards; no MC2 execution, no corpus dependence
+# added).
+N_V3_11D_TESTS = 18
+# V3.11E reconciliation: 21 evidence-resolution guard tests
+# (tests/test_v3_11e_evidence_resolution.py: protocol/duration/gap/spread/
+# ending/pit/poison/parity/verdict/integrity guards; no MC2 execution,
+# no corpus dependence added).
+N_V3_11E_TESTS = 21
+# V3.11F reconciliation: 16 programme-freeze guard tests
+# (tests/test_v3_11f_freeze.py: registry/coverage/terminal/parity/
+# provenance/navigation/manifest guards; no MC2 execution, no corpus
+# dependence added).
+N_V3_11F_TESTS = 16
+EXPECTED_COLLECTED = 5148 + N_FREEZE_TESTS + N_V3_10_TESTS + N_V3_11A_TESTS + N_V3_11B_TESTS + N_V3_11C_TESTS + N_V3_11D_TESTS + N_V3_11E_TESTS + N_V3_11F_TESTS
 
 
 def _git(*args):

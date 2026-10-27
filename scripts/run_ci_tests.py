@@ -188,7 +188,19 @@ CORPUS_MANIFEST = Path(__file__).resolve().parent / "ci_corpus_dependent.txt"
 # tests/test_v3_10b_workspace_ownership.py (workspace ownership) and
 # tests/test_v3_10f_telemetry.py (read-only telemetry API firewall;
 # no MC2 execution, no corpus dependence added), with no removals = 5186.
-EXPECTED_COLLECTED = 5186
+# V3.11D VSC regime model: 18 added tests in
+# tests/test_v3_11d_vsc_model.py (interval/model/pace/gap/order/pit/RNG/
+# secondary/poison/verdict guards; no MC2 execution, no corpus dependence
+# added), with no removals = 5268.
+# V3.11E VSC evidence resolution: 21 added tests in
+# tests/test_v3_11e_evidence_resolution.py (protocol/duration/gap/spread/
+# ending/pit/poison/parity/verdict/integrity guards; no MC2 execution,
+# no corpus dependence added), with no removals = 5289.
+# V3.11F programme freeze: 16 added tests in
+# tests/test_v3_11f_freeze.py (registry/coverage/terminal/parity/
+# provenance/navigation/manifest guards; no MC2 execution, no corpus
+# dependence added), with no removals = 5305.
+EXPECTED_COLLECTED = 5305
 
 # (pytest node id, reason it cannot pass at the frozen baseline)
 # P11-1: the 12 pre-existing stale historical pins were genuinely corrected

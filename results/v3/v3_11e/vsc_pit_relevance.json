@@ -1,0 +1,74 @@
+{
+ "EQ1_mapping": "B HOLDS: MC2 builds a forward kernel from T and steps laps beyond factual time; A holds only for anchoring/replay AT T",
+ "EQ7_relevance": "pit semantics MANDATORY: MC2 samples pit targets and applies pit losses forward from T; no T-knowable pit-free scope exists without predicting future pits",
+ "markers": {
+  "engine_event_trace": {
+   "file": "raceintel/simulation/engine.py",
+   "lines": [
+    658,
+    817
+   ],
+   "needle": "_trace_event",
+   "present": true
+  },
+  "engine_forward_stepping": {
+   "file": "raceintel/simulation/engine.py",
+   "lines": [
+    630,
+    799,
+    822
+   ],
+   "needle": "_schedule_next",
+   "present": true
+  },
+  "engine_pit_state": {
+   "file": "raceintel/simulation/engine.py",
+   "lines": [
+    596,
+    621,
+    769
+   ],
+   "needle": "pit_count",
+   "present": true
+  },
+  "mc_pit_select": {
+   "file": "raceintel/simulation/monte_carlo.py",
+   "lines": [
+    1172
+   ],
+   "needle": "def select_pit_parameters",
+   "present": true
+  },
+  "mc_pit_set": {
+   "file": "raceintel/simulation/monte_carlo.py",
+   "lines": [
+    1143
+   ],
+   "needle": "class PitParameterSet",
+   "present": true
+  },
+  "params_pit_loss": {
+   "file": "raceintel/simulation/params.py",
+   "lines": [
+    100
+   ],
+   "needle": "pit_effective_loss_s",
+   "present": true
+  },
+  "params_pit_penalties": {
+   "file": "raceintel/simulation/params.py",
+   "lines": [
+    102
+   ],
+   "needle": "pit_in_lap_penalty_s",
+   "present": true
+  }
+ },
+ "mc2_simulates_pits_forward": true,
+ "mc2_steps_beyond_T": true,
+ "method": "read-only text search of frozen MC2 sources (no import, no execution, no modification)",
+ "protocol_sha256": "b298c0a395e02f13b02f6703bd2c5d03ba52f058924723e0e09b09adbfd88d63",
+ "question": "EQ1/EQ7",
+ "schema_version": "v3.11e-pit-relevance-v1",
+ "verdict": "PIT_MANDATORY_BLOCKER_RETAINED"
+}

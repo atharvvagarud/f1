@@ -1,0 +1,13 @@
+{
+ "failure_cause": "HEAD == V39_COMMIT half of the assertion: time-bound to the V3.9 freeze instant; legitimate frozen V3.10 history extended HEAD to 2c00e7e (V39 commit is an ancestor)",
+ "genuinely_stale": true,
+ "intended_pin": "V3.9 freeze provenance: tag commit identity",
+ "invariant_preserved": "moved tag or rewritten history still fails; legitimate extension passes",
+ "pinned_commit": "fb0d8d8772bdc1343bc6be6c5ff9ee68cddd7203",
+ "repair": "replaced HEAD-equality with merge-base --is-ancestor (history preserved + extended, not rewritten); tag pin kept verbatim",
+ "schema_version": "v3.11f-v39-v1",
+ "tag_commit_observed": "fb0d8d8772bdc1343bc6be6c5ff9ee68cddd7203",
+ "tag_unmoved": true,
+ "test": "tests/test_v3_10b_workspace_ownership.py::test_v39_freeze_provenance_unchanged",
+ "weakened": false
+}

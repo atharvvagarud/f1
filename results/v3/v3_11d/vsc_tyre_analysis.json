@@ -1,0 +1,5 @@
+{
+ "finding": "NO_MODIFICATION: stints/compounds continue through VSC in D9 (no forced changes); lap-based age advances identically under VSC and green",
+ "mc2_mechanism": "engine.expected_lap_time_s degrades by next_age (lap-count based); laps increment normally under VSC; no pace-coupled tyre term exists in frozen MC2",
+ "schema_version": "v3.11d-tyre-v1"
+}

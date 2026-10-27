@@ -1,0 +1,13 @@
+{
+ "finding": "immediate return toward green pace; transient quantified for the transition rule",
+ "post_minus_pre_median_s": {
+  "count": 422,
+  "max": 21.98,
+  "mean": 1.1,
+  "median": 0.12,
+  "p25": -0.94,
+  "p75": 2.44,
+  "p90": 7.13
+ },
+ "schema_version": "v3.11d-withdrawal-v1"
+}

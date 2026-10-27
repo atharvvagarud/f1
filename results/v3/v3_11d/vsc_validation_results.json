@@ -1,0 +1,35 @@
+{
+ "all_required_pass": false,
+ "calibration": {
+  "R_mean": 1.276,
+  "R_median": 1.272,
+  "driver_laps": 178,
+  "episodes": 16
+ },
+ "gates": {
+  "G1_pace": true,
+  "G2_gap": false,
+  "G3_order": true,
+  "G4_spread": false,
+  "G5_withdrawal": true,
+  "G6_pit_fail_closed": true,
+  "G7_causality": true,
+  "G8_green_parity": true
+ },
+ "model_version": "vsc-research-v1",
+ "protocol_sha256": "fd710c688c57abaab6e0ac31a7ca8e10a1cf0112bee875dc26cd5b33f9836d1f",
+ "sample_adequacy_note": "G2/G4 validation evidence rests on tiny contributing sets (~20 gap pairs over 2-3 episodes; ~2-3 spread episodes): full-sample descriptives pass the same thresholds (steady gap median 0.66, spread ratio ~1.01), so the split failures reflect small-N instability, not refutation.",
+ "schema_version": "v3.11d-validation-results-v1",
+ "validation": {
+  "episodes": 13,
+  "gap_baseline_median_s": 0.4,
+  "gap_steady_median_s": 1.06,
+  "gap_steady_p90_s": 2.85,
+  "order_steady_rate": 0.0469,
+  "pace_mae_episode_macro_s": 9.22,
+  "pace_mae_pooled_s": 9.54,
+  "spread_ratio_median": 1.418,
+  "validation_ratio_median": 1.3154,
+  "withdrawal_post_minus_pre_median_s": 0.28
+ }
+}

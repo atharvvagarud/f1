@@ -1,0 +1,24 @@
+{
+ "all_required_pass": false,
+ "audit_wall_s": 1.3,
+ "duration_blocks_integration": true,
+ "gates": {
+  "G1_pace": true,
+  "G2_gap": false,
+  "G3_order": true,
+  "G4_spread": false,
+  "G5_withdrawal": true,
+  "G6_pit_fail_closed": true,
+  "G7_causality": true,
+  "G8_green_parity": true
+ },
+ "integration_decision": "INSUFFICIENT_EVIDENCE",
+ "protocol_sha256": "fd710c688c57abaab6e0ac31a7ca8e10a1cf0112bee875dc26cd5b33f9836d1f",
+ "schema_version": "v3.11d-validation-v1",
+ "stochastic_futures_run": 0,
+ "verdict_meaning": {
+  "ACCEPTED_FOR_INTEGRATION": "all gates pass",
+  "INSUFFICIENT_EVIDENCE": "gate failures confined to underpowered dimensions and/or duration blocking; no refutation",
+  "REJECTED": "decisive dynamics refutation"
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "candidate": 9644,
+ "classification": "REPRODUCED",
+ "coverage": 0.3814,
+ "eligible": 3678,
+ "exact": true,
+ "expected": {
+  "candidate": 9644,
+  "eligible": 3678,
+  "reasons": {
+   "MISSING_DRIVER_OBSERVATION": 354,
+   "MISSING_TYRE_STATE": 198,
+   "STALE_ROSTER_OBSERVATION": 3294,
+   "TERMINAL_STATE": 154,
+   "UNSUPPORTED_TRACK_STATE": 1165,
+   "WET_CONDITIONS": 801
+  },
+  "unsupported": 5966
+ },
+ "invariant_sum": 5966,
+ "provenance": {
+  "catalogue": "results/v3/v3_2n/final_eligibility_catalogue.json",
+  "catalogue_corpus_hash": "368ec94f90ac265f5dd231078b123ffc61796655b15665da618ada4942b334c0",
+  "frozen_tag": "v3.10-pit-wall"
+ },
+ "reason_counts": {
+  "MISSING_DRIVER_OBSERVATION": 354,
+  "MISSING_TYRE_STATE": 198,
+  "STALE_ROSTER_OBSERVATION": 3294,
+  "TERMINAL_STATE": 154,
+  "UNSUPPORTED_TRACK_STATE": 1165,
+  "WET_CONDITIONS": 801
+ },
+ "schema_version": "v3.11a-baseline-reproduction-v1",
+ "unsupported": 5966
+}

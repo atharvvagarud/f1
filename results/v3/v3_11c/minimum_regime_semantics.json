@@ -1,0 +1,32 @@
+{
+ "RED_RESTART": {
+  "restart_grid_formation": "REQUIRED",
+  "support_recommendation": "UNKNOWN (likely not justifiable; remains unsupported by design unless dedicated semantics built)",
+  "suspension_and_clock_reset_semantics": "REQUIRED",
+  "tyre_change_rules": "REQUIRED"
+ },
+ "SC": {
+  "duration_model": "REQUIRED",
+  "field_compression_and_queue_order": "REQUIRED",
+  "leader_reference": "OPTIONAL_REFINEMENT",
+  "pit_effects_under_sc": "REQUIRED",
+  "restart_release_mechanics": "REQUIRED",
+  "sc_pace_and_no_overtake": "REQUIRED"
+ },
+ "VSC": {
+  "duration_and_withdrawal_model": "REQUIRED",
+  "gap_preservation_rule": "REQUIRED",
+  "global_delta_time_pace": "REQUIRED",
+  "overtaking_restrictions": "OPTIONAL_REFINEMENT",
+  "pit_loss_under_vsc": "REQUIRED"
+ },
+ "YELLOW": {
+  "affected_driver_pace_effect": "REQUIRED",
+  "duration_model": "OPTIONAL_REFINEMENT",
+  "global_penalty": "UNKNOWN (evidence rejects: local-only)",
+  "overtaking_constraints_under_yellow": "REQUIRED",
+  "sector_geometry_and_driver_exposure_mapping": "REQUIRED"
+ },
+ "label": "questions, not assumptions; REQUIRED = needed for any defensible support",
+ "schema_version": "v3.11c-minimum-semantics-v1"
+}

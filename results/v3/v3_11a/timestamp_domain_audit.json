@@ -1,0 +1,18 @@
+{
+ "conclusion": "No offset/restart/rounding defect evidenced; boundary shapes are genuine observation absence at T, not clock errors. No repair in A.",
+ "conversions": "D6 lap-end session time carried unchanged into D9 state_time_s (d9schema); no timezone/wall-clock use",
+ "defects_found_requiring_repair": 0,
+ "domains": {
+  "driver_observed_time_s": "own latest D9 row <= T (never future)",
+  "race_control_clock": "HH:MM:SS.mmm session origin == D9 origin (V3.2J clock audit); exact <= T match",
+  "replay_state_time_s": "anchor_state_time_s == RaceState.state_time_s (asserted equal); D9 lap-end clock from D6 session time",
+  "scheduled_laps": "PRE_RACE D5 races entity (not a clock)",
+  "weather_observed_at_s": "wx_observed_at_s + wx_age_s in D9"
+ },
+ "quantified_boundary_shapes": {
+  "frame0_states_unsupported": 149,
+  "missing_driver_frame0": 149,
+  "null_track_early_lap1": 6
+ },
+ "schema_version": "v3.11a-timestamp-domain-audit-v1"
+}

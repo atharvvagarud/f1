@@ -1,0 +1,13 @@
+{
+ "activation_eq_T": "VSC visible (lap-end equality semantics)",
+ "activation_gt_T": "invisible",
+ "activation_lt_T": "VSC visible (causal)",
+ "nearest_transition": "absent",
+ "schema_version": "v3.11d-boundary-v1",
+ "vsc_to_green": "immediate return (validated G5)",
+ "vsc_to_red": "FAIL CLOSED (refuse)",
+ "vsc_to_sc": "FAIL CLOSED (refuse)",
+ "withdrawal_eq_T": "GREEN visible",
+ "withdrawal_gt_T": "invisible until observed",
+ "withdrawal_lt_T": "GREEN visible"
+}

@@ -1,0 +1,46 @@
+{
+ "DUR1_sample": true,
+ "DUR2_calibration": false,
+ "DUR3_sharpness": true,
+ "hit_rate_80": 0.581,
+ "interval_width_s": {
+  "count": 62,
+  "max": 139.88,
+  "mean": 115.04,
+  "median": 120.42,
+  "p25": 100.96,
+  "p75": 139.88,
+  "p90": 139.88
+ },
+ "median_ae_s": 56.9,
+ "method": "D1 conditional-survival queries at elapsed marks; validation complete episodes active at mark",
+ "n_scored_queries": 62,
+ "n_unevaluable_queries": 0,
+ "per_mark": {
+  "120.0": {
+   "hit_rate_80": 0.364,
+   "median_ae_s": 37.6,
+   "n_queries": 11
+  },
+  "30.0": {
+   "hit_rate_80": 0.71,
+   "median_ae_s": 61.2,
+   "n_queries": 31
+  },
+  "60.0": {
+   "hit_rate_80": 0.5,
+   "median_ae_s": 56.9,
+   "n_queries": 20
+  }
+ },
+ "protocol_sha256": "b298c0a395e02f13b02f6703bd2c5d03ba52f058924723e0e09b09adbfd88d63",
+ "query_marks_s": [
+  30.0,
+  60.0,
+  120.0
+ ],
+ "refutation": "NOT_APPLICABLE (feasibility question)",
+ "schema_version": "v3.11e-duration-validation-v1",
+ "stochastic_futures_run": 0,
+ "verdict": "UNDERPOWERED"
+}

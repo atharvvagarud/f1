@@ -1,0 +1,6 @@
+{
+ "decision": "PRESERVE_FROZEN (no evidence VSC pace alters hazard; VSC laps are few; no retirement dynamics in MC2)",
+ "disappearances_at_pre": 9,
+ "disappearances_during_active": 27,
+ "schema_version": "v3.11d-retirement-v1"
+}

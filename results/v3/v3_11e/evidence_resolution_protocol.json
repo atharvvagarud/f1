@@ -1,0 +1,140 @@
+{
+ "d_protocol_sha256": "fd710c688c57abaab6e0ac31a7ca8e10a1cf0112bee875dc26cd5b33f9836d1f",
+ "declared_before_scoring": true,
+ "duration_protocol": {
+  "candidates": {
+   "D0": "refuse future VSC continuation (control; confirms blocker)",
+   "D1": "empirical global duration distribution (Kaplan-Meier; remaining via conditional survival)",
+   "D2": "conditional model ONLY if N_cal_complete >= 50 AND covariates from predeclared set {elapsed VSC time at T} plus circuit class only if >= 3 circuits have >= 10 complete durations each"
+  },
+  "censoring": {
+   "END_OF_DATA": "right-censored at observed length",
+   "SC_RED_exits": "complete for primary endpoint; competing for GREEN-return endpoint",
+   "single_lap": "complete short durations (informative)"
+  },
+  "endpoint_primary": "time to VSC-token exit in seconds (any exit cause)",
+  "endpoint_secondary": "time to GREEN return (SC/RED exits as competing risks; descriptive only)",
+  "hypotheses": {
+   "A": "no duration prediction needed: runtime advances under VSC only while causal state remains VSC",
+   "B": "simulation beyond factual T needs future VSC duration: explicit duration handling required",
+   "C": "stochastic duration distribution fitted from history"
+  },
+  "mapping_rule": "A holds only for anchoring/replay AT factual T; B holds iff MC2 steps beyond T under VSC (verified by reading frozen MC2 engine stepping, no modification); C is the candidate under test",
+  "metrics": [
+   "median absolute error on remaining duration",
+   "80% interval hit rate (calibration)",
+   "interval width distribution"
+  ],
+  "question": "EQ1/EQ2",
+  "remaining_duration_queries": "elapsed marks {30, 60, 120}s post-activation on episodes active at the mark",
+  "success_DUR1_sample": "N_cal_complete >= 30 AND N_val_complete >= 10",
+  "success_DUR2_calibration": "80% interval hit rate on validation in [0.6, 1.0]",
+  "success_DUR3_sharpness": "median AE on remaining duration <= 90s (one racing lap: larger errors misplace green-return by >= 1 lap at ~25s/lap pace delta)",
+  "verdicts": {
+   "SUPPORTED": "DUR1 AND DUR2 AND DUR3",
+   "UNDERPOWERED": "otherwise (duration feasibility is not refutable from these data; refutation NOT_APPLICABLE)"
+  }
+ },
+ "ending_policy": {
+  "DISTINCT_TRANSITION_DYNAMICS": "N >= 20 AND (MAE > 10.0s OR |median_ratio - 1.272| > 0.10)",
+  "INSUFFICIENT_EVIDENCE": "N_ending_driver_laps < 20",
+  "SAME_DYNAMICS": "MAE <= 10.0s (D G1 bar) AND N_ending_driver_laps >= 20; ending laps then join ACTIVE windows for gap/spread construction only",
+  "consequence_if_not_same": "D behavior retained (ending excluded); no silent merge",
+  "quarantine": "vsc_ending laps excluded from all ACTIVE windows until EQ5 resolves",
+  "test": "pooled MAE of frozen R_cal=1.272 on ending-lap driver laps (same driver-PRE base method as D)"
+ },
+ "evidence_questions": {
+  "EQ1": "Is future VSC duration required by MC2 once simulation advances beyond factual T?",
+  "EQ2": "Can remaining VSC duration at T be represented without future leakage and with enough fidelity?",
+  "EQ3": "Does legitimate sample construction resolve the gap gate (D thresholds unchanged)?",
+  "EQ4": "Does legitimate sample construction resolve the spread gate (D thresholds unchanged)?",
+  "EQ5": "Is VSC_ENDING dynamically equivalent to ACTIVE VSC?",
+  "EQ6": "Did defensible pit-loss evidence improve over D?",
+  "EQ7": "Is pit semantics still a mandatory blocker?"
+ },
+ "forbidden_inputs": [
+  "season=2025 rows (outside the frozen D frame)",
+  "any rewriting of A/B/C/D artifacts",
+  "future withdrawal/duration/message/state in runtime semantics",
+  "coverage percentage as any gate"
+ ],
+ "frozen_base": "v3.10-pit-wall (2c00e7e)",
+ "gap_protocol": {
+  "REFUTED": "episodes >= 5 AND 95% CI lower bound of median > 1.0s",
+  "SUPPORTED": "point gate passes AND contributing validation episodes >= 5 AND 95% CI upper bound of median <= 1.0s",
+  "UNDERPOWERED": "episodes < 5 OR CI wider (without confident violation)",
+  "construction": "D windows + conditional ending-lap inclusion (only if EQ5 == SAME_DYNAMICS); validation split only",
+  "question": "EQ3",
+  "thresholds_unchanged": "median <= 1.0s AND p90 <= 3.0s",
+  "uncertainty": "episode-cluster bootstrap percentile CI, B=2000, seed=7"
+ },
+ "mandatory_gates": [
+  "pace",
+  "gap",
+  "spread",
+  "order",
+  "withdrawal",
+  "duration",
+  "pit",
+  "poison",
+  "parity",
+  "fail_closed"
+ ],
+ "minimum_evidence": "per-dimension N bars above; effective N = contributing episodes (primary); pairs/laps reported as observations, never as independent N",
+ "no_coverage_gate": true,
+ "permitted_datasets": [
+  "data/v2/processed/driver_lap_state_d9/season=2018..2024 (same corpus as D; season=2025 excluded: outside D frame)",
+  "results/v3/v3_11d/vsc_episode_dataset.csv (frozen intervals; read-only)",
+  "results/v3/v3_11d/*.json (frozen D evidence; read-only)",
+  "results/v3/v3_11a/unsupported_state_ledger.json (read-only; secondary-blocker accounting only)"
+ ],
+ "pit_protocol": {
+  "full_loss_bar": "out-lap marginal N >= 15 AND in-lap N >= 30 AND median 95% CI width <= 5s",
+  "primary_scope": "usable-29 episodes (D scope)",
+  "question": "EQ6/EQ7",
+  "relevance_gate": "read frozen MC2 engine for forward pit mechanics; if MC2 simulates pit stops forward from T, pit semantics stay mandatory (no T-knowable pit-free scope exists without predicting pits)",
+  "secondary_scope": "all non-truncated intervals (reported separately; exit type does not contaminate the VSC token run itself)",
+  "verdict_if_bar_missed": "PIT_LOSS_INSUFFICIENT_EVIDENCE retained (fail-closed stands)"
+ },
+ "predecessors": {
+  "V3.11A": "MC2_COVERAGE_FORENSICS_COMPLETE",
+  "V3.11B": "CAUSAL_STATE_RECONSTRUCTION_REJECTED",
+  "V3.11C": "TRACK_SOURCE_REGIME_FORENSICS_COMPLETE",
+  "V3.11D": "VSC_REGIME_MODEL_INSUFFICIENT_EVIDENCE"
+ },
+ "protocol_sha256": "b298c0a395e02f13b02f6703bd2c5d03ba52f058924723e0e09b09adbfd88d63",
+ "retained_dimensions": {
+  "hard_refutation_bounds": "MAE > 15.0 OR order > 0.30 OR |withdrawal| > 10.0 (D bounds)",
+  "order_G3": "re-verify rate <= 0.15 on validation",
+  "pace_G1": "re-verify MAE <= 10.0s on validation with frozen R_cal=1.272 (no refit)",
+  "withdrawal_G5": "re-verify |median| <= 5.0s on validation"
+ },
+ "schema_version": "v3.11e-evidence-protocol-v1",
+ "spread_protocol": {
+  "REFUTED": "episodes >= 5 AND 95% CI entirely outside [0.8, 1.25]",
+  "SUPPORTED": "point in band AND contributing validation episodes >= 5 AND 95% CI within [0.7, 1.4]",
+  "UNDERPOWERED": "episodes < 5 OR CI wider",
+  "construction": "D episode metric (mean ACTIVE / mean PRE, >=10-row rule) + conditional ending-lap inclusion; validation split only; no calibration mixing",
+  "question": "EQ4",
+  "thresholds_unchanged": "episode-median ratio in [0.8, 1.25]",
+  "uncertainty": "episode-cluster bootstrap percentile CI, B=2000, seed=7"
+ },
+ "stage": "V3.11E VSC evidence resolution",
+ "stochastic_policy": "0 MC2 stochastic futures; bootstrap is deterministic given recorded seed",
+ "temporal_split": "D split retained unchanged: calibration seasons <= 2021, validation seasons >= 2022; all E scoring on validation unless a dimension protocol states otherwise",
+ "terminal_criteria": {
+  "A_VSC_EVIDENCE_RESOLVED": "every mandatory gate SUPPORTED",
+  "B_VSC_EVIDENCE_STILL_INSUFFICIENT": "any mandatory UNDERPOWERED and none REFUTED -> STOP V3.11 coverage expansion",
+  "C_VSC_EVIDENCE_REFUTED": "any mandatory REFUTED -> STOP V3.11 coverage expansion",
+  "D_VSC_EVIDENCE_BLOCKED": "analysis incompletable"
+ },
+ "uncertainty_method": "episode-cluster bootstrap (resample episodes), B=2000, seed=7, percentile CI; offline resampling only (not MC2 futures)",
+ "window_rules_retained_from_d": [
+  "entry lap always dropped; exit lap dropped iff direct vsc->all_clear withdrawal (rule v2)",
+  "PRE = up to 3 all_clear laps before start_s; POST = up to 3 laps after exit_lap",
+  "clean() = finite positive lap_time_s and no pit_in_s/out_s",
+  "spread lap needs >= 10 clean same-token rows",
+  "pit/retirement laps excluded per metric",
+  "SC/red-adjacent runs excluded at episode level"
+ ]
+}

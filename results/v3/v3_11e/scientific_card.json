@@ -1,0 +1,13 @@
+{
+ "classification": "VSC_EVIDENCE_STILL_INSUFFICIENT",
+ "frozen_base": "v3.10-pit-wall (2c00e7e)",
+ "production_effect": "none",
+ "protocol_sha256": "b298c0a395e02f13b02f6703bd2c5d03ba52f058924723e0e09b09adbfd88d63",
+ "retained_d_support": {
+  "order": "SUPPORTED",
+  "pace": "SUPPORTED",
+  "withdrawal": "SUPPORTED"
+ },
+ "schema_version": "v3.11e-scientific-card-v1",
+ "stage": "V3.11E VSC evidence resolution"
+}

@@ -1,0 +1,16 @@
+{
+ "interval_tokens": {
+  "None": 6,
+  "all_clear": 547,
+  "red_flag": 21,
+  "safety_car": 119,
+  "vsc": 82,
+  "vsc_ending": 62,
+  "yellow": 418
+ },
+ "intervals": 1255,
+ "method": "offline run-length over modal D9 token per state_time_s; pre-first-observation run stays None/UNKNOWN; no runtime use",
+ "races": 149,
+ "races_with_pre_first_unknown_run": 6,
+ "schema_version": "v3.11c-interval-analysis-v1"
+}

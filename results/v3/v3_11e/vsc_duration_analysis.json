@@ -1,0 +1,201 @@
+{
+ "D0_refuse": "control: refuse future VSC continuation; always available, confirms blocker",
+ "D1_empirical": {
+  "empirical_median_s": 58.240999999999985,
+  "km_table": [
+   [
+    0.0,
+    1.0
+   ],
+   [
+    0.0,
+    0.9767
+   ],
+   [
+    4.52,
+    0.9535
+   ],
+   [
+    5.703,
+    0.9302
+   ],
+   [
+    7.838,
+    0.907
+   ],
+   [
+    13.023,
+    0.8837
+   ],
+   [
+    13.26,
+    0.8605
+   ],
+   [
+    13.515,
+    0.8372
+   ],
+   [
+    21.733,
+    0.814
+   ],
+   [
+    22.553,
+    0.7907
+   ],
+   [
+    23.543,
+    0.7674
+   ],
+   [
+    25.493,
+    0.7442
+   ],
+   [
+    28.583,
+    0.7209
+   ],
+   [
+    28.786,
+    0.6977
+   ],
+   [
+    30.075,
+    0.6744
+   ],
+   [
+    32.447,
+    0.6512
+   ],
+   [
+    34.151,
+    0.6279
+   ],
+   [
+    38.059,
+    0.6047
+   ],
+   [
+    41.766,
+    0.5814
+   ],
+   [
+    45.154,
+    0.5581
+   ],
+   [
+    50.366,
+    0.5349
+   ],
+   [
+    57.443,
+    0.5116
+   ],
+   [
+    58.241,
+    0.4884
+   ],
+   [
+    69.286,
+    0.4651
+   ],
+   [
+    70.319,
+    0.4419
+   ],
+   [
+    76.847,
+    0.4186
+   ],
+   [
+    86.815,
+    0.3953
+   ],
+   [
+    110.887,
+    0.3721
+   ],
+   [
+    113.858,
+    0.3488
+   ],
+   [
+    118.552,
+    0.3256
+   ],
+   [
+    120.201,
+    0.3023
+   ],
+   [
+    133.726,
+    0.2791
+   ],
+   [
+    141.823,
+    0.2558
+   ],
+   [
+    148.107,
+    0.2326
+   ],
+   [
+    151.113,
+    0.2093
+   ],
+   [
+    152.699,
+    0.186
+   ],
+   [
+    155.524,
+    0.1628
+   ],
+   [
+    156.047,
+    0.1395
+   ],
+   [
+    161.15,
+    0.1163
+   ],
+   [
+    162.106,
+    0.093
+   ],
+   [
+    174.031,
+    0.0698
+   ],
+   [
+    177.808,
+    0.0465
+   ],
+   [
+    204.345,
+    0.0233
+   ],
+   [
+    394.453,
+    0.0
+   ]
+  ],
+  "method": "Kaplan-Meier on calibration intervals (competing exits complete for primary endpoint; END_OF_DATA right-censored)",
+  "n_censored": 0,
+  "n_complete": 43,
+  "n_fit": 43
+ },
+ "D2_conditional": {
+  "allowed": false,
+  "circuit_class_allowed": false,
+  "circuit_class_reason": ">= 3 circuits with >= 10 complete durations required; observed 0",
+  "covariate_set_if_allowed": [
+   "elapsed VSC time at T"
+  ],
+  "fitted": false,
+  "note": "D2 not constructed unless predeclared bars pass; bars evaluated here from counts only",
+  "reason": "N_cal_complete >= 50 required; observed 43"
+ },
+ "protocol_sha256": "b298c0a395e02f13b02f6703bd2c5d03ba52f058924723e0e09b09adbfd88d63",
+ "schema_version": "v3.11e-duration-analysis-v1"
+}

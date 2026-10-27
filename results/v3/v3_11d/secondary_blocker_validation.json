@@ -1,0 +1,13 @@
+{
+ "in_usable_episodes": 11,
+ "note": "diagnostic readiness only; no eligibility effect in D",
+ "other_blockers_preserved": [
+  "STALE",
+  "WET",
+  "MISSING_DRIVER",
+  "MISSING_TYRE",
+  "TERMINAL"
+ ],
+ "schema_version": "v3.11d-secondary-v1",
+ "vsc_secondary_free_anchors": 41
+}

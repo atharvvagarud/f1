@@ -1,0 +1,117 @@
+{
+ "blockers": {
+  "duration": {
+   "d_result": "FAIL (integration blocked on duration)",
+   "finding": "median-duration rule is a single-value predictor: calibration slope unidentifiable and H measured slope 2.61 (outside [0.5,1.5]) on the same data-generating process with 55 episodes; 82 intervals do not change the identifiability structure (p50 ~1 lap, heavy right tail). Duration remains the integration blocker (confirms H).",
+   "gate": "median-duration predictor; calibration slope in [0.5, 1.5] AND MAE <= 1.0 lap on validation split",
+   "median_duration_s": 69.3,
+   "n_intervals": 80,
+   "on_failure": "duration remains the integration blocker (confirms H); no duration component fitted"
+  },
+  "gap": {
+   "adequacy": "G2/G4 validation evidence rests on tiny contributing sets (~20 gap pairs over 2-3 episodes; ~2-3 spread episodes): full-sample descriptives pass the same thresholds (steady gap median 0.66, spread ratio ~1.01), so the split failures reflect small-N instability, not refutation.",
+   "full_sample_count": 69,
+   "full_sample_median_s": 0.66,
+   "gate": "G2_gap",
+   "threshold": "steady ACTIVE gap-change median <= 1.0s AND p90 <= 3.0s (~2x PRE baseline 0.42/1.53)",
+   "validation_median_s": 1.06,
+   "validation_p90_s": 2.85
+  },
+  "pit": {
+   "out_lap_note": "out-lap marginals n=7 (protocol text)",
+   "v3_status": "EXCLUDED at protocol time: pit-loss evidence insufficient (out-lap marginals n=7); fail-closed where pit events are relevant",
+   "vsc_pit_lap_count": 73
+  },
+  "spread": {
+   "full_sample_active_count": 13,
+   "gate": "G4_spread",
+   "threshold": "ACTIVE/PRE spread median ratio in [0.8, 1.25]",
+   "validation_ratio_median": 1.418
+  }
+ },
+ "d_classification": "VSC_REGIME_MODEL_INSUFFICIENT_EVIDENCE",
+ "d_integration_decision": "INSUFFICIENT_EVIDENCE",
+ "d_protocol_sha256": "fd710c688c57abaab6e0ac31a7ca8e10a1cf0112bee875dc26cd5b33f9836d1f",
+ "d_supported_dimensions": {
+  "order_steady_rate": 0.0469,
+  "pace_mae_macro_s": 9.22,
+  "pace_mae_pooled_s": 9.54,
+  "withdrawal_median_s": 0.28
+ },
+ "d_validation_values": {
+  "episodes": 13,
+  "gap_baseline_median_s": 0.4,
+  "gap_steady_median_s": 1.06,
+  "gap_steady_p90_s": 2.85,
+  "order_steady_rate": 0.0469,
+  "pace_mae_episode_macro_s": 9.22,
+  "pace_mae_pooled_s": 9.54,
+  "spread_ratio_median": 1.418,
+  "validation_ratio_median": 1.3154,
+  "withdrawal_post_minus_pre_median_s": 0.28
+ },
+ "ending_treatment_in_d": {
+  "micro_scope": "noted but refused post-hoc in D",
+  "policy": "vsc_ending laps excluded from ACTIVE windows; withdrawal onset marker only (rule v2)"
+ },
+ "episodes": {
+  "exclusions": {
+   "NO_FULL_VSC_LAP": 46,
+   "TRANSITION_INTO_RED_FLAG": 1,
+   "TRANSITION_INTO_SAFETY_CAR": 10,
+   "TRUNCATED_ACTIVE_AT_END": 2
+  },
+  "n_intervals": 82,
+  "quality_rule": "v2 token-semantic (drop entry; drop exit iff direct vsc->all_clear withdrawal)",
+  "strict_interior_usable": 11,
+  "unusable": 53,
+  "usable": 29
+ },
+ "frozen_parameters": {
+  "R_cal": 1.272,
+  "R_mean": 1.276,
+  "calibration_driver_laps": 178,
+  "note": "E reuses R_cal frozen; E does not refit pace"
+ },
+ "gates": {
+  "G1_pace": {
+   "d_result": true,
+   "definition": "validation MAE <= 10.0s (H-comparable absolute gate; decontaminated windows)"
+  },
+  "G2_gap": {
+   "d_result": false,
+   "definition": "steady ACTIVE gap-change median <= 1.0s AND p90 <= 3.0s (~2x PRE baseline 0.42/1.53)"
+  },
+  "G3_order": {
+   "d_result": true,
+   "definition": "steady ACTIVE change rate <= 15% (PRE baseline bound 14.4%)"
+  },
+  "G4_spread": {
+   "d_result": false,
+   "definition": "ACTIVE/PRE spread median ratio in [0.8, 1.25]"
+  },
+  "G5_withdrawal": {
+   "d_result": true,
+   "definition": "|POST-PRE median| <= 5.0s (immediate green return)"
+  },
+  "G6_pit_fail_closed": {
+   "d_result": true,
+   "definition": "rule specified: refuse VSC simulation crossing pit events under VSC (no validated loss model)"
+  },
+  "G7_causality": {
+   "d_result": true,
+   "definition": "interval semantics causal (C contract); poison-pinned; deterministic"
+  },
+  "G8_green_parity": {
+   "d_result": true,
+   "definition": "GREEN path byte-identical (isolation + frozen suites green)"
+  }
+ },
+ "schema_version": "v3.11e-blocker-registry-v1",
+ "temporal_split": {
+  "calibration": "seasons 2018-2021",
+  "usable_calibration_episodes": 16,
+  "usable_validation_episodes": 13,
+  "validation": "seasons 2022-2024"
+ }
+}

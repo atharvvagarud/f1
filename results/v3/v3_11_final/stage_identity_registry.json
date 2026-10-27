@@ -1,0 +1,60 @@
+{
+ "schema_version": "v3.11f-stage-registry-v1",
+ "stages": {
+  "A": {
+   "classification": "MC2_COVERAGE_FORENSICS_COMPLETE",
+   "doc": "docs/V3_11A_MC2_COVERAGE_FORENSICS.md",
+   "production_effect": "none (diagnostic artifacts only)",
+   "protocol_sha256": null,
+   "protocol_source": "no predeclared protocol stage",
+   "result_root": "results/v3/v3_11a",
+   "scientific_card": "results/v3/v3_11a/scientific_card.json",
+   "scientific_card_sha256": "24a0945625ce02e82856a797ec24155a74fe5c276744e9bc3c3da277947b5843",
+   "stage": "V3.11A"
+  },
+  "B": {
+   "classification": "CAUSAL_STATE_RECONSTRUCTION_REJECTED",
+   "doc": "docs/V3_11B_CAUSAL_STATE_RECONSTRUCTION.md",
+   "production_effect": "none",
+   "protocol_sha256": "5849607042825ca6d31e049e880b3ddde8b693b5c739e2182268021acfa357ef",
+   "protocol_source": "reconstruction_protocol.json",
+   "result_root": "results/v3/v3_11b",
+   "scientific_card": "results/v3/v3_11b/scientific_card.json",
+   "scientific_card_sha256": "edeecac6370a6d3dc5047f83fc198806036250aa74735f96d49d8c22a4f6b8c0",
+   "stage": "V3.11B"
+  },
+  "C": {
+   "classification": "TRACK_SOURCE_REGIME_FORENSICS_COMPLETE",
+   "doc": "docs/V3_11C_TRACK_SOURCE_REGIME_FORENSICS.md",
+   "production_effect": "none",
+   "protocol_sha256": null,
+   "protocol_source": "no predeclared protocol stage",
+   "result_root": "results/v3/v3_11c",
+   "scientific_card": "results/v3/v3_11c/scientific_card.json",
+   "scientific_card_sha256": "99eb6d7a91cf86af9caa9454239620b11d503c67330455b24502f48b3fcceb61",
+   "stage": "V3.11C"
+  },
+  "D": {
+   "classification": "VSC_REGIME_MODEL_INSUFFICIENT_EVIDENCE",
+   "doc": "docs/V3_11D_VSC_REGIME_MODEL.md",
+   "production_effect": "none",
+   "protocol_sha256": "fd710c688c57abaab6e0ac31a7ca8e10a1cf0112bee875dc26cd5b33f9836d1f",
+   "protocol_source": "vsc_validation_protocol.json",
+   "result_root": "results/v3/v3_11d",
+   "scientific_card": "results/v3/v3_11d/scientific_card.json",
+   "scientific_card_sha256": "1ddf193b73f0e57aa1f977ca83e93219d00a67006b94146f25ff96ecd70f2754",
+   "stage": "V3.11D"
+  },
+  "E": {
+   "classification": "VSC_EVIDENCE_STILL_INSUFFICIENT",
+   "doc": "docs/V3_11E_VSC_EVIDENCE_RESOLUTION.md",
+   "production_effect": "none",
+   "protocol_sha256": "b298c0a395e02f13b02f6703bd2c5d03ba52f058924723e0e09b09adbfd88d63",
+   "protocol_source": "evidence_resolution_protocol.json",
+   "result_root": "results/v3/v3_11e",
+   "scientific_card": "results/v3/v3_11e/scientific_card.json",
+   "scientific_card_sha256": "41689ce2d5f3303e971f211cbe29e5ae8bed03de45fb717ec52a25aaf5ae1d7a",
+   "stage": "V3.11E"
+  }
+ }
+}

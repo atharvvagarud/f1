@@ -1,0 +1,20 @@
+{
+ "collection_expected": 5305,
+ "f_freeze_tests": 16,
+ "f_pin_formula": "5289 (post-E) + F freeze tests",
+ "p0_guard_review": {
+  "admitted_paths": "V3.11A-E offline research scripts (no production code) + navigation doc",
+  "change": "P0-P20 new_prod filter: carve-outs for scripts/v3_11* and scripts/README.md",
+  "file": "tests/test_perf_mc2_p0.py",
+  "guard_still_strict_for_other_paths": true,
+  "performance_invariants_changed": false,
+  "precedent": "V3.10I reconciliation carve-outs in the same filter (api/v2_telemetry_, scripts/v3_10)",
+  "verdict": "NOT_WEAKENED"
+ },
+ "schema_version": "v3.11f-validation-v1",
+ "v39_guard_review": {
+  "file": "tests/test_v3_10b_workspace_ownership.py",
+  "record": "results/v3/v3_11_final/v39_guard_reconciliation.json",
+  "verdict": "NARROWLY_REPAIRED_EQUAL_STRENGTH"
+ }
+}

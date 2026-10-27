@@ -1,0 +1,25 @@
+{
+ "b_comparison": "V3.11B H-T1 is NOT the revived K rule: K sought FRESHER raw observations to replace stale D9 rows; H-T1 sought to persist the stale D9 row itself across the gap. Different mechanism, same underlying objection (no contemporaneous evidence exists), tested independently against pre-declared unanimity criteria on the 51-state subset.",
+ "b_evidence_against_h_t1": {
+  "gap_s_median": 1506.3,
+  "leader_laps_advanced_median": 16,
+  "persisted_vs_next_lap_exact": "0/54",
+  "persisted_vs_next_position_exact": "0/54",
+  "race_time_abs_err_s_median": 3990.0,
+  "regime_during_gap_offenders": 48,
+  "states_surviving_exclusions": "0/51"
+ },
+ "conclusion": "K's objection stands unanswered and B adds an independent rejection: freezing dynamic timing fields across 4-29 leader laps (median 16) with 48/54 gaps containing yellow regimes fabricates race state. TIMING_GAP_RECONSTRUCTION = REJECTED.",
+ "failed_gates": {
+  "lap": "0.9485 < 0.99 (all diffs -1; raw NumberOfLaps lags D9 LAP_END by median 88.2s; cannot supply anything fresher than D9)",
+  "pit": "0.9412 < 0.95 (raw-ahead-by-one boundary; NumberOfPitStops absent 2020/2022/2023)",
+  "position": "0.8551 < 0.99 (raw FRESHER than canonical, median 7.5s: tower shuffles vs lap-crossing -- different observation events, not reconstructor error)",
+  "tyre": "FAIL (TimingData carries no compound/age; 2019-2023 TimingAppData not local)"
+ },
+ "intended_rule": "Keep stale drivers in the field by reconstructing a complete causal contemporaneous state from raw live timing (TimingData/TimingAppData/Position/CarData deltas, latest t <= T via bisect_right).",
+ "k_objection_resolved": false,
+ "reason_for_rejection": "Zero FULL candidates under the frozen required-state definition; residual decomposition RAW_SOURCE_STALE 2866: raw TimingData is equally stale for stale drivers -- staleness is real-world (driver not crossing), not a processed-data artifact. Hypothesis rejected; REJECT_DIRECT_RAW_STATE_RECONSTRUCTION.",
+ "schema_version": "v3.11b-v32k-failure-review-v1",
+ "source": "docs/V3_2K_RAW_TIMING_STATE_RECONSTRUCTION.md + results/v3/v3_2k_raw_timing_state_reconstruction.json (frozen, read-only)",
+ "validation_protocol": "Preregistered (sha 567260af...) target 3294 STALE states + 420 trusted controls; admission gates position>=0.99, lap>=0.99, pit>=0.95, poison 100%, determinism, season consistency, lapped/tyre/pace safety, winner firewall."
+}

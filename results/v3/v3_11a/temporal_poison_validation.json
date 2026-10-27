@@ -1,0 +1,13 @@
+{
+ "future_driver_consumed": 0,
+ "future_timing_consumed": 0,
+ "future_track_consumed": 0,
+ "future_tyre_consumed": 0,
+ "future_weather_consumed": 0,
+ "method": "probes use searchsorted(T, side='right')-1 over D9 state_time_s; future rows loaded only to count later_exists",
+ "offender_age_agreement_within_1s": 7977,
+ "offender_age_mismatch_gt_1s": 0,
+ "offender_probes_with_later_observation_ignored": 579,
+ "schema_version": "v3.11a-temporal-poison-v1",
+ "verdict": "PASS (no future observation consumed)"
+}

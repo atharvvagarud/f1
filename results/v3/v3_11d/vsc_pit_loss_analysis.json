@@ -1,0 +1,22 @@
+{
+ "green_pit_laps_extra_time_s": {
+  "count": 583,
+  "max": 57.03,
+  "mean": 6.44,
+  "median": 4.48,
+  "p25": 2.31,
+  "p75": 7.24,
+  "p90": 17.29
+ },
+ "schema_version": "v3.11d-pitloss-v1",
+ "verdict": "MODEL if distributions separate with usable N, else INSUFFICIENT_EVIDENCE with fail-closed pit rule",
+ "vsc_pit_laps_extra_time_s": {
+  "count": 73,
+  "max": 18.12,
+  "mean": -1.45,
+  "median": -0.08,
+  "p25": -8.77,
+  "p75": 5.37,
+  "p90": 10.58
+ }
+}

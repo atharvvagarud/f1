@@ -1,0 +1,7 @@
+{
+ "finding": "median-duration rule is a single-value predictor: calibration slope unidentifiable and H measured slope 2.61 (outside [0.5,1.5]) on the same data-generating process with 55 episodes; 82 intervals do not change the identifiability structure (p50 ~1 lap, heavy right tail). Duration remains the integration blocker (confirms H).",
+ "gate": "FAIL (integration blocked on duration)",
+ "median_duration_s": 69.3,
+ "n_intervals": 80,
+ "schema_version": "v3.11d-duration-check-v1"
+}

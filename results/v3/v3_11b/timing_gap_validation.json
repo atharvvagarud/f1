@@ -1,0 +1,15 @@
+{
+ "T1_lap_unanimity": "0/54",
+ "T2_position_unanimity": "0/54",
+ "T3_exclusion_survival_states": "0/51",
+ "T4_runtime_causality": "runtime procedure (persist last <=T row) reads only state_time_s <= T via searchsorted side=right; next-native rows used as offline labels only (this script); poison-pinned in tests/test_v3_11b_reconstruction.py",
+ "criteria_met": {
+  "T1": false,
+  "T2": false,
+  "T3": false,
+  "T4": true
+ },
+ "protocol_sha256": "5849607042825ca6d31e049e880b3ddde8b693b5c739e2182268021acfa357ef",
+ "schema_version": "v3.11b-timing-gap-validation-v1",
+ "verdict": "REJECTED"
+}

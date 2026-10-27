@@ -1,0 +1,12 @@
+{
+ "note": "metrics available causally/historically in D9; no model fit in C",
+ "schema_version": "v3.11c-validation-targets-v1",
+ "targets": {
+  "field_spread": "max-min race_time_s across field (D9 clocks)",
+  "gap_compression": "gap_to_leader/ahead seconds across SC boundaries (D9 gap channels)",
+  "lap_time_delta_vs_green": "D9 lap_time_s by token (V3.2F packs exist: yellow +0.46s, VSC +19.6s, SC +33.2s medians)",
+  "pit_loss_regime_delta": "pit_in/out vs green baseline (D5 pit_stops + D9 clocks)",
+  "position_order_stability": "official classification vs simulated order under regime",
+  "restart_ordering": "post-SC lap positions (D9 position channel)"
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "injections_ignored_at_T": [
+  "VSC activation",
+  "VSC withdrawal",
+  "GREEN transition",
+  "SC transition",
+  "RED transition",
+  "pit event",
+  "tyre observation",
+  "timing observation"
+ ],
+ "labels_separation": "validation labels (post-episode laps, withdrawal times, next compounds) never enter runtime functions; runtime reads <=T rows only (pinned in focused tests)",
+ "schema_version": "v3.11d-temporal-poison-v1",
+ "verdict": "PASS"
+}

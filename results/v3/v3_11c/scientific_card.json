@@ -1,0 +1,11 @@
+{
+ "causally_known": 1101,
+ "causally_unknown": 64,
+ "classification": "TRACK_SOURCE_REGIME_FORENSICS_COMPLETE",
+ "frozen_base": "v3.10-pit-wall (2c00e7e)",
+ "production_effect": "none",
+ "recommended_next": "V3.11D VSC REGIME MODEL (research)",
+ "schema_version": "v3.11c-scientific-card-v1",
+ "stage": "V3.11C track-source & regime forensics (research only)",
+ "track_states": 1165
+}

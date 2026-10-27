@@ -1,0 +1,13 @@
+{
+ "both": 183,
+ "by_validate_reason": {
+  "wet_compound_state": 454,
+  "wet_track_conditions": 347
+ },
+ "compound_only": 454,
+ "n_states": 801,
+ "rainfall_only": 164,
+ "schema_version": "v3.11a-wet-breakdown-v1",
+ "verdict": "DATA_RECONSTRUCTION establishes the state (compounds factual); SIMULATOR_CAPABILITY blocks (no wet pace family, no weather evolution) -> BOTH, dominated by simulator capability. Wet mapping to dry forbidden.",
+ "wet_compound_driver_states": 637
+}

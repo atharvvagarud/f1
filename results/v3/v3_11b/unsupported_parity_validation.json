@@ -1,0 +1,15 @@
+{
+ "collateral_eligibility_expansion": 0,
+ "note": "No accepted recovery subset exists; every unsupported state keeps its frozen reason.",
+ "outside_accepted_subset_recovered": 0,
+ "reason_counts_unchanged": {
+  "MISSING_DRIVER_OBSERVATION": 354,
+  "MISSING_TYRE_STATE": 198,
+  "STALE_ROSTER_OBSERVATION": 3294,
+  "TERMINAL_STATE": 154,
+  "UNSUPPORTED_TRACK_STATE": 1165,
+  "WET_CONDITIONS": 801
+ },
+ "schema_version": "v3.11b-unsupported-parity-v1",
+ "unsupported_states_unchanged": 5966
+}

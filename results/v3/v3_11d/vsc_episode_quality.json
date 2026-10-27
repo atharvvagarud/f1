@@ -1,0 +1,25 @@
+{
+ "exclusions": {
+  "NO_FULL_VSC_LAP": 46,
+  "TRANSITION_INTO_RED_FLAG": 1,
+  "TRANSITION_INTO_SAFETY_CAR": 10,
+  "TRUNCATED_ACTIVE_AT_END": 2
+ },
+ "n_episodes": 82,
+ "quality_rule": "v2 token-semantic (drop entry; drop exit iff direct vsc->all_clear withdrawal)",
+ "quality_rule_rationale": "code 7 marks withdrawal onset (C); only direct withdrawals contaminate the exit lap; decided before scoring",
+ "schema_version": "v3.11d-episode-quality-v1",
+ "strict_interior_usable": 11,
+ "unusable": 53,
+ "usable": 29,
+ "usable_by_split": {
+  "calibration": 16,
+  "validation": 13
+ },
+ "window_definitions": {
+  "ACTIVE": "driver-lap rows with token vsc strictly inside [start_s, end_s], dropping the run entry lap always and the exit lap on direct vsc->all_clear withdrawal (rule v2); sensitivity on strict interior laps",
+  "POST": "up to 3 all_clear laps after end_s (after vsc_ending run when present), pit laps excluded",
+  "PRE": "up to 3 all_clear laps immediately before start_s, same drivers, pit laps excluded for pace metrics",
+  "contamination": "SC/red-adjacent runs excluded at episode level; pit/retirement laps excluded per metric (retirement = driver absent all later laps: retrospective label, fixed before outcome comparison)"
+ }
+}

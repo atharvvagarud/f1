@@ -1,0 +1,10 @@
+{
+ "entry_transient_changes": 153,
+ "entry_transient_compared": 350,
+ "entry_transient_rate": 0.4371,
+ "note": "steady-state consecutive-ACTIVE rate is the gate metric; entry transient (incident/activation chaos) reported, not gated; pit laps excluded throughout",
+ "schema_version": "v3.11d-order-v1",
+ "steady_active_laps_compared": 173,
+ "steady_change_rate": 0.0347,
+ "steady_position_changes": 6
+}

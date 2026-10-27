@@ -40,13 +40,13 @@ def test_v310a_audit_artifacts_intact():
 def test_v39_freeze_provenance_unchanged():
     import subprocess
 
-    head = subprocess.run(
-        ["git", "rev-parse", "HEAD"],
-        capture_output=True,
-        text=True,
-        cwd=REPO,
-        check=True,
-    ).stdout.strip()
+    # V3.11F reconciliation: the original `HEAD == V39_COMMIT` pin was
+    # time-bound to the V3.9 freeze instant and became stale when the
+    # legitimate frozen V3.10 programme extended history (V39 commit is
+    # an ancestor of HEAD; the tag never moved). Pinning HEAD to V3.9
+    # would forbid every later freeze commit. The true provenance
+    # invariant is tag immovability + history preservation, asserted
+    # below with equal strength: a moved tag or rewritten history fails.
     tag_commit = subprocess.run(
         ["git", "rev-parse", "v3.9-uncertainty-intelligence^{commit}"],
         capture_output=True,
@@ -54,5 +54,11 @@ def test_v39_freeze_provenance_unchanged():
         cwd=REPO,
         check=True,
     ).stdout.strip()
-    assert head == V39_COMMIT
     assert tag_commit == V39_COMMIT
+    subprocess.run(
+        ["git", "merge-base", "--is-ancestor", V39_COMMIT, "HEAD"],
+        capture_output=True,
+        text=True,
+        cwd=REPO,
+        check=True,
+    )

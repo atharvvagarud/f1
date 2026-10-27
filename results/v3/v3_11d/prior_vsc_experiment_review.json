@@ -1,0 +1,30 @@
+{
+ "d_differences": [
+  "conditional dynamics only: D validates pace/gaps/order/spread/pit/withdrawal GIVEN causally-known VSC intervals (C token-run contract with explicit 6/7 withdrawal); H additionally required predictive duration (P(continues|age))",
+  "transition-lap decontamination: D excludes entry/exit laps from ACTIVE pace windows (pre-declared); H scored all during-VSC laps including partials",
+  "ratio-form pace + race-specific alternative tested pre-declared against H-comparable absolute gates",
+  "duration re-tested independently as integration blocker, not as a fittable component"
+ ],
+ "experiments": [
+  {
+   "calibration": "past-only per fold (H1 train<=2021/eval2022-23; H2 train<=2023/eval2024; min cell N=30)",
+   "hypothesis": "VSC admittable via stochastic duration model + median pace offset",
+   "id": "V3.2H-VSC",
+   "implementation": "lap-modal episodes; residual-duration survival fit; past-only median pace offset (+19s); AR(1)/dynamics-freeze options",
+   "protocol": "prereg a31aec4e; gates duration + during-pace + post-exit + gaps; outcomes NOT_MEASURABLE_OFFLINE (no simulator pre-admission)",
+   "reason": "duration uncalibratable at ~55 episodes; driver sd ~9s dominates central pace effect",
+   "result": "REJECT_VSC (duration FAIL/FAIL: slope 2.61 vs [0.5,1.5]; pace MAE 10.38/11.58s vs gate <=10.0s; post-exit PASS; gaps PASS)",
+   "source": "docs/V3_2H_CAUSAL_REGIME_MODELS.md + results/v3/v3_2h/ (frozen, read-only)",
+   "verdict": "REJECTED"
+  },
+  {
+   "hypothesis": "VSC pace process measurable enough to motivate modelling",
+   "id": "V3.2F-VSC-AUDIT",
+   "reason": "mechanism + estimation missing",
+   "result": "median +19.6s (n=892); 55 lap-level episodes p50 1 lap; needs duration/restart/anchor-conditioning (all unestimated)",
+   "source": "results/v3/v3_2f/vsc_audit.json (frozen)",
+   "verdict": "DEFERRED (evidence pack, not a model)"
+  }
+ ],
+ "schema_version": "v3.11d-prior-review-v1"
+}

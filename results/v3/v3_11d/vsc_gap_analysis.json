@@ -1,0 +1,31 @@
+{
+ "finding": "steady-state ACTIVE changes vs baseline lap-to-lap variability decide preservation; entry transient reported, not gated",
+ "pairwise_gap_baseline_pre_s": {
+  "count": 499,
+  "max": 5.07,
+  "mean": 0.64,
+  "median": 0.42,
+  "p25": 0.16,
+  "p75": 0.87,
+  "p90": 1.53
+ },
+ "pairwise_gap_entry_transient_s": {
+  "count": 91,
+  "max": 19.82,
+  "mean": 2.25,
+  "median": 1.06,
+  "p25": 0.48,
+  "p75": 2.51,
+  "p90": 6.24
+ },
+ "pairwise_gap_steady_active_s": {
+  "count": 69,
+  "max": 4.48,
+  "mean": 0.98,
+  "median": 0.66,
+  "p25": 0.29,
+  "p75": 1.19,
+  "p90": 2.54
+ },
+ "schema_version": "v3.11d-gap-v1"
+}

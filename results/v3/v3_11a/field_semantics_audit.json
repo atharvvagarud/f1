@@ -1,0 +1,54 @@
+{
+ "fields": {
+  "driver_identity": {
+   "domain_behavior": "event participation persists; grid slot is a pre-race fact",
+   "frozen_treatment": "roster from results; DNS via pre-race grid slot; unobserved refused",
+   "future_candidate": "NEEDS_RESEARCH",
+   "semantics": "SESSION_STATIC",
+   "source": "presence.dns_exclusions + adapter unobserved"
+  },
+  "driver_row_observation_age": {
+   "domain_behavior": "Row bundles timing+position+gap+tyre+pit at one lap-end clock; staleness is row-level, not field-level.",
+   "frozen_treatment": "INSTANTANEOUS gate: age=T-observed_time must be <= 3.0 expected laps",
+   "future_candidate": "NO",
+   "semantics": "INSTANTANEOUS",
+   "source": "raceintel/simulation/engine.py:contemporaneous_roster_offenders; race_state_reconstruction observed_time_s = own latest D9 row <= T"
+  },
+  "position_gap": {
+   "domain_behavior": "freshness-sensitive; gaps compress under SC",
+   "frozen_treatment": "carried in driver row; same age gate",
+   "future_candidate": "NO",
+   "semantics": "INSTANTANEOUS",
+   "source": "race_state_reconstruction._driver_state + gaps"
+  },
+  "terminal_progress": {
+   "domain_behavior": "no remaining race by definition",
+   "frozen_treatment": "leader>=scheduled refused (INVALID)",
+   "future_candidate": "NO",
+   "semantics": "EVENT_PERSISTENT",
+   "source": "presence.prepare_initial_state terminal check"
+  },
+  "track_status": {
+   "domain_behavior": "race-control status persists until next message; interval-reconstructible",
+   "frozen_treatment": "race_control.track_state token; only all_clear supported; null refused",
+   "future_candidate": "YES",
+   "semantics": "EVENT_PERSISTENT",
+   "source": "D9 track_state (FastF1 codes 1/2/4/5/6/7); engine._validate_start_state"
+  },
+  "tyre_compound_age": {
+   "domain_behavior": "compound persists within a stint; stint fields (stint_number/stint_lap) present in D9",
+   "frozen_treatment": "row-carried; missing_tyre_age refusal; no persistence",
+   "future_candidate": "YES",
+   "semantics": "EVENT_PERSISTENT",
+   "source": "adapter._driver_state tyre_age=tyre_life"
+  },
+  "weather_rainfall": {
+   "domain_behavior": "weather evolves; needs evolution model",
+   "frozen_treatment": "wx_rainfall True refused (wet science)",
+   "future_candidate": "NO",
+   "semantics": "INSTANTANEOUS",
+   "source": "D9 wx_rainfall/wx_observed_at_s/wx_age_s"
+  }
+ },
+ "schema_version": "v3.11a-field-semantics-audit-v1"
+}

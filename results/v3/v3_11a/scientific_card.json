@@ -1,0 +1,9 @@
+{
+ "classification": "MC2_COVERAGE_FORENSICS_COMPLETE",
+ "frozen_base": "v3.10-pit-wall",
+ "ledger": "3678/9644 eligible (38.14%)",
+ "production_effect": "none (diagnostic artifacts only)",
+ "schema_version": "v3.11a-scientific-card-v1",
+ "stage": "V3.11A MC2 coverage forensics (observational)",
+ "unsupported": 5966
+}

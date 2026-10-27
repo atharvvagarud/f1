@@ -152,8 +152,66 @@ FINAL_ALLOW = (
                "tests/test_perf_mc2_p0.py",
                "tests/test_v2_phase5_r7.py",
                "tests/test_v3_2i_status_models.py",
+               # V3.11A reconciliation (forensics): offline diagnostic stage
+               # only (coverage forensics script/tests/artifacts + CI count
+               # pin; frozen science untouched; any other path still fails).
+               "results/v3/v3_11a/",
+               "docs/V3_11A",
+               "scripts/v3_11a",
+               "tests/test_v3_11a",
+               # V3.11B reconciliation (causal reconstruction validation):
+               # offline rule-validation stage only (registry/protocol/
+               # analysis scripts + focused tests + artifacts + CI count
+               # pin; zero production implementation; frozen science
+               # untouched; any other path still fails).
+               "results/v3/v3_11b/",
+               "docs/V3_11B",
+               "scripts/v3_11b",
+               "tests/test_v3_11b",
+               # V3.11C reconciliation (track-source/regime forensics):
+               # offline research stage only (source/regime/ledger
+               # scripts + focused tests + artifacts + CI count pin;
+               # zero production implementation; frozen science
+               # untouched; any other path still fails).
+               "results/v3/v3_11c/",
+               "docs/V3_11C",
+               "scripts/v3_11c",
+               "tests/test_v3_11c",
+               # V3.11D reconciliation (VSC regime model research):
+               # isolated research model + validation stage only
+               # (episode/analysis/protocol/model/validation scripts +
+               # focused tests + artifacts + CI count pin; zero
+               # production implementation; frozen science untouched;
+               # any other path still fails).
+               "results/v3/v3_11d/",
+               "docs/V3_11D",
+               "scripts/v3_11d",
+               "tests/test_v3_11d",
+               # V3.11E reconciliation (VSC evidence resolution):
+               # offline evidence stage only (protocol/duration/evidence/
+               # validation scripts + focused tests + artifacts + CI
+               # count pin; zero production implementation; frozen
+               # science untouched; any other path still fails).
+               "results/v3/v3_11e/",
+               "docs/V3_11E",
+               "scripts/v3_11e",
+               "tests/test_v3_11e",
+               # Architecture navigation baseline (docs-only, pre-E):
+               # domain index + scripts forward rule; navigation
+               # artifacts only; zero production implementation;
+               # frozen science untouched; any other path still fails.
+               "docs/INDEX.md",
+               "scripts/README.md",
+               # V3.11F reconciliation (programme freeze):
+               # freeze script + final card/results + synthesis doc +
+               # focused freeze tests + CI count pin; zero production
+               # implementation; frozen science untouched; any other
+               # path still fails.
+               "results/v3/v3_11_final/",
+               "docs/V3_11_MC2_COVERAGE_EXPANSION_FINAL.md",
+               "scripts/v3_11f",
+               "tests/test_v3_11f",
 )
-
 # Tracked files H is permitted to show as modified pre-commit.
 TRACKED_ALLOW = {
     "api/main.py",
@@ -233,6 +291,10 @@ TRACKED_ALLOW = {
     "tests/test_perf_mc2_p0.py",
     "tests/test_v2_phase5_r7.py",
     "tests/test_v3_2i_status_models.py",
+    # V3.11F reconciliation (freeze): narrow stale-guard repair of the
+    # time-bound V3.9 HEAD pin (tag pin kept; ancestry asserted with
+    # equal strength; frozen science untouched).
+    "tests/test_v3_10b_workspace_ownership.py",
 }
 
 
@@ -764,7 +826,11 @@ def test_worktree_contains_only_owned_v38_paths():
                    "tests/test_mc2_p3_1.py",
                    "tests/test_perf_mc2_p0.py",
                    "tests/test_v2_phase5_r7.py",
-                   "tests/test_v3_2i_status_models.py"}
+                   "tests/test_v3_2i_status_models.py",
+                   # V3.11F reconciliation (freeze): narrow stale-guard
+                   # repair of the time-bound V3.9 HEAD pin (tag pin
+                   # kept; ancestry asserted with equal strength).
+                   "tests/test_v3_10b_workspace_ownership.py",}
     p2a_ok = _load(
         ROOT / "results" / "v3" / "performance_mc2" / "p2a"
         / "parity_results.json")["overall"] == "EXACT" \

@@ -1,0 +1,13 @@
+{
+ "matrix": {
+  "RED->VSC": "refuse",
+  "VSC->RED": "refuse",
+  "VSC->SC": "refuse (fail_closed returns reason)",
+  "ambiguous_status": "refuse (UNKNOWN_PRE_FIRST / UNSUPPORTED)",
+  "missing_withdrawal": "refuse (WITHDRAWAL_UNKNOWN)",
+  "pit_under_vsc": "refuse (PIT_UNDER_VSC_NO_VALIDATED_LOSS)",
+  "source_contradiction": "refuse (no corroborated token)"
+ },
+ "pinned_in": "tests/test_v3_11d_vsc_model.py (unit matrix over fail_closed/interval_state)",
+ "schema_version": "v3.11d-failclosed-v1"
+}

@@ -1,0 +1,31 @@
+{
+ "protocol_sha256": "5849607042825ca6d31e049e880b3ddde8b693b5c739e2182268021acfa357ef",
+ "rules": {
+  "DRIVER_IDENTITY": {
+   "assessment": "No R2 candidate requires identity carry-forward (R2 sublabels contain no driver rule); MISSING_DRIVER is genuine absence (149 boundary + 205 gaps). No alias mapping in B, as expected.",
+   "states": 0,
+   "verdict": "NO-OP (nothing proposed, nothing implemented)"
+  },
+  "INDIVIDUAL_DISAPPEARANCE": {
+   "assessment": "Not the B target. No generic last-observation persistence; disappearance cause unknowable <=T.",
+   "states": 3047,
+   "verdict": "DEFERRED (bounded domain rule, future evidence)"
+  },
+  "MASS_CLOCK_RESET": {
+   "assessment": "None in the R2 registry (all R4). Red-flag/restart timing semantics are high-risk; no timestamp shifting or normalization performed in B.",
+   "states": 196,
+   "verdict": "DEFERRED (restart science stage)"
+  },
+  "NULL_TRACK_SEMANTICS": {
+   "assessment": "All 59 are pre-first-message null tokens (leader laps 2-8); 0/64 null-track states carry any known prior status <=T (V3.11A). H-K1 (null implies all_clear) requires message-feed-liveness proof -- source interpretation owned by the later track-source stage. No status invented in B.",
+   "states": 59,
+   "verdict": "REJECTED for B / DEFERRED to track-source stage"
+  },
+  "WET_AND_NEUTRALIZED_REGIMES": {
+   "assessment": "Simulator-capability/scientific issues per V3.11A; no yellow/SC/VSC/red/wet pace, evolution, or transition modelling in B.",
+   "states": "862 R3 + 1042 R4-wet (out of B scope)",
+   "verdict": "OUT OF SCOPE (later scientific gates)"
+  }
+ },
+ "schema_version": "v3.11b-deferred-rule-analysis-v1"
+}

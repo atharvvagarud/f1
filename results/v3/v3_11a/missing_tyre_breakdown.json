@@ -1,0 +1,7 @@
+{
+ "cause": "lap-1 all-null tyre rows + early-retirement data gaps (V3.2F evidence); no default compound; no future backfill; stint fields null too",
+ "n_states": 198,
+ "no_prior_compound": 140,
+ "schema_version": "v3.11a-missing-tyre-breakdown-v1",
+ "with_prior_le_T_compound": 58
+}

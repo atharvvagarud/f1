@@ -1,0 +1,8 @@
+{
+ "diagnostic_smoke_simulations_run": 0,
+ "full_5000_future_simulations_run": 0,
+ "newly_eligible_states": 0,
+ "note": "\u00a732 prefers input validation without simulation; with zero newly eligible states there is nothing to validate.",
+ "schema_version": "v3.11b-mc2-input-validation-v1",
+ "status": "NOT_APPLICABLE_ZERO_NEWLY_ELIGIBLE"
+}

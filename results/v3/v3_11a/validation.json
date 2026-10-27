@@ -1,0 +1,11 @@
+{
+ "audit_peak_rss_mb": 342.6,
+ "audit_wall_s": 6.4,
+ "baseline_exact": true,
+ "blockers_reproduce_frozen": true,
+ "ledger_completeness": true,
+ "no_eligibility_change": true,
+ "no_production_import": true,
+ "original_reasons_preserved": true,
+ "schema_version": "v3.11a-validation-v1"
+}

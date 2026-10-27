@@ -1,0 +1,8 @@
+{
+ "cause": "leader_laps_done >= scheduled_laps: no remaining race; all remain unsupported by design",
+ "expected_permanent": 154,
+ "n_states": 154,
+ "possible_data_defect": 0,
+ "schema_version": "v3.11a-terminal-breakdown-v1",
+ "unknown": 0
+}

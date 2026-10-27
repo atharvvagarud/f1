@@ -1,0 +1,24 @@
+{
+ "baseline": {
+  "candidate": 9644,
+  "eligible": 3678,
+  "reasons": {
+   "MISSING_DRIVER": 354,
+   "MISSING_TYRE": 198,
+   "STALE": 3294,
+   "TERMINAL": 154,
+   "TRACK": 1165,
+   "WET": 801
+  },
+  "unsupported": 5966
+ },
+ "join": {
+  "blockers_reproduce_frozen": true,
+  "j_relief_stale_to_capable": 1373,
+  "raw_primary_mismatches_vs_final": 1373
+ },
+ "multi_blocker_states": 2032,
+ "schema_version": "v3.11a-forensic-summary-v1",
+ "single_blocker_states": 3934,
+ "unsupported_ledger_rows": 5966
+}

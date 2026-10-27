@@ -1,0 +1,13 @@
+{
+ "all_rules_verdict": "REJECTED x3",
+ "audit_wall_s": 0.0,
+ "coverage": "3678/9644 reaffirmed, delta 0",
+ "eligible_to_unsupported_transitions": 0,
+ "mc2_futures_run": 0,
+ "native_parity": true,
+ "production_implementation": false,
+ "protocol_declared_before_results": true,
+ "registry_exact_114": true,
+ "schema_version": "v3.11b-validation-v1",
+ "unsupported_parity": true
+}

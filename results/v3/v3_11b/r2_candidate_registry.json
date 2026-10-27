@@ -1,0 +1,3563 @@
+{
+ "by_subtype": {
+  "NULL_TRACK": 59,
+  "TIMING_GAP": 51,
+  "TYRE_STINT": 4
+ },
+ "candidates": [
+  {
+   "T_s": 612.664,
+   "blocking_conditions": [
+    "MISSING_TYRE_STATE",
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 20,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "stint-boundary ambiguity; track co-block",
+   "leader_lap": 2,
+   "missing_tyre_drivers": [
+    "alonso",
+    "bottas",
+    "brendon_hartley",
+    "ericsson",
+    "gasly",
+    "grosjean",
+    "hamilton",
+    "hulkenberg",
+    "kevin_magnussen",
+    "leclerc",
+    "max_verstappen",
+    "ocon",
+    "perez",
+    "raikkonen",
+    "ricciardo",
+    "sainz",
+    "sirotkin",
+    "stroll",
+    "vandoorne",
+    "vettel"
+   ],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "MISSING_TYRE_STINT_PERSISTENCE",
+   "r2_subtype": "TYRE_STINT",
+   "race_id": "2018-r01-R",
+   "rainfall": false,
+   "required_fields": [
+    "tyre_compound",
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r01-R:20",
+   "track_state": null,
+   "why_plausible_per_A": "prior <=T compound exists within known stint"
+  },
+  {
+   "T_s": 702.473,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 40,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 3,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r01-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r01-R:40",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 791.946,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 60,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 4,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r01-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r01-R:60",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 881.107,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 80,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 5,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r01-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r01-R:80",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 654.87,
+   "blocking_conditions": [
+    "MISSING_TYRE_STATE",
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 20,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "stint-boundary ambiguity; track co-block",
+   "leader_lap": 2,
+   "missing_tyre_drivers": [
+    "alonso",
+    "bottas",
+    "brendon_hartley",
+    "ericsson",
+    "gasly",
+    "grosjean",
+    "hamilton",
+    "hulkenberg",
+    "kevin_magnussen",
+    "leclerc",
+    "max_verstappen",
+    "ocon",
+    "perez",
+    "raikkonen",
+    "ricciardo",
+    "sainz",
+    "sirotkin",
+    "stroll",
+    "vandoorne",
+    "vettel"
+   ],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "MISSING_TYRE_STINT_PERSISTENCE",
+   "r2_subtype": "TYRE_STINT",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "tyre_compound",
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:20",
+   "track_state": null,
+   "why_plausible_per_A": "prior <=T compound exists within known stint"
+  },
+  {
+   "T_s": 753.342,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 40,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 3,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:40",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 852.367,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 60,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 4,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:60",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 951.236,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 80,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 5,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:80",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1049.856,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 100,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 6,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:100",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1148.514,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 120,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 7,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:120",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1247.333,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 140,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 8,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:140",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1346.107,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 160,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 9,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:160",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1444.857,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 180,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 10,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:180",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1543.618,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 200,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 11,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:200",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1642.414,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 220,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 12,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:220",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1741.169,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 240,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 13,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:240",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1840.175,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 260,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 14,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:260",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1939.091,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 280,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 15,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:280",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2038.311,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 300,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 16,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:300",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2137.765,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 320,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 17,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:320",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2237.253,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 340,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 18,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r03-R:340",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2336.658,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 360,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 19,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r03-R:360",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2440.794,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 380,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 20,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r03-R:380",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2547.006,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 400,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 21,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r03-R:400",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2646.384,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 420,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 22,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r03-R:420",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2745.7,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 440,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 23,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r03-R:440",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2845.367,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 460,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 24,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r03-R:460",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2944.624,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 480,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 25,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r03-R:480",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 3043.959,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 500,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 26,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r03-R:500",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 3142.92,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 520,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 27,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r03-R:520",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 3240.683,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 540,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 28,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r03-R:540",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 3338.337,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 560,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 29,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r03-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r03-R:560",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 575.526,
+   "blocking_conditions": [
+    "MISSING_TYRE_STATE",
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 20,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "stint-boundary ambiguity; track co-block",
+   "leader_lap": 2,
+   "missing_tyre_drivers": [
+    "alonso",
+    "bottas",
+    "brendon_hartley",
+    "ericsson",
+    "gasly",
+    "grosjean",
+    "hamilton",
+    "hulkenberg",
+    "kevin_magnussen",
+    "leclerc",
+    "max_verstappen",
+    "ocon",
+    "perez",
+    "raikkonen",
+    "ricciardo",
+    "sainz",
+    "sirotkin",
+    "stroll",
+    "vandoorne",
+    "vettel"
+   ],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "MISSING_TYRE_STINT_PERSISTENCE",
+   "r2_subtype": "TYRE_STINT",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "tyre_compound",
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:20",
+   "track_state": null,
+   "why_plausible_per_A": "prior <=T compound exists within known stint"
+  },
+  {
+   "T_s": 653.435,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 40,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 3,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:40",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 731.212,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 60,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 4,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:60",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 809.381,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 80,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 5,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:80",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 887.828,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 100,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 6,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:100",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 966.314,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 120,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 7,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:120",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1044.835,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 140,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 8,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:140",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1123.397,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 160,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 9,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:160",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1202.003,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 180,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 10,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:180",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1280.648,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 200,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 11,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:200",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1359.225,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 220,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 12,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:220",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1437.577,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 240,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 13,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:240",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1515.878,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 260,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 14,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:260",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1594.103,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 280,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 15,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:280",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1672.554,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 300,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 16,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:300",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1750.552,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 320,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 17,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:320",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1828.929,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 340,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 18,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:340",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1907.901,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 360,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 19,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:360",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 1986.645,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 380,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 20,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:380",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2065.338,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 400,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 21,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:400",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2144.018,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 420,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 22,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r11-R:420",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2222.75,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 440,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 23,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r11-R:440",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2301.399,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 460,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 24,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r11-R:460",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2384.248,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 480,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 25,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r11-R:480",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2464.384,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 500,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 26,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r11-R:500",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2543.674,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 519,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 27,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r11-R:519",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 2627.221,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 540,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 28,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "MID",
+   "state_id": "2018-r11-R:540",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 587.155,
+   "blocking_conditions": [
+    "MISSING_TYRE_STATE",
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 19,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "stint-boundary ambiguity; track co-block",
+   "leader_lap": 2,
+   "missing_tyre_drivers": [
+    "alonso",
+    "bottas",
+    "brendon_hartley",
+    "ericsson",
+    "gasly",
+    "grosjean",
+    "hamilton",
+    "hulkenberg",
+    "kevin_magnussen",
+    "max_verstappen",
+    "ocon",
+    "perez",
+    "raikkonen",
+    "ricciardo",
+    "sainz",
+    "sirotkin",
+    "stroll",
+    "vandoorne",
+    "vettel"
+   ],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "MISSING_TYRE_STINT_PERSISTENCE",
+   "r2_subtype": "TYRE_STINT",
+   "race_id": "2018-r12-R",
+   "rainfall": false,
+   "required_fields": [
+    "tyre_compound",
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r12-R:19",
+   "track_state": null,
+   "why_plausible_per_A": "prior <=T compound exists within known stint"
+  },
+  {
+   "T_s": 670.048,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 38,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 3,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r12-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r12-R:38",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 752.999,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 57,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 4,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2018-r12-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2018,
+   "stage": "EARLY",
+   "state_id": "2018-r12-R:57",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 3116.089,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 197,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 11,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 389.2,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "EARLY",
+   "state_id": "2019-r19-R:197",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 3217.443,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 216,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 12,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 490.6,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "EARLY",
+   "state_id": "2019-r19-R:216",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 3318.512,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 235,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 13,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 591.6,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "EARLY",
+   "state_id": "2019-r19-R:235",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 3419.566,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 254,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 14,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 692.7,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "EARLY",
+   "state_id": "2019-r19-R:254",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 3523.747,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 273,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 15,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 796.9,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "EARLY",
+   "state_id": "2019-r19-R:273",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 3624.94,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 292,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 16,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 898.1,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "EARLY",
+   "state_id": "2019-r19-R:292",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 3726.123,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 311,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 17,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 999.2,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "EARLY",
+   "state_id": "2019-r19-R:311",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 3826.986,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 330,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 18,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 1100.1,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "EARLY",
+   "state_id": "2019-r19-R:330",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 3927.972,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 348,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 19,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 1201.1,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:348",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 4029.871,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 367,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 20,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 1303.0,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:367",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 4131.317,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 386,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 21,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 1404.4,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:386",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 4233.215,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 405,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 22,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 1506.3,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:405",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 4334.831,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 424,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 23,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 1608.0,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:424",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 4436.034,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 443,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 24,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 1709.2,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:443",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 4536.128,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 461,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 25,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 1809.2,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:461",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 4636.264,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 479,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 26,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 1909.4,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:479",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 4736.034,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 498,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 27,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 2009.2,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:498",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 4835.991,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 517,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 28,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 2109.1,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:517",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 4935.609,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 536,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 29,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 2208.7,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:536",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 5035.92,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 555,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 30,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 2309.0,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:555",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 5136.232,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 573,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 31,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 2409.4,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:573",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 5236.557,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 592,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 32,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 2509.7,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:592",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 5337.975,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 611,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 33,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 2611.1,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:611",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 5439.154,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 627,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 34,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 2712.3,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:627",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 5539.473,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 645,
+   "freshness_threshold_s": 305.2,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 35,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "vettel",
+     "frozen_age_s": 2812.6,
+     "last_observation_le_T_s": 2726.88,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2019-r19-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2019,
+   "stage": "MID",
+   "state_id": "2019-r19-R:645",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 2801.683,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 213,
+   "freshness_threshold_s": 209.7,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 12,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "raikkonen",
+     "frozen_age_s": 249.4,
+     "last_observation_le_T_s": 2552.281,
+     "next_observation_gt_T_exists": true
+    },
+    {
+     "driver_id": "russell",
+     "frozen_age_s": 247.4,
+     "last_observation_le_T_s": 2554.246,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2020-r01-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2020,
+   "stage": "EARLY",
+   "state_id": "2020-r01-R:213",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 2870.907,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 230,
+   "freshness_threshold_s": 209.7,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 13,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "raikkonen",
+     "frozen_age_s": 318.6,
+     "last_observation_le_T_s": 2552.281,
+     "next_observation_gt_T_exists": true
+    },
+    {
+     "driver_id": "russell",
+     "frozen_age_s": 316.7,
+     "last_observation_le_T_s": 2554.246,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2020-r01-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2020,
+   "stage": "EARLY",
+   "state_id": "2020-r01-R:230",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 2939.956,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 246,
+   "freshness_threshold_s": 209.7,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 14,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "raikkonen",
+     "frozen_age_s": 387.7,
+     "last_observation_le_T_s": 2552.281,
+     "next_observation_gt_T_exists": true
+    },
+    {
+     "driver_id": "russell",
+     "frozen_age_s": 385.7,
+     "last_observation_le_T_s": 2554.246,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2020-r01-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2020,
+   "stage": "EARLY",
+   "state_id": "2020-r01-R:246",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 186.25,
+   "blocking_conditions": [
+    "UNSUPPORTED_TRACK_STATE"
+   ],
+   "frame_index": 20,
+   "freshness_threshold_s": null,
+   "known_scientific_risk": "no prior known status (0/64); null semantics unvalidated; source interpretation deferred",
+   "leader_lap": 2,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [],
+   "original_frozen_reason": "UNSUPPORTED_TRACK_STATE",
+   "r2_sublabel": "TRACK_NULL_INTERVAL_RECONSTRUCTION",
+   "r2_subtype": "NULL_TRACK",
+   "race_id": "2020-r11-R",
+   "rainfall": false,
+   "required_fields": [
+    "track_status"
+   ],
+   "season": 2020,
+   "stage": "EARLY",
+   "state_id": "2020-r11-R:20",
+   "track_state": null,
+   "why_plausible_per_A": "pre-first-message null token; race demonstrably underway"
+  },
+  {
+   "T_s": 5735.353,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 394,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 21,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 709.8,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "EARLY",
+   "state_id": "2023-r13-R:394",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 5811.658,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 413,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 22,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 786.1,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "EARLY",
+   "state_id": "2023-r13-R:413",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 5963.526,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 451,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 24,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 938.0,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:451",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 6039.19,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 470,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 25,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1013.6,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:470",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 6114.849,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 489,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 26,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1089.3,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:489",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 6190.53,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 508,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 27,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1165.0,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:508",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 6266.029,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 527,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 28,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1240.5,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:527",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 6341.403,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 546,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 29,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1315.8,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:546",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 6416.913,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 565,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 30,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1391.4,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:565",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 6492.474,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 584,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 31,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1466.9,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:584",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 6567.888,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 603,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 32,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1542.3,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:603",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 6643.23,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 622,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 33,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1617.7,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:622",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 6718.502,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 641,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 34,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1692.9,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:641",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 6793.777,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 660,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 35,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1768.2,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:660",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 6868.998,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 679,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 36,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1843.4,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:679",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 6944.165,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 698,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 37,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1918.6,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:698",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 7019.236,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 717,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 38,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 1993.7,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:717",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 7094.429,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 736,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 39,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 2068.9,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:736",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 7169.561,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 755,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 40,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 2144.0,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:755",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 7244.867,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 774,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 41,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 2219.3,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:774",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 7320.2,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 793,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 42,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 2294.6,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:793",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 7395.566,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 811,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 43,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 2370.0,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:811",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  },
+  {
+   "T_s": 7471.159,
+   "blocking_conditions": [
+    "STALE_ROSTER_OBSERVATION"
+   ],
+   "frame_index": 829,
+   "freshness_threshold_s": 229.5,
+   "known_scientific_risk": "inherits V3.2K failed gates; reappearance known only via future; dynamic state frozen across gap",
+   "leader_lap": 44,
+   "missing_tyre_drivers": [],
+   "next_observation_note": "OFFLINE label only; must never enter a runtime rule",
+   "observation_provenance": "D9 driver_lap_state <= T (V3.11A probe)",
+   "offenders": [
+    {
+     "driver_id": "sargeant",
+     "frozen_age_s": 2445.6,
+     "last_observation_le_T_s": 5025.561,
+     "next_observation_gt_T_exists": true
+    }
+   ],
+   "original_frozen_reason": "STALE_ROSTER_OBSERVATION",
+   "r2_sublabel": "STALE_TIMING_GAP_RECONSTRUCTION",
+   "r2_subtype": "TIMING_GAP",
+   "race_id": "2023-r13-R",
+   "rainfall": false,
+   "required_fields": [
+    "driver_row_timing"
+   ],
+   "season": 2023,
+   "stage": "MID",
+   "state_id": "2023-r13-R:829",
+   "track_state": "all_clear",
+   "why_plausible_per_A": "all stale offenders causally reappear later"
+  }
+ ],
+ "exact": true,
+ "expected": {
+  "NULL_TRACK": 59,
+  "TIMING_GAP": 51,
+  "TYRE_STINT": 4
+ },
+ "n": 114,
+ "provenance": "results/v3/v3_11a/unsupported_state_ledger.json (read-only; V3.11A artifacts untouched)",
+ "registry_sha256": "f8e0c565e681eebc9554f14a5085ca0b3a6ed29abace14de037638a626e9e38a",
+ "schema_version": "v3.11b-r2-candidate-registry-v1"
+}

@@ -1,0 +1,28 @@
+{
+ "RED_RESTART": "NOT_STARTED",
+ "SC": "NOT_STARTED",
+ "VSC": "PLAUSIBLE_BUT_INSUFFICIENT_EVIDENCE",
+ "WET": "NOT_STARTED",
+ "YELLOW": "NOT_STARTED",
+ "entry_coverage": "3678 / 9644",
+ "exit_coverage": "3678 / 9644",
+ "final_decision": "STOP_V3_11_COVERAGE_EXPANSION",
+ "parent": "v3.10-pit-wall / 2c00e7ea4e61b6477cac3207e8379f087b0ec527",
+ "production_effect": "none",
+ "programme": "V3.11 MC2 Coverage Expansion",
+ "schema_version": "v3.11f-programme-card-v1",
+ "stage_classifications": {
+  "A": "MC2_COVERAGE_FORENSICS_COMPLETE",
+  "B": "CAUSAL_STATE_RECONSTRUCTION_REJECTED",
+  "C": "TRACK_SOURCE_REGIME_FORENSICS_COMPLETE",
+  "D": "VSC_REGIME_MODEL_INSUFFICIENT_EVIDENCE",
+  "E": "VSC_EVIDENCE_STILL_INSUFFICIENT"
+ },
+ "stages": [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E"
+ ]
+}

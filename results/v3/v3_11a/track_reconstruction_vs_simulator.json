@@ -1,0 +1,15 @@
+{
+ "n_states": 1165,
+ "rationale": {
+  "BOTH": "yellow: token known but local exposure unknown AND no regime model",
+  "RECONSTRUCTION_PROBLEM": "null token: state not established",
+  "SIMULATOR_CAPABILITY_PROBLEM": "vsc/safety_car/vsc_ending/red_flag: token known, no regime",
+  "UNKNOWN": 0
+ },
+ "schema_version": "v3.11a-track-split-v1",
+ "split": {
+  "BOTH": 521,
+  "RECONSTRUCTION_PROBLEM": 64,
+  "SIMULATOR_CAPABILITY_PROBLEM": 580
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "gates": {
+  "duration": "UNDERPOWERED",
+  "fail_closed": "SUPPORTED",
+  "gap": "UNDERPOWERED",
+  "order": "SUPPORTED",
+  "pace": "SUPPORTED",
+  "parity": "SUPPORTED",
+  "pit": "UNDERPOWERED",
+  "poison": "SUPPORTED",
+  "spread": "UNDERPOWERED",
+  "withdrawal": "SUPPORTED"
+ },
+ "protocol_sha256": "b298c0a395e02f13b02f6703bd2c5d03ba52f058924723e0e09b09adbfd88d63",
+ "schema_version": "v3.11e-gate-table-v1",
+ "values": {
+  "duration": {
+   "hit_rate_80": 0.581,
+   "median_ae_s": 56.9,
+   "verdict": "UNDERPOWERED"
+  },
+  "gap": {
+   "bootstrap": {
+    "B": 2000,
+    "method": "episode-cluster percentile CI",
+    "seed": 7
+   },
+   "contributing_validation_episodes": 2,
+   "effective_N_note": "episodes are the independent unit; pairs are observations, never independent N",
+   "independent_unit": "episode",
+   "median_ci95_s": [
+    1.038,
+    2.854
+   ],
+   "pair_observations": 17,
+   "point_gate_pass": false,
+   "protocol_sha256": "b298c0a395e02f13b02f6703bd2c5d03ba52f058924723e0e09b09adbfd88d63",
+   "schema_version": "v3.11e-gap-power-v1",
+   "verdict": "UNDERPOWERED"
+  },
+  "order_compared": 64,
+  "order_steady_rate": 0.0469,
+  "pace_mae_pooled_s": 9.54,
+  "pace_n": 104,
+  "pit": {
+   "bar_met": false,
+   "verdict": "UNDERPOWERED"
+  },
+  "spread": {
+   "bootstrap": {
+    "B": 2000,
+    "method": "episode percentile CI",
+    "seed": 7
+   },
+   "contributing_validation_episodes": 3,
+   "effective_N_note": "one ratio per episode; episodes are N",
+   "independent_unit": "episode",
+   "median_ci95": [
+    1.1797,
+    1.5167
+   ],
+   "point_gate_pass": false,
+   "protocol_sha256": "b298c0a395e02f13b02f6703bd2c5d03ba52f058924723e0e09b09adbfd88d63",
+   "schema_version": "v3.11e-spread-power-v1",
+   "verdict": "UNDERPOWERED"
+  },
+  "withdrawal_median_s": -0.34
+ },
+ "verdict_key": {
+  "NOT_APPLICABLE": "scientifically exempt with predeclared reason (none claimed)",
+  "REFUTED": "contradicted by adequate evidence",
+  "SUPPORTED": "gate passed with adequate evidence",
+  "UNDERPOWERED": "evidence too weak to decide"
+ }
+}

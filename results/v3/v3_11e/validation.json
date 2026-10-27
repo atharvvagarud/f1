@@ -1,0 +1,32 @@
+{
+ "all_supported": false,
+ "audit_wall_s": 0.3,
+ "bootstrap_record": {
+  "B": 2000,
+  "method": "episode-cluster percentile CI",
+  "note": "offline resampling, not MC2 futures",
+  "seed": 7
+ },
+ "classification": "VSC_EVIDENCE_STILL_INSUFFICIENT",
+ "duration_blocks_integration": true,
+ "gates": {
+  "duration": "UNDERPOWERED",
+  "fail_closed": "SUPPORTED",
+  "gap": "UNDERPOWERED",
+  "order": "SUPPORTED",
+  "pace": "SUPPORTED",
+  "parity": "SUPPORTED",
+  "pit": "UNDERPOWERED",
+  "poison": "SUPPORTED",
+  "spread": "UNDERPOWERED",
+  "withdrawal": "SUPPORTED"
+ },
+ "protocol_sha256": "b298c0a395e02f13b02f6703bd2c5d03ba52f058924723e0e09b09adbfd88d63",
+ "schema_version": "v3.11e-validation-v1",
+ "stochastic_futures_run": 0,
+ "verdict_meaning": {
+  "VSC_EVIDENCE_REFUTED": "mandatory assumption contradicted; TERMINAL for V3.11 coverage",
+  "VSC_EVIDENCE_RESOLVED": "all mandatory gates supported; ready for a later production-integration stage",
+  "VSC_EVIDENCE_STILL_INSUFFICIENT": "plausible; mandatory dimension(s) underpowered; TERMINAL for V3.11 coverage"
+ }
+}

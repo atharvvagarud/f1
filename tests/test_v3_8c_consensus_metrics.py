@@ -494,6 +494,33 @@ def test_no_frozen_source_modified():
         "tests/test_perf_mc2_p0.py",
         "tests/test_v2_phase5_r7.py",
         "tests/test_v3_2i_status_models.py",
+        # V3.11F reconciliation (freeze): V3.11A-F charters admitted
+        # exactly (coverage forensics, causal reconstruction,
+        # track/regime forensics, VSC model, evidence resolution,
+        # programme freeze + navigation baseline; frozen science
+        # untouched; any other path still fails).
+        "results/v3/v3_11",
+        "docs/V3_11",
+        "docs/INDEX.md",
+        "tests/test_v3_11",
+        "scripts/v3_11",
+        "scripts/README.md",
+        "scripts/run_ci_tests.py",
+        "tests/test_perf_mc2_freeze.py",
+        "tests/test_perf_mc2_p0.py",
+        "tests/test_mc2_p2a.py",
+        "tests/test_v3_10b_workspace_ownership.py",
+        "tests/test_v3_8h_freeze.py",
+        "tests/test_v3_9e_freeze.py",
+        "tests/test_v3_6a_contract.py",
+        "tests/test_v3_7a_contract.py",
+        "tests/test_v3_8a_consensus_contract.py",
+        "tests/test_v3_8b_source_adapters.py",
+        "tests/test_v3_8c_consensus_metrics.py",
+        "tests/test_v3_8d_correction_01.py",
+        "tests/test_v3_8d_evaluation.py",
+        "tests/test_v3_9a_contract.py",
+        "tests/test_v3_9b_measurement.py",
     )
     for line in out.splitlines():
         if line.strip():

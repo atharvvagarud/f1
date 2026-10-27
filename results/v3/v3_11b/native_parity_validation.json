@@ -1,0 +1,9 @@
+{
+ "eligible_catalogue_corpus_hash_unchanged": true,
+ "eligible_states_identical": true,
+ "mc2_inputs_identical": true,
+ "method": "zero accepted rules => zero production edits; parity holds by construction and is executed by the frozen suites (V3.2N/J/K, presence, field-contract, parity) re-run in \u00a740",
+ "production_diff_empty": true,
+ "production_diff_paths": [],
+ "schema_version": "v3.11b-native-parity-v1"
+}

@@ -1,0 +1,26 @@
+{
+ "driver_identity_persistence": {
+  "missing_driver_frame0_boundary": 149,
+  "note": "pre-race grid participation persists, but assigning a T-state (position/gap/tyre) from it is fabrication; no causal T-state exists"
+ },
+ "label": "HYPOTHETICAL_CAUSAL_RECOVERY (not eligible)",
+ "rules": "only observations <= T; no future backfill; no nearest; no interpolation from future; no final-race knowledge",
+ "schema_version": "v3.11a-hypothetical-persistence-v1",
+ "stale_timing_gap": {
+  "note": "51 TIMING_GAP states are the only stale states whose offenders all reappear causally later; 196 MASS_CLOCK_RESET states need restart/clock science first (R4); the rest need retirement science (R4).",
+  "states_all_offenders_return_later_timing_gap": 51,
+  "states_any_offender_never_again": 3243,
+  "states_mass_clock_reset_suspected": 196
+ },
+ "track_interval_persistence": {
+  "note": "No null-track state has a known status <= T (pre-first-message); interval persistence has nothing to persist from. The R2 candidate for these 59 states is a validated null-token semantics rule, not persistence.",
+  "null_track_states": 64,
+  "null_track_with_known_status_le_T": 0
+ },
+ "tyre_stint_persistence": {
+  "missing_tyre_states_no_prior_compound": 140,
+  "missing_tyre_states_with_prior_le_T_compound": 58,
+  "note": "58 TYRE primaries have a prior compound, but 54 of them are co-blocked by harder conditions (stale-never R4, wet R4); only 4 states (null-track co-block) are unblocked by a stint-persistence rule alone.",
+  "unblocked_by_tyre_rule_alone": 4
+ }
+}

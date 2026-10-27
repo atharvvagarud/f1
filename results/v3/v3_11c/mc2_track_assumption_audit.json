@@ -1,0 +1,21 @@
+{
+ "assumptions": {
+  "field_interactions": "none beyond shared base pace (no bunching, no DRS trains, no backmarker blue-flag behavior)",
+  "gaps": "evolved from factual gaps; no compression model",
+  "overtaking": "implicit in independent per-driver draws; no no-overtake or queue mechanics",
+  "pit_loss": "dry parametrised loss; SC-cheap stops unmodelled (R6 transitions dry-filtered)",
+  "position_evolution": "earliest-first lap-step classification; no SC/VSC delta-time or restart logic",
+  "race_clock": "continuous session clock; no suspension/reset semantics",
+  "race_pace": "dry-green empirical pace family only (R3-era parameters; wet/neutralised unmodelled)",
+  "retirement": "none (ACTIVE-only start states; no reliability dynamics)",
+  "tyre_evolution": "dry degradation only; no wet/intermediate family, no red-flag tyre-change rules"
+ },
+ "evidence": "raceintel/simulation/engine.py + mc2 kernel (read-only inspection; MC2 untouched)",
+ "schema_version": "v3.11c-mc2-assumptions-v1",
+ "why_each_regime_unsupported": {
+  "RED": "no suspension/restart semantics by design",
+  "SC": "no compression/queue/restart models",
+  "VSC": "no delta-time pace + no duration/withdrawal model",
+  "YELLOW": "no local-exposure channel + no local pace effect"
+ }
+}

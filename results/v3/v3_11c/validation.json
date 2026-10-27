@@ -1,0 +1,10 @@
+{
+ "audit_wall_s": 2.5,
+ "ledger_rows_unique_1165": true,
+ "mc2_futures_run": 0,
+ "no_eligibility_change": true,
+ "no_production_implementation": true,
+ "schema_version": "v3.11c-validation-v1",
+ "split_reproduces_A": true,
+ "track_baseline_reproduced_1165": true
+}

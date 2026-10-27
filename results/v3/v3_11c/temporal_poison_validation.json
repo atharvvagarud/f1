@@ -1,0 +1,16 @@
+{
+ "boundaries": "event <T visible; ==T visible where source semantics establish observability at equality (merge_asof exact-match, last-char lap-end); >T invisible; no nearest-message",
+ "future_injections_ignored": [
+  "track-status transition",
+  "race-control message",
+  "SC deployment",
+  "VSC deployment",
+  "GREEN withdrawal",
+  "red flag",
+  "restart"
+ ],
+ "offline_resolver_rule": "causal status at T = modal D9 token at max(state_time_s <= T); RC latest <=T corroboration only; pre-first => UNKNOWN",
+ "pre_first_message_poison": "first future message varied across GREEN/YELLOW/VSC/SC/RED leaves T UNKNOWN (pinned in focused tests)",
+ "schema_version": "v3.11c-temporal-poison-v1",
+ "verdict": "PASS (offline resolvers only; zero production use)"
+}

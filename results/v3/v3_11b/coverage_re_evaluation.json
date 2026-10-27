@@ -1,0 +1,18 @@
+{
+ "coverage": 0.3814,
+ "coverage_is_outcome_note": "0 recovered states is the honest result of three evidence-backed rejections, not a failure to chase 39.32%.",
+ "delta_vs_v3_10": 0,
+ "eligible": 3678,
+ "method": "eligibility reaffirmation (no implementation); no MC2 futures run in B",
+ "reason_counts": {
+  "MISSING_DRIVER_OBSERVATION": 354,
+  "MISSING_TYRE_STATE": 198,
+  "STALE_ROSTER_OBSERVATION": 3294,
+  "TERMINAL_STATE": 154,
+  "UNSUPPORTED_TRACK_STATE": 1165,
+  "WET_CONDITIONS": 801
+ },
+ "schema_version": "v3.11b-coverage-re-evaluation-v1",
+ "total_candidates": 9644,
+ "unsupported": 5966
+}

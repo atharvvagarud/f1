@@ -1,0 +1,14 @@
+{
+ "contract": "EXPLICIT_STATUS_PERSISTS_UNTIL_EXPLICIT_SUPERSESSION",
+ "contract_status": "DEFENSIBLE for S1 tokens between explicit transitions (run-length episodes stable; CLEAR returns all_clear; sector yellows reflect in overlapping-lap tokens), but NOT implemented in C; pre-first-observation interval stays UNKNOWN regardless.",
+ "rc_yellow_vs_token": {
+  "match": 636,
+  "mismatch": 423,
+  "missing": 19
+ },
+ "schema_version": "v3.11c-post-persistence-v1",
+ "track_clear_returns_all_clear": {
+  "n": 162,
+  "total": 193
+ }
+}

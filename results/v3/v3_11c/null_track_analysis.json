@@ -1,0 +1,1598 @@
+{
+ "H0_no_message_means_unknown": "HELD for all 64 (no GREEN-establishing source found)",
+ "H1_session_starts_green": "REJECTED (intuition only; no source/domain evidence; feed-liveness unproven)",
+ "H2_other_source_proves_green": "63/64 states have a Track-GREEN message <=T, but all are 'GREEN LIGHT - PIT EXIT OPEN' (pit-exit/session light, not green-flag racing) -- establishes session liveness, NOT regime. H2 fails as GREEN proof.",
+ "n_null": 64,
+ "pre_first_message": 64,
+ "schema_version": "v3.11c-null-track-v1",
+ "states": [
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 612.664,
+   "first_msg_t": 52.819,
+   "first_token_t": 888.403,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 427.819,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 2,
+   "race_id": "2018-r01-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r01-R:20",
+   "timing_coverage_le_T": 21
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 702.473,
+   "first_msg_t": 52.819,
+   "first_token_t": 888.403,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 427.819,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 3,
+   "race_id": "2018-r01-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r01-R:40",
+   "timing_coverage_le_T": 41
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 791.946,
+   "first_msg_t": 52.819,
+   "first_token_t": 888.403,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 427.819,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 4,
+   "race_id": "2018-r01-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r01-R:60",
+   "timing_coverage_le_T": 61
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 881.107,
+   "first_msg_t": 52.819,
+   "first_token_t": 888.403,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 427.819,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 5,
+   "race_id": "2018-r01-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r01-R:80",
+   "timing_coverage_le_T": 81
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1049.856,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 6,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:100",
+   "timing_coverage_le_T": 101
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1148.514,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 7,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:120",
+   "timing_coverage_le_T": 121
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1247.333,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 8,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:140",
+   "timing_coverage_le_T": 141
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1346.107,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 9,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:160",
+   "timing_coverage_le_T": 161
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1444.857,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 10,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:180",
+   "timing_coverage_le_T": 181
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 654.87,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 2,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track"
+   ],
+   "rc_msgs_le_T": 2,
+   "state_id": "2018-r03-R:20",
+   "timing_coverage_le_T": 21
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1543.618,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 11,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:200",
+   "timing_coverage_le_T": 201
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1642.414,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 12,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:220",
+   "timing_coverage_le_T": 221
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1741.169,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 13,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:240",
+   "timing_coverage_le_T": 241
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1840.175,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 14,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:260",
+   "timing_coverage_le_T": 261
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1939.091,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 15,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:280",
+   "timing_coverage_le_T": 281
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2038.311,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 16,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:300",
+   "timing_coverage_le_T": 301
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2137.765,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 17,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:320",
+   "timing_coverage_le_T": 321
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2237.253,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 18,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:340",
+   "timing_coverage_le_T": 341
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2336.658,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 19,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:360",
+   "timing_coverage_le_T": 361
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2440.794,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 20,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:380",
+   "timing_coverage_le_T": 381
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 753.342,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 3,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:40",
+   "timing_coverage_le_T": 41
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2547.006,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 21,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:400",
+   "timing_coverage_le_T": 401
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2646.384,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 22,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:420",
+   "timing_coverage_le_T": 421
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2745.7,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 23,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:440",
+   "timing_coverage_le_T": 441
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2845.367,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 24,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:460",
+   "timing_coverage_le_T": 461
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2944.624,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 25,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:480",
+   "timing_coverage_le_T": 481
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 3043.959,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 26,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:500",
+   "timing_coverage_le_T": 501
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 3142.92,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 27,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:520",
+   "timing_coverage_le_T": 521
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 3240.683,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 28,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:540",
+   "timing_coverage_le_T": 541
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 3338.337,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 29,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:560",
+   "timing_coverage_le_T": 561
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 852.367,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 4,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:60",
+   "timing_coverage_le_T": 61
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 951.236,
+   "first_msg_t": 62.882,
+   "first_token_t": 3412.143,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 455.882,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 5,
+   "race_id": "2018-r03-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r03-R:80",
+   "timing_coverage_le_T": 81
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 887.828,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 6,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:100",
+   "timing_coverage_le_T": 101
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 966.314,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 7,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:120",
+   "timing_coverage_le_T": 121
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1044.835,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 8,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:140",
+   "timing_coverage_le_T": 141
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1123.397,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 9,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:160",
+   "timing_coverage_le_T": 161
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1202.003,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 10,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:180",
+   "timing_coverage_le_T": 181
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 575.526,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 2,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:20",
+   "timing_coverage_le_T": 21
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1280.648,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 11,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:200",
+   "timing_coverage_le_T": 201
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1359.225,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 12,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:220",
+   "timing_coverage_le_T": 221
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1437.577,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 13,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:240",
+   "timing_coverage_le_T": 241
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1515.878,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 14,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:260",
+   "timing_coverage_le_T": 261
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1594.103,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 15,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:280",
+   "timing_coverage_le_T": 281
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1672.554,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 16,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:300",
+   "timing_coverage_le_T": 301
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1750.552,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 17,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:320",
+   "timing_coverage_le_T": 321
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1828.929,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 18,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:340",
+   "timing_coverage_le_T": 341
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1907.901,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 19,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:360",
+   "timing_coverage_le_T": 361
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 1986.645,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 20,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:380",
+   "timing_coverage_le_T": 381
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 653.435,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 3,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:40",
+   "timing_coverage_le_T": 41
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2065.338,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 21,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:400",
+   "timing_coverage_le_T": 401
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2144.018,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 22,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:420",
+   "timing_coverage_le_T": 421
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2222.75,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 23,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:440",
+   "timing_coverage_le_T": 441
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2301.399,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 24,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:460",
+   "timing_coverage_le_T": 461
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2384.248,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 25,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:480",
+   "timing_coverage_le_T": 481
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2464.384,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 26,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:500",
+   "timing_coverage_le_T": 501
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2543.674,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 27,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:519",
+   "timing_coverage_le_T": 520
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 2627.221,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 28,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:540",
+   "timing_coverage_le_T": 541
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 731.212,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 4,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:60",
+   "timing_coverage_le_T": 61
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 809.381,
+   "first_msg_t": 57.968,
+   "first_token_t": 2643.653,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.968,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 5,
+   "race_id": "2018-r11-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r11-R:80",
+   "timing_coverage_le_T": 81
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 587.155,
+   "first_msg_t": 64.823,
+   "first_token_t": 906.053,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.823,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 2,
+   "race_id": "2018-r12-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track"
+   ],
+   "rc_msgs_le_T": 2,
+   "state_id": "2018-r12-R:19",
+   "timing_coverage_le_T": 21
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 670.048,
+   "first_msg_t": 64.823,
+   "first_token_t": 906.053,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.823,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 3,
+   "race_id": "2018-r12-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r12-R:38",
+   "timing_coverage_le_T": 40
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 752.999,
+   "first_msg_t": 64.823,
+   "first_token_t": 906.053,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.823,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 4,
+   "race_id": "2018-r12-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r12-R:57",
+   "timing_coverage_le_T": 59
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": true,
+   "T_s": 836.642,
+   "first_msg_t": 64.823,
+   "first_token_t": 906.053,
+   "green_like_messages_le_T": [
+    {
+     "scope": "Track",
+     "t": 416.823,
+     "text": "GREEN LIGHT - PIT EXIT OPEN"
+    }
+   ],
+   "leader_lap": 5,
+   "race_id": "2018-r12-R",
+   "rc_msg_flags_le_T": [
+    "Drs/None/None",
+    "Flag/GREEN/Track",
+    "Drs/None/None"
+   ],
+   "rc_msgs_le_T": 3,
+   "state_id": "2018-r12-R:76",
+   "timing_coverage_le_T": 78
+  },
+  {
+   "H0_unknown": true,
+   "H1_starts_green_accepted": false,
+   "H2_proven_green": false,
+   "T_s": 186.25,
+   "first_msg_t": 194.409,
+   "first_token_t": 192.781,
+   "green_like_messages_le_T": [],
+   "leader_lap": 2,
+   "race_id": "2020-r11-R",
+   "rc_msg_flags_le_T": [],
+   "rc_msgs_le_T": 0,
+   "state_id": "2020-r11-R:20",
+   "timing_coverage_le_T": 21
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "ranking_rule": "feasibility x safety, not raw count; high-volume unsafe recovery ranked below smaller safe fixes",
+ "rows": [
+  {
+   "category": "R2 causal reconstruction (V3.11B candidate)",
+   "complexity": "medium",
+   "feasibility": "medium (V3.2K gates failed for raw timing; null-token semantics unvalidated; stint boundaries ambiguous)",
+   "future_data_risk": "none (<=T only)",
+   "recommended_stage": "V3.11B (scoped; A justifies only these 114 states)",
+   "risk": "medium",
+   "sim_change": false,
+   "states": 114,
+   "sub": {
+    "null_track_semantics": 59,
+    "stale_timing_gap": 51,
+    "tyre_stint_persistence": 4
+   }
+  },
+  {
+   "category": "R4 stale retirement/mass-reset science",
+   "complexity": "high",
+   "feasibility": "low (needs validated retirement inference + restart/clock semantics; V3.2J/C rejected generic retirement inference)",
+   "future_data_risk": "none (<=T only)",
+   "recommended_stage": "research stage after V3.11B",
+   "risk": "high",
+   "sim_change": false,
+   "states": 3434,
+   "sub": {
+    "individual_disappearance": 3238,
+    "mass_clock_reset": 196
+   }
+  },
+  {
+   "category": "R3 neutralized TRACK regimes",
+   "complexity": "high",
+   "feasibility": "low (new regime science per V3.2F/H)",
+   "future_data_risk": "none",
+   "recommended_stage": "later regime stage (not V3.11B)",
+   "risk": "high",
+   "sim_change": true,
+   "states": 862
+  },
+  {
+   "category": "R4 WET (pace + evolution + transition)",
+   "complexity": "high",
+   "feasibility": "low (INTER data exists but WET-rain cells thin; no evolution/transition mechanism)",
+   "future_data_risk": "none",
+   "recommended_stage": "separate wet-modelling stage",
+   "risk": "high",
+   "sim_change": true,
+   "states": 1042
+  },
+  {
+   "category": "R5 not causally recoverable",
+   "complexity": "n/a",
+   "feasibility": "not causally recoverable",
+   "future_data_risk": "requires future",
+   "recommended_stage": "none (candidate-universe question)",
+   "risk": "high",
+   "sim_change": false,
+   "states": 360
+  },
+  {
+   "category": "R0 terminal (intentional)",
+   "complexity": "n/a",
+   "feasibility": "intentional",
+   "future_data_risk": "none",
+   "recommended_stage": "never",
+   "risk": "none",
+   "sim_change": false,
+   "states": 154
+  }
+ ],
+ "schema_version": "v3.11a-prioritization-matrix-v1"
+}

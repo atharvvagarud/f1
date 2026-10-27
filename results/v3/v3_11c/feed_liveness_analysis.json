@@ -1,0 +1,21 @@
+{
+ "contract": {
+  "green_emitted_on_transition_only": "EMPIRICALLY-OBSERVED (GREEN only as pit-exit light / session announcements, never periodic)",
+  "guaranteed_initial_emission": false,
+  "historical_completeness": "UNKNOWN (69 untimed 2018-r02 messages excluded by construction)",
+  "ingestion_after_start": "possible (first messages minutes in; no liveness proof)",
+  "season_differences": "vocabulary stable 2018-2024; TimingData local 2019-2023, sqlite 2018/2024",
+  "silent_while_green": true
+ },
+ "max_inter_message_gap_s": {
+  "count": 149,
+  "max": 7650.0,
+  "median": 1005.0,
+  "p75": 1506.0,
+  "p90": 2381.8,
+  "p95": 2933.4
+ },
+ "races_with_rc": 149,
+ "schema_version": "v3.11c-feed-liveness-v1",
+ "verdict": "No liveness guarantee exists: absence cannot prove GREEN. H0 stands."
+}

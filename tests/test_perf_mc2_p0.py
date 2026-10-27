@@ -350,6 +350,10 @@ def _p0_counts():
                  "tests/test_v2_phase5_r7.py",
                  "tests/test_v3_2i_status_models.py",
                  "scripts/run_ci_tests.py",
+                 # V3.11F reconciliation (freeze): narrow stale-guard
+                 # repair of the time-bound V3.9 HEAD pin (tag pin
+                 # kept; ancestry asserted with equal strength).
+                 "tests/test_v3_10b_workspace_ownership.py",
                  # V3.10I wave-2 reconciliations below (exact guard
                  # files admitting the V3.10 set; frozen science
                  # untouched).
@@ -396,7 +400,13 @@ def _p0_counts():
                 # read-only telemetry API trio + V3.10 scripts
                 # (audit/parity probes; no science).
                 and "api/v2_telemetry_" not in ln
-                and "scripts/v3_10" not in ln]
+                and "scripts/v3_10" not in ln
+                # V3.11 reconciliation (research): V3.11A-E offline
+                # research scripts (forensics/reconstruction/regimes/
+                # VSC model/evidence resolution; no production code)
+                # + architecture navigation baseline doc (docs-only).
+                and "scripts/v3_11" not in ln
+                and "scripts/README.md" not in ln]
     # (the two exclusions are exactly the P1 executor + benchmark harness,
     # owned by the performance programme; any other new prod file fails)
     counts["P0-P20"] = len(other_tracked) + len(new_prod)

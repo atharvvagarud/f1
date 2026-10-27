@@ -1,0 +1,12 @@
+{
+ "counts": {
+  "previously_eligible_still_eligible": 3678,
+  "unsupported_still_unsupported": 5966
+ },
+ "eligible_to_unsupported": 0,
+ "method": "no accepted rules => no eligibility recompute warranted (\u00a729 triggers only after accepted-rule implementation); ledger reaffirms the frozen catalogue",
+ "reconciles": true,
+ "schema_version": "v3.11b-eligibility-transition-v1",
+ "transitions": [],
+ "unsupported_to_eligible": []
+}

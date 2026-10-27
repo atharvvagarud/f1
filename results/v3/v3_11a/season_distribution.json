@@ -1,0 +1,93 @@
+{
+ "by_season": {
+  "2018": {
+   "by_reason": {
+    "MISSING_DRIVER": 22,
+    "MISSING_TYRE": 99,
+    "STALE": 655,
+    "TERMINAL": 22,
+    "TRACK": 249,
+    "WET": 88
+   },
+   "eligible": 251,
+   "total": 1386,
+   "unsupported": 1135
+  },
+  "2019": {
+   "by_reason": {
+    "MISSING_DRIVER": 21,
+    "STALE": 332,
+    "TERMINAL": 24,
+    "TRACK": 158,
+    "WET": 111
+   },
+   "eligible": 715,
+   "total": 1361,
+   "unsupported": 646
+  },
+  "2020": {
+   "by_reason": {
+    "MISSING_DRIVER": 18,
+    "MISSING_TYRE": 33,
+    "STALE": 460,
+    "TERMINAL": 17,
+    "TRACK": 171,
+    "WET": 62
+   },
+   "eligible": 366,
+   "total": 1127,
+   "unsupported": 761
+  },
+  "2021": {
+   "by_reason": {
+    "MISSING_DRIVER": 24,
+    "STALE": 433,
+    "TERMINAL": 23,
+    "TRACK": 150,
+    "WET": 184
+   },
+   "eligible": 587,
+   "total": 1401,
+   "unsupported": 814
+  },
+  "2022": {
+   "by_reason": {
+    "MISSING_DRIVER": 79,
+    "MISSING_TYRE": 33,
+    "STALE": 419,
+    "TERMINAL": 20,
+    "TRACK": 207,
+    "WET": 214
+   },
+   "eligible": 463,
+   "total": 1435,
+   "unsupported": 972
+  },
+  "2023": {
+   "by_reason": {
+    "MISSING_DRIVER": 82,
+    "MISSING_TYRE": 33,
+    "STALE": 519,
+    "TERMINAL": 24,
+    "TRACK": 129,
+    "WET": 53
+   },
+   "eligible": 572,
+   "total": 1412,
+   "unsupported": 840
+  },
+  "2024": {
+   "by_reason": {
+    "MISSING_DRIVER": 108,
+    "STALE": 476,
+    "TERMINAL": 24,
+    "TRACK": 101,
+    "WET": 89
+   },
+   "eligible": 724,
+   "total": 1522,
+   "unsupported": 798
+  }
+ },
+ "schema_version": "v3.11a-season-distribution-v1"
+}

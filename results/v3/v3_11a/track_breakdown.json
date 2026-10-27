@@ -1,0 +1,18 @@
+{
+ "by_token": {
+  "None": 64,
+  "red_flag": 18,
+  "safety_car": 371,
+  "vsc": 124,
+  "vsc_ending": 67,
+  "yellow": 521
+ },
+ "by_validate_reason": {
+  "neutralized_track_state": 1083,
+  "red_flag_track_state": 18,
+  "unknown_track_state": 64
+ },
+ "n_states": 1165,
+ "red_flag_states": 18,
+ "schema_version": "v3.11a-track-breakdown-v1"
+}

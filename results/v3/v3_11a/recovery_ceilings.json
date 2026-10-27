@@ -1,0 +1,63 @@
+{
+ "arithmetic_contexts": {
+  "if_all_stale_recovered": {
+   "eligible": 6972,
+   "fraction": 0.7229,
+   "total": 9644
+  },
+  "if_all_stale_track_recovered": {
+   "eligible": 8137,
+   "fraction": 0.8437,
+   "total": 9644
+  }
+ },
+ "by_class": {
+  "R0_PERMANENT_OR_INTENTIONAL": {
+   "ceiling_eligible": 3832,
+   "ceiling_fraction": 0.3973,
+   "states": 154
+  },
+  "R1_LOW_RISK_DATA_RECONSTRUCTION": {
+   "ceiling_eligible": 3678,
+   "ceiling_fraction": 0.3814,
+   "states": 0
+  },
+  "R2_DOMAIN_RULE_REQUIRED": {
+   "ceiling_eligible": 3792,
+   "ceiling_fraction": 0.3932,
+   "states": 114
+  },
+  "R3_SIMULATOR_SUPPORT_REQUIRED": {
+   "ceiling_eligible": 4540,
+   "ceiling_fraction": 0.4708,
+   "states": 862
+  },
+  "R4_RESEARCH_REQUIRED": {
+   "ceiling_eligible": 8154,
+   "ceiling_fraction": 0.8455,
+   "states": 4476
+  },
+  "R5_NOT_CAUSALLY_RECOVERABLE": {
+   "ceiling_eligible": 4038,
+   "ceiling_fraction": 0.4187,
+   "states": 360
+  },
+  "R6_UNKNOWN": {
+   "ceiling_eligible": 3678,
+   "ceiling_fraction": 0.3814,
+   "states": 0
+  }
+ },
+ "current": {
+  "eligible": 3678,
+  "fraction": 0.3814,
+  "total": 9644
+ },
+ "label": "DIAGNOSTIC CEILING, NOT EXPECTED PRODUCTION COVERAGE",
+ "r2_alone": {
+  "ceiling_eligible": 3792,
+  "ceiling_fraction": 0.3932,
+  "states": 114
+ },
+ "schema_version": "v3.11a-recovery-ceilings-v1"
+}

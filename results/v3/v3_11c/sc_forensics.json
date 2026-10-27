@@ -1,0 +1,24 @@
+{
+ "finding": "SC intervals causally establishable (explicit token + DEPLOYED/ENDING lifecycle); simulation needs bunching + duration + restart models that do not exist. Largest regime population (371 states).",
+ "rc_safetycar_statuses": {
+  "DEPLOYED": 171,
+  "ENDING": 41,
+  "IN THIS LAP": 100,
+  "THROUGH THE PIT LANE": 13
+ },
+ "sc_intervals": 119,
+ "sc_withdrawn_to": {
+  "all_clear": 100,
+  "red_flag": 13,
+  "yellow": 3
+ },
+ "schema_version": "v3.11c-sc-forensics-v1",
+ "simulator_aspects_required": [
+  "field compression (gaps destroyed, queue formation)",
+  "speed limitation under SC",
+  "no-overtake behavior",
+  "pit interaction under SC (cheap stops, R6 dry-only today)",
+  "restart release + restart-lap pace variance (V3.2F: restart sd 21.2s)",
+  "leader reference across neutralisation"
+ ]
+}

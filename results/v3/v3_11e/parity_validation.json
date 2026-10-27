@@ -1,0 +1,12 @@
+{
+ "d_episode_rows": 29,
+ "d_inputs_intact": true,
+ "green_prediction_outputs_changed": false,
+ "green_rng_streams_changed": false,
+ "production_diff_empty": true,
+ "production_diff_paths": [],
+ "production_status_empty": true,
+ "protocol_sha256": "b298c0a395e02f13b02f6703bd2c5d03ba52f058924723e0e09b09adbfd88d63",
+ "schema_version": "v3.11e-parity-v1",
+ "verdict": "PASS"
+}

@@ -1,0 +1,66 @@
+{
+ "schema_version": "v3.11c-source-inventory-v1",
+ "sources": {
+  "S1_d9_track_state": {
+   "consumers": "RaceState.race_control.track_state (verbatim) -> MC2 _validate_start_state",
+   "contradictions": "intra-lap transitions preserved only as last-char; earlier chars dropped",
+   "first_observation": "first non-null token per race (measured below)",
+   "global_or_local": "GLOBAL token collapsing possibly-local conditions (no sector/driver channel)",
+   "missingness": "null iff source null/empty/unknown (pre-first-message typical)",
+   "persists": "NO by itself (snapshot); persistence is an interpretation requiring contract",
+   "raw_provenance": "D6/D7 track_status per-lap TrackStatus string (FastF1 feed) -> D9 last-char token (d9.py:derive_track_state, d9schema.py:TRACK_STATE_CODES)",
+   "seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "timestamp_domain": "D6 lap-end session clock (state_time_s); IN_LAP availability",
+   "update_semantics": "SNAPSHOT at lap boundary (last-code-wins; multi-code laps span transitions, e.g. '12')",
+   "vocabulary": [
+    "all_clear",
+    "red_flag",
+    "safety_car",
+    "vsc",
+    "vsc_ending",
+    "yellow"
+   ]
+  },
+  "S2_race_control_messages": {
+   "consumers": "D9 rc_last_message_* (merge_asof backward); RaceState lineage-only; V3.10D event feed",
+   "contradictions": "stale last-message vs current token (median RC age 16.9s per V3.2F)",
+   "first_observation": "first timestamped message per race (measured below)",
+   "global_or_local": "MIXED: Track (session), Sector (local), Driver (individual, mostly BLUE backmarker warnings)",
+   "missingness": "untimestamped messages excluded from as-of joins (69 in 2018-r02); feed may be silent while GREEN",
+   "persists": "NO (events); state must be derived via transition semantics",
+   "raw_provenance": "FastF1 race_control_messages via tiera.py loader -> D5 race_control parquet (message_seq, observed_at_s, lap_number, category, flag, status, scope, sector, racing_number, text)",
+   "seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "timestamp_domain": "session clock HH:MM:SS.mmm (V3.2J clock audit: shares D9 origin)",
+   "update_semantics": "EVENT MESSAGES (transitions/announce- ments, not snapshots)",
+   "vocabulary": "categories Flag/Drs/SafetyCar/CarEvent/Other; flags GREEN/YELLOW/DOUBLE YELLOW/CLEAR/BLUE/CHEQUERED/RED/BLACK AND WHITE; scopes Track/Sector/Driver"
+  },
+  "S3_derived_flags": {
+   "note": "NOT an independent source; excluded from agreement analysis as evidence",
+   "raw_provenance": "deterministic views of S1 token (flag_yellow/safety_car/red/vsc)"
+  },
+  "S4_rc_last_message_join": {
+   "note": "NOT an independent source; attachment mechanism only",
+   "raw_provenance": "D7 merge_asof backward join of S2 onto state rows (exact matches count; tie-break by message_seq)"
+  },
+  "S5_frozen_episodes": {
+   "note": "OFFLINE diagnostic only; future duration/exit forbidden at runtime",
+   "raw_provenance": "results/v3/v3_2f/coverage_opportunity_raw.json episodes (run-length modal token per state_time_s, offline)"
+  }
+ }
+}

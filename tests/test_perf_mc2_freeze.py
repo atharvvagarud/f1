@@ -199,11 +199,17 @@ def test_collection_pin_reconciled():
     # V3.9C reconciliation: 5122 + 26 bundle/API tests = 5148.
     # V3.9E reconciliation: 5148 + 28 freeze tests = 5176.
     # V3.10I reconciliation: 5176 + 10 V3.10 ownership/API tests = 5186.
-    assert m and int(m.group(1)) == 5122 + 26 + 28 + 10
+    # V3.11A reconciliation: 5186 + 22 forensics guard tests = 5208.
+    # V3.11B reconciliation: 5208 + 21 reconstruction-validation tests = 5229.
+    # V3.11C reconciliation: 5229 + 21 track-forensics tests = 5250.
+    # V3.11D reconciliation: 5250 + 18 VSC-model tests = 5268.
+    # V3.11E reconciliation: 5268 + 21 evidence-resolution tests = 5289.
+    # V3.11F reconciliation: 5289 + 16 programme-freeze tests = 5305.
+    assert m and int(m.group(1)) == 5122 + 26 + 28 + 10 + 22 + 21 + 21 + 18 + 21 + 16
     out = subprocess.run(
         ["/Users/tfatharva/f1-in-race-prediction_main/.venv/bin/python",
          "-m", "pytest", "tests/", "--collect-only", "-q",
          "-p", "no:cacheprovider"],
         cwd=ROOT, capture_output=True, text=True, check=True).stdout
     n = int(out.strip().splitlines()[-1].split()[0])
-    assert n == 5122 + 26 + 28 + 10, n
+    assert n == 5122 + 26 + 28 + 10 + 22 + 21 + 21 + 18 + 21 + 16, n

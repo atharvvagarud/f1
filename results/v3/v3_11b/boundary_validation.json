@@ -1,0 +1,12 @@
+{
+ "causal_lookup_semantics": {
+  "nearest_row_behavior": "absent (exact causal lookup only)",
+  "observation_time_eq_T": "observed (inclusive, side=right)",
+  "observation_time_gt_T": "excluded (never consumed)",
+  "validity_boundary": "no rule validity interval exists in B (all rules rejected)"
+ },
+ "pinned_in": "tests/test_v3_11b_reconstruction.py (causal-lookup unit tests on the B lookup pattern)",
+ "pit_boundary": "none carried: 0/4 tyre states had any prior compound; no default/inferred compound anywhere",
+ "red_flag_restart_bridging": "none: 196 MASS_CLOCK_RESET states untouched; no timestamp shifting/normalization in B",
+ "schema_version": "v3.11b-boundary-validation-v1"
+}

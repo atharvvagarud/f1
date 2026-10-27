@@ -1,0 +1,20 @@
+{
+ "causal_intervals_establishable": "YES structurally (explicit 6-intervals with 7-withdrawal in 56/82 cases); mid-interval T needs duration/withdrawal knowledge only for simulation, not for establishing the regime at T",
+ "nature": "global session condition (delta-time regime), not sector-local; driver-local exposure uniform by rule, not by evidence channel",
+ "rc_channel": "no VSC RC category/flag exists; activation and withdrawal evidenced ONLY by token codes 6/7 (+ DRS DISABLED adjacency, lineage-only)",
+ "schema_version": "v3.11c-vsc-forensics-v1",
+ "vsc_ending_followed_by": {
+  "all_clear": 59,
+  "safety_car": 1,
+  "yellow": 2
+ },
+ "vsc_ending_intervals": 62,
+ "vsc_followed_by_other": {
+  "END_OF_DATA": 2,
+  "all_clear": 13,
+  "red_flag": 1,
+  "safety_car": 10
+ },
+ "vsc_followed_by_vsc_ending": 56,
+ "vsc_intervals": 82
+}

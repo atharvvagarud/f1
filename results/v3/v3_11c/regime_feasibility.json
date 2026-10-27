@@ -1,0 +1,19 @@
+{
+ "RED": {
+  "evidence": "18 states + suspension discontinuity (post-red clock gaps median 1491s); restart is a new race; no semantics in scope",
+  "level": "F4_NOT_SCIENTIFICALLY_JUSTIFIED"
+ },
+ "SC": {
+  "evidence": "371 states; intervals + DEPLOYED/ENDING lifecycle explicit, but bunching+restart+duration all unmodelled (restart sd 21.2s); largest mechanical gap",
+  "level": "F3_HIGH_COMPLEXITY"
+ },
+ "VSC": {
+  "evidence": "191 states (124+67); global delta-time regime (uniform exposure by rule); explicit 6/7 token lifecycle (56/82 with ending, 59 endings->green); pace delta measurable (+19.6s); needs duration + withdrawal + pit-loss research",
+  "level": "F2_MINIMAL_MODEL_RESEARCHABLE"
+ },
+ "YELLOW": {
+  "evidence": "521 states but exposure never global (268 sector-active, 245 stale/unknown, 8 unknown); no sector->driver channel; local pace effect unmodelled; V3.2F global-penalty rejected",
+  "level": "F3_HIGH_COMPLEXITY"
+ },
+ "schema_version": "v3.11c-feasibility-v1"
+}

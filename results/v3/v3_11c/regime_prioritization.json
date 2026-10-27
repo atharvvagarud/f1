@@ -1,0 +1,11 @@
+{
+ "next_stage": "V3.11D -- VSC REGIME MODEL (research)",
+ "not_recommended": [
+  "YELLOW (F3 + exposure science missing)",
+  "RED (F4 by design)"
+ ],
+ "rationale": "only F2 regime: global exposure (no local-mapping science needed), explicit token lifecycle, measurable pace delta, 191 affected states with clean withdrawal evidence (59 endings->green). Chosen by feasibility x evidence, not raw count (SC is larger at 371 but F3).",
+ "recommendation": "VSC",
+ "runner_up": "SC (largest population; F3 complexity)",
+ "schema_version": "v3.11c-prioritization-v1"
+}

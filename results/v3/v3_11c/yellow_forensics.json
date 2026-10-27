@@ -1,0 +1,6 @@
+{
+ "finding": "D9 yellow token is lap-boundary last-code-wins; the RC feed carries YELLOW/DOUBLE YELLOW exclusively at Sector scope (zero Track-scoped YELLOW in corpus) with CLEAR withdrawals per sector. No sector->driver exposure channel exists in D9/RaceState; a local yellow must never become global slow-race physics without exposure evidence.",
+ "n_anchor_yellow": 521,
+ "rc_sector_yellow_active_states": 268,
+ "schema_version": "v3.11c-yellow-forensics-v1"
+}

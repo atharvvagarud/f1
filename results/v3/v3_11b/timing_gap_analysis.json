@@ -1,0 +1,2395 @@
+{
+ "exclusion_hits": {
+  "compound_change_offenders": 0,
+  "pit_during_gap_offenders": 0,
+  "regime_during_gap_offenders": 48,
+  "surviving_offenders": 6
+ },
+ "gap_s": {
+  "count": 54,
+  "max": 2812.6,
+  "median": 1506.3,
+  "min": 247.4,
+  "p90": 2370.0
+ },
+ "leader_laps_advanced_during_gap": {
+  "count": 54,
+  "max": 29,
+  "median": 16,
+  "min": 4,
+  "p90": 26
+ },
+ "n_offenders": 54,
+ "n_states": 51,
+ "per_state": [
+  {
+   "T_s": 3116.089,
+   "frame_index": 197,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 11,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 4,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 389.2,
+     "gap_s": 389.20899999999983,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 4470.348,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:197",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 3217.443,
+   "frame_index": 216,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 12,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 5,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 490.6,
+     "gap_s": 490.5630000000001,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 4368.994,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:216",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 3318.512,
+   "frame_index": 235,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 13,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 6,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 591.6,
+     "gap_s": 591.6320000000001,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 4267.924999999999,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:235",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 3419.566,
+   "frame_index": 254,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 14,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 7,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 692.7,
+     "gap_s": 692.6859999999997,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 4166.871,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:254",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 3523.747,
+   "frame_index": 273,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 15,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 8,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 796.9,
+     "gap_s": 796.8669999999997,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 4062.69,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:273",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 3624.94,
+   "frame_index": 292,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 16,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 9,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 898.1,
+     "gap_s": 898.06,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 3961.497,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:292",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 3726.123,
+   "frame_index": 311,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 17,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 10,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 999.2,
+     "gap_s": 999.2429999999999,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 3860.314,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:311",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 3826.986,
+   "frame_index": 330,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 18,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 11,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1100.1,
+     "gap_s": 1100.1059999999998,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 3759.451,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:330",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 3927.972,
+   "frame_index": 348,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 19,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 12,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1201.1,
+     "gap_s": 1201.092,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 3658.4649999999997,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:348",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 4029.871,
+   "frame_index": 367,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 20,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 13,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1303.0,
+     "gap_s": 1302.991,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 3556.566,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:367",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 4131.317,
+   "frame_index": 386,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 21,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 14,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1404.4,
+     "gap_s": 1404.437,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 3455.12,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:386",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 4233.215,
+   "frame_index": 405,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 22,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 15,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1506.3,
+     "gap_s": 1506.335,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 3353.2219999999998,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:405",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 4334.831,
+   "frame_index": 424,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 23,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 16,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1608.0,
+     "gap_s": 1607.951,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 3251.6059999999998,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:424",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 4436.034,
+   "frame_index": 443,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 24,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 17,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1709.2,
+     "gap_s": 1709.1539999999995,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 3150.4030000000002,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:443",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 4536.128,
+   "frame_index": 461,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 25,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 18,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1809.2,
+     "gap_s": 1809.2479999999996,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 3050.309,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:461",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 4636.264,
+   "frame_index": 479,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 26,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 19,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1909.4,
+     "gap_s": 1909.384,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 2950.173,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:479",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 4736.034,
+   "frame_index": 498,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 27,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 20,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2009.2,
+     "gap_s": 2009.1539999999995,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 2850.4030000000002,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:498",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 4835.991,
+   "frame_index": 517,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 28,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 21,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2109.1,
+     "gap_s": 2109.111,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 2750.446,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:517",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 4935.609,
+   "frame_index": 536,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 29,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 22,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2208.7,
+     "gap_s": 2208.7290000000003,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 2650.8279999999995,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:536",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 5035.92,
+   "frame_index": 555,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 30,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 23,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2309.0,
+     "gap_s": 2309.04,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 2550.517,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:555",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 5136.232,
+   "frame_index": 573,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 31,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 24,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2409.4,
+     "gap_s": 2409.352,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 2450.205,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:573",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 5236.557,
+   "frame_index": 592,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 32,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 25,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2509.7,
+     "gap_s": 2509.6769999999997,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 2349.88,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:592",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 5337.975,
+   "frame_index": 611,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 33,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 26,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2611.1,
+     "gap_s": 2611.0950000000003,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 2248.4619999999995,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:611",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 5439.154,
+   "frame_index": 627,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 34,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 27,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2712.3,
+     "gap_s": 2712.2740000000003,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 2147.2829999999994,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:627",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 5539.473,
+   "frame_index": 645,
+   "freshness_threshold_s": 305.2,
+   "leader_lap": 35,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 4859.557,
+     "driver_id": "vettel",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 28,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2812.6,
+     "gap_s": 2812.593,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 2046.964,
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 7586.437
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 7,
+      "pit_stops": 0,
+      "position": 7,
+      "race_time_s": 2726.88
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2019-r19-R",
+   "state_id": "2019-r19-R:645",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 2801.683,
+   "frame_index": 213,
+   "freshness_threshold_s": 209.7,
+   "leader_lap": 12,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 429.40999999999985,
+     "driver_id": "raikkonen",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 4,
+      "pit_during_gap_label": false,
+      "regime_during_gap": false,
+      "regime_tokens_during_gap": []
+     },
+     "frozen_age_s": 249.4,
+     "gap_s": 249.40200000000004,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 180.0079999999998,
+      "lap_number": 9,
+      "pit_stops": 0,
+      "position": 19,
+      "race_time_s": 2981.691
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 17,
+      "race_time_s": 2552.281
+     },
+     "survives_exclusions": true
+    },
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 431.3399999999997,
+     "driver_id": "russell",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 4,
+      "pit_during_gap_label": false,
+      "regime_during_gap": false,
+      "regime_tokens_during_gap": []
+     },
+     "frozen_age_s": 247.4,
+     "gap_s": 247.4369999999999,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 183.9029999999998,
+      "lap_number": 9,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 2985.586
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 19,
+      "race_time_s": 2554.246
+     },
+     "survives_exclusions": true
+    }
+   ],
+   "race_id": "2020-r01-R",
+   "state_id": "2020-r01-R:213",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 2870.907,
+   "frame_index": 230,
+   "freshness_threshold_s": 209.7,
+   "leader_lap": 13,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 429.40999999999985,
+     "driver_id": "raikkonen",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 5,
+      "pit_during_gap_label": false,
+      "regime_during_gap": false,
+      "regime_tokens_during_gap": []
+     },
+     "frozen_age_s": 318.6,
+     "gap_s": 318.6260000000002,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 110.78399999999965,
+      "lap_number": 9,
+      "pit_stops": 0,
+      "position": 19,
+      "race_time_s": 2981.691
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 17,
+      "race_time_s": 2552.281
+     },
+     "survives_exclusions": true
+    },
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 431.3399999999997,
+     "driver_id": "russell",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 5,
+      "pit_during_gap_label": false,
+      "regime_during_gap": false,
+      "regime_tokens_during_gap": []
+     },
+     "frozen_age_s": 316.7,
+     "gap_s": 316.66100000000006,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 114.67899999999963,
+      "lap_number": 9,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 2985.586
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 19,
+      "race_time_s": 2554.246
+     },
+     "survives_exclusions": true
+    }
+   ],
+   "race_id": "2020-r01-R",
+   "state_id": "2020-r01-R:230",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 2939.956,
+   "frame_index": 246,
+   "freshness_threshold_s": 209.7,
+   "leader_lap": 14,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 429.40999999999985,
+     "driver_id": "raikkonen",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 6,
+      "pit_during_gap_label": false,
+      "regime_during_gap": false,
+      "regime_tokens_during_gap": []
+     },
+     "frozen_age_s": 387.7,
+     "gap_s": 387.6750000000002,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 41.73499999999967,
+      "lap_number": 9,
+      "pit_stops": 0,
+      "position": 19,
+      "race_time_s": 2981.691
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 17,
+      "race_time_s": 2552.281
+     },
+     "survives_exclusions": true
+    },
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 431.3399999999997,
+     "driver_id": "russell",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 6,
+      "pit_during_gap_label": false,
+      "regime_during_gap": false,
+      "regime_tokens_during_gap": []
+     },
+     "frozen_age_s": 385.7,
+     "gap_s": 385.71000000000004,
+     "next_native_label": {
+      "compound": "MEDIUM",
+      "dt_after_T_s": 45.629999999999654,
+      "lap_number": 9,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 2985.586
+     },
+     "persisted": {
+      "compound": "MEDIUM",
+      "lap_number": 8,
+      "pit_stops": 0,
+      "position": 19,
+      "race_time_s": 2554.246
+     },
+     "survives_exclusions": true
+    }
+   ],
+   "race_id": "2020-r01-R",
+   "state_id": "2020-r01-R:246",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 5735.353,
+   "frame_index": 394,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 21,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 6,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 709.8,
+     "gap_s": 709.7920000000004,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 3280.169000000001,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:394",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 5811.658,
+   "frame_index": 413,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 22,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 7,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 786.1,
+     "gap_s": 786.0970000000007,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 3203.8640000000005,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:413",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 5963.526,
+   "frame_index": 451,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 24,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 9,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 938.0,
+     "gap_s": 937.9650000000001,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 3051.996000000001,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:451",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 6039.19,
+   "frame_index": 470,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 25,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 10,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1013.6,
+     "gap_s": 1013.6289999999999,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 2976.3320000000012,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:470",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 6114.849,
+   "frame_index": 489,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 26,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 11,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1089.3,
+     "gap_s": 1089.2880000000005,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 2900.6730000000007,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:489",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 6190.53,
+   "frame_index": 508,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 27,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 12,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1165.0,
+     "gap_s": 1164.969,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 2824.992000000001,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:508",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 6266.029,
+   "frame_index": 527,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 28,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 13,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1240.5,
+     "gap_s": 1240.4680000000008,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 2749.4930000000004,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:527",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 6341.403,
+   "frame_index": 546,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 29,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 14,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1315.8,
+     "gap_s": 1315.8420000000006,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 2674.1190000000006,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:546",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 6416.913,
+   "frame_index": 565,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 30,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 15,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1391.4,
+     "gap_s": 1391.3519999999999,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 2598.6090000000013,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:565",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 6492.474,
+   "frame_index": 584,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 31,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 16,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1466.9,
+     "gap_s": 1466.9130000000005,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 2523.0480000000007,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:584",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 6567.888,
+   "frame_index": 603,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 32,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 17,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1542.3,
+     "gap_s": 1542.3270000000002,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 2447.634000000001,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:603",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 6643.23,
+   "frame_index": 622,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 33,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 18,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1617.7,
+     "gap_s": 1617.6689999999999,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 2372.2920000000013,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:622",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 6718.502,
+   "frame_index": 641,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 34,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 19,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1692.9,
+     "gap_s": 1692.9410000000007,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 2297.0200000000004,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:641",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 6793.777,
+   "frame_index": 660,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 35,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 20,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1768.2,
+     "gap_s": 1768.2160000000003,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 2221.745000000001,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:660",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 6868.998,
+   "frame_index": 679,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 36,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 21,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1843.4,
+     "gap_s": 1843.437,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 2146.5240000000013,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:679",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 6944.165,
+   "frame_index": 698,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 37,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 22,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1918.6,
+     "gap_s": 1918.6040000000003,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 2071.357000000001,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:698",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 7019.236,
+   "frame_index": 717,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 38,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 23,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 1993.7,
+     "gap_s": 1993.6750000000002,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 1996.286000000001,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:717",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 7094.429,
+   "frame_index": 736,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 39,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 24,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2068.9,
+     "gap_s": 2068.8680000000004,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 1921.0930000000008,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:736",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 7169.561,
+   "frame_index": 755,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 40,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 25,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2144.0,
+     "gap_s": 2144.0,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 1845.9610000000011,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:755",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 7244.867,
+   "frame_index": 774,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 41,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 26,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2219.3,
+     "gap_s": 2219.3060000000005,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 1770.6550000000007,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:774",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 7320.2,
+   "frame_index": 793,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 42,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 27,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2294.6,
+     "gap_s": 2294.639,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 1695.322000000001,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:793",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 7395.566,
+   "frame_index": 811,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 43,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 28,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2370.0,
+     "gap_s": 2370.005,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 1619.956000000001,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:811",
+   "state_passes_T1_T2_T3": false
+  },
+  {
+   "T_s": 7471.159,
+   "frame_index": 829,
+   "freshness_threshold_s": 229.5,
+   "leader_lap": 44,
+   "offenders": [
+    {
+     "T1_lap_exact": false,
+     "T2_position_exact": false,
+     "T3_race_time_abs_err_s": 3989.961000000001,
+     "driver_id": "sargeant",
+     "exclusions": {
+      "compound_change_label": false,
+      "leader_laps_advanced": 29,
+      "pit_during_gap_label": false,
+      "regime_during_gap": true,
+      "regime_tokens_during_gap": [
+       "safety_car",
+       "yellow"
+      ]
+     },
+     "frozen_age_s": 2445.6,
+     "gap_s": 2445.598,
+     "next_native_label": {
+      "compound": "SOFT",
+      "dt_after_T_s": 1544.3630000000012,
+      "lap_number": 15,
+      "pit_stops": 0,
+      "position": null,
+      "race_time_s": 9015.522
+     },
+     "persisted": {
+      "compound": "SOFT",
+      "lap_number": 14,
+      "pit_stops": 0,
+      "position": 20,
+      "race_time_s": 5025.561
+     },
+     "survives_exclusions": false
+    }
+   ],
+   "race_id": "2023-r13-R",
+   "state_id": "2023-r13-R:829",
+   "state_passes_T1_T2_T3": false
+  }
+ ],
+ "persisted_vs_next": {
+  "lap_exact": 0,
+  "lap_total": 54,
+  "position_exact": 0,
+  "position_total": 54,
+  "race_time_abs_err_s": {
+   "count": 54,
+   "max": 4859.6,
+   "median": 3990.0,
+   "min": 429.4,
+   "p90": 4859.6
+  }
+ },
+ "protocol_sha256": "5849607042825ca6d31e049e880b3ddde8b693b5c739e2182268021acfa357ef",
+ "schema_version": "v3.11b-timing-gap-analysis-v1"
+}

@@ -259,9 +259,11 @@ def test_no_mc2_rerun_or_bayes_or_api():
     new_api = sorted(ln.split()[-1] for ln in out.splitlines()
                      if ln.strip().startswith("??")
                      and ln.split()[-1].startswith("api/"))
-    assert new_api == ["api/v2_telemetry_routes.py",
-                       "api/v2_telemetry_schemas.py",
-                       "api/v2_telemetry_service.py"], new_api
+    # V3.11F reconciliation (freeze): the V3.10F telemetry trio is
+    # committed at the frozen v3.10 parent, so the pre-commit
+    # expectation (trio untracked) is stale; V3.11 adds no api/
+    # files. Invariant preserved: no other (untracked) api/.
+    assert new_api == [], new_api
 
 
 def test_performance_freeze_provenance():

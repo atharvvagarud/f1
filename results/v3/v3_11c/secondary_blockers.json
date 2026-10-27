@@ -1,0 +1,21 @@
+{
+ "note": "regime support alone recovers only secondary-free states; STALE/WET/TYRE/TERMINAL co-blocks persist.",
+ "schema_version": "v3.11c-secondary-blockers-v1",
+ "secondary_free_causally_known_by_regime": {
+  "RED": 3,
+  "SC": 66,
+  "VSC": 41,
+  "YELLOW": 123
+ },
+ "secondary_sets": {
+  "MISSING_TYRE_STATE": 16,
+  "MISSING_TYRE_STATE+STALE_ROSTER_OBSERVATION": 39,
+  "MISSING_TYRE_STATE+STALE_ROSTER_OBSERVATION+WET_CONDITIONS": 11,
+  "MISSING_TYRE_STATE+WET_CONDITIONS": 8,
+  "NONE": 292,
+  "STALE_ROSTER_OBSERVATION": 579,
+  "STALE_ROSTER_OBSERVATION+WET_CONDITIONS": 159,
+  "WET_CONDITIONS": 61
+ },
+ "still_blocked_with_regime_support": 873
+}

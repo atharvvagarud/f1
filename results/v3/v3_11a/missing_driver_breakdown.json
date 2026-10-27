@@ -1,0 +1,13 @@
+{
+ "adapter_reasons": {
+  "unobserved_roster_member": 354
+ },
+ "cause": "genuine absence of <=T observation (race-start boundary + mid-race data gaps, incl. 2022-r02-R tsunoda gap); no alias auto-resolution performed",
+ "frame0_boundary": 149,
+ "later_exists": 155,
+ "mid_race_gap": 205,
+ "n_states": 354,
+ "never_seen_all_race": 202,
+ "schema_version": "v3.11a-missing-driver-breakdown-v1",
+ "unambiguous_identity": "grid slot known for gridded drivers; identity persists but T-state missing"
+}

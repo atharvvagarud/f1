@@ -1,0 +1,276 @@
+{
+ "edges": [
+  {
+   "count": 372,
+   "from": "all_clear",
+   "seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "to": "yellow"
+  },
+  {
+   "count": 285,
+   "from": "yellow",
+   "seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "to": "all_clear"
+  },
+  {
+   "count": 100,
+   "from": "safety_car",
+   "seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "to": "all_clear"
+  },
+  {
+   "count": 59,
+   "from": "vsc_ending",
+   "seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "to": "all_clear"
+  },
+  {
+   "count": 59,
+   "from": "yellow",
+   "seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "to": "safety_car"
+  },
+  {
+   "count": 56,
+   "from": "vsc",
+   "seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "to": "vsc_ending"
+  },
+  {
+   "count": 53,
+   "from": "yellow",
+   "seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "to": "vsc"
+  },
+  {
+   "count": 24,
+   "from": "all_clear",
+   "seasons": [
+    2018,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "to": "vsc"
+  },
+  {
+   "count": 19,
+   "from": "all_clear",
+   "seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "to": "safety_car"
+  },
+  {
+   "count": 18,
+   "from": "red_flag",
+   "seasons": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "to": "all_clear"
+  },
+  {
+   "count": 13,
+   "from": "safety_car",
+   "seasons": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "to": "red_flag"
+  },
+  {
+   "count": 13,
+   "from": "vsc",
+   "seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ],
+   "to": "all_clear"
+  },
+  {
+   "count": 10,
+   "from": "vsc",
+   "seasons": [
+    2018,
+    2020,
+    2022,
+    2023,
+    2024
+   ],
+   "to": "safety_car"
+  },
+  {
+   "count": 6,
+   "from": "all_clear",
+   "seasons": [
+    2018,
+    2023,
+    2024
+   ],
+   "to": "vsc_ending"
+  },
+  {
+   "count": 4,
+   "from": "None",
+   "seasons": [
+    2018
+   ],
+   "to": "yellow"
+  },
+  {
+   "count": 3,
+   "from": "safety_car",
+   "seasons": [
+    2020,
+    2024
+   ],
+   "to": "yellow"
+  },
+  {
+   "count": 3,
+   "from": "yellow",
+   "seasons": [
+    2020,
+    2021,
+    2023
+   ],
+   "to": "red_flag"
+  },
+  {
+   "count": 2,
+   "from": "vsc_ending",
+   "seasons": [
+    2019,
+    2020
+   ],
+   "to": "yellow"
+  },
+  {
+   "count": 2,
+   "from": "None",
+   "seasons": [
+    2018,
+    2020
+   ],
+   "to": "all_clear"
+  },
+  {
+   "count": 1,
+   "from": "all_clear",
+   "seasons": [
+    2021
+   ],
+   "to": "red_flag"
+  },
+  {
+   "count": 1,
+   "from": "red_flag",
+   "seasons": [
+    2023
+   ],
+   "to": "safety_car"
+  },
+  {
+   "count": 1,
+   "from": "red_flag",
+   "seasons": [
+    2021
+   ],
+   "to": "yellow"
+  },
+  {
+   "count": 1,
+   "from": "vsc",
+   "seasons": [
+    2023
+   ],
+   "to": "red_flag"
+  },
+  {
+   "count": 1,
+   "from": "vsc_ending",
+   "seasons": [
+    2018
+   ],
+   "to": "safety_car"
+  }
+ ],
+ "method": "consecutive modal-run edges (None = pre-first-unknown)",
+ "schema_version": "v3.11c-transition-graph-v1"
+}

@@ -1,0 +1,21 @@
+{
+ "arithmetic_verified": true,
+ "candidate_total": 9644,
+ "coverage_entry_pct": 38.14,
+ "coverage_exit_pct": 38.14,
+ "delta_eligible": 0,
+ "eligible_entry": 3678,
+ "eligible_exit": 3678,
+ "reason_counts": {
+  "MISSING_DRIVER": 354,
+  "MISSING_TYRE": 198,
+  "STALE": 3294,
+  "TERMINAL": 154,
+  "TRACK": 1165,
+  "WET": 801
+ },
+ "schema_version": "v3.11f-coverage-v1",
+ "source": "results/v3/v3_11b/coverage_re_evaluation.json (frozen B re-affirmation; A-E made zero transitions)",
+ "unsupported_entry": 5966,
+ "unsupported_exit": 5966
+}

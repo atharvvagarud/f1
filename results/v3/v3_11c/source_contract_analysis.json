@@ -1,0 +1,46 @@
+{
+ "contracts": {
+  "S1_code_mapping": {
+   "basis": "d9schema.py:102 cites FastF1 3.7.0 fastf1.api.track_status_data",
+   "claim": "1/2/4/5/6/7 -> all_clear/yellow/safety_car/red_flag/vsc/vsc_ending",
+   "class": "SOURCE-DOCUMENTED"
+  },
+  "S1_last_char_rule": {
+   "basis": "d9.py:79-96 + D11 parity checks",
+   "claim": "last character wins",
+   "class": "REPOSITORY-INFERRED"
+  },
+  "S1_null_means_unknown": {
+   "basis": "derive_track_state: missing/empty/unknown -> null, never invented (d9.py:106-110); engine refuses null explicitly",
+   "claim": "null token carries no regime information",
+   "class": "REPOSITORY-INFERRED"
+  },
+  "S1_token_is_snapshot": {
+   "basis": "d9.py:last_track_status_code docstring + FastF1 appends codes chronologically (d9schema.py:102-113)",
+   "caveat": "multi-code laps ('12','126','64') prove the token discards intra-lap history; a 'yellow' token may cover a mostly-green lap and vice versa ('21')",
+   "claim": "D9 token = race condition at the lap boundary",
+   "class": "REPOSITORY-INFERRED"
+  },
+  "S2_merge_asof_backward": {
+   "basis": "d7.py:260-290 merge_asof direction=backward, allow_exact_matches=True, seq tie-break",
+   "claim": "latest message <=T attaches (exact counts)",
+   "class": "REPOSITORY-INFERRED"
+  },
+  "S2_messages_are_events": {
+   "basis": "vocabulary: DEPLOYED/ENDING/IN THIS LAP/CLEAR/ GREEN LIGHT announcements; feed silent for long green stretches (measured below)",
+   "claim": "RC rows are transition/announcement events, not state snapshots",
+   "class": "EMPIRICALLY-OBSERVED"
+  },
+  "S2_sc_lifecycle_explicit": {
+   "basis": "SafetyCar status census in this artifact",
+   "claim": "SC deployment/withdrawal announced via SafetyCar DEPLOYED/ENDING/IN THIS LAP",
+   "class": "EMPIRICALLY-OBSERVED"
+  },
+  "S2_yellow_is_sector_scoped": {
+   "basis": "rc_flag_x_scope census in this artifact (YELLOW|Sector, DOUBLE YELLOW|Sector only)",
+   "claim": "YELLOW/DOUBLE YELLOW messages are Sector-scoped; no Track-scoped YELLOW exists in corpus",
+   "class": "EMPIRICALLY-OBSERVED"
+  }
+ },
+ "schema_version": "v3.11c-source-contract-v1"
+}

@@ -1,0 +1,18 @@
+{
+ "bootstrap": {
+  "B": 2000,
+  "method": "episode percentile CI",
+  "seed": 7
+ },
+ "contributing_validation_episodes": 3,
+ "effective_N_note": "one ratio per episode; episodes are N",
+ "independent_unit": "episode",
+ "median_ci95": [
+  1.1797,
+  1.5167
+ ],
+ "point_gate_pass": false,
+ "protocol_sha256": "b298c0a395e02f13b02f6703bd2c5d03ba52f058924723e0e09b09adbfd88d63",
+ "schema_version": "v3.11e-spread-power-v1",
+ "verdict": "UNDERPOWERED"
+}

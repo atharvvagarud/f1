@@ -1,0 +1,92 @@
+{
+ "by_season_first_token": {
+  "2018": {
+   "count": 21,
+   "max": 3412.1,
+   "median": 1206.6,
+   "p75": 2061.9,
+   "p90": 2149.3,
+   "p95": 2643.7
+  },
+  "2019": {
+   "count": 21,
+   "max": 2499.2,
+   "median": 2106.8,
+   "p75": 2115.8,
+   "p90": 2133.0,
+   "p95": 2144.4
+  },
+  "2020": {
+   "count": 17,
+   "max": 2144.9,
+   "median": 2090.1,
+   "p75": 2112.6,
+   "p90": 2136.8,
+   "p95": 2141.6
+  },
+  "2021": {
+   "count": 22,
+   "max": 15566.4,
+   "median": 3804.9,
+   "p75": 3847.6,
+   "p90": 3864.9,
+   "p95": 3865.5
+  },
+  "2022": {
+   "count": 22,
+   "max": 7802.1,
+   "median": 3833.6,
+   "p75": 3873.9,
+   "p90": 3886.8,
+   "p95": 7407.2
+  },
+  "2023": {
+   "count": 22,
+   "max": 5029.0,
+   "median": 3846.4,
+   "p75": 3866.5,
+   "p90": 3890.7,
+   "p95": 3903.6
+  },
+  "2024": {
+   "count": 24,
+   "max": 5762.3,
+   "median": 3494.6,
+   "p75": 3592.5,
+   "p90": 3833.3,
+   "p95": 4328.5
+  }
+ },
+ "finding": "First usable token arrives well after clock zero (session formation/lap-1 coverage); null states are systematic pre-first-message behavior, not race-specific ingestion failures.",
+ "first_msg_by_flag": {
+  "CLEAR": 2,
+  "DOUBLE YELLOW": 3,
+  "GREEN": 26,
+  "YELLOW": 4
+ },
+ "first_token_by_value": {
+  "all_clear": 72,
+  "red_flag": 3,
+  "safety_car": 29,
+  "vsc": 5,
+  "yellow": 40
+ },
+ "race_start_to_first_rc_msg_s": {
+  "count": 148,
+  "max": 1141.0,
+  "median": 423.0,
+  "p75": 900.8,
+  "p90": 913.0,
+  "p95": 1140.0
+ },
+ "race_start_to_first_token_s": {
+  "count": 149,
+  "max": 15566.4,
+  "median": 3420.0,
+  "p75": 3828.4,
+  "p90": 3867.7,
+  "p95": 3891.9
+ },
+ "races_without_rc": [],
+ "schema_version": "v3.11c-first-observation-v1"
+}
