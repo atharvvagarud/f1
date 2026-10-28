@@ -7,7 +7,7 @@ enforced by construction.
 This repository is a portfolio case study in building ML systems that cannot
 see the future: 189,420 temporally-safe race states, a frozen 2025 one-shot
 holdout (Top-1 79.6%, Top-3 97.9%), and a Dockerized two-service local runtime
-validated by 3,193 scientific tests. Start here, then read the
+validated by 5,319 collected pytest nodes. Start here, then read the
 [technical case study](docs/case-study/TECHNICAL_CASE_STUDY.md) for depth.
 
 ## What It Does
@@ -35,7 +35,7 @@ validated by 3,193 scientific tests. Start here, then read the
 | Dataset | 189,420 temporal states × 84 predictive features |
 | 2025 one-shot holdout | Log Loss 0.0680, Brier 0.0200, Top-1 79.6%, Top-3 97.9% |
 | Replay | 149 races, 9,644 exact checkpoints |
-| Scientific validation | 3,193 passed, 5 skipped, 4 xfailed, 0 failures |
+| Scientific validation | 5,310 passed, 5 skipped, 4 xfailed, 0 failures |
 | Runtime | Dockerized two-service local deployment, readiness 6/6 |
 
 2025 is the one-shot holdout evaluation season. It is not served by any
@@ -165,13 +165,12 @@ causal and never probability increments.
 
 Three tiers, kept separate — Tier-1 never implies Tier-3:
 
-- **Tier 1** — source-safe CI (`make ci`): clean-checkout capable, 2480
-  passed / 4 xfailed, 0 failures (2,489 of 3,210 collected; corpus-dependent
-  nodes deselected).
+- **Tier 1** — source-safe CI (`make ci`): clean-checkout capable, 4,276
+  of 5,319 collected nodes selected (corpus-dependent nodes deselected).
 - **Tier 2** — deployable runtime: validated bundle + Docker/Compose +
   readiness gate + endpoint and workflow smoke.
 - **Tier 3** — full scientific regression (`make science`, canonical corpus
-  required): 3193 passed / 5 skipped / 4 xfailed, 0 failures in ~57 min.
+  required): 5310 passed / 5 skipped / 4 xfailed, 0 failures in ~69 min.
 
 Skips are file-presence guards (corpus absent vs present), shown as
 measured. The two suites answer different questions on purpose: Tier-1
