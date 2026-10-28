@@ -22,7 +22,7 @@ disagree, the repository wins.
   research code. Flat directory; many stage entry points; some frozen
   scripts contain real domain logic (see `scripts/README.md`).
 - `tests/` — test suites, freeze guards, temporal/provenance checks.
-  199 test files, collection pinned (currently 5268).
+  202 test files, collection pinned (currently 5319).
 - `results/` — scientific evidence and generated research outputs
   (machine-readable JSON, ledgers, scientific cards).
 - `docs/` — scientific reports, freezes, architectural/navigation
@@ -217,12 +217,19 @@ Key docs: `docs/V3_6A_STRATEGY_LANDSCAPE_AND_SCIENTIFIC_CONTRACT.md`,
 
 Stage lineage: V2 Phase-7 strategy → V3.6 Strategy 2.0 paired engine.
 
-Current authority: AUTHORITY_NOT_YET_FORMALIZED. Both families are live
-and additive (the 2.0 route file states Phase-7 is "untouched and
-unimported"; the package `__init__.py` exports Phase-7 only). No
-repository evidence marks either family legacy, deprecated, or canonical.
-Strategy 2.0 is newer and reuses Phase-7 machinery; that alone does not
-make it canonical. Do not retire either without a formal decision.
+Current authority: formalized post-V3 (C2 registration seam, C8
+audit). The S4 `raceintel/strategy/` substrate is canonical runtime
+infrastructure shared by both API families. `api/v2_strategy_v3_*`
+(Strategy 2.0) is CANONICAL_KEEP; `api/v2_strategy_*` (Phase-7
+`POST /v2/strategies/compare`) is LEGACY_COMPAT_KEEP — a live
+compatibility contract (pit-wall decision adapter,
+`frontend/lib/v2.ts` client), not dead code. Both families are mounted
+and consumed (the 2.0 route file leaves the Phase-7 route, service,
+and schemas untouched and unimported; the package `__init__.py`
+exports Phase-7 only). The two contracts must not be consolidated as
+repository cleanup (that would be a product/API migration, out of
+scope). Frozen `v3_6*`/`v3_7d` research and evidence are provenance,
+not duplicate runtime implementation. Do not retire either family.
 
 ## Counterfactuals
 
