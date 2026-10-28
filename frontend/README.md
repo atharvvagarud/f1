@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# F1 Intelligence — Frontend
 
-## Getting Started
+Next.js product UI for F1 Intelligence: prediction, replay, simulator,
+strategy, counterfactuals, consensus, uncertainty, spatial, and the
+pit-wall workspace. It renders backend data; it never reconstructs
+simulation or race-state logic (see `docs/FRONTEND_DESIGN_SYSTEM.md`
+§18 for the semantics the visuals must not break).
 
-First, run the development server:
+## Development
+
+Requirements: Node 22 (`engines` + `.nvmrc`), npm with the committed
+lockfile. Install with `npm ci` (never `npm install`):
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+make install-frontend   # cd frontend && npm ci
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run from the repository root (frontend on `:3000`, backend on `:8000`):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+make backend-dev    # uvicorn api.main:app with reload
+make frontend-dev   # cd frontend && npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Backend configuration
 
-## Learn More
+`NEXT_PUBLIC_API_BASE` is the public backend base URL captured by
+`lib/http.ts` at module load (local fallback
+`http://127.0.0.1:8000`). Production builds require it explicitly:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+make docker-frontend-build NEXT_PUBLIC_API_BASE=http://localhost:8000
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The value is browser-facing, so it must be host-reachable
+(`http://localhost:8000` in compose) — never a Docker-internal host.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Code map
 
-## Deploy on Vercel
+- `app/` — Next.js routes (one directory per surface).
+- `features/` — per-domain UI: components, hooks, view-models, tests.
+- `components/` — shared shell/prediction/UI primitives.
+- `lib/` — backend clients (`v2.ts`, `api.ts`, `spatial.ts`,
+  `http.ts`) with `node --test` contract tests.
+- `data/` — versioned static evidence (`about.v1.json`,
+  `models.v1.json`) backing the Models/About surfaces.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Checks
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+make test-frontend   # canonical Tier-1 frontend selector
+make typecheck       # tsc --noEmit
+make lint            # eslint
+make build           # npm run build (production bundle)
+```
+
+## Further documentation
+
+- Root `README.md` — product, capabilities, running, testing.
+- `docs/development/DEVELOPMENT.md` — bootstrap, validation,
+  Docker/Compose, generated artifacts.
