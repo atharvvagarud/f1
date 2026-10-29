@@ -10,6 +10,7 @@ service calls only; production MC2 never runs here.
 import hashlib
 import json
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -334,7 +335,7 @@ def test_no_frontend_science_imports():
 
 def test_collection_accounting():
     out = subprocess.run(
-        ["/Users/tfatharva/f1-in-race-prediction_main/.venv/bin/python",
+        [sys.executable,
          "-m", "pytest", "tests/", "--collect-only", "-q",
          "-p", "no:cacheprovider"],
         cwd=ROOT, capture_output=True, text=True, check=True).stdout

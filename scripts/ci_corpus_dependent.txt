@@ -2,6 +2,11 @@
 # One pytest node id per line. "# file: reason" headers give the dependency.
 # Evidence: clean-checkout run 2026-09-30 — each node failed/errored with
 # corpus-absence signatures and passes where the ignored corpus exists.
+# G6 evidence: GitHub source-CI run 40923580599 (2026-10-29, first true
+# clean-checkout exercise since 2026-09-30) — appended nodes failed/errored
+# with corpus-absence signatures (43 nodes) or fresh-checkout mtime
+# normalization (1 node); all pass where the ignored corpus or the
+# author filesystem exists.
 # TIER 3 (full scientific regression) runs these; TIER 1 normal CI does not.
 
 # tests/test_request_observability.py: app fixture serves from the canonical corpus (serving stack needs ignored data)
@@ -1162,3 +1167,54 @@ tests/test_v3_5e_refinement.py::test_oof_schema_and_no_serving_changes
 # tests/test_v3_5f_evaluation.py: reads ignored data/v3/v3_5f prediction parquets
 tests/test_v3_5f_evaluation.py::test_identity_alignment_exact
 tests/test_v3_5f_evaluation.py::test_probabilities_bounded_and_coherent
+# G6 additions: maiden GitHub source-CI failures (run 40923580599); Tier-3 still runs these.
+# tests/test_mc2_p2b.py: ignored data/v2/simulation/params artifacts (SimulationValidationError: parameter artifact not found)
+tests/test_mc2_p2b.py::test_heap_invariant_no_stale_entries
+# tests/test_mc2_p3_1.py: ignored data/v2/simulation/params artifacts
+tests/test_mc2_p3_1.py::test_inventory_assumptions_hold
+tests/test_mc2_p3_1.py::test_knot_and_endpoint_semantics
+tests/test_mc2_p3_1.py::test_unfused_forms_differ_by_bits
+# tests/test_v3_10f_telemetry.py: ignored data/v2/processed/driver_lap_state_d9 parquets
+tests/test_v3_10f_telemetry.py::test_nan_projects_to_none_never_zero
+tests/test_v3_10f_telemetry.py::test_observation_boundary_carried_verbatim
+tests/test_v3_10f_telemetry.py::test_projection_shape_and_counts
+tests/test_v3_10f_telemetry.py::test_route_serves_full_race_payload
+tests/test_v3_10f_telemetry.py::test_stint_end_observed_joins_lap_grid
+tests/test_v3_10f_telemetry.py::test_unknown_race_raises_and_routes_404
+# tests/test_v3_6d_evaluation.py: asserts author-filesystem mtime order; git checkouts normalize mtimes (fresh-checkout-incompatible, not corpus-dependent)
+tests/test_v3_6d_evaluation.py::test_protocol_frozen_before_results
+# tests/test_v3_7c_engine.py: canonical rows from ignored data/v2/processed corpus (RuntimeError: no canonical rows)
+tests/test_v3_7c_engine.py::test_micro_multi_driver_case
+tests/test_v3_7c_engine.py::test_micro_multi_stop_case
+tests/test_v3_7c_engine.py::test_micro_n_greater_than_2_case
+tests/test_v3_7c_engine.py::test_micro_n1_parity_case
+tests/test_v3_7c_engine.py::test_micro_n2_parity_case
+tests/test_v3_7c_engine.py::test_micro_rival_outcome_case
+# tests/test_v3_7f_api.py: fixtures read canonical rows from ignored data/v2/processed corpus
+tests/test_v3_7f_api.py::test_availability_bad_anchor
+tests/test_v3_7f_api.py::test_availability_deterministic_and_cheap
+tests/test_v3_7f_api.py::test_availability_supported_and_factual
+tests/test_v3_7f_api.py::test_availability_unknown_race_and_2025
+tests/test_v3_7f_api.py::test_bad_compound_rejected
+tests/test_v3_7f_api.py::test_compare_2025_unsupported
+tests/test_v3_7f_api.py::test_corrupt_cache_fails_closed
+tests/test_v3_7f_api.py::test_direct_live_cache_parity[multi-driver]
+tests/test_v3_7f_api.py::test_direct_live_cache_parity[multi-stop]
+tests/test_v3_7f_api.py::test_direct_live_cache_parity[plan-vs-plan]
+tests/test_v3_7f_api.py::test_direct_live_cache_parity[reference-vs-N1]
+tests/test_v3_7f_api.py::test_direct_live_cache_parity[reference-vs-N2]
+tests/test_v3_7f_api.py::test_direct_live_cache_parity[reference-vs-N5]
+tests/test_v3_7f_api.py::test_direct_live_cache_parity[rival-outcome]
+tests/test_v3_7f_api.py::test_horizon_violation_is_unsupported
+tests/test_v3_7f_api.py::test_live_disabled_cache_miss_is_404
+tests/test_v3_7f_api.py::test_n_zero_rejected
+tests/test_v3_7f_api.py::test_n1_n2_overlap_with_v36
+tests/test_v3_7f_api.py::test_phase7_and_v36_routes_intact
+tests/test_v3_7f_api.py::test_plan_form_mismatch_rejected
+tests/test_v3_7f_api.py::test_plan_vs_plan_primary_mismatch_unsupported
+tests/test_v3_7f_api.py::test_production_config_locked
+tests/test_v3_7f_api.py::test_production_override_fields_impossible
+tests/test_v3_7f_api.py::test_rejected_kind_rejected
+tests/test_v3_7f_api.py::test_rival_is_target_is_unsupported
+tests/test_v3_7f_api.py::test_temporal_poison_blocked_end_to_end
+tests/test_v3_7f_api.py::test_unknown_and_conflicting_targets_rejected

@@ -10,6 +10,7 @@ artifacts (measured once, honestly), not in reruns here.
 import hashlib
 import json
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -229,7 +230,7 @@ def test_collection_pin_reconciled():
     # C7 derives the live expectation from the Tier-1 selector's
     # canonical pin instead of maintaining this arithmetic.
     out = subprocess.run(
-        ["/Users/tfatharva/f1-in-race-prediction_main/.venv/bin/python",
+        [sys.executable,
          "-m", "pytest", "tests/", "--collect-only", "-q",
          "-p", "no:cacheprovider"],
         cwd=ROOT, capture_output=True, text=True, check=True).stdout

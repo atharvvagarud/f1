@@ -37,6 +37,12 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
+        with:
+          # Frozen Git-provenance guards assert on historical tags and
+          # commit ancestry; the default shallow/tagless checkout cannot
+          # satisfy them. Full history (tags included) keeps source CI
+          # reproducible without weakening any guard.
+          fetch-depth: 0
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
