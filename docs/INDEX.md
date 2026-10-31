@@ -1,31 +1,40 @@
-# F1 Intelligence — Domain Index
+# F1 Intelligence: domain index
 
 Index over the stage-numbered history. This file replaces nothing: every
 `V2_*` / `V3_*` / `PHASE*` / `D*` document, script, result, and test keeps
 its authority as the frozen record. Numbers like `V3_8D` are experiment
-codes — look concepts up here, do not memorize the codes.
+codes: look concepts up here, do not memorize the codes.
 
 All paths below were verified to exist. If a path and this index ever
 disagree, the repository wins.
 
+## New here?
+
+Start with the [GitHub Wiki](https://github.com/atharvvagarud/f1/wiki)
+for guided system documentation. This index maps the versioned
+engineering and scientific record; frozen evidence stays in this
+repository.
+
 ## Repository area map
 
-- `raceintel/` — authoritative production/scientific implementation.
+Guide: [Architecture](https://github.com/atharvvagarud/f1/wiki/Architecture).
+
+- `raceintel/`: authoritative production/scientific implementation.
   Domain packages (simulation, model_lab, strategy, …). If domain logic
   exists here, this copy is the one that matters.
-- `api/` — HTTP/product composition layer. Thin routes + services over
+- `api/`: HTTP/product composition layer. Thin routes + services over
   `raceintel/` (and the `ml/` legacy path). Composition root: `api/main.py`.
-- `frontend/` — product UI (Next.js). App routes, features, clients.
-- `ml/` — legacy serving/inference area still used by specific paths
+- `frontend/`: product UI (Next.js). App routes, features, clients.
+- `ml/`: legacy serving/inference area still used by specific paths
   (the R4 prediction route via `api/services/prediction_service.py`).
-- `scripts/` — historical/research entry points and existing frozen
+- `scripts/`: historical/research entry points and existing frozen
   research code. Flat directory; many stage entry points; some frozen
   scripts contain real domain logic (see `scripts/README.md`).
-- `tests/` — test suites, freeze guards, temporal/provenance checks.
+- `tests/`: test suites, freeze guards, temporal/provenance checks.
   202 test files, collection pinned (currently 5319).
-- `results/` — scientific evidence and generated research outputs
+- `results/`: scientific evidence and generated research outputs
   (machine-readable JSON, ledgers, scientific cards).
-- `docs/` — scientific reports, freezes, architectural/navigation
+- `docs/`: scientific reports, freezes, architectural/navigation
   documentation (this file lives here).
 
 Frozen `V3_*` scripts/results/docs/tests are provenance artifacts.
@@ -33,6 +42,8 @@ Do not move or rename them casually. Guard allowlists and lineage
 references key on their exact paths.
 
 ## Current development state
+
+Guide: [Development History](https://github.com/atharvvagarud/f1/wiki/Development-History).
 
 - V3.10 production (`v3.10-pit-wall` == `2c00e7e`) is frozen.
 - V3.11A–E are complete and frozen (terminal programme; see
@@ -50,6 +61,8 @@ references key on their exact paths.
 - Frozen scientific evidence must not be moved or renamed.
 
 ## Platform / data ingestion
+
+Guide: [Data Platform](https://github.com/atharvvagarud/f1/wiki/Data-Platform).
 
 Authoritative implementation: `raceintel/data/`, `raceintel/pipeline/`
 (D6–D11 gates: `d6.py`, `d7.py`, `d8.py`, `d9.py`, `d10.py`, `d11.py` plus
@@ -71,6 +84,8 @@ Current authority: `raceintel/pipeline/` gates + `raceintel/contracts.py`.
 
 ## RaceState / temporal state
 
+Guide: [Temporal Safety and Features](https://github.com/atharvvagarud/f1/wiki/Temporal-Safety-and-Features).
+
 Authoritative implementation: `raceintel/race_state/` (`race_state.py`,
 `race_state_reconstruction.py`, `race_state_features.py`).
 
@@ -85,10 +100,12 @@ Stage lineage: V2 Phase 4 → replay/simulation consumers in Phase 5/6.
 
 Current authority: `raceintel/race_state/`.
 
-Notes: V3.11B causal state reconstruction was REJECTED — no persistence
+Notes: V3.11B causal state reconstruction was REJECTED: no persistence
 rules were added; reconstruction semantics remain exactly as frozen.
 
 ## Feature engineering
+
+Guide: [Temporal Safety and Features](https://github.com/atharvvagarud/f1/wiki/Temporal-Safety-and-Features).
 
 Authoritative implementation: `raceintel/features/` (engine, registry,
 contracts, pace/gaps/rates/temporal/interactions).
@@ -107,6 +124,8 @@ simulation, replay.
 Current authority: `raceintel/features/`.
 
 ## Winner prediction
+
+Guide: [Prediction System](https://github.com/atharvvagarud/f1/wiki/Prediction-System).
 
 Authoritative production serving: `ml/` (`config.py`, `features.py`,
 `inference.py`) via `api/services/prediction_service.py`,
@@ -138,6 +157,8 @@ science = `raceintel/model_lab/` + frozen V3.3–V3.5 records.
 
 ## Model Lab
 
+Guide: [Model Lab and Evaluation](https://github.com/atharvvagarud/f1/wiki/Model-Lab-and-Evaluation).
+
 Authoritative implementation: `raceintel/model_lab/` (52 modules:
 protocol, splits, runners, suites, calibration, final fit, `serving.py`).
 Serving artifacts consumed in production by `api/v2_service.py` and
@@ -161,6 +182,8 @@ V3.4 ensemble selection.
 Current authority: `raceintel/model_lab/`.
 
 ## Monte Carlo / MC2
+
+Guide: [Monte Carlo Simulation](https://github.com/atharvvagarud/f1/wiki/Monte-Carlo-Simulation).
 
 Authoritative production: `raceintel/simulation/` (`engine.py`,
 `monte_carlo.py`, `mc2_batch.py`, `rng.py`, `state.py`, `params.py`,
@@ -190,10 +213,12 @@ Coverage 3678/9644 = 38.14%.
 
 ## Strategy
 
+Guide: [Strategy Engine](https://github.com/atharvvagarud/f1/wiki/Strategy-Engine).
+
 Authoritative implementation: `raceintel/strategy/` (Phase-7 S1–S5:
 `contracts.py`, `candidates.py`, `comparison.py`, `objectives.py`,
 `paired.py`, `interventions.py`, `uncertainty.py`) plus V3.6 Strategy 2.0
-(`v3_contracts.py`, `v3_engine.py` — thin orchestration reusing Phase-7
+(`v3_contracts.py`, `v3_engine.py`: thin orchestration reusing Phase-7
 S3/S4/S5 verbatim).
 
 API: `api/v2_strategy_*` (`POST /v2/strategies/compare`) and
@@ -221,7 +246,7 @@ Current authority: formalized post-V3 (C2 registration seam, C8
 audit). The S4 `raceintel/strategy/` substrate is canonical runtime
 infrastructure shared by both API families. `api/v2_strategy_v3_*`
 (Strategy 2.0) is CANONICAL_KEEP; `api/v2_strategy_*` (Phase-7
-`POST /v2/strategies/compare`) is LEGACY_COMPAT_KEEP — a live
+`POST /v2/strategies/compare`) is LEGACY_COMPAT_KEEP: a live
 compatibility contract (pit-wall decision adapter,
 `frontend/lib/v2.ts` client), not dead code. Both families are mounted
 and consumed (the 2.0 route file leaves the Phase-7 route, service,
@@ -232,6 +257,8 @@ scope). Frozen `v3_6*`/`v3_7d` research and evidence are provenance,
 not duplicate runtime implementation. Do not retire either family.
 
 ## Counterfactuals
+
+Guide: [What-If and Counterfactuals](https://github.com/atharvvagarud/f1/wiki/What-If-and-Counterfactuals).
 
 Authoritative implementation: `raceintel/counterfactual/`,
 `api/v2_counterfactual_*`, `frontend/features/counterfactuals/`,
@@ -255,6 +282,8 @@ Current authority: `raceintel/counterfactual/` + V3.7 records.
 
 ## Consensus
 
+Guide: [Consensus, Uncertainty and Explainability](https://github.com/atharvvagarud/f1/wiki/Consensus-Uncertainty-and-Explainability).
+
 Authoritative implementation: `raceintel/consensus/` (adapters,
 alignment, contracts, metrics, product, trajectories),
 `api/v2_consensus_*`, `frontend/features/consensus/`,
@@ -273,6 +302,8 @@ Stage lineage: V3.8 model-simulation consensus.
 Current authority: `raceintel/consensus/` + V3.8 records.
 
 ## Uncertainty
+
+Guide: [Consensus, Uncertainty and Explainability](https://github.com/atharvvagarud/f1/wiki/Consensus-Uncertainty-and-Explainability).
 
 Authoritative implementation: `raceintel/uncertainty/`,
 `api/v2_uncertainty_*`, `frontend/features/uncertainty/`,
@@ -294,6 +325,8 @@ Current authority: `raceintel/uncertainty/` + V3.9 records.
 
 ## Spatial replay
 
+Guide: [Historical and Spatial Replay](https://github.com/atharvvagarud/f1/wiki/Historical-and-Spatial-Replay).
+
 Authoritative implementation: `raceintel/spatial/`,
 `raceintel/replay/` (`replay.py`, `replay_predictions.py`,
 `replay_probability_timeline.py`, `replay_reconstruction.py`),
@@ -309,7 +342,7 @@ firewall, geometry, ingestion, manifest, resolver, validation),
 `tests/test_v2_phase8_*` (5 files: replay intelligence).
 
 Frozen evidence: `results/phase12/`, `results/v2_replay/` (generated,
-reproducible — not committed).
+reproducible: not committed).
 
 Key docs: `docs/PHASE12_*.md` (spatial program reports).
 
@@ -319,6 +352,8 @@ Stage lineage: V2 historical replay (Phase 5) → replay intelligence
 Current authority: `raceintel/spatial/` + `raceintel/replay/`.
 
 ## Pit Wall
+
+Guide: [API, Frontend and Design](https://github.com/atharvvagarud/f1/wiki/API-Frontend-and-Design).
 
 Authoritative implementation: product composition over telemetry +
 replay + strategy. `frontend/app/pit-wall/page.tsx`,
@@ -349,12 +384,14 @@ Current authority: V3.10 pit-wall records (HEAD).
 
 ## Track regime research
 
+Guide: [Monte Carlo Simulation](https://github.com/atharvvagarud/f1/wiki/Monte-Carlo-Simulation).
+
 Research implementation (NOT production): `scripts/v3_11c_*.py`
 (sources, regimes, ledger), `scripts/v3_11a_mc2_coverage_forensics.py`
 (coverage forensics).
 
 Status: frozen research (committed at the V3.11 freeze). V3.11C verdict:
-TRACK_SOURCE_REGIME_FORENSICS_COMPLETE — forensics only, no regime
+TRACK_SOURCE_REGIME_FORENSICS_COMPLETE: forensics only, no regime
 simulation, no eligibility change.
 
 Key tests: `tests/test_v3_11a_forensics.py`,
@@ -375,11 +412,13 @@ cards. No production integration authorized.
 
 ## VSC research
 
+Guide: [Monte Carlo Simulation](https://github.com/atharvvagarud/f1/wiki/Monte-Carlo-Simulation).
+
 Research implementation (NOT production): `scripts/v3_11d_*.py`
 (episodes, analysis, protocol, `v3_11d_vsc_model.py`, validation).
 
 Status: frozen research (committed at the V3.11 freeze). V3.11D verdict:
-VSC_REGIME_MODEL_INSUFFICIENT_EVIDENCE — no production integration
+VSC_REGIME_MODEL_INSUFFICIENT_EVIDENCE: no production integration
 authorized, no eligibility change.
 
 Key tests: `tests/test_v3_11d_vsc_model.py`.
@@ -396,6 +435,8 @@ Current authority: research verdict in the V3.11D scientific card.
 VSC integration explicitly NOT authorized.
 
 ## API
+
+Guide: [API, Frontend and Design](https://github.com/atharvvagarud/f1/wiki/API-Frontend-and-Design).
 
 Authoritative implementation: `api/main.py` (composition root, 13
 routers), `api/config.py`, `api/observability.py`, `api/readiness.py`,
@@ -419,6 +460,8 @@ Current authority: `api/main.py` mount list.
 
 ## Frontend
 
+Guide: [API, Frontend and Design](https://github.com/atharvvagarud/f1/wiki/API-Frontend-and-Design).
+
 Authoritative implementation: `frontend/app/` (routes incl. consensus,
 counterfactuals, models, pit-wall, replay, simulator, spatial,
 strategy, uncertainty), `frontend/features/` (11 domains),
@@ -441,26 +484,28 @@ Current authority: `frontend/` as frozen at V3.10.
 
 ## Legacy model areas (ml / model_lab / v2)
 
+Guide: [Architecture](https://github.com/atharvvagarud/f1/wiki/Architecture).
+
 Repository evidence only; nothing here is moved, deleted, or retired.
 
-- `ml/` — HAS production consumers. Used by
+- `ml/`: HAS production consumers. Used by
   `api/services/prediction_service.py` (the mounted R4 prediction route)
   plus prediction/ensemble tests (`tests/test_ensemble.py`,
   `tests/test_prediction_equivalence.py`, `tests/test_model_loading.py`,
   `tests/test_datasets.py`, `tests/test_known_defects.py`,
   `tests/conftest.py`). Legacy serving/inference seam: keep working.
-- `raceintel/model_lab/` — science infrastructure AND production serving
+- `raceintel/model_lab/`: science infrastructure AND production serving
   seam. `raceintel/model_lab/serving.py` is imported by
   `api/v2_service.py` and `api/readiness.py`. The 52-module package holds
   both frozen experiment machinery and live serving artifacts.
-- `v2/` — NO importers found in `raceintel/`, `api/`, `scripts/`, or
-  `tests/` (only `v2/__init__.py` + `v2/model_lab/preprocessing.py` plus
-  caches). Appears unused/dead, BUT it is intentionally tracked baseline
-  code (see the V2 canonical-data comment in `.gitignore`). Do not delete
-  or relocate without a provenance review and a recorded decision. No ADR
-  exists yet.
+- `v2/`: a required pickle-compatibility shim, not dead code. The
+  implementation migrated to `raceintel/`; the three remaining tracked
+  files re-export `raceintel.model_lab` so the historical pickle import
+  path `v2.model_lab.preprocessing.FittedPreprocessor` keeps resolving.
+  Retention decision: `docs/adr/ADR-0002-v2-shim-retention.md`
+  (accepted post-V3). Do not delete or relocate.
 
-## SAFE START FOR AGENTS
+## Safe start for agents
 
 1. Read `docs/INDEX.md` first.
 2. Use Graphify before broad file reads.
@@ -471,22 +516,25 @@ Repository evidence only; nothing here is moved, deleted, or retired.
 6. Preserve temporal safety / provenance / holdout rules.
 7. Check stage-specific scientific docs before altering model behavior.
 
-## POST-V3 ARCHITECTURE BACKLOG
+## Post-V3 architecture backlog
 
 Source: the read-only architecture audit (HTML report kept outside the
-repo — do NOT copy it in). Listed here without implementing:
+repo: do not copy it in). V3 development has ended; all items below
+were completed post-V3:
 
-- C1 — deepen model_lab suite orchestration
-- C2 — API registration seam
-- C4 — reconcile model worlds / v2 legacy
-- C5 — split frontend v2.ts client (COMPLETE post-V3: shared
-  transport extracted to `frontend/lib/http.ts`; endpoint clients
-  retained, contracts unchanged)
-- C7 — derive guard pins from one source
-- C8 — strategy legacy/canonical cleanup
-
-DO NOT IMPLEMENT DURING ACTIVE V3 DEVELOPMENT unless separately
-authorized.
+- C1: deepen model_lab suite orchestration (complete: test-suite
+  orchestration consolidated)
+- C2: API registration seam (complete: `register_routers(app)`
+  composition point in `api/main.py`)
+- C4: reconcile model worlds / v2 legacy (complete: retention
+  decision recorded in `docs/adr/ADR-0002-v2-shim-retention.md`)
+- C5: split frontend v2.ts client (complete: shared transport
+  extracted to `frontend/lib/http.ts`; endpoint clients retained,
+  contracts unchanged)
+- C7: derive guard pins from one source (complete: duplicated
+  Tier-1 pins derived)
+- C8: strategy legacy/canonical cleanup (complete: strategy authority
+  refreshed; V3 surface canonical, V1 route compatibility-live)
 
 
 
